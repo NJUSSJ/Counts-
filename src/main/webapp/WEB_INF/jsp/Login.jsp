@@ -45,7 +45,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#" class="button special">Sign Up</a></li>
+                <li><a href="javascript:open();" class="button special">Sign Up</a></li>
             </ul>
         </nav>
     </header>
@@ -111,6 +111,29 @@
 
     </footer>
 
+</div>
+
+<div class="content" id="sign_up">
+    <h2>SIGN UP</h2>
+    <form action="<c:url value="signupCheck.html?"/>" method="post">
+        <div class="row">
+            <div class="12u">
+                <input type="text" name="userName" placeholder="Username" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                <input type="password" name="password" placeholder="Password" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="12u">
+                <ul class="buttons">
+                    <li><input type="submit" class="special" value="LOG IN" /></li>
+                </ul>
+            </div>
+        </div>
+    </form>
 </div>
 
 <!-- Scripts -->
