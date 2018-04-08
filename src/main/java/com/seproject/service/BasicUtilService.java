@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @Service
 public class BasicUtilService {
-    public boolean writeClass(Object o){
+    public ArrayList<String> writeClass(Object o){
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
         for(int i=0;i<field.length;i++){
@@ -16,35 +16,81 @@ public class BasicUtilService {
             String type=field[i].getType().toString();
             String name = field[i].getName();    //获取属性的名字
             name = name.substring(0, 1).toUpperCase() + name.substring(1);
-            if(type.startsWith("class")){
-
-            }else {
-                try {
-                    Method m = o.getClass().getMethod("get" + name);
+            try {
+                Method m = o.getClass().getMethod("get" + name);
+                if (type.startsWith("class")) {//自定义类
+                    ArrayList<String> info=writeClass(m.invoke(o));
+                    for(String each:info){
+                        result.add(name+":"+type+":"+each);
+                    }
+                } else if (type.startsWith("java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
+                    ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
+                    for(ArrayList<Object> each:list) {
+                        for(Object element:each) {
+                            ArrayList<String> info=writeClass(element);
+                            for(String eachInfo:info){
+                                result.add(name+":"+type+":"+each);
+                            }
+                        }
+                    }
+                } else if(type.startsWith("java.util.ArrayList<java.lang.Integer>")){
+                    ArrayList<Integer> list=(ArrayList<Integer>) m.invoke(o);
+                    for(int each:list) {
+                        result.add(name+":"+type+":"+each);
+                    }
+                }else if(type.startsWith("java.util.ArrayList<java.lang.Double>")){
+                    ArrayList<Double> list=(ArrayList<Double>) m.invoke(o);
+                    for(double each:list) {
+                        result.add(name+":"+type+":"+each);
+                    }
+                }else if(type.startsWith("java.util.ArrayList<java.lang.Long>")){
+                    ArrayList<Long> list=(ArrayList<Long>) m.invoke(o);
+                    for(long each:list) {
+                        result.add(name+":"+type+":"+each);
+                    }
+                }else if(type.startsWith("java.util.ArrayList<java.lang.Boolean>")){
+                    ArrayList<Boolean> list=(ArrayList<Boolean>) m.invoke(o);
+                    for(boolean each:list) {
+                        result.add(name+":"+type+":"+each);
+                    }
+                }else if(type.startsWith("java.util.ArrayList<java.lang.String>")){
+                    ArrayList<String> list=(ArrayList<String>) m.invoke(o);
+                    for(String each:list) {
+                        result.add(name+":"+type+":"+each);
+                    }
+                }else if (type.startsWith("java.util.ArrayList")) {//自定义类ArrayList
+                    ArrayList<Object> list= (ArrayList<Object>) m.invoke(o);
+                    for(Object each:list){
+                        ArrayList<String> info=writeClass(each);
+                        for(String eachInfo:info){
+                            result.add(name+":"+type+":"+eachInfo);
+                        }
+                    }
+                } else {
                     if ("int".equals(type)) {
                         int value = (Integer) m.invoke(o);
-                        temp=Integer.toString(value);
+                        temp = Integer.toString(value);
                     } else if ("double".equals(type)) {
                         double value = (Double) m.invoke(o);
-                        temp=Double.toString(value);
+                        temp = Double.toString(value);
                     } else if ("char".equals(type)) {
                         char value = (Character) m.invoke(o);
-                        temp=Character.toString(value);
+                        temp = Character.toString(value);
                     } else if ("boolean".equals(type)) {
                         boolean value = (Boolean) m.invoke(o);
-                        temp=Boolean.toString(value);
+                        temp = Boolean.toString(value);
                     } else if ("long".equals(type)) {
                         Long value = (Long) m.invoke(o);
-                        temp=Long.toString(value);
+                        temp = Long.toString(value);
                     } else {
                     }
-                }catch (Exception e){
-                    return false;
                 }
+            }catch(Exception e){
+                e.printStackTrace();
             }
             result.add(temp);
         }
         //调用Dao进行write
-        return true;
+        return result;
     }
 }
