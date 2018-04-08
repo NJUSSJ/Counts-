@@ -24,10 +24,10 @@
 
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http:localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="http:localhost:3141/">Welcome</a></li>
+                <li class="current"><a href="http://localhost:3141/">Welcome</a></li>
                 <li class="submenu">
                     <a href="#">Layouts</a>
                     <ul>
@@ -45,7 +45,16 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="javascript:open();" class="button special">Sign Up</a></li>
+                <li><a onclick="showSignUp" class="button special">Sign Up</a>
+                <script>
+                    function showSignUp() {
+                        var sign = document.getElementById("signUp");
+                        var login = document.getElementById("login");
+                        login.style.display = "none";
+                        sign.style.display = "block";
+                    }
+                </script>
+                </li>
             </ul>
         </nav>
     </header>
@@ -60,9 +69,9 @@
         </header> -->
 
         <!-- One -->
-        <section class="wrapper style4 special container 50%" id="opaque">
+        <section class="wrapper style4 special container 50%" id="login">
             <script>
-                var tmp = document.getElementById("opaque");
+                var tmp = document.getElementById("login");
                 tmp.style.opacity = 0.8;
             </script>
 
@@ -102,7 +111,7 @@
             <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
             <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
             <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
-            <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribble</span></a></li>
         </ul>
 
         <ul class="copyright">
@@ -113,9 +122,16 @@
 
 </div>
 
-<div class="content" id="sign_up">
+<!-- signUp -->
+<section class="wrapper style4 special container 50%" id="signUp">
+    <style>
+        #signUp{
+            display: none;
+        }
+    </style>
+<div class="content">
     <h2>SIGN UP</h2>
-    <form action="<c:url value="signupCheck.html?"/>" method="post">
+    <form action="<c:url value="signUpCheck.html?"/>" method="post">
         <div class="row">
             <div class="12u">
                 <input type="text" name="userName" placeholder="Username" />
@@ -129,14 +145,16 @@
         <div class="row">
             <div class="12u">
                 <ul class="buttons">
-                    <li><input type="submit" class="special" value="LOG IN" /></li>
+                    <li><input type="submit" class="special" href="javascript:close();" value="LOG IN" /></li>
                 </ul>
             </div>
         </div>
     </form>
 </div>
+</section>
 
 <!-- Scripts -->
+<script src="js/signUp.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>
