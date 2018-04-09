@@ -2,6 +2,8 @@ package com.seproject.service;
 
 import org.springframework.stereotype.Service;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -11,6 +13,13 @@ public class BasicUtilService {
     public ArrayList<String> writeClass(Object o){
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
+
+        /*for(int i=0;i<field.length;i++){
+            if(field[i].getAnnotation(Key.class)!=null){
+                System.out.println("主键是"+i);
+            }
+        }*/
+
         for(int i=0;i<field.length;i++){
             String temp="";
             String type=field[i].getType().toString();
@@ -18,7 +27,7 @@ public class BasicUtilService {
             name = name.substring(0, 1).toUpperCase() + name.substring(1);
             try {
                 Method m = o.getClass().getMethod("get" + name);
-                if(type.equals("java.lang.String")){//字符串
+                if(type.equals("class java.lang.String")){//字符串
                     result.add((String)m.invoke(o));
                 }
                 else if (type.startsWith("class")) {//自定义类

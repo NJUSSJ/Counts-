@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
-	private UserDao userDao;
+	/*private UserDao userDao;
 	private LoginLogDao loginLogDao;
 
 
@@ -25,13 +25,13 @@ public class UserService {
 
 	@Transactional
     public void loginSuccess(User user) {
-		user.setCredits( 5 + user.getCredits());
+		*//*user.setCredits( 5 + user.getCredits());
 		LoginLog loginLog = new LoginLog();
 		loginLog.setUserId(user.getUserId());
 		loginLog.setIp(user.getLastIp());
 		loginLog.setLoginDate(user.getLastVisit());
         userDao.updateLoginInfo(user);
-        loginLogDao.insertLoginLog(loginLog);
+        loginLogDao.insertLoginLog(loginLog);*//*
 	}
 
 	@Autowired
@@ -42,5 +42,5 @@ public class UserService {
 	@Autowired
 	public void setLoginLogDao(LoginLogDao loginLogDao) {
 		this.loginLogDao = loginLogDao;
-	}
+	}*/
 }
