@@ -83,7 +83,7 @@ public class BasicUtilService {
                         boolean value = (Boolean) m.invoke(o);
                         temp = Boolean.toString(value);
                     } else if ("long".equals(type)) {
-                        Long value = (Long) m.invoke(o);
+                        long value = (Long) m.invoke(o);
                         temp = Long.toString(value);
                     } else {
                     }
@@ -229,4 +229,6 @@ public class BasicUtilService {
         }
         return model;
     }
+
+
 }
