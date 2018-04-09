@@ -4,9 +4,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 
 import java.io.*;
+import java.util.ArrayList;
 
 @Repository
 public class FileDao {
+    public  String  separateString="@##_##@";
     public String readFile(String name){
         String res="";
         String content="";
@@ -71,6 +73,61 @@ public class FileDao {
             return false;
         }
         return true;
+    }
+
+    public void write_object(ArrayList<String> al, String fileName){
+
+
+        String tuple="";
+        for(int i=0;i<al.size();i++){
+            tuple=tuple+al.get(i);
+            if(i<al.size()-1){
+                tuple+=this.separateString;
+            }
+        }
+
+        try {
+            File file= ResourceUtils.getFile("classpath:file/objectFile/"+fileName+".txt");
+            FileWriter writer=new FileWriter(file,true);
+            writer.write(tuple);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("领域对象在写入数据库文件时发生异常");
+
+            e.printStackTrace();
+        }
+
+    }
+
+    public ArrayList<String> read_class(String fileName){
+        // 读取并返回一个类中所有已存储的对象
+        fileName="objectFile/"+fileName;
+        ArrayList<String> objects=new ArrayList<String>();
+        String [] temp=readFile(fileName).split("\n");
+        for(String t:temp){
+            objects.add(t);
+        }
+        return objects;
+    }
+
+    public ArrayList<String> read_Object(String fileName,int keyID,String key){
+        //根据主键以动态数组形式返回所存储的对象的所有成员变量值。
+        //第二个参数指出第几个成员是主键，从0开始计数
+        //第三个参数指出主键的值
+        ArrayList <String > singleObject=new ArrayList<String>();
+        ArrayList <String > objects=read_class(fileName);
+        for(int i=0;i<objects.size();i++){
+            String temp[]=objects.get(i).split(this.separateString);
+            if(temp[keyID].equals(key)){
+                for(int j=0;j<temp.length;j++){
+                    singleObject.add(temp[j]);
+                }
+                break;
+            }
+        }
+
+        return singleObject;
     }
 
 
