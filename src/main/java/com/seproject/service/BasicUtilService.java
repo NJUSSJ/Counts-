@@ -24,7 +24,7 @@ public class BasicUtilService {
                 else if (type.startsWith("class")) {//自定义类
                     ArrayList<String> info=writeClass(m.invoke(o));
                     for(String each:info){
-                        result.add(name+":"+type+":"+each);
+                        result.add(each);
                     }
                 } else if (type.startsWith("java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
@@ -32,41 +32,41 @@ public class BasicUtilService {
                         for(Object element:each) {
                             ArrayList<String> info=writeClass(element);
                             for(String eachInfo:info){
-                                result.add(name+":"+type+":"+each);
+                                result.add(eachInfo);
                             }
                         }
                     }
                 } else if(type.startsWith("java.util.ArrayList<java.lang.Integer>")){
                     ArrayList<Integer> list=(ArrayList<Integer>) m.invoke(o);
                     for(int each:list) {
-                        result.add(name+":"+type+":"+each);
+                        result.add(""+each);
                     }
                 }else if(type.startsWith("java.util.ArrayList<java.lang.Double>")){
                     ArrayList<Double> list=(ArrayList<Double>) m.invoke(o);
                     for(double each:list) {
-                        result.add(name+":"+type+":"+each);
+                        result.add(""+each);
                     }
                 }else if(type.startsWith("java.util.ArrayList<java.lang.Long>")){
                     ArrayList<Long> list=(ArrayList<Long>) m.invoke(o);
                     for(long each:list) {
-                        result.add(name+":"+type+":"+each);
+                        result.add(""+each);
                     }
                 }else if(type.startsWith("java.util.ArrayList<java.lang.Boolean>")){
                     ArrayList<Boolean> list=(ArrayList<Boolean>) m.invoke(o);
                     for(boolean each:list) {
-                        result.add(name+":"+type+":"+each);
+                        result.add(""+each);
                     }
                 }else if(type.startsWith("java.util.ArrayList<java.lang.String>")){
                     ArrayList<String> list=(ArrayList<String>) m.invoke(o);
                     for(String each:list) {
-                        result.add(name+":"+type+":"+each);
+                        result.add(each);
                     }
                 }else if (type.startsWith("java.util.ArrayList")) {//自定义类ArrayList
                     ArrayList<Object> list= (ArrayList<Object>) m.invoke(o);
                     for(Object each:list){
                         ArrayList<String> info=writeClass(each);
                         for(String eachInfo:info){
-                            result.add(name+":"+type+":"+eachInfo);
+                            result.add(eachInfo);
                         }
                     }
                 } else {//基本类型
