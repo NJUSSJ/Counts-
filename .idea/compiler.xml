@@ -10,8 +10,5 @@
         <module name="SEP_Phase_II" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SEP_Phase_II" target="1.6" />
-    </bytecodeTargetLevel>
   </component>
 </project>

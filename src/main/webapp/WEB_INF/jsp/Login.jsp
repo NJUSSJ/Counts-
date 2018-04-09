@@ -45,7 +45,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a onclick="showSignUp" class="button special">Sign Up</a>
+                <li><a onclick="showSignUp()" class="button special">Sign Up</a>
                 <script>
                     function showSignUp() {
                         var sign = document.getElementById("signUp");
@@ -76,6 +76,7 @@
             </script>
 
             <!-- Content -->
+
             <div class="content">
                 <h2>LOG IN</h2>
                 <form action="<c:url value="loginCheck.html?"/>" method="post">
@@ -101,6 +102,37 @@
 
         </section>
 
+        <!-- signUp -->
+        <section class="wrapper style4 special container 50%" id="signUp">
+           <style>
+                #signUp{
+                    display: none;
+                }
+            </style>
+            <div class="content">
+                <h2>SIGN UP</h2>
+                <form action="<c:url value="signUpCheck.html?"/>" method="post">
+                    <div class="row">
+                        <div class="12u">
+                            <input type="text" name="userName" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <input type="password" name="password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <ul class="buttons">
+                                <li><input type="submit" class="special" href="javascript:close();" value="LOG IN" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </article>
 
     <!-- Footer -->
@@ -121,37 +153,6 @@
     </footer>
 
 </div>
-
-<!-- signUp -->
-<section class="wrapper style4 special container 50%" id="signUp">
-    <style>
-        #signUp{
-            display: none;
-        }
-    </style>
-<div class="content">
-    <h2>SIGN UP</h2>
-    <form action="<c:url value="signUpCheck.html?"/>" method="post">
-        <div class="row">
-            <div class="12u">
-                <input type="text" name="userName" placeholder="Username" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="12u">
-                <input type="password" name="password" placeholder="Password" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="12u">
-                <ul class="buttons">
-                    <li><input type="submit" class="special" href="javascript:close();" value="LOG IN" /></li>
-                </ul>
-            </div>
-        </div>
-    </form>
-</div>
-</section>
 
 <!-- Scripts -->
 <script src="js/signUp.js"></script>

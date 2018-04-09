@@ -16,6 +16,8 @@
       </configuration>
     </facet>
   </component>
+<<<<<<< HEAD
+=======
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -83,4 +85,5 @@
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.8" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-dysmsapi:1.1.0" level="project" />
   </component>
+>>>>>>> 4a6a3cd23b8e2f15f085df5921825afd7bf1ee24
 </module>

@@ -4,6 +4,7 @@ com/seproject/domain/User.class
 com/seproject/Application.class
 com/seproject/web/PicTailor.class
 com/seproject/dao/FileDao.class
+com/seproject/service/BasicUtilService.class
 com/seproject/web/LoginCommand.class
 com/seproject/web/CollectionController.class
 com/seproject/dao/UserDao$1.class
