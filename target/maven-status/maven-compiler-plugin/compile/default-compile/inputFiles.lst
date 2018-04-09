@@ -2,6 +2,7 @@
 /Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/web/MultiController.java
 /Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/Application.java
 /Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/web/ReadWriteFileController.java
+/Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/service/BasicUtilService.java
 /Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/web/CollectionController.java
 /Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/dao/UserDao.java
 /Users/julia98/git/SEP_Phase_II/src/main/java/com/seproject/domain/ImageInfo.java
