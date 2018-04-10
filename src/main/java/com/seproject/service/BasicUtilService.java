@@ -4,6 +4,7 @@ import com.seproject.dao.FileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -11,7 +12,6 @@ import java.util.ArrayList;
 public class BasicUtilService {
     private FileDao fileDao;
     public ArrayList<String> writeClass(Object o){
-
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
 
@@ -25,12 +25,7 @@ public class BasicUtilService {
                 if(type.equals("class java.lang.String")){//字符串
                     result.add((String)m.invoke(o));
                 }
-                else if (type.startsWith("class")) {//自定义类
-                    ArrayList<String> info=writeClass(m.invoke(o));
-                    for(String each:info){
-                        result.add(each);
-                    }
-                } else if (type.startsWith("java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
+                else if (type.startsWith("class java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
                     for(ArrayList<Object> each:list) {
                         for(Object element:each) {
@@ -40,39 +35,32 @@ public class BasicUtilService {
                             }
                         }
                     }
-                } else if(type.startsWith("java.util.ArrayList<java.lang.Integer>")){
-                    ArrayList<Integer> list=(ArrayList<Integer>) m.invoke(o);
-                    for(int each:list) {
-                        result.add(""+each);
-                    }
-                }else if(type.startsWith("java.util.ArrayList<java.lang.Double>")){
-                    ArrayList<Double> list=(ArrayList<Double>) m.invoke(o);
-                    for(double each:list) {
-                        result.add(""+each);
-                    }
-                }else if(type.startsWith("java.util.ArrayList<java.lang.Long>")){
-                    ArrayList<Long> list=(ArrayList<Long>) m.invoke(o);
-                    for(long each:list) {
-                        result.add(""+each);
-                    }
-                }else if(type.startsWith("java.util.ArrayList<java.lang.Boolean>")){
-                    ArrayList<Boolean> list=(ArrayList<Boolean>) m.invoke(o);
-                    for(boolean each:list) {
-                        result.add(""+each);
-                    }
-                }else if(type.startsWith("java.util.ArrayList<java.lang.String>")){
-                    ArrayList<String> list=(ArrayList<String>) m.invoke(o);
-                    for(String each:list) {
-                        result.add(each);
-                    }
-                }else if (type.startsWith("java.util.ArrayList")) {//自定义类ArrayList
-                    ArrayList<Object> list= (ArrayList<Object>) m.invoke(o);
-                    for(Object each:list){
-                        ArrayList<String> info=writeClass(each);
-                        for(String eachInfo:info){
-                            result.add(eachInfo);
+                } else if (type.equals("class java.util.ArrayList")) {//ArrayList
+                    ArrayList list= (ArrayList) m.invoke(o);
+                    if(list.size()==0){
+                        result.add("[]");
+                        continue;
+                    }else{
+                        String category=list.get(0).getClass().toString();
+                        System.out.println(category);
+                        if((!category.startsWith("class java.lang"))){
+                            String str="[";
+                            for(Object each:list){
+                                writeClass(each);
+                                str=str+"<"+each.getClass().toString()+","+getKeyValue(each,getKeyID(each))+">,";
+                            }
+                            result.add(str.substring(0,str.length()-1)+"]");//去掉最后一个逗号
+                        }else{
+                            result.add(list.toString());
                         }
                     }
+                }else if (type.startsWith("class")) {//自定义类
+                    Object object=m.invoke(o);
+                    writeClass(object);
+
+                    int key=getKeyID(object);
+                    result.add("<"+object.getClass().toString()+","+getKeyValue(object,key)+">");
+
                 } else {//基本类型
                     if ("int".equals(type)) {
                         int value = (Integer) m.invoke(o);
@@ -98,25 +86,24 @@ public class BasicUtilService {
             }
         }
         //调用Dao进行write
-        fileDao.write_object(result,o.getClass().toString());
+        //System.out.println(result);
+        if(fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o))).size()==0){
+            fileDao.write_object(result,o.getClass().toString());
+        }else{
+            System.out.println("主键已经存在，不能写入");
+        };
+
+
         return result;
     }
 
 
-    public Object read(Object model,String content){
+    public Object read(Object model,String keyValue){
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
-        int key=-1;
-        for(int i=0;i<field.length;i++){
-            if(field[i].getAnnotation(Key.class)!=null){
-                key=i;
-                break;
-            }
-        }
-        System.out.println(key);
 
-        ArrayList<String> info=fileDao.read_Object(model.getClass().toString(),key,"15");
+        ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
 
-        System.out.println(info);
+        System.out.println("info:"+info);
 
         Method[] methods=model.getClass().getDeclaredMethods();
         try {
@@ -124,6 +111,7 @@ public class BasicUtilService {
                 String name = field[j].getName();    //获取属性的名字
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
                 String type = field[j].getGenericType().toString();
+                System.out.println("type:"+type);
                 Method getter = null;
                 Method setter = null;
                 for (Method each : methods) {
@@ -137,11 +125,15 @@ public class BasicUtilService {
 
                 System.out.println(" type:" + type);
                 if (type.equals("class java.lang.String")) {
-                    setter.invoke(model, new Object[]{"haha"});
+                    setter.invoke(model, new Object[]{info.get(j)});
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
                     ArrayList<Integer> tmp = new ArrayList<Integer>();
-                    tmp.add(5);
-                    tmp.add(6);
+                    String content=info.get(j).replace("[","").replace("]","");
+
+                    String[] details=content.split(", ");
+                    for(String each:details){
+                        tmp.add(Integer.parseInt(each));
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.lang.Double>")) {
                     ArrayList<Double> tmp = new ArrayList<Double>();
@@ -223,9 +215,16 @@ public class BasicUtilService {
                     tmp.get(1).add("dada");
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.startsWith("class")) {
-        		/*Object o=read(getter.invoke(model),"boolean:b:false");
-        		setter.invoke(model, new Object[] {o});*/
-                    Object o = read(getter.invoke(model), "lala");
+                    String temp=info.get(j);
+                    int begin_index=temp.indexOf(",");
+                    int end_index=temp.indexOf(">");
+                    String value=temp.substring(begin_index+1,end_index);
+                    System.out.println("value:"+value);
+                    Object object=getter.invoke(model);
+                    if(object==null){
+                        System.out.println("NULL");
+                    }
+                    Object o=read(object,value);
                     setter.invoke(model, new Object[]{o});
                 } else {
                     if (type.equals("int")) {
@@ -245,6 +244,35 @@ public class BasicUtilService {
             e.printStackTrace();
         }
         return model;
+    }
+    public int getKeyID(Object model){
+        Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
+        int key=-1;
+        for(int i=0;i<field.length;i++){
+            if(field[i].getAnnotation(Key.class)!=null){
+                key=i;
+                break;
+            }
+        }
+        return key;
+    }
+
+
+    public String getKeyValue(Object o,int key){
+        Field[] fields=o.getClass().getDeclaredFields();
+        String name = fields[key].getName();    //获取属性的名字
+        name = name.substring(0, 1).toUpperCase() + name.substring(1);
+        try {
+            Method m=o.getClass().getMethod("get"+name);
+            return m.invoke(o).toString();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    return null;
     }
 
     @Autowired

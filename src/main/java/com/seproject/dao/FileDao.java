@@ -90,7 +90,6 @@ public class FileDao {
         try {
             File file0=new File("target/classes/file/objectFile/"+fileName+".txt");
             if(!file0.exists()){
-                System.out.println(file0.getAbsolutePath());
                  file0.createNewFile();
             }
             File file= ResourceUtils.getFile("classpath:file/objectFile/"+fileName+".txt");
@@ -109,6 +108,17 @@ public class FileDao {
 
     public ArrayList<String> read_class(String fileName){
         // 读取并返回一个类中所有已存储的对象
+
+        //若文件不存在，则创建该文件
+        File file0=new File("target/classes/file/objectFile/"+fileName+".txt");
+        if(!file0.exists()){
+            try {
+                file0.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        //
         fileName="objectFile/"+fileName;
         ArrayList<String> objects=new ArrayList<String>();
         String [] temp=readFile(fileName).split("\n");
