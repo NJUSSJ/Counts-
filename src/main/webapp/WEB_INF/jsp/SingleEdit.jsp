@@ -221,7 +221,7 @@
 <script src="js/skel.min.js"></script>
 <script src="js/util.js"></script>
 
-<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
 </body>
 </html>

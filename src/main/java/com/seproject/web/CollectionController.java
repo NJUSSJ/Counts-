@@ -23,6 +23,7 @@ public class CollectionController {
         ModelAndView model=new ModelAndView("MultiPic");
         model.addObject("url",url);
         model.addObject("collection", collection);
+        System.out.print(model);
         return model;
     }
 
