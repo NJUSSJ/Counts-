@@ -76,7 +76,8 @@ public class FileDao {
     }
 
     public void write_object(ArrayList<String> al, String fileName){
-
+        //在文件末新增一个领域对象元组。
+        //入参是成员变量值列表和文件名（类名）
 
         String tuple="";
         for(int i=0;i<al.size();i++){
@@ -111,7 +112,7 @@ public class FileDao {
         return objects;
     }
 
-    public ArrayList<String> read_Object(String fileName,int keyID,String key){
+    public ArrayList<String> read_object(String fileName,int keyID,String key){
         //根据主键以动态数组形式返回所存储的对象的所有成员变量值。
         //第二个参数指出第几个成员是主键，从0开始计数
         //第三个参数指出主键的值
@@ -128,6 +129,27 @@ public class FileDao {
         }
 
         return singleObject;
+    }
+
+    public void delete_object(String fileName,int keyID,String key){
+        //删除单张表中的单个对象
+        ArrayList <String > objects=read_class(fileName);
+        for(int i=0;i<objects.size();i++){
+            String temp[]=objects.get(i).split(this.separateString);
+            if(temp[keyID].equals(key)){
+                objects.remove(i); //删除传入的主键所对应的元组
+                break;
+            }
+        }
+        String output="";
+        for(int i=0;i<objects.size();i++){
+            output=output+objects.get(i);
+            if(i<objects.size()-1){
+                output+="\n";//加入换行符
+            }
+        }
+        fileName="objectFile/"+fileName;
+        writeFile(fileName,output);
     }
 
 
