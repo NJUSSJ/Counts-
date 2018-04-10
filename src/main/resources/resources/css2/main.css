@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 @import url("font-awesome.min.css");
 
-/*
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 /* Reset */
 
@@ -1502,7 +1497,7 @@
 				margin: 6px 0 8px 0;
 			}
 
-				#nav a {
+				#nav,blank a {
 					font-size: 2em;
 					opacity: 0.5;
 					outline: 0;
@@ -1512,11 +1507,11 @@
 					margin: 0 0.25em 0 0.25em;
 				}
 
-					#nav a:active {
+					#nav,blank a:active {
 						opacity: 1.0;
 					}
 
-					#nav a span {
+					#nav,blank a span {
 						display: none;
 					}
 

@@ -29,7 +29,7 @@
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
-        <a href="<c:url value="backMain.html?"/>" class="icon fa-twitter"><span>Back</span></a>
+        <a href="<c:url value="backMain.html?"/>" class="icon fa-undo"><span>Back</span></a>
     </nav>
 
     <!-- Main -->
@@ -58,16 +58,16 @@
             <section>
                 <div class="row">
                     <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic001.jpg" alt=""></a>
                     </div>
                     <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic002.jpg" alt=""></a>
                     </div>
                     <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic003.jpg" alt=""></a>
                     </div>
                     <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic004.jpg" alt=""></a>
                     </div>
                     <div class="4u 12u$(mobile)">
                         <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
@@ -105,21 +105,27 @@
             <form action="#" method="post">
                 <div>
                     <div class="row">
-                        <div class="6u 12u$(mobile)">
-                            <input type="text" name="name" placeholder="Name" />
+                        <div class="6u 12u$(mobile)" id="blank">
+                            <span>UserName</span><input type="text" name="userName" placeholder="UserName" value="User Example"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
-                            <input type="text" name="phoneNumber" placeholder="phoneNumber" />
+                            <span>PhoneNumber</span><input type="text" name="phoneNumber" placeholder="PhoneNumber" disabled="disabled" value="18812345678"/>
+                        </div>
+                        <div class="6u 12u$(mobile)">
+                            <span>UserType</span><input type="text" name="userType" placeholder="UserType" disabled="disabled" value="Crowdsourcing Worker"/>
+                        </div>
+                        <div class="6u$ 12u$(mobile)">
+                            <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="100"/>
                         </div>
                         <div class="12u$">
-                            <input type="text" name="subject" placeholder="Subject" />
+                            <span>Password</span><input type="text" name="password" placeholder="Password" value="password123"/>
                         </div>
                         <div class="12u$">
-                            <textarea name="message" placeholder="Message" rows="8"></textarea>
+                            <span>Description</span><textarea name="description" placeholder="Description" rows="8">A very honest and industrious croudsourcing worker.</textarea>
                         </div>
-                        <!-- <div class="12u$">
-                            <input type="submit" value="Send Message" />
-                        </div> -->
+                        <div class="12u$">
+                            <input type="submit" name="save" value="Save Changes" />
+                        </div>
                     </div>
                 </div>
             </form>
