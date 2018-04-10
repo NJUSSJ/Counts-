@@ -28,9 +28,9 @@
             <ul>
                 <li class="current"><a href="http://localhost:3141/">Welcome</a></li>
                 <li class="submenu">
-                    <a href="#">Layouts</a>
+                    <a href="#">Settings</a>
                     <ul>
-                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="<c:url value="personal.html?"/>">Personal Info</a></li>
                         <li><a href="right-sidebar.html">Right Sidebar</a></li>
                         <li><a href="no-sidebar.html">No Sidebar</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -233,7 +233,7 @@
 <script src="js/jquery.scrollgress.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/util.js"></script>
-<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
 
 </body>

@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 
 <html>
-<!-- <style type="text/css">
+<!-- <style type="text/css2">
    .wrapper style4 special container {
        opacity: 45;
    }
@@ -14,10 +14,7 @@
     <title>LOG IN PAGE --COUNTS by Social Engineers</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 </head>
 <body class="contact" style="background-image:url(http://api.dujin.org/bing/1366.php);">
 <div id="page-wrapper">
@@ -162,7 +159,7 @@
 <script src="js/jquery.scrollgress.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/util.js"></script>
-<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
 
 </body>

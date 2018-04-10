@@ -15,7 +15,7 @@
 <body class="index" onload="load(5,${requestScope.url},${requestScope.collection})">
 <div id="page-wrapper">
     <header id="header">
-        <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineer</span></a></h1>
+        <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
                 <li class="current"><a href="index.html">Welcome</a></li>
@@ -78,7 +78,6 @@
 <script src="js/jquery.scrollgress.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/util.js"></script>
-<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
 </body>
 </html>

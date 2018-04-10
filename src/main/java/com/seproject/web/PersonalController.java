@@ -1,6 +1,3 @@
-/**
- * @author fortune
- */
 package com.seproject.web;
 
 import com.seproject.service.FileIOService;
@@ -12,20 +9,21 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-public class CollectionController {
+public class PersonalController {
     private FileIOService fileIOService;
 
-    @RequestMapping(value = "/details.html")
-    public ModelAndView getDetailofCollection(HttpServletRequest request){
-        String fixx="\'http://120.79.221.158:8080/Pictures/";
-        String url=fixx+request.getParameter("imageURL")+"/\'";
-        String collection="\'"+request.getParameter("imageURL")+"\'";
-        ModelAndView model=new ModelAndView("MultiPic");
-        model.addObject("url",url);
-        model.addObject("collection", collection);
-        System.out.print(model);
+    @RequestMapping(value = "/personal.html")
+    public ModelAndView getPersonalInfo(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("Personal");
         return model;
     }
+
+    @RequestMapping(value = "/backMain.html")
+    public ModelAndView getBackMain(HttpServletRequest request){
+        ModelAndView model = new ModelAndView("Main");
+        return model;
+    }
+
 
     @Autowired
     public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
