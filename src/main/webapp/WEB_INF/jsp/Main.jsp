@@ -79,7 +79,7 @@
     <article id="main">
 
         <header class="special container">
-            <span class="icon fa-mobile"></span>
+            <span class="icon fa-user-md"></span>
             <h2>在线众包标注系统<strong>主界面</strong></h2>
             <p>登陆后请点击下方任意一个图片集开始进行标注</p>
         </header>
