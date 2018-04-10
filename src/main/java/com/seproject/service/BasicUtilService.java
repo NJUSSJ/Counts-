@@ -137,23 +137,39 @@ public class BasicUtilService {
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.lang.Double>")) {
                     ArrayList<Double> tmp = new ArrayList<Double>();
-                    tmp.add(7.0);
-                    tmp.add(8.0);
+                    String content=info.get(j).replace("[","").replace("]","");
+
+                    String[] details=content.split(", ");
+                    for(String each:details){
+                        tmp.add(Double.parseDouble(each));
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.lang.Boolean>")) {
                     ArrayList<Boolean> tmp = new ArrayList<Boolean>();
-                    tmp.add(true);
-                    tmp.add(false);
+                    String content=info.get(j).replace("[","").replace("]","");
+
+                    String[] details=content.split(", ");
+                    for(String each:details){
+                        tmp.add(Boolean.parseBoolean(each));
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.lang.Long>")) {
                     ArrayList<Long> tmp = new ArrayList<Long>();
-                    tmp.add((long) 9);
-                    tmp.add((long) 10);
+                    String content=info.get(j).replace("[","").replace("]","");
+
+                    String[] details=content.split(", ");
+                    for(String each:details){
+                        tmp.add(Long.parseLong(each));
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.lang.String>")) {
                     ArrayList<String> tmp = new ArrayList<String>();
-                    tmp.add("fafa");
-                    tmp.add(("tata"));
+                    String content=info.get(j).replace("[","").replace("]","");
+
+                    String[] details=content.split(", ");
+                    for(String each:details){
+                        tmp.add(each);
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.startsWith("java.util.ArrayList<java.util.ArrayList<")) {
                     ArrayList<ArrayList<Object>> tmp = (ArrayList<ArrayList<Object>>) getter.invoke(model);
@@ -166,7 +182,7 @@ public class BasicUtilService {
                         }
                     }
                     setter.invoke(model, new Object[]{tmp});
-                } else if (type.startsWith("java.util.ArrayList<")) {
+                } else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
                     ArrayList<Object> tmp = (ArrayList<Object>) getter.invoke(model);
                     for (int i = 0; i < tmp.size(); i++) {
                         Object o = tmp.get(i);
@@ -228,15 +244,19 @@ public class BasicUtilService {
                     setter.invoke(model, new Object[]{o});
                 } else {
                     if (type.equals("int")) {
-                        setter.invoke(model, new Object[]{5});//实际情况要根据content来决定
+                        int temp=Integer.parseInt(info.get(j));
+                        setter.invoke(model, new Object[]{temp});//实际情况要根据content来决定
                     } else if (type.equals("double")) {
-                        setter.invoke(model, new Object[]{4.0});
+                        double temp=Double.parseDouble(info.get(j));
+                        setter.invoke(model, new Object[]{temp});
                     }
                     if (type.equals("boolean")) {
-                        setter.invoke(model, new Object[]{false});
+                        boolean temp=Boolean.parseBoolean(info.get(j));
+                        setter.invoke(model, new Object[]{temp});
                     }
                     if (type.equals("long")) {
-                        setter.invoke(model, new Object[]{90});
+                        long temp=Long.parseLong(info.get(j));
+                        setter.invoke(model, new Object[]{temp});
                     }
                 }
             }
@@ -245,6 +265,12 @@ public class BasicUtilService {
         }
         return model;
     }
+
+    /**
+     *
+     * @param model
+     * @return model里主键属性在所有属性中的位置，以0起始
+     */
     public int getKeyID(Object model){
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
         int key=-1;
@@ -257,7 +283,12 @@ public class BasicUtilService {
         return key;
     }
 
-
+    /**
+     *
+     * @param o 对象
+     * @param key 主键位置
+     * @return o里主键属性的值，以String类型返回
+     */
     public String getKeyValue(Object o,int key){
         Field[] fields=o.getClass().getDeclaredFields();
         String name = fields[key].getName();    //获取属性的名字
