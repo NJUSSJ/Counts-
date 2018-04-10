@@ -88,9 +88,15 @@ public class FileDao {
         }
 
         try {
+            File file0=new File("target/classes/file/objectFile/"+fileName+".txt");
+            if(!file0.exists()){
+                System.out.println(file0.getAbsolutePath());
+                 file0.createNewFile();
+            }
             File file= ResourceUtils.getFile("classpath:file/objectFile/"+fileName+".txt");
+
             FileWriter writer=new FileWriter(file,true);
-            writer.write(tuple);
+            writer.write(tuple+"\n");
             writer.flush();
             writer.close();
         } catch (IOException e) {
