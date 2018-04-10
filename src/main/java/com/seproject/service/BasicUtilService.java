@@ -1,24 +1,19 @@
 package com.seproject.service;
 
+import com.seproject.dao.FileDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.lang.annotation.Annotation;
-import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 @Service
 public class BasicUtilService {
+    private FileDao fileDao;
     public ArrayList<String> writeClass(Object o){
+
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
-
-        /*for(int i=0;i<field.length;i++){
-            if(field[i].getAnnotation(Key.class)!=null){
-                System.out.println("主键是"+i);
-            }
-        }*/
 
         for(int i=0;i<field.length;i++){
             String temp="";
@@ -103,13 +98,26 @@ public class BasicUtilService {
             }
         }
         //调用Dao进行write
+        fileDao.write_object(result,o.getClass().toString());
         return result;
     }
 
 
-    public static Object read(Object model,String content){
-
+    public Object read(Object model,String content){
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
+        int key=-1;
+        for(int i=0;i<field.length;i++){
+            if(field[i].getAnnotation(Key.class)!=null){
+                key=i;
+                break;
+            }
+        }
+        System.out.println(key);
+
+        ArrayList<String> info=fileDao.read_Object(model.getClass().toString(),key,"15");
+
+        System.out.println(info);
+
         Method[] methods=model.getClass().getDeclaredMethods();
         try {
             for (int j = 0; j < field.length; j++) {     //遍历所有属性
@@ -239,5 +247,7 @@ public class BasicUtilService {
         return model;
     }
 
+    @Autowired
+    public void setFileDao(FileDao fileDao){this.fileDao=fileDao;}
 
 }
