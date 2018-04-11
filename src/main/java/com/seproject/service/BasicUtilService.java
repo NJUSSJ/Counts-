@@ -114,7 +114,7 @@ public class BasicUtilService {
         }
         System.out.println(key);
 
-        ArrayList<String> info=fileDao.read_Object(model.getClass().toString(),key,"15");
+        ArrayList<String> info=fileDao.read_object(model.getClass().toString(),key,"15");
 
         System.out.println(info);
 
