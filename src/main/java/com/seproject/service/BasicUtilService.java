@@ -336,7 +336,7 @@ public class BasicUtilService {
 
     public int getKeyID(Object model,String keyName){
         //方法重载，获得@Searchable(varName=keyName)的ID
-
+// 重载
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
         int key=-1;
         for(int i=0;i<field.length;i++){
