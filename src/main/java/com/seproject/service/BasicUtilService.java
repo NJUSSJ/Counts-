@@ -3,7 +3,6 @@
 package com.seproject.service;
 
 import com.seproject.dao.FileDao;
-import com.seproject.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.lang.reflect.Field;
@@ -20,7 +19,8 @@ public class BasicUtilService {
 
         for(int i=0;i<field.length;i++){
             String temp="";
-            String type=field[i].getType().toString();
+            String type=field[i].getGenericType().toString();
+            System.out.println("type:"+type);
             String name = field[i].getName();    //获取属性的名字
             name = name.substring(0, 1).toUpperCase() + name.substring(1);
             try {
@@ -28,17 +28,37 @@ public class BasicUtilService {
                 if(type.equals("class java.lang.String")){//字符串
                     result.add((String)m.invoke(o));
                 }
-                else if (type.startsWith("class java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
+                else if (type.startsWith("java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
-                    for(ArrayList<Object> each:list) {
-                        for(Object element:each) {
-                            ArrayList<String> info=writeClass(element);
-                            for(String eachInfo:info){
-                                result.add(eachInfo);
-                            }
+                    if(list.size()==0){
+                        result.add("[]");
+                        continue;
+                    }else{
+                        String str="[";
+                        for(int k=0;k<list.size();k++){
+                            ArrayList eachList=list.get(k);
+                                if(eachList.size()==0){
+                                    str+="[]";
+                                }else{
+                                    String category=eachList.get(0).getClass().toString();
+                                    System.out.println("category:"+category);
+                                    if((!category.startsWith("class java.lang"))) {
+                                        str+="[";
+                                        for(Object eachObject:eachList){
+                                            writeClass(eachObject);
+                                            str+="<"+eachObject.getClass()+"#"+getKeyValue(eachObject,getKeyID(eachObject))+">,";
+                                        }
+                                        str=str.substring(0,str.length()-1)+"],";//一层list去掉末尾逗号
+                                    }else{
+                                        str+=eachList.toString()+",";
+                                    }
+                                }
                         }
+                        str=str.substring(0,str.length()-1)+"]";//二层list去掉末尾逗号
+                        System.out.println("str:"+str);
+                        result.add(str);
                     }
-                } else if (type.equals("class java.util.ArrayList")) {//ArrayList
+                } else if (type.equals("java.util.ArrayList")) {//ArrayList
                     ArrayList list= (ArrayList) m.invoke(o);
                     if(list.size()==0){
                         result.add("[]");
@@ -89,7 +109,7 @@ public class BasicUtilService {
             }
         }
         //调用Dao进行write
-        //System.out.println(result);
+        System.out.println("result:"+result);
         if(fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o))).size()==0){
             fileDao.write_object(result,o.getClass().toString());
         }else{
@@ -174,104 +194,95 @@ public class BasicUtilService {
                         tmp.add(each);
                     }
                     setter.invoke(model, new Object[]{tmp});
-                } else if (type.startsWith("java.util.ArrayList<java.util.ArrayList<")) {
-                    ArrayList<ArrayList<Object>> tmp = (ArrayList<ArrayList<Object>>) getter.invoke(model);
-                    for (int i = 0; i < tmp.size(); i++) {
-                        ArrayList<Object> each = tmp.get(i);
-                        for (int k = 0; k < each.size(); k++) {
-                            Object o = each.get(k);
-                            o = read(o, "lala");
-                            each.set(k, o);
-                        }
-                    }
-                    setter.invoke(model, new Object[]{tmp});
-                } else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
-                    ArrayList<Object> tmp = new ArrayList<Object>();
-                    String content=info.get(j).replace("[","").replace("]","");
-                    String[] details=content.split(",");
-                    System.out.println(details[0]);
-                    System.out.println(details.length);
-                    for (int i = 0; i < details.length; i++) {
-
-                        int begin_index=details[i].indexOf("<");
-                        int middle_index=details[i].indexOf("#");
-                        int end_index=details[i].indexOf(">");
-                        String value=details[i].substring(middle_index+1,end_index);
-                        String className=details[i].substring(begin_index+1,middle_index);
-
-                        int sp=className.lastIndexOf(" ");
-                        className=className.substring(sp+1);
-                        System.out.println("value:"+value+" className:"+className);
-                        Object o=Class.forName(className).newInstance();//用指针中的类名创建对象
-                        o=read(o,value);
-                        tmp.add(o);
-                    }
-                    setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Integer>>")) {
                     ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
-                    tmp.add(new ArrayList<Integer>());
-                    tmp.add(new ArrayList<Integer>());
-                    tmp.get(0).add(0);
-                    tmp.get(0).add(2);
-                    tmp.get(1).add(2);
+                    String[] details=getDetails(info.get(j));
+                    for (int i = 0; i < details.length; i++) {
+                        ArrayList<Integer> each = new ArrayList<Integer>();
+                        String[] eachContent=details[i].split(", ");
+                        for (int k = 0; k < eachContent.length; k++) {
+                            each.add(Integer.parseInt(eachContent[k]));
+                        }
+                        tmp.add(each);
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Double>>")) {
                     ArrayList<ArrayList<Double>> tmp = new ArrayList<ArrayList<Double>>();
-                    tmp.add(new ArrayList<Double>());
-                    tmp.add(new ArrayList<Double>());
-                    tmp.get(0).add(1.0);
-                    tmp.get(0).add(2.0);
-                    tmp.get(1).add(2.0);
+                    String[] details=getDetails(info.get(j));
+                    for (int i = 0; i < details.length; i++) {
+                        ArrayList<Double> each = new ArrayList<Double>();
+                        String[] eachContent=details[i].split(", ");
+                        for (int k = 0; k < eachContent.length; k++) {
+                            each.add(Double.parseDouble(eachContent[k]));
+                        }
+                        tmp.add(each);
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Long>>")) {
                     ArrayList<ArrayList<Long>> tmp = new ArrayList<ArrayList<Long>>();
-                    tmp.add(new ArrayList<Long>());
-                    tmp.add(new ArrayList<Long>());
-                    tmp.get(0).add((long) 2);
-                    tmp.get(0).add((long) 2);
-                    tmp.get(1).add((long) 2);
+                    String[] details=getDetails(info.get(j));
+                    for (int i = 0; i < details.length; i++) {
+                        ArrayList<Long> each = new ArrayList<Long>();
+                        String[] eachContent=details[i].split(", ");
+                        for (int k = 0; k < eachContent.length; k++) {
+                            each.add(Long.parseLong(eachContent[k]));
+                        }
+                        tmp.add(each);
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Boolean>>")) {
                     ArrayList<ArrayList<Boolean>> tmp = new ArrayList<ArrayList<Boolean>>();
-                    tmp.add(new ArrayList<Boolean>());
-                    tmp.add(new ArrayList<Boolean>());
-                    tmp.get(0).add(false);
-                    tmp.get(0).add(true);
-                    tmp.get(1).add(true);
+                    String[] details=getDetails(info.get(j));
+                    for (int i = 0; i < details.length; i++) {
+                        ArrayList<Boolean> each = new ArrayList<Boolean>();
+                        String[] eachContent=details[i].split(", ");
+                        for (int k = 0; k < eachContent.length; k++) {
+                            each.add(Boolean.parseBoolean(eachContent[k]));
+                        }
+                        tmp.add(each);
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.String>>")) {
                     ArrayList<ArrayList<String>> tmp = new ArrayList<ArrayList<String>>();
-                    tmp.add(new ArrayList<String>());
-                    tmp.add(new ArrayList<String>());
-                    tmp.get(0).add("kaka");
-                    tmp.get(0).add("papa");
-                    tmp.get(1).add("dada");
+                    String[] details=getDetails(info.get(j));
+                    for (int i = 0; i < details.length; i++) {
+                        ArrayList<String> each = new ArrayList<String>();
+                        String[] eachContent=details[i].split(", ");
+                        for (int k = 0; k < eachContent.length; k++) {
+                            each.add(eachContent[k]);
+                        }
+                        tmp.add(each);
+                    }
+                    setter.invoke(model, new Object[]{tmp});
+                }  else if (type.startsWith("java.util.ArrayList<java.util.ArrayList<")) {//二维ArrayList含自定义类型
+                    ArrayList<ArrayList<Object>> tmp =new ArrayList<ArrayList<Object>>();
+                    String[] details=getDetails(info.get(j));
+                    for (int i = 0; i < details.length; i++) {
+                        ArrayList<Object> each = new ArrayList<Object>();
+                        String[] eachContent=details[i].split(",");
+                        for (int k = 0; k < eachContent.length; k++) {
+                            Object o = createObjectByKey(eachContent[k]);
+                            each.add(o);
+                        }
+                        tmp.add(each);
+                    }
+                    setter.invoke(model, new Object[]{tmp});
+                }else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
+                    ArrayList<Object> tmp = new ArrayList<Object>();
+                    String content=info.get(j).replace("[","").replace("]","");
+                    String[] details=content.split(",");
+                    for (int i = 0; i < details.length; i++) {
+                        Object o=createObjectByKey(details[i]);
+                        tmp.add(o);
+                    }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.startsWith("class")) {
-                    String temp=info.get(j);
-                    int begin_index=temp.indexOf("<");
-                    int middle_index=temp.indexOf("#");
-                    int end_index=temp.indexOf(">");
-                    String value=temp.substring(middle_index+1,end_index);
-                    String className=temp.substring(begin_index+1,middle_index);
-
-                    int sp=className.lastIndexOf(" ");
-                    className=className.substring(sp+1);
-                    System.out.println("value:"+value+" className:"+className);
-                    Object o=Class.forName(className).newInstance();//用指针中的类名创建对象
-                    o=read(o,value);
-/*                    System.out.println("value:"+value);
-                    Object object=getter.invoke(model);
-                    if(object==null){
-                        System.out.println("NULL");
-                    }
-                    Object o=read(object,value);*/
-                    System.out.println("I'm here!"+" value:"+value);
+                    Object o=createObjectByKey(info.get(j));
                     setter.invoke(model, new Object[]{o});
                 } else {
                     if (type.equals("int")) {
                         int temp=Integer.parseInt(info.get(j));
-                        setter.invoke(model, new Object[]{temp});//实际情况要根据content来决定
+                        setter.invoke(model, new Object[]{temp});
                     } else if (type.equals("double")) {
                         double temp=Double.parseDouble(info.get(j));
                         setter.invoke(model, new Object[]{temp});
@@ -293,8 +304,6 @@ public class BasicUtilService {
     }
 
     /**
-     *
-     * @param model
      * @return model里主键属性在所有属性中的位置，以0起始
      */
     public int getKeyID(Object model){
@@ -332,6 +341,50 @@ public class BasicUtilService {
         return null;
     }
 
+    /**
+     *
+     * @param key 形如"<className,keyValue>"的字符串
+     * @return 根据字符串创建的对象
+     */
+    private Object createObjectByKey(String key){
+        int begin_index=key.indexOf("<");
+        int middle_index=key.indexOf("#");
+        int end_index=key.indexOf(">");
+        String value=key.substring(middle_index+1,end_index);
+        String className=key.substring(begin_index+1,middle_index);
+
+        int sp=className.lastIndexOf(" ");
+        className=className.substring(sp+1);
+        Object o= null;//用指针中的类名创建对象
+        try {
+            o = Class.forName(className).newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        o=read(o,value);
+        return o;
+    }
+
+    /**
+     *二维ArrayList专用内容解析
+     */
+    private String[] getDetails(String origin){
+        if(origin.equals("[]")){
+            String[] s=new String[0];
+            return s;
+        }
+        String content=origin.substring(1,origin.length()-1);
+        String[] details=content.split("\\],\\[");//[，]在java中有特殊意义，要转义
+        String first=details[0];
+        String last=details[details.length-1];
+        details[0]=first.substring(1);
+        details[1]=last.substring(0,last.length()-1);
+        return details;
+    }
     @Autowired
     public void setFileDao(FileDao fileDao){this.fileDao=fileDao;}
 
