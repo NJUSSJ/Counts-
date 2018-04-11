@@ -3,6 +3,7 @@
 package com.seproject.service;
 
 import com.seproject.dao.FileDao;
+import com.seproject.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +52,7 @@ public class BasicUtilService {
                             String str="[";
                             for(Object each:list){
                                 writeClass(each);
-                                str=str+"<"+each.getClass().toString()+","+getKeyValue(each,getKeyID(each))+">,";
+                                str=str+"<"+each.getClass().toString()+"#"+getKeyValue(each,getKeyID(each))+">,";
                             }
                             result.add(str.substring(0,str.length()-1)+"]");//去掉最后一个逗号
                         }else{
@@ -63,7 +64,7 @@ public class BasicUtilService {
                     writeClass(object);
 
                     int key=getKeyID(object);
-                    result.add("<"+object.getClass().toString()+","+getKeyValue(object,key)+">");
+                    result.add("<"+object.getClass().toString()+"#"+getKeyValue(object,key)+">");
 
                 } else {//基本类型
                     if ("int".equals(type)) {
@@ -187,11 +188,25 @@ public class BasicUtilService {
                     }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
-                    ArrayList<Object> tmp = (ArrayList<Object>) getter.invoke(model);
-                    for (int i = 0; i < tmp.size(); i++) {
-                        Object o = tmp.get(i);
-                        o = read(o, "ssj");
-                        tmp.set(i, o);
+                    ArrayList<Object> tmp = new ArrayList<Object>();
+                    String content=info.get(j).replace("[","").replace("]","");
+                    String[] details=content.split(",");
+                    System.out.println(details[0]);
+                    System.out.println(details.length);
+                    for (int i = 0; i < details.length; i++) {
+
+                        int begin_index=details[i].indexOf("<");
+                        int middle_index=details[i].indexOf("#");
+                        int end_index=details[i].indexOf(">");
+                        String value=details[i].substring(middle_index+1,end_index);
+                        String className=details[i].substring(begin_index+1,middle_index);
+
+                        int sp=className.lastIndexOf(" ");
+                        className=className.substring(sp+1);
+                        System.out.println("value:"+value+" className:"+className);
+                        Object o=Class.forName(className).newInstance();//用指针中的类名创建对象
+                        o=read(o,value);
+                        tmp.add(o);
                     }
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Integer>>")) {
@@ -236,15 +251,24 @@ public class BasicUtilService {
                     setter.invoke(model, new Object[]{tmp});
                 } else if (type.startsWith("class")) {
                     String temp=info.get(j);
-                    int begin_index=temp.indexOf(",");
+                    int begin_index=temp.indexOf("<");
+                    int middle_index=temp.indexOf("#");
                     int end_index=temp.indexOf(">");
-                    String value=temp.substring(begin_index+1,end_index);
-                    System.out.println("value:"+value);
+                    String value=temp.substring(middle_index+1,end_index);
+                    String className=temp.substring(begin_index+1,middle_index);
+
+                    int sp=className.lastIndexOf(" ");
+                    className=className.substring(sp+1);
+                    System.out.println("value:"+value+" className:"+className);
+                    Object o=Class.forName(className).newInstance();//用指针中的类名创建对象
+                    o=read(o,value);
+/*                    System.out.println("value:"+value);
                     Object object=getter.invoke(model);
                     if(object==null){
                         System.out.println("NULL");
                     }
-                    Object o=read(object,value);
+                    Object o=read(object,value);*/
+                    System.out.println("I'm here!"+" value:"+value);
                     setter.invoke(model, new Object[]{o});
                 } else {
                     if (type.equals("int")) {

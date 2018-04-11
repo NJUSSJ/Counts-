@@ -9,8 +9,8 @@ public class Test_Gift {
     //用于测试。
     @Key(type = ValueType.STRING)
     private String giftID;
-    private ArrayList<Integer> list;
-    private User user=new User();
+    private ArrayList<User> list;
+    private User user;
 
     public String getGiftID(){return giftID;}
 
@@ -20,11 +20,11 @@ public class Test_Gift {
 
     public void setUser(User user){this.user=user;}
 
-    public ArrayList<Integer> getList() {
+    public ArrayList<User> getList() {
         return list;
     }
 
-    public void setList(ArrayList<Integer> list) {
+    public void setList(ArrayList<User> list) {
         this.list = list;
     }
 }
