@@ -14,6 +14,7 @@ com\seproject\web\LoginCommand.class
 com\seproject\web\MultiController.class
 com\seproject\service\Key.class
 com\seproject\dao\FileDao.class
+com\seproject\service\Searchable.class
 com\seproject\domain\User.class
 com\seproject\service\BasicBLService.class
 com\seproject\web\ReadWriteFileController.class
@@ -21,4 +22,5 @@ com\seproject\service\BasicUtilService.class
 com\seproject\web\PersonalController.class
 com\seproject\web\CollectionController.class
 com\seproject\service\ValueType.class
+com\seproject\service\RM.class
 com\seproject\web\LoginController.class
