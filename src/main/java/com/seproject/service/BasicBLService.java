@@ -1,6 +1,7 @@
 package com.seproject.service;
 
 import com.seproject.dao.FileDao;
+import com.seproject.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -74,10 +75,8 @@ public class BasicBLService<T> {
 
 
        for(String name:names){
-           arr.add((T)this.basicUtilService.read(t,name));
+           arr.add((T)(this.basicUtilService.read(t,name)));
        }
-
-
        return arr;
    }
 
