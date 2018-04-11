@@ -13,6 +13,7 @@ com\seproject\Application.class
 com\seproject\web\LoginCommand.class
 com\seproject\web\MultiController.class
 com\seproject\service\Key.class
+com\seproject\web\UploadController.class
 com\seproject\dao\FileDao.class
 com\seproject\service\Searchable.class
 com\seproject\domain\User.class

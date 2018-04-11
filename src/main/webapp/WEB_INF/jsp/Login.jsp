@@ -24,7 +24,7 @@
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="http://localhost:3141/">Welcome</a></li>
+                <li class="current"><a href="/upload.html">Welcome</a></li>
                 <li class="submenu">
                     <a href="#">Layouts</a>
                     <ul>
