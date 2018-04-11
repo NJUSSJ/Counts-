@@ -4,7 +4,7 @@ import com.seproject.service.Key;
 import com.seproject.service.ValueType;
 
 public class Mission {
-    @Key(type=ValueType.STRING)
+    @Key
     String missionID;
 
     String requestorID;

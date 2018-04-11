@@ -7,7 +7,7 @@ import com.seproject.service.ValueType;
 
 
 public class User {
-	@Key(type = ValueType.STRING)
+	@Key
  	private	String phoneNumber;
     @Searchable(varName = "userName")
 	private String userName;
