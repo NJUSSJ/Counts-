@@ -10,7 +10,7 @@ public class User {
  	private	String phoneNumber;
 
 	private String userName;
-	private String password ;
+	private String password;
 	private double credit;
 	private int level;
 	//private UserType usertype;
