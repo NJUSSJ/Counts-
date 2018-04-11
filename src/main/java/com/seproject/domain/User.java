@@ -1,6 +1,7 @@
 package com.seproject.domain;
 
 import com.seproject.service.Key;
+import com.seproject.service.Searchable;
 import com.seproject.service.ValueType;
 
 
@@ -8,7 +9,7 @@ import com.seproject.service.ValueType;
 public class User {
 	@Key(type = ValueType.STRING)
  	private	String phoneNumber;
-
+    @Searchable(varName = "userName")
 	private String userName;
 	private String password;
 	private double credit;

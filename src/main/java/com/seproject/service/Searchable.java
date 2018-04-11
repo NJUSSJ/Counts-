@@ -7,9 +7,10 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface Key {
-    //主键注解，加在领域对象的成员变量上。
-    //要求所加的变量是基本数据类型或String类型。
-    ValueType type() ; //指出主键的类型（可能不需要）
+public @interface Searchable {
+    //可检索键
+    //加此注释的变量可以作为增删改查中的键值，并支持返回多个元组。
+    //需要在注释中显示地指出被注释变量的变量名
+    String varName();
 
 }
