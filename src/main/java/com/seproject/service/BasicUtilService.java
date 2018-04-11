@@ -5,6 +5,8 @@ package com.seproject.service;
 import com.seproject.dao.FileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -306,6 +308,23 @@ public class BasicUtilService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int getKeyID(Object model,String keyName){
+        //方法重载，获得@Searchable(varName=keyName)的ID
+
+        Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
+        int key=-1;
+        for(int i=0;i<field.length;i++){
+            if(field[i].getAnnotation(Searchable.class)!=null){
+                Annotation annotation=field[i].getAnnotation(Searchable.class);
+                if(((Searchable) annotation).varName().equals(keyName)) {
+                    key = i;
+                    break;
+                }
+            }
+        }
+        return key;
     }
 
     @Autowired

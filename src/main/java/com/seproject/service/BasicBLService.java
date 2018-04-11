@@ -22,20 +22,26 @@ public class BasicBLService<T> {
     * 用于实现数据库中对象的增加、修改、删除、精确查找、模糊查找
      */
 
-   public RM add(T t){
+   public RM add(T t0){
        //增加单个对象
-       this.basicUtilService.writeClass(t);
+       this.basicUtilService.writeClass(t0);
        return RM.SUCCESS;
    }
    public RM delete(String keyValue){
        //根据主键删除单个对象
        String fileName=t.getClass().toString();
-
+       int keyID=this.basicUtilService.getKeyID(t);
+       this.fileDao.delete_object(fileName,keyID,keyValue);
        return RM.SUCCESS;
 
    }
-   public RM update(T t){
+   public RM update(T t0){
        //修改单个对象
+       int keyID=this.basicUtilService.getKeyID(t0);
+       String keyValue=this.basicUtilService.getKeyValue(t0,keyID);
+       //先删除再增加
+       delete(keyValue);
+       add(t0);
 
        return RM.SUCCESS;
    }
@@ -52,7 +58,27 @@ public class BasicBLService<T> {
        *       返回所有名字叫Tony的User对象
        *       此方法未来会被重载，第三个参数是查找策略，可支持模糊查找
         */
-       return null;
+       ArrayList<T> arr=new ArrayList<T>();
+       String fileName=t.getClass().toString();
+       ArrayList<String> objects=this.fileDao.read_class(fileName);
+       int searchableID=this.basicUtilService.getKeyID(t,keyName);
+       int keyID=this.basicUtilService.getKeyID(t);
+       ArrayList<String> names=new ArrayList<String>();
+
+       for(int i=0;i<objects.size();i++){
+           String [] temp=objects.get(i).split(this.fileDao.separateString);
+           if(temp[searchableID].equals(keyValue)){
+               names.add(temp[keyID]);
+           }
+       }
+
+
+       for(String name:names){
+           arr.add((T)this.basicUtilService.read(t,name));
+       }
+
+
+       return arr;
    }
 
    @Autowired
