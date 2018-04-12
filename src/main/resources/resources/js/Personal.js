@@ -62,10 +62,25 @@ function loadPersonal(username, phoneNumber) {
     this.phoneNumber = phoneNumber;
     getPersonalInfo();
     var personalInfo = eval("(" + person + ")");
+    document.getElementById("_username").value = personalInfo.username;
+    document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
+    document.getElementById("_userType").value = personalInfo.userType;
+    document.getElementById("_credit").value = personalInfo.credit;
+    document.getElementById("_level").value = personalInfo.level;
+    document.getElementById("_password").value = personalInfo.password;
+    document.getElementById("_description").value = personalInfo.collectionList;
 }
 
 function savePersonalBlanks() {
-    var personalInfo = new PersonalInfo();
+    var username = document.getElementById("_username");
+    var phoneNumber = document.getElementById("_password");
+    var userType = document.getElementById("_userType");
+    var credit = document.getElementById("_credit");
+    var level = document.getElementById("_level");
+    var password = document.getElementById("_password");
+    var description = document.getElementById("_description");
+
+    var personalInfo = new PersonalInfo(phoneNumber, username, password, credit, level, userType, description);
     savePersonalInfo(personalInfo);
     alert("已储存个人信息");
 }

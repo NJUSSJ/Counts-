@@ -3,6 +3,8 @@ package com.seproject.domain;
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
 
+
+
 import java.util.ArrayList;
 
 
@@ -16,6 +18,7 @@ public class User {
 	@Searchable(varName = "level")
 	private int level;
 	//private UserType usertype;
+
 	private ArrayList<String> collectionList = new ArrayList<String>();
 
 	public String getPhoneNumber() {
