@@ -45,10 +45,6 @@ public class LoginController {
 		ModelAndView view = new ModelAndView("Main");
 		view.addObject("username",user.getUserName());
 		view.addObject("password",user.getPassword());
-<<<<<<< HEAD
-=======
-
->>>>>>> ab81a8ce672668915a2ed70aecabe3368993d472
 
 		System.out.println(user.getUserName()+"/"+user.getPassword()+"!!!!");
 		basicBLService.add(user);
