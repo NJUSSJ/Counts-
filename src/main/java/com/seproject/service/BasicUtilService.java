@@ -5,6 +5,7 @@ package com.seproject.service;
 import com.seproject.dao.FileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.util.cldr.CLDRLocaleDataMetaInfo;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -42,7 +43,6 @@ public class BasicUtilService {
                                     str+="[]";
                                 }else{
                                     String category=eachList.get(0).getClass().toString();
-
                                     if((!category.startsWith("class java.lang"))) {
                                         str+="[";
                                         for(Object eachObject:eachList){
@@ -56,7 +56,6 @@ public class BasicUtilService {
                                 }
                         }
                         str=str.substring(0,str.length()-1)+"]";//二层list去掉末尾逗号
-
                         result.add(str);
                     }
                 } else if (type.equals("java.util.ArrayList")) {//ArrayList
@@ -66,7 +65,6 @@ public class BasicUtilService {
                         continue;
                     }else{
                         String category=list.get(0).getClass().toString();
-
                         if((!category.startsWith("class java.lang"))){
                             String str="[";
                             for(Object each:list){
@@ -110,7 +108,6 @@ public class BasicUtilService {
             }
         }
         //调用Dao进行write
-
         if(fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o))).size()==0){
             fileDao.write_object(result,o.getClass().toString());
         }else{
@@ -123,12 +120,16 @@ public class BasicUtilService {
 
 
     public Object read(Object model,String keyValue){
-        Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
-
-        ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
-
-        Method[] methods=model.getClass().getDeclaredMethods();
         try {
+            Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
+            String className=model.getClass().toString();
+            int sp=className.indexOf(" ");
+            className=className.substring(sp+1);
+            model= Class.forName(className).newInstance();
+
+            ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
+
+            Method[] methods=model.getClass().getDeclaredMethods();
             for (int j = 0; j < field.length; j++) {     //遍历所有属性
                 String name = field[j].getName();    //获取属性的名字
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
@@ -143,7 +144,6 @@ public class BasicUtilService {
                         getter = each;
                     }
                 }
-
                 if (type.equals("class java.lang.String")) {
                     setter.invoke(model, new Object[]{info.get(j)});
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
@@ -340,7 +340,7 @@ public class BasicUtilService {
         return null;
     }
 
-    public int getKeyID(Object model,String keyName){
+    public int  getKeyID(Object model,String keyName){
         //方法重载，获得@Searchable(varName=keyName)的ID
 
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Test_Gift {
     //用于测试。
-    @Key(type = ValueType.STRING)
+    @Key
     private String giftID;
     private ArrayList<ArrayList<Integer>> list;
     private User user;
