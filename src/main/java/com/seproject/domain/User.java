@@ -2,13 +2,16 @@ package com.seproject.domain;
 
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
+<<<<<<< HEAD
 import com.seproject.service.ValueType;
 
 import java.util.ArrayList;
+=======
+>>>>>>> 356124b8a6e29d3224845c8b32ef822b85fce7c2
 
 
 public class User {
-	@Key(type = ValueType.STRING)
+	@Key
  	private	String phoneNumber;
     @Searchable(varName = "userName")
 	private String userName;

@@ -1,6 +1,7 @@
 package com.seproject.service;
 
 import com.seproject.dao.FileDao;
+import com.seproject.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,7 +51,7 @@ public class BasicBLService<T> {
        return (T)basicUtilService.read(t,keyValue);
    }
 
-   public ArrayList<T> search(String keyName,String keyValue){
+   public ArrayList<T> search(String keyName,SearchCategory category,String keyValue){
        //多返回值查找，返回所有键值=keyValue的元组
        //可查找的成员变量要加@Searchable，并在此方法内给出所查找的变量的变量名
        /*
@@ -67,19 +68,92 @@ public class BasicBLService<T> {
 
        for(int i=0;i<objects.size();i++){
            String [] temp=objects.get(i).split(this.fileDao.separateString);
-           if(temp[searchableID].equals(keyValue)){
-               names.add(temp[keyID]);
+           switch (category){
+               case EQUAL:
+                   if(temp[searchableID].equals(keyValue)){
+                   names.add(temp[keyID]);
+               }
+               break;
+               case NOT_EQUAL:
+                   if(!temp[searchableID].equals(keyValue)){
+                   names.add(temp[keyID]);
+               }
+               break;
+               case CONTAINS:
+                   if(contains(temp[searchableID],keyValue)){
+                       names.add(temp[keyID]);
+                   }
+                   break;
+               case LARGER_THAN:
+                   if(Double.parseDouble(temp[searchableID])>Double.parseDouble(keyValue)){
+                       names.add(temp[keyID]);
+                   }
+                   break;
+               case SMALLER_THAN:
+                   if(Double.parseDouble(temp[searchableID])<Double.parseDouble(keyValue)){
+                       names.add(temp[keyID]);
+                   }
+                   break;
            }
+
        }
 
 
        for(String name:names){
-           arr.add((T)this.basicUtilService.read(t,name));
+           arr.add((T)(this.basicUtilService.read(t,name)));
        }
-
-
        return arr;
    }
+
+   public boolean checkKeyExists(String keyValue){
+       //主键查重
+       //查询该主键对应的对象是否已经存在
+       boolean result=false;
+       String fileName=t.getClass().toString();
+       ArrayList<String> objects=this.fileDao.read_class(fileName);
+       int keyID=basicUtilService.getKeyID(t);
+       for(int i=0;i<objects.size();i++){
+           String [] temp=objects.get(i).split(this.fileDao.separateString);
+           String key=temp[keyID];
+           if(key.equals(keyValue)){
+               result=true;
+               break;
+               }
+       }
+
+            return result;
+   }
+
+   public ArrayList<T> getAllObjects(){
+       //返回全部
+       //返回该类下的所有对象
+       ArrayList<T> arr=new ArrayList<T>();
+       String fileName=t.getClass().toString();
+       ArrayList<String> objects=this.fileDao.read_class(fileName);
+       int keyID=basicUtilService.getKeyID(t);
+       for(int i=0;i<objects.size();i++){
+           String [] temp=objects.get(i).split(this.fileDao.separateString);
+           String key=temp[keyID];
+           arr.add((T)basicUtilService.read(t,key));
+       }
+       return arr;
+   }
+
+    private boolean contains(String origin,String pattern) {
+        char[] pat=pattern.toCharArray();
+        int index=-1;
+        for(char each:pat) {
+            int sequence=origin.indexOf(each);
+            System.out.println("index:"+index+" seq:"+sequence);
+            if(sequence<=index) {
+                return false;
+            }else {
+                origin=origin.substring(sequence+1);
+            }
+        }
+        return true;
+    }
+
 
    @Autowired
    public void setFileDao(FileDao fileDao){this.fileDao=fileDao;}
