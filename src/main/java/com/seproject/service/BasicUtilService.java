@@ -12,6 +12,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Service
 public class BasicUtilService {
@@ -129,23 +130,23 @@ public class BasicUtilService {
 
             ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
 
+            if(info==null||info.size()<=0){//非空判断
+                return null;
+            }
+
             Method[] methods=model.getClass().getDeclaredMethods();
             for (int j = 0; j < field.length; j++) {     //遍历所有属性
                 String name = field[j].getName();    //获取属性的名字
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
                 String type = field[j].getGenericType().toString();
-                Method getter = null;
                 Method setter = null;
                 for (Method each : methods) {
                     if (each.getName().equals("set" + name)) {
                         setter = each;
                     }
-                    if (each.getName().equals("get" + name)) {
-                        getter = each;
-                    }
                 }
                 if (type.equals("class java.lang.String")) {
-                    setter.invoke(model, new Object[]{info.get(j)});
+                    setter.invoke(model, info.get(j));
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
                     ArrayList<Integer> tmp = new ArrayList<Integer>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -154,7 +155,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Integer.parseInt(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Double>")) {
                     ArrayList<Double> tmp = new ArrayList<Double>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -163,7 +164,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Double.parseDouble(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Boolean>")) {
                     ArrayList<Boolean> tmp = new ArrayList<Boolean>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -172,7 +173,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Boolean.parseBoolean(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Long>")) {
                     ArrayList<Long> tmp = new ArrayList<Long>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -181,7 +182,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Long.parseLong(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.String>")) {
                     ArrayList<String> tmp = new ArrayList<String>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -190,7 +191,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Integer>>")) {
                     ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
                     String[] details=getDetails(info.get(j));
@@ -202,7 +203,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Double>>")) {
                     ArrayList<ArrayList<Double>> tmp = new ArrayList<ArrayList<Double>>();
                     String[] details=getDetails(info.get(j));
@@ -214,7 +215,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Long>>")) {
                     ArrayList<ArrayList<Long>> tmp = new ArrayList<ArrayList<Long>>();
                     String[] details=getDetails(info.get(j));
@@ -226,7 +227,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Boolean>>")) {
                     ArrayList<ArrayList<Boolean>> tmp = new ArrayList<ArrayList<Boolean>>();
                     String[] details=getDetails(info.get(j));
@@ -238,16 +239,14 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.String>>")) {
                     ArrayList<ArrayList<String>> tmp = new ArrayList<ArrayList<String>>();
                     String[] details=getDetails(info.get(j));
                     for (int i = 0; i < details.length; i++) {
                         ArrayList<String> each = new ArrayList<String>();
                         String[] eachContent=details[i].split(", ");
-                        for (int k = 0; k < eachContent.length; k++) {
-                            each.add(eachContent[k]);
-                        }
+                        each.addAll(Arrays.asList(eachContent));
                         tmp.add(each);
                     }
                     setter.invoke(model, new Object[]{tmp});
