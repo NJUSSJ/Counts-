@@ -2,10 +2,6 @@ package com.seproject.domain;
 
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
-<<<<<<< HEAD
-=======
-
->>>>>>> d62786d2f42191402829fe8196d94eb96d0b0bd0
 import java.util.ArrayList;
 
 
@@ -18,12 +14,9 @@ public class User {
 	private double credit;
 	@Searchable(varName = "level")
 	private int level;
-<<<<<<< HEAD
-	private UserType usertype;
-=======
 	//private UserType usertype;
->>>>>>> d62786d2f42191402829fe8196d94eb96d0b0bd0
-	private ArrayList<String> collectionList = new ArrayList<String>();
+
+//	private ArrayList<String> collectionList = new ArrayList<String>();
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -64,7 +57,7 @@ public class User {
 	public void setLevel(int level) {
 		this.level = level;
 	}
-
+/*
 	public ArrayList<String> getCollectionList(){return collectionList;}
 
 	public void setCollectionList(ArrayList<String> collectionList){this.collectionList=collectionList;}
@@ -72,4 +65,5 @@ public class User {
 	public void addCollectionList(String collectionID){
 		collectionList.add(collectionID);
 	}
+	*/
 }

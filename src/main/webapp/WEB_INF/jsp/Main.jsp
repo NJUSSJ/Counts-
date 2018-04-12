@@ -30,7 +30,7 @@
                 <li class="submenu">
                     <a href="#">Settings</a>
                     <ul>
-                        <li><a href="<c:url value="personal.html?"/>">Personal Info</a></li>
+                        <li><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">Personal Info</a></li>
                         <li><a href="right-sidebar.html">Right Sidebar</a></li>
                         <li><a href="no-sidebar.html">No Sidebar</a></li>
                         <li><a href="contact.html">Contact</a></li>

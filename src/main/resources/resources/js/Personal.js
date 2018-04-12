@@ -1,14 +1,16 @@
-var phoneNumber;
-var username;
 
-function PersonalInfo(phoneNumber, username, password, credit, level, userType, collectionList) {
+var phoneNumber = "";
+var userName = "";
+var person = "";
+
+function PersonalInfo(userName, phoneNumber, password, credit, level) {
+    this.userName = userName;
     this.phoneNumber = phoneNumber;
-    this.username = username;
     this.password = password;
     this.credit = credit;
     this.level = level;
-    this.userType = userType;
-    this.collectionList = collectionList;
+    //this.userType = userType;
+    //this.collectionList = collectionList;
 }
 
 /**
@@ -22,16 +24,26 @@ function getPersonalInfo() {
         url: "readPersonal",
         contentType: "application/json",
         dataType: "json",
-        data: toJsonString(phoneNumber),
+        data: toJsonString(new UserNameObj(userName)),
         success: function takePersonalInfo(jsonResult) {
             person = JSON.stringify(jsonResult);
-        }
-        ,
+        },
         error: function(msg){
             alert("fail")
         }
     });
     return 0;
+}
+function UserNameObj(userName) {
+    this.username = userName;
+}
+function toJsonString(obj) {
+    var msg=[];
+    for(var key in obj){
+        msg.push([key,":",obj[key]].join(""));
+
+    }
+    return "{"+msg.join(",")+"}";
 }
 
 /**
@@ -39,9 +51,10 @@ function getPersonalInfo() {
  * @param personalInfo
  */
 function savePersonalInfo(personalInfo) {
+
     $.ajax({
         type: "POST",
-        url: "write",
+        url: "writePersonal",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(personalInfo),
@@ -57,30 +70,36 @@ function savePersonalInfo(personalInfo) {
     return 0;
 }
 
-function loadPersonal(username, phoneNumber) {
-    this.username = username;
-    this.phoneNumber = phoneNumber;
+function loadPersonal() {
+    var tmp = window.location.search.split("&");
+    this.userName = tmp[0].substring(tmp[0].indexOf("=")+1);
+    this.phoneNumber = tmp[1].substring(tmp[1].indexOf("=")+1);
+    alert(userName + " " + phoneNumber);
+
     getPersonalInfo();
+    alert(person);
     var personalInfo = eval("(" + person + ")");
-    document.getElementById("_username").value = personalInfo.username;
+
+    document.getElementById("_userName").value = personalInfo.userName;
+    document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
-    document.getElementById("_userType").value = personalInfo.userType;
+    //document.getElementById("_userType").value = personalInfo.userType;
     document.getElementById("_credit").value = personalInfo.credit;
     document.getElementById("_level").value = personalInfo.level;
     document.getElementById("_password").value = personalInfo.password;
-    document.getElementById("_description").value = personalInfo.collectionList;
+    //document.getElementById("_description").value = personalInfo.collectionList;
 }
 
 function savePersonalBlanks() {
-    var username = document.getElementById("_username");
-    var phoneNumber = document.getElementById("_password");
-    var userType = document.getElementById("_userType");
-    var credit = document.getElementById("_credit");
-    var level = document.getElementById("_level");
-    var password = document.getElementById("_password");
-    var description = document.getElementById("_description");
+    var userName = document.getElementById("_username").value;
+    var phoneNumber = document.getElementById("_phoneNumber").value;
+    var userType = document.getElementById("_userType").value;
+    var credit = document.getElementById("_credit").value;
+    var level = document.getElementById("_level").value;
+    var password = document.getElementById("_password").value;
+    var description = document.getElementById("_description").value;
 
-    var personalInfo = new PersonalInfo(phoneNumber, username, password, credit, level, userType, description);
+    var personalInfo = new PersonalInfo(userName, phoneNumber, password, credit, level);
     savePersonalInfo(personalInfo);
     alert("已储存个人信息");
 }

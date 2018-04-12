@@ -25,14 +25,14 @@ public class LoginController {
 	@RequestMapping(value = "/loginCheck.html")
 		public ModelAndView loginCheck(HttpServletRequest request,User user) {
 		ModelAndView view = new ModelAndView("Main");
-		view.addObject("username",user.getUserName());
-		view.addObject("password",user.getPassword());//problem！
 		boolean existed=basicBLService.checkKeyExists(user.getUserName());
 		if(!existed){
 			return new ModelAndView("Login", "error", "用户不存在");
 		}else {
 			User realUser=basicBLService.findByKey(user.getUserName());
 			if(realUser.getPassword().equals(user.getPassword())){
+				view.addObject("userName",realUser.getUserName());
+				view.addObject("phoneNumber",realUser.getPhoneNumber());
 				return view;
 			}else{
 				return new ModelAndView("Login", "error", "密码错误。");
@@ -43,8 +43,6 @@ public class LoginController {
 	@RequestMapping(value = "/signUpCheck.html")
 	public ModelAndView signUpCheck(HttpServletRequest request,User user){
 		ModelAndView view = new ModelAndView("Main");
-		view.addObject("username",user.getUserName());
-		view.addObject("phoneNumber",user.getPassword());
 
 		//String phoneNumber=.getPhoneNumber();
 		System.out.println(user.getUserName()+"/"+user.getPassword()+"!!!!");
@@ -60,6 +58,8 @@ public class LoginController {
 			}else{
 				return new ModelAndView("Login", "error", "密码错误。");
 			}*/
+			view.addObject("username",user.getUserName());
+			//view.addObject("phoneNumber",user.getPhoneNumber());
 		}
 		return view;
 	}
