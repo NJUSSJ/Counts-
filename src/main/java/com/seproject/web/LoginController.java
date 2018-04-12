@@ -1,5 +1,6 @@
 package com.seproject.web;
 
+import com.seproject.service.BasicBLService;
 import com.seproject.service.FileIOService;
 import com.seproject.service.UserService;
 import com.seproject.domain.User;
@@ -14,6 +15,7 @@ import java.util.Date;
 public class LoginController {
 	private UserService userService;
     private FileIOService fileIOService;
+    private BasicBLService<User> basicBLService;
 	@RequestMapping(value = "/")
 	public ModelAndView loginPage(){
 
@@ -21,78 +23,45 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/loginCheck.html")
-		public ModelAndView loginCheck(HttpServletRequest request, LoginCommand loginCommand) {
-		/*=boolean isValidUser =  userService.hasMatchUser(loginCommand.getUserName(),
-					                    loginCommand.getPassword());
-		if (!isValidUser) {
-		    System.out.println(loginCommand.getUserName() + " " +
-                    loginCommand.getPassword());
-			System.out.print("Not right log in message!");
-			return new ModelAndView("Login", "error", "用户名或密码错误。");
-		} else {
-			User user = userService.findUserByUserName(loginCommand
-					.getUserName());
-			user.setLastIp(request.getLocalAddr());
-			user.setLastVisit(new Date());
-			userService.loginSuccess(user);
-			//user.setUserName("ab");
-			request.getSession().setAttribute("user", user);//给前端返回对象
-			return new ModelAndView("Main");
-		}*/
-
+		public ModelAndView loginCheck(HttpServletRequest request,User user) {
 		ModelAndView view = new ModelAndView("Main");
-		view.addObject("username",loginCommand.getUserName());
-		view.addObject("phoneNumber",loginCommand.getPhoneNumber());
-
-		String result = fileIOService.readUserFile("user");
-		String[] check = result.split("\n");
-		if (check[0].equals(loginCommand.getUserName()) && check[1].equals(loginCommand.getPassword())) {
-			return view;
-		} else {
-			return new ModelAndView("Login", "error", "用户名或密码错误。");
+		view.addObject("username",user.getUserName());
+		view.addObject("password",user.getPassword());//problem！
+		boolean existed=basicBLService.checkKeyExists(user.getUserName());
+		if(!existed){
+			return new ModelAndView("Login", "error", "用户不存在");
+		}else {
+			User realUser=basicBLService.findByKey(user.getUserName());
+			if(realUser.getPassword().equals(user.getPassword())){
+				return view;
+			}else{
+				return new ModelAndView("Login", "error", "密码错误。");
+			}
 		}
 	}
 
 	@RequestMapping(value = "/signUpCheck.html")
-	public ModelAndView signUpCheck(HttpServletRequest request, LoginCommand loginCommand){
-		/*=boolean isValidUser =  userService.hasMatchUser(loginCommand.getUserName(),
-					                    loginCommand.getPassword());
-		if (!isValidUser) {
-		    System.out.println(loginCommand.getUserName() + " " +
-                    loginCommand.getPassword());
-			System.out.print("Not right log in message!");
-			return new ModelAndView("Login", "error", "用户名或密码错误。");
-		} else {
-			User user = userService.findUserByUserName(loginCommand
-					.getUserName());
-			user.setLastIp(request.getLocalAddr());
-			user.setLastVisit(new Date());
-			userService.loginSuccess(user);
-			//user.setUserName("ab");
-			request.getSession().setAttribute("user", user);//给前端返回对象
-			return new ModelAndView("Main");
-		}*/
-		/*
-		String result=fileIOService.readUserFile("user");
-		String [] check=result.split("\n");
-		if(check[0].equals(loginCommand.getUserName())&&check[1].equals(loginCommand.getPassword())){
-			return new ModelAndView("Main");
-		}else{
-			return new ModelAndView("Login", "error", "用户名或密码错误。");
-		}
-*/
-
+	public ModelAndView signUpCheck(HttpServletRequest request,User user){
 		ModelAndView view = new ModelAndView("Main");
-		view.addObject("username",loginCommand.getUserName());
-		view.addObject("phoneNumber",loginCommand.getPhoneNumber());
+		view.addObject("username",user.getUserName());
+		view.addObject("phoneNumber",user.getPassword());
 
-		String tmp = loginCommand.getUserName() + loginCommand.getPassword();
-		boolean result = fileIOService.writeUserFile("user",tmp);
-		if(result){
-			return view;
+		//String phoneNumber=.getPhoneNumber();
+		System.out.println(user.getUserName()+"/"+user.getPassword()+"!!!!");
+		//boolean result=basicBLService.checkKeyExists(phoneNumber);
+		basicBLService.add(user);
+		boolean result=true;
+		if(!result){
+			return new ModelAndView("Login", "error", "用户不存在。");
 		}else{
-			return new ModelAndView("Login", "error", "用户名或密码错误。");
+			/*User realUser=basicBLService.findByKey(phoneNumber);
+			if(user.getPassword().equals(realUser.getPassword())){
+				return view;
+			}else{
+				return new ModelAndView("Login", "error", "密码错误。");
+			}*/
 		}
+		return view;
 	}
 
 	@Autowired
@@ -101,5 +70,8 @@ public class LoginController {
 	}
 	@Autowired
 	public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService;}
-
+	@Autowired
+	public void setBasicBLService(BasicBLService<User> basicBLService){this.basicBLService=basicBLService;
+		this.basicBLService.setT(new User());
+	}
 }

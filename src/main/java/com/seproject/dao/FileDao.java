@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @Repository
 public class FileDao {
-    public  String  separateString="@##_##@";
+    public static String  separateString="@##_##@";
     public String readFile(String name){
         String res="";
         String content="";

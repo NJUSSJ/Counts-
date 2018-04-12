@@ -113,7 +113,7 @@ public class BasicBLService<T> {
        ArrayList<String> objects=this.fileDao.read_class(fileName);
        int keyID=basicUtilService.getKeyID(t);
        for(int i=0;i<objects.size();i++){
-           String [] temp=objects.get(i).split(this.fileDao.separateString);
+           String[] temp=(objects.get(i)).split(this.fileDao.separateString);
            String key=temp[keyID];
            if(key.equals(keyValue)){
                result=true;
@@ -121,7 +121,7 @@ public class BasicBLService<T> {
                }
        }
 
-            return result;
+       return result;
    }
 
    public ArrayList<T> getAllObjects(){
@@ -139,6 +139,12 @@ public class BasicBLService<T> {
        return arr;
    }
 
+    /**
+     *
+     * @param origin
+     * @param pattern
+     * @return
+     */
     private boolean contains(String origin,String pattern) {
         char[] pat=pattern.toCharArray();
         int index=-1;
