@@ -101,25 +101,25 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <form>
                     <div class="row 50%">
                         <div class="6u 12u(mobile)">
-                            <input type="text" name="name" placeholder="任务名称"/>
+                            <input  id="name" type="text" name="name" placeholder="任务名称"/>
                         </div>
                     </div>
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">起始时间： </span><input type="date" name="startTime"  />
+                            <span class="datePicker">起始时间： </span><input  id="startTime" type="date" name="startTime"  />
                         </div>
                     </div>
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">起始时间： </span><input type="date" name="endTime"  />
+                            <span class="datePicker">起始时间： </span><input id="endTime" type="date" name="endTime"  />
                         </div>
                     </div>
 
                     <div class="row 50%">
                         <div class="12u">
-                            <textarea name="despription" placeholder="任务描述" rows="4"></textarea>
+                            <textarea  id="description" name="despription" placeholder="任务描述" rows="4"></textarea>
                         </div>
                     </div>
                     <div class="row 50%">
@@ -133,27 +133,37 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <script type="text/javascript">
                                 Dropzone.autoDiscover = false;
                                 var myDropzone = new Dropzone("#myDropzone", {
-                                    url: "/file/upload",
+                                    url: "/upload.html",
                                     addRemoveLinks: true,
                                     method: 'post',
                                     filesizeBase: 1024,
+                                    acceptedFiles: ".jpg,.gif,.png,.jpeg", //上传的类型
+
                                     sending: function(file, xhr, formData) {
-                                        formData.append("filesize", file.size);
-                                    },
+
+                                        },
                                     success: function (file, response, e) {
-                                        var res = JSON.parse(response);
-                                        if (res.error) {
-                                            $(file.previewTemplate).children('.dz-error-mark').css('opacity', '1')
-                                        }
-                                    }
+                                        
+                                    },
+
+                                    dictDefaultMessage:'拖动文件至此或者点击上传',
+                                    dictMaxFilesExceeded: "您最多只能上传1个文件！",
+                                    dictResponseError: '文件上传失败!',
+                                    dictInvalidFileType: "文件类型只能是*.jpg,*.gif,*.png,*.jpeg。",
+                                    dictFallbackMessage:"浏览器不受支持",
+                                    dictFileTooBig:"文件过大上传文件最大支持.",
+                                    dictRemoveLinks: "删除",
+                                    dictCancelUpload: "取消"
                                 });
+
+
                             </script>
                         </div>
                     </div>
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="submit" class="special" value="Send Message" /></li>
+                                <li><input type="button" class="special" value="Send Message" id="submit"/></li>
                             </ul>
                         </div>
                     </div>
@@ -192,6 +202,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
+<script src="js/upload.js"></script>
 
 
 
