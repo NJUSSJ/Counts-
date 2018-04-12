@@ -112,7 +112,26 @@
                 <form action="<c:url value="signUpCheck.html"/>" method="post">
                     <div class="row">
                         <div class="12u">
-                            <input type="text" name="userName" placeholder="Username" />
+                            <input type="text" name="phoneNumber" placeholder="PhoneNumber" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                        <ul class="buttons">
+                            <li><input type="button" value="SEND CODE" onclick="function sendVerificationCode() {
+
+                            }" class="button special" /></li>
+                        </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <input type="text" name="verificationCode" placeholder="VerificationCode" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <input type="text" name="userType" placeholder="Username" />
                         </div>
                     </div>
                     <div class="row">

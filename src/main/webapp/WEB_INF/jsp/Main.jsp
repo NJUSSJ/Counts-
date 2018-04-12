@@ -26,7 +26,7 @@
         <h1 id="logo"><a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="http://localhost:3141/">Welcome</a></li>
+                <li class="current"><a>${requestScope.userName}</a></li>
                 <li class="submenu">
                     <a href="#">Settings</a>
                     <ul>

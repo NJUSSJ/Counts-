@@ -122,8 +122,8 @@
                         <div class="6u$ 12u$(mobile)">
                             <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="" id="_credit"/>
                         </div>
-                        <div class="6u$ 12u$(mobile)">
-                            <span>Credit</span><input type="text" name="level" placeholder="Level" disabled="disabled" value="" id="_level"/>
+                        <div class="6u 12u$(mobile)">
+                            <span>Level</span><input type="text" name="level" placeholder="Level" disabled="disabled" value="" id="_level"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
                             <span>Password</span><input type="text" name="password" placeholder="Password" value="" id="_password"/>
