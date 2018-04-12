@@ -91,7 +91,8 @@ public class FileDao {
 
             File nav= ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
             String path=nav.getAbsolutePath();
-            int index=path.lastIndexOf("\\");
+            path=path.replace("\\","/");
+            int index=path.lastIndexOf("/");
             path=path.substring(0,index);
             System.out.println("Path:"+nav.getAbsolutePath());
             File file0=new File(path+"/"+fileName+".txt");
@@ -122,9 +123,12 @@ public class FileDao {
 
             File nav= ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
             String path=nav.getAbsolutePath();
-            int index=path.lastIndexOf("\\");
+            System.out.println("Path0:"+path);
+            path=path.replace("\\","/");
+            System.out.println("Path1:"+path);
+            int index=path.lastIndexOf("/");
             path=path.substring(0,index);
-            System.out.println("Path:"+nav.getAbsolutePath());
+
             File file0=new File(path+"/"+fileName+".txt");
             if(!file0.exists()){
 
