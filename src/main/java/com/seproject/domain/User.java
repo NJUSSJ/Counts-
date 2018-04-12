@@ -2,8 +2,6 @@ package com.seproject.domain;
 
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
-import com.seproject.service.ValueType;
-
 
 
 public class User {
