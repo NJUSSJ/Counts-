@@ -121,9 +121,12 @@ public class FileDao {
         //
         fileName="objectFile/"+fileName;
         ArrayList<String> objects=new ArrayList<String>();
-        String [] temp=readFile(fileName).split("\n");
-        for(String t:temp){
-            objects.add(t);
+        String content=readFile(fileName);
+        if(!(content==null||content.length()<=0)) {
+            String[] temp = content.split("\n");
+            for (String t : temp) {
+                objects.add(t);
+            }
         }
         return objects;
     }

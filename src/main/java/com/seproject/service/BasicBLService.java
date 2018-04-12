@@ -144,7 +144,6 @@ public class BasicBLService<T> {
         int index=-1;
         for(char each:pat) {
             int sequence=origin.indexOf(each);
-            System.out.println("index:"+index+" seq:"+sequence);
             if(sequence<=index) {
                 return false;
             }else {

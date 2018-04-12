@@ -11,8 +11,8 @@ public class User {
 	private String userName;
 	private String password;
 	private double credit;
+	@Searchable(varName = "level")
 	private int level;
-	//private UserType usertype;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
