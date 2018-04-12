@@ -5,18 +5,19 @@ package com.seproject.service;
 import com.seproject.dao.FileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.util.cldr.CLDRLocaleDataMetaInfo;
+
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Service
 public class BasicUtilService {
     private FileDao fileDao;
-    public ArrayList<String> writeClass(Object o){
+    public void writeClass(Object o){
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
 
@@ -34,7 +35,6 @@ public class BasicUtilService {
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
                     if(list.size()==0){
                         result.add("[]");
-                        continue;
                     }else{
                         String str="[";
                         for(int k=0;k<list.size();k++){
@@ -58,11 +58,10 @@ public class BasicUtilService {
                         str=str.substring(0,str.length()-1)+"]";//二层list去掉末尾逗号
                         result.add(str);
                     }
-                } else if (type.equals("java.util.ArrayList")) {//ArrayList
+                } else if (type.startsWith("java.util.ArrayList")) {//ArrayList
                     ArrayList list= (ArrayList) m.invoke(o);
-                    if(list.size()==0){
+                    if(list==null||list.size()==0){
                         result.add("[]");
-                        continue;
                     }else{
                         String category=list.get(0).getClass().toString();
                         if((!category.startsWith("class java.lang"))){
@@ -115,7 +114,6 @@ public class BasicUtilService {
         };
 
 
-        return result;
     }
 
 
@@ -129,23 +127,23 @@ public class BasicUtilService {
 
             ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
 
+            if(info==null||info.size()<=0){//非空判断
+                return null;
+            }
+
             Method[] methods=model.getClass().getDeclaredMethods();
             for (int j = 0; j < field.length; j++) {     //遍历所有属性
                 String name = field[j].getName();    //获取属性的名字
                 name = name.substring(0, 1).toUpperCase() + name.substring(1);
                 String type = field[j].getGenericType().toString();
-                Method getter = null;
                 Method setter = null;
                 for (Method each : methods) {
                     if (each.getName().equals("set" + name)) {
                         setter = each;
                     }
-                    if (each.getName().equals("get" + name)) {
-                        getter = each;
-                    }
                 }
                 if (type.equals("class java.lang.String")) {
-                    setter.invoke(model, new Object[]{info.get(j)});
+                    setter.invoke(model, info.get(j));
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
                     ArrayList<Integer> tmp = new ArrayList<Integer>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -154,7 +152,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Integer.parseInt(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Double>")) {
                     ArrayList<Double> tmp = new ArrayList<Double>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -163,7 +161,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Double.parseDouble(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Boolean>")) {
                     ArrayList<Boolean> tmp = new ArrayList<Boolean>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -172,7 +170,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Boolean.parseBoolean(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Long>")) {
                     ArrayList<Long> tmp = new ArrayList<Long>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -181,7 +179,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(Long.parseLong(each));
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.String>")) {
                     ArrayList<String> tmp = new ArrayList<String>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -190,7 +188,7 @@ public class BasicUtilService {
                     for(String each:details){
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Integer>>")) {
                     ArrayList<ArrayList<Integer>> tmp = new ArrayList<ArrayList<Integer>>();
                     String[] details=getDetails(info.get(j));
@@ -202,7 +200,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Double>>")) {
                     ArrayList<ArrayList<Double>> tmp = new ArrayList<ArrayList<Double>>();
                     String[] details=getDetails(info.get(j));
@@ -214,7 +212,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Long>>")) {
                     ArrayList<ArrayList<Long>> tmp = new ArrayList<ArrayList<Long>>();
                     String[] details=getDetails(info.get(j));
@@ -226,7 +224,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Boolean>>")) {
                     ArrayList<ArrayList<Boolean>> tmp = new ArrayList<ArrayList<Boolean>>();
                     String[] details=getDetails(info.get(j));
@@ -238,19 +236,17 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.String>>")) {
                     ArrayList<ArrayList<String>> tmp = new ArrayList<ArrayList<String>>();
                     String[] details=getDetails(info.get(j));
                     for (int i = 0; i < details.length; i++) {
                         ArrayList<String> each = new ArrayList<String>();
                         String[] eachContent=details[i].split(", ");
-                        for (int k = 0; k < eachContent.length; k++) {
-                            each.add(eachContent[k]);
-                        }
+                        each.addAll(Arrays.asList(eachContent));
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 }  else if (type.startsWith("java.util.ArrayList<java.util.ArrayList<")) {//二维ArrayList含自定义类型
                     ArrayList<ArrayList<Object>> tmp =new ArrayList<ArrayList<Object>>();
                     String[] details=getDetails(info.get(j));
@@ -263,7 +259,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 }else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
                     ArrayList<Object> tmp = new ArrayList<Object>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -272,25 +268,25 @@ public class BasicUtilService {
                         Object o=createObjectByKey(details[i]);
                         tmp.add(o);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.startsWith("class")) {
                     Object o=createObjectByKey(info.get(j));
-                    setter.invoke(model, new Object[]{o});
+                    setter.invoke(model, o);
                 } else {
                     if (type.equals("int")) {
                         int temp=Integer.parseInt(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     } else if (type.equals("double")) {
                         double temp=Double.parseDouble(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     }
                     if (type.equals("boolean")) {
                         boolean temp=Boolean.parseBoolean(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     }
                     if (type.equals("long")) {
                         long temp=Long.parseLong(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     }
                 }
             }
@@ -302,7 +298,6 @@ public class BasicUtilService {
 
     /**
      *
-     * @param model
      * @return model里主键属性在所有属性中的位置，以0起始
      */
     public int getKeyID(Object model){

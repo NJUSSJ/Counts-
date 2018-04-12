@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @Repository
 public class FileDao {
-    public  String  separateString="@##_##@";
+    public static String  separateString="@##_##@";
     public String readFile(String name){
         String res="";
         String content="";
@@ -88,11 +88,19 @@ public class FileDao {
         }
 
         try {
-            File file0=new File("target/classes/file/objectFile/"+fileName+".txt");
+
+            File nav= ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
+            String path=nav.getAbsolutePath();
+            path=path.replace("\\","/");
+            int index=path.lastIndexOf("/");
+            path=path.substring(0,index);
+            System.out.println("Path:"+nav.getAbsolutePath());
+            File file0=new File(path+"/"+fileName+".txt");
             if(!file0.exists()){
-                 file0.createNewFile();
+
+                file0.createNewFile();
             }
-            File file= ResourceUtils.getFile("classpath:file/objectFile/"+fileName+".txt");
+            File file= ResourceUtils.getFile(path+"/"+fileName+".txt");
 
             FileWriter writer=new FileWriter(file,true);
             writer.write(tuple+"\n");
@@ -110,22 +118,39 @@ public class FileDao {
         // 读取并返回一个类中所有已存储的对象
 
         //若文件不存在，则创建该文件
-        File file0=new File("target/classes/file/objectFile/"+fileName+".txt");
-        if(!file0.exists()){
-            try {
-                file0.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
+
+        try {
+
+            File nav= ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
+            String path=nav.getAbsolutePath();
+            System.out.println("Path0:"+path);
+            path=path.replace("\\","/");
+            System.out.println("Path1:"+path);
+            int index=path.lastIndexOf("/");
+            path=path.substring(0,index);
+
+            File file0=new File(path+"/"+fileName+".txt");
+            if(!file0.exists()){
+
+                    file0.createNewFile();
             }
-        }
-        //
-        fileName="objectFile/"+fileName;
-        ArrayList<String> objects=new ArrayList<String>();
-        String [] temp=readFile(fileName).split("\n");
-        for(String t:temp){
-            objects.add(t);
-        }
-        return objects;
+            //
+            fileName="objectFile/"+fileName;
+            ArrayList<String> objects=new ArrayList<String>();
+            String content=readFile(fileName);
+            if(!(content==null||content.length()<=0)) {
+                String[] temp = content.split("\n");
+                for (String t : temp) {
+                    objects.add(t);
+                }
+            }
+            return objects;
+            }catch (Exception e){
+                e.printStackTrace();
+                return null;
+            }
+
+
     }
 
     public ArrayList<String> read_object(String fileName,int keyID,String key){

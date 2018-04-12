@@ -12,6 +12,10 @@ com\seproject\domain\MessageService.class
 com\seproject\Application.class
 com\seproject\web\LoginCommand.class
 com\seproject\web\MultiController.class
+<<<<<<< HEAD
+=======
+com\seproject\service\BasicBLService$1.class
+>>>>>>> 2faf31f30a113a31d6277792c418e8d56a8be5f3
 com\seproject\service\Key.class
 com\seproject\web\UploadController.class
 com\seproject\dao\FileDao.class
@@ -22,6 +26,12 @@ com\seproject\web\ReadWriteFileController.class
 com\seproject\service\BasicUtilService.class
 com\seproject\web\PersonalController.class
 com\seproject\web\CollectionController.class
+<<<<<<< HEAD
 com\seproject\service\ValueType.class
 com\seproject\service\RM.class
 com\seproject\web\LoginController.class
+=======
+com\seproject\service\RM.class
+com\seproject\web\LoginController.class
+com\seproject\service\SearchCategory.class
+>>>>>>> 2faf31f30a113a31d6277792c418e8d56a8be5f3

@@ -2,19 +2,19 @@ package com.seproject.domain;
 
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
-import com.seproject.service.ValueType;
-
+import java.util.ArrayList;
 
 
 public class User {
-	@Key
+	@Searchable(varName = "phoneNumber")
  	private	String phoneNumber;
-    @Searchable(varName = "userName")
+	@Key
 	private String userName;
 	private String password;
 	private double credit;
+	@Searchable(varName = "level")
 	private int level;
-	//private UserType usertype;
+	//private ArrayList<String> collectionList = new ArrayList<String>();
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -55,4 +55,13 @@ public class User {
 	public void setLevel(int level) {
 		this.level = level;
 	}
+/*
+	public ArrayList<String> getCollectionList(){return collectionList;}
+
+	public void setCollectionList(ArrayList<String> collectionList){this.collectionList=collectionList;}
+
+	public void addCollectionList(String collectionID){
+		collectionList.add(collectionID);
+	}
+	*/
 }

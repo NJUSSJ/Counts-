@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css2/main.css" />
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
 </head>
-<body>
+<body onload="loadPersonal()">
 
 <!-- Wrapper-->
 <div id="wrapper">
@@ -29,7 +29,7 @@
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
-        <a href="<c:url value="backMain.html?"/>" class="icon fa-undo"><span>Back</span></a>
+        <a href="<c:url value="backMain.html"/>" class="icon fa-undo"><span>Back</span></a>
     </nav>
 
     <!-- Main -->
@@ -38,7 +38,7 @@
         <!-- Me -->
         <article id="me" class="panel">
             <header>
-                <h1>User Example</h1>
+                <h1 id="_userNameCard"></h1>
                 <p>Croudsourcing Worker</p>
             </header>
             <a href="#work" class="jumplink pic">
@@ -106,25 +106,28 @@
                 <div>
                     <div class="row">
                         <div class="6u 12u$(mobile)" id="blank">
-                            <span>UserName</span><input type="text" name="userName" placeholder="UserName" value="User Example"/>
+                            <span>UserName</span><input type="text" name="userName" placeholder="UserName" value="" id="_userName"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
-                            <span>PhoneNumber</span><input type="text" name="phoneNumber" placeholder="PhoneNumber" disabled="disabled" value="18812345678"/>
+                            <span>PhoneNumber</span><input type="text" name="phoneNumber" placeholder="PhoneNumber" disabled="disabled" value="" id="_phoneNumber"/>
                         </div>
                         <div class="6u 12u$(mobile)">
-                            <span>UserType</span><input type="text" name="userType" placeholder="UserType" disabled="disabled" value="Crowdsourcing Worker"/>
+                            <span>UserType</span><input type="text" name="userType" placeholder="UserType" disabled="disabled" value="" id="_userType"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
-                            <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="100"/>
+                            <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="" id="_credit"/>
+                        </div>
+                        <div class="6u$ 12u$(mobile)">
+                            <span>Credit</span><input type="text" name="level" placeholder="Level" disabled="disabled" value="" id="_level"/>
+                        </div>
+                        <div class="6u$ 12u$(mobile)">
+                            <span>Password</span><input type="text" name="password" placeholder="Password" value="" id="_password"/>
                         </div>
                         <div class="12u$">
-                            <span>Password</span><input type="text" name="password" placeholder="Password" value="password123"/>
+                            <span>Description</span><textarea name="description" placeholder="Description" rows="8" id="_description">A very honest and industrious croudsourcing worker.</textarea>
                         </div>
                         <div class="12u$">
-                            <span>Description</span><textarea name="description" placeholder="Description" rows="8">A very honest and industrious croudsourcing worker.</textarea>
-                        </div>
-                        <div class="12u$">
-                            <input type="submit" name="save" value="Save Changes" />
+                            <input type="submit" name="save" value="Save Changes" onclick="savePersonalBlanks()"/>
                         </div>
                     </div>
                 </div>
@@ -143,6 +146,7 @@
 </div>
 
 <!-- Scripts -->
+<script src="js/personal.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

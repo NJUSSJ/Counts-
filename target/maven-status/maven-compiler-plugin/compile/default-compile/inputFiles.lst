@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\service\ValueType.java
 C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\dao\LoginLogDao.java
 C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\web\LoginCommand.java
@@ -25,3 +26,32 @@ C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\domain\LoginLog.java
 C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\domain\MessageService.java
 C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\web\PicTailor.java
 C:\Users\shisj\SEP_Phase_II\src\main\java\com\seproject\web\MultiController.java
+=======
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\BasicUtilService.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\Searchable.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\ImageInfo.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\RM.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\CollectionController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\ReadWriteFileController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\User.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\LoginCommand.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\Application.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\Mission.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\PersonalController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\MessageService.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\FileIOService.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\LoginLog.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\Key.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\SearchCategory.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\dao\UserDao.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\MultiController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\dao\FileDao.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\dao\LoginLogDao.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\LoginController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\Test_Gift.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\UploadController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\UserType.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\BasicBLService.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\PicTailor.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\UserService.java
+>>>>>>> 2faf31f30a113a31d6277792c418e8d56a8be5f3

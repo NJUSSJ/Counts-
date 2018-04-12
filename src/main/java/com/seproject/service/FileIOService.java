@@ -68,6 +68,7 @@ public class FileIOService {
         String result=info[id-1].substring(name.length()+3);//如果是两位数id记得要修改这一段
         return result;
     }
+
     @Autowired
     public void setFileDao(FileDao fileDao){
         this.fileDao=fileDao;

@@ -1,15 +1,11 @@
 package com.seproject.web;
 
-import com.seproject.domain.ImageInfo;
 import com.seproject.service.FileIOService;
-import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.io.File;
 
 /**
  * Created by julia98 on 2018/3/22.
@@ -41,7 +37,6 @@ public class ReadWriteFileController {
             res=res+"}";
         }
         return res;
-
     }
 
     @Autowired

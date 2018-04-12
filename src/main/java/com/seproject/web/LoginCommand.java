@@ -1,6 +1,9 @@
 package com.seproject.web;
 
+import com.seproject.service.Key;
+
 public class LoginCommand {
+	@Key
     private String phoneNumber;
 
 	private String userName;
