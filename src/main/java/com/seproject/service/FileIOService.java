@@ -38,6 +38,16 @@ public class FileIOService {
     }
 
     /**
+     * 待实现！
+     * 存储前端传过来的用户信息
+     * @param str
+     * @return
+     */
+    public boolean updateUserFile(String str){
+        return true;
+    }
+
+    /**
      * 解析json字符串并写入相应的txt位置中
      * @param :json字符串
      *
@@ -68,6 +78,17 @@ public class FileIOService {
         String result=info[id-1].substring(name.length()+3);//如果是两位数id记得要修改这一段
         return result;
     }
+
+    /**
+     * 待实现！
+     * 根据用户电话号码返回相应的json字符串
+     * @param phoneNumber
+     * @return
+     */
+    public String getPersonalJsonString(String phoneNumber){
+        return null;
+    }
+
     @Autowired
     public void setFileDao(FileDao fileDao){
         this.fileDao=fileDao;

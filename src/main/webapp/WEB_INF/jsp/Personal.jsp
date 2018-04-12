@@ -33,7 +33,7 @@
     </nav>
 
     <!-- Main -->
-    <div id="main">
+    <div id="main" onload="loadPersonal(${requestScope.username},${requestScope.phoneNumber})">
 
         <!-- Me -->
         <article id="me" class="panel">
@@ -106,25 +106,25 @@
                 <div>
                     <div class="row">
                         <div class="6u 12u$(mobile)" id="blank">
-                            <span>UserName</span><input type="text" name="userName" placeholder="UserName" value="User Example"/>
+                            <span>UserName</span><input type="text" name="userName" placeholder="UserName" value="User Example" id="username"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
-                            <span>PhoneNumber</span><input type="text" name="phoneNumber" placeholder="PhoneNumber" disabled="disabled" value="18812345678"/>
+                            <span>PhoneNumber</span><input type="text" name="phoneNumber" placeholder="PhoneNumber" disabled="disabled" value="18812345678" id="phoneNumber"/>
                         </div>
                         <div class="6u 12u$(mobile)">
-                            <span>UserType</span><input type="text" name="userType" placeholder="UserType" disabled="disabled" value="Crowdsourcing Worker"/>
+                            <span>UserType</span><input type="text" name="userType" placeholder="UserType" disabled="disabled" value="Crowdsourcing Worker" id="userType"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
-                            <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="100"/>
+                            <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="100" id="credit"/>
                         </div>
                         <div class="12u$">
-                            <span>Password</span><input type="text" name="password" placeholder="Password" value="password123"/>
+                            <span>Password</span><input type="text" name="password" placeholder="Password" value="password123" id="password"/>
                         </div>
                         <div class="12u$">
-                            <span>Description</span><textarea name="description" placeholder="Description" rows="8">A very honest and industrious croudsourcing worker.</textarea>
+                            <span>Description</span><textarea name="description" placeholder="Description" rows="8" id="description">A very honest and industrious croudsourcing worker.</textarea>
                         </div>
                         <div class="12u$">
-                            <input type="submit" name="save" value="Save Changes" />
+                            <input type="submit" name="save" value="Save Changes" onclick="savePersonalBlanks()"/>
                         </div>
                     </div>
                 </div>

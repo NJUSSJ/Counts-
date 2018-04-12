@@ -21,7 +21,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/loginCheck.html")
-		public ModelAndView loginCheck(HttpServletRequest request, LoginCommand loginCommand){
+		public ModelAndView loginCheck(HttpServletRequest request, LoginCommand loginCommand) {
 		/*=boolean isValidUser =  userService.hasMatchUser(loginCommand.getUserName(),
 					                    loginCommand.getPassword());
 		if (!isValidUser) {
@@ -39,13 +39,18 @@ public class LoginController {
 			request.getSession().setAttribute("user", user);//给前端返回对象
 			return new ModelAndView("Main");
 		}*/
-			String result=fileIOService.readUserFile("user");
-			String [] check=result.split("\n");
-			if(check[0].equals(loginCommand.getUserName())&&check[1].equals(loginCommand.getPassword())){
-				return new ModelAndView("Main");
-			}else{
-				return new ModelAndView("Login", "error", "用户名或密码错误。");
-			}
+
+		ModelAndView view = new ModelAndView("Main");
+		view.addObject("username",loginCommand.getUserName());
+		view.addObject("phoneNumber",loginCommand.getPhoneNumber());
+
+		String result = fileIOService.readUserFile("user");
+		String[] check = result.split("\n");
+		if (check[0].equals(loginCommand.getUserName()) && check[1].equals(loginCommand.getPassword())) {
+			return view;
+		} else {
+			return new ModelAndView("Login", "error", "用户名或密码错误。");
+		}
 	}
 
 	@RequestMapping(value = "/signUpCheck.html")
@@ -67,10 +72,24 @@ public class LoginController {
 			request.getSession().setAttribute("user", user);//给前端返回对象
 			return new ModelAndView("Main");
 		}*/
+		/*
 		String result=fileIOService.readUserFile("user");
 		String [] check=result.split("\n");
 		if(check[0].equals(loginCommand.getUserName())&&check[1].equals(loginCommand.getPassword())){
 			return new ModelAndView("Main");
+		}else{
+			return new ModelAndView("Login", "error", "用户名或密码错误。");
+		}
+*/
+
+		ModelAndView view = new ModelAndView("Main");
+		view.addObject("username",loginCommand.getUserName());
+		view.addObject("phoneNumber",loginCommand.getPhoneNumber());
+
+		String tmp = loginCommand.getUserName() + loginCommand.getPassword();
+		boolean result = fileIOService.writeUserFile("user",tmp);
+		if(result){
+			return view;
 		}else{
 			return new ModelAndView("Login", "error", "用户名或密码错误。");
 		}

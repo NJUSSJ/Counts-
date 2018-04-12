@@ -104,11 +104,12 @@
            <style>
                 #signUp{
                     display: none;
+                    opacity: 0.8;
                 }
             </style>
             <div class="content">
                 <h2>SIGN UP</h2>
-                <form action="<c:url value="signUpCheck.html?"/>" method="post">
+                <form action="<c:url value="signUpCheck.html"/>" method="post">
                     <div class="row">
                         <div class="12u">
                             <input type="text" name="userName" placeholder="Username" />
@@ -122,7 +123,7 @@
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="submit" class="special" href="javascript:close();" value="LOG IN" /></li>
+                                <li><input type="submit" class="special" href="javascript:close();" value="SIGN UP" /></li>
                             </ul>
                         </div>
                     </div>

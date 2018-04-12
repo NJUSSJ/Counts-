@@ -93,17 +93,12 @@ function loadPic(url) {
     if(imgInfo.fixedx) {
 
         fixedX = imgInfo.fixedx;
-
         fixedY = imgInfo.fixedy;
-        //alert(fixedY);
         fixedWidth = imgInfo.fixedwidth;
         fixedHeight = imgInfo.fixedheight;
         curlArray = imgInfo.list;
 
     }
-
-
-
 
     if(imgInfo.sentences!=null){
         sentences=imgInfo.sentences;

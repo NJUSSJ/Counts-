@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="http:localhost:3141/" class="button special">Sign Out</a></li>
+                <li><a href="http://localhost:3141/" class="button special">Sign Out</a></li>
             </ul>
         </nav>
     </header>

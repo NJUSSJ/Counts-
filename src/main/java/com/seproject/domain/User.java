@@ -4,6 +4,7 @@ import com.seproject.service.Key;
 import com.seproject.service.Searchable;
 import com.seproject.service.ValueType;
 
+import java.util.ArrayList;
 
 
 public class User {
@@ -14,7 +15,8 @@ public class User {
 	private String password;
 	private double credit;
 	private int level;
-	//private UserType usertype;
+	private UserType usertype;
+	private ArrayList<String> collectionList = new ArrayList<String>();
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -54,5 +56,9 @@ public class User {
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+
+	public void addCollectionList(String collectionID){
+		collectionList.add(collectionID);
 	}
 }
