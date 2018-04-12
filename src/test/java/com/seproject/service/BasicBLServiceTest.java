@@ -62,9 +62,9 @@ public class BasicBLServiceTest {
     @Test
     public void search() {
        ArrayList<User> list=service.search("level",SearchCategory.SMALLER_THAN,"1000");
-       System.out.println(list.get(0).getPhoneNumber());
+       /*System.out.println(list.get(0).getPhoneNumber());
         System.out.println(list.get(1).getPhoneNumber());
-        //System.out.println(list.get(2).getPhoneNumber());
+        //System.out.println(list.get(2).getPhoneNumber());*/
     }
 
     @Test
