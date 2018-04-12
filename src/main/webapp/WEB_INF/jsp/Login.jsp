@@ -131,7 +131,12 @@
                     </div>
                     <div class="row">
                         <div class="12u">
-                            <input type="text" name="userType" placeholder="Username" />
+                            <input type="text" name="userName" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <input type="text" name="userType" placeholder="UserType" />
                         </div>
                     </div>
                     <div class="row">
