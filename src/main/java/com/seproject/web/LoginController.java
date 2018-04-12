@@ -43,10 +43,13 @@ public class LoginController {
 	@RequestMapping(value = "/signUpCheck.html")
 	public ModelAndView signUpCheck(HttpServletRequest request,User user){
 		ModelAndView view = new ModelAndView("Main");
+<<<<<<< HEAD
+=======
+		view.addObject("username",user.getUserName());
+		view.addObject("password",user.getPassword());
+>>>>>>> 27cc2b41a577f0a1aa824592550f4cc3a4ec07df
 
-		//String phoneNumber=.getPhoneNumber();
 		System.out.println(user.getUserName()+"/"+user.getPassword()+"!!!!");
-		//boolean result=basicBLService.checkKeyExists(phoneNumber);
 		basicBLService.add(user);
 		boolean result=true;
 		if(!result){

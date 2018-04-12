@@ -2,6 +2,12 @@ package com.seproject.domain;
 
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 27cc2b41a577f0a1aa824592550f4cc3a4ec07df
 import java.util.ArrayList;
 
 
@@ -16,7 +22,11 @@ public class User {
 	private int level;
 	//private UserType usertype;
 
+<<<<<<< HEAD
 //	private ArrayList<String> collectionList = new ArrayList<String>();
+=======
+	private ArrayList<String> collectionList = new ArrayList<String>();
+>>>>>>> 27cc2b41a577f0a1aa824592550f4cc3a4ec07df
 
 	public String getPhoneNumber() {
 		return phoneNumber;
