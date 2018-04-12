@@ -17,9 +17,13 @@ public class User {
 	private String userName;
 	private String password;
 	private double credit;
+	@Searchable(varName = "level")
 	private int level;
+<<<<<<< HEAD
 	private UserType usertype;
 	private ArrayList<String> collectionList = new ArrayList<String>();
+=======
+>>>>>>> 3a80ad90e81c4a8ad16ca32423471eb3987ccaac
 
 	public String getPhoneNumber() {
 		return phoneNumber;

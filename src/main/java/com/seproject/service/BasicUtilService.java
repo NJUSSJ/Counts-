@@ -17,7 +17,7 @@ import java.util.Arrays;
 @Service
 public class BasicUtilService {
     private FileDao fileDao;
-    public ArrayList<String> writeClass(Object o){
+    public void writeClass(Object o){
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
 
@@ -35,7 +35,6 @@ public class BasicUtilService {
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
                     if(list.size()==0){
                         result.add("[]");
-                        continue;
                     }else{
                         String str="[";
                         for(int k=0;k<list.size();k++){
@@ -63,7 +62,6 @@ public class BasicUtilService {
                     ArrayList list= (ArrayList) m.invoke(o);
                     if(list.size()==0){
                         result.add("[]");
-                        continue;
                     }else{
                         String category=list.get(0).getClass().toString();
                         if((!category.startsWith("class java.lang"))){
@@ -116,7 +114,6 @@ public class BasicUtilService {
         };
 
 
-        return result;
     }
 
 
@@ -249,7 +246,7 @@ public class BasicUtilService {
                         each.addAll(Arrays.asList(eachContent));
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 }  else if (type.startsWith("java.util.ArrayList<java.util.ArrayList<")) {//二维ArrayList含自定义类型
                     ArrayList<ArrayList<Object>> tmp =new ArrayList<ArrayList<Object>>();
                     String[] details=getDetails(info.get(j));
@@ -262,7 +259,7 @@ public class BasicUtilService {
                         }
                         tmp.add(each);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 }else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
                     ArrayList<Object> tmp = new ArrayList<Object>();
                     String content=info.get(j).replace("[","").replace("]","");
@@ -271,25 +268,25 @@ public class BasicUtilService {
                         Object o=createObjectByKey(details[i]);
                         tmp.add(o);
                     }
-                    setter.invoke(model, new Object[]{tmp});
+                    setter.invoke(model, tmp);
                 } else if (type.startsWith("class")) {
                     Object o=createObjectByKey(info.get(j));
-                    setter.invoke(model, new Object[]{o});
+                    setter.invoke(model, o);
                 } else {
                     if (type.equals("int")) {
                         int temp=Integer.parseInt(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     } else if (type.equals("double")) {
                         double temp=Double.parseDouble(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     }
                     if (type.equals("boolean")) {
                         boolean temp=Boolean.parseBoolean(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     }
                     if (type.equals("long")) {
                         long temp=Long.parseLong(info.get(j));
-                        setter.invoke(model, new Object[]{temp});
+                        setter.invoke(model, temp);
                     }
                 }
             }
@@ -301,7 +298,6 @@ public class BasicUtilService {
 
     /**
      *
-     * @param model
      * @return model里主键属性在所有属性中的位置，以0起始
      */
     public int getKeyID(Object model){
