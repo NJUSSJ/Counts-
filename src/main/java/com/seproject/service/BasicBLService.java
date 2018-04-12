@@ -74,7 +74,8 @@ public class BasicBLService<T> {
 
 
        for(String name:names){
-           arr.add((T)this.basicUtilService.read(t,name));
+           System.out.println(name);
+           arr.add((T)(this.basicUtilService.read(t,name)));
        }
 
 
