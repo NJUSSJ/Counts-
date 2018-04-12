@@ -25,11 +25,12 @@ public class PersonalController {
         return model;
     }
 
+    /*
     @RequestMapping(value = "/backMain.html")
     public ModelAndView getBackMain(HttpServletRequest request){
         ModelAndView model = new ModelAndView("Main");
         return model;
-    }
+    }*/
 
     @RequestMapping(value = "/readPersonal")
     @ResponseBody
