@@ -58,9 +58,9 @@ public class BasicUtilService {
                         str=str.substring(0,str.length()-1)+"]";//二层list去掉末尾逗号
                         result.add(str);
                     }
-                } else if (type.equals("java.util.ArrayList")) {//ArrayList
+                } else if (type.startsWith("java.util.ArrayList")) {//ArrayList
                     ArrayList list= (ArrayList) m.invoke(o);
-                    if(list.size()==0){
+                    if(list==null||list.size()==0){
                         result.add("[]");
                     }else{
                         String category=list.get(0).getClass().toString();
