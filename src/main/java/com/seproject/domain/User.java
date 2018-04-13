@@ -14,7 +14,10 @@ public class User {
 	private double credit;
 	@Searchable(varName = "level")
 	private int level;
-	//private ArrayList<String> collectionList = new ArrayList<String>();
+
+	//private UserType usertype;
+
+//	private ArrayList<String> collectionList = new ArrayList<String>();
 
 	public String getPhoneNumber() {
 		return phoneNumber;

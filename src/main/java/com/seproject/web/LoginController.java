@@ -43,9 +43,6 @@ public class LoginController {
 	@RequestMapping(value = "/signUpCheck.html")
 	public ModelAndView signUpCheck(HttpServletRequest request,User user){
 		ModelAndView view = new ModelAndView("Main");
-		view.addObject("username",user.getUserName());
-		view.addObject("password",user.getPassword());
-
 
 		System.out.println(user.getUserName()+"/"+user.getPassword()+"!!!!");
 		basicBLService.add(user);
@@ -59,8 +56,8 @@ public class LoginController {
 			}else{
 				return new ModelAndView("Login", "error", "密码错误。");
 			}*/
-			view.addObject("username",user.getUserName());
-			//view.addObject("phoneNumber",user.getPhoneNumber());
+			view.addObject("userName",user.getUserName());
+			view.addObject("phoneNumber",user.getPhoneNumber());
 		}
 		return view;
 	}

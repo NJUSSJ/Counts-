@@ -29,7 +29,12 @@
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
-        <a href="<c:url value="backMain.html"/>" class="icon fa-undo"><span>Back</span></a>
+        <a onclick="back()" class="icon fa-undo"><span>Back</span></a>
+        <script>
+            function back() {
+                history.go(-1);
+            }
+        </script>
     </nav>
 
     <!-- Main -->
@@ -117,8 +122,8 @@
                         <div class="6u$ 12u$(mobile)">
                             <span>Credit</span><input type="text" name="credit" placeholder="Credit" disabled="disabled" value="" id="_credit"/>
                         </div>
-                        <div class="6u$ 12u$(mobile)">
-                            <span>Credit</span><input type="text" name="level" placeholder="Level" disabled="disabled" value="" id="_level"/>
+                        <div class="6u 12u$(mobile)">
+                            <span>Level</span><input type="text" name="level" placeholder="Level" disabled="disabled" value="" id="_level"/>
                         </div>
                         <div class="6u$ 12u$(mobile)">
                             <span>Password</span><input type="text" name="password" placeholder="Password" value="" id="_password"/>
