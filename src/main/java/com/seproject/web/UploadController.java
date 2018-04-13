@@ -1,6 +1,7 @@
 package com.seproject.web;
 
 import com.seproject.domain.Mission;
+import com.seproject.service.BasicBLService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -25,8 +26,7 @@ import java.util.*;
 
 @Controller
 public class UploadController {
-
-
+    BasicBLService<Mission> missionBasicBLService;
 
 
     @RequestMapping(value = "/upload.html")
@@ -37,9 +37,10 @@ public class UploadController {
     @RequestMapping(value = "/uploadFile")
     @ResponseBody
     public String addMission(@RequestBody String MissionJASON)throws IOException{
-
+        System.out.println(MissionJASON);
         JSONObject jsonObject=new JSONObject().fromObject(MissionJASON);
         Mission mission=(Mission)JSONObject.toBean(jsonObject,Mission.class);
+
 
         return "success";
     }
@@ -50,25 +51,36 @@ public class UploadController {
 
         Map<String, MultipartFile> fileMap = request.getFileMap();
 
+
+
+
         for(MultipartFile multipartFile : fileMap.values()) {
-            saveFileToLocalDisk(multipartFile);
+            saveFileToLocalDisk(multipartFile, request.getParameter("name"),Integer.parseInt(request.getParameter("indexPic")));
         }
         return "";
     }
 
 
 
-    private void saveFileToLocalDisk(MultipartFile multipartFile) throws IOException,
+    private void saveFileToLocalDisk(MultipartFile multipartFile, String missionName,int i) throws IOException,
             FileNotFoundException {
 
-        String outputFileName = getOutputFilename(multipartFile,1);
+        String outputFileName = getOutputFilename(multipartFile,i, missionName);
 
         FileCopyUtils.copy(multipartFile.getBytes(), new FileOutputStream(outputFileName));
     }
 
-    private String getOutputFilename(MultipartFile multipartFile,int i) {
-        return "collections\\"+i+"_"+multipartFile.getOriginalFilename();
+    private String getOutputFilename(MultipartFile multipartFile,int i, String missionName) {
+        System.out.println(multipartFile.getOriginalFilename());
+
+        String suffix=multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
+        System.out.println(suffix);
+        return "collections\\"+missionName+"_"+i+suffix;
     }
 
+    public void setMissionBasicBLService(BasicBLService<Mission> missionBasicBLService){
+        this.missionBasicBLService=missionBasicBLService;
+        missionBasicBLService.setT(new Mission());
+    }
 
 }
