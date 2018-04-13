@@ -2,34 +2,30 @@ var submitButton=document.getElementById("submit");
 
 submitButton.addEventListener("click", function () {
     uploadMission();
-    alert("success");
+    myDropzone.processQueue();
 })
 
-function mission(name, startTime, endTime, description, files, fileNum){
+function mission(name, startTime, endTime, description){
     this.name=name;
     this.startTime=startTime;
     this.endTime=endTime;
     this.description=description;
-    this.files=files;
-    this.fileNum=fileNum;
+
 }
 
 function uploadMission() {
     var name=document.getElementById("name").value;
     var startT=document.getElementById("startTime").value;
-    alert(startT);
     var endT=document.getElementById("endTime").value;
     var descrip=document.getElementById("description").value;
+    var missionData=new mission(name, startT, endT, descrip);
 
-    var files=document.getElementsByClassName("dz-imageCode");
-    var fileNum=document.getElementsByClassName("dz-imageCode").length;
 
-    var fileArray=new Array();
-    for(var i=0;i<fileNum;i++){
-        fileArray[i]=files[i].src;
-    }
-    var missionData=new mission(name, startT, endT, descrip, fileArray, fileNum);
+
     MissionJASON(missionData);
+
+    
+    
 }
 
 function MissionJASON(mission) {
@@ -46,7 +42,7 @@ function MissionJASON(mission) {
             }
         },
         error:function () {
-            alert("fail");
+
         }
     })
 }
