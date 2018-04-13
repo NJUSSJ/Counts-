@@ -118,6 +118,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span class="datePicker">限制工人最低等级： </span>
+                            <select id="workerLevel">
+                            <option value="1">Lev1</option>
+                            <option value="2">Lev2</option>
+                            <option value="3">Lev3</option>
+                            <option value="4">Lev4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
                         <div class="12u">
                             <textarea  id="description" name="despription" placeholder="任务描述" rows="4"></textarea>
                         </div>
@@ -138,14 +150,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                     autoProcessQueue: false,
                                     method: 'post',
                                     filesizeBase: 1024,
-                                    parallelUploads: 10,
+                                    parallelUploads: 1000,
                                     acceptedFiles: ".jpg,.gif,.png,.jpeg", //上传的类型
 
                                     sending: function(file, xhr, formData) {
 
-                                        },
+                                    },
                                     success: function (file, response, e) {
-                                        alert("任务发布成功！");
+
                                     },
 
                                     dictDefaultMessage:'拖动文件至此或者点击上传',

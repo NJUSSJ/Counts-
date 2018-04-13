@@ -3,14 +3,15 @@ var submitButton=document.getElementById("submit");
 submitButton.addEventListener("click", function () {
     uploadMission();
     myDropzone.processQueue();
+    alert("任务发布成功！");
 })
 
-function mission(name, startTime, endTime, description){
+function mission(name, startTime, endTime, description, workerLevel){
     this.name=name;
     this.startTime=startTime;
     this.endTime=endTime;
     this.description=description;
-
+    this.workerLevel=workerLevel;
 }
 
 function uploadMission() {
@@ -18,7 +19,8 @@ function uploadMission() {
     var startT=document.getElementById("startTime").value;
     var endT=document.getElementById("endTime").value;
     var descrip=document.getElementById("description").value;
-    var missionData=new mission(name, startT, endT, descrip);
+    var workerlevel=document.getElementById("workerLevel").value;
+    var missionData=new mission(name, startT, endT, descrip, workerlevel);
 
 
 

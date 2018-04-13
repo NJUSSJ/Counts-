@@ -46,7 +46,7 @@ public class UploadController {
 
     @RequestMapping(value = "/uploadPics", method = RequestMethod.POST)
     @ResponseBody
-    public String addPics(MultipartHttpServletRequest request, HttpServletResponse response)throws IOException{
+    public String addPics(MultipartHttpServletRequest request)throws IOException{
 
         Map<String, MultipartFile> fileMap = request.getFileMap();
 

@@ -18,21 +18,39 @@ public class Mission {
     String startTime;
     String endTime;
     String description;
+    String workerLevel;
     String[] files;
     int fileNum;
+    String[] tags;
 
     public Mission(){
 
     }
-    public Mission(String name, String startTime, String endTime, String description, String[] files, int fileNum){
+    public Mission(String name, String startTime, String endTime, String description, String[] files, int fileNum, String workerLevel){
         this.name=name;
         this.startTime=startTime;
         this.endTime=endTime;
         this.description=description;
         this.files=files;
         this.fileNum=fileNum;
+        this.workerLevel=workerLevel;
     }
 
+    public void setWorkerLevel(String workerLevel){
+        this.workerLevel=workerLevel;
+    }
+
+    public String getWorkerLevel(){
+        return this.workerLevel;
+    }
+
+    public void setTags(String[] tags){
+        this.tags=tags;
+    }
+
+    public String[] getTags(){
+        return this.tags;
+    }
 
     public void setFileNum(int num){
         this.fileNum=num;
