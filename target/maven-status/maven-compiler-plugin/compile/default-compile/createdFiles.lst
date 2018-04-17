@@ -11,6 +11,7 @@ com\seproject\domain\ImageInfo.class
 com\seproject\domain\MessageService.class
 com\seproject\Application.class
 com\seproject\web\LoginCommand.class
+com\seproject\service\MathService.class
 com\seproject\web\MultiController.class
 com\seproject\domain\UploadedFile.class
 com\seproject\service\BasicBLService$1.class
