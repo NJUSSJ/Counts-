@@ -33,7 +33,7 @@ public class BasicUtilService {
                 }
                 else if (type.startsWith("java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
-                    if(list.size()==0){
+                    if(list==null||list.size()==0){
                         result.add("[]");
                     }else{
                         String str="[";
@@ -107,7 +107,8 @@ public class BasicUtilService {
             }
         }
         //调用Dao进行write
-        if(fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o))).size()==0){
+        ArrayList<String> objectInfo=fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o)));
+        if(objectInfo==null||objectInfo.size()<=0){
             fileDao.write_object(result,o.getClass().toString());
         }else{
             System.out.println("主键已经存在，不能写入");
@@ -126,8 +127,9 @@ public class BasicUtilService {
             model= Class.forName(className).newInstance();
 
             ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
-
+            System.out.println("className in read:"+className);
             if(info==null||info.size()<=0){//非空判断
+                System.out.println("no Info!");
                 return null;
             }
 

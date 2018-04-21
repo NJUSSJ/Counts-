@@ -34,8 +34,8 @@ public class MessageService {
     static final String accessKeyId = "LTAIUW9JZiECa7X4";
     static final String accessKeySecret = "VIoYEb2nYcFY3o3uW9jDfvs4iIRFbB";
 
-    private String phoneNumber;
-    private int VariCode;
+    private static String phoneNumber;
+    private static int VariCode;
 
     public static SendSmsResponse sendSms() throws ClientException {
 
@@ -51,13 +51,13 @@ public class MessageService {
         //组装请求对象-具体描述见控制台-文档部分内容
         SendSmsRequest request = new SendSmsRequest();
         //必填:待发送手机号
-        request.setPhoneNumbers("15996236816");
+        request.setPhoneNumbers(phoneNumber);
         //必填:短信签名-可在短信控制台中找到
         request.setSignName("Counts众包");
         //必填:短信模板-可在短信控制台中找到
         request.setTemplateCode("SMS_129742645");
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
-        request.setTemplateParam("{\"code\":\"123\"}");
+        request.setTemplateParam("{\"code\":\""+VariCode+"\"}");
 
         //可选:outId为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者
         request.setOutId("yourOutId");
@@ -100,19 +100,19 @@ public class MessageService {
         return querySendDetailsResponse;
     }
 
-    public void setPhonrNum(String phoneNumber){
-        this.phoneNumber=phoneNumber;
+    public static void setPhonrNum(String phoneNumber){
+        MessageService.phoneNumber=phoneNumber;
     }
 
-    public String getPhoneNumber(){
+    public static String getPhoneNumber(){
         return phoneNumber;
     }
 
-    public void setVariCode(int VariCode){
-        this.VariCode=VariCode;
+    public static void setVariCode(int VariCode){
+        MessageService.VariCode=VariCode;
     }
 
-    public int getVariCode(){
+    public static int getVariCode(){
         return VariCode;
     }
 }

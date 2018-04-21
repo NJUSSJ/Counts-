@@ -23,12 +23,12 @@ public class BasicBLService<T> {
     * 用于实现数据库中对象的增加、修改、删除、精确查找、模糊查找
      */
 
-   public RM add(T t0){
+   public synchronized RM add(T t0){
        //增加单个对象
        this.basicUtilService.writeClass(t0);
        return RM.SUCCESS;
    }
-   public RM delete(String keyValue){
+   public synchronized RM delete(String keyValue){
        //根据主键删除单个对象
        String fileName=t.getClass().toString();
        int keyID=this.basicUtilService.getKeyID(t);
@@ -36,7 +36,7 @@ public class BasicBLService<T> {
        return RM.SUCCESS;
 
    }
-   public RM update(T t0){
+   public synchronized RM update(T t0){
        //修改单个对象
        int keyID=this.basicUtilService.getKeyID(t0);
        String keyValue=this.basicUtilService.getKeyValue(t0,keyID);
@@ -46,12 +46,12 @@ public class BasicBLService<T> {
 
        return RM.SUCCESS;
    }
-   public T findByKey(String keyValue){
+   public  synchronized T findByKey(String keyValue){
        //根据主键精准查找单个对象
        return (T)basicUtilService.read(t,keyValue);
    }
 
-   public ArrayList<T> search(String keyName,SearchCategory category,String keyValue){
+   public synchronized ArrayList<T> search(String keyName,SearchCategory category,String keyValue){
        //多返回值查找，返回所有键值=keyValue的元组
        //可查找的成员变量要加@Searchable，并在此方法内给出所查找的变量的变量名
        /*
@@ -105,7 +105,7 @@ public class BasicBLService<T> {
        return arr;
    }
 
-   public boolean checkKeyExists(String keyValue){
+   public synchronized boolean checkKeyExists(String keyValue){
        //主键查重
        //查询该主键对应的对象是否已经存在
        boolean result=false;
@@ -124,7 +124,7 @@ public class BasicBLService<T> {
        return result;
    }
 
-   public ArrayList<T> getAllObjects(){
+   public synchronized ArrayList<T> getAllObjects(){
        //返回全部
        //返回该类下的所有对象
        ArrayList<T> arr=new ArrayList<T>();

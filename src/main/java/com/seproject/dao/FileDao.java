@@ -1,15 +1,17 @@
 package com.seproject.dao;
 
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 
+import javax.security.sasl.SaslServer;
 import java.io.*;
 import java.util.ArrayList;
 
 @Repository
 public class FileDao {
     public static String  separateString="@##_##@";
-    public String readFile(String name){
+    public synchronized String readFile(String name){
         String res="";
         String content="";
         try {
@@ -31,7 +33,7 @@ public class FileDao {
 
         return  res;
     }
-    public boolean writeFile(String name,String content){
+    public synchronized boolean writeFile(String name,String content){
         try {
             File file= ResourceUtils.getFile("classpath:file/"+name+".txt");
             FileWriter writer=new FileWriter(file,false);
@@ -123,21 +125,25 @@ public class FileDao {
 
             File nav= ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
             String path=nav.getAbsolutePath();
-            System.out.println("Path0:"+path);
             path=path.replace("\\","/");
-            System.out.println("Path1:"+path);
+            System.out.println("Path3:"+path);
             int index=path.lastIndexOf("/");
             path=path.substring(0,index);
 
             File file0=new File(path+"/"+fileName+".txt");
             if(!file0.exists()){
-
-                    file0.createNewFile();
+                System.out.println("Created");
+                file0.createNewFile();
             }
             //
             fileName="objectFile/"+fileName;
             ArrayList<String> objects=new ArrayList<String>();
+            System.out.println("read_class fileName:"+fileName);
             String content=readFile(fileName);
+            if(content==null||content.length()<=0){
+                System.out.println("Comtemt null");
+            }
+            System.out.println(content+"content");
             if(!(content==null||content.length()<=0)) {
                 String[] temp = content.split("\n");
                 for (String t : temp) {
@@ -158,6 +164,7 @@ public class FileDao {
         //第二个参数指出第几个成员是主键，从0开始计数
         //第三个参数指出主键的值
         ArrayList <String > singleObject=new ArrayList<String>();
+        System.out.println("read_object fileName:"+fileName);
         ArrayList <String > objects=read_class(fileName);
         for(int i=0;i<objects.size();i++){
             String temp[]=objects.get(i).split(this.separateString);
@@ -185,9 +192,9 @@ public class FileDao {
         String output="";
         for(int i=0;i<objects.size();i++){
             output=output+objects.get(i);
-            if(i<objects.size()-1){
+            //if(i<objects.size()-1){
                 output+="\n";//加入换行符
-            }
+           // }
         }
         fileName="objectFile/"+fileName;
         writeFile(fileName,output);

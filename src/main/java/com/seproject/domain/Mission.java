@@ -2,6 +2,8 @@ package com.seproject.domain;
 
 import com.seproject.service.Key;
 
+import java.util.ArrayList;
+
 public class Mission {
     @Key
     String name;
@@ -19,14 +21,14 @@ public class Mission {
     String endTime;
     String description;
     String workerLevel;
-    String[] files;
+    ArrayList<String> files=new ArrayList<String>();
     int fileNum;
-    String[] tags;
+    ArrayList<String> tags=new ArrayList<String>();
 
     public Mission(){
 
     }
-    public Mission(String name, String startTime, String endTime, String description, String[] files, int fileNum, String workerLevel){
+    public Mission(String name, String startTime, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel){
         this.name=name;
         this.startTime=startTime;
         this.endTime=endTime;
@@ -44,11 +46,11 @@ public class Mission {
         return this.workerLevel;
     }
 
-    public void setTags(String[] tags){
+    public void setTags(ArrayList<String> tags){
         this.tags=tags;
     }
 
-    public String[] getTags(){
+    public ArrayList<String> getTags(){
         return this.tags;
     }
 
@@ -60,11 +62,11 @@ public class Mission {
         return this.fileNum;
     }
 
-    public void setFiles(String files[]){
+    public void setFiles(ArrayList<String> files){
         this.files=files;
     }
 
-    public String[] getFiles(){
+    public ArrayList<String> getFiles(){
         return  this.files;
     }
 

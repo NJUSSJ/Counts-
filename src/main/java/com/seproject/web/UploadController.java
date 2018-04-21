@@ -3,6 +3,7 @@ package com.seproject.web;
 import com.seproject.domain.Mission;
 import com.seproject.service.BasicBLService;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,26 +41,51 @@ public class UploadController {
         System.out.println(MissionJASON);
         JSONObject jsonObject=new JSONObject().fromObject(MissionJASON);
         Mission mission=(Mission)JSONObject.toBean(jsonObject,Mission.class);
+        missionBasicBLService.setT(new Mission());//lala
+        Mission tmpMission=missionBasicBLService.findByKey(mission.getName());
+        tmpMission.setName(mission.getName());
 
-
+        missionBasicBLService.update(tmpMission);
         return "success";
     }
 
     @RequestMapping(value = "/uploadPics", method = RequestMethod.POST)
     @ResponseBody
-    public String addPics(MultipartHttpServletRequest request)throws IOException{
-
+    public synchronized String addPics(MultipartHttpServletRequest request)throws IOException{
         Map<String, MultipartFile> fileMap = request.getFileMap();
+        String missionName=request.getParameter("name");
+        System.out.println("MIssionName:"+missionName);
+        missionBasicBLService.setT(new Mission());//lala
+        Mission tmpMission=missionBasicBLService.findByKey(missionName);
+        if(tmpMission==null){
+            String startTime=request.getParameter("startTime");
+            String endTime=request.getParameter("endTime");
+            String description=request.getParameter("description");
+            String workLevel=request.getParameter("workLevel");
+            tmpMission=new Mission();
+            tmpMission.setName(missionName);
+            tmpMission.setWorkerLevel(workLevel);
+            tmpMission.setStartTime(startTime);
+            tmpMission.setEndTime(endTime);
+            tmpMission.setDescription(description);
+            tmpMission.setFileNum(0);
+            missionBasicBLService.setT(new Mission());
+            missionBasicBLService.add(tmpMission);
 
-
-
-
+        }
         for(MultipartFile multipartFile : fileMap.values()) {
+            String picAddress=getOutputFilename(multipartFile,Integer.parseInt(request.getParameter("indexPic")),missionName);
+            ArrayList<String> tmpFiles=tmpMission.getFiles();
+            tmpFiles.add(picAddress);
+            int index=tmpMission.getFileNum();
+            index++;
+            tmpMission.setFileNum(index);
+            missionBasicBLService.setT(new Mission());
+            missionBasicBLService.update(tmpMission);
             saveFileToLocalDisk(multipartFile, request.getParameter("name"),Integer.parseInt(request.getParameter("indexPic")));
         }
         return "";
     }
-
 
 
     private void saveFileToLocalDisk(MultipartFile multipartFile, String missionName,int i) throws IOException,
@@ -71,13 +97,13 @@ public class UploadController {
     }
 
     private String getOutputFilename(MultipartFile multipartFile,int i, String missionName) {
-        System.out.println(multipartFile.getOriginalFilename());
+
 
         String suffix=multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
-        System.out.println(suffix);
-        return "collections\\"+missionName+"_"+i+suffix;
-    }
 
+        return "src\\main\\webapp\\images\\"+missionName+"_"+i+suffix;
+    }
+    @Autowired
     public void setMissionBasicBLService(BasicBLService<Mission> missionBasicBLService){
         this.missionBasicBLService=missionBasicBLService;
         missionBasicBLService.setT(new Mission());

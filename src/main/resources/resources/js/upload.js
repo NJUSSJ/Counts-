@@ -2,7 +2,6 @@ var submitButton=document.getElementById("submit");
 var indexPic=1;
 
 submitButton.addEventListener("click", function () {
-    uploadMission();
     myDropzone.processQueue();
     alert("任务发布成功！");
 })
@@ -36,6 +35,10 @@ var myDropzone = new Dropzone("#myDropzone", {
         this.on("processing", function (file) {
             this.options.params={
                 name: document.getElementById("name").value,
+                startTime: document.getElementById("startTime").value,
+                endTime: document.getElementById("endTime").value,
+                workLevel: document.getElementById("workerLevel").value,
+                description: document.getElementById("description").value,
                 indexPic: indexPic
             };
             indexPic++;
@@ -55,42 +58,5 @@ var myDropzone = new Dropzone("#myDropzone", {
 
 
 
-function mission(name, startTime, endTime, description, workerLevel){
-    this.name=name;
-    this.startTime=startTime;
-    this.endTime=endTime;
-    this.description=description;
-    this.workerLevel=workerLevel;
-}
 
-function uploadMission() {
-    var name=document.getElementById("name").value;
-    var startT=document.getElementById("startTime").value;
-    var endT=document.getElementById("endTime").value;
-    var descrip=document.getElementById("description").value;
-    var workerlevel=document.getElementById("workerLevel").value;
-    var missionData=new mission(name, startT, endT, descrip, workerlevel);
 
-    MissionJASON(missionData);
-    indexPic=1;
-
-}
-
-function MissionJASON(mission) {
-    $.ajax({
-        type: "POST",
-        url: "uploadFile",
-        contentType: "application/json",
-        dataType: "json",
-        data: JSON.stringify(mission),
-        //data: JSON.stringify(a),
-        success: function (jsonResult) {
-            if(jsonResult.success) {
-                alert(jsonResult);
-            }
-        },
-        error:function () {
-
-        }
-    })
-}
