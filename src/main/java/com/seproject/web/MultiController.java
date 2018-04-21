@@ -17,12 +17,12 @@ import java.util.ArrayList;
 
 @RestController
 public class MultiController {
-    private BasicBLService<Mission> missionBasicBLService;
+    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
-        String sufixx="\'http://120.79.221.158:8080/Pictures/";
-        String url=sufixx+request.getParameter("collection")+"/"+request.getParameter("imageURL")+".jpg\'";
+        String sufixx="\'../../images/";
+        String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
         ModelAndView model=new ModelAndView("SingleEdit");
         model.addObject("url",url);
         return model;
@@ -43,11 +43,6 @@ public class MultiController {
         return missionNames;
     }
 
-    @Autowired
-    public void setMissionBasicBLService(BasicBLService<Mission> missionBasicBLService){
-        this.missionBasicBLService=missionBasicBLService;
-        this.missionBasicBLService.setT(new Mission());
-    }
 
 
 }

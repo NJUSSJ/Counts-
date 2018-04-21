@@ -90,7 +90,7 @@ function loadPic(url) {
     var imgInfo = eval("(" + tmp123 + ")");
 
 
-    if(imgInfo.fixedx) {
+    if(imgInfo!=null) {
 
         fixedX = imgInfo.fixedx;
         fixedY = imgInfo.fixedy;
@@ -100,7 +100,7 @@ function loadPic(url) {
 
     }
 
-    if(imgInfo.sentences!=null){
+    if(imgInfo!=null){
         sentences=imgInfo.sentences;
         sentids=imgInfo.sentids;
     }

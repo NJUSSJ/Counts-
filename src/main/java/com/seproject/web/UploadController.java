@@ -27,7 +27,7 @@ import java.util.*;
 
 @Controller
 public class UploadController {
-    BasicBLService<Mission> missionBasicBLService;
+    BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
 
     @RequestMapping(value = "/upload.html")
@@ -41,7 +41,6 @@ public class UploadController {
         System.out.println(MissionJASON);
         JSONObject jsonObject=new JSONObject().fromObject(MissionJASON);
         Mission mission=(Mission)JSONObject.toBean(jsonObject,Mission.class);
-        missionBasicBLService.setT(new Mission());//lala
         Mission tmpMission=missionBasicBLService.findByKey(mission.getName());
         tmpMission.setName(mission.getName());
 
@@ -69,7 +68,6 @@ public class UploadController {
             tmpMission.setEndTime(endTime);
             tmpMission.setDescription(description);
             tmpMission.setFileNum(0);
-            missionBasicBLService.setT(new Mission());
             missionBasicBLService.add(tmpMission);
 
         }
@@ -80,7 +78,6 @@ public class UploadController {
             int index=tmpMission.getFileNum();
             index++;
             tmpMission.setFileNum(index);
-            missionBasicBLService.setT(new Mission());
             missionBasicBLService.update(tmpMission);
             saveFileToLocalDisk(multipartFile, request.getParameter("name"),Integer.parseInt(request.getParameter("indexPic")));
         }
@@ -103,10 +100,4 @@ public class UploadController {
 
         return "src\\main\\webapp\\images\\"+missionName+"_"+i+suffix;
     }
-    @Autowired
-    public void setMissionBasicBLService(BasicBLService<Mission> missionBasicBLService){
-        this.missionBasicBLService=missionBasicBLService;
-        missionBasicBLService.setT(new Mission());
-    }
-
 }

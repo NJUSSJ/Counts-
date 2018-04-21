@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
-<body class="index" onload="load(5,${requestScope.url},${requestScope.collection})">
+<body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection})">
 <div id="page-wrapper">
     <header id="header">
         <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
@@ -71,7 +71,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/multipic.js"></script>
+<script src="js/multipic1.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>

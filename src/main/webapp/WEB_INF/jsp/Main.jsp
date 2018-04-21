@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body class="no-sidebar" onload="loadMain(${requestScope.userName},${requestScope.userCategory})">
+<body class="no-sidebar" onload="loadMain(${requestScope.phoneNumber},${requestScope.userCategory})">
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -102,107 +102,7 @@
 
         <!-- Two -->
         <section class="wrapper style1 container special" id="collections">
-            <div class="row">
-                <div class="4u 12u(narrower)">
 
-                    <section>
-                        <header>
-                            <h3>标注图集1</h3>
-                        </header>
-                        <a href="<c:url value="/details.html"/>?imageURL=cat1" class="image featured"  ><img src="../../images/mission1_1.jpg" alt="" class="collection"/></a>
-                        <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                        <footer>
-                            <ul class="buttons">
-                                <li><a href="<c:url value="/details.html"/>?imageURL=cat1" class="button small" >Start Tagging</a></li>
-                            </ul>
-                        </footer>
-                    </section>
-
-                </div>
-                <div class="4u 12u(narrower)">
-
-                    <section>
-                        <header>
-                            <h3>标注图集2</h3>
-                        </header>
-                        <a href="<c:url value="details.html"/>?imageURL=cat2" class="image featured collection"><img src="http://120.79.221.158:8080/Pictures/cat2/1.jpg" alt="" class="collection"/></a>
-                        <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                        <footer>
-                            <ul class="buttons">
-                                <li><a href="<c:url value="/details.html"/>?imageURL=cat2" class="button small">Start Tagging</a></li>
-                            </ul>
-                        </footer>
-                    </section>
-
-                </div>
-                <div class="4u 12u(narrower)">
-
-                    <section>
-                        <header>
-                            <h3>标注图集3</h3>
-                        </header>
-                        <a href="<c:url value="details.html"/>?imageURL=dog1" class="image featured collection"><img src="http://120.79.221.158:8080/Pictures/dog1/1.jpg" alt="" class="collection"/></a>
-                        <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                        <footer>
-                            <ul class="buttons">
-                                <li><a href="<c:url value="/details.html"/>?imageURL=dog1" class="button small">Start Tagging</a></li>
-                            </ul>
-                        </footer>
-                    </section>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="4u 12u(narrower)">
-
-                    <section>
-                        <header>
-                            <h3>标注图集4</h3>
-                        </header>
-                        <a href="<c:url value="/details.html"/>?imageURL=dog2" class="image featured collection"><img src="http://120.79.221.158:8080/Pictures/dog2/1.jpg" alt="" class="collection" /></a>
-                        <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                        <footer>
-                            <ul class="buttons">
-                                <li><a href="<c:url value="/details.html"/>?imageURL=dog2" class="button small">Start Tagging</a></li>
-                            </ul>
-                        </footer>
-                    </section>
-
-                </div>
-                <div class="4u 12u(narrower)">
-
-                    <section>
-                        <header>
-                            <h3>标注图集5</h3>
-                        </header>
-                        <a href="<c:url value="/details.html"/>?imageURL=parrot1" class="image featured collection"><img src="http://120.79.221.158:8080/Pictures/parrot1/1.jpg" alt="" class="collection"/></a>
-                        <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                        <footer>
-                            <ul class="buttons">
-                                <li><a href="<c:url value="/details.html"/>?imageURL=parrot1" class="button small">Start Tagging</a></li>
-                            </ul>
-                        </footer>
-                    </section>
-
-                </div>
-                <div class="4u 12u(narrower)">
-
-                    <section>
-                        <header>
-                            <h3>标注图集6</h3>
-                        </header>
-                        <a href="<c:url value="/details.html"/>?imageURL=parrot2" class="image featured collection"><img src="http://120.79.221.158:8080/Pictures/parrot2/1.jpg" alt="" class="collection"/></a>
-                        <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                        <footer>
-                            <ul class="buttons">
-                                <li><a href="<c:url value="/details.html"/>?imageURL=parrot2" class="button small">Start Tagging</a></li>
-                            </ul>
-                        </footer>
-                    </section>
-
-                </div>
-            </div>
         </section>
 
     </article>
@@ -235,7 +135,7 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/Maincollection.js"></script>
+<script src="js/Maincollection1.js"></script>
 
 </body>
 </html>

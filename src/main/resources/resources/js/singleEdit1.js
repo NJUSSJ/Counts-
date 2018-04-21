@@ -100,7 +100,7 @@ function loadPic(url) {
 
     }
 
-    if(imgInfo.sentences!=null){
+    if(imgInfo!=null){
         sentences=imgInfo.sentences;
         sentids=imgInfo.sentids;
     }

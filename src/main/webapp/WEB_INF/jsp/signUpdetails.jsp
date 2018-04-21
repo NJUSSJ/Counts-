@@ -111,7 +111,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="submit" class="special" value="Send Message" id="submit"/></li>
+                                <li><input type="submit" class="special" value="完成注册" id="submit"/></li>
                             </ul>
                         </div>
                     </div>
