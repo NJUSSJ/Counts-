@@ -60,9 +60,10 @@ public class SignUpController {
         newUser.setPhoneNumber(request.getParameter("phoneNumber"));
         newUser.setUserName(request.getParameter("userName"));
         newUser.setPassword(request.getParameter("passWord"));
+        newUser.setCredit(1000);
         userService.setT(new User());//lala
         userService.add(newUser);
-        return null;
+        return new ModelAndView("Login");
     }
 
     @Autowired
