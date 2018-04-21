@@ -113,7 +113,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">起始时间： </span><input id="endTime" type="date" name="endTime"  />
+                            <span class="datePicker">截至时间： </span><input id="endTime" type="date" name="endTime"  />
                         </div>
                     </div>
 
