@@ -7,6 +7,7 @@ com\seproject\dao\UserDao.class
 com\seproject\domain\LoginLog.class
 com\seproject\dao\LoginLogDao.class
 com\seproject\domain\Test_Gift.class
+com\seproject\web\SignUpController.class
 com\seproject\domain\ImageInfo.class
 com\seproject\domain\MessageService.class
 com\seproject\Application.class
