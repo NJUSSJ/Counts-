@@ -337,8 +337,10 @@ public class BasicUtilService {
         return null;
     }
 
+    /**
+     *方法重载，获得@Searchable(varName=keyName)的ID
+     */
     public int  getKeyID(Object model,String keyName){
-        //方法重载，获得@Searchable(varName=keyName)的ID
 
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
         int key=-1;
@@ -353,6 +355,12 @@ public class BasicUtilService {
         }
         return key;
     }
+
+    /**
+     *
+     * @param key 形如"<className,keyValue>"的指针字符串
+     * @return 根据对象类型和主键值生成唯一的对象
+     */
     private Object createObjectByKey(String key){
         int begin_index=key.indexOf("<");
         int middle_index=key.indexOf("#");
