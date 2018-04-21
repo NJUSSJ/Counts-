@@ -16,8 +16,8 @@ import java.util.Date;
 @RestController
 public class LoginController {
 
-    private BasicBLService<User> basicBLService;
-    private BasicBLService<Mission> missionBasicBLService;
+    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
+    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
 	@RequestMapping(value = "/")
 	public ModelAndView loginPage(){
@@ -28,7 +28,6 @@ public class LoginController {
 	@RequestMapping(value = "/loginCheck.html")
 		public ModelAndView loginCheck(HttpServletRequest request,User user) {
 		ModelAndView view = new ModelAndView("Main");
-		basicBLService.setT(new User());
 		boolean existed=false;
 		User tmpUser=basicBLService.findByKey(request.getParameter("userName"));
 		if(tmpUser!=null){
@@ -81,14 +80,4 @@ public class LoginController {
 		return view;
 	}
 
-	@Autowired
-	public void setBasicBLService(BasicBLService<User> basicBLService){
-	    this.basicBLService=basicBLService;
-		this.basicBLService.setT(new User());
-	}
-	@Autowired
-    public void setMissionBasicBLService(BasicBLService<Mission> missionBasicBLService){
-	    this.missionBasicBLService=missionBasicBLService;
-	    this.missionBasicBLService.setT(new Mission());
-    }
 }

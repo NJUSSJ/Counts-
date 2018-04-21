@@ -16,9 +16,14 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class CollectionController {
+<<<<<<< HEAD
 
     private BasicBLService<User> basicBLService;
     private BasicBLService<Mission> missionBasicBLService;
+=======
+    private FileIOService fileIOService;
+    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
+>>>>>>> bb99aaa1456330cc53f7efaa1343751e719b78ce
 
     @RequestMapping(value = "/details.html")
     public ModelAndView getDetailofCollection(HttpServletRequest request){
@@ -36,6 +41,7 @@ public class CollectionController {
         return model;
     }
 
+<<<<<<< HEAD
 
     @Autowired
     public void setBasicBLService(BasicBLService<User> basicBLService){ this.basicBLService=basicBLService;
@@ -47,4 +53,19 @@ public class CollectionController {
         this.missionBasicBLService.setT(new Mission());
     }
 
+=======
+  /*  private void tryReflect(){
+        //试一下好不好用
+        basicBLService.add(new User());
+        basicBLService.delete("123");
+        basicBLService.findByKey("123");
+        basicBLService.update(new User());
+    }*/
+    @Autowired
+    public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
+/*    @Autowired
+    public void setBasicBLService(BasicBLService<User> basicBLService){ this.basicBLService=basicBLService;
+    this.basicBLService.setT(new User());//做一个试验
+    }*/
+>>>>>>> bb99aaa1456330cc53f7efaa1343751e719b78ce
 }

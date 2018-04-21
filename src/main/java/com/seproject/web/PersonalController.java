@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class PersonalController {
     private FileIOService fileIOService;
-    private BasicBLService<User> basicBLService;
+    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
@@ -59,10 +59,5 @@ public class PersonalController {
     @Autowired
     public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
 
-    @Autowired
-    public void setBasicBLService(BasicBLService<User> basicBLService) {
-    this.basicBLService = basicBLService;
-    this.basicBLService.setT(new User());
-}
 
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 @RestController
 public class MultiController {
-    private BasicBLService<Mission> missionBasicBLService;
+    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
@@ -43,11 +43,6 @@ public class MultiController {
         return missionNames;
     }
 
-    @Autowired
-    public void setMissionBasicBLService(BasicBLService<Mission> missionBasicBLService){
-        this.missionBasicBLService=missionBasicBLService;
-        this.missionBasicBLService.setT(new Mission());
-    }
 
 
 }
