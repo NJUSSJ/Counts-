@@ -26,23 +26,13 @@
             <ul>
                 <li class="current"><a href="/upload.html">Welcome</a></li>
                 <li class="submenu">
-                    <a href="#">Layouts</a>
+                    <a href="#">帮助</a>
                     <ul>
-                        <li><a href="left-sidebar.html">Profile</a></li>
-                        <li><a href="right-sidebar.html">Profile Settings</a></li>
-                        <li class="submenu">
-                            <a href="#">Submenu</a>
-                            <ul>
-                                <li><a href="#">Dolore Sed</a></li>
-                                <li><a href="#">Consequat</a></li>
-                                <li><a href="#">Lorem Magna</a></li>
-                                <li><a href="#">Sed Magna</a></li>
-                                <li><a href="#">Ipsum Nisl</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="left-sidebar.html">网站手册</a></li>
+                        <li><a href="right-sidebar.html">找回密码</a></li>
                     </ul>
                 </li>
-                <li><a onclick="showSignUp()" class="button special">Sign Up</a>
+                <li><a onclick="showSignUp()" class="button special">注册</a>
                 <script>
                     function showSignUp() {
                         var sign = document.getElementById("signUp");
@@ -75,22 +65,22 @@
             <!-- Content -->
 
             <div class="content">
-                <h2>LOG IN</h2>
+                <h2>登录</h2>
                 <form action="<c:url value="loginCheck.html?"/>" method="post">
                     <div class="row">
                         <div class="12u">
-                            <input type="text" name="userName" placeholder="Username" />
+                            <input type="text" name="userName" placeholder="用户名/手机" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="12u">
-                            <input type="password" name="password" placeholder="Password" />
+                            <input type="password" name="password" placeholder="密码" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="submit" class="special" value="LOG IN" /></li>
+                                <li><input type="submit" class="special" value="登录" /></li>
                             </ul>
                         </div>
                     </div>
@@ -108,49 +98,120 @@
                 }
             </style>
             <div class="content">
-                <h2>SIGN UP</h2>
-                <form action="<c:url value="signUpCheck.html"/>" method="post">
+                <h2>注册</h2>
+                <form action="<c:url value="/signUpDetails"/>" method="post" id="signForm">
                     <div class="row">
                         <div class="12u">
-                            <input type="text" name="phoneNumber" placeholder="PhoneNumber" />
+                            <input type="text" name="phoneNumber" placeholder="手机号" required="required" id="phoneNumber" />
                         </div>
                     </div>
+
+                    <div class="row 50%" id="variCodeArea">
+                        <div class="6u 12u(mobile)" align="left">
+                            <input type="text" name="variCode" placeholder="验证码" id="variCode">
+                        </div>
+                        <div class="6u 12u(mobile)" align="left">
+                            <span id="time">秒后可重新发送</span> <a id="resend" onclick="sendVari()">重新发送验证码</a>
+
+                            <style>
+                                #resend:hover{
+                                    cursor: pointer;
+                                }
+                                #resend{
+                                    display: none;
+                                }
+                            </style>
+                        </div>
+
+                        <style>
+                            #variCodeArea{
+                                display: none;
+                            }
+                        </style>
+                    </div>
+
                     <div class="row">
                         <div class="12u">
                         <ul class="buttons">
-                            <li><input type="button" value="SEND CODE" onclick="function sendVerificationCode() {
+                            <li><input type="button" value="发送验证码"  class="button special" onclick="sendVari()" id="button1"/></li>
+                            <li><input type="button" value="确认"  class="button special"  id="button2"/></li>
 
-                            }" class="button special" /></li>
+                            <style>
+                                #button2{
+                                    display: none;
+                                }
+                            </style>
+                            <script>
+                                var phoneNumber=document.getElementById("phoneNumber");
+                                var variCode;
+
+                                var time=60;
+                                var t;
+                                var existed=false;
+                                function setTime() {
+                                    if(time==0){
+                                        document.getElementById("resend").style.display="inline";
+                                        document.getElementById("time").style.display="none";
+                                        return;
+                                    }
+                                    document.getElementById("time").innerHTML=time+"秒后可重新发送"
+                                    time=time-1;
+                                    t=setTimeout("setTime()",1000);
+
+                                }
+                                function sendVari() {
+                                    if(document.getElementById("phoneNumber").value==null||document.getElementById("phoneNumber").value==""||document.getElementById("phoneNumber").value.length!=11){
+                                        alert("请正确输入手机号码");
+                                        return;
+                                    }
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "sendVaricationCode",
+                                        contentType: "application/json",
+                                        dataType: "json",
+                                        data: document.getElementById("phoneNumber").value,
+                                        //data: JSON.stringify(a),
+                                        success: function (returnData) {
+                                            if(returnData=="0"){
+                                                alert("该手机号已注册过！");
+                                                existed=true;
+                                                return;
+                                            }
+                                            variCode=returnData;
+                                            alert(returnData);
+                                            document.getElementById("variCodeArea").style.display="block";
+                                            document.getElementById("button1").style.display="none";
+                                            document.getElementById("button2").style.display="block";
+                                            document.getElementById("time").style.display="inline";
+                                            document.getElementById("resend").style.display="none";
+                                            time=60;
+                                            setTime();
+                                            document.getElementById("button2").addEventListener("click", function () {
+                                                confirmCode();
+                                            });
+
+                                        },
+                                        error:function () {
+                                            alert("发送失败,请检查您的网络链接是否正常");
+                                            document.getElementById("button1").value="发送验证码";
+                                        }
+                                    });
+                                }
+                                function confirmCode() {
+                                    var enterCode=document.getElementById("variCode").value;
+                                    if(enterCode==variCode){
+                                        var form=document.getElementById("signForm");
+                                        form.submit();
+                                    }else{
+                                        alert("验证码错误！");
+                                    }
+                                }
+                            </script>
                         </ul>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="12u">
-                            <input type="text" name="verificationCode" placeholder="VerificationCode" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="12u">
-                            <input type="text" name="userName" placeholder="Username" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="12u">
-                            <input type="text" name="userType" placeholder="UserType" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="12u">
-                            <input type="password" name="password" placeholder="Password" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="12u">
-                            <ul class="buttons">
-                                <li><input type="submit" class="special" href="javascript:close();" value="SIGN UP" /></li>
-                            </ul>
-                        </div>
-                    </div>
+
+
                 </form>
             </div>
         </section>

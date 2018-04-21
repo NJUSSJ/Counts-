@@ -33,7 +33,7 @@ public class BasicUtilService {
                 }
                 else if (type.startsWith("java.util.ArrayList<java.util.ArrayList")) {//二重ArrayList
                     ArrayList<ArrayList<Object>> list=(ArrayList<ArrayList<Object>>) m.invoke(o);
-                    if(list.size()==0){
+                    if(list==null||list.size()==0){
                         result.add("[]");
                     }else{
                         String str="[";
@@ -107,7 +107,8 @@ public class BasicUtilService {
             }
         }
         //调用Dao进行write
-        if(fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o))).size()==0){
+        ArrayList<String> objectInfo=fileDao.read_object(o.getClass().toString(),getKeyID(o),getKeyValue(o,getKeyID(o)));
+        if(objectInfo==null||objectInfo.size()<=0){
             fileDao.write_object(result,o.getClass().toString());
         }else{
             System.out.println("主键已经存在，不能写入");
@@ -126,8 +127,9 @@ public class BasicUtilService {
             model= Class.forName(className).newInstance();
 
             ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
-
+            System.out.println("className in read:"+className);
             if(info==null||info.size()<=0){//非空判断
+                System.out.println("no Info!");
                 return null;
             }
 
@@ -335,8 +337,10 @@ public class BasicUtilService {
         return null;
     }
 
+    /**
+     *方法重载，获得@Searchable(varName=keyName)的ID
+     */
     public int  getKeyID(Object model,String keyName){
-        //方法重载，获得@Searchable(varName=keyName)的ID
 
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
         int key=-1;
@@ -351,6 +355,12 @@ public class BasicUtilService {
         }
         return key;
     }
+
+    /**
+     *
+     * @param key 形如"<className,keyValue>"的指针字符串
+     * @return 根据对象类型和主键值生成唯一的对象
+     */
     private Object createObjectByKey(String key){
         int begin_index=key.indexOf("<");
         int middle_index=key.indexOf("#");

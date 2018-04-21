@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body class="no-sidebar">
+<body class="no-sidebar" onload="loadMain(${requestScope.userName},${requestScope.userCategory})">
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -101,7 +101,7 @@
         </section>
 
         <!-- Two -->
-        <section class="wrapper style1 container special">
+        <section class="wrapper style1 container special" id="collections">
             <div class="row">
                 <div class="4u 12u(narrower)">
 
@@ -109,7 +109,7 @@
                         <header>
                             <h3>标注图集1</h3>
                         </header>
-                        <a href="<c:url value="/details.html"/>?imageURL=cat1" class="image featured"  ><img src="http://120.79.221.158:8080/Pictures/cat1/1.jpg" alt="" class="collection"/></a>
+                        <a href="<c:url value="/details.html"/>?imageURL=cat1" class="image featured"  ><img src="../../images/mission1_1.jpg" alt="" class="collection"/></a>
                         <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
                         <footer>
                             <ul class="buttons">
@@ -235,6 +235,7 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
+<script src="js/Maincollection.js"></script>
 
 </body>
 </html>

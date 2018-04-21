@@ -6,14 +6,16 @@ import java.util.ArrayList;
 
 
 public class User {
-	@Searchable(varName = "phoneNumber")
- 	private	String phoneNumber;
-	@Key
-	private String userName;
-	private String password;
-	private double credit;
+
+    @Key
+ 	private	String phoneNumber="";
+
+	private String userName="";
+	private String password="";
+	private double credit=0;
+	private int category=0;
 	@Searchable(varName = "level")
-	private int level;
+	private int level=1;
 
 	//private UserType usertype;
 
@@ -58,6 +60,14 @@ public class User {
 	public void setLevel(int level) {
 		this.level = level;
 	}
+
+	public void setCategory(int category){
+	    this.category=category;
+    }
+
+    public int getCategory(){
+	    return this.category;
+    }
 /*
 	public ArrayList<String> getCollectionList(){return collectionList;}
 

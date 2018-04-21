@@ -14,7 +14,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 <head>
-    <title>Contact - Twenty by HTML5 UP</title>
+    <title>Counts by SOCIAL ENGINEER</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
@@ -56,7 +56,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
+        <h1 id="logo"><a href="index.html">Counts <span> by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
                 <li class="current"><a href="index.html">Welcome</a></li>
@@ -89,8 +89,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
         <header class="special container">
             <span class="icon fa-envelope"></span>
-            <h2>Get In Touch</h2>
-            <p>Use the form below to give /dev/null a piece of your mind.</p>
+            <h2>任务发布</h2>
+            <p>请正确填写任务信息</p>
         </header>
 
         <!-- One -->
@@ -118,6 +118,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span class="datePicker">限制工人最低等级： </span>
+                            <select id="workerLevel">
+                            <option value="1">Lev1</option>
+                            <option value="2">Lev2</option>
+                            <option value="3">Lev3</option>
+                            <option value="4">Lev4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
                         <div class="12u">
                             <textarea  id="description" name="despription" placeholder="任务描述" rows="4"></textarea>
                         </div>
@@ -125,37 +137,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row 50%">
                         <div class="12u">
                             <div class="dropzone" id="myDropzone">
-                                <div class="am-text-success dz-message">
+                                <div class="am-text-success dz-message" id="files">
                                     将文件拖拽到此处<br>或点此打开文件管理器选择文件
                                 </div>
                             </div>
 
                             <script type="text/javascript">
-                                Dropzone.autoDiscover = false;
-                                var myDropzone = new Dropzone("#myDropzone", {
-                                    url: "/upload.html",
-                                    addRemoveLinks: true,
-                                    method: 'post',
-                                    filesizeBase: 1024,
-                                    acceptedFiles: ".jpg,.gif,.png,.jpeg", //上传的类型
-
-                                    sending: function(file, xhr, formData) {
-
-                                        },
-                                    success: function (file, response, e) {
-                                        
-                                    },
-
-                                    dictDefaultMessage:'拖动文件至此或者点击上传',
-                                    dictMaxFilesExceeded: "您最多只能上传1个文件！",
-                                    dictResponseError: '文件上传失败!',
-                                    dictInvalidFileType: "文件类型只能是*.jpg,*.gif,*.png,*.jpeg。",
-                                    dictFallbackMessage:"浏览器不受支持",
-                                    dictFileTooBig:"文件过大上传文件最大支持.",
-                                    dictRemoveLinks: "删除",
-                                    dictCancelUpload: "取消"
-                                });
-
 
                             </script>
                         </div>
@@ -186,7 +173,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         </ul>
 
         <ul class="copyright">
-            <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>&copy; Social Engineer</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
 
     </footer>

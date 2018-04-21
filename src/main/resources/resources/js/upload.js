@@ -1,52 +1,62 @@
 var submitButton=document.getElementById("submit");
+var indexPic=1;
 
 submitButton.addEventListener("click", function () {
-    uploadMission();
-    alert("success");
+    myDropzone.processQueue();
+    alert("任务发布成功！");
 })
 
-function mission(name, startTime, endTime, description, files, fileNum){
-    this.name=name;
-    this.startTime=startTime;
-    this.endTime=endTime;
-    this.description=description;
-    this.files=files;
-    this.fileNum=fileNum;
-}
+/*
+dropzone setting
+ */
+Dropzone.autoDiscover = false;
 
-function uploadMission() {
-    var name=document.getElementById("name").value;
-    var startT=document.getElementById("startTime").value;
-    alert(startT);
-    var endT=document.getElementById("endTime").value;
-    var descrip=document.getElementById("description").value;
+var myDropzone = new Dropzone("#myDropzone", {
+    url: "uploadPics",
+    addRemoveLinks: true,
+    autoProcessQueue: false,
+    method: 'post',
+    filesizeBase: 1024,
+    parallelUploads: 100,
+    acceptedFiles: ".jpg,.gif,.png,.jpeg", //上传的类型
 
-    var files=document.getElementsByClassName("dz-imageCode");
-    var fileNum=document.getElementsByClassName("dz-imageCode").length;
+    sending: function(file, xhr, formData) {
 
-    var fileArray=new Array();
-    for(var i=0;i<fileNum;i++){
-        fileArray[i]=files[i].src;
-    }
-    var missionData=new mission(name, startT, endT, descrip, fileArray, fileNum);
-    MissionJASON(missionData);
-}
+    },
+    success: function (file, response, e) {
 
-function MissionJASON(mission) {
-    $.ajax({
-        type: "POST",
-        url: "uploadFile",
-        contentType: "application/json",
-        dataType: "json",
-        data: JSON.stringify(mission),
-        //data: JSON.stringify(a),
-        success: function (jsonResult) {
-            if(jsonResult.success) {
-                alert(jsonResult);
-            }
-        },
-        error:function () {
-            alert("fail");
-        }
-    })
-}
+    },
+
+    params: {
+        name: "234"
+    },
+
+    init: function () {
+        this.on("processing", function (file) {
+            this.options.params={
+                name: document.getElementById("name").value,
+                startTime: document.getElementById("startTime").value,
+                endTime: document.getElementById("endTime").value,
+                workLevel: document.getElementById("workerLevel").value,
+                description: document.getElementById("description").value,
+                indexPic: indexPic
+            };
+            indexPic++;
+        });
+    },
+
+    dictDefaultMessage:'拖动文件至此或者点击上传',
+    dictMaxFilesExceeded: "您最多只能上传1个文件！",
+    dictResponseError: '文件上传失败!',
+    dictInvalidFileType: "文件类型只能是*.jpg,*.gif,*.png,*.jpeg。",
+    dictFallbackMessage:"浏览器不受支持",
+    dictFileTooBig:"文件过大上传文件最大支持.",
+    dictRemoveLinks: "删除",
+    dictCancelUpload: "取消"
+});
+
+
+
+
+
+
