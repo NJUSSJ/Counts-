@@ -26,10 +26,9 @@ public class CollectionController {
     public ModelAndView getDetailofCollection(HttpServletRequest request){
         int picNum;
         String missionName=request.getParameter("imageURL");
-        missionBasicBLService.setT(new Mission());
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
-        String fixx="\'http://120.79.221.158:8080/Pictures/";
-        String url=fixx+request.getParameter("imageURL")+"/\'";
+        String fixx="\'../../images/";
+        String url=fixx+request.getParameter("imageURL")+"_\'";
         String collection="\'"+request.getParameter("imageURL")+"\'";
         ModelAndView model=new ModelAndView("MultiPic");
         model.addObject("url",url);

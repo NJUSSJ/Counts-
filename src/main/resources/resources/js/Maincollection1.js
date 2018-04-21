@@ -68,7 +68,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.src="/details.html?imageURL="+missionNames[i*3];
+        a1_2.href="/details.html?imageURL="+missionNames[i*3];
         a1_2.innerHTML="Start Tagging";
         li1.appendChild(a1_2);
         ul1.appendChild(li1);
@@ -104,7 +104,7 @@ function setCollection(){
         var li2=document.createElement("li");
         var a2_2=document.createElement("a");
         a2_2.className="button small";
-        a2_2.src="/details.html?imageURL="+missionNames[i*3+1];
+        a2_2.href="/details.html?imageURL="+missionNames[i*3+1];
         a2_2.innerHTML="Start Tagging";
         li2.appendChild(a2_2);
         ul2.appendChild(li2);
@@ -144,7 +144,7 @@ function setCollection(){
         var li3=document.createElement("li");
         var a3_2=document.createElement("a");
         a3_2.className="button small";
-        a3_2.src="/details.html?imageURL="+missionNames[i*3+2];
+        a3_2.href="/details.html?imageURL="+missionNames[i*3+2];
         a3_2.innerHTML="Start Tagging";
         li3.appendChild(a3_2);
         ul3.appendChild(li3);
@@ -185,7 +185,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.src="/details.html?imageURL="+missionNames[rowNum*3+1];
+        a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+1];
         a1_2.innerHTML="Start Tagging"
         li1.appendChild(a1_2);
         ul1.appendChild(li1);

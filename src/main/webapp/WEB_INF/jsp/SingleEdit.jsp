@@ -212,7 +212,7 @@
 
 </footer>
 <!-- Scripts -->
-<script src="js/singleEdit.js"></script>
+<script src="js/singleEdit1.js"></script>
 <script src="js/tagTool.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>

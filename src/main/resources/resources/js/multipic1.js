@@ -80,13 +80,13 @@ function load(num,url,collection) {
         inner1=inner1+"<div>\n";
         document.getElementById("pictureSection").innerHTML=inner1;
 
-        /*
+    }
+    /*
         set href
          */
-        for(var i=1;i<=num;i++){
-            var a = document.getElementById("image"+i);
-            a.href="test1.html?collection="+collection+"&imageURL="+i;
-        }
+    for(var i=1;i<=num;i++){
+        var a = document.getElementById("image"+i);
+        a.href="test1.html?collection="+collection+"&imageURL="+i;
     }
 
 }

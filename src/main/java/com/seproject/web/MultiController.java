@@ -21,8 +21,8 @@ public class MultiController {
 
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
-        String sufixx="\'http://120.79.221.158:8080/Pictures/";
-        String url=sufixx+request.getParameter("collection")+"/"+request.getParameter("imageURL")+".jpg\'";
+        String sufixx="\'../../images/";
+        String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
         ModelAndView model=new ModelAndView("SingleEdit");
         model.addObject("url",url);
         return model;

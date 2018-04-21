@@ -53,7 +53,7 @@ function setCollection(){
         header1.appendChild(missionName1);
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="<c:url value=\"/details.html\"/>?imageURL="+missionNames[i*3];
+        a1_1.href="/details.html?imageURL="+missionNames[i*3];
         var img1=document.createElement("img");
         img1.src="../../images/"+missionNames[i*3]+"_1.jpg";
         img1.className="collection";
@@ -68,7 +68,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.src="<c:url value=\"/details.html\"/>?imageURL="+missionNames[i*3];
+        a1_2.href="/details.html?imageURL="+missionNames[i*3];
         a1_2.innerHTML="Start Tagging";
         li1.appendChild(a1_2);
         ul1.appendChild(li1);
@@ -89,7 +89,7 @@ function setCollection(){
         header2.appendChild(missionName2);
         var a2_1=document.createElement("a");
         a2_1.className="image featured";
-        a2_1.href="<c:url value=\"/details.html\"/>?imageURL="+missionNames[i*3+1];
+        a2_1.href="/details.html?imageURL="+missionNames[i*3+1];
         var img2=document.createElement("img");
         img2.src="../../images/"+missionNames[i*3+1]+"_1.jpg";
         img2.className="collection";
@@ -104,7 +104,7 @@ function setCollection(){
         var li2=document.createElement("li");
         var a2_2=document.createElement("a");
         a2_2.className="button small";
-        a2_2.src="<c:url value=\"/details.html\"/>?imageURL="+missionNames[i*3+1];
+        a2_2.href="/details.html?imageURL="+missionNames[i*3+1];
         a2_2.innerHTML="Start Tagging";
         li2.appendChild(a2_2);
         ul2.appendChild(li2);
@@ -129,7 +129,7 @@ function setCollection(){
         header3.appendChild(missionName3);
         var a3_1=document.createElement("a");
         a3_1.className="image featured";
-        a3_1.href="<c:url value=\"/details.html\"/>?imageURL="+missionNames[i*3+2];
+        a3_1.href="/details.html?imageURL="+missionNames[i*3+2];
         var img3=document.createElement("img");
         img3.src="../../images/"+missionNames[i*3+2]+"_1.jpg";
         img3.className="collection";
@@ -144,7 +144,7 @@ function setCollection(){
         var li3=document.createElement("li");
         var a3_2=document.createElement("a");
         a3_2.className="button small";
-        a3_2.src="<c:url value=\"/details.html\"/>?imageURL="+missionNames[i*3+2];
+        a3_2.href="/details.html?imageURL="+missionNames[i*3+2];
         a3_2.innerHTML="Start Tagging";
         li3.appendChild(a3_2);
         ul3.appendChild(li3);
@@ -170,7 +170,7 @@ function setCollection(){
         header1.appendChild(missionName1);
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="<c:url value=\"/details.html\"/>?imageURL="+missionNames[rowNum*3+i];
+        a1_1.href="/details.html?imageURL="+missionNames[rowNum*3+i];
         var img1=document.createElement("img");
         img1.src="../../images/"+missionNames[rowNum*3+i]+"_1.jpg";
         img1.className="collection";
@@ -185,7 +185,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.src="<c:url value=\"/details.html\"/>?imageURL="+missionNames[rowNum*3+1];
+        a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+1];
         a1_2.innerHTML="Start Tagging"
         li1.appendChild(a1_2);
         ul1.appendChild(li1);
