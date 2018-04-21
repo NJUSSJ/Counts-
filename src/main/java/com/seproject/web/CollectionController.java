@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class CollectionController {
     private FileIOService fileIOService;
-    private BasicBLService<User> basicBLService;
+    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
 
     @RequestMapping(value = "/details.html")
     public ModelAndView getDetailofCollection(HttpServletRequest request){
@@ -39,8 +39,8 @@ public class CollectionController {
     }*/
     @Autowired
     public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
-    @Autowired
+/*    @Autowired
     public void setBasicBLService(BasicBLService<User> basicBLService){ this.basicBLService=basicBLService;
     this.basicBLService.setT(new User());//做一个试验
-    }
+    }*/
 }

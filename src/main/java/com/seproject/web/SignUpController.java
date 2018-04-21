@@ -18,11 +18,10 @@ import java.util.Random;
 @Controller
 public class SignUpController {
 
-    private BasicBLService<User> userService;
+    private BasicBLService<User> userService=new BasicBLService<User>(new User());
     @RequestMapping(value = "/sendVaricationCode")
     @ResponseBody
     public String sendVarication(@RequestBody String Number){
-        userService.setT(new User());//lala
         User user=userService.findByKey(Number);
         if(user!=null){
             return 0+"";
@@ -60,14 +59,7 @@ public class SignUpController {
         newUser.setPhoneNumber(request.getParameter("phoneNumber"));
         newUser.setUserName(request.getParameter("userName"));
         newUser.setPassword(request.getParameter("passWord"));
-        userService.setT(new User());//lala
         userService.add(newUser);
         return null;
-    }
-
-    @Autowired
-    public void setUserService(BasicBLService<User> userService){
-        this.userService=userService;
-        this.userService.setT(new User());
     }
 }

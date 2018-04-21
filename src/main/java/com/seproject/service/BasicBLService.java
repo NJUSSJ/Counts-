@@ -7,8 +7,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-@Service
 public class BasicBLService<T> {
+
+    public BasicBLService(){}
+    public BasicBLService(T t){
+        this.t=t;
+        fileDao=new FileDao();
+        basicUtilService=new BasicUtilService();
+        basicUtilService.setFileDao(fileDao);
+    }
+
    T t; //模板类实例，用于传参数
    FileDao fileDao;
    BasicUtilService basicUtilService;
@@ -160,8 +168,10 @@ public class BasicBLService<T> {
     }
 
 
+/*
    @Autowired
    public void setFileDao(FileDao fileDao){this.fileDao=fileDao;}
    @Autowired
     public  void setBasicUtilService(BasicUtilService basicUtilService){this.basicUtilService=basicUtilService;}
+*/
 }
