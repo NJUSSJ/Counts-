@@ -1,0 +1,3 @@
+com\seproject\domain\LoginLog.class
+com\seproject\dao\LoginLogDao.class
+com\seproject\service\BasicUtilService.class
