@@ -3,14 +3,15 @@ var phoneNumber = "";
 var userName = "";
 var person = "";
 
-function PersonalInfo(userName, phoneNumber, password, credit, level) {
+function PersonalInfo(userName, phoneNumber, password, credit, level, category, taggedImgCollections, description) {
     this.userName = userName;
     this.phoneNumber = phoneNumber;
     this.password = password;
     this.credit = credit;
     this.level = level;
-    //this.userType = userType;
-    //this.collectionList = collectionList;
+    this.category = category;
+    this.taggedImgCollections = taggedImgCollections;
+    this.description = description;
 }
 
 /**
@@ -71,6 +72,8 @@ function savePersonalInfo(personalInfo) {
 }
 
 function loadPersonal() {
+    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
+
     var tmp = window.location.search.split("&");
     this.userName = tmp[0].substring(tmp[0].indexOf("=")+1);
     this.phoneNumber = tmp[1].substring(tmp[1].indexOf("=")+1);
@@ -82,17 +85,38 @@ function loadPersonal() {
     document.getElementById("_userName").value = personalInfo.userName;
     document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
-    //document.getElementById("_userType").value = personalInfo.userType;
+    switch (personalInfo.category) {
+        case 0:
+            document.getElementById("_userType").value = "众包工人";
+            break;
+        case 1:
+            document.getElementById("_userType").value = "众包发起者";
+            break;
+        case 2:
+            document.getElementById("_userType").value = "系统管理员";
+            break;
+    }
     document.getElementById("_credit").value = personalInfo.credit;
     document.getElementById("_level").value = personalInfo.level;
     document.getElementById("_password").value = personalInfo.password;
-    //document.getElementById("_description").value = personalInfo.collectionList;
+    document.getElementById("_description").value = personalInfo.description
+                                    + " " + personalInfo.taggedImgCollections;
 }
 
 function savePersonalBlanks() {
     var userName = document.getElementById("_username").value;
     var phoneNumber = document.getElementById("_phoneNumber").value;
-    var userType = document.getElementById("_userType").value;
+    switch (document.getElementById("_userType").value) {
+        case "众包工人":
+            var category = 0;
+            break;
+        case "众包发起者":
+            var category = 1;
+            break;
+        case "系统管理员":
+            var category = 2;
+            break;
+    }
     var credit = document.getElementById("_credit").value;
     var level = document.getElementById("_level").value;
     var password = document.getElementById("_password").value;

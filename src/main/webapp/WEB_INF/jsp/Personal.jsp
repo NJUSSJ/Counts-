@@ -29,7 +29,9 @@
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
-        <a href="" class="icon fa-undo"><span>Back</span></a>
+        <a href="http://localhost:3141/" class="icon fa-undo"><span>Back</span></a>
+        <!--返回主界面按钮若调用 loginCheck 则需通过表单传送userName等信息
+        若通过自己重新写的方法 则不包含misson信息 所以还是退出重新登录吧 无奈╮(╯▽╰)╭ -->
     </nav>
 
     <!-- Main -->
@@ -56,7 +58,7 @@
                 标注过的图集列表
             </p>
             <section>
-                <div class="row">
+                <div class="row" id="personalCollections">
                     <div class="4u 12u$(mobile)">
                         <a href="#" class="image fit"><img src="images/pic001.jpg" alt=""></a>
                     </div>

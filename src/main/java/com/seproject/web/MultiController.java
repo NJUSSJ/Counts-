@@ -28,6 +28,7 @@ public class MultiController {
         return model;
     }
 
+    //以下是不是要通过入口对象user筛选一下返回的mission？ 个人信息的taggedCollection调用了此方法
     @RequestMapping(value = "/getCollectionInfo")
     @ResponseBody
     public String[] getCollectionInfo(@RequestBody String User) {

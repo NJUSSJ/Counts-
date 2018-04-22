@@ -36,6 +36,4 @@ public class CollectionController {
         model.addObject("picNum",picNum);
         return model;
     }
-
-
 }

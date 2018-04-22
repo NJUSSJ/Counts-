@@ -3,6 +3,7 @@ package com.seproject.domain;
 import com.seproject.service.Key;
 import com.seproject.service.Searchable;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class User {
@@ -14,8 +15,28 @@ public class User {
 	private String password="";
 	private double credit=0;
 	private int category=0;
+
 	@Searchable(varName = "level")
 	private int level=1;
+
+	private String description="";
+	private List<String> taggedImgCollections;
+
+	public List<String> getTaggedImgCollection() {
+		return taggedImgCollections;
+	}
+
+	public void setTaggedImgCollection(List<String> taggedImgCollection) {
+		this.taggedImgCollections = taggedImgCollections;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
