@@ -27,9 +27,14 @@
         <nav id="nav">
             <ul>
                 <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
-                <li class="submenu">
+                <li class="submenu" id="submenu">
                     <a id="menuTitle"></a>
                 </li>
+                <style>
+                    #submenu{
+                        display: none;
+                    }
+                </style>
                 <li><a href="http://localhost:3141/" class="button special">登出</a></li>
             </ul>
         </nav>

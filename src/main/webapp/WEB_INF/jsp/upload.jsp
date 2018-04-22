@@ -52,6 +52,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     </style>
 </head>
 <body class="contact" onload="load(${requestScope.requestorNum})">
+
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -98,7 +99,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
             <!-- Content -->
             <div class="content">
-                <form>
+                <form action="/uploadFinish.html" method="post" id="formID">
+                    <div class="row 50%" id="phoneNumber">
+                        <div class="6u 12u(mobile)" >
+                            <input type="text" name="phoneNumber" id="actualNumber" />
+                        </div>
+                    </div>
+
+                    <style>
+                        #phoneNumber{
+                             display: none;
+                        }
+                    </style>
                     <div class="row 50%">
                         <div class="6u 12u(mobile)">
                             <input  id="name" type="text" name="name" placeholder="任务名称"/>
@@ -162,7 +174,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="button" class="special" value="发布任务" id="submit"/></li>
+                                <li><input type="button" class="special" value="发布任务" id="submitButton"/></li>
                             </ul>
                         </div>
                     </div>
@@ -201,7 +213,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/upload1.js"></script>
+<script src="js/upload.js"></script>
 
 
 

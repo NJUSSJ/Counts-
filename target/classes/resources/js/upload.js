@@ -1,9 +1,11 @@
-var submitButton=document.getElementById("submit");
+var submitButton=document.getElementById("submitButton");
 var indexPic=1;
 var requestorPhone;
 
 function load(userPhone) {
+
     requestorPhone=userPhone;
+    document.getElementById("actualNumber").value=requestorPhone;
 }
 
 submitButton.addEventListener("click", function () {
@@ -12,21 +14,9 @@ submitButton.addEventListener("click", function () {
     }
     myDropzone.processQueue();
     alert("发布成功！");
-    $.ajax({
-        async: false,
-        type: "POST",
-        url: "uploadFinish",
-        contentType: "application/json",
-        dataType: "json",
-        data: requestorPhone,
-        success: function() {
-
-        },
-        error: function(msg){
-            alert("fail")
-        }
-    });
-})
+    var form=document.getElementById("formID");
+    form.submit();
+});
 
 /*
 dropzone setting

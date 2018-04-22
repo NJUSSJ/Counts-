@@ -37,12 +37,13 @@ public class MultiController {
         int index=0;
         String[] missionNames=new String[1000];
         for(Mission mission: tmpMission){
-            missionNames[index]=mission.getName();
+            missionNames[index]=mission.getName()+"^"+mission.getDescription();
             index++;
         }
         System.out.println(User);
         return missionNames;
     }
+
 
 
 
