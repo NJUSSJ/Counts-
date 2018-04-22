@@ -20,6 +20,10 @@ public class User {
 	private int level=1;
 
 	private String description="";
+<<<<<<< HEAD
+=======
+
+>>>>>>> f7308cc8861bbaf44d6ae48f803b21b028f8d882
 
 	public String getDescription() {
 		return description;
@@ -76,13 +80,5 @@ public class User {
     public int getCategory(){
 	    return this.category;
     }
-/*
-	public ArrayList<String> getCollectionList(){return collectionList;}
 
-	public void setCollectionList(ArrayList<String> collectionList){this.collectionList=collectionList;}
-
-	public void addCollectionList(String collectionID){
-		collectionList.add(collectionID);
-	}
-	*/
 }

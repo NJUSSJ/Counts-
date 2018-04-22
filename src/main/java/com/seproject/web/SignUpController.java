@@ -60,8 +60,8 @@ public class SignUpController {
         newUser.setUserName(request.getParameter("userName"));
         newUser.setPassword(request.getParameter("passWord"));
         newUser.setCategory(Integer.parseInt(request.getParameter("category")));
-
         newUser.setCredit(1000);
+        newUser.setDescription("1");
 
 
         userService.add(newUser);

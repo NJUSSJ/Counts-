@@ -12,7 +12,7 @@ public class Collection {
     private String uid;
     @Searchable(varName = "mid")
     private String mid;
-    ArrayList<TagInfo> infoList = new ArrayList<TagInfo>();
+    ArrayList<ImageInfo> infoList = new ArrayList<ImageInfo>();
     private int state;
 
     public String getKeyId() {
@@ -39,10 +39,10 @@ public class Collection {
         this.mid = mid;
     }
 
-    public void setInfoList(ArrayList<TagInfo> list) {
+    public void setInfoList(ArrayList<ImageInfo> list) {
         infoList = list;
     }
-    public ArrayList<TagInfo> getInfoList(){return infoList;}
+    public ArrayList<ImageInfo> getInfoList(){return infoList;}
 
     public int getState(){return state;}
 

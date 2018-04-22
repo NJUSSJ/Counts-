@@ -84,9 +84,9 @@ public class FileDao {
         String tuple="";
         for(int i=0;i<al.size();i++){
             tuple=tuple+al.get(i);
-            if(i<al.size()-1){
+
                 tuple+=this.separateString;
-            }
+
         }
 
         try {
