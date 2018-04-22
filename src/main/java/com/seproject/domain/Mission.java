@@ -7,16 +7,6 @@ import java.util.ArrayList;
 public class Mission {
     @Key
     String name;
-
-    /*
-    String requestorID;
-    double reward;
-    String ddl;
-    String startTime;
-    String missionName;
-    int max_finisher;
-     */
-
     String startTime;
     String endTime;
     String description;

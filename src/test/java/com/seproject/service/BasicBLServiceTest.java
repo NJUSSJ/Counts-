@@ -11,15 +11,7 @@ import static org.junit.Assert.*;
 
 public class BasicBLServiceTest {
 
-  /* BasicBLService<User> service=new BasicBLService<User>(new User());
-    @Before
-    public void setUp() throws Exception {
-        service.setFileDao(new FileDao());
-        BasicUtilService utilService=new BasicUtilService();
-        utilService.setFileDao(new FileDao());
-        service.setBasicUtilService(utilService);
-        service.setT(new User());
-    }
+    BasicBLService<User> service=new BasicBLService<User>(new User());
 
     @Test
     public void add() {
@@ -88,5 +80,5 @@ public class BasicBLServiceTest {
 
     @Test
     public void setBasicUtilService() {
-    }*/
+    }
 }

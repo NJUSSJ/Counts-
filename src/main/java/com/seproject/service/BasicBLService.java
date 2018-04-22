@@ -167,11 +167,4 @@ public class BasicBLService<T> {
         return true;
     }
 
-
-/*
-   @Autowired
-   public void setFileDao(FileDao fileDao){this.fileDao=fileDao;}
-   @Autowired
-    public  void setBasicUtilService(BasicUtilService basicUtilService){this.basicUtilService=basicUtilService;}
-*/
 }
