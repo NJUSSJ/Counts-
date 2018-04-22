@@ -3,7 +3,6 @@
  */
 
 function load(num,url,collection) {
-    alert(num);
     document.getElementById("pictureSection").innerHTML="";
     var numRow=Math.floor(num/3);
     for(var i=0;i<numRow;i++){

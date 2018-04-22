@@ -51,7 +51,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         }
     </style>
 </head>
-<body class="contact">
+<body class="contact" onload="load(${requestScope.requestorNum})">
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -106,6 +106,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
+                        <div class="6u 12u(mobile)">
+                            <input  id="reward" type="text" name="reward" placeholder="任务奖励：积分" />
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)">
+                            <input  id="maxNum" type="text" name="maxNum" placeholder="期望标注人数：人" />
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
                             <span class="datePicker">起始时间： </span><input  id="startTime" type="date" name="startTime"  />
                         </div>
@@ -150,7 +162,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="button" class="special" value="Send Message" id="submit"/></li>
+                                <li><input type="button" class="special" value="发布任务" id="submit"/></li>
                             </ul>
                         </div>
                     </div>
@@ -189,7 +201,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/upload.js"></script>
+<script src="js/upload1.js"></script>
 
 
 

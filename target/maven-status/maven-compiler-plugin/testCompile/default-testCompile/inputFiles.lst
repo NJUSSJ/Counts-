@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /Users/julia98/SEP_Phase_II/src/test/java/com/seproject/service/BasicBLServiceTest1.java
 /Users/julia98/SEP_Phase_II/src/test/java/com/seproject/dao/FileDaoTest1.java
 /Users/julia98/SEP_Phase_II/src/test/java/com/seproject/service/BasicBLServiceTest.java
 /Users/julia98/SEP_Phase_II/src/test/java/com/seproject/dao/FileDaoTest2.java
+=======
+D:\SEP2\SEP_Phase_II\src\test\java\com\seproject\dao\FileDaoTest2.java
+D:\SEP2\SEP_Phase_II\src\test\java\com\seproject\dao\FileDaoTest1.java
+D:\SEP2\SEP_Phase_II\src\test\java\com\seproject\service\BasicBLServiceTest.java
+D:\SEP2\SEP_Phase_II\src\test\java\com\seproject\service\BasicBLServiceTest1.java
+D:\SEP2\SEP_Phase_II\src\test\java\com\seproject\service\MathServiceTest.java
+>>>>>>> 89eac855cb70ac8b3b2b956743026435cdfa8269

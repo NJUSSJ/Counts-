@@ -1,25 +1,17 @@
 package com.seproject.domain;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ImageInfo {
     private String imgid;
     private int sentids;
-    private List<EachSentence> sentences;
+    //private ArrayList<EachSentence> sentences;
     private String filename;
     private int fixedx;
     private int fixedy;
     private int fixedwidth;
     private int fixedheight;
-    private List list;
-
-    public String getId() {
-        return imgid;
-    }
-
-    public void setId(String imgid) {
-        this.imgid = imgid;
-    }
+    private ArrayList<ArrayList<Integer>> list;
 
     public int getSentids() {
         return sentids;
@@ -29,14 +21,14 @@ public class ImageInfo {
         this.sentids = sentids;
     }
 
-    public List<EachSentence> getSentences() {
+  /*  public ArrayList<EachSentence> getSentences() {
         return sentences;
     }
 
-    public void setSentences(List<EachSentence> sentences) {
+    public void setSentences(ArrayList<EachSentence> sentences) {
         this.sentences = sentences;
     }
-
+*/
     public String getFilename() {
         return filename;
     }
@@ -77,11 +69,15 @@ public class ImageInfo {
         this.fixedy = fixedy;
     }
 
-    public List getList() {
+    public ArrayList<ArrayList<Integer>> getList() {
         return list;
     }
 
-    public void setList(List list) {
+    public void setList(ArrayList<ArrayList<Integer>> list) {
         this.list = list;
     }
+
+    public String getImgid() { return imgid; }
+
+    public void setImgid(String imgid) { this.imgid = imgid; }
 }
