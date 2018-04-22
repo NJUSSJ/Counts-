@@ -1,10 +1,16 @@
 package com.seproject.domain;
 
+import com.seproject.service.Key;
+import com.seproject.service.Searchable;
+
 import java.util.ArrayList;
 
 public class Collection {
+    @Key
     private String keyId;
+    @Searchable(varName = "uid")
     private String uid;
+    @Searchable(varName = "mid")
     private String mid;
     ArrayList<TagInfo> infoList = new ArrayList<TagInfo>();
     private int state;
