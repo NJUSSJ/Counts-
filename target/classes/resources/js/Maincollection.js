@@ -12,11 +12,14 @@ function user(userPhone,category){
 
 function loadMain(userPhone,userCategory) {
     var tmpUser = new user(userPhone, userCategory);
-    if(userCategory==0){
+    if(userCategory==1){
+        var li=document.getElementById("submenu");
+        li.style.display="inline";
         document.getElementById("menuTitle").innerHTML="发布一个新任务";
         document.getElementById("menuTitle").href="/upload.html?userPhone="+userPhone;
     } else {
-        document.getElementById("menuTitle").innerHTML="工人相关";
+        var li=document.getElementById("submenu");
+        li.style.display="none";
     }
 
     $.ajax({
@@ -71,6 +74,7 @@ function setCollection(){
         a1_1.appendChild(img1);
         var p1=document.createElement("p");
         var missionDescription="mission description";
+
         p1.innerHTML=missionDescription;
         var footer1=document.createElement("footer");
         var ul1=document.createElement("ul");
@@ -107,6 +111,7 @@ function setCollection(){
         a2_1.appendChild(img2);
         var p2=document.createElement("p");
         var missionDescription="mission description";
+
         p2.innerHTML=missionDescription;
         var footer2=document.createElement("footer");
         var ul2=document.createElement("ul");
@@ -147,6 +152,7 @@ function setCollection(){
         a3_1.appendChild(img3);
         var p3=document.createElement("p");
         var missionDescription="mission description";
+
         p3.innerHTML=missionDescription;
         var footer3=document.createElement("footer");
         var ul3=document.createElement("ul");
@@ -176,18 +182,19 @@ function setCollection(){
         var section1=document.createElement("section");
         var header1=document.createElement("header");
         var missionName1=document.createElement("h3");
-        missionName1.innerHTML=missionNames[rowNum*3+i];
+        missionName1.innerHTML=missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"));
         header1.appendChild(missionName1);
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="/details.html?imageURL="+missionNames[rowNum*3+i];
+        a1_1.href="/details.html?imageURL="+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"));
         var img1=document.createElement("img");
-        img1.src="../../images/"+missionNames[rowNum*3+i]+"_1.jpg";
+        img1.src="../../images/"+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"_1.jpg";
         img1.className="collection";
         img1.alt="";
         a1_1.appendChild(img1);
         var p1=document.createElement("p");
-        var missionDescription="mission description";
+        var missionDescription=missionNames[rowNum*3+i].substring(missionNames[rowNum*3+i].indexOf("^")+1,missionNames[rowNum*3+i].length);
+
         p1.innerHTML=missionDescription;
         var footer1=document.createElement("footer");
         var ul1=document.createElement("ul");
@@ -195,7 +202,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+i];
+        a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"));
         a1_2.innerHTML="Start Tagging"
         li1.appendChild(a1_2);
         ul1.appendChild(li1);

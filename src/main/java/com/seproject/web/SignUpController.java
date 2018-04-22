@@ -59,6 +59,7 @@ public class SignUpController {
         newUser.setPhoneNumber(request.getParameter("phoneNumber"));
         newUser.setUserName(request.getParameter("userName"));
         newUser.setPassword(request.getParameter("passWord"));
+        newUser.setCategory(Integer.parseInt(request.getParameter("category")));
 
         newUser.setCredit(1000);
 
