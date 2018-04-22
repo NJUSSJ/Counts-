@@ -1,54 +1,44 @@
 package com.seproject.domain;
 
-import com.seproject.service.Key;
-
 import java.util.ArrayList;
 
 public class Collection {
-    @Key
-    private String cid;
-    private String userPhoneNumber;
-    private String missionName;
-    private ArrayList<ImageInfo> infoList;
+    private String keyId;
+    private String uid;
+    private String mid;
+    ArrayList<TagInfo> infoList = new ArrayList<TagInfo>();
     private int state;
 
-    public String getCid() {
-        return cid;
+    public String getKeyId() {
+        return keyId;
     }
 
-    public void setCid(String cid) {
-        this.cid = cid;
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
     }
 
-    public String getUserPhoneNumber() {
-        return userPhoneNumber;
+    public String getUid() {
+        return uid;
     }
 
-    public void setUserPhoneNumber(String userPhoneNumber) {
-        this.userPhoneNumber = userPhoneNumber;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
-    public String getMissionName() {
-        return missionName;
+    public String getMid() {
+        return mid;
     }
 
-    public void setMissionName(String missionName) {
-        this.missionName = missionName;
+    public void setMid(String mid) {
+        this.mid = mid;
     }
 
-    public ArrayList<ImageInfo> getInfoList() {
-        return infoList;
+    public void setInfoList(ArrayList<TagInfo> list) {
+        infoList = list;
     }
+    public ArrayList<TagInfo> getInfoList(){return infoList;}
 
-    public void setInfoList(ArrayList<ImageInfo> infoList) {
-        this.infoList = infoList;
-    }
+    public int getState(){return state;}
 
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
+    public void setState(int state){this.state=state;}
 }
