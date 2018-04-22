@@ -1,3 +1,4 @@
+com\seproject\domain\EachSentence.class
 com\seproject\service\FileIOService.class
 com\seproject\domain\UserType.class
 com\seproject\web\PicTailor.class
@@ -29,3 +30,4 @@ com\seproject\web\CollectionController.class
 com\seproject\service\RM.class
 com\seproject\web\LoginController.class
 com\seproject\service\SearchCategory.class
+com\seproject\domain\Collection.class

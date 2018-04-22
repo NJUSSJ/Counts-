@@ -26,7 +26,7 @@ public class ReadWriteFileController {
     @RequestMapping(value = "/read")
     @ResponseBody
     public String readFile(@RequestBody String imageInfo) {
-        System.out.print(imageInfo);
+/*        System.out.print("imageInfo:"+imageInfo);
         String [] temp1=imageInfo.split(":");
         String [] temp2=temp1[1].split(",");
         String name=temp2[0];
@@ -36,7 +36,9 @@ public class ReadWriteFileController {
             res="{"+res;
             res=res+"}";
         }
-        return res;
+        System.out.println("result:"+res);
+        return res;*/
+        return "{}";
     }
 
     @Autowired
