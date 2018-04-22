@@ -22,8 +22,6 @@ public class User {
 	private String description="";
 
 
-
-
 	public String getDescription() {
 		return description;
 	}

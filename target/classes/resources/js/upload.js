@@ -30,7 +30,7 @@ var myDropzone = new Dropzone("#myDropzone", {
     method: 'post',
     filesizeBase: 1024,
     parallelUploads: 100,
-    acceptedFiles: ".jpg,.gif,.png,.jpeg", //上传的类型
+    acceptedFiles: ".jpg", //上传的类型
 
     sending: function(file, xhr, formData) {
 
