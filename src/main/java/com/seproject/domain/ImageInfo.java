@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ImageInfo {
     private String imgid;
     private int sentids;
-    //private ArrayList<EachSentence> sentences;
+    private ArrayList<String> sentences;
     private String filename;
     private int fixedx;
     private int fixedy;
@@ -21,14 +21,14 @@ public class ImageInfo {
         this.sentids = sentids;
     }
 
-  /*  public ArrayList<EachSentence> getSentences() {
+    public ArrayList<String> getSentences() {
         return sentences;
     }
 
-    public void setSentences(ArrayList<EachSentence> sentences) {
+    public void setSentences(ArrayList<String> sentences) {
         this.sentences = sentences;
     }
-*/
+
     public String getFilename() {
         return filename;
     }

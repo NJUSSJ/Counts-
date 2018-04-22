@@ -6,7 +6,7 @@ function loadPersonalCollection(phoneNumber, category) {
     $.ajax({
         async: false,
         method: "POST",
-        url: "getCollectionInfo",
+        url: "getPersonalCollectionInfo",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(tmpUser),

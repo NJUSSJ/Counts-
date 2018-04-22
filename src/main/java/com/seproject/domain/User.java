@@ -20,15 +20,6 @@ public class User {
 	private int level=1;
 
 	private String description="";
-	private List<String> taggedImgCollections;
-
-	public List<String> getTaggedImgCollection() {
-		return taggedImgCollections;
-	}
-
-	public void setTaggedImgCollection(List<String> taggedImgCollection) {
-		this.taggedImgCollections = taggedImgCollections;
-	}
 
 	public String getDescription() {
 		return description;

@@ -50,6 +50,7 @@ var i  =  2;
 var sentences = new Array();
 var sentids = new Array();
 var sentidsCount = 0;
+var _sentences = new Array();
 
 
 //data func
@@ -664,6 +665,11 @@ tool3.addEventListener("click",function () {
     var txt = document.getElementById("info").innerHTML;
     var sentence = new eachSentence(txt,getNameAndCollection(),sentidsCount,2);
     sentences.push(sentence);
+
+    //重新发送taginfo
+    for(var i = 0;i<sentences.length;i++){
+        _sentences.push(sentences[i].raw);
+    }
 
 })
 

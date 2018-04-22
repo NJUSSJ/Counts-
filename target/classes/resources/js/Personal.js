@@ -72,7 +72,6 @@ function savePersonalInfo(personalInfo) {
 }
 
 function loadPersonal() {
-    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
 
     var tmp = window.location.search.split("&");
     this.userName = tmp[0].substring(tmp[0].indexOf("=")+1);
@@ -82,6 +81,9 @@ function loadPersonal() {
     getPersonalInfo();
     alert(person);
     var personalInfo = eval("(" + person + ")");
+
+    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
+
     document.getElementById("_userName").value = personalInfo.userName;
     document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
@@ -93,7 +95,7 @@ function loadPersonal() {
             document.getElementById("_userType").value = "众包发起者";
             break;
         case 2:
-            document.getElementById("_userType").value = "系统管理员";
+            document.getElementById("_userType").value = "众包工人";
             break;
     }
     document.getElementById("_credit").value = personalInfo.credit;

@@ -1,5 +1,6 @@
 package com.seproject.web;
 
+import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
 import com.seproject.service.FileIOService;
@@ -13,11 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @RestController
 public class PersonalController {
     private FileIOService fileIOService;
     private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
+    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
@@ -55,6 +58,24 @@ public class PersonalController {
         return "ret";
     }
 
+
+    //筛选用户的标注过的mission
+    @RequestMapping(value = "/getPersonalCollectionInfo")
+    @ResponseBody
+    public String[] getCollectionInfo(@RequestBody String userInfo) {
+        System.out.println(userInfo);
+        String phoneNumber = userInfo.substring(12,23);//获取手机号
+        String category = userInfo.substring(31);
+        missionBasicBLService.setT(new Mission());
+        ArrayList<Mission> tmpMission=missionBasicBLService.search("uid",searchcategory.equal,phoneNumber);
+        int index=0;
+        String[] missionNames=new String[1000];
+        for(Mission mission: tmpMission){
+            missionNames[index]=mission.getName()+"^"+mission.getDescription();
+            index++;
+        }
+        return missionNames;
+    }
 
     @Autowired
     public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}

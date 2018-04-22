@@ -23,6 +23,12 @@ public class ReadWriteFileController {
         return "666";
     }
 
+    @RequestMapping(value = "/tag")
+    @ResponseBody
+    public String getTag(@RequestBody String img){
+        return "666";
+    }
+
     @RequestMapping(value = "/read")
     @ResponseBody
     public String readFile(@RequestBody String imageInfo) {

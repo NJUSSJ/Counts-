@@ -46,16 +46,6 @@ function tagInfoCollection(fixedx,fixedy,fixedwidth,fixedheight,list) {
 }
 
 //data
-/*
-function imgs(sentids,imgid,sentences,filename,tagInfoCollection) {
-    this.sentids = sentids;
-    this.imgid = imgid;
-    this.sentences = sentences;
-    this.filename = filename;
-    this.tagInfoCollection = tagInfoCollection;
-}
-*/
-//data
 function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list) {
     this.sentids = sentids;
     this.imgid = imgid;
@@ -78,10 +68,32 @@ function getSentences() {
 function getSentIds() {
     return sentids;
 }
+
 function saveData() {
     var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection(),fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
+    SendTag(_sentences);
     alert("已储存本图片信息");
+}
+
+/* ajax */
+function SendTag(imgs) {
+    $.ajax({
+        type: "POST",
+        url: "tag",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(imgs),
+        //data: JSON.stringify(a),
+        success: function (jsonResult) {
+            if(jsonResult.success) {
+                alert(jsonResult);
+            }
+        },
+        error:function () {
+            alert("fail");
+        }
+    });
 }
 
 //test
