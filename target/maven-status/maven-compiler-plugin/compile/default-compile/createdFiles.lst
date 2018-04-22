@@ -24,8 +24,10 @@ com\seproject\domain\User.class
 com\seproject\service\BasicBLService.class
 com\seproject\web\ReadWriteFileController.class
 com\seproject\service\BasicUtilService.class
+com\seproject\domain\TagInfo.class
 com\seproject\web\PersonalController.class
 com\seproject\web\CollectionController.class
 com\seproject\service\RM.class
 com\seproject\web\LoginController.class
 com\seproject\service\SearchCategory.class
+com\seproject\domain\Collection.class
