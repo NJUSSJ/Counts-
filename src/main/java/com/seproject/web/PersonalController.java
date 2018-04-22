@@ -4,6 +4,7 @@ import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
 import com.seproject.service.FileIOService;
+import com.seproject.service.SearchCategory;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
@@ -67,7 +68,7 @@ public class PersonalController {
         String phoneNumber = userInfo.substring(12,23);//获取手机号
         String category = userInfo.substring(31);
         missionBasicBLService.setT(new Mission());
-        ArrayList<Mission> tmpMission=missionBasicBLService.search("uid",searchcategory.equal,phoneNumber);
+        ArrayList<Mission> tmpMission=missionBasicBLService.search("uid",SearchCategory.EQUAL,phoneNumber);
         int index=0;
         String[] missionNames=new String[1000];
         for(Mission mission: tmpMission){
