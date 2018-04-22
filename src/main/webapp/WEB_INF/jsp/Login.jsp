@@ -16,7 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
-<body class="contact" style="background-image:url(http://api.dujin.org/bing/1366.php);">
+<body class="contact" style="background-image:url(http://api.dujin.org/bing/1366.php);" onload="judge(${requestScope.error})">
+<script>
+    function judge(returnData) {
+        if(returnData!=null){
+            alert(returnData);
+        }
+    }
+</script>
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -24,7 +31,7 @@
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="/upload.html">Welcome</a></li>
+                <li class="current"><a>Welcome</a></li>
                 <li class="submenu">
                     <a href="#">帮助</a>
                     <ul>

@@ -26,27 +26,11 @@
         <h1 id="logo"><a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a>${requestScope.userName}</a></li>
+                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
                 <li class="submenu">
-                    <a href="#">Settings</a>
-                    <ul>
-                        <li><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">Personal Info</a></li>
-                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="no-sidebar.html">No Sidebar</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li class="submenu">
-                            <a href="#">Submenu</a>
-                            <ul>
-                                <li><a href="#">Dolore Sed</a></li>
-                                <li><a href="#">Consequat</a></li>
-                                <li><a href="#">Lorem Magna</a></li>
-                                <li><a href="#">Sed Magna</a></li>
-                                <li><a href="#">Ipsum Nisl</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <a id="menuTitle"></a>
                 </li>
-                <li><a href="http://localhost:3141/" class="button special">Sign Out</a></li>
+                <li><a href="http://localhost:3141/" class="button special">登出</a></li>
             </ul>
         </nav>
     </header>
@@ -135,7 +119,7 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/Maincollection1.js"></script>
+<script src="js/Maincollection.js"></script>
 
 </body>
 </html>

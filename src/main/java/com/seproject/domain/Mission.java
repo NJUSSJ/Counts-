@@ -8,14 +8,7 @@ public class Mission {
     @Key
     String name;
 
-    /*
-    String requestorID;
-    double reward;
-    String ddl;
-    String startTime;
-    String missionName;
-    int max_finisher;
-     */
+
 
     String startTime;
     String endTime;
@@ -24,11 +17,13 @@ public class Mission {
     ArrayList<String> files=new ArrayList<String>();
     int fileNum;
     ArrayList<String> tags=new ArrayList<String>();
-
+    int reward;
+    int expectedNum;
+    String requestorNumber;
     public Mission(){
 
     }
-    public Mission(String name, String startTime, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel){
+    public Mission(String name, String startTime, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, int expectedNum, String requestorNumber){
         this.name=name;
         this.startTime=startTime;
         this.endTime=endTime;
@@ -36,6 +31,9 @@ public class Mission {
         this.files=files;
         this.fileNum=fileNum;
         this.workerLevel=workerLevel;
+        this.expectedNum=expectedNum;
+        this.reward=reward;
+        this.requestorNumber=requestorNumber;
     }
 
     public void setWorkerLevel(String workerLevel){
@@ -102,7 +100,29 @@ public class Mission {
         return this.endTime;
     }
 
+    public void setReward(int reward){
+        this.reward=reward;
+    }
 
+    public int getReward(){
+        return this.reward;
+    }
+
+    public void setExpectedNum(int expectedNum){
+        this.expectedNum=expectedNum;
+    }
+
+    public int getExpectedNum(){
+        return this.expectedNum;
+    }
+
+    public void setRequestorNumber(String requestorNumber){
+        this.requestorNumber=requestorNumber;
+    }
+
+    public String getRequestorNumber(){
+        return this.requestorNumber;
+    }
 
 
 

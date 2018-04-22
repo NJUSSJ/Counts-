@@ -35,7 +35,7 @@ public class LoginController {
         }
 		if(!existed){
 			System.out.println("not existed");
-			return new ModelAndView("Login", "error", "用户不存在");
+			return new ModelAndView("Login", "error", "\'用户不存在\'");
 		}else {
 			User realUser=basicBLService.findByKey(user.getUserName());
 			if(realUser.getPassword().equals(user.getPassword())){
@@ -53,7 +53,7 @@ public class LoginController {
 				return view;
 			}else{
 			    System.out.println("Wrong!");
-				return new ModelAndView("Login", "error", "密码错误。");
+				return new ModelAndView("Login", "error", "\'密码错误\'");
 			}
 		}
 	}
