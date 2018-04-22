@@ -10,29 +10,41 @@ function user(userName,category){
     this.category=category;
 }
 
-function loadMain(userName,userCategory){
-    var tmpUser=new user(userName,userCategory);
+function loadMain(userName,userCategory) {
+    alert("123");
+    var tmpUser = new user(userName, userCategory);
+    if(userCategory==0){
+        document.getElementById("menuTitle").innerHTML="发布者相关";
+        var obj=document.getElementById("submenu").getElementsByTagName("li");
+        obj[1].innerHTML="发布新任务";
+    } else {
+        document.getElementById("menuTitle").innerHTML="工人相关";
+    }
+
     $.ajax({
+        async: false,
         method: "POST",
         url: "getCollectionInfo",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(tmpUser),
         success: function takePersonalInfo(returnData) {
-            for(var i=0;i<returnData.length;i++){
-                if(returnData[i]==null){
+            for (var i = 0; i < returnData.length; i++) {
+                if (returnData[i] == null) {
                     break;
                 }
-                missionNames[i]=returnData[i];
+                missionNames[i] = returnData[i];
                 index++;
             }
             setCollection();
         },
-        error: function(){
+        error: function () {
             alert("fail")
         }
     });
+
 }
+
 
 function setCollection(){
     var missionNum=index;

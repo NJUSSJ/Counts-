@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-com/seproject/service/BasicBLServiceTest.class
-com/seproject/dao/FileDaoTest1.class
-com/seproject/dao/FileDaoTest2.class
-com/seproject/service/BasicBLServiceTest1.class
-=======
+com\seproject\service\MathServiceTest.class
 com\seproject\dao\FileDaoTest2.class
 com\seproject\dao\FileDaoTest1.class
 com\seproject\service\BasicBLServiceTest.class
 com\seproject\service\BasicBLServiceTest1.class
->>>>>>> 7b6d63c2f95d543a06bfd2a1809f6e3d34f07275

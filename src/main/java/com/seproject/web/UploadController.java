@@ -1,6 +1,7 @@
 package com.seproject.web;
 
 import com.seproject.domain.Mission;
+import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,25 @@ import java.util.*;
 @Controller
 public class UploadController {
     BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
+    BasicBLService<User> userBasicBLService=new BasicBLService<User>(new User());
 
 
     @RequestMapping(value = "/upload.html")
-    public ModelAndView test(){
-        return new ModelAndView("upload");
+    public ModelAndView test(HttpServletRequest request){
+        return new ModelAndView("upload","requestorNum",request.getParameter("userPhone"));
+    }
+
+    @RequestMapping(value = "/uploadFinish")
+    @ResponseBody
+    public ModelAndView finish(@RequestBody String phoneNumber){
+        System.out.println("get!!!!!!!!!!!");
+        User tmpUser=userBasicBLService.findByKey(phoneNumber);
+        ModelAndView view=new ModelAndView("Main");
+        view.addObject("userCategory",tmpUser.getCategory());
+        view.addObject("userName",tmpUser.getUserName());
+        view.addObject("phoneNumber", tmpUser.getPhoneNumber());
+        return view;
+
     }
 
     @RequestMapping(value = "/uploadFile")
@@ -61,12 +76,18 @@ public class UploadController {
             String endTime=request.getParameter("endTime");
             String description=request.getParameter("description");
             String workLevel=request.getParameter("workLevel");
+            String requestorPhone=request.getParameter("requestorPhone");
+            int reward=Integer.parseInt(request.getParameter("reward"));
+            int expectedNum=Integer.parseInt(request.getParameter("expectedNum"));
             tmpMission=new Mission();
             tmpMission.setName(missionName);
             tmpMission.setWorkerLevel(workLevel);
             tmpMission.setStartTime(startTime);
             tmpMission.setEndTime(endTime);
             tmpMission.setDescription(description);
+            tmpMission.setReward(reward);
+            tmpMission.setExpectedNum(expectedNum);
+            tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
             missionBasicBLService.add(tmpMission);
 
@@ -84,6 +105,11 @@ public class UploadController {
         return "";
     }
 
+    @RequestMapping(value = "/findMission")
+    @ResponseBody
+    public Boolean findMission(@RequestBody String missionName){
+        return missionBasicBLService.checkKeyExists(missionName);
+    }
 
     private void saveFileToLocalDisk(MultipartFile multipartFile, String missionName,int i) throws IOException,
             FileNotFoundException {

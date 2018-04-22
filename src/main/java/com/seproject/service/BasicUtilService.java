@@ -127,9 +127,7 @@ public class BasicUtilService {
             model= Class.forName(className).newInstance();
 
             ArrayList<String> info=fileDao.read_object(model.getClass().toString(),getKeyID(model),keyValue);
-            System.out.println("className in read:"+className);
             if(info==null||info.size()<=0){//非空判断
-                System.out.println("no Info!");
                 return null;
             }
 

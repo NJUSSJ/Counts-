@@ -5,34 +5,44 @@
 
 var missionNames=new Array();
 var index=0;
-function user(userName,category){
-    this.userName=userName;
+function user(userPhone,category){
+    this.userPhone=userPhone;
     this.category=category;
 }
 
-function loadMain(userName,userCategory){
-    var tmpUser=new user(userName,userCategory);
+function loadMain(userPhone,userCategory) {
+    var tmpUser = new user(userPhone, userCategory);
+    if(userCategory==0){
+        document.getElementById("menuTitle").innerHTML="发布一个新任务";
+        document.getElementById("menuTitle").href="/upload.html?userPhone="+userPhone;
+    } else {
+        document.getElementById("menuTitle").innerHTML="工人相关";
+    }
+
     $.ajax({
+        async: false,
         method: "POST",
         url: "getCollectionInfo",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(tmpUser),
         success: function takePersonalInfo(returnData) {
-            for(var i=0;i<returnData.length;i++){
-                if(returnData[i]==null){
+            for (var i = 0; i < returnData.length; i++) {
+                if (returnData[i] == null) {
                     break;
                 }
-                missionNames[i]=returnData[i];
+                missionNames[i] = returnData[i];
                 index++;
             }
             setCollection();
         },
-        error: function(){
+        error: function () {
             alert("fail")
         }
     });
+
 }
+
 
 function setCollection(){
     var missionNum=index;
@@ -185,7 +195,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+1];
+        a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+i];
         a1_2.innerHTML="Start Tagging"
         li1.appendChild(a1_2);
         ul1.appendChild(li1);

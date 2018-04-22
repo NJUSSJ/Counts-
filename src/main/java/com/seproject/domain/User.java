@@ -17,10 +17,6 @@ public class User {
 	@Searchable(varName = "level")
 	private int level=1;
 
-	//private UserType usertype;
-
-//	private ArrayList<String> collectionList = new ArrayList<String>();
-
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
