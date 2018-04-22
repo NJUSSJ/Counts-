@@ -2,9 +2,11 @@ package com.seproject.service;
 import com.seproject.domain.Collection;
 import com.seproject.domain.StatisticsData.*;
 import com.seproject.domain.User;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class StatisticsService {
     //统计方法Service
     /*

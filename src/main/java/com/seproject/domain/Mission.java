@@ -7,12 +7,7 @@ import java.util.ArrayList;
 public class Mission {
     @Key
     String name;
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 62462fd6b76fab4a9af1cd4cf655c362d52c9411
     String startTime;
     String endTime;
     String description;
