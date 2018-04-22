@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7c4a957f-99b8-4524-801b-3db0350ebeaf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/domain/User.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/User.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/domain/User.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/main.css" afterPath="$PROJECT_DIR$/target/classes/resources/css2/main.css" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Maincollection.js~HEAD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Personal.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/Personal.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/multipic.js~HEAD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/singleEdit.js~HEAD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,8 +89,8 @@
       <file leaf-file-name="BasicUtilService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/BasicUtilService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="131">
+              <caret line="143" column="17" lean-forward="true" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -433,15 +424,16 @@
       <workItem from="1524381162310" duration="1446000" />
       <workItem from="1524382993931" duration="2981000" />
       <workItem from="1524392527603" duration="4097000" />
-      <workItem from="1524396728092" duration="1038000" />
+      <workItem from="1524396728092" duration="1086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9562000" />
+    <option name="totallyTimeSpent" value="9610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -452,7 +444,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.019849785" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -879,8 +871,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/BasicUtilService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="131">
+          <caret line="143" column="17" lean-forward="true" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
           <folding />
         </state>
       </provider>
