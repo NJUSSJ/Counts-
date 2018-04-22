@@ -1,3 +1,33 @@
+<<<<<<< HEAD
+com/seproject/web/MultiController.class
+com/seproject/web/UploadController.class
+com/seproject/domain/User.class
+com/seproject/dao/FileDao.class
+com/seproject/web/LoginCommand.class
+com/seproject/domain/UserType.class
+com/seproject/service/RM.class
+com/seproject/service/Searchable.class
+com/seproject/service/FileIOService.class
+com/seproject/web/ReadWriteFileController.class
+com/seproject/domain/ImageInfo.class
+com/seproject/domain/Test_Gift.class
+com/seproject/domain/MessageService.class
+com/seproject/service/UserService.class
+com/seproject/Application.class
+com/seproject/web/PicTailor.class
+com/seproject/service/BasicBLService.class
+com/seproject/web/CollectionController.class
+com/seproject/domain/UploadedFile.class
+com/seproject/service/BasicBLService$1.class
+com/seproject/service/Key.class
+com/seproject/service/MathService.class
+com/seproject/web/SignUpController.class
+com/seproject/service/SearchCategory.class
+com/seproject/web/PersonalController.class
+com/seproject/dao/UserDao.class
+com/seproject/domain/Mission.class
+com/seproject/web/LoginController.class
+=======
 com\seproject\service\FileIOService.class
 com\seproject\domain\UserType.class
 com\seproject\web\PicTailor.class
@@ -24,10 +54,9 @@ com\seproject\domain\User.class
 com\seproject\service\BasicBLService.class
 com\seproject\web\ReadWriteFileController.class
 com\seproject\service\BasicUtilService.class
-com\seproject\domain\TagInfo.class
 com\seproject\web\PersonalController.class
 com\seproject\web\CollectionController.class
 com\seproject\service\RM.class
 com\seproject\web\LoginController.class
 com\seproject\service\SearchCategory.class
-com\seproject\domain\Collection.class
+>>>>>>> 7b6d63c2f95d543a06bfd2a1809f6e3d34f07275

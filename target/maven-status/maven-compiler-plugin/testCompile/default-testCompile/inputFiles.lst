@@ -1,4 +1,11 @@
-C:\Users\Administrator\IdeaProjects\SEP_Phase_II\src\test\java\com\seproject\service\BasicBLServiceTest1.java
-C:\Users\Administrator\IdeaProjects\SEP_Phase_II\src\test\java\com\seproject\service\BasicBLServiceTest.java
-C:\Users\Administrator\IdeaProjects\SEP_Phase_II\src\test\java\com\seproject\dao\FileDaoTest2.java
-C:\Users\Administrator\IdeaProjects\SEP_Phase_II\src\test\java\com\seproject\dao\FileDaoTest1.java
+<<<<<<< HEAD
+/Users/julia98/SEP_Phase_II/src/test/java/com/seproject/service/BasicBLServiceTest1.java
+/Users/julia98/SEP_Phase_II/src/test/java/com/seproject/dao/FileDaoTest1.java
+/Users/julia98/SEP_Phase_II/src/test/java/com/seproject/service/BasicBLServiceTest.java
+/Users/julia98/SEP_Phase_II/src/test/java/com/seproject/dao/FileDaoTest2.java
+=======
+C:\Users\shisj\SEP_Phase_II\src\test\java\com\seproject\service\BasicBLServiceTest1.java
+C:\Users\shisj\SEP_Phase_II\src\test\java\com\seproject\service\BasicBLServiceTest.java
+C:\Users\shisj\SEP_Phase_II\src\test\java\com\seproject\dao\FileDaoTest1.java
+C:\Users\shisj\SEP_Phase_II\src\test\java\com\seproject\dao\FileDaoTest2.java
+>>>>>>> 7b6d63c2f95d543a06bfd2a1809f6e3d34f07275
