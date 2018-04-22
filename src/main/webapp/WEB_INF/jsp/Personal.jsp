@@ -29,12 +29,7 @@
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
-        <a onclick="back()" class="icon fa-undo"><span>Back</span></a>
-        <script>
-            function back() {
-                history.go(-1);
-            }
-        </script>
+        <a href="" class="icon fa-undo"><span>Back</span></a>
     </nav>
 
     <!-- Main -->

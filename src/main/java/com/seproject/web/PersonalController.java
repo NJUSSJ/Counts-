@@ -34,10 +34,10 @@ public class PersonalController {
 
     @RequestMapping(value = "/readPersonal")
     @ResponseBody
-    public String readPersonal(@RequestBody String userNameObj) {
-        String userName = userNameObj.substring(userNameObj.indexOf(":")+1,userNameObj.length()-1);
-        System.out.println(userName);
-        User user = basicBLService.findByKey(userName);
+    public String readPersonal(@RequestBody String phoneNumberObj) {
+        String phoneNumber = phoneNumberObj.substring(phoneNumberObj.indexOf(":")+1,phoneNumberObj.length()-1);
+        System.out.println("phoneNumber: " + phoneNumber);
+        User user = basicBLService.findByKey(phoneNumber);
         JSONObject json = JSONObject.fromObject(user);//将java对象转换为json对象
         String res = json.toString();//将json对象转换为字符串
         System.out.println("readPersonal：" + res);

@@ -24,7 +24,7 @@ function getPersonalInfo() {
         url: "readPersonal",
         contentType: "application/json",
         dataType: "json",
-        data: toJsonString(new UserNameObj(userName)),
+        data: toJsonString(new phoneNumberObj(phoneNumber)),
         success: function takePersonalInfo(jsonResult) {
             person = JSON.stringify(jsonResult);
         },
@@ -34,8 +34,8 @@ function getPersonalInfo() {
     });
     return 0;
 }
-function UserNameObj(userName) {
-    this.username = userName;
+function phoneNumberObj(phoneNumber) {
+    this.phoneNumber = phoneNumber;
 }
 function toJsonString(obj) {
     var msg=[];
@@ -79,7 +79,6 @@ function loadPersonal() {
     getPersonalInfo();
     alert(person);
     var personalInfo = eval("(" + person + ")");
-
     document.getElementById("_userName").value = personalInfo.userName;
     document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
