@@ -166,7 +166,8 @@
 
 <!-- Scripts -->
 <script src="js/DrawCharts.js"></script>
-<script src="js/echarts.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/echarts-wordcloud.min.js"></script>
 <script src="js/personal.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
