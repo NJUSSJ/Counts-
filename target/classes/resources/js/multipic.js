@@ -111,8 +111,27 @@ function setButtons(num) {
     }
 }
 
+function collection(uid, mid){
+    this.uid=uid;
+    this.mid=mid;
+}
 function addMissionToUser(missionName, userPhone) {
         alert(missionName);
         alert(userPhone);
+        var collectionData=new collection(userPhone,missionName);
+        $.ajax({
+           type: "POST",
+           async: false,
+           url: "/addMissionToUser",
+           contentType: "application/json",
+           dataType: "json",
+           data: JSON.stringify(collectionData),
+           success: function () {
+
+           },
+           error: function () {
+
+           }
+        });
 }
 
