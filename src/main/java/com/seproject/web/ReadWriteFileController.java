@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by julia98 on 2018/3/22.
  */
@@ -54,12 +56,13 @@ public class ReadWriteFileController {
     /**
      * 用户提交任务的方法
      * 改变图集状态从0变到1
-     * @param missionAndPhoneNumber
+     * @param request
      * @return
      */
     @RequestMapping(value = "/submit")
     @ResponseBody
-    public String submitTagInfo(@RequestBody String missionAndPhoneNumber){
+    public String submitTagInfo(@RequestBody HttpServletRequest request){
+        String missionAndPhoneNumber = request.getParameter("missionAndPhoneNumber");
         Collection collection=null;
 
         if((collection=collectionService.findByKey(missionAndPhoneNumber))!=null){

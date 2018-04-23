@@ -116,7 +116,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         </ul>
 
         <ul class="copyright">
-            <li>&copy; Social Engineer</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>&copy; Social Engineer</li></li>
         </ul>
 
     </footer>
