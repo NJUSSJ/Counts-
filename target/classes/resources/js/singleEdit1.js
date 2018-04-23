@@ -646,7 +646,7 @@ tool3.addEventListener("click",function () {
         canvas.style.cursor = "";
 
 
-        var overallPrompt  =  prompt("请对整体图像进行标注。");
+        var overallPrompt = prompt("请对整体图像进行标注。");
         if(overallPrompt !=  null) {
             alert(overallPrompt);
             document.getElementById("info").innerHTML=overallPrompt;
@@ -673,6 +673,3 @@ tool3.addEventListener("click",function () {
     }
 
 })
-
-
-
