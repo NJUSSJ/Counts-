@@ -12,7 +12,7 @@ function loadPhoneNumber(phoneNumber){
 
 function loadSubmitHref(){
     var submit = document.getElementById("submitTagInfo");
-    submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=collectionName+${requestScope.phoneNumber}');
+    submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=${collectionName}+${requestScope.phoneNumber}');
 }
 
 add.addEventListener("click", function add() {
