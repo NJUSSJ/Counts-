@@ -26,6 +26,8 @@ public class CollectionController {
     public ModelAndView getDetailofCollection(HttpServletRequest request){
         int picNum;
         String missionName=request.getParameter("imageURL");
+        String userName=request.getParameter("userName");
+        String phoneNumber=request.getParameter("userPhone");
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
         String fixx="\'../../images/";
         String url=fixx+request.getParameter("imageURL")+"_\'";
@@ -34,6 +36,8 @@ public class CollectionController {
         model.addObject("url",url);
         model.addObject("collection", collection);
         model.addObject("picNum",picNum);
+        model.addObject("userName",userName);
+        model.addObject("phoneNumber",phoneNumber);
         return model;
     }
 }

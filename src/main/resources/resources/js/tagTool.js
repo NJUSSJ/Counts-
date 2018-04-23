@@ -3,6 +3,11 @@ var nextPage = document.getElementById("more");
 var save = document.getElementById("save");
 var back = document.getElementById("back");
 var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521465839531&di=894d8615e5b830dffd2d3f5184ea90b1&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fdc54564e9258d109241f9f09da58ccbf6d814d88.jpg"
+var phoneNumber = "";
+
+function loadPhoneNumber(phoneNumber){
+    this.phoneNumber = phoneNumber;
+}
 
 add.addEventListener("click", function add() {
     getImgInfo(imgCollection);
@@ -58,8 +63,8 @@ function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedhei
     this.list = list;
 }
 
-
-var imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1];
+//imgid 格式为 collectionName + picName + phoneNumber
+var imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1] + "-" + phoneNumber;
 
 function getSentences() {
     return sentences;

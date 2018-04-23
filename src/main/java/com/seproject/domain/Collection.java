@@ -13,7 +13,7 @@ public class Collection {
     @Searchable(varName = "mid")
     private String mid;
     ArrayList<ImageInfo> infoList = new ArrayList<ImageInfo>();
-    private int state;
+    private int state;//0 保存 1 提交 2 未保存
 
     public String getKeyId() {
         return keyId;

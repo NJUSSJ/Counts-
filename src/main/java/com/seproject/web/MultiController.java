@@ -21,10 +21,14 @@ public class MultiController {
 
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
+        String userName = request.getParameter("userName");
+        String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'../../images/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
         ModelAndView model=new ModelAndView("SingleEdit");
         model.addObject("url",url);
+        model.addObject("userName",userName);
+        model.addObject("phoneNumber",phoneNumber);
         return model;
     }
 

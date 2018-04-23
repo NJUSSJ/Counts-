@@ -2,7 +2,7 @@
  *@author fortune
  */
 
-function load(num,url,collection) {
+function load(num,url,collection,userName,phoneNumber) {
     document.getElementById("pictureSection").innerHTML="";
     var numRow=Math.floor(num/3);
     for(var i=0;i<numRow;i++){
@@ -85,7 +85,7 @@ function load(num,url,collection) {
          */
     for(var i=1;i<=num;i++){
         var a = document.getElementById("image"+i);
-        a.href="test1.html?collection="+collection+"&imageURL="+i;
+        a.href="test1.html?collection="+collection+"&imageURL="+i+"&userName="+userName+"&phoneNumber="+phoneNumber;
     }
 
 }

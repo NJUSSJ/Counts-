@@ -1,5 +1,6 @@
 package com.seproject.web;
 
+import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 public class PersonalController {
     private FileIOService fileIOService;
     private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
-    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
+    private BasicBLService<Collection> collectionBasicBLService=new BasicBLService<Collection>(new Collection());
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
@@ -64,18 +65,19 @@ public class PersonalController {
     @RequestMapping(value = "/getPersonalCollectionInfo")
     @ResponseBody
     public String[] getCollectionInfo(@RequestBody String userInfo) {
-        System.out.println(userInfo);
-        String phoneNumber = userInfo.substring(12,23);//获取手机号
-        String category = userInfo.substring(31);
-        missionBasicBLService.setT(new Mission());
-        ArrayList<Mission> tmpMission=missionBasicBLService.search("uid",SearchCategory.EQUAL,phoneNumber);
+        System.out.println("接收到的userInfo: " + userInfo);
+        String phoneNumber = userInfo.substring(16,27);//获取手机号
+        System.out.println(phoneNumber);
+        collectionBasicBLService.setT(new Collection());
+        ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid",SearchCategory.EQUAL,phoneNumber);
         int index=0;
-        String[] missionNames=new String[1000];
-        for(Mission mission: tmpMission){
-            missionNames[index]=mission.getName()+"^"+mission.getDescription();
+        String[] collectionNames=new String[1000];
+        for(Collection collection: tmpMission){
+            collectionNames[index]= String.valueOf(collection);
             index++;
         }
-        return missionNames;
+        System.out.println(collectionNames);
+        return collectionNames;
     }
 
     @Autowired

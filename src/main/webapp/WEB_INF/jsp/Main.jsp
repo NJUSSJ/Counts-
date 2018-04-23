@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body class="no-sidebar" onload="loadMain(${requestScope.phoneNumber},${requestScope.userCategory})">
+<body class="no-sidebar" onload="loadMain(${requestScope.phoneNumber},${requestScope.userCategory},${requestScope.userName})">
 <div id="page-wrapper">
 
     <!-- Header -->

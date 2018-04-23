@@ -51,6 +51,7 @@ var sentences = new Array();
 var sentids = new Array();
 var sentidsCount = 0;
 var _sentences = new Array();
+var phoneNumber = "";
 
 
 //data func

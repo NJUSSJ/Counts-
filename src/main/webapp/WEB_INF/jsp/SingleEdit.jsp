@@ -65,7 +65,7 @@
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
-        <nav id="nav">
+        <nav id="nav" onload="loadPhoneNumber(${requestScope.phoneNumber})">
             <ul>
                 <li class="submenu">
                     <a herf="#">Tag</a>
@@ -78,7 +78,7 @@
                         <li><a id="more"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                     </ul>
                 </li>
-                <li class="current"><a href="index.html">Welcome</a></li>
+                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
                 <li class="submenu">
                     <a href="#">User</a>
                     <ul>

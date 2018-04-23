@@ -2,6 +2,7 @@ var missionNames=new Array();
 var index=0;
 
 function loadPersonalCollection(phoneNumber, category) {
+    alert("开始准备请求后端collection数据");
     var tmpUser = new user(phoneNumber, category);
     $.ajax({
         async: false,
@@ -24,6 +25,7 @@ function loadPersonalCollection(phoneNumber, category) {
             alert("fail");
         }
     });
+    alert("loadPersonalCollection success");
 }
 
 function setPersonalCollection() {

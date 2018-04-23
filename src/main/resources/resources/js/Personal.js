@@ -1,16 +1,16 @@
-
 var phoneNumber = "";
 var userName = "";
 var person = "";
+var missionNames=new Array();
+var index=0;
 
-function PersonalInfo(userName, phoneNumber, password, credit, level, category, taggedImgCollections, description) {
+function PersonalInfo(userName, phoneNumber, password, credit, level, category, description) {
     this.userName = userName;
     this.phoneNumber = phoneNumber;
     this.password = password;
     this.credit = credit;
     this.level = level;
     this.category = category;
-    this.taggedImgCollections = taggedImgCollections;
     this.description = description;
 }
 
@@ -82,14 +82,12 @@ function loadPersonal() {
     alert(person);
     var personalInfo = eval("(" + person + ")");
 
-    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
-
     document.getElementById("_userName").value = personalInfo.userName;
     document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
     switch (personalInfo.category) {
-        case 0:
-            document.getElementById("_userType").value = "众包工人";
+        case 3:
+            document.getElementById("_userType").value = "系统管理员";
             break;
         case 1:
             document.getElementById("_userType").value = "众包发起者";
@@ -101,16 +99,18 @@ function loadPersonal() {
     document.getElementById("_credit").value = personalInfo.credit;
     document.getElementById("_level").value = personalInfo.level;
     document.getElementById("_password").value = personalInfo.password;
-    document.getElementById("_description").value = personalInfo.description
-                                    + " " + personalInfo.taggedImgCollections;
+    document.getElementById("_description").value = personalInfo.description;
+
+    //加载collectionInfo
+    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
 }
 
 function savePersonalBlanks() {
     var userName = document.getElementById("_username").value;
     var phoneNumber = document.getElementById("_phoneNumber").value;
     switch (document.getElementById("_userType").value) {
-        case "众包工人":
-            var category = 0;
+        case "系统管理员":
+            var category = 3;
             break;
         case "众包发起者":
             var category = 1;
@@ -127,4 +127,54 @@ function savePersonalBlanks() {
     var personalInfo = new PersonalInfo(userName, phoneNumber, password, credit, level);
     savePersonalInfo(personalInfo);
     alert("已储存个人信息");
+}
+
+function TmpUser(phoneNumber,category){
+    this.phoneNumber=phoneNumber;
+    this.category=category;
+}
+
+function loadPersonalCollection(phoneNumber, category) {
+    var tmpUser = new TmpUser(phoneNumber, category);
+    $.ajax({
+        async: false,
+        method: "POST",
+        url: "getPersonalCollectionInfo",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(tmpUser),
+        success: function takePersonalCollectionInfo(returnData) {
+            for (var i = 0; i < returnData.length; i++) {
+                if (returnData[i] == null) {
+                    break;
+                }
+                missionNames[i] = returnData[i];
+                index++;
+            }
+            alert("获取personal collection数据完毕 开始加载");
+            setPersonalCollection();
+        },
+        error: function () {
+            alert("fail");
+        }
+    });
+    alert("loadPersonalCollection success");
+}
+
+function setPersonalCollection() {
+    document.getElementById("personalCollections").innerHTML="";
+    for(var i = 0;i<missionNames.length;i++){
+        var div = document.createElement("div");
+        div.className = "4u 12u$(mobile)";
+        var a = document.createElement("a");
+        a.className = "image fit";
+        a.href = "/details.html?imageURL="+missionNames[i];
+        var img = document.createElement("img");
+        img.src = "../../images/"+missionNames[i]+"_1.jpg";
+        img.alt = "";
+        a.appendChild(img);
+        div.appendChild(a);
+        document.getElementById("personalCollections").appendChild(div);
+    }
+
 }

@@ -84,7 +84,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <select name="category">
                                 <option value="1">众包发起者</option>
                                 <option value="2">众包工人</option>
-
+                                <option value="3">系统管理员</option>
                             </select>
                         </div>
                     </div>

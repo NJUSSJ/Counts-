@@ -161,7 +161,7 @@
                                         document.getElementById("time").style.display="none";
                                         return;
                                     }
-                                    document.getElementById("time").innerHTML=time+"秒后可重新发送"
+                                    document.getElementById("time").innerHTML=time+"秒后可重新发送";
                                     time=time-1;
                                     t=setTimeout("setTime()",1000);
 

@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
-<body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection})">
+<body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userName},${requestScope.phoneNumber})">
 <div id="page-wrapper">
     <header id="header">
         <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="index.html">Welcome</a></li>
+                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
                 <li class="submenu">
                     <a href="#">User Info</a>
                     <ul>
