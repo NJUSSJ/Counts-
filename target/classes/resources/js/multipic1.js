@@ -1,8 +1,12 @@
 /**
  *@author fortune
  */
+var userCategory1;
+var Tagable1;
 
-function load(num,url,collection,userName,phoneNumber) {
+function load(num,url,collection,userCategory,Tagable) {
+    userCategory1=userCategory;
+    Tagable1=Tagable;
     document.getElementById("pictureSection").innerHTML="";
     var numRow=Math.floor(num/3);
     for(var i=0;i<numRow;i++){
@@ -16,7 +20,7 @@ function load(num,url,collection,userName,phoneNumber) {
             "\" width=\"400\" height=\"260\">\n" +
             "                    <footer>\n" +
             "                        <ul class=\"buttons\">\n" +
-            "                            <li><a href=\"#\" class=\"button small\" id=image"+(i*3+1)+">TAT IT</a></li>\n" +
+            "                            <li><a href=\"#\" class=\"button small\" id=image"+(i*3+1)+">TAG IT</a></li>\n" +
             "                        </ul>\n" +
             "                    </footer>\n" +
             "                </section>\n" +
@@ -85,8 +89,30 @@ function load(num,url,collection,userName,phoneNumber) {
          */
     for(var i=1;i<=num;i++){
         var a = document.getElementById("image"+i);
-        a.href="test1.html?collection="+collection+"&imageURL="+i+"&userName="+userName+"&phoneNumber="+phoneNumber;
+        a.href="test1.html?collection="+collection+"&imageURL="+i;
     }
 
+    setButtons(num);
+
+}
+
+function setButtons(num) {
+    if(Tagable1=="0"){
+        var buttons=document.getElementsByClassName("button small");
+        for(var i=0;i<num;i++){
+            buttons[i].style.display="none";
+        }
+    }else {
+
+    }
+    if(userCategory1=="1"){
+        var submenu=document.getElementById("submenu");
+        submenu.style.display="none";
+    }
+}
+
+function addMissionToUser(missionName, userPhone) {
+        alert(missionName);
+        alert(userPhone);
 }
 

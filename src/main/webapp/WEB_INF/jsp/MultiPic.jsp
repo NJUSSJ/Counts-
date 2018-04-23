@@ -12,21 +12,17 @@
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
-<body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userName},${requestScope.phoneNumber})">
+<body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userCategory},${requestScope.Tagable})">
 <div id="page-wrapper">
     <header id="header">
         <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
-                <li class="submenu">
-                    <a href="#">User Info</a>
-                    <ul>
-                        <li><a href="left-sidebar.html">Profile</a></li>
-                        <li><a href="right-sidebar.html">Profile Settings</a></li>
-                    </ul>
+                <li class="current"><a href="index.html">${requestScope.userName}</a></li>
+                <li class="submenu" id="submenu">
+                    <a href="/personal.html" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">加入我的任务集</a>
                 </li>
-                <li><a href="#" class="button special">Sign Out</a></li>
+                <li><a href="#" class="button special">登出</a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +34,7 @@
 
     <header class="special container">
         <span class="icon fa-bar-chart-o"></span>
-        <h2>Here is the pictures of collection -<strong id="strong"> "Something"</strong></h2>
+        <h2>当前任务集--<strong id="strong">${requestScope.collection}</strong></h2>
             <br />
     </header>
 
