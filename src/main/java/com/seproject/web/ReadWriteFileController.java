@@ -47,6 +47,13 @@ public class ReadWriteFileController {
         return "{}";
     }
 
+    @RequestMapping(value = "/submit")
+    @ResponseBody
+    public String submitTagInfo(@RequestBody String missionAndPhoneNumber){
+        return "666";
+    }
+
+
     @Autowired
     public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
 
