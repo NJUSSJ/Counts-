@@ -151,7 +151,7 @@ function loadPersonalCollection(phoneNumber, category) {
                 missionNames[i] = returnData[i];
                 index++;
             }
-            alert("获取personal collection数据完毕 开始加载");
+            alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
             setPersonalCollection();
         },
         error: function () {

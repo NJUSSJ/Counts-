@@ -73,10 +73,10 @@ public class PersonalController {
         int index=0;
         String[] collectionNames=new String[1000];
         for(Collection collection: tmpMission){
-            collectionNames[index]= String.valueOf(collection);
+            collectionNames[index]= collection.getMid();
+            System.out.println("返回前端的collectionNames=" + collectionNames[index]);
             index++;
         }
-        System.out.println(collectionNames);
         return collectionNames;
     }
 
