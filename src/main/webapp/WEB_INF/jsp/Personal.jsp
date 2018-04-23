@@ -145,16 +145,8 @@
                     分析图表
                 </p>
                 <section>
-                    <div class="row" id="drawCharts">
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img src="images/pic001.jpg" alt=""></a>
-                        </div>
-                        <div class="4u 12u$(mobile)">
-                            <a href="#" class="image fit"><img src="images/pic002.jpg" alt=""></a>
-                        </div>
-                        <div class="4u$ 12u$(mobile)">
-                            <a href="#" class="image fit"><img src="images/pic003.jpg" alt=""></a>
-                        </div>
+                    <div class="row" id="drawCharts" style="width: 600px;height:400px;">
+                        <script type="text/javascript" src="js/DrawCharts.js"></script>
                     </div>
                 </section>
             </header>
@@ -173,6 +165,8 @@
 </div>
 
 <!-- Scripts -->
+<script src="js/DrawCharts.js"></script>
+<script src="js/echarts.js"></script>
 <script src="js/personal.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>

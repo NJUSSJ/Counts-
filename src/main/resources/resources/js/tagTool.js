@@ -12,6 +12,7 @@ function loadPhoneNumber(phoneNumber){
 
 function loadSubmitHref(){
     var submit = document.getElementById("submitTagInfo");
+    //注意以下collectionName 参数是否能取到
     submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=${collectionName}+${requestScope.phoneNumber}');
 }
 
