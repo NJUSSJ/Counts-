@@ -1,8 +1,11 @@
 package com.seproject.domain;
 
+import com.seproject.service.Key;
+
 import java.util.ArrayList;
 
 public class ImageInfo {
+    @Key
     private String imgid;
     private int sentids;
     private ArrayList<String> sentences;
