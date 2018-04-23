@@ -48,12 +48,12 @@ public class StatisticsService {
     {
         String temp0[]=imageInfo.getImgid().split("-");
         String missionName=temp0[0];
-        String picName0= temp0[1]; //这个属性必须是数字,且最好从0开始
+        String picName0= temp0[1]; //这个属性必须是数字,且从1开始
         String userName= temp0[2];
 
         Collection collection=service1.findByKey(missionName+userName);
         ArrayList<ImageInfo> infoList=collection.getInfoList();
-        infoList.set(Integer.parseInt(picName0),imageInfo);
+        infoList.set(Integer.parseInt(picName0)-1,imageInfo);
         collection.setInfoList(infoList);
         service1.update(collection);
         return RM.SUCCESS;

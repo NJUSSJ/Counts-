@@ -17,6 +17,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css2/main.css" />
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
 </head>
 <body onload="loadPersonal()">
@@ -29,8 +31,8 @@
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
-        <a href="#charts" class="icon fa-apple"><span>Charts</span></a>
-        <a href="http://localhost:3141/" class="icon fa-undo"><span>Back</span></a>
+        <a href="#charts" class="icon fa-pie-chart"><span>Charts</span></a>
+        <a href="http://localhost:3141/" class="icon fa-refresh"><span>Back</span></a>
         <!--返回主界面按钮若调用 loginCheck 则需通过表单传送userName等信息
         若通过自己重新写的方法 则不包含misson信息 所以还是退出重新登录吧 无奈╮(╯▽╰)╭ -->
     </nav>
@@ -145,9 +147,10 @@
                     分析图表
                 </p>
                 <section>
-                    <div class="row" id="drawCharts" style="width: 600px;height:400px;">
-                        <script type="text/javascript" src="js/DrawCharts.js"></script>
-                    </div>
+                    <div id="drawCharts" style="width: 600px;height:400px;"></div>
+                    <script type="text/javascript" src="js/DrawCharts.js"></script>
+                    <div id="chart0" style="width: 600px;height:400px;"></div>
+                    <script type="text/javascript" src="js/DrawCharts.js"></script>
                 </section>
             </header>
 
@@ -165,8 +168,8 @@
 </div>
 
 <!-- Scripts -->
-<script src="js/DrawCharts.js"></script>
-<script src="js/echarts.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/echarts-wordcloud.min.js"></script>
 <script src="js/personal.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
