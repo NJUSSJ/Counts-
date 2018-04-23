@@ -4,9 +4,16 @@ var save = document.getElementById("save");
 var back = document.getElementById("back");
 var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521465839531&di=894d8615e5b830dffd2d3f5184ea90b1&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fdc54564e9258d109241f9f09da58ccbf6d814d88.jpg"
 var phoneNumber = "";
+var collectionName = getNameAndCollection()[0];
 
 function loadPhoneNumber(phoneNumber){
     this.phoneNumber = phoneNumber;
+}
+
+function loadSubmitHref(){
+    var submit = document.getElementById("submitTagInfo");
+    //注意以下collectionName 参数是否能取到
+    submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=${collectionName}+${requestScope.phoneNumber}');
 }
 
 add.addEventListener("click", function add() {
