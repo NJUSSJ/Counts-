@@ -18,12 +18,12 @@ function loadMain(userPhone,userCategory) {
     userCategory1=userCategory;
 
     if(userCategory==1){
-        var li=document.getElementById("submenu");
+        var li=document.getElementById("extra");
         li.style.display="inline";
         document.getElementById("menuTitle").innerHTML="发布一个新任务";
         document.getElementById("menuTitle").href="/upload.html?userPhone="+userPhone;
     } else {
-        var li=document.getElementById("submenu");
+        var li=document.getElementById("extra");
         li.style.display="none";
     }
 

@@ -92,7 +92,7 @@ function loadPic(url) {
     var imgInfo = eval("(" + tmp123 + ")");
 
 
-    if(imgInfo!=null) {
+    if(imgInfo.fixedx!=null||imgInfo.list!=null) {
 
         fixedX = imgInfo.fixedx;
         fixedY = imgInfo.fixedy;

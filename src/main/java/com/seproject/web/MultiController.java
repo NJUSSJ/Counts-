@@ -47,6 +47,15 @@ public class MultiController {
         return missionNames;
     }
 
+    @RequestMapping(value = "/getMisionDetais")
+    @ResponseBody
+    public ModelAndView getMissionDetais(HttpServletRequest request){
+        String missionName=request.getParameter("missionName");
+        Mission tmpMission=missionBasicBLService.findByKey(missionName);
+        int picNum=tmpMission.getFileNum();
+        return null;
+    }
+
 
 
 
