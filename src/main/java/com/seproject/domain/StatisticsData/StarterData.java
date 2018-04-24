@@ -10,4 +10,14 @@ public class StarterData {
     public ArrayList<Double> creditSum;
     public ArrayList<Double> creditAvg;
     public ArrayList<String> missionName;
+/*
+    public StarterData(int missionSum, int finishedMissionNum, int ongoingMissionNum, ArrayList<Integer> participantSum, ArrayList<Double> creditSum, ArrayList<Double> creditAvg, ArrayList<String> missionName){
+        this.missionSum = missionSum;
+        this.finishedMissionNum = finishedMissionNum;
+        this.ongoingMissionNum = ongoingMissionNum;
+        this.participantSum = participantSum;
+        this.creditSum = creditSum;
+        this.creditAvg = creditAvg;
+        this.missionName = missionName;
+    } */
 }

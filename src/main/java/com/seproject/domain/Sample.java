@@ -1,5 +1,6 @@
 package com.seproject.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,21 +10,42 @@ import java.util.Map;
  */
 public class Sample {
     private String missionName;
-    private Map<String,ImageInfo> info=new HashMap<String, ImageInfo>();
 
-    public String getMissionName() {
-        return missionName;
+    private ArrayList<Integer> picIndex;
+
+    private ArrayList<String> userId;
+
+    private ArrayList<String> imageInfo;
+
+    public void setMissionName(String missionName){
+        this.missionName=missionName;
     }
 
-    public void setMissionName(String missionName) {
-        this.missionName = missionName;
+    public String getMissionName(){
+        return this.missionName;
     }
 
-    public Map<String, ImageInfo> getInfo() {
-        return info;
+    public void setPicIndex(ArrayList<Integer> picIndex){
+        this.picIndex=picIndex;
     }
 
-    public void setInfo(Map<String, ImageInfo> info) {
-        this.info = info;
+    public ArrayList<Integer> getPicIndex() {
+        return picIndex;
+    }
+
+    public void setUserId(ArrayList<String> userId){
+        this.userId=userId;
+    }
+
+    public ArrayList<String> getImageInfo() {
+        return imageInfo;
+    }
+
+    public void setImageInfo(ArrayList<String> imageInfo){
+        this.imageInfo=imageInfo;
+    }
+
+    public ArrayList<String> getUserId() {
+        return userId;
     }
 }
