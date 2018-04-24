@@ -12,8 +12,10 @@ public class Collection {
     private String uid;
     @Searchable(varName = "mid")
     private String mid;
-    ArrayList<ImageInfo> infoList = new ArrayList<ImageInfo>();
+    private ArrayList<String> infoList = new ArrayList<String>();
     private int state;//0 保存 1 提交 2 未保存
+    private double credit;
+    private int quality;
 
     public String getKeyId() {
         return keyId;
@@ -39,12 +41,33 @@ public class Collection {
         this.mid = mid;
     }
 
-    public void setInfoList(ArrayList<ImageInfo> list) {
-        infoList = list;
-    }
-    public ArrayList<ImageInfo> getInfoList(){return infoList;}
+
 
     public int getState(){return state;}
 
     public void setState(int state){this.state=state;}
+
+    public ArrayList<String> getInfoList() {
+        return infoList;
+    }
+
+    public void setInfoList(ArrayList<String> infoList) {
+        this.infoList = infoList;
+    }
+
+    public double getCredit() {
+        return credit;
+    }
+
+    public void setCredit(double credit) {
+        this.credit = credit;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
+
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
 }

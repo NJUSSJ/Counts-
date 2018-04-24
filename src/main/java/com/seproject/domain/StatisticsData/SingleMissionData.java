@@ -8,9 +8,9 @@ public class SingleMissionData {
     public int number2;
     public int number3;
 
-    public int numberSum;// 完成总2人数。
+    public int numberSum;// 完成总人数。
 
     public ArrayList<Double> credit;
-    public int levelNum;
+    public ArrayList<Integer> level;
 
 }
