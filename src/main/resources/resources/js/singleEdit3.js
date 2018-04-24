@@ -92,7 +92,7 @@ function loadPic(url) {
     var imgInfo = eval("(" + tmp123 + ")");
 
 
-    if(imgInfo!=null) {
+    if(imgInfo.fixedx!=null||imgInfo.list!=null) {
 
         fixedX = imgInfo.fixedx;
         fixedY = imgInfo.fixedy;
@@ -307,14 +307,17 @@ function loadPic(url) {
 
     }
 
-    var OverallIndex=0;
-    while(imgInfo.sentences[OverallIndex].status!=2){
-        OverallIndex++;
-        if(OverallIndex==imgInfo.sentences.length){
-            break;
+    if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
+        var OverallIndex=0;
+        while(imgInfo.sentences[OverallIndex].status!=2){
+            OverallIndex++;
+            if(OverallIndex==imgInfo.sentences.length){
+                break;
+            }
         }
+        document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
     }
-    document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
+
 }
 
 

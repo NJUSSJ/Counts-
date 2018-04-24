@@ -134,7 +134,7 @@ function loadPic(url) {
     }
     canvas.width=Pic_width;
     canvas.height=Pic_height;
-
+    
     drawImage();
 
     var indexOfRectSentence=0;
