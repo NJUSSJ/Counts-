@@ -20,7 +20,6 @@ public class BasicUtilService {
     public void writeClass(Object o){
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
-        System.out.println("writeClass");
         for(int i=0;i<field.length;i++){
             String temp="";
             String type=field[i].getGenericType().toString();
@@ -65,7 +64,9 @@ public class BasicUtilService {
                         int lastIndex=type.indexOf(">");
                         String className=type.substring(firstIndex+1,lastIndex);
                         System.out.println("className:"+className);
-                        fileDao.read_class(className);
+                        if(className.startsWith("class")) {
+                            fileDao.read_class(className);
+                        }//如果是自定义类型空list，则先创建对应的文件
                         result.add("[]");
                     }else{
                         String category=list.get(0).getClass().toString();
@@ -135,8 +136,6 @@ public class BasicUtilService {
             if(info==null||info.size()<=0){//非空判断
                 return null;
             }
-
-            System.out.println("info:"+info);
 
             Method[] methods=model.getClass().getDeclaredMethods();
             for (int j = 0; j < field.length; j++) {     //遍历所有属性
