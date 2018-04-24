@@ -82,7 +82,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <a href="#me" class="icon fa-home active"><span>任务主页</span></a>
         <a href="#work" class="icon fa-eye"><span>任务详情</span></a>
         <a href="#samplePanel" class="icon fa-tag" onclick=""><span>评估任务</span></a>
-        <a href="charts" class="icon fa-pie-chart"><span>任务统计</span></a>
+        <a href="#charts" class="icon fa-pie-chart"><span>任务统计</span></a>
     </nav>
 
     <!-- Main -->
@@ -91,12 +91,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <!-- Me -->
         <article id="me" class="panel">
             <header>
-                <h1 id="Name">Mission Name</h1>
+                <h1 id="Name">${requestScope.missionName}</h1>
                 <p>Croudsourcing Requestor</p>
             </header>
             <a href="#work" class="jumplink pic">
                 <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
-                <img src="images/me.jpg" alt="" />
+                <img src="images/logo.jpg" alt="" />
             </a>
         </article>
 
@@ -108,45 +108,41 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <section>
                 <div class="row">
                     <div class="12u 12u$(mobile)" id="blank">
-                        <span>任务名称：</span><span id="missionName"></span>
+                        <span>任务名称：</span><span id="missionName">${requestScope.missionName}</span>
                     </div>
                     <div class="6u$ 12u$(mobile)">
-                        <span>任务积分：</span><span id="missionCredit"></span>
+                        <span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span>
                     </div>
                     <div class="6u 12u$(mobile)">
-                        <span>期待标注人数：</span><span id="expectedNum"></span>
+                        <span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
-                        <span>起始时间：</span><span id="startTime"></span>
+                        <span>起始时间：</span><span id="startTime">${requestScope.startTime}</span>
                     </div>
                     <div class="12u 12u$(mobile)">
-                        <span>截止时间：</span><span id="endTime"></span>
+                        <span>截止时间：</span><span id="endTime">${requestScope.endTime}</span>
                     </div>
                     <div class="12u$">
-                        <span>工人最低等级：</span><span id="level"></span>
+                        <span>工人最低等级：</span><span id="level">${requestScope.Level}</span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
-                        <span>任务描述:</span><span id="missionDescription"></span>
+                        <span>任务描述：</span><span id="missionDescription">${requestScope.description}</span>
                     </div>
 
                 </div>
 
-
-
-
-
                 <div class="row">
                     <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
                     </div>
                     <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
                     </div>
                     <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
                     </div>
                     <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
+                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
                     </div>
                     <div class="4u 12u$(mobile)">
                         <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>

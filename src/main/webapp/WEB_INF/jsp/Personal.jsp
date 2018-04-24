@@ -148,14 +148,12 @@
                     分析图表
                 </p>
                 <section>
-<<<<<<< HEAD
-                    <div id="chartsArea"></div>
-=======
+
                     <div id="drawCharts" style="width: 600px;height:400px;"></div>
                     <script type="text/javascript" src="js/DrawCharts1.js"></script>
                     <div id="chart0" style="width: 600px;height:400px;"></div>
                     <script type="text/javascript" src="js/DrawCharts1.js"></script>
->>>>>>> b5a200404d73c7f163a27d769c5305dc38a5bb98
+
                 </section>
             </header>
         </article>
@@ -172,13 +170,11 @@
 </div>
 
 <!-- Scripts -->
-<<<<<<< HEAD
-<script src="js/personal.js"></script>
-=======
+
 <script src="js/echarts.min.js"></script>
 <script src="js/echarts-wordcloud.min.js"></script>
-<script src="js/Personal1.js"></script>
->>>>>>> b5a200404d73c7f163a27d769c5305dc38a5bb98
+<script src="js/Personal.js"></script>
+
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

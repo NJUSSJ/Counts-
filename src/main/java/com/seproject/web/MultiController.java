@@ -47,15 +47,29 @@ public class MultiController {
         return missionNames;
     }
 
-    @RequestMapping(value = "/getMisionDetais")
+    @RequestMapping(value = "/getMissionDetails")
     @ResponseBody
     public ModelAndView getMissionDetais(HttpServletRequest request){
+        System.out.println("Get!!!!!!!!!!!!");
         String missionName=request.getParameter("missionName");
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
+        double credit=tmpMission.getReward();
+        int expectedNum=tmpMission.getExpectedNum();
+        String startTime=tmpMission.getStartTime();
+        String endTime=tmpMission.getEndTime();
+        String Level=tmpMission.getWorkerLevel();
+        String description=tmpMission.getDescription();
+
         ModelAndView view= new ModelAndView("MissionDetails");
         view.addObject("missionName",missionName);
         view.addObject("picNum",picNum);
+        view.addObject("credit",credit);
+        view.addObject("expectedNum",expectedNum);
+        view.addObject("startTime", startTime);
+        view.addObject("endTime", endTime);
+        view.addObject("Level",Level);
+        view.addObject("description",description);
         return view;
     }
 
