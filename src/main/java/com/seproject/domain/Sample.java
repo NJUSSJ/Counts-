@@ -17,6 +17,8 @@ public class Sample {
 
     private ArrayList<String> imageInfo;
 
+    private  ArrayList<Integer> quality;
+
     public void setMissionName(String missionName){
         this.missionName=missionName;
     }
@@ -47,5 +49,13 @@ public class Sample {
 
     public ArrayList<String> getUserId() {
         return userId;
+    }
+
+    public ArrayList<Integer> getQuality() {
+        return quality;
+    }
+
+    public void setQuality(ArrayList<Integer> quality) {
+        this.quality = quality;
     }
 }

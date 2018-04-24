@@ -1,6 +1,7 @@
 package com.seproject.domain;
 
 import com.seproject.service.Key;
+import com.seproject.service.Searchable;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,8 @@ public class Mission {
     ArrayList<String> tags=new ArrayList<String>();
     int reward;
     int expectedNum;
+
+    @Searchable(varName = "requestorNumber")
     String requestorNumber;
     public Mission(){
 
