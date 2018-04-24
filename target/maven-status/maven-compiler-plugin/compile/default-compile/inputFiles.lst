@@ -11,7 +11,9 @@ D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\Collection.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\Application.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\Mission.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\PersonalController.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\SampleController.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\MessageService.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\FactoryService.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\FileIOService.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\LoginLog.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\Key.java
@@ -19,6 +21,7 @@ D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\StatisticsService.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\SearchCategory.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\MathService.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\Sample.java
+D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\ChartController.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\UploadedFile.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\SignUpController.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\dao\UserDao.java
@@ -27,10 +30,8 @@ D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\dao\FileDao.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\dao\LoginLogDao.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\StatisticsData\StarterData.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\StatisticsData\WorkerData.java
-D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\TagInfo.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\StatisticsData\SingleMissionData.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\LoginController.java
-D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\Test_Gift.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\service\ReviewService.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\web\UploadController.java
 D:\SEP2\SEP_Phase_II\src\main\java\com\seproject\domain\UserType.java
