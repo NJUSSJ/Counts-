@@ -26,12 +26,12 @@
         <h1 id="logo"><a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
-                <li class="submenu" id="submenu">
+                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
+                <li class="submenu" id="extra">
                     <a id="menuTitle"></a>
                 </li>
-                <style>
-                    #submenu{
+                <style type="text/css">
+                    #extra{
                         display: none;
                     }
                 </style>
@@ -124,7 +124,7 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/Maincollection.js"></script>
+<script src="js/Maincollection1.js"></script>
 
 </body>
 </html>

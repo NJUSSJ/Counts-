@@ -100,6 +100,9 @@ function loadPic(url) {
         fixedHeight = imgInfo.fixedheight;
         curlArray = imgInfo.list;
 
+        index1=fixedX.length;
+        index2=curlArray.length;
+
     }
 
     if(imgInfo!=null){
@@ -132,8 +135,6 @@ function loadPic(url) {
     canvas.width=Pic_width;
     canvas.height=Pic_height;
 
-    index1=fixedX.length;
-    index2=curlArray.length;
     drawImage();
 
     var indexOfRectSentence=0;

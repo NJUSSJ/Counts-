@@ -1,6 +1,7 @@
 var phoneNumber = "";
 var userName = "";
 var person = "";
+var userCategory = "";
 var missionNames=new Array();
 var index=0;
 
@@ -76,7 +77,8 @@ function loadPersonal() {
     var tmp = window.location.search.split("&");
     this.userName = tmp[0].substring(tmp[0].indexOf("=")+1);
     this.phoneNumber = tmp[1].substring(tmp[1].indexOf("=")+1);
-    alert(userName + " " + phoneNumber);
+    userCategory = tmp[2].substring(tmp[2].indexOf("=")+1);
+    alert(userName + " " + phoneNumber + " " + userCategory);
 
     getPersonalInfo();
     alert(person);
@@ -162,19 +164,18 @@ function loadPersonalCollection(phoneNumber, category) {
 }
 
 function setPersonalCollection() {
-    document.getElementById("personalCollections").innerHTML="";
-    for(var i = 0;i<missionNames.length;i++){
+    document.getElementById("personalCollections").innerHTML = "";
+    for (var i = 0; i < missionNames.length; i++) {
         var div = document.createElement("div");
         div.className = "4u 12u$(mobile)";
         var a = document.createElement("a");
         a.className = "image fit";
-        a.href = "/details.html?imageURL="+missionNames[i];
+        a.href = "/details.html?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 1;
         var img = document.createElement("img");
-        img.src = "../../images/"+missionNames[i]+"_1.jpg";
+        img.src = "../../images/" + missionNames[i] + "_1.jpg";
         img.alt = "";
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalCollections").appendChild(div);
     }
-
 }
