@@ -53,7 +53,10 @@ public class MultiController {
         String missionName=request.getParameter("missionName");
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
-        return null;
+        ModelAndView view= new ModelAndView("MissionDetails");
+        view.addObject("missionName",missionName);
+        view.addObject("picNum",picNum);
+        return view;
     }
 
 

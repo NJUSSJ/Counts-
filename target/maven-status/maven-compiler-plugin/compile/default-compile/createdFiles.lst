@@ -9,7 +9,6 @@ com\seproject\dao\UserDao.class
 com\seproject\service\StatisticsService.class
 com\seproject\domain\LoginLog.class
 com\seproject\dao\LoginLogDao.class
-com\seproject\domain\Test_Gift.class
 com\seproject\web\SignUpController.class
 com\seproject\domain\ImageInfo.class
 com\seproject\domain\MessageService.class
@@ -27,14 +26,15 @@ com\seproject\service\Searchable.class
 com\seproject\domain\User.class
 com\seproject\service\BasicBLService.class
 com\seproject\web\ReadWriteFileController.class
+com\seproject\service\FactoryService.class
 com\seproject\service\BasicUtilService.class
 com\seproject\domain\Sample.class
-com\seproject\domain\TagInfo.class
 com\seproject\service\ReviewService.class
 com\seproject\web\PersonalController.class
 com\seproject\web\CollectionController.class
 com\seproject\service\RM.class
 com\seproject\web\LoginController.class
 com\seproject\service\SearchCategory.class
+com\seproject\web\SampleController.class
 com\seproject\domain\Collection.class
 com\seproject\domain\StatisticsData\WorkerData.class
