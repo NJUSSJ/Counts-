@@ -1,0 +1,12 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/* Banner */
+
+	#banner {
+		.inner {
+			opacity: 1.0;
+		}
+	}
