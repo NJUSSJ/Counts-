@@ -14,10 +14,10 @@ public class Mission {
     String workerLevel;
     ArrayList<String> files=new ArrayList<String>();
     int fileNum;
-    ArrayList<String> tags=new ArrayList<String>();
-    int reward;
+    double reward;
     int expectedNum;
     String requestorNumber;
+    int state;//0:未完成 1：完成
     public Mission(){
 
     }
@@ -40,14 +40,6 @@ public class Mission {
 
     public String getWorkerLevel(){
         return this.workerLevel;
-    }
-
-    public void setTags(ArrayList<String> tags){
-        this.tags=tags;
-    }
-
-    public ArrayList<String> getTags(){
-        return this.tags;
     }
 
     public void setFileNum(int num){
@@ -98,11 +90,11 @@ public class Mission {
         return this.endTime;
     }
 
-    public void setReward(int reward){
+    public void setReward(double reward){
         this.reward=reward;
     }
 
-    public int getReward(){
+    public double getReward(){
         return this.reward;
     }
 
@@ -122,7 +114,8 @@ public class Mission {
         return this.requestorNumber;
     }
 
+    public int getState(){return state;}
 
-
+    public void setState(int state){this.state=state;}
 
 }

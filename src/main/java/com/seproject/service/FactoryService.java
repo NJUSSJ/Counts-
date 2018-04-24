@@ -1,6 +1,8 @@
 package com.seproject.service;
 
+import com.seproject.domain.StatisticsData.AdminData;
 import com.seproject.domain.StatisticsData.SingleMissionData;
+import com.seproject.domain.StatisticsData.StarterData;
 import com.seproject.domain.StatisticsData.WorkerData;
 import org.springframework.stereotype.Service;
 import com.seproject.domain.*;
@@ -12,6 +14,45 @@ public class FactoryService {
     /**
      * 工厂类，用于直接创建各种各样的对象
      */
+    public StarterData starterDataFactory(
+            int missionSum,
+            int finishedMissionNum,
+            int ongoingMissionNum,
+            ArrayList<Integer> participantSum,
+            ArrayList<Double> creditSum,
+            ArrayList<Double> creditAvg,
+            ArrayList<String> missionName
+    ){
+        StarterData starterData=new StarterData();
+        starterData.missionSum=missionSum;
+        starterData.finishedMissionNum=finishedMissionNum;
+        starterData.ongoingMissionNum=ongoingMissionNum;
+        starterData.participantSum=participantSum;
+        starterData.creditSum=creditSum;
+        starterData.creditAvg=creditAvg;
+        starterData.missionName=missionName;
+        return starterData;
+    }
+
+    public AdminData adminDataFactory(
+            int userSum,
+            int workerNum,
+            int adminNum,
+            int starterNum,
+            int missionSum,
+            int finishedMissionNum,
+            int ongoingMissionNum
+    ){
+        AdminData adminData=new AdminData();
+        adminData.userSum=userSum;
+        adminData.workerNum=workerNum;
+        adminData.adminNum=adminNum;
+        adminData.starterNum=starterNum;
+        adminData.missionSum=missionSum;
+        adminData.finishedMissionNum=finishedMissionNum;
+        adminData.ongoingMissionNum=ongoingMissionNum;
+        return adminData;
+    }
 
     public WorkerData workerDataFactory(
             int missionSum,
