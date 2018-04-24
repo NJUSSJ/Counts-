@@ -14,7 +14,8 @@ public class User {
 	private String userName="";
 	private String password="";
 	private double credit=0;
-	private int category=0;
+	@Searchable(varName = "category")
+	private int category=0;//1 是发起者，2是工人
 
 	@Searchable(varName = "level")
 	private int level=1;
