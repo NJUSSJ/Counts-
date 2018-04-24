@@ -88,14 +88,14 @@ function loadPersonal() {
     document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
     switch (personalInfo.category) {
-        case 3:
-            document.getElementById("_userType").value = "系统管理员";
-            break;
         case 1:
             document.getElementById("_userType").value = "众包发起者";
             break;
         case 2:
             document.getElementById("_userType").value = "众包工人";
+            break;
+        case 3:
+            document.getElementById("_userType").value = "系统管理员";
             break;
     }
     document.getElementById("_credit").value = personalInfo.credit;
@@ -105,20 +105,26 @@ function loadPersonal() {
 
     //加载collectionInfo
     loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
+
+    //获取chart相关后端数据
+    getChartData(personalInfo.phoneNumber, personalInfo.category);
+
+    //加载chart
+    loadChartArea(personalInfo.category);
 }
 
 function savePersonalBlanks() {
     var userName = document.getElementById("_username").value;
     var phoneNumber = document.getElementById("_phoneNumber").value;
     switch (document.getElementById("_userType").value) {
-        case "系统管理员":
-            var category = 3;
-            break;
         case "众包发起者":
             var category = 1;
             break;
-        case "系统管理员":
+        case "众包工人":
             var category = 2;
+            break;
+        case "系统管理员":
+            var category = 3;
             break;
     }
     var credit = document.getElementById("_credit").value;

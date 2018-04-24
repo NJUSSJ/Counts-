@@ -17,6 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css2/main.css" />
+    <script src="js/CreateChartArea.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
@@ -147,13 +148,9 @@
                     分析图表
                 </p>
                 <section>
-                    <div id="drawCharts" style="width: 600px;height:400px;"></div>
-                    <script type="text/javascript" src="js/DrawCharts.js"></script>
-                    <div id="chart0" style="width: 600px;height:400px;"></div>
-                    <script type="text/javascript" src="js/DrawCharts.js"></script>
+                    <div id="chartsArea"></div>
                 </section>
             </header>
-
         </article>
 
     </div>
@@ -168,8 +165,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="js/echarts.min.js"></script>
-<script src="js/echarts-wordcloud.min.js"></script>
 <script src="js/personal.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
