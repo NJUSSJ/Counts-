@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 @RestController
 public class PersonalController {
-    private FileIOService fileIOService;
+
     private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
     private BasicBLService<Collection> collectionBasicBLService=new BasicBLService<Collection>(new Collection());
 
@@ -83,9 +83,6 @@ public class PersonalController {
        }
         return collectionNames;
     }
-
-    @Autowired
-    public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
-
+    
 
 }

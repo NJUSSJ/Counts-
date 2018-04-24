@@ -40,7 +40,6 @@ public class UploadController {
     @RequestMapping(value = "/uploadFinish.html")
     @ResponseBody
     public ModelAndView finish(HttpServletRequest request){
-        System.out.println("get!!!!!!!!!!!");
         System.out.println(request.getParameter("phoneNumber"));
         String phoneNumber=request.getParameter("phoneNumber");
         User tmpUser=userBasicBLService.findByKey(phoneNumber);

@@ -102,13 +102,12 @@ function loadPic(url) {
 
         index1=fixedX.length;
         index2=curlArray.length;
-
-    }
-
-    if(imgInfo!=null){
         sentences=imgInfo.sentences;
         sentids=imgInfo.sentids;
+
     }
+
+
 
     image.src = url;
 
