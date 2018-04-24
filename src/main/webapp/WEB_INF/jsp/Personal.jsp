@@ -148,9 +148,9 @@
                 </p>
                 <section>
                     <div id="drawCharts" style="width: 600px;height:400px;"></div>
-                    <script type="text/javascript" src="js/DrawCharts.js"></script>
+                    <script type="text/javascript" src="js/DrawCharts1.js"></script>
                     <div id="chart0" style="width: 600px;height:400px;"></div>
-                    <script type="text/javascript" src="js/DrawCharts.js"></script>
+                    <script type="text/javascript" src="js/DrawCharts1.js"></script>
                 </section>
             </header>
 
@@ -170,7 +170,7 @@
 <!-- Scripts -->
 <script src="js/echarts.min.js"></script>
 <script src="js/echarts-wordcloud.min.js"></script>
-<script src="js/personal.js"></script>
+<script src="js/Personal1.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

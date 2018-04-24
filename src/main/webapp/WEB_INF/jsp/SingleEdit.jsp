@@ -78,7 +78,7 @@
                         <li><a id="more"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                     </ul>
                 </li>
-                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}">${requestScope.userName}</a></li>
+                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
                 <li><a onload="loadSubmitHref()" id="submitTagInfo" class="button special">Submit</a></li>
                 <li><a href="http://localhost:3141" class="button special">Sign Out</a></li>
             </ul>

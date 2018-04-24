@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-var drawCharts = document.getElementById("drawCharts");
-=======
 // 基于准备好的dom，初始化echarts实例
 var myChart = echarts.init(document.getElementById('drawCharts'));
 
@@ -191,4 +188,3 @@ var option1 = {
     ]
 };
 chart0.setOption(option1);
->>>>>>> 7f56ba0100b067f2b9b1f6cee85c982b4ffb219a

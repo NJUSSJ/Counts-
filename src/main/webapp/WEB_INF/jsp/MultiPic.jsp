@@ -20,7 +20,7 @@
             <ul>
                 <li class="current"><a href="index.html">${requestScope.userName}</a></li>
                 <li class="submenu" id="submenu">
-                    <a href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">加入我的任务集</a>
+                    <a href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">加入我的任务集</a>
                 </li>
                 <li><a href="#" class="button special">登出</a></li>
             </ul>
@@ -67,7 +67,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/multipic1.js"></script>
+<script src="js/multipic.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>

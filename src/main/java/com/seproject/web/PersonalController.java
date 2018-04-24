@@ -64,19 +64,23 @@ public class PersonalController {
     //筛选用户的标注过的mission
     @RequestMapping(value = "/getPersonalCollectionInfo")
     @ResponseBody
-    public String[] getCollectionInfo(@RequestBody String userInfo) {
+    public ArrayList<String> getCollectionInfo(@RequestBody String userInfo) {
         System.out.println("接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         System.out.println(phoneNumber);
         collectionBasicBLService.setT(new Collection());
         ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid",SearchCategory.EQUAL,phoneNumber);
-        int index=0;
+      /*  int index=0;
         String[] collectionNames=new String[1000];
         for(Collection collection: tmpMission){
-            collectionNames[index]= String.valueOf(collection);
+            collectionNames[index]= collection.getMid();
+            System.out.println("返回前端的collectionNames=" + collectionNames[index]);
             index++;
-        }
-        System.out.println(collectionNames);
+        }*/
+       ArrayList<String > collectionNames =new ArrayList<String>();
+       for(int i=0;i<tmpMission.size();i++){
+           collectionNames.add(tmpMission.get(i).getMid());
+       }
         return collectionNames;
     }
 

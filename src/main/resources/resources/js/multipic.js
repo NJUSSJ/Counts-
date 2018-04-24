@@ -118,19 +118,19 @@ function collection(uid, mid){
 function addMissionToUser(missionName, userPhone) {
         alert(missionName);
         alert(userPhone);
-        var collection=new collection(userPhone,missionName);
+        var collectionData=new collection(userPhone,missionName);
         $.ajax({
            type: "POST",
            async: false,
            url: "/addMissionToUser",
            contentType: "application/json",
            dataType: "json",
-           data: JSON.stringify(collection),
+           data: JSON.stringify(collectionData),
            success: function () {
 
            },
            error: function () {
-               alert("fail1");
+
            }
         });
 }
