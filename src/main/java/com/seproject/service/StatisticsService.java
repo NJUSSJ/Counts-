@@ -60,14 +60,78 @@ public class StatisticsService {
         return w;
     }
 
-
+    /**
+     * missionSum:发布的任务总数
+     * finishedMissionNum：已结束的任务总数
+     * ongoingMissionNum:正在进行的任务总数
+     * participantSum:每个任务的参与者总数
+     * creditSum：每个任务的总奖励
+     * creditAvg：每个任务的平均奖励
+     * missionName：每个任务的名称
+     */
     public StarterData getStarterData(String userID){
+        int missionSum=0,finishedMissionNum=0,ongoingMissionNum=0;
+        ArrayList<Integer> participantSum=new ArrayList<Integer>();
+        ArrayList<Double> creditSum=new ArrayList<Double>();
+        ArrayList<Double> creditAvg=new ArrayList<Double>();
+        ArrayList<String> missionName=new ArrayList<String>();
+        ArrayList<Mission> missions=service3.getAllObjects();
+        ArrayList<Collection> collections=service1.getAllObjects();
+        for(Mission m:missions){
+            if((m.getRequestorNumber()).equals(userID)){
+                missionSum++;
+                missionName.add(m.getName());
+                if(m.getState()==0){
+                    ongoingMissionNum++;
+                }else{
+                    finishedMissionNum++;
+                }
+                int temp=0;
+                for(Collection c:collections){
+                    if(c.getUid().equals(userID)){
+                        temp++;
+                    }
+                }
+                participantSum.add(temp);
+                creditSum.add(m.getReward());
+                creditAvg.add(m.getReward()/temp);
 
-        return null;
+            }
+        }
+        return factoryService.starterDataFactory(missionSum,finishedMissionNum,ongoingMissionNum,participantSum,creditSum,creditAvg,missionName);
     }
-    public AdminData  getAdminData(){
-        return null;
 
+    /**
+     * userSum：用户总数
+     * workerNum：工人总数
+     * adminNum：管理员总数
+     * starterNum：发起者总数
+     * missionSum：任务总数
+     * finishedMissionNum：已完成任务数
+     * ongoingMissionNum：未完成任务数
+     */
+    public AdminData  getAdminData(){
+        ArrayList<User> users=service2.getAllObjects();
+        int userSum=users.size();
+        int workerNum=0,adminNum=0,starterNum=0;
+        for(User user:users){
+            switch (user.getCategory()){
+                case 0:adminNum++;break;
+                case 1:starterNum++;break;
+                case 2:workerNum++;break;
+            }
+        }
+
+        ArrayList<Mission> missions=service3.getAllObjects();
+        int missionSum=missions.size(),finishedMissionNum=0,ongoingMissionNum=0;
+        for(Mission m:missions){
+            if(m.getState()==0){
+                ongoingMissionNum++;
+            }else{
+                finishedMissionNum++;
+            }
+        }
+        return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum);
     }
     public SingleMissionData getSingleMissionData(String missionID){
         int number0=0;

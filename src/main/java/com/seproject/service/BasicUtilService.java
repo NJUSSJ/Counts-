@@ -65,7 +65,9 @@ public class BasicUtilService {
                         int lastIndex=type.indexOf(">");
                         String className=type.substring(firstIndex+1,lastIndex);
                         System.out.println("className:"+className);
-                        fileDao.read_class(className);
+                        if(className.startsWith("class")) {
+                            fileDao.read_class(className);
+                        }//如果是自定义类型空list，则先创建对应的文件
                         result.add("[]");
                     }else{
                         String category=list.get(0).getClass().toString();
