@@ -20,7 +20,7 @@ public class BasicUtilService {
     public void writeClass(Object o){
         Field[] field = o.getClass().getDeclaredFields();
         ArrayList<String> result=new ArrayList<String>();
-
+        System.out.println("writeClass");
         for(int i=0;i<field.length;i++){
             String temp="";
             String type=field[i].getGenericType().toString();
@@ -61,6 +61,11 @@ public class BasicUtilService {
                 } else if (type.startsWith("java.util.ArrayList")) {//ArrayList
                     ArrayList list= (ArrayList) m.invoke(o);
                     if(list==null||list.size()==0){
+                        int firstIndex=type.indexOf("<");
+                        int lastIndex=type.indexOf(">");
+                        String className=type.substring(firstIndex+1,lastIndex);
+                        System.out.println("className:"+className);
+                        fileDao.read_class(className);
                         result.add("[]");
                     }else{
                         String category=list.get(0).getClass().toString();
@@ -131,6 +136,8 @@ public class BasicUtilService {
                 return null;
             }
 
+            System.out.println("info:"+info);
+
             Method[] methods=model.getClass().getDeclaredMethods();
             for (int j = 0; j < field.length; j++) {     //遍历所有属性
                 String name = field[j].getName();    //获取属性的名字
@@ -142,6 +149,7 @@ public class BasicUtilService {
                         setter = each;
                     }
                 }
+
                 if (type.equals("class java.lang.String")) {
                     setter.invoke(model, info.get(j));
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
@@ -264,9 +272,11 @@ public class BasicUtilService {
                     ArrayList<Object> tmp = new ArrayList<Object>();
                     String content=info.get(j).replace("[","").replace("]","");
                     String[] details=content.split(",");
-                    for (int i = 0; i < details.length; i++) {
-                        Object o=createObjectByKey(details[i]);
-                        tmp.add(o);
+                    if(details.length<=0) {
+                        for (int i = 0; i < details.length; i++) {
+                            Object o = createObjectByKey(details[i]);
+                            tmp.add(o);
+                        }
                     }
                     setter.invoke(model, tmp);
                 } else if (type.startsWith("class")) {

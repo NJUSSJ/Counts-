@@ -7,7 +7,9 @@ public class WorkerData {
     public int finishedMissionNum;
     public int unfinishedMissionNum;
     public ArrayList<Double> credit;// 单个任务获得的积分
+    public ArrayList<String> missionName; //每个任务的名称
     public int creditRank;
+<<<<<<< HEAD
     public int workersum;//总工人数
     public double creditSum; //积分总数
 /*
@@ -22,3 +24,8 @@ public class WorkerData {
     }
     */
 }
+=======
+    public int workerSum;//总工人数
+    public double  creditSum; //积分总数
+}
+>>>>>>> b5a200404d73c7f163a27d769c5305dc38a5bb98

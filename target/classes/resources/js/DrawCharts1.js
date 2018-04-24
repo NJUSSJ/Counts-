@@ -1,3 +1,4 @@
+<<<<<<< HEAD:target/classes/resources/js/DrawCharts.js
 alert("start loading Charts");
 var sumCharts = 1;
 
@@ -14,6 +15,8 @@ for(var i = 0;i<sumCharts;i++){
     script.setAttribute("src","js/DrawCharts.js");
     parent.appendChild(script);
 }
+=======
+>>>>>>> b5a200404d73c7f163a27d769c5305dc38a5bb98:target/classes/resources/js/DrawCharts1.js
 // 基于准备好的dom，初始化echarts实例
 //    var myChart = echarts.init(document.getElementById("drawCharts"));
 
@@ -114,6 +117,13 @@ for(var i = 0;i<sumCharts;i++){
                     return Math.random() * 200;
                 }
             }
+<<<<<<< HEAD:target/classes/resources/js/DrawCharts.js
         ]
     };
     chart0.setOption(option1);
+=======
+        }
+    ]
+};
+chart0.setOption(option1);
+>>>>>>> b5a200404d73c7f163a27d769c5305dc38a5bb98:target/classes/resources/js/DrawCharts1.js
