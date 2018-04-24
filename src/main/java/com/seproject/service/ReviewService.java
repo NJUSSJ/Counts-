@@ -38,6 +38,7 @@ public class ReviewService {
         double averageLevel=0;
         for(Collection collection:collections){
             if(collection.getState()==1){
+
                 collections1.add(collection);
                 User user=service2.findByKey(collection.getUid());
                 userList.add(user);
@@ -92,7 +93,7 @@ public class ReviewService {
         sample.setPicIndex(picIndex);
         sample.setQuality(quality);
         sample.setUserId(userId);
-        return new Sample();
+        return sample;
     }
 
 
@@ -103,7 +104,7 @@ public class ReviewService {
     /**
      * 奖励分配算法
      */
-    public void award(String missionID, ArrayList<Double> quality){
+    public void award(String missionID){
         /**
          * award[i] = 0.2 *m/n+ 0.8*(m/n)*q[i]/Average(q)
          *          = (m/n)* (t+(1-t)*q[i]/Average(q))
@@ -111,6 +112,29 @@ public class ReviewService {
          *
          * 调用这个方法后，涉及到的每个用户的积分将被重新计算
          */
+        double baseCredit=0.2;
+        Mission m=service3.findByKey(missionID);
+        double sumCredit=m.getReward();
+        ArrayList<Collection> collections=service1.getAllObjects();
+        ArrayList<Collection> subCollection=new ArrayList<Collection>();
+        for(Collection c:collections){
+            if(c.getMid().equals(missionID)){
+                subCollection.add(c);
+            }
+        }
+
+        double qualityAvg=0;
+        double realCreditSum=0;
+        for(Collection c:subCollection){ qualityAvg+=c.getQuality(); }
+        qualityAvg/=subCollection.size();
+        for(Collection c:subCollection){
+            double result=sumCredit*(baseCredit+(1-baseCredit)*c.getQuality()/qualityAvg)/subCollection.size();
+            realCreditSum+=result;
+            c.setCredit(result);
+        }
+
+        User starter=service2.findByKey(m.getRequestorNumber());
+        starter.setCredit(starter.getCredit()+(sumCredit-realCreditSum));
     }
 
     /**
