@@ -154,7 +154,8 @@ public class BasicUtilService {
                     setter.invoke(model, info.get(j));
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
                     ArrayList<Integer> tmp = new ArrayList<Integer>();
-                    String content=info.get(j).replace("[","").replace("]","");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
 
                     String[] details=content.split(", ");
                     for(String each:details){
@@ -163,8 +164,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Double>")) {
                     ArrayList<Double> tmp = new ArrayList<Double>();
-                    String content=info.get(j).replace("[","").replace("]","");
-
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     String[] details=content.split(", ");
                     for(String each:details){
                         tmp.add(Double.parseDouble(each));
@@ -172,7 +173,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Boolean>")) {
                     ArrayList<Boolean> tmp = new ArrayList<Boolean>();
-                    String content=info.get(j).replace("[","").replace("]","");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
 
                     String[] details=content.split(", ");
                     for(String each:details){
@@ -181,8 +183,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Long>")) {
                     ArrayList<Long> tmp = new ArrayList<Long>();
-                    String content=info.get(j).replace("[","").replace("]","");
-
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     String[] details=content.split(", ");
                     for(String each:details){
                         tmp.add(Long.parseLong(each));
@@ -190,8 +192,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.String>")) {
                     ArrayList<String> tmp = new ArrayList<String>();
-                    String content=info.get(j).replace("[","").replace("]","");
-                    System.out.println("content:"+content+" !!!!!!");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     while(true) {
                         int index=content.indexOf(", ");
                         if(index==-1){
@@ -279,7 +281,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 }else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
                     ArrayList<Object> tmp = new ArrayList<Object>();
-                    String content=info.get(j).replace("[","").replace("]","");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     String[] details=content.split(",");
                     if(details.length<=0) {
                         for (int i = 0; i < details.length; i++) {
