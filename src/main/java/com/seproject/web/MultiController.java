@@ -4,6 +4,7 @@
 package com.seproject.web;
 
 import com.seproject.domain.Mission;
+import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 
 @RestController
 public class MultiController {
+    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
     private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
     @RequestMapping(value = "/test1.html")
@@ -28,7 +30,9 @@ public class MultiController {
         ModelAndView model=new ModelAndView("SingleEdit");
         model.addObject("url",url);
         model.addObject("userName",userName);
-        model.addObject("phoneNumber",phoneNumber);
+        User user = basicBLService.findByKey(phoneNumber);
+        model.addObject("userCategory",user.getCategory());
+        model.addObject("userPhone",phoneNumber);
         return model;
     }
 

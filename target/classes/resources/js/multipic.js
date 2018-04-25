@@ -4,7 +4,7 @@
 var userCategory1;
 var Tagable1;
 
-function load(num,url,collection,userCategory,Tagable) {
+function load(num,url,collection,userCategory,Tagable,phoneNumber) {
     userCategory1=userCategory;
     Tagable1=Tagable;
     document.getElementById("pictureSection").innerHTML="";
@@ -89,7 +89,7 @@ function load(num,url,collection,userCategory,Tagable) {
          */
     for(var i=1;i<=num;i++){
         var a = document.getElementById("image"+i);
-        a.href="test1.html?collection="+collection+"&imageURL="+i;
+        a.href="test1.html?collection="+collection+"&imageURL="+i+"&phoneNumber="+phoneNumber;
     }
 
     setButtons(num);

@@ -60,12 +60,12 @@
 
     </style>
 </head>
-<body class="left-sidebar" onload="loadPic(${requestScope.url})">
+<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone})">
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
-        <nav id="nav" onload="loadPhoneNumber(${requestScope.phoneNumber})">
+        <nav id="nav">
             <ul>
                 <li class="submenu">
                     <a herf="#">Tag</a>
@@ -78,7 +78,7 @@
                         <li><a id="more"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                     </ul>
                 </li>
-                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
+                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
                 <li><a onload="loadSubmitHref()" id="submitTagInfo" class="button special">Submit</a></li>
                 <li><a href="http://localhost:3141" class="button special">Sign Out</a></li>
             </ul>

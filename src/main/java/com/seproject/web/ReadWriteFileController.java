@@ -25,7 +25,7 @@ public class ReadWriteFileController {
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
        // String imgid = params.getString("imgid");
-        System.out.print("获取到的文件名" + imgid);
+        System.out.print("获取到的json字符串：" + imgid);
 
         JSONObject jsonObject = JSONObject.fromObject(imgid);
         String temp0[]=jsonObject.getString("imgid").split("-");
@@ -42,7 +42,7 @@ public class ReadWriteFileController {
 
         return "666";
     }
-
+/*
     @RequestMapping(value = "/tag")
     @ResponseBody
     public String getTag(@RequestBody String collectionNameAndPicName){
@@ -51,7 +51,7 @@ public class ReadWriteFileController {
         String picName = jsonObject.getString("picName");
 
         return "666";
-    }
+    }*/
 
     @RequestMapping(value = "/read")
     @ResponseBody
@@ -60,6 +60,7 @@ public class ReadWriteFileController {
         JSONObject jsonObject = JSONObject.fromObject(imageInfo);
         String collectionName=jsonObject.getString("collectionName");
         String picName=jsonObject.getString("picName");
+        System.out.println("picName: " + picName);
         String phoneNumber=jsonObject.getString("phoneNumber");
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
         String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);

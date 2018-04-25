@@ -67,6 +67,9 @@ function eachSentence(raw,imgid,sentid,status) {
 function getNameAndCollection() {
     var tmp = window.location.search.split("&");
     var collectionName = tmp[0].substring(tmp[0].indexOf("=")+1,tmp[0].length);
+    if (collectionName[0] === '%'){
+        collectionName = decodeURI(collectionName);
+    }
     var picName = tmp[1].substring(tmp[1].indexOf("=")+1,tmp[1].length);
     var nameAndCollection = [collectionName,picName];
     return nameAndCollection;
@@ -85,11 +88,15 @@ var tmp123;
 /*
 从getImgInfo取json数据得到url 若不为空则加载此url
  */
-function loadPic(url) {
+function loadPic(url, phoneNumber) {
+    alert("loading pic " + url);
+    loadPhoneNumber(phoneNumber);
     getImgInfo();
 
 
+
     var imgInfo = eval("(" + tmp123 + ")");
+    alert(imgInfo);
 
 
     if(imgInfo.fixedx!=null||imgInfo.list!=null) {
