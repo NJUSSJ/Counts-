@@ -25,7 +25,7 @@ public class ReadWriteFileController {
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
        // String imgid = params.getString("imgid");
-        System.out.print("获取到的json字符串：" + imgid);
+        System.out.println("获取到的json字符串：" + imgid);
 
         JSONObject jsonObject = JSONObject.fromObject(imgid);
         String temp0[]=jsonObject.getString("imgid").split("-");
@@ -34,7 +34,9 @@ public class ReadWriteFileController {
         String userName= temp0[2];
 
         Collection collection=collectionService.findByKey(starterMissionName+userName);
+        System.out.println(collection);
         ArrayList<String> infoList=collection.getInfoList();
+        System.out.println(infoList.size()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         infoList.set(Integer.parseInt(picName0)-1,imgid);
         collection.setInfoList(infoList);
         collectionService.update(collection);

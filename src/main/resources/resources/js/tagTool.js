@@ -20,6 +20,7 @@ function loadSubmitHref(){
     //注意以下collectionName 参数是否能取到
     submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=collectionName+${requestScope.phoneNumber}');
 }
+<<<<<<< HEAD
 /*
 add.addEventListener("click", function add() {
     getImgInfo(imgCollection);
@@ -33,6 +34,11 @@ function _delete() {
 function edit(){
 }
 */
+=======
+
+
+
+>>>>>>> ae3ac988131ef189e3bda2c69899c9ec37d8e55b
 save.addEventListener("click", function save() {
     saveData();
     alert("标注信息已保存");
@@ -157,7 +163,7 @@ function getImgInfo() {
           //return ret;
         }
         ,
-        error: function(msg){
+        error: function(){
             alert("fail")
         }
     });

@@ -92,8 +92,6 @@ function loadPic(url, phoneNumber) {
     loadPhoneNumber(phoneNumber);
     getImgInfo();
 
-
-
     var imgInfo = eval("(" + tmp123 + ")");
     alert("imgInfo: " + imgInfo);
 

@@ -75,35 +75,37 @@ public class BasicBLService<T> {
        ArrayList<String> names=new ArrayList<String>();
 
        for(int i=0;i<objects.size();i++){
-           String [] temp=objects.get(i).split(this.fileDao.separateString);
-           switch (category){
-               case EQUAL:
-                   if(temp[searchableID].equals(keyValue)){
-                   names.add(temp[keyID]);
+           String eachContent=objects.get(i);
+           if(eachContent!=null&&eachContent.length()>0) {//去除换行符的干扰
+               String[] temp = objects.get(i).split(this.fileDao.separateString);
+               switch (category) {
+                   case EQUAL:
+                       if (temp[searchableID].equals(keyValue)) {
+                           names.add(temp[keyID]);
+                       }
+                       break;
+                   case NOT_EQUAL:
+                       if (!temp[searchableID].equals(keyValue)) {
+                           names.add(temp[keyID]);
+                       }
+                       break;
+                   case CONTAINS:
+                       if (contains(temp[searchableID], keyValue)) {
+                           names.add(temp[keyID]);
+                       }
+                       break;
+                   case LARGER_THAN:
+                       if (Double.parseDouble(temp[searchableID]) > Double.parseDouble(keyValue)) {
+                           names.add(temp[keyID]);
+                       }
+                       break;
+                   case SMALLER_THAN:
+                       if (Double.parseDouble(temp[searchableID]) < Double.parseDouble(keyValue)) {
+                           names.add(temp[keyID]);
+                       }
+                       break;
                }
-               break;
-               case NOT_EQUAL:
-                   if(!temp[searchableID].equals(keyValue)){
-                   names.add(temp[keyID]);
-               }
-               break;
-               case CONTAINS:
-                   if(contains(temp[searchableID],keyValue)){
-                       names.add(temp[keyID]);
-                   }
-                   break;
-               case LARGER_THAN:
-                   if(Double.parseDouble(temp[searchableID])>Double.parseDouble(keyValue)){
-                       names.add(temp[keyID]);
-                   }
-                   break;
-               case SMALLER_THAN:
-                   if(Double.parseDouble(temp[searchableID])<Double.parseDouble(keyValue)){
-                       names.add(temp[keyID]);
-                   }
-                   break;
            }
-
        }
 
 
