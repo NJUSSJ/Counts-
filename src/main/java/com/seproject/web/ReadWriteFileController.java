@@ -56,19 +56,14 @@ public class ReadWriteFileController {
     @RequestMapping(value = "/read")
     @ResponseBody
     public String readFile(@RequestBody String imageInfo) {
-/*        System.out.print("imageInfo:"+imageInfo);
-        String [] temp1=imageInfo.split(":");
-        String [] temp2=temp1[1].split(",");
-        String name=temp2[0];
-        int id=Integer.parseInt(temp1[2].replace("}",""));
-        String res = fileIOService.getJsonString(name, id);
-        if(!res.startsWith("{")){
-            res="{"+res;
-            res=res+"}";
-        }
-        System.out.println("result:"+res);
-        return res;*/
-        return "{}";
+        //加载单张图片的标注信息
+        JSONObject jsonObject = JSONObject.fromObject(imageInfo);
+        String collectionName=jsonObject.getString("collectionName");
+        String picName=jsonObject.getString("picName");
+        String phoneNumber=jsonObject.getString("phoneNumber");
+        Collection collection=collectionService.findByKey(collectionName+phoneNumber);
+        String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
+        return jsonString;
     }
 
     /**
