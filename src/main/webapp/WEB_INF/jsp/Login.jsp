@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
-<body class="contact" style="background-image:url(images/banner.jpg);" onload="judge(${requestScope.error})">
+<body class="contact" style="background-image:url(http://api.dujin.org/bing/1366.php);" onload="judge(${requestScope.error})">
 <script>
     function judge(returnData) {
         if(returnData!=null){
