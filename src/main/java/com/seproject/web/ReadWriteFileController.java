@@ -66,6 +66,7 @@ public class ReadWriteFileController {
         String phoneNumber=jsonObject.getString("phoneNumber");
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
         String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
+        System.out.println("从后端往前端发送的json字符串：" + jsonString);
         return jsonString;
     }
 
