@@ -1,9 +1,3 @@
-<<<<<<< HEAD
 com\seproject\service\InitData.class
 com\seproject\web\ChartController.class
 com\seproject\service\FactoryService.class
-=======
-com/seproject/web/ChartController.class
-com/seproject/service/FactoryService.class
-com/seproject/service/InitData.class
->>>>>>> 52d1f8f15f6d0f395cab10c1be5a307acb7fd745

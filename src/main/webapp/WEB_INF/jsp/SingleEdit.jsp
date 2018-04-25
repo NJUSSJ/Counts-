@@ -64,13 +64,8 @@
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
-<<<<<<< HEAD
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav" onload="loadPhoneNumber(${requestScope.phoneNumber})">
-=======
-        <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
-        <nav id="nav">
->>>>>>> 52d1f8f15f6d0f395cab10c1be5a307acb7fd745
             <ul>
                 <li class="submenu">
                     <a herf="#">Tag</a>
