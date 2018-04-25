@@ -3,17 +3,22 @@ var nextPage = document.getElementById("more");
 var save = document.getElementById("save");
 var back = document.getElementById("back");
 var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521465839531&di=894d8615e5b830dffd2d3f5184ea90b1&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fdc54564e9258d109241f9f09da58ccbf6d814d88.jpg"
-var phoneNumber = "";
+var phoneNumber;
+var imgid;
 var collectionName = getNameAndCollection()[0];
 
-function loadPhoneNumber(phoneNumber){
-    this.phoneNumber = phoneNumber;
+function loadPhoneNumber(_phoneNumber){
+    phoneNumber = _phoneNumber;
+    //imgid 格式为 collectionName + picName + phoneNumber
+    imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1] + "-" + phoneNumber;
+
+    alert("修改过的phoneNumber: " +phoneNumber);
 }
 
 function loadSubmitHref(){
     var submit = document.getElementById("submitTagInfo");
     //注意以下collectionName 参数是否能取到
-    submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=${collectionName}+${requestScope.phoneNumber}');
+    submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=collectionName+${requestScope.phoneNumber}');
 }
 
 add.addEventListener("click", function add() {
@@ -71,7 +76,7 @@ function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedhei
 }
 
 //imgid 格式为 collectionName + picName + phoneNumber
-var imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1] + "-" + phoneNumber;
+//var imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1] + "-" + phoneNumber;
 
 function getSentences() {
     return sentences;
@@ -84,28 +89,7 @@ function getSentIds() {
 function saveData() {
     var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection(),fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
-    SendCollectionNameAndPicName(getNameAndCollection()[0],getNameAndCollection()[1]);
     alert("已储存本图片信息");
-}
-
-/* ajax */
-function SendCollectionNameAndPicName(collectionName, picName) {
-    $.ajax({
-        type: "POST",
-        url: "tag",
-        contentType: "application/json",
-        dataType: "json",
-        data: {collectionName:collectionName,picName:picName},
-        //data: JSON.stringify(a),
-        success: function (jsonResult) {
-            if(jsonResult.success) {
-                alert(jsonResult);
-            }
-        },
-        error:function () {
-            alert("fail");
-        }
-    });
 }
 
 //test
@@ -134,9 +118,9 @@ function ImageJson(imgs) {
     });
 }
 
-function imgCollection() {
+function imgCollection(phoneNumber) {
     this.collectionName = getNameAndCollection()[0];
-    this.id = getNameAndCollection()[1];
+    this.picName = getNameAndCollection()[1];
     this.phoneNumber = phoneNumber;
 }
 
@@ -159,7 +143,7 @@ function getImgInfo() {
         contentType: "application/json",
         dataType: "json",
        // data: JSON.stringify(new imgCollection()),
-        data: toJsonString(new imgCollection()),
+        data: JSON.stringify(new imgCollection(phoneNumber)),
         //data: JSON.stringify(a),
         success: function takeImgInfo(jsonResult) {
           /*if(jsonResult==""){
