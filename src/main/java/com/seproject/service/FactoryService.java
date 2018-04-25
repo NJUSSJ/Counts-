@@ -1,9 +1,7 @@
 package com.seproject.service;
 
-import com.seproject.domain.StatisticsData.AdminData;
-import com.seproject.domain.StatisticsData.SingleMissionData;
-import com.seproject.domain.StatisticsData.StarterData;
-import com.seproject.domain.StatisticsData.WorkerData;
+import com.seproject.domain.*;
+import com.seproject.domain.StatisticsData.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -96,4 +94,24 @@ public class FactoryService {
         return singleMissionData;
     }
 
+    public User userFactory(
+            String phoneNumber,
+            String userName,
+            String password,
+            double credit,
+            int category,
+            int level,
+            String description
+
+    ){
+        User user=new User();
+        user.setCategory(category);
+        user.setLevel(level);
+        user.setPassword(password);
+        user.setCredit(credit);
+        user.setUserName(userName);
+        user.setPhoneNumber(phoneNumber);
+        user.setDescription(description);
+        return user;
+    }
 }
