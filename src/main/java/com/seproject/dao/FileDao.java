@@ -19,7 +19,9 @@ public class FileDao {
 
             BufferedReader br=new BufferedReader(new FileReader(file));
             while((content=br.readLine())!=null){
-                res=res+content+"\n";
+
+                    res = res + content + "\n";
+
             }
             br.close();
         } catch (FileNotFoundException e) {
@@ -140,8 +142,13 @@ public class FileDao {
             String content=readFile(fileName);
             if(!(content==null||content.length()<=0)) {
                 String[] temp = content.split("\n");
+                String temp1="";
                 for (String t : temp) {
-                    objects.add(t);
+                    temp1=temp1+t;
+                    if(t.endsWith(separateString)){
+                        objects.add(temp1);
+                        temp1="";
+                    }
                 }
             }
             return objects;
