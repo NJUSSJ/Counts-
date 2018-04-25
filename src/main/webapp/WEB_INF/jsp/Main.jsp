@@ -23,7 +23,7 @@
 
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
                 <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
@@ -79,7 +79,7 @@
             <!-- Content -->
             <div class="content">
                 <section>
-                    <a href="#" class="image featured "><img src="http://api.dujin.org/bing/1366.php" alt="" /></a>
+                    <a href="#" class="image featured "><img src="images/banner.jpg" alt="" /></a>
                     <header>
                         <h3>以下为一段说明文字</h3>
                     </header>

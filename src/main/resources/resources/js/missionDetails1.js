@@ -14,3 +14,24 @@ function loadDetails(picNum) {
         picSection.appendChild(div);
     }
 }
+
+var number0;
+var number1;
+var number2;
+var number3;
+var numberSum;
+var credit;
+var level;
+
+function SingleMissionData(number0, number1, number2, number3, numberSum, credit, level) {
+    this.number0=number0;
+    this.number1=number1;
+    this.number2=number2;
+    this.number3=number3;
+    this.numberSum=numberSum;
+    this.credit=credit;
+    this.level=level;
+}
+function loadChartsData() {
+
+}
