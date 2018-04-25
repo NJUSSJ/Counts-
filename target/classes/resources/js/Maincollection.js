@@ -71,7 +71,7 @@ function setCollection(){
         header1.appendChild(missionName1);
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="/details.html?imageURL="+missionNames[i*3].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+        a1_1.href="/details.html?imageURL="+missionNames[i*3].substring(0,missionNames[i*3].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         var img1=document.createElement("img");
         img1.src="../../images/"+missionNames[i*3].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"_1.jpg";
         img1.className="collection";

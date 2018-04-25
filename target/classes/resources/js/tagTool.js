@@ -84,18 +84,18 @@ function getSentIds() {
 function saveData() {
     var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection(),fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
-    SendTag(_sentences);
+    SendCollectionNameAndPicName(getNameAndCollection()[0],getNameAndCollection()[1]);
     alert("已储存本图片信息");
 }
 
 /* ajax */
-function SendTag(imgs) {
+function SendCollectionNameAndPicName(collectionName, picName) {
     $.ajax({
         type: "POST",
         url: "tag",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(imgs),
+        data: {collectionName:collectionName,picName:picName},
         //data: JSON.stringify(a),
         success: function (jsonResult) {
             if(jsonResult.success) {
