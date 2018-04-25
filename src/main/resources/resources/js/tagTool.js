@@ -136,7 +136,8 @@ function ImageJson(imgs) {
 
 function imgCollection() {
     this.collectionName = getNameAndCollection()[0];
-    this.id = new Number(getNameAndCollection()[1]);
+    this.id = getNameAndCollection()[1];
+    this.phoneNumber = phoneNumber;
 }
 
 function toJsonString(obj) {

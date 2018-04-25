@@ -17,6 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css2/main.css" />
+    <script src="js/personal.js"></script>
     <script src="js/CreateChartArea.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
@@ -33,9 +34,7 @@
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
         <a href="#charts" class="icon fa-pie-chart"><span>Charts</span></a>
-        <a href="http://localhost:3141/" class="icon fa-refresh"><span>Back</span></a>
-        <!--返回主界面按钮若调用 loginCheck 则需通过表单传送userName等信息
-        若通过自己重新写的方法 则不包含misson信息 所以还是退出重新登录吧 无奈╮(╯▽╰)╭ -->
+        <a href="<c:url value="loginCheck.html"/>?userName=${requestScope.phoneNumber}&password=${requestScope.password}" class="icon fa-refresh"><span>Back</span></a>
     </nav>
 
     <!-- Main -->
@@ -133,7 +132,7 @@
                             <span>Description</span><textarea name="description" placeholder="Description" rows="8" id="_description">A very honest and industrious croudsourcing worker.</textarea>
                         </div>
                         <div class="12u$">
-                            <input type="submit" name="save" value="Save Changes" onclick="savePersonalBlanks()"/>
+                            <input type="button" name="save" value="Save Changes" onclick="savePersonalBlanks()"/>
                         </div>
                     </div>
                 </div>
@@ -165,7 +164,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="js/personal.js"></script>
 <script src="js/ChartData.js"></script>
 <script src="js/GetChartData.js"></script>
 <script src="js2/jquery.min.js"></script>
