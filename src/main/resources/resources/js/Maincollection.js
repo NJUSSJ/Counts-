@@ -88,7 +88,7 @@ function setCollection(){
         var a1_2=document.createElement("a");
         a1_2.className="button small";
         a1_2.href="/details.html?imageURL="+missionNames[i*3].substring(0,missionNames[i*3].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
-        a1_2.innerHTML="Start Tagging";
+        a1_2.innerHTML="查看任务概况";
         li1.appendChild(a1_2);
         ul1.appendChild(li1);
         footer1.appendChild(ul1);
@@ -125,7 +125,7 @@ function setCollection(){
         var a2_2=document.createElement("a");
         a2_2.className="button small";
         a2_2.href="/details.html?imageURL="+missionNames[i*3+1].substring(0,missionNames[i*3+1].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
-        a2_2.innerHTML="Start Tagging";
+        a2_2.innerHTML="查看任务概况";
         li2.appendChild(a2_2);
         ul2.appendChild(li2);
         footer2.appendChild(ul2);
@@ -165,7 +165,7 @@ function setCollection(){
         var a3_2=document.createElement("a");
         a3_2.className="button small";
         a3_2.href="/details.html?imageURL="+missionNames[i*3+2].substring(0,missionNames[i*3+2].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
-        a3_2.innerHTML="Start Tagging";
+        a3_2.innerHTML="查看任务概况";
         li3.appendChild(a3_2);
         ul3.appendChild(li3);
         footer3.appendChild(ul3);
@@ -207,7 +207,7 @@ function setCollection(){
         var a1_2=document.createElement("a");
         a1_2.className="button small";
         a1_2.href="/details.html?imageURL="+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
-        a1_2.innerHTML="Start Tagging"
+        a1_2.innerHTML="查看任务概况"
         li1.appendChild(a1_2);
         ul1.appendChild(li1);
         footer1.appendChild(ul1);

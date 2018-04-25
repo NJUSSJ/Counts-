@@ -21,6 +21,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
+    <script src="js/missionDetails1.js"></script>
 </head>
 <style type="text/css">
     div.sidebar{
@@ -72,7 +73,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
 </style>
-<body>
+<body onload="loadDetails(${requestScope.picNum})">
 
 <!-- Wrapper-->
 <div id="wrapper">
@@ -131,43 +132,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                 </div>
 
-                <div class="row">
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
-                    </div>
+                <div class="row" id="picSection">
+
                 </div>
             </section>
         </article>
@@ -221,8 +187,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             </header>
             <section>
                 <div class="row">
+                    <div id="chart1" style="width: 600px;height:400px;">
 
+                    </div>
                 </div>
+                <script type="text/javascript" src="js/missionDetailsCharts.js"></script>
 
                 <div class="row">
 
@@ -242,9 +211,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
-<script src="js/echarts.min.js"></script>
-<script src="js/echarts-wordcloud.min.js"></script>
-<script src="js/personal.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

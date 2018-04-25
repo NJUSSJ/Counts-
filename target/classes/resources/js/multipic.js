@@ -20,7 +20,7 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber) {
             "\" width=\"400\" height=\"260\">\n" +
             "                    <footer>\n" +
             "                        <ul class=\"buttons\">\n" +
-            "                            <li><a href=\"#\" class=\"button small\" id=image"+(i*3+1)+">TAG IT</a></li>\n" +
+            "                            <li><a href=\"#\" class=\"button special\" id=image"+(i*3+1)+">開始標注</a></li>\n" +
             "                        </ul>\n" +
             "                    </footer>\n" +
             "                </section>\n" +
@@ -34,7 +34,7 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber) {
             "\" width=\"400\" height=\"260\">\n" +
             "                    <footer>\n" +
             "                        <ul class=\"buttons\">\n" +
-            "                            <li><a href=\"#\" class=\"button small\" id=image"+(i*3+2)+">TAG IT</a></li>\n" +
+            "                            <li><a href=\"#\" class=\"button special\" id=image"+(i*3+2)+">開始標注</a></li>\n" +
             "                        </ul>\n" +
             "                    </footer>\n" +
             "                </section>\n" +
@@ -48,7 +48,7 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber) {
             "\" width=\"400\" height=\"260\">\n" +
             "                    <footer>\n" +
             "                        <ul class=\"buttons\">\n" +
-            "                            <li><a href=\"#\" class=\"button small\" id=image"+(i*3+3)+">TAG IT</a></li>\n" +
+            "                            <li><a href=\"#\" class=\"button special\" id=image"+(i*3+3)+">開始標注</a></li>\n" +
             "                        </ul>\n" +
             "                    </footer>\n" +
             "                </section>\n" +
@@ -73,7 +73,7 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber) {
                 "\" width=\"400\" height=\"260\">\n" +
                 "                <footer>\n" +
                 "                    <ul class=\"buttons\">\n" +
-                "                        <li><a href=\"#\" class=\"button small\" id=image"+(3*numRow+i+1)+">TAG IT</a></li>\n" +
+                "                        <li><a href=\"#\" class=\"button special\" id=image"+(3*numRow+i+1)+">開始標注</a></li>\n" +
                 "                    </ul>\n" +
                 "                </footer>\n" +
                 "            </section>\n" +
@@ -98,12 +98,13 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber) {
 
 function setButtons(num) {
     if(Tagable1=="0"){
-        var buttons=document.getElementsByClassName("button small");
+        var buttons=document.getElementsByClassName("button special");
         for(var i=0;i<num;i++){
             buttons[i].style.display="none";
         }
     }else {
-
+        var submenu=document.getElementById("submenu");
+        submenu.style.display="none";
     }
     if(userCategory1=="1"){
         var submenu=document.getElementById("submenu");
