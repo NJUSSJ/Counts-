@@ -27,6 +27,13 @@ public class PersonalController {
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
         ModelAndView model = new ModelAndView("Personal");
+        String userName = request.getParameter("userName");
+        model.addObject("userName",userName);
+        String phoneNumber = request.getParameter("phoneNumber");
+        model.addObject("phoneNumber", phoneNumber);
+        User user = basicBLService.findByKey(phoneNumber);
+        String password = user.getPassword();
+        model.addObject("password", password);
         return model;
     }
 
@@ -52,12 +59,12 @@ public class PersonalController {
     @RequestMapping(value = "/writePersonal")
     @ResponseBody
     public String writePersonal(@RequestBody String personalInfo){
-        System.out.println("获取到的用户信息: " + personalInfo);
+        System.out.println("writePersonal: " + personalInfo);
         JSONObject obj = new JSONObject().fromObject(personalInfo);
         User user = (User)JSONObject.toBean(obj,User.class);
         basicBLService.update(user);
 
-        return "ret";
+        return "write personal info success";
     }
 
 

@@ -30,6 +30,7 @@ public class LoginController {
 		ModelAndView view = new ModelAndView("Main");
 		boolean existed=false;
 		User tmpUser=basicBLService.findByKey(request.getParameter("userName"));
+		System.out.println(request.getParameter("userName"));
 		if(tmpUser!=null){
 		    existed=true;
         }

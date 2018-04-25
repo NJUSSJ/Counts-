@@ -55,6 +55,7 @@ function toJsonString(obj) {
 function savePersonalInfo(personalInfo) {
 
     $.ajax({
+        async: false,
         type: "POST",
         url: "writePersonal",
         contentType: "application/json",
@@ -66,10 +67,10 @@ function savePersonalInfo(personalInfo) {
             }
         },
         error:function () {
-            alert("fail");
+            //alert("fail");
         }
     });
-    return 0;
+    return 1;
 }
 
 function loadPersonal() {
@@ -114,27 +115,34 @@ function loadPersonal() {
 }
 
 function savePersonalBlanks() {
-    var userName = document.getElementById("_username").value;
+
+    var category = 0;
+    var userName = document.getElementById("_userName").value;
     var phoneNumber = document.getElementById("_phoneNumber").value;
+
     switch (document.getElementById("_userType").value) {
         case "众包发起者":
-            var category = 1;
+            category = 1;
             break;
         case "众包工人":
-            var category = 2;
+            category = 2;
             break;
         case "系统管理员":
-            var category = 3;
+            category = 3;
             break;
     }
+
     var credit = document.getElementById("_credit").value;
     var level = document.getElementById("_level").value;
     var password = document.getElementById("_password").value;
     var description = document.getElementById("_description").value;
 
-    var personalInfo = new PersonalInfo(userName, phoneNumber, password, credit, level);
+    var personalInfo = new PersonalInfo(userName, phoneNumber, password, credit, level, category, description);
     savePersonalInfo(personalInfo);
     alert("已储存个人信息");
+
+    location.reload();
+    return true;
 }
 
 function TmpUser(phoneNumber,category){

@@ -36,7 +36,7 @@ public class ReadWriteFileController {
         JSONObject jsonObject = JSONObject.fromObject(collectionNameAndPicName);
         String collectionName = jsonObject.getString("collectionName");
         String picName = jsonObject.getString("picName");
-        
+
         return "666";
     }
 
