@@ -57,7 +57,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><a href="index.html">Counts <span> by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
                 <li class="current"><a href="index.html">Welcome</a></li>

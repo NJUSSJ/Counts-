@@ -1,6 +1,7 @@
 package com.seproject.web;
 
 import com.seproject.domain.StatisticsData.AdminData;
+import com.seproject.domain.StatisticsData.SingleMissionData;
 import com.seproject.domain.StatisticsData.StarterData;
 import com.seproject.domain.StatisticsData.WorkerData;
 import com.seproject.service.StatisticsService;
@@ -61,6 +62,14 @@ public class ChartController {
         String ret = jsonObject.toString();
 
         return ret;
+    }
+    //向前端傳輸單個任務的chartDara
+    @RequestMapping(value = "/singleMissionData")
+    @ResponseBody
+    public String getMissionChartData(@RequestBody String missionInfo){
+        System.out.println("後端接收到的mission："+missionInfo);
+        SingleMissionData data=new SingleMissionData();
+        return "";
     }
     @Autowired
     public void setStatisticsService(StatisticsService statisticsService) {

@@ -83,7 +83,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <a href="#me" class="icon fa-home active"><span>任务主页</span></a>
         <a href="#work" class="icon fa-eye"><span>任务详情</span></a>
         <a href="#samplePanel" class="icon fa-tag" onclick=""><span>评估任务</span></a>
-        <a href="#charts" class="icon fa-pie-chart"><span>任务统计</span></a>
+        <a href="#charts" class="icon fa-pie-chart" onclick=""><span>任务统计</span></a>
     </nav>
 
     <!-- Main -->
@@ -191,11 +191,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     </div>
                 </div>
-                <script type="text/javascript" src="js/missionDetailsCharts.js"></script>
+
 
                 <div class="row">
+                    <div id="chart2" style="width: 600px;height:400px;">
 
+                    </div>
                 </div>
+                <script type="text/javascript" src="js/missionDetailsCharts.js"></script>
             </section>
         </article>
 

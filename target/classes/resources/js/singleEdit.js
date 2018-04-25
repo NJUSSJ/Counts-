@@ -99,20 +99,23 @@ function loadPic(url, phoneNumber) {
     alert(imgInfo);
 
 
-    if(imgInfo.fixedx!=null||imgInfo.list!=null) {
+    if(imgInfo!=null){
+        if(imgInfo.fixedx!=null||imgInfo.list!=null) {
 
-        fixedX = imgInfo.fixedx;
-        fixedY = imgInfo.fixedy;
-        fixedWidth = imgInfo.fixedwidth;
-        fixedHeight = imgInfo.fixedheight;
-        curlArray = imgInfo.list;
+            fixedX = imgInfo.fixedx;
+            fixedY = imgInfo.fixedy;
+            fixedWidth = imgInfo.fixedwidth;
+            fixedHeight = imgInfo.fixedheight;
+            curlArray = imgInfo.list;
 
-        index1=fixedX.length;
-        index2=curlArray.length;
-        sentences=imgInfo.sentences;
-        sentids=imgInfo.sentids;
+            index1=fixedX.length;
+            index2=curlArray.length;
+            sentences=imgInfo.sentences;
+            sentids=imgInfo.sentids;
 
+        }
     }
+
 
 
 
@@ -313,16 +316,19 @@ function loadPic(url, phoneNumber) {
 
     }
 
-    if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
-        var OverallIndex=0;
-        while(imgInfo.sentences[OverallIndex].status!=2){
-            OverallIndex++;
-            if(OverallIndex==imgInfo.sentences.length){
-                break;
+    if(imgInfo!=null){
+        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
+            var OverallIndex=0;
+            while(imgInfo.sentences[OverallIndex].status!=2){
+                OverallIndex++;
+                if(OverallIndex==imgInfo.sentences.length){
+                    break;
+                }
             }
+            document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
         }
-        document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
     }
+
 
 }
 

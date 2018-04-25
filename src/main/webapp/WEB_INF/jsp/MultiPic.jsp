@@ -15,7 +15,7 @@
 <body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userCategory},${requestScope.Tagable},${requestScope.userPhone})">
 <div id="page-wrapper">
     <header id="header">
-        <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
                 <li class="current"><a href="index.html">${requestScope.userName}</a></li>
@@ -91,7 +91,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/multipic.js"></script>
+<script src="js/multipic1.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>

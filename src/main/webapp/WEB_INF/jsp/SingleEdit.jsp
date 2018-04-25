@@ -64,15 +64,12 @@
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><a href="index.html">COUNTS <span>Social Engineers</span></a></h1>
-        <nav id="nav">
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
+        <nav id="nav" onload="loadPhoneNumber(${requestScope.phoneNumber})">
             <ul>
                 <li class="submenu">
                     <a herf="#">Tag</a>
                     <ul>
-                        <li><a id="add"><img src="images/add.png" width="20" height="20" align="center">ADD</a></li>
-                        <li><a onclick="_delete"><img src="images/delete.png" width="20" height="20" align="center">DELETE</a></li>
-                        <li><a onclick="edit"><img src="images/edit.png" width="20" height="20" align="center">EDIT</a></li>
                         <li><a id="save"><img src="images/save.png" width="20" height="20" align="center">SAVE</a></li>
                         <li><a id="back"><img src="images/back.png" width="20" height="20" align="center">BACK</a></li>
                         <li><a id="more"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>

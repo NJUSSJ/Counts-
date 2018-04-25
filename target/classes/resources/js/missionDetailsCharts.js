@@ -1,76 +1,41 @@
 var chart1 = echarts.init(document.getElementById('chart1'));
 var option1 = {
-    backgroundColor: '#2c343c',
-
     title: {
-        text: 'Customized Pie',
-        left: 'center',
-        top: 20,
-        textStyle: {
-            color: '#ccc'
-        }
+        text: '提交质量分布'
     },
-
-    tooltip: {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    tooltip: {},
+    legend: {
+        data:['人数']
     },
-
-    visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-            colorLightness: [0, 1]
-        }
+    xAxis: {
+        data: ["差","中","良","优"]
     },
-    series: [
-        {
-            name: '访问来源',
-            type: 'pie',
-            radius: '55%',
-            center: ['50%', '50%'],
-            data: [
-                {value: 335, name: '直接访问'},
-                {value: 310, name: '邮件营销'},
-                {value: 274, name: '联盟广告'},
-                {value: 235, name: '视频广告'},
-                {value: 400, name: '搜索引擎'}
-            ].sort(function (a, b) {
-                return a.value - b.value;
-            }),
-            roseType: 'radius',
-            label: {
-                normal: {
-                    textStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    lineStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    },
-                    smooth: 0.2,
-                    length: 10,
-                    length2: 20
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: '#c23531',
-                    shadowBlur: 200,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            },
-
-            animationType: 'scale',
-            animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-                return Math.random() * 200;
-            }
-        }
-    ]
+    yAxis: {},
+    series: [{
+        name: '人数',
+        type: 'bar',
+        data: [5, 20, 36, 10]
+    }]
 };
 chart1.setOption(option1);
+
+var chart2 = echarts.init(document.getElementById('chart2'));
+var option2 = {
+    title: {
+        text: '积分关于工人的等级分布'
+    },
+    tooltip: {},
+    legend: {
+        data:['积分总数']
+    },
+    xAxis: {
+        data: ["Level1","evel2","Level3","Level4"]
+    },
+    yAxis: {},
+    series: [{
+        name: '积分总数',
+        type: 'bar',
+        data: [203, 201, 398, 166]
+    }]
+};
+chart2.setOption(option2);
