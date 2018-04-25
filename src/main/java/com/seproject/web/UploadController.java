@@ -90,6 +90,7 @@ public class UploadController {
             tmpMission.setExpectedNum(expectedNum);
             tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
+            tmpMission.setState(0);
             missionBasicBLService.add(tmpMission);
 
         }

@@ -124,7 +124,7 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/Maincollection.js"></script>
+<script src="js/Maincollection3.js"></script>
 
 </body>
 </html>

@@ -78,7 +78,7 @@ function setCollection(){
         img1.alt="";
         a1_1.appendChild(img1);
         var p1=document.createElement("p");
-        var missionDescription=missionNames[i*3].substring(missionNames[rowNum*3+i].indexOf("^")+1,missionNames[i*3].length);
+        var missionDescription=missionNames[i*3].substring(missionNames[i*3].indexOf("^")+1,missionNames[i*3].length);
 
         p1.innerHTML=missionDescription;
         var footer1=document.createElement("footer");
@@ -87,7 +87,7 @@ function setCollection(){
         var li1=document.createElement("li");
         var a1_2=document.createElement("a");
         a1_2.className="button small";
-        a1_2.href="/details.html?imageURL="+missionNames[i*3].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+        a1_2.href="/details.html?imageURL="+missionNames[i*3].substring(0,missionNames[i*3].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         a1_2.innerHTML="Start Tagging";
         li1.appendChild(a1_2);
         ul1.appendChild(li1);
@@ -108,14 +108,14 @@ function setCollection(){
         header2.appendChild(missionName2);
         var a2_1=document.createElement("a");
         a2_1.className="image featured";
-        a2_1.href="/details.html?imageURL="+missionNames[i*3+1].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+        a2_1.href="/details.html?imageURL="+missionNames[i*3+1].substring(0,missionNames[i*3+1].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         var img2=document.createElement("img");
         img2.src="../../images/"+missionNames[i*3+1].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"_1.jpg";
         img2.className="collection";
         img2.alt="";
         a2_1.appendChild(img2);
         var p2=document.createElement("p");
-        var missionDescription=missionNames[i*3+1].substring(missionNames[rowNum*3+i].indexOf("^")+1,missionNames[i*3+1].length);
+        var missionDescription=missionNames[i*3+1].substring(missionNames[i*3+1].indexOf("^")+1,missionNames[i*3+1].length);
 
         p2.innerHTML=missionDescription;
         var footer2=document.createElement("footer");
@@ -124,7 +124,7 @@ function setCollection(){
         var li2=document.createElement("li");
         var a2_2=document.createElement("a");
         a2_2.className="button small";
-        a2_2.href="/details.html?imageURL="+missionNames[i*3+1].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+        a2_2.href="/details.html?imageURL="+missionNames[i*3+1].substring(0,missionNames[i*3+1].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         a2_2.innerHTML="Start Tagging";
         li2.appendChild(a2_2);
         ul2.appendChild(li2);
@@ -149,14 +149,14 @@ function setCollection(){
         header3.appendChild(missionName3);
         var a3_1=document.createElement("a");
         a3_1.className="image featured";
-        a3_1.href="/details.html?imageURL="+missionNames[i*3+2].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+        a3_1.href="/details.html?imageURL="+missionNames[i*3+2].substring(0,missionNames[i*3+2].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         var img3=document.createElement("img");
         img3.src="../../images/"+missionNames[i*3+2].substring(0,missionNames[i*3+2].indexOf("^"))+"_1.jpg";
         img3.className="collection";
         img3.alt="";
         a3_1.appendChild(img3);
         var p3=document.createElement("p");
-        var missionDescription=missionNames[i*3+2].substring(missionNames[rowNum*3+i].indexOf("^")+1,missionNames[rowNum*3+i].length);
+        var missionDescription=missionNames[i*3+2].substring(missionNames[i*3+2].indexOf("^")+1,missionNames[i*3+2].length);
         p3.innerHTML=missionDescription;
         var footer3=document.createElement("footer");
         var ul3=document.createElement("ul");
