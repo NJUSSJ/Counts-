@@ -20,7 +20,7 @@ function loadSubmitHref(){
     //注意以下collectionName 参数是否能取到
     submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=collectionName+${requestScope.phoneNumber}');
 }
-
+/*
 add.addEventListener("click", function add() {
     getImgInfo(imgCollection);
     alert("SUCCESS!");
@@ -32,7 +32,7 @@ function _delete() {
 
 function edit(){
 }
-
+*/
 save.addEventListener("click", function save() {
     saveData();
     alert("标注信息已保存");
@@ -87,7 +87,7 @@ function getSentIds() {
 }
 
 function saveData() {
-    var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection(),fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
+    var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
     alert("已储存本图片信息");
 }
@@ -151,7 +151,7 @@ function getImgInfo() {
           }else{
               alert(JSON.stringify(jsonResult))
           }*/
-          //alert(jsonResult.imgid);
+          alert(jsonResult);
           tmp123 = JSON.stringify(jsonResult);
           //alert("qqq" + tmp123);
           //return ret;
