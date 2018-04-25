@@ -56,8 +56,6 @@
         #edit_area{
             height: 700px;
         }
-
-
     </style>
 </head>
 <body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone})">
@@ -76,7 +74,7 @@
                     </ul>
                 </li>
                 <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
-                <li><a onload="loadSubmitHref()" id="submitTagInfo" class="button special">Submit</a></li>
+                <li><a href="<c:url value="submit"/>?missionAndPhoneNumber=${requestScope.collection}${requestScope.userPhone}" id="submitTagInfo" class="button special">Submit</a></li>
                 <li><a href="http://localhost:3141" class="button special">Sign Out</a></li>
             </ul>
         </nav>

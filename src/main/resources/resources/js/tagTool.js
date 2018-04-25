@@ -15,12 +15,6 @@ function loadPhoneNumber(_phoneNumber){
     alert("修改过的phoneNumber: " +phoneNumber);
 }
 
-function loadSubmitHref(){
-    var submit = document.getElementById("submitTagInfo");
-    //注意以下collectionName 参数是否能取到
-    submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=collectionName+${requestScope.phoneNumber}');
-}
-
 save.addEventListener("click", function save() {
     saveData();
     alert("标注信息已保存");

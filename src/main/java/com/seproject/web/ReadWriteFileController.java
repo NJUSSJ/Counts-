@@ -1,15 +1,14 @@
 package com.seproject.web;
 
 import com.seproject.domain.Collection;
+import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
-import com.seproject.service.FileIOService;
-import com.seproject.service.StatisticsService;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -20,7 +19,9 @@ import java.util.ArrayList;
 @Controller
 public class ReadWriteFileController {
 
-     BasicBLService<Collection> collectionService=new BasicBLService<Collection>(new Collection());
+    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
+    BasicBLService<Collection> collectionService=new BasicBLService<Collection>(new Collection());
+
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
@@ -78,8 +79,9 @@ public class ReadWriteFileController {
      */
     @RequestMapping(value = "/submit")
     @ResponseBody
-    public String submitTagInfo(@RequestBody HttpServletRequest request){
+    public String submitTagInfo(HttpServletRequest request){
         String missionAndPhoneNumber = request.getParameter("missionAndPhoneNumber");
+        System.out.println(missionAndPhoneNumber);
         Collection collection=null;
 
         if((collection=collectionService.findByKey(missionAndPhoneNumber))!=null){
@@ -89,7 +91,7 @@ public class ReadWriteFileController {
             System.out.println("要提交的图集不存在"+"：主键为"+missionAndPhoneNumber);
         }
 
-        return "666";
+        return "提交成功！";
     }
 
 
