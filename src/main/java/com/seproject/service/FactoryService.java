@@ -97,4 +97,24 @@ public class FactoryService {
         return singleMissionData;
     }
 
+    public User userFactory(
+            String phoneNumber,
+            String userName,
+            String password,
+            double credit,
+            int category,
+            int level,
+            String description
+
+    ){
+        User user=new User();
+        user.setCategory(category);
+        user.setLevel(level);
+        user.setPassword(password);
+        user.setCredit(credit);
+        user.setUserName(userName);
+        user.setPhoneNumber(phoneNumber);
+        user.setDescription(description);
+        return user;
+    }
 }
