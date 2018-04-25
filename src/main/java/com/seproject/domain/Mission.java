@@ -1,6 +1,7 @@
 package com.seproject.domain;
 
 import com.seproject.service.Key;
+import com.seproject.service.Searchable;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,8 @@ public class Mission {
     int fileNum;
     double reward;
     int expectedNum;
+
+    @Searchable(varName = "requestorNumber")
     String requestorNumber;
     int state;//0:未完成 1：完成
     public Mission(){

@@ -2,10 +2,6 @@ var adminSumCharts = 2;
 var starterSumCharts = 2;
 var workerSumCharts = 2;
 
-var adminId = "adminChart" + adminSumCharts.toString();
-var starterId = "startChart" + starterSumCharts.toString();
-var workerId = "workerChart" + workerSumCharts.toString();
-
 function loadChartArea(userCategory) {
 
     var parent = document.getElementById("chartsArea");

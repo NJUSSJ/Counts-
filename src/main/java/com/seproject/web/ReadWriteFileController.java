@@ -4,6 +4,7 @@ import com.seproject.domain.Collection;
 import com.seproject.service.BasicBLService;
 import com.seproject.service.FileIOService;
 import com.seproject.service.StatisticsService;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +32,11 @@ public class ReadWriteFileController {
 
     @RequestMapping(value = "/tag")
     @ResponseBody
-    public String getTag(@RequestBody String img){
+    public String getTag(@RequestBody String collectionNameAndPicName){
+        JSONObject jsonObject = JSONObject.fromObject(collectionNameAndPicName);
+        String collectionName = jsonObject.getString("collectionName");
+        String picName = jsonObject.getString("picName");
+        
         return "666";
     }
 

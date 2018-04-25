@@ -61,13 +61,13 @@ public class StatisticsService {
     }
 
     /**
-     * missionSum:发布的任务总数
-     * finishedMissionNum：已结束的任务总数
-     * ongoingMissionNum:正在进行的任务总数
-     * participantSum:每个任务的参与者总数
-     * creditSum：每个任务的总奖励
-     * creditAvg：每个任务的平均奖励
-     * missionName：每个任务的名称
+     * adminMissionSum:发布的任务总数
+     * adminFinishedMissionNum：已结束的任务总数
+     * adminOngoingMissionNum:正在进行的任务总数
+     * starterParticipantSum:每个任务的参与者总数
+     * starterCreditSum：每个任务的总奖励
+     * starterCreditAvg：每个任务的平均奖励
+     * starterMissionName：每个任务的名称
      */
     public StarterData getStarterData(String userID){
         int missionSum=0,finishedMissionNum=0,ongoingMissionNum=0;
@@ -102,13 +102,13 @@ public class StatisticsService {
     }
 
     /**
-     * userSum：用户总数
-     * workerNum：工人总数
+     * adminUserSum：用户总数
+     * adminWorkerNum：工人总数
      * adminNum：管理员总数
-     * starterNum：发起者总数
-     * missionSum：任务总数
-     * finishedMissionNum：已完成任务数
-     * ongoingMissionNum：未完成任务数
+     * adminStarterNum：发起者总数
+     * adminMissionSum：任务总数
+     * adminFinishedMissionNum：已完成任务数
+     * adminOngoingMissionNum：未完成任务数
      */
     public AdminData  getAdminData(){
         ArrayList<User> users=service2.getAllObjects();
@@ -171,11 +171,11 @@ public class StatisticsService {
     public RM fillCollection (ImageInfo imageInfo)
     {
       /*  String temp0[]=imageInfo.getImgid().split("-");
-        String missionName=temp0[0];
+        String starterMissionName=temp0[0];
         String picName0= temp0[1]; //这个属性必须是数字,且从1开始
         String userName= temp0[2];
 
-        Collection collection=service1.findByKey(missionName+userName);
+        Collection collection=service1.findByKey(starterMissionName+userName);
         ArrayList<ImageInfo> infoList=collection.getInfoList();
         infoList.set(Integer.parseInt(picName0)-1,imageInfo);
         collection.setInfoList(infoList);

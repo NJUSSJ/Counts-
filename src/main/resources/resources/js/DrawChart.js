@@ -105,3 +105,33 @@ workerChart1.setOption(workerOption1);
     adminChart1.setOption(adminOption1);
 
 /* ------------------------------------------------------------------- */
+
+
+// 基于准备好的dom，初始化echarts实例
+var starterChart1 = echarts.init(document.getElementById('starterChart1'));
+
+// 指定图表的配置项和数据
+
+var starterOption1 = {
+    title: {
+        text: 'COUNTS用户等级分布统计图'
+    },
+    tooltip: {},
+    legend: {
+        data: ['LEVEL']
+    },
+    xAxis: {
+        data: ["LEVEL1", "LEVEL2", "LEVEL3", "LEVEL4", "LEVEL5", "LEVEL6"]
+    },
+    yAxis: {},
+    series: [{
+        name: 'LEVEL',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+    }]
+};
+
+// 使用刚指定的配置项和数据显示图表。
+starterChart1.setOption(starterOption1);
+
+/* ------------------------------------------------------------------- */

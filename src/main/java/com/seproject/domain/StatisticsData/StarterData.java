@@ -3,21 +3,21 @@ package com.seproject.domain.StatisticsData;
 import java.util.ArrayList;
 
 public class StarterData {
-    public int missionSum;
-    public int finishedMissionNum;
-    public int ongoingMissionNum;
-    public ArrayList<Integer> participantSum;
-    public ArrayList<Double> creditSum;
-    public ArrayList<Double> creditAvg;
-    public ArrayList<String> missionName;
+    public int starterMissionSum;
+    public int starterFinishedMissionNum;
+    public int starterOngoingMissionNum;
+    public ArrayList<Integer> starterParticipantSum;
+    public ArrayList<Double> starterCreditSum;
+    public ArrayList<Double> starterCreditAvg;
+    public ArrayList<String> starterMissionName;
 /*
-    public StarterData(int missionSum, int finishedMissionNum, int ongoingMissionNum, ArrayList<Integer> participantSum, ArrayList<Double> creditSum, ArrayList<Double> creditAvg, ArrayList<String> missionName){
-        this.missionSum = missionSum;
-        this.finishedMissionNum = finishedMissionNum;
-        this.ongoingMissionNum = ongoingMissionNum;
-        this.participantSum = participantSum;
-        this.creditSum = creditSum;
-        this.creditAvg = creditAvg;
-        this.missionName = missionName;
+    public StarterData(int adminMissionSum, int adminFinishedMissionNum, int adminOngoingMissionNum, ArrayList<Integer> starterParticipantSum, ArrayList<Double> starterCreditSum, ArrayList<Double> starterCreditAvg, ArrayList<String> starterMissionName){
+        this.adminMissionSum = adminMissionSum;
+        this.adminFinishedMissionNum = adminFinishedMissionNum;
+        this.adminOngoingMissionNum = adminOngoingMissionNum;
+        this.starterParticipantSum = starterParticipantSum;
+        this.starterCreditSum = starterCreditSum;
+        this.starterCreditAvg = starterCreditAvg;
+        this.starterMissionName = starterMissionName;
     } */
 }
