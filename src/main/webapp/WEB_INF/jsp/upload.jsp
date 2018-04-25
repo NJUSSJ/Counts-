@@ -213,7 +213,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/upload.js"></script>
+<script src="js/upload1.js"></script>
 
 
 

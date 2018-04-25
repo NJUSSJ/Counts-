@@ -132,7 +132,7 @@ function veriInput() {
     }
 
 
-    if(document.getElementsByClassName("dz-image")==[]){
+    if(document.getElementsByClassName("dz-image")[0]==null){
         alert("请选择任务文件！");
         return false;
     }
