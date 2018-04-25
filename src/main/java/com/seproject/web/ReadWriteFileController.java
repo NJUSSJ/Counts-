@@ -12,21 +12,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 /**
  * Created by julia98 on 2018/3/22.
  */
 @Controller
 public class ReadWriteFileController {
-    FileIOService fileIOService;
-//    StatisticsService statisticsService;
+
      BasicBLService<Collection> collectionService=new BasicBLService<Collection>(new Collection());
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
        // String imgid = params.getString("imgid");
         System.out.print("获取到的文件名" + imgid);
-        fileIOService.updateDataFile(imgid);
+
+        JSONObject jsonObject = JSONObject.fromObject(imgid);
+        String temp0[]=jsonObject.getString("imgid").split("-");
+        String starterMissionName=temp0[0];
+        String picName0= temp0[1]; //这个属性必须是数字,且从1开始
+        String userName= temp0[2];
+
+        Collection collection=collectionService.findByKey(starterMissionName+userName);
+        ArrayList<String> infoList=collection.getInfoList();
+        infoList.set(Integer.parseInt(picName0)-1,imgid);
+        collection.setInfoList(infoList);
+        collectionService.update(collection);
+
+
         return "666";
     }
 
@@ -81,11 +94,6 @@ public class ReadWriteFileController {
     }
 
 
-    @Autowired
-    public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService ;}
- /*   @Autowired
-    public  void setStatisticsService(StatisticsService statisticsService){
-        this.statisticsService=statisticsService;
-    }
-    */
+
+
 }

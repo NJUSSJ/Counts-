@@ -165,23 +165,6 @@ public class StatisticsService {
 
     }
 
-    /**
-     * 根据 Image id 自动将其封装在对应的Collection 里
-     */
-    public RM fillCollection (ImageInfo imageInfo)
-    {
-      /*  String temp0[]=imageInfo.getImgid().split("-");
-        String starterMissionName=temp0[0];
-        String picName0= temp0[1]; //这个属性必须是数字,且从1开始
-        String userName= temp0[2];
-
-        Collection collection=service1.findByKey(starterMissionName+userName);
-        ArrayList<ImageInfo> infoList=collection.getInfoList();
-        infoList.set(Integer.parseInt(picName0)-1,imageInfo);
-        collection.setInfoList(infoList);
-        service1.update(collection);*/
-        return RM.SUCCESS;
-    }
 
     @Autowired
     public void setFactoryService(FactoryService factoryService){this.factoryService=factoryService;}
