@@ -29,8 +29,16 @@ public class CollectionController {
 
     @RequestMapping(value = "/details.html")
     public ModelAndView getDetailofCollection(HttpServletRequest request){
-        int picNum;
         String missionName=request.getParameter("imageURL");
+        Mission tmpMission=missionBasicBLService.findByKey(missionName);
+        int picNum=tmpMission.getFileNum();
+        double credit=tmpMission.getReward();
+        int expectedNum=tmpMission.getExpectedNum();
+        String startTime=tmpMission.getStartTime();
+        String endTime=tmpMission.getEndTime();
+        String Level=tmpMission.getWorkerLevel();
+        String description=tmpMission.getDescription();
+
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
         String fixx="\'../../images/";
         String url=fixx+request.getParameter("imageURL")+"_\'";
@@ -39,6 +47,8 @@ public class CollectionController {
         String userName=basicBLService.findByKey(userPhone).getUserName();
         int userCategory=Integer.parseInt(request.getParameter("userCategory"));
         int Tagable=Integer.parseInt(request.getParameter("Tagable"));
+
+
         ModelAndView model=new ModelAndView("MultiPic");
         model.addObject("url",url);
         model.addObject("collection", collection);
@@ -47,6 +57,13 @@ public class CollectionController {
         model.addObject("userCategory", userCategory);
         model.addObject("userName",userName);
         model.addObject("Tagable", Tagable);
+
+        model.addObject("credit",credit);
+        model.addObject("expectedNum",expectedNum);
+        model.addObject("startTime", startTime);
+        model.addObject("endTime", endTime);
+        model.addObject("Level",Level);
+        model.addObject("description",description);
 
         return model;
     }
