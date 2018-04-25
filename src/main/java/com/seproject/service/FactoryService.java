@@ -1,9 +1,7 @@
 package com.seproject.service;
 
-import com.seproject.domain.StatisticsData.AdminData;
-import com.seproject.domain.StatisticsData.SingleMissionData;
-import com.seproject.domain.StatisticsData.StarterData;
-import com.seproject.domain.StatisticsData.WorkerData;
+import com.seproject.domain.*;
+import com.seproject.domain.StatisticsData.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

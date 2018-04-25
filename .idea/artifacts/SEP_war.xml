@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="SEP:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="SEP-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="SEP:war exploded" />
-    </root>
-  </artifact>
-</component>
