@@ -165,15 +165,7 @@
 </div>
 
 <!-- Scripts -->
-<<<<<<< HEAD
 <script src="js/personal.js"></script>
-=======
-
-<script src="js/echarts.min.js"></script>
-<script src="js/echarts-wordcloud.min.js"></script>
-<script src="js/Personal.js"></script>
-
->>>>>>> a8ecc9481535a5b73ab190eb0d1b2278b041dd0e
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>
