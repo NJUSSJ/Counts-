@@ -19,7 +19,11 @@ public class FileDao {
 
             BufferedReader br=new BufferedReader(new FileReader(file));
             while((content=br.readLine())!=null){
-                res=res+content+"\n";
+                if(content.endsWith(separateString)) {
+                    res = res + content + "\n";
+                }else{
+                    res=res+content;
+                }
             }
             br.close();
         } catch (FileNotFoundException e) {
