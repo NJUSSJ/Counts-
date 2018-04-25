@@ -5,7 +5,6 @@ import com.seproject.domain.StatisticsData.SingleMissionData;
 import com.seproject.domain.StatisticsData.StarterData;
 import com.seproject.domain.StatisticsData.WorkerData;
 import org.springframework.stereotype.Service;
-import com.seproject.domain.*;
 
 import java.util.ArrayList;
 
@@ -24,13 +23,13 @@ public class FactoryService {
             ArrayList<String> missionName
     ){
         StarterData starterData=new StarterData();
-        starterData.missionSum=missionSum;
-        starterData.finishedMissionNum=finishedMissionNum;
-        starterData.ongoingMissionNum=ongoingMissionNum;
-        starterData.participantSum=participantSum;
-        starterData.creditSum=creditSum;
-        starterData.creditAvg=creditAvg;
-        starterData.missionName=missionName;
+        starterData.starterMissionSum =missionSum;
+        starterData.starterFinishedMissionNum =finishedMissionNum;
+        starterData.starterOngoingMissionNum =ongoingMissionNum;
+        starterData.starterParticipantSum =participantSum;
+        starterData.starterCreditSum =creditSum;
+        starterData.starterCreditAvg =creditAvg;
+        starterData.starterMissionName =missionName;
         return starterData;
     }
 
@@ -44,13 +43,13 @@ public class FactoryService {
             int ongoingMissionNum
     ){
         AdminData adminData=new AdminData();
-        adminData.userSum=userSum;
-        adminData.workerNum=workerNum;
+        adminData.adminUserSum =userSum;
+        adminData.adminWorkerNum =workerNum;
         adminData.adminNum=adminNum;
-        adminData.starterNum=starterNum;
-        adminData.missionSum=missionSum;
-        adminData.finishedMissionNum=finishedMissionNum;
-        adminData.ongoingMissionNum=ongoingMissionNum;
+        adminData.adminStarterNum =starterNum;
+        adminData.adminMissionSum =missionSum;
+        adminData.adminFinishedMissionNum =finishedMissionNum;
+        adminData.adminOngoingMissionNum =ongoingMissionNum;
         return adminData;
     }
 
@@ -65,14 +64,14 @@ public class FactoryService {
             double  creditSum
     ){
         WorkerData workerData=new WorkerData();
-        workerData.credit=credit;
-        workerData.creditRank=creditRank;
-        workerData.creditSum=creditSum;
-        workerData.missionSum=missionSum;
-        workerData.finishedMissionNum=finishedMissionNum;
-        workerData.unfinishedMissionNum=unfinishedMissionNum;
+        workerData.workerCredit =credit;
+        workerData.workerCreditRank =creditRank;
+        workerData.workerCreditSum =creditSum;
+        workerData.workerMissionSum =missionSum;
+        workerData.workerFinishedMissionNum =finishedMissionNum;
+        workerData.workerUnfinishedMissionNum =unfinishedMissionNum;
         workerData.workerSum=workerSum;
-        workerData.missionName=missionName;
+        workerData.workerMissionName =missionName;
         return workerData;
     }
 

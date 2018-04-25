@@ -36,8 +36,6 @@ public class CollectionController {
         String url=fixx+request.getParameter("imageURL")+"_\'";
         String collection="\'"+request.getParameter("imageURL")+"\'";
         String userPhone=request.getParameter("userPhone");
-        System.out.println("userPhone:"+userPhone);
-        System.out.println(basicBLService.findByKey(userPhone)==null);
         String userName=basicBLService.findByKey(userPhone).getUserName();
         int userCategory=Integer.parseInt(request.getParameter("userCategory"));
         int Tagable=Integer.parseInt(request.getParameter("Tagable"));
