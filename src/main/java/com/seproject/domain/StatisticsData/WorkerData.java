@@ -3,23 +3,23 @@ package com.seproject.domain.StatisticsData;
 import java.util.ArrayList;
 
 public class WorkerData {
-    public int missionSum;
-    public int finishedMissionNum;
-    public int unfinishedMissionNum;
-    public ArrayList<Double> credit;// 单个任务获得的积分
-    public ArrayList<String> missionName; //每个任务的名称
-    public int creditRank;
+    public int workerMissionSum;
+    public int workerFinishedMissionNum;
+    public int workerUnfinishedMissionNum;
+    public ArrayList<Double> workerCredit;// 单个任务获得的积分
+    public ArrayList<String> workerMissionName; //每个任务的名称
+    public int workerCreditRank;
     public int workerSum;//总工人数
-    public double creditSum; //积分总数
+    public double workerCreditSum; //积分总数
 /*
-    public WorkerData(int missionSum, int finishedMissionNum, int unfinishedMissionNum, ArrayList<Double> credit, int creditRank, int workersum, double creditSum){
-        this.missionSum = missionSum;
-        this.finishedMissionNum = finishedMissionNum;
-        this.unfinishedMissionNum = unfinishedMissionNum;
-        this.credit = credit;
-        this.creditRank = creditRank;
+    public WorkerData(int adminMissionSum, int adminFinishedMissionNum, int workerUnfinishedMissionNum, ArrayList<Double> workerCredit, int workerCreditRank, int workersum, double starterCreditSum){
+        this.adminMissionSum = adminMissionSum;
+        this.adminFinishedMissionNum = adminFinishedMissionNum;
+        this.workerUnfinishedMissionNum = workerUnfinishedMissionNum;
+        this.workerCredit = workerCredit;
+        this.workerCreditRank = workerCreditRank;
         this.workersum = workersum;
-        this.creditSum = creditSum;
+        this.starterCreditSum = starterCreditSum;
     }
     */
 }

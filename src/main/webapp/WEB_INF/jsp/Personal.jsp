@@ -166,6 +166,8 @@
 
 <!-- Scripts -->
 <script src="js/personal.js"></script>
+<script src="js/ChartData.js"></script>
+<script src="js/GetChartData.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

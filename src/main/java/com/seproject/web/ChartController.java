@@ -19,7 +19,7 @@ public class ChartController {
     @RequestMapping(value = "/starterChartData")
     @ResponseBody
     public String getStarterChartData(@RequestBody String userInfo) {
-        System.out.println("接收到的userInfo: " + userInfo);
+        System.out.println("starterChartData接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         System.out.println(phoneNumber);
 
@@ -35,7 +35,7 @@ public class ChartController {
     @RequestMapping(value = "/workerChartData")
     @ResponseBody
     public String getWorkerChartData(@RequestBody String userInfo) {
-        System.out.println("接收到的userInfo: " + userInfo);
+        System.out.println("workerChartData接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         System.out.println(phoneNumber);
 
@@ -51,7 +51,7 @@ public class ChartController {
     @RequestMapping(value = "/adminChartData")
     @ResponseBody
     public String getAdminChartData(@RequestBody String userInfo) {
-        System.out.println("接收到的userInfo: " + userInfo);
+        System.out.println("adminChartData接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         System.out.println(phoneNumber);
 
