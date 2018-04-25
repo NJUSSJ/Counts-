@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @RestController
 public class CollectionController {
@@ -76,8 +77,15 @@ public class CollectionController {
         Collection collection=(Collection)JSONObject.toBean(object,Collection.class);
         String uid=collection.getUid();
         String mid=collection.getMid();
+        Mission tmpMission=missionBasicBLService.findByKey(mid);
+        int picNum=tmpMission.getFileNum();
         collection.setKeyId(mid+uid);
         collection.setState(0);
+        ArrayList<String> tmpArray=new ArrayList<String>();
+        for(int i=0;i<picNum;i++){
+            tmpArray.add("{}");
+        }
+        collection.setInfoList(tmpArray);
         collectionBasicBLService.add(collection);
     }
 }

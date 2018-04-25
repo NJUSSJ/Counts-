@@ -51,18 +51,6 @@ public class UploadController {
 
     }
 
-    @RequestMapping(value = "/uploadFile")
-    @ResponseBody
-    public String addMission(@RequestBody String MissionJASON)throws IOException{
-        System.out.println(MissionJASON);
-        JSONObject jsonObject=new JSONObject().fromObject(MissionJASON);
-        Mission mission=(Mission)JSONObject.toBean(jsonObject,Mission.class);
-        Mission tmpMission=missionBasicBLService.findByKey(mission.getName());
-        tmpMission.setName(mission.getName());
-
-        missionBasicBLService.update(tmpMission);
-        return "success";
-    }
 
     @RequestMapping(value = "/uploadPics", method = RequestMethod.POST)
     @ResponseBody

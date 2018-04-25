@@ -31,7 +31,7 @@
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="/getMissionDetails?missionName=新垣结衣">Welcome</a></li>
+                <li class="current"><a href="/getMissionDetails?missionName=社会人的任务">Welcome</a></li>
                 <li class="submenu">
                     <a href="#">帮助</a>
                     <ul>

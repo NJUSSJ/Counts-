@@ -21,17 +21,7 @@ function loadSubmitHref(){
     submit.setAttribute("href",'<c:url value="submit"/>?missionAndPhoneNumber=collectionName+${requestScope.phoneNumber}');
 }
 
-add.addEventListener("click", function add() {
-    getImgInfo(imgCollection);
-    alert("SUCCESS!");
-})
 
-function _delete() {
-    tagArea.text = "";
-}
-
-function edit(){
-}
 
 save.addEventListener("click", function save() {
     saveData();
@@ -157,7 +147,7 @@ function getImgInfo() {
           //return ret;
         }
         ,
-        error: function(msg){
+        error: function(){
             alert("fail")
         }
     });
