@@ -1,6 +1,6 @@
 var adminSumCharts = 4;
 var starterSumCharts = 2;
-var workerSumCharts = 2;
+var workerSumCharts = 3;
 
 function loadChartArea(userCategory) {
 
