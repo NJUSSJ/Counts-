@@ -60,7 +60,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
             <!-- Content -->
             <div class="content">
-                <form action="/setUser" method="post">
+                <form action="<c:url value="/setUser"/>" method="post">
                     <div class="row">
                         <div class="12u">
                             <input  id="phoneNumber" type="text" name="phoneNumber"/>
