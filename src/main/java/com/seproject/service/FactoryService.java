@@ -38,7 +38,9 @@ public class FactoryService {
             int starterNum,
             int missionSum,
             int finishedMissionNum,
-            int ongoingMissionNum
+            int ongoingMissionNum,
+            ArrayList<String> levelName,
+            ArrayList<Integer> level
     ){
         AdminData adminData=new AdminData();
         adminData.adminUserSum =userSum;
@@ -48,6 +50,8 @@ public class FactoryService {
         adminData.adminMissionSum =missionSum;
         adminData.adminFinishedMissionNum =finishedMissionNum;
         adminData.adminOngoingMissionNum =ongoingMissionNum;
+        adminData.adminLevelName=levelName;
+        adminData.adminLevelWorkerNum=level;
         return adminData;
     }
 
@@ -59,7 +63,9 @@ public class FactoryService {
             ArrayList<String> missionName,
             int creditRank,
             int workerSum,
-            double  creditSum
+            double  creditSum,
+            ArrayList<Double> maxCredit,
+            ArrayList<Double> avg
     ){
         WorkerData workerData=new WorkerData();
         workerData.workerCredit =credit;
@@ -70,6 +76,8 @@ public class FactoryService {
         workerData.workerUnfinishedMissionNum =unfinishedMissionNum;
         workerData.workerSum=workerSum;
         workerData.workerMissionName =missionName;
+        workerData.workerAverageCredit=avg;
+        workerData.workerMaxCredit=maxCredit;
         return workerData;
     }
 
