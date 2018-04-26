@@ -74,13 +74,14 @@ public class ReadWriteFileController {
     /**
      * 用户提交任务的方法
      * 改变图集状态从0变到1
-     * @param request
+     * @param str
      * @return
      */
-    @RequestMapping(value = "/submit")
+    @RequestMapping(value = "/submitTag")
     @ResponseBody
-    public String submitTagInfo(HttpServletRequest request){
-        String missionAndPhoneNumber = request.getParameter("missionAndPhoneNumber");
+    public String submitTagInfo(@RequestBody String str){
+        JSONObject jsonObject = JSONObject.fromObject(str);
+        String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
         System.out.println(missionAndPhoneNumber);
         Collection collection=null;
 

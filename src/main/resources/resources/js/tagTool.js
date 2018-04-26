@@ -5,7 +5,7 @@ var back = document.getElementById("back");
 var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521465839531&di=894d8615e5b830dffd2d3f5184ea90b1&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fdc54564e9258d109241f9f09da58ccbf6d814d88.jpg"
 var phoneNumber;
 var imgid;
-var collectionName = getNameAndCollection()[0];
+//var collectionName = getNameAndCollection()[0];
 
 function loadPhoneNumber(_phoneNumber){
     phoneNumber = _phoneNumber;
@@ -145,4 +145,31 @@ function getImgInfo() {
     });
     return ret1;
 
+}
+/* ---------------------------------------------------- */
+function missionAndPhoneNumberObj(missionAndPhoneNumber) {
+    this.missionAndPhoneNumber = missionAndPhoneNumber;
+}
+function submitTagInfo() {
+    var missionAndPhoneNumber = getNameAndCollection()[0] + phoneNumber;
+    //alert("提交ing!" + missionAndPhoneNumber);
+
+    alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
+    $.ajax({
+        async: false,
+        type: "POST",
+        url: "submitTag",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)),
+        success: function () {
+            alert("提交成功!");
+        }
+        ,
+        error: function(){
+            //alert("提交失败!");
+        }
+    });
+    alert("提交成功!");
+    return 0;
 }

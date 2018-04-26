@@ -8,6 +8,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="js/tagTool.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <style type="text/css">
         div.sidebar{
@@ -74,7 +75,7 @@
                     </ul>
                 </li>
                 <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
-                <li><a href="<c:url value="submit"/>?missionAndPhoneNumber=${requestScope.collection}${requestScope.userPhone}" id="submitTagInfo" class="button special">Submit</a></li>
+                <li><a onclick="submitTagInfo()" class="button special">Submit</a></li>
                 <li><a href="http://localhost:3141" class="button special">Sign Out</a></li>
             </ul>
         </nav>
