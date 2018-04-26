@@ -345,7 +345,7 @@ function sendJudgeResult() {
 
         },
         error: function(){
-            alert("fail")
+
         }
     });
 }
