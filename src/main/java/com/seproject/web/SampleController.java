@@ -35,7 +35,13 @@ public class SampleController {
         JSONObject object=JSONObject.fromObject(sample);
         String sampleInfo=object.toString();
         System.out.println(sampleInfo);
-        System.out.println(sample.getImageInfo().get(0));
         return sampleInfo;
+    }
+
+    @RequestMapping(value = "/getSampleResult")
+    public void setSampleResult(@RequestBody String SampleInfo){
+        JSONObject object=JSONObject.fromObject(SampleInfo);
+        Sample sample=(Sample)JSONObject.toBean(object,Sample.class);
+        System.out.println(sample.getQuality());
     }
 }
