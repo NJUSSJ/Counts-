@@ -83,7 +83,7 @@ public class CollectionController {
         collection.setState(0);
         ArrayList<String> tmpArray=new ArrayList<String>();
         for(int i=0;i<picNum;i++){
-            tmpArray.add("{}");
+            tmpArray.add("");
         }
         collection.setInfoList(tmpArray);
         collectionBasicBLService.add(collection);

@@ -43,14 +43,13 @@ var flag  =  false;
 var x_curl  =  0; // 鼠标开始移动的位置X
 var y_curl  =  0; // 鼠标开始移动的位置Y
 var pointList  =  [];
-var curlArray=new Array();
+var curlArray=[];
 var i  =  2;
 
 //data list
-var sentences = new Array();
-var sentids = new Array();
+var sentences = [];
+var sentids = [];
 var sentidsCount = 0;
-var _sentences = new Array();
 var phoneNumber = "";
 
 
@@ -94,7 +93,7 @@ function loadPic(url, phoneNumber) {
     getImgInfo();
 
     var imgInfo = eval("(" + tmp123 + ")");
-    alert(imgInfo);
+    alert("imgInfo: " + imgInfo);
 
 
     if(imgInfo!=null){
@@ -399,7 +398,7 @@ function mouseUpRect(e){
 
         //data
         sentids.push(sentidsCount++);
-        var sentence = new eachSentence(textarea.value,getNameAndCollection(),sentidsCount,0);
+        var sentence = new eachSentence(textarea.value,getNameAndCollection()[0] + "_" + getNameAndCollection()[1],sentidsCount-1,0);
         sentences.push(sentence);
 
 
@@ -519,7 +518,7 @@ function mouseUpCurl() {
         textarea.innerHTML  =  curlPrompt;
         //data
         sentids.push(sentidsCount++);
-        var sentence = new eachSentence(textarea.innerHTML,getNameAndCollection(),sentidsCount,1);
+        var sentence = new eachSentence(textarea.innerHTML,getNameAndCollection()[0] + "_" + getNameAndCollection()[1],sentidsCount-1,1);
         sentences.push(sentence);
 
 
@@ -678,7 +677,7 @@ tool3.addEventListener("click",function () {
     //data
     sentids.push(sentidsCount++);
     var txt = document.getElementById("info").innerHTML;
-    var sentence = new eachSentence(txt,getNameAndCollection(),sentidsCount,2);
+    var sentence = new eachSentence(txt,getNameAndCollection()[0] + "_" + getNameAndCollection()[1],sentidsCount-1,2);
     sentences.push(sentence);
 
     //重新发送taginfo

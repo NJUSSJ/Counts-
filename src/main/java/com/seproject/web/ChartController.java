@@ -20,9 +20,9 @@ public class ChartController {
     @RequestMapping(value = "/starterChartData")
     @ResponseBody
     public String getStarterChartData(@RequestBody String userInfo) {
-        System.out.println("starterChartData接收到的userInfo: " + userInfo);
+
         String phoneNumber = userInfo.substring(16,27);//获取手机号
-        System.out.println(phoneNumber);
+
 
         //需要通过uid获取相应data
         StarterData starterData = statisticsService.getStarterData(phoneNumber);
@@ -36,9 +36,7 @@ public class ChartController {
     @RequestMapping(value = "/workerChartData")
     @ResponseBody
     public String getWorkerChartData(@RequestBody String userInfo) {
-        System.out.println("workerChartData接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
-        System.out.println(phoneNumber);
 
         //需要通过uid获取相应data
         WorkerData workerData = statisticsService.getWorkerData(phoneNumber);
@@ -52,9 +50,7 @@ public class ChartController {
     @RequestMapping(value = "/adminChartData")
     @ResponseBody
     public String getAdminChartData(@RequestBody String userInfo) {
-        System.out.println("adminChartData接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
-        System.out.println(phoneNumber);
 
         //需要通过uid获取相应data
         AdminData adminData =statisticsService.getAdminData();
@@ -67,7 +63,6 @@ public class ChartController {
     @RequestMapping(value = "/singleMissionData")
     @ResponseBody
     public String getMissionChartData(@RequestBody String missionInfo){
-        System.out.println("後端接收到的mission："+missionInfo);
         SingleMissionData data=new SingleMissionData();
         return "";
     }

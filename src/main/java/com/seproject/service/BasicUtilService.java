@@ -3,6 +3,7 @@
 package com.seproject.service;
 
 import com.seproject.dao.FileDao;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -153,7 +154,8 @@ public class BasicUtilService {
                     setter.invoke(model, info.get(j));
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
                     ArrayList<Integer> tmp = new ArrayList<Integer>();
-                    String content=info.get(j).replace("[","").replace("]","");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
 
                     String[] details=content.split(", ");
                     for(String each:details){
@@ -162,8 +164,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Double>")) {
                     ArrayList<Double> tmp = new ArrayList<Double>();
-                    String content=info.get(j).replace("[","").replace("]","");
-
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     String[] details=content.split(", ");
                     for(String each:details){
                         tmp.add(Double.parseDouble(each));
@@ -171,7 +173,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Boolean>")) {
                     ArrayList<Boolean> tmp = new ArrayList<Boolean>();
-                    String content=info.get(j).replace("[","").replace("]","");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
 
                     String[] details=content.split(", ");
                     for(String each:details){
@@ -180,8 +183,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.Long>")) {
                     ArrayList<Long> tmp = new ArrayList<Long>();
-                    String content=info.get(j).replace("[","").replace("]","");
-
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     String[] details=content.split(", ");
                     for(String each:details){
                         tmp.add(Long.parseLong(each));
@@ -189,11 +192,20 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.lang.String>")) {
                     ArrayList<String> tmp = new ArrayList<String>();
-                    String content=info.get(j).replace("[","").replace("]","");
-
-                    String[] details=content.split(", ");
-                    for(String each:details){
-                        tmp.add(each);
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
+                    while(true) {
+                        int index=content.indexOf(", ");
+                        if(index==-1){
+                            if(content!=null&&content.length()>0) {
+                                tmp.add(content);
+                            }
+                            break;
+                        }
+                        System.out.println("index"+index);
+                        tmp.add(content.substring(0,index));
+                        content=content.substring(index+2);
+                        System.out.println("In the loop:"+content);
                     }
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Integer>>")) {
@@ -269,7 +281,8 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 }else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
                     ArrayList<Object> tmp = new ArrayList<Object>();
-                    String content=info.get(j).replace("[","").replace("]","");
+                    String content=info.get(j);
+                    content=content.substring(1,content.length()-1);
                     String[] details=content.split(",");
                     if(details.length<=0) {
                         for (int i = 0; i < details.length; i++) {
