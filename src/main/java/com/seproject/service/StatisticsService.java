@@ -54,8 +54,27 @@ public class StatisticsService {
         }
         int workerSum=users.size();
 
+        //获取任务积分的最大值和平均值
+        ArrayList<Double> creditMax=new ArrayList<Double>();
+        ArrayList<Double>creditAvg =new ArrayList<Double>();
+        for(int i=0;i<missionName.size();i++){
+            Mission mission1=service3.findByKey(missionName.get(i));
+            ArrayList<Collection> collection1=service1.search("mid",SearchCategory.EQUAL,missionName.get(i));
+            if(collection1.size()>0) {
+                creditAvg.add(mission1.getReward() / collection1.size());
+            }else {
+                creditAvg.add(-1.0);// 防止除数为0
+            }
+            double maxcredit=0;
+            for(int j=0;j<collection1.size();j++){
+                if(collection1.get(j).getCredit()>maxcredit){
+                    maxcredit=collection1.get(j).getCredit();
+                }
+            }
+            creditMax.add(maxcredit);
+        }
 
-        WorkerData w=factoryService.workerDataFactory(missionSum,finishedMissionNum,unfinishedMissionNum,credit,missionName,creditRank,workerSum,creditSum);
+        WorkerData w=factoryService.workerDataFactory(missionSum,finishedMissionNum,unfinishedMissionNum,credit,missionName,creditRank,workerSum,creditSum,creditMax,creditAvg);
 
         return w;
     }
@@ -114,11 +133,16 @@ public class StatisticsService {
         ArrayList<User> users=service2.getAllObjects();
         int userSum=users.size();
         int workerNum=0,adminNum=0,starterNum=0;
+        int maxLevel=0;
         for(User user:users){
             switch (user.getCategory()){
                 case 0:adminNum++;break;
                 case 1:starterNum++;break;
-                case 2:workerNum++;break;
+                case 2:workerNum++;
+                    if(user.getLevel()>maxLevel){
+                        maxLevel=user.getLevel();
+                    }
+                     break;
             }
         }
 
@@ -131,7 +155,23 @@ public class StatisticsService {
                 finishedMissionNum++;
             }
         }
-        return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum);
+
+        //求用户等级最大值。
+        ArrayList<Integer> levels=new ArrayList<Integer>();
+        ArrayList<String> levelNames=new ArrayList<String>();
+        for(int i=0;i<maxLevel;i++){
+            levels.add(0);
+            levelNames.add("Level"+(Integer.toString(i+1)));
+        }
+        for(User user:users){
+            if(user.getCategory()==2){
+                int k0=user.getLevel();
+                if(k0>0)
+                levels.set(k0-1,levels.get(k0-1)+1);
+            }
+        }
+
+        return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum,levelNames,levels);
     }
     public SingleMissionData getSingleMissionData(String missionID){
         int number0=0;
