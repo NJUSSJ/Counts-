@@ -4,7 +4,11 @@
 var userCategory1;
 var Tagable1;
 
+<<<<<<< HEAD
 function load(num,url,collection,userCategory,Tagable,phoneNumber) {
+=======
+function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum) {
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     userCategory1=userCategory;
     Tagable1=Tagable;
     document.getElementById("pictureSection").innerHTML="";
@@ -89,7 +93,11 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber) {
          */
     for(var i=1;i<=num;i++){
         var a = document.getElementById("image"+i);
+<<<<<<< HEAD
         a.href="test1.html?collection="+collection+"&imageURL="+i+"&phoneNumber="+phoneNumber;
+=======
+        a.href="test1.html?collection="+encodeURI(collection)+"&imageURL="+i+"&phoneNumber="+phoneNumber+"&picNum="+picNum;
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     }
 
     setButtons(num);

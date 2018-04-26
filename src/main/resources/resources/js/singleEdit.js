@@ -680,9 +680,4 @@ tool3.addEventListener("click",function () {
     var sentence = new eachSentence(txt,getNameAndCollection()[0] + "_" + getNameAndCollection()[1],sentidsCount-1,2);
     sentences.push(sentence);
 
-    //重新发送taginfo
-/*    for(var i = 0;i<sentences.length;i++){
-        _sentences.push(sentences[i].raw);
-    }*/
-
 })

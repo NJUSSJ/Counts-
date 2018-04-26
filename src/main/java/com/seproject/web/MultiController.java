@@ -3,6 +3,7 @@
  */
 package com.seproject.web;
 
+import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.BasicBLService;
@@ -28,7 +29,10 @@ public class MultiController {
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
         ModelAndView model=new ModelAndView("SingleEdit");
         model.addObject("url",url);
-        model.addObject("collection",request.getParameter("collection"));
+        String collection = request.getParameter("collection");
+        model.addObject("collection",collection);
+        int picNum = missionBasicBLService.findByKey(collection).getFileNum();
+        model.addObject("picNum",picNum);
         User user = basicBLService.findByKey(phoneNumber);
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());

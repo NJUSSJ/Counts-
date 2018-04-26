@@ -2,7 +2,11 @@ var phoneNumber = "";
 var userName = "";
 var person = "";
 var userCategory = "";
+<<<<<<< HEAD
 var missionNames=new Array();
+=======
+var missionNames=[];
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 var index=0;
 
 function PersonalInfo(userName, phoneNumber, password, credit, level, category, description) {
@@ -31,7 +35,11 @@ function getPersonalInfo() {
             person = JSON.stringify(jsonResult);
         },
         error: function(msg){
+<<<<<<< HEAD
             alert("fail")
+=======
+            //alert("fail")
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
         }
     });
     return 0;
@@ -79,10 +87,17 @@ function loadPersonal() {
     this.userName = tmp[0].substring(tmp[0].indexOf("=")+1);
     this.phoneNumber = tmp[1].substring(tmp[1].indexOf("=")+1);
     userCategory = tmp[2].substring(tmp[2].indexOf("=")+1);
+<<<<<<< HEAD
     alert(userName + " " + phoneNumber + " " + userCategory);
 
     getPersonalInfo();
     alert(person);
+=======
+    //alert(userName + " " + phoneNumber + " " + userCategory);
+
+    getPersonalInfo();
+    //alert(person);
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     var personalInfo = eval("(" + person + ")");
 
     document.getElementById("_userName").value = personalInfo.userName;
@@ -167,6 +182,7 @@ function loadPersonalCollection(phoneNumber, category) {
                 missionNames[i] = returnData[i];
                 index++;
             }
+<<<<<<< HEAD
             alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
             setPersonalCollection();
         },
@@ -175,6 +191,16 @@ function loadPersonalCollection(phoneNumber, category) {
         }
     });
     alert("loadPersonalCollection success");
+=======
+            //alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
+            setPersonalCollection();
+        },
+        error: function () {
+            //alert("fail");
+        }
+    });
+    //alert("loadPersonalCollection success");
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 }
 
 function setPersonalCollection() {

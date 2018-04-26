@@ -40,6 +40,6 @@ public class SampleController {
 
     @RequestMapping(value = "/getSampleResult")
     public void setSampleResult(){
-        
+
     }
 }

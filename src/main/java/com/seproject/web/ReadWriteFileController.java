@@ -65,8 +65,7 @@ public class ReadWriteFileController {
         String picName=jsonObject.getString("picName");
         System.out.println("picName: " + picName);
         String phoneNumber=jsonObject.getString("phoneNumber");
-        Collection collection=collectionService.findByKey(collectionName+phoneNumber);
-        String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
+        Collection collection=collectionService.findByKey(collectionName+phoneNumber);String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
         System.out.println("从后端往前端发送的json字符串：" + jsonString);
         return jsonString;
     }
@@ -74,13 +73,14 @@ public class ReadWriteFileController {
     /**
      * 用户提交任务的方法
      * 改变图集状态从0变到1
-     * @param request
+     * @param str
      * @return
      */
-    @RequestMapping(value = "/submit")
+    @RequestMapping(value = "/submitTag")
     @ResponseBody
-    public String submitTagInfo(HttpServletRequest request){
-        String missionAndPhoneNumber = request.getParameter("missionAndPhoneNumber");
+    public String submitTagInfo(@RequestBody String str){
+        JSONObject jsonObject = JSONObject.fromObject(str);
+        String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
         System.out.println(missionAndPhoneNumber);
         Collection collection=null;
 

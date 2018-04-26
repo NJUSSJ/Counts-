@@ -60,6 +60,7 @@ function loadSample(missionName) {
     });
 }
 
+<<<<<<< HEAD
 /*
 parameters for canvas
  */
@@ -86,12 +87,15 @@ var Pic_x;
 var Pic_y;
 var image = new Image();
 
+=======
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 function sampleSet(sample, missionName) {
     picIndex=sample.picIndex;
     imageInfo=sample.imageInfo;
     quality=sample.quality;
     userId=sample.userId;
 
+<<<<<<< HEAD
     loadOneSample(indexForSample,missionName);
 }
 
@@ -266,6 +270,15 @@ function drawImage() {
 
 
 
+=======
+    var imgInfoString=imageInfo[indexForSample];
+    alert(imgInfoString);
+    var imgInfo=eval('('+imgInfoString+')');
+    alert(imgInfo.imgid);
+
+}
+
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 var number0;
 var number1;
 var number2;

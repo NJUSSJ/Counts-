@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 com\seproject\dao\FileDaoTest2.class
 com\seproject\dao\FileDaoTest1.class
 com\seproject\service\BasicBLServiceTest.class
 com\seproject\service\BasicBLServiceTest1.class
+=======
+com/seproject/service/BasicBLServiceTest1.class
+com/seproject/dao/FileDaoTest1.class
+com/seproject/dao/FileDaoTest2.class
+>>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab

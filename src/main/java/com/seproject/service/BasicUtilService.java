@@ -202,10 +202,8 @@ public class BasicUtilService {
                             }
                             break;
                         }
-                        System.out.println("index"+index);
                         tmp.add(content.substring(0,index));
                         content=content.substring(index+2);
-                        System.out.println("In the loop:"+content);
                     }
                     setter.invoke(model, tmp);
                 } else if (type.equals("java.util.ArrayList<java.util.ArrayList<java.lang.Integer>>")) {
@@ -281,8 +279,7 @@ public class BasicUtilService {
                     setter.invoke(model, tmp);
                 }else if (type.startsWith("java.util.ArrayList<")) {//ArrayList含自定义类型
                     ArrayList<Object> tmp = new ArrayList<Object>();
-                    String content=info.get(j);
-                    content=content.substring(1,content.length()-1);
+                    String content=info.get(j).replace("[","").replace("]","");
                     String[] details=content.split(",");
                     if(details.length<=0) {
                         for (int i = 0; i < details.length; i++) {
