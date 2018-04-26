@@ -140,8 +140,8 @@
                     <header>
                         <h3>This is Something</h3>
                     </header>
-                    <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
-                    <footer>
+                    <p>tag tag tag</p>
+                        <footer>
                         <ul class="buttons">
                             <li><a href="#" class="button small">Learn More</a></li>
                         </ul>
@@ -155,7 +155,7 @@
                     <header>
                         <h3>Also Something</h3>
                     </header>
-                    <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+                    <p>tag tag tag</p>
                     <footer>
                         <ul class="buttons">
                             <li><a href="#" class="button small">Learn More</a></li>
@@ -170,7 +170,7 @@
                     <header>
                         <h3>Probably Something</h3>
                     </header>
-                    <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+                    <p>tag tag tag</p>
                     <footer>
                         <ul class="buttons">
                             <li><a href="#" class="button small">Learn More</a></li>
@@ -196,7 +196,7 @@
     </ul>
 
     <ul class="copyright">
-        <li>&copy; Social Engineers</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        <li>&copy; Social Engineers</li>
     </ul>
 
 </footer>
