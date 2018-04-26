@@ -17,9 +17,6 @@ function AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, a
 }
 
 function loadAdminChartNumAndData(adminDataObj) {
-<<<<<<< HEAD
-    alert("adminDataObj: " + adminDataObj);
-=======
     alert("adminDataObj: " + "adminUserSum " + adminDataObj.adminUserSum
     + "adminWorkerNum " + adminDataObj.adminWorkerNum
     + "adminNum " + adminDataObj.adminNum
@@ -28,7 +25,6 @@ function loadAdminChartNumAndData(adminDataObj) {
     + "adminFinishedMissionNum " + adminDataObj.adminFinishedMissionNum
     + "adminOngoingMissionNum " + adminDataObj.adminOngoingMissionNum);
 
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     adminUserSum = adminDataObj.adminUserSum;
     adminWorkerNum = adminDataObj.adminWorkerNum;
     adminNum = adminDataObj.adminNum;
@@ -36,6 +32,10 @@ function loadAdminChartNumAndData(adminDataObj) {
     adminMissionSum = adminDataObj.adminMissionSum;
     adminFinishedMissionNum = adminDataObj.adminFinishedMissionNum;
     adminOngoingMissionNum = adminDataObj.adminOngoingMissionNum;
+}
+
+function getAdminData() {
+    return new AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, adminMissionSum, adminFinishedMissionNum, adminOngoingMissionNum);
 }
 
 var starterMissionSum;
@@ -57,9 +57,6 @@ function StarterDataObj(starterMissionSum, starterFinishedMissionNum, starterOng
 }
 
 function loadStarterChartNumAndData(starterDataObj) {
-<<<<<<< HEAD
-    alert("starterDataObj: " + starterDataObj);
-=======
     alert("starterDataObj: " + "starterMissionSum " + starterDataObj.starterMissionSum
     + "starterFinishedMissionNum " + starterDataObj.starterFinishedMissionNum
     + "starterOngoingMissionNum " + starterDataObj.starterOngoingMissionNum
@@ -68,7 +65,6 @@ function loadStarterChartNumAndData(starterDataObj) {
     + "starterCreditAvg " + starterDataObj.starterCreditAvg
     + "starterMissionName " + starterDataObj.starterMissionName);
 
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     starterMissionSum = starterDataObj.starterMissionSum;
     starterFinishedMissionNum = starterDataObj.starterFinishedMissionNum;
     starterOngoingMissionNum = starterDataObj.starterOngoingMissionNum;
@@ -76,6 +72,10 @@ function loadStarterChartNumAndData(starterDataObj) {
     starterCreditSum = starterDataObj.starterCreditSum;
     starterCreditAvg = starterDataObj.starterCreditAvg;
     starterMissionName = starterDataObj.starterMissionName;
+}
+
+function getStarterData() {
+    return new StarterDataObj(starterMissionSum, starterFinishedMissionNum, starterOngoingMissionNum, starterParticipantSum, starterCreditSum, starterCreditAvg, starterMissionName);
 }
 
 var workerMissionSum;
@@ -99,9 +99,6 @@ function WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinis
 }
 
 function loadWorkerChartNumAndData(workerDataObj) {
-<<<<<<< HEAD
-    alert("workerDataObj: " + workerDataObj);
-=======
     alert("workerDataObj: " + "workerMissionSum " + workerDataObj.workerMissionSum
     + "workerFinishedMissionNum " + workerDataObj.workerFinishedMissionNum
     + "workerUnfinishedMissionNum " + workerDataObj.workerUnfinishedMissionNum
@@ -111,7 +108,6 @@ function loadWorkerChartNumAndData(workerDataObj) {
     + "workerSum " + workerDataObj.workerSum
     + "workerCreditSum " + workerDataObj.workerCreditSum);
 
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     workerMissionSum = workerDataObj.workerMissionSum;
     workerFinishedMissionNum = workerDataObj.workerFinishedMissionNum;
     workerUnfinishedMissionNum = workerDataObj.workerUnfinishedMissionNum;
@@ -120,4 +116,8 @@ function loadWorkerChartNumAndData(workerDataObj) {
     workerCreditRank = workerDataObj.workerCreditRank;
     workerSum = workerDataObj.workerSum;
     workerCreditSum = workerDataObj.workerCreditSum;
+}
+
+function getWorkerData() {
+    return new WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinishedMissionNum, workerCredit, workerMissionName, workerCreditRank, workerSum, workerCreditSum);
 }

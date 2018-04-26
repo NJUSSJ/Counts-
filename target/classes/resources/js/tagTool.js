@@ -5,11 +5,7 @@ var back = document.getElementById("back");
 var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521465839531&di=894d8615e5b830dffd2d3f5184ea90b1&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fdc54564e9258d109241f9f09da58ccbf6d814d88.jpg"
 var phoneNumber;
 var imgid;
-<<<<<<< HEAD
-var collectionName = getNameAndCollection()[0];
-=======
 //var collectionName = getNameAndCollection()[0];
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 
 function loadPhoneNumber(_phoneNumber){
     phoneNumber = _phoneNumber;
@@ -25,20 +21,12 @@ save.addEventListener("click", function save() {
 })
 
 back.addEventListener("click", function back() {
-<<<<<<< HEAD
-=======
     /*
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     var tmp = confirm("返回上一页面?");
     if(tmp == true){
         history.go(-1);
     }else{
     }
-<<<<<<< HEAD
-})
-
-nextPage.addEventListener("click", function more() {
-=======
     */
     var tmp = window.location.search.split("&");
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
@@ -56,24 +44,11 @@ nextPage.addEventListener("click", function more() {
 
 nextPage.addEventListener("click", function more() {
     /*
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     var img = new Image();
     img.src = url;
     ctx.drawImage(img,0,0,canvas.width,canvas.height);
-<<<<<<< HEAD
-})
-
-function tagInfoCollection(fixedx,fixedy,fixedwidth,fixedheight,list) {
-    this.fixedx = fixedx;
-    this.fixedy = fixedy;
-    this.fixedwidth = fixedwidth;
-    this.fixedheight = fixedheight;
-    this.list = list;
-}
-
-=======
     */
     var tmp = window.location.search.split("&");
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
@@ -89,7 +64,6 @@ function tagInfoCollection(fixedx,fixedy,fixedwidth,fixedheight,list) {
     }
 })
 
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 //data
 function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list) {
     this.sentids = sentids;
@@ -191,8 +165,6 @@ function getImgInfo() {
     });
     return ret1;
 
-<<<<<<< HEAD
-=======
 }
 /* ---------------------------------------------------- */
 function missionAndPhoneNumberObj(missionAndPhoneNumber) {
@@ -220,5 +192,4 @@ function submitTagInfo() {
     });
     alert("提交成功!");
     return 0;
->>>>>>> 80e8a01f2e696b72978f2b8e1a8119800ff459ab
 }

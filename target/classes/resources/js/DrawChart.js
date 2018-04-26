@@ -1,4 +1,6 @@
 var workerChart1 = echarts.init(document.getElementById('workerChart1'));
+var workerObj = getWorkerData();
+
 var workerOption1 = {
     backgroundColor: '#2c343c',
 
@@ -79,7 +81,7 @@ workerChart1.setOption(workerOption1);
 
 // 基于准备好的dom，初始化echarts实例
     var adminChart1 = echarts.init(document.getElementById('adminChart1'));
-
+    var adminObj = getAdminData();
 // 指定图表的配置项和数据
 
     var adminOption1 = {
@@ -109,7 +111,7 @@ workerChart1.setOption(workerOption1);
 
 // 基于准备好的dom，初始化echarts实例
 var starterChart1 = echarts.init(document.getElementById('starterChart1'));
-
+var starterObj = getStarterData();
 // 指定图表的配置项和数据
 
 var starterOption1 = {

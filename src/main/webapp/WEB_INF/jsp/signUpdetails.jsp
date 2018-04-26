@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <!--
 Twenty by HTML5 UP
@@ -40,7 +41,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <ul>
                 <li class="current"><a href="#">Welcome</a></li>
 
-                <li><a href="/" class="button special">登录</a></li>
+                <li><a href="<c:url value="/"/>" class="button special">登录</a></li>
             </ul>
         </nav>
     </header>
@@ -59,7 +60,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
             <!-- Content -->
             <div class="content">
-                <form action=<c:url value="/setUser"/> method="post">
+                <form action="/setUser" method="post">
                     <div class="row">
                         <div class="12u">
                             <input  id="phoneNumber" type="text" name="phoneNumber"/>
