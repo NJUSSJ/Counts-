@@ -3,6 +3,7 @@ var picIndex;
 var imageInfo;
 var quality;
 var userId;
+var indexForSample=0;
 function loadDetails(picNum) {
     /*
     加载任务图片
@@ -50,7 +51,7 @@ function loadSample(missionName) {
                 var Sample=eval(jsonString);
                 returnSample=Sample;
                 alert(Sample.missionName);
-                sampleSet(Sample);
+                sampleSet(Sample, missionName);
             }
         },
         error: function(){
@@ -59,11 +60,17 @@ function loadSample(missionName) {
     });
 }
 
-function sampleSet(sample) {
+function sampleSet(sample, missionName) {
     picIndex=sample.picIndex;
     imageInfo=sample.imageInfo;
     quality=sample.quality;
     userId=sample.userId;
+
+    var imgInfoString=imageInfo[indexForSample];
+    alert(imgInfoString);
+    var imgInfo=eval('('+imgInfoString+')');
+    alert(imgInfo.imgid);
+
 }
 
 var number0;

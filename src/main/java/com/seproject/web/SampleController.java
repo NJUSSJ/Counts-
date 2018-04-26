@@ -35,6 +35,7 @@ public class SampleController {
         JSONObject object=JSONObject.fromObject(sample);
         String sampleInfo=object.toString();
         System.out.println(sampleInfo);
+        System.out.println(sample.getImageInfo().get(0));
         return sampleInfo;
     }
 }
