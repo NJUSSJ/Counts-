@@ -21,7 +21,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
-    <script src="js/missionDetails1.js"></script>
+
 </head>
 <style type="text/css">
     div.sidebar{
@@ -154,16 +154,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <!-- Tool bar -->
                     <div class="sidebar" align="left">
                         <ul class="picturetools">
-                            <li><input type="button" name="" value="优"></li>
-                            <li><input type="button" name="" value="良"></li>
-                            <li><input type="button" name="" value="中"></li>
-                            <li><input type="button" name="" value="差"></li>
+                            <li><input type="button" name="" value="优" onclick="good()"></li>
+                            <li><input type="button" name="" value="良" onclick="fair()"></li>
+                            <li><input type="button" name="" value="中" onclick="middle()"></li>
+                            <li><input type="button" name="" value="差" onclick="bad()"></li>
                         </ul>
                     </div>
 
                 </div>
 
-                <div class="4u 12u(narrower)" align="center">
+                <div class="2u 12u(narrower)" align="center">
 
                     <!-- Tag Info-->
                     <div class="tag_info" id="textareaPlace" style="overflow: auto">
@@ -171,15 +171,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <!-- <a href="#" class="button special">保存</a> -->
                     </div>
                 </div>
-                <div class="6u 12u(narrower)">
+                <div class="8u 12u(narrower)">
 
                     <!-- Content -->
                     <div class="content" align="center">
-                        <canvas id="canvas" width="500" height="500">
+                        <canvas id="canvasForSample" width="500" height="500">
 
                         </canvas>
                         <p id="info">Tag info.</p>
-
                     </div>
 
                 </div>
@@ -224,6 +223,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/skel-viewport.min.js"></script>
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
+<script src="js/missionDetails.js"></script>
 
 </body>
 </html>
