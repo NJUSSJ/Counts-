@@ -54,6 +54,9 @@ public class SignUpController {
 
     @RequestMapping(value = "/setUser")
     public ModelAndView setUser(HttpServletRequest request){
+
+        System.out.println("GET USER");
+
         User newUser=new User();
         System.out.println(request.getParameter("phoneNumber"));
         newUser.setPhoneNumber(request.getParameter("phoneNumber"));
@@ -62,8 +65,6 @@ public class SignUpController {
         newUser.setCategory(Integer.parseInt(request.getParameter("category")));
         newUser.setCredit(1000);
         newUser.setDescription("1");
-
-
         userService.add(newUser);
         return new ModelAndView("Login");
     }

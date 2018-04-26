@@ -41,7 +41,7 @@ public class CollectionController {
         String description=tmpMission.getDescription();
 
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
-        String fixx="\'../../images/";
+        String fixx="\'missionImages/";
         String url=fixx+request.getParameter("imageURL")+"_\'";
         String collection="\'"+request.getParameter("imageURL")+"\'";
         String userPhone=request.getParameter("userPhone");

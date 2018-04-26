@@ -33,15 +33,25 @@ public class BasicBLService<T> {
 
    public synchronized RM add(T t0){
        //增加单个对象
-       this.basicUtilService.writeClass(t0);
-       return RM.SUCCESS;
+       if(findByKey(basicUtilService.getKeyValue(t0,basicUtilService.getKeyID(t0)))==null){
+           this.basicUtilService.writeClass(t0);
+           return RM.SUCCESS;
+       }else{
+           return RM.FAILURE;
+       }
+
+
    }
    public synchronized RM delete(String keyValue){
        //根据主键删除单个对象
        String fileName=t.getClass().toString();
        int keyID=this.basicUtilService.getKeyID(t);
        this.fileDao.delete_object(fileName,keyID,keyValue);
-       return RM.SUCCESS;
+       if(findByKey(keyValue)==null) {
+           return RM.SUCCESS;
+       }else{
+           return RM.FAILURE;
+       }
 
    }
    public synchronized RM update(T t0){
@@ -49,10 +59,13 @@ public class BasicBLService<T> {
        int keyID=this.basicUtilService.getKeyID(t0);
        String keyValue=this.basicUtilService.getKeyValue(t0,keyID);
        //先删除再增加
-       delete(keyValue);
-       add(t0);
-
-       return RM.SUCCESS;
+       RM step1=delete(keyValue);
+       RM step2=add(t0);
+       if(step1.equals(RM.SUCCESS)&&step2.equals(RM.SUCCESS)) {
+           return RM.SUCCESS;
+       }else{
+           return RM.FAILURE;
+       }
    }
    public  synchronized T findByKey(String keyValue){
        //根据主键精准查找单个对象

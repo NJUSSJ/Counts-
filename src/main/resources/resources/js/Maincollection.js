@@ -73,7 +73,7 @@ function setCollection(){
         a1_1.className="image featured";
         a1_1.href="/details.html?imageURL="+missionNames[i*3].substring(0,missionNames[i*3].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         var img1=document.createElement("img");
-        img1.src="../../images/"+missionNames[i*3].substring(0,missionNames[i*3].indexOf("^"))+"_1.jpg";
+        img1.src="missionImages/"+missionNames[i*3].substring(0,missionNames[i*3].indexOf("^"))+"_1.jpg";
         img1.className="collection";
         img1.alt="";
         a1_1.appendChild(img1);
@@ -110,7 +110,7 @@ function setCollection(){
         a2_1.className="image featured";
         a2_1.href="/details.html?imageURL="+missionNames[i*3+1].substring(0,missionNames[i*3+1].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         var img2=document.createElement("img");
-        img2.src="../../images/"+missionNames[i*3+1].substring(0,missionNames[i*3+1].indexOf("^"))+"_1.jpg";
+        img2.src="missionImages/"+missionNames[i*3+1].substring(0,missionNames[i*3+1].indexOf("^"))+"_1.jpg";
         img2.className="collection";
         img2.alt="";
         a2_1.appendChild(img2);
@@ -151,7 +151,7 @@ function setCollection(){
         a3_1.className="image featured";
         a3_1.href="/details.html?imageURL="+missionNames[i*3+2].substring(0,missionNames[i*3+2].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
         var img3=document.createElement("img");
-        img3.src="../../images/"+missionNames[i*3+2].substring(0,missionNames[i*3+2].indexOf("^"))+"_1.jpg";
+        img3.src="missionImages/"+missionNames[i*3+2].substring(0,missionNames[i*3+2].indexOf("^"))+"_1.jpg";
         img3.className="collection";
         img3.alt="";
         a3_1.appendChild(img3);
@@ -190,9 +190,11 @@ function setCollection(){
         header1.appendChild(missionName1);
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="/details.html?imageURL="+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+        var urlString="/details.html?imageURL="+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+
+        a1_1.href=encodeURI();
         var img1=document.createElement("img");
-        img1.src="../../images/"+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"_1.jpg";
+        img1.src="missionImages/"+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"_1.jpg";
         img1.className="collection";
         img1.alt="";
         a1_1.appendChild(img1);

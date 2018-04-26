@@ -7,6 +7,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -113,7 +114,21 @@ public class UploadController {
 
 
         String suffix=multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
+        //
+        String path="";
+        try {
+            File nav=  ResourceUtils.getFile("classpath:resources/missionImages/navigation.txt");
+            path=nav.getAbsolutePath();
+            path=path.replace("\\","/");
+            int index=path.lastIndexOf("/");
+            path=path.substring(0,index);
 
-        return "src\\main\\webapp\\images\\"+missionName+"_"+i+suffix;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        //
+
+        return path+"/"+missionName+"_"+i+suffix;
     }
 }

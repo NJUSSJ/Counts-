@@ -63,7 +63,7 @@
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> <a href="http://localhost:3141/">COUNTS <span>by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></a></h1>
         <nav id="nav" onload="loadPhoneNumber(${requestScope.phoneNumber})">
             <ul>
                 <li class="submenu">
