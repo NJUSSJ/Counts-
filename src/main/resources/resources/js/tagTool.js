@@ -21,28 +21,48 @@ save.addEventListener("click", function save() {
 })
 
 back.addEventListener("click", function back() {
+    /*
     var tmp = confirm("返回上一页面?");
     if(tmp == true){
         history.go(-1);
     }else{
     }
+    */
+    var tmp = window.location.search.split("&");
+    var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
+    var i = tmp[1].substring(tmp[1].indexOf("=")+1);
+    var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
+    var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
+
+    if(Number(i) === 1) {
+        i = Number(i) - 1;
+        window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber + "&picNum=" + picNum;
+    }else {
+        alert("本图片为第一张");
+    }
 })
 
 nextPage.addEventListener("click", function more() {
+    /*
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     var img = new Image();
     img.src = url;
     ctx.drawImage(img,0,0,canvas.width,canvas.height);
-})
+    */
+    var tmp = window.location.search.split("&");
+    var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
+    var i = tmp[1].substring(tmp[1].indexOf("=")+1);
+    var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
+    var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
 
-function tagInfoCollection(fixedx,fixedy,fixedwidth,fixedheight,list) {
-    this.fixedx = fixedx;
-    this.fixedy = fixedy;
-    this.fixedwidth = fixedwidth;
-    this.fixedheight = fixedheight;
-    this.list = list;
-}
+    if(Number(i)<picNum) {
+        i = Number(i) + 1;
+        window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber + "&picNum=" + picNum;
+    }else {
+        alert("本图片为最后一张");
+    }
+})
 
 //data
 function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list) {
@@ -150,9 +170,9 @@ function getImgInfo() {
 function missionAndPhoneNumberObj(missionAndPhoneNumber) {
     this.missionAndPhoneNumber = missionAndPhoneNumber;
 }
+
 function submitTagInfo() {
     var missionAndPhoneNumber = getNameAndCollection()[0] + phoneNumber;
-    //alert("提交ing!" + missionAndPhoneNumber);
 
     alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
     $.ajax({
