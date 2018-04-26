@@ -8,6 +8,8 @@ public class WorkerData {
     public int workerUnfinishedMissionNum;
     public ArrayList<Double> workerCredit;// 单个任务获得的积分
     public ArrayList<String> workerMissionName; //每个任务的名称
+    //public ArrayList<Double> workerAverageCredit;//每个任务平均分
+    //public ArrayList<Double> workerMaxCredit;//每个任务最大分
     public int workerCreditRank;
     public int workerSum;//总工人数
     public double workerCreditSum; //积分总数

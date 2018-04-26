@@ -1,4 +1,4 @@
-var adminSumCharts = 2;
+var adminSumCharts = 4;
 var starterSumCharts = 2;
 var workerSumCharts = 2;
 
