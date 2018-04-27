@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css2/main.css" />
-    <script src="js/personal.js"></script>
+    <script src="js/Personal.js"></script>
     <script src="js/CreateChartArea.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>

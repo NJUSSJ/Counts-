@@ -1,6 +1,6 @@
 var adminSumCharts = 4;
 var starterSumCharts = 2;
-var workerSumCharts = 3;
+var workerSumCharts = 2;
 
 function loadChartArea(userCategory) {
 
@@ -18,7 +18,7 @@ function loadChartArea(userCategory) {
 
                 var script = document.createElement("script");
                 script.type = "text/javascript";
-                script.src = "js/DrawChart.js";
+                script.src = "js/DrawStarterChart.js";
                 parent.appendChild(script);
             }
             break;
@@ -33,7 +33,7 @@ function loadChartArea(userCategory) {
 
                 var script = document.createElement("script");
                 script.type = "text/javascript";
-                script.src = "js/DrawChart.js";
+                script.src = "js/DrawWorkerChart.js";
                 parent.appendChild(script);
             }
             break;
@@ -48,7 +48,7 @@ function loadChartArea(userCategory) {
 
                 var script = document.createElement("script");
                 script.type = "text/javascript";
-                script.src = "js/DrawChart.js";
+                script.src = "js/DrawAdminChart.js";
                 parent.appendChild(script);
             }
             break;
