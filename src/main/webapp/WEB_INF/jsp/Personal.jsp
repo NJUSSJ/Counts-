@@ -34,7 +34,7 @@
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
         <a href="#charts" class="icon fa-pie-chart"><span>Charts</span></a>
-        <a href="<c:url value="loginCheck.html"/>?userName=${requestScope.phoneNumber}&password=${requestScope.password}" class="icon fa-refresh"><span>Back</span></a>
+        <a href="<c:url value="loginCheck.html?userName=${requestScope.phoneNumber}&password=${requestScope.password}"/>" class="icon fa-refresh"><span>Back</span></a>
     </nav>
 
     <!-- Main -->
