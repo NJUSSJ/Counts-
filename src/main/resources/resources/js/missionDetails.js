@@ -19,7 +19,7 @@ function loadDetails(picNum) {
         a.href="#";
         a.className="image fit picture";
         var img=document.createElement("img");
-        img.src="../../images/"+missionName+"_"+i+".jpg";
+        img.src="missionImages/"+missionName+"_"+i+".jpg";
         a.appendChild(img);
         div.appendChild(a);
         picSection.appendChild(div);
@@ -48,7 +48,14 @@ function loadSample(missionName) {
                 var info=document.createElement("h6");
                 info.innerHTML="任务还未截止！请在任务结束后的三个工作日内进行评估。";
                 samplePanel.appendChild(info);
-            }else{
+            }else if(returnData=="2"){
+                var sampleArea=document.getElementById("edit_area");
+                sampleArea.style.display="none";
+                var samplePanel=document.getElementById("samplePanel");
+                var info=document.createElement("h6");
+                info.innerHTML="该任务已完成过评估！";
+                samplePanel.appendChild(info);
+            } else{
                 var jsonString=returnData;
                 var Sample=eval(jsonString);
                 returnSample=Sample;
@@ -145,7 +152,7 @@ function loadOneSample(index,missionName) {
         }
     }
 
-    image.src ="../../images/"+missionName+"_"+picIndex[indexForSample]+".jpg";
+    image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
 
 
     var width = image.width;

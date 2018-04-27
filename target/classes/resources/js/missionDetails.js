@@ -19,7 +19,7 @@ function loadDetails(picNum) {
         a.href="#";
         a.className="image fit picture";
         var img=document.createElement("img");
-        img.src="../../images/"+missionName+"_"+i+".jpg";
+        img.src="missionImages/"+missionName+"_"+i+".jpg";
         a.appendChild(img);
         div.appendChild(a);
         picSection.appendChild(div);
@@ -145,7 +145,7 @@ function loadOneSample(index,missionName) {
         }
     }
 
-    image.src ="../../images/"+missionName+"_"+picIndex[indexForSample]+".jpg";
+    image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
 
 
     var width = image.width;
