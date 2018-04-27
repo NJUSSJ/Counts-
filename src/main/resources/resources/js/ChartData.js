@@ -5,8 +5,13 @@ var adminStarterNum;
 var adminMissionSum;
 var adminFinishedMissionNum;
 var adminOngoingMissionNum;
+var adminLevelName = [];
+var adminLevelWorkerNum = [];
+var adminUserName = [];
+var adminMissionName = [];
+var adminUserMissionQuality = [];
 
-function AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, adminMissionSum, adminFinishedMissionNum, adminOngoingMissionNum) {
+function AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, adminMissionSum, adminFinishedMissionNum, adminOngoingMissionNum, adminLevelName, adminLevelWorkerNum, adminUserName, adminMissionName, adminUserMissionQuality) {
     this.adminUserSum = adminUserSum;
     this.adminWorkerNum = adminWorkerNum;
     this.adminNum = adminNum;
@@ -14,6 +19,11 @@ function AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, a
     this.adminMissionSum = adminMissionSum;
     this.adminFinishedMissionNum = adminFinishedMissionNum;
     this.adminOngoingMissionNum = adminOngoingMissionNum;
+    this.adminLevelName = adminLevelName;
+    this.adminLevelWorkerNum = adminLevelWorkerNum;
+    this.adminUserName = adminUserName;
+    this.adminMissionName = adminMissionName;
+    this.adminUserMissionQuality = adminUserMissionQuality;
 }
 
 function loadAdminChartNumAndData(adminDataObj) {
@@ -23,7 +33,12 @@ function loadAdminChartNumAndData(adminDataObj) {
     + "adminStarterNum " + adminDataObj.adminStarterNum
     + "adminMissionSum " + adminDataObj.adminMissionSum
     + "adminFinishedMissionNum " + adminDataObj.adminFinishedMissionNum
-    + "adminOngoingMissionNum " + adminDataObj.adminOngoingMissionNum);
+    + "adminOngoingMissionNum " + adminDataObj.adminOngoingMissionNum
+    + "adminLevelName " + adminDataObj.adminLevelName
+    + "adminLevelWorkerNum " + adminDataObj.adminLevelWorkerNum
+    + "adminUserName " + adminDataObj.adminUserName
+    + "adminMissionName " + adminDataObj.adminMissionName
+    + "adminUserMissionQuality " + adminDataObj.adminUserMissionQuality);
 
     adminUserSum = adminDataObj.adminUserSum;
     adminWorkerNum = adminDataObj.adminWorkerNum;
@@ -32,10 +47,15 @@ function loadAdminChartNumAndData(adminDataObj) {
     adminMissionSum = adminDataObj.adminMissionSum;
     adminFinishedMissionNum = adminDataObj.adminFinishedMissionNum;
     adminOngoingMissionNum = adminDataObj.adminOngoingMissionNum;
+    adminLevelName = adminDataObj.adminLevelName;
+    adminLevelWorkerNum = adminDataObj.adminLevelWorkerNum;
+    adminUserName = adminDataObj.adminUserName;
+    adminMissionName = adminDataObj.adminMissionName;
+    adminUserMissionQuality = adminDataObj.adminUserMissionQuality;
 }
 
 function getAdminData() {
-    return new AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, adminMissionSum, adminFinishedMissionNum, adminOngoingMissionNum);
+    return new AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, adminMissionSum, adminFinishedMissionNum, adminOngoingMissionNum, adminLevelName, adminLevelWorkerNum, adminUserName, adminMissionName, adminUserMissionQuality);
 }
 
 var starterMissionSum;
@@ -86,8 +106,11 @@ var workerMissionName = []; //每个任务的名称
 var workerCreditRank;
 var workerSum;//总工人数
 var workerCreditSum; //积分总数
+var workerAverageCredit = [];//每个任务平均分
+var workerMaxCredit = [];//每个任务最大分
+var workerMissionCreditQuality = []//
 
-function WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinishedMissionNum, workerCredit, workerMissionName, workerCreditRank, workerSum, workerCreditSum) {
+function WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinishedMissionNum, workerCredit, workerMissionName, workerCreditRank, workerSum, workerCreditSum, workerAverageCredit, workerMaxCredit, workerMissionCreditQuality) {
     this.workerMissionSum = workerMissionSum;
     this.workerFinishedMissionNum = workerFinishedMissionNum;
     this.workerUnfinishedMissionNum = workerUnfinishedMissionNum;
@@ -96,6 +119,9 @@ function WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinis
     this.workerCreditRank = workerCreditRank;
     this.workerSum = workerSum;
     this.workerCreditSum = workerCreditSum;
+    this.workerAverageCredit = workerAverageCredit;
+    this.workerMaxCredit = workerMaxCredit;
+    this.workerMissionCreditQuality = workerMissionCreditQuality;
 }
 
 function loadWorkerChartNumAndData(workerDataObj) {
@@ -106,7 +132,10 @@ function loadWorkerChartNumAndData(workerDataObj) {
     + "workerMissionName " + workerDataObj.workerMissionName
     + "workerCreditRank " + workerDataObj.workerCreditRank
     + "workerSum " + workerDataObj.workerSum
-    + "workerCreditSum " + workerDataObj.workerCreditSum);
+    + "workerCreditSum " + workerDataObj.workerCreditSum
+    + "workerAverageCredit " + workerDataObj.workerAverageCredit
+    + "workerMaxCredit" + workerDataObj.workerMaxCredit
+    + "workerMissionCreditQuality " + workerDataObj.workerMissionCreditQuality);
 
     workerMissionSum = workerDataObj.workerMissionSum;
     workerFinishedMissionNum = workerDataObj.workerFinishedMissionNum;
@@ -116,8 +145,11 @@ function loadWorkerChartNumAndData(workerDataObj) {
     workerCreditRank = workerDataObj.workerCreditRank;
     workerSum = workerDataObj.workerSum;
     workerCreditSum = workerDataObj.workerCreditSum;
+    workerAverageCredit = workerDataObj.workerAverageCredit;
+    workerMaxCredit = workerDataObj.workerMaxCredit;
+    workerMissionCreditQuality = workerDataObj.workerMissionCreditQuality;
 }
 
 function getWorkerData() {
-    return new WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinishedMissionNum, workerCredit, workerMissionName, workerCreditRank, workerSum, workerCreditSum);
+    return new WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinishedMissionNum, workerCredit, workerMissionName, workerCreditRank, workerSum, workerCreditSum, workerAverageCredit, workerMaxCredit, workerMissionCreditQuality);
 }

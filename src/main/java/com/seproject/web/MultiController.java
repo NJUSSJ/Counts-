@@ -25,7 +25,7 @@ public class MultiController {
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
         String phoneNumber = request.getParameter("phoneNumber");
-        String sufixx="\'../../images/";
+        String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
         ModelAndView model=new ModelAndView("SingleEdit");
         model.addObject("url",url);
@@ -42,7 +42,10 @@ public class MultiController {
 
     @RequestMapping(value = "/getCollectionInfo")
     @ResponseBody
-    public String[] getCollectionInfo(@RequestBody String User) {
+    public String[] getCollectionInfo(@RequestBody String user) {
+
+        System.out.println("GET COLLECTIONINFO");
+
         missionBasicBLService.setT(new Mission());
         ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
         int index=0;
@@ -51,7 +54,8 @@ public class MultiController {
             missionNames[index]=mission.getName()+"^"+mission.getDescription();
             index++;
         }
-        System.out.println(User);
+
+        System.out.println(user);
         return missionNames;
     }
 

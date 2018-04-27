@@ -64,7 +64,6 @@ public class BasicUtilService {
                         int firstIndex=type.indexOf("<");
                         int lastIndex=type.indexOf(">");
                         String className=type.substring(firstIndex+1,lastIndex);
-                        System.out.println("className:"+className);
                         if(className.startsWith("class")) {
                             fileDao.read_class(className);
                         }//如果是自定义类型空list，则先创建对应的文件
@@ -197,7 +196,7 @@ public class BasicUtilService {
                     while(true) {
                         int index=content.indexOf(", ");
                         if(index==-1){
-                            if(content!=null&&content.length()>0) {
+                            if(content!=null&&content.length()>=0) {
                                 tmp.add(content);
                             }
                             break;
