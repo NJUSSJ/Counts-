@@ -184,7 +184,19 @@ function setPersonalCollection() {
         div.className = "4u 12u$(mobile)";
         var a = document.createElement("a");
         a.className = "image fit";
-        a.href = "/details.html?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 1;
+        switch (userCategory) {
+            case "1":
+                a.href = "/getMissionDetails?missionName=" + missionNames[i];
+                break;
+
+            case "2":
+                a.href = "/details.html?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 1;
+                break;
+
+            case "3":
+                a.href = "/details.html?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 0;
+                break;
+        }
         var img = document.createElement("img");
         img.src = "missionImages/" + missionNames[i] + "_1.jpg";
         img.alt = "";
