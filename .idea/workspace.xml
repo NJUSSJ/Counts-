@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35b213d7-11d2-423a-b38e-24bd9a37b3c9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PersonalController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -75,6 +73,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-10">
               <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -136,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java" />
+        <option value="$PROJECT_DIR$/README" />
       </list>
     </option>
   </component>
@@ -548,7 +556,7 @@
       <option name="presentableId" value="Default" />
       <updated>1524817047423</updated>
       <workItem from="1524817049870" duration="22000" />
-      <workItem from="1524817341776" duration="3871000" />
+      <workItem from="1524817341776" duration="4045000" />
     </task>
     <servers />
   </component>
@@ -585,10 +593,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3893000" />
+    <option name="totallyTimeSpent" value="4067000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="132" width="1680" height="1027" extended-state="0" />
+    <frame x="66" y="154" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -632,13 +640,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/seproject/dao/FileDaoTest1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/LoginLog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -901,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -918,6 +912,20 @@
             <element signature="e#4125#4133#0" expanded="true" />
             <element signature="e#4461#4469#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
