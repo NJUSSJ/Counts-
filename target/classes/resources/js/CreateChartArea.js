@@ -12,7 +12,7 @@ function loadChartArea(userCategory) {
         case 1:
             for(var i = 1;i<=starterSumCharts;i++) {
                 var div = document.createElement("div");
-                div.id = "adminChart" + i.toString();
+                div.id = "starterChart" + i.toString();
                 div.style = "width: 600px;height: 400px;";
                 parent.appendChild(div);
 
