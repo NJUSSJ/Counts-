@@ -35,7 +35,7 @@
                         display: none;
                     }
                 </style>
-                <li><a href="http://localhost:3141/" class="button special">登出</a></li>
+                <li><a href="/" class="button special">登出</a></li>
             </ul>
         </nav>
     </header>
