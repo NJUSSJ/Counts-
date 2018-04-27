@@ -15,14 +15,14 @@
 <body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userCategory},${requestScope.Tagable},${requestScope.userPhone},${requestScope.picNum})">
 <div id="page-wrapper">
     <header id="header">
-        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="index.html">${requestScope.userName}</a></li>
+                <li class="current"><a href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
                 <li class="submenu" id="submenu">
-                    <a href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">加入我的任务集</a>
+                    <a id="addMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">加入我的任务集</a>
                 </li>
-                <li><a href="#" class="button special">登出</a></li>
+                <li><a href="/" class="button special">登出</a></li>
             </ul>
         </nav>
     </header>

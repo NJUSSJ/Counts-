@@ -34,7 +34,7 @@ back.addEventListener("click", function back() {
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
     var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
 
-    if(Number(i) === 1) {
+    if(Number(i) > 1) {
         i = Number(i) - 1;
         window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber + "&picNum=" + picNum;
     }else {

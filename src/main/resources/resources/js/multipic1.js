@@ -5,6 +5,11 @@ var userCategory1;
 var Tagable1;
 
 function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum) {
+    if(userCategory === 3){
+        document.getElementById("addMissionBtn").innerHTML = "";
+        document.getElementById("addMissionBtn").style.display = "none";
+    }
+
     userCategory1=userCategory;
     Tagable1=Tagable;
     document.getElementById("pictureSection").innerHTML="";

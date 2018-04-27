@@ -23,7 +23,7 @@ public class PersonalController {
 
     private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
     private BasicBLService<Collection> collectionBasicBLService=new BasicBLService<Collection>(new Collection());
-    //private BasicBLService<Mission> missionBasicBLService=new BasicBLService<~>(new Mission());
+    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
@@ -76,20 +76,39 @@ public class PersonalController {
         System.out.println("接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         System.out.println(phoneNumber);
-        collectionBasicBLService.setT(new Collection());
-        ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid",SearchCategory.EQUAL,phoneNumber);
-      /*  int index=0;
+        String category = userInfo.substring(40,41);
+        System.out.println(category);
+        if(Integer.parseInt(category) == 2) {
+            collectionBasicBLService.setT(new Collection());
+            ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);
+            ArrayList<String > collectionNames =new ArrayList<String>();
+            for(int i=0;i<tmpMission.size();i++){
+                collectionNames.add(tmpMission.get(i).getMid());
+            }
+            return collectionNames;
+        }else if(Integer.parseInt(category) == 1){
+            missionBasicBLService.setT(new Mission());
+            ArrayList<Mission> tmpMission = missionBasicBLService.search("requestorNumber", SearchCategory.EQUAL, phoneNumber);
+            ArrayList<String > collectionNames =new ArrayList<String>();
+            for(int i=0;i<tmpMission.size();i++){
+                collectionNames.add(tmpMission.get(i).getName());
+            }
+            return collectionNames;
+        }else{
+            ArrayList<Mission> tmpMission = missionBasicBLService.getAllObjects();
+            ArrayList<String > collectionNames =new ArrayList<String>();
+            for(int i=0;i<tmpMission.size();i++){
+                collectionNames.add(tmpMission.get(i).getName());
+            }
+            return collectionNames;
+        }
+        /*  int index=0;
         String[] collectionNames=new String[1000];
         for(Collection collection: tmpMission){
             collectionNames[index]= collection.getMid();
             System.out.println("返回前端的collectionNames=" + collectionNames[index]);
             index++;
         }*/
-       ArrayList<String > collectionNames =new ArrayList<String>();
-       for(int i=0;i<tmpMission.size();i++){
-           collectionNames.add(tmpMission.get(i).getMid());
-       }
-        return collectionNames;
     }
 
 

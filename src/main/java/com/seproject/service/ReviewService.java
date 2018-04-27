@@ -131,6 +131,7 @@ public class ReviewService {
             double result=sumCredit*(baseCredit+(1-baseCredit)*c.getQuality()/qualityAvg)/subCollection.size();
             realCreditSum+=result;
             c.setCredit(result);
+
         }
 
         User starter=service2.findByKey(m.getRequestorNumber());

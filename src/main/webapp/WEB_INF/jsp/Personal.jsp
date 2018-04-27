@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css2/main.css" />
-    <script src="js/personal.js"></script>
+    <script src="js/Personal.js"></script>
     <script src="js/CreateChartArea.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
@@ -34,7 +34,7 @@
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
         <a href="#charts" class="icon fa-pie-chart"><span>Charts</span></a>
-        <a href="<c:url value="loginCheck.html"/>?userName=${requestScope.phoneNumber}&password=${requestScope.password}" class="icon fa-refresh"><span>Back</span></a>
+        <a href="<c:url value="loginCheck.html?userName=${requestScope.phoneNumber}&password=${requestScope.password}"/>" class="icon fa-refresh"><span>Back</span></a>
     </nav>
 
     <!-- Main -->
@@ -44,7 +44,7 @@
         <article id="me" class="panel">
             <header>
                 <h1 id="_userNameCard"></h1>
-                <p>Croudsourcing Worker</p>
+                <p>Croudsourcing User</p>
             </header>
             <a href="#work" class="jumplink pic">
                 <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
@@ -58,7 +58,7 @@
                 <h2>Work</h2>
             </header>
             <p>
-                标注过的图集列表
+                图集列表
             </p>
             <section>
                 <div class="row" id="personalCollections">

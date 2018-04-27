@@ -32,26 +32,32 @@ public class FactoryService {
     }
 
     public AdminData adminDataFactory(
-            int userSum,
-            int workerNum,
+            int adminUserSum,
+            int adminWorkerNum,
             int adminNum,
-            int starterNum,
-            int missionSum,
-            int finishedMissionNum,
-            int ongoingMissionNum,
-            ArrayList<String> levelName,
-            ArrayList<Integer> level
+            int adminStarterNum,
+            int adminMissionSum,
+            int adminFinishedMissionNum,
+            int adminOngoingMissionNum,
+            ArrayList<String> adminLevelName,
+            ArrayList<Integer> adminLevelWorkerNum,
+            ArrayList<String> adminUserName,
+            ArrayList<String> adminMissionName,
+            ArrayList<ArrayList<String>> adminUserMissionQuality
     ){
         AdminData adminData=new AdminData();
-        adminData.adminUserSum =userSum;
-        adminData.adminWorkerNum =workerNum;
+        adminData.adminUserSum=adminUserSum;
+        adminData.adminWorkerNum=adminWorkerNum;
         adminData.adminNum=adminNum;
-        adminData.adminStarterNum =starterNum;
-        adminData.adminMissionSum =missionSum;
-        adminData.adminFinishedMissionNum =finishedMissionNum;
-        adminData.adminOngoingMissionNum =ongoingMissionNum;
-        adminData.adminLevelName=levelName;
-        adminData.adminLevelWorkerNum=level;
+        adminData.adminStarterNum=adminStarterNum;
+        adminData.adminMissionSum=adminMissionSum;
+        adminData.adminFinishedMissionNum=adminFinishedMissionNum;
+        adminData.adminOngoingMissionNum=adminOngoingMissionNum;
+        adminData.adminLevelName=adminLevelName;
+        adminData.adminLevelWorkerNum=adminLevelWorkerNum;
+        adminData.adminUserName=adminUserName;
+        adminData.adminMissionName=adminMissionName;
+        adminData.adminUserMissionQuality=adminUserMissionQuality;
         return adminData;
     }
 

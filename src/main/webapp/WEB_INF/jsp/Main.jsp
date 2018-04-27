@@ -23,10 +23,10 @@
 
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav">
             <ul>
-                <li class="current"><a href="<c:url value="personal.html"/>?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}">${requestScope.userName}</a></li>
+                <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
                 <li class="submenu" id="extra">
                     <a id="menuTitle"></a>
                 </li>
@@ -35,7 +35,7 @@
                         display: none;
                     }
                 </style>
-                <li><a href="http://localhost:3141/" class="button special">登出</a></li>
+                <li><a href="/" class="button special">登出</a></li>
             </ul>
         </nav>
     </header>
