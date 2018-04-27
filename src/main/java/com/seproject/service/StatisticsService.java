@@ -128,6 +128,11 @@ public class StatisticsService {
      * adminMissionSum：任务总数
      * adminFinishedMissionNum：已完成任务数
      * adminOngoingMissionNum：未完成任务数
+     * adminLevelName：等级名称
+     * adminLevelWorkerNum:不同级别工人数
+     * adminUserName：所有用户的用户名 需要排序
+     * adminMissionName：所有任务名 需要排序
+     * adminUserMissionQuality：每一项为[userName,mission,quality]的数组
      */
     public AdminData  getAdminData(){
         ArrayList<User> users=service2.getAllObjects();
@@ -171,7 +176,47 @@ public class StatisticsService {
             }
         }
 
-        return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum,levelNames,levels);
+        ArrayList<String> userNames=new ArrayList<String>();
+        for(User user:users){
+            userNames.add(user.getUserName());
+        }
+        for(int i=0;i<userNames.size()-1;i++){
+            for(int j=0;j<userNames.size();j++){
+                if(userNames.get(i).compareTo(userNames.get(j))>0){
+                    String temp=userNames.get(i);
+                    userNames.set(i,userNames.get(j));
+                    userNames.set(j,temp);
+                }
+            }
+        }
+
+        ArrayList<String> missionNames=new ArrayList<String>();
+        for(Mission m:missions){
+            missionNames.add(m.getName());
+        }
+        for(int i=0;i<missionNames.size()-1;i++){
+            for(int j=0;j<missionNames.size();j++){
+                if(missionNames.get(i).compareTo(missionNames.get(j))>0){
+                    String temp=missionNames.get(i);
+                    missionNames.set(i,missionNames.get(j));
+                    missionNames.set(j,temp);
+                }
+            }
+        }
+
+        ArrayList<ArrayList<String>> details=new ArrayList<ArrayList<String>>();
+        for(int i=0;i<userNames.size();i++){
+            for(int j=0;j<missionNames.size();j++){
+                ArrayList<String> inner=new ArrayList<String>();
+                String uName=userNames.get(i),mName=missionNames.get(j);
+                inner.add(uName);
+                inner.add(mName);
+                inner.add(service1.findByKey(uName+mName).getQuality()+"");
+                details.add(inner);
+            }
+        }
+        return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum,levelNames,levels,userNames,missionNames,details);
+
     }
     public SingleMissionData getSingleMissionData(String missionID){
         int number0=0;
