@@ -211,7 +211,7 @@ public class StatisticsService {
                 String uName=userNames.get(i),mName=missionNames.get(j);
                 inner.add(uName);
                 inner.add(mName);
-                inner.add(service1.findByKey(uName+mName).getQuality()+"");
+                inner.add(service1.findByKey(mName+uName).getQuality()+"");
                 details.add(inner);
             }
         }
