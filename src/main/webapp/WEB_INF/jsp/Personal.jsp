@@ -44,7 +44,7 @@
         <article id="me" class="panel">
             <header>
                 <h1 id="_userNameCard"></h1>
-                <p>Croudsourcing Worker</p>
+                <p>Croudsourcing User</p>
             </header>
             <a href="#work" class="jumplink pic">
                 <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
@@ -58,7 +58,7 @@
                 <h2>Work</h2>
             </header>
             <p>
-                标注过的图集列表
+                图集列表
             </p>
             <section>
                 <div class="row" id="personalCollections">
