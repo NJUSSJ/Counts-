@@ -3,204 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="35b213d7-11d2-423a-b38e-24bd9a37b3c9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SEP.iml" afterPath="$PROJECT_DIR$/SEP.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/dao/LoginLogDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/dao/UserDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/domain/LoginLog.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/domain/LoginLog.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/domain/StatisticsData/AdminData.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/domain/StatisticsData/AdminData.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/domain/StatisticsData/WorkerData.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/domain/StatisticsData/WorkerData.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/BasicBLService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/BasicBLService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/BasicUtilService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/BasicUtilService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/UserService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/SignUpController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/SignUpController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/dropZoneJS/dropzone.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/dropZoneJS/dropzone.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/ChartData.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/ChartData.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/CreateChartArea.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/CreateChartArea.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/DrawChart.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/DrawChart.js" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MultiPic.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MultiPic.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/Application.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/FileDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/LoginLogDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/UserDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Collection.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/ImageInfo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/LoginLog.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/MessageService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Mission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Sample.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/StatisticsData/AdminData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/StatisticsData/SingleMissionData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/StatisticsData/StarterData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/StatisticsData/WorkerData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/UploadedFile.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/UserType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/BasicBLService$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/BasicBLService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/BasicUtilService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FactoryService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FileIOService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/InitData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/Key.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MathService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/RM.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/SearchCategory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/Searchable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/UserService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/ChartController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/CollectionController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/LoginCommand.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/LoginController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/PersonalController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/PicTailor.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/ReadWriteFileController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/SampleController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/SignUpController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/cat1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/cat2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/dog1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/dog2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/parrot1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/parrot2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/registry.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/test1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/navigation.txt" afterPath="$PROJECT_DIR$/src/main/resources/resources/missionImages/navigation.txt" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/ObjectFileReadMe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Collection.txt" afterPath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Collection.txt" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Mission.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Collection.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" afterPath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/navigation.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/userFile/test2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/userFile/user.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/res_readme" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/960_12_col.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/SubCollection.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/ie8.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/ie9.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-bl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-br.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-tl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-tr.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-bl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-br.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-tl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-tr.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/overlay.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/upload.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/main.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/ie8.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/images/bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/images/overlay.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/main.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/noscript.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneCSS/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneCSS/dropzone.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneJS/dropzone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/Quicksand_Book-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/add.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/back.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/banner.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/edit.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/graphics_editor.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/logo.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/more.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/more4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/note.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pen.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic001.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic002.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic003.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic004.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic01.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic02.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic03.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic04.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic05.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic06.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic07.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic08.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic09.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pic12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/save.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ChartData.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/CreateChartArea.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawChart.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/GetChartData.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Maincollection.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Personal.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/echarts-wordcloud.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/echarts.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/backgroundsize.min.htc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/html5shiv.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/respond.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.dropotron.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.scrollgress.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.scrolly.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionDetails.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionDetailsCharts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/multipic1.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/object.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/signUp.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/singleEdit.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/skel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/tagTool.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/upload1.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/backgroundsize.min.htc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/html5shiv.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/respond.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/skel-viewport.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/skel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/ie8.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/ie9.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_functions.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_skel.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_vars.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/ie8.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_functions.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_skel.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_vars.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/noscript.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest1.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -234,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginCommand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/LoginCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="552">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -280,7 +85,7 @@
       <file leaf-file-name="UploadController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2530">
+            <state relative-caret-position="734">
               <caret line="131" column="22" lean-forward="false" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
               <folding />
             </state>
@@ -297,31 +102,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Maincollection.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Maincollection.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4508">
-              <caret line="196" column="33" lean-forward="false" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
+            <state relative-caret-position="-337">
+              <caret line="193" column="39" lean-forward="true" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/LoginController.java">
+      <file leaf-file-name="Mission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multipic1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/multipic1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="230">
+              <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -373,10 +168,10 @@
         <option value="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Mission.txt" />
         <option value="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Collection.txt" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js" />
       </list>
     </option>
   </component>
@@ -475,16 +270,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_II" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
@@ -492,14 +278,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_II" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
@@ -516,7 +294,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="missionImages" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -710,6 +488,12 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.seproject.Application" />
+      <module name="SEP" />
+      <envs />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -743,12 +527,13 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.FileDaoTest1" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.FileDaoTest2.readFile" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.BasicBLServiceTest.add" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.BasicBLServiceTest" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.BasicBLServiceTest.update" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -773,7 +558,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524817047423</updated>
-      <workItem from="1524817049870" duration="22000" />
+      <workItem from="1524817049870" duration="1807000" />
     </task>
     <servers />
   </component>
@@ -810,11 +595,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22000" />
+    <option name="totallyTimeSpent" value="1807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -823,8 +607,8 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.305794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.49785408" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -860,14 +644,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/file/dataFile/test1.txt" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/seproject/service/MathServiceTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/com/seproject/dao/FileDaoTest1.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1088,14 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4508">
-          <caret line="196" column="33" lean-forward="false" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1116,14 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="131" column="22" lean-forward="false" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1157,8 +917,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/LoginCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="552">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="131" column="22" lean-forward="false" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/jquery.dropotron.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-337">
+          <caret line="193" column="39" lean-forward="true" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="39" />
           <folding />
         </state>
       </provider>
