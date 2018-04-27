@@ -186,7 +186,7 @@ function setPersonalCollection() {
         a.className = "image fit";
         a.href = "/details.html?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 1;
         var img = document.createElement("img");
-        img.src = "../../images/" + missionNames[i] + "_1.jpg";
+        img.src = "missionImages/" + missionNames[i] + "_1.jpg";
         img.alt = "";
         a.appendChild(img);
         div.appendChild(a);

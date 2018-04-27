@@ -191,7 +191,12 @@ function setCollection(){
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
         var urlString="/details.html?imageURL="+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"&userPhone="+userPhone1+"&userCategory="+userCategory1+"&Tagable=0";
+<<<<<<< HEAD
         a1_1.href=encodeURI(urlString);
+=======
+
+        a1_1.href=encodeURI();
+>>>>>>> 77bc2ccf7fedc8181ccc90dcb3cca77b5ddd3394
         var img1=document.createElement("img");
         img1.src="missionImages/"+missionNames[rowNum*3+i].substring(0,missionNames[rowNum*3+i].indexOf("^"))+"_1.jpg";
         img1.className="collection";

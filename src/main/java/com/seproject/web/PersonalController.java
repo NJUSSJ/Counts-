@@ -23,6 +23,7 @@ public class PersonalController {
 
     private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
     private BasicBLService<Collection> collectionBasicBLService=new BasicBLService<Collection>(new Collection());
+    //private BasicBLService<Mission> missionBasicBLService=new BasicBLService<~>(new Mission());
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
