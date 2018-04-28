@@ -6,7 +6,9 @@ import com.seproject.domain.Sample;
 import com.seproject.domain.User;
 import org.springframework.stereotype.Service;
 
+import java.security.cert.CollectionCertStoreParameters;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 
 /**
  * 评审的业务逻辑
@@ -38,11 +40,12 @@ public class ReviewService {
         double averageLevel=0;
         for(Collection collection:collections){
             if(collection.getState()==1){
-
                 collections1.add(collection);
                 User user=service2.findByKey(collection.getUid());
                 userList.add(user);
                 averageLevel+=user.getLevel();
+                collection.setQuality(3);
+                service1.update(collection);
             }else{
                 collection.setQuality(-1);
                 service1.update(collection);
@@ -152,6 +155,29 @@ public class ReviewService {
 
         User starter=service2.findByKey(m.getRequestorNumber());
         starter.setCredit(starter.getCredit()+(sumCredit-realCreditSum));
+    }
+
+    public void setSampleResult(Sample sample){
+        Mission m=service3.findByKey(sample.getMissionName());
+        m.setState(2);
+        service3.update(m);
+        ArrayList<String> uid=sample.getUserId();
+        ArrayList<Integer> q=sample.getQuality();
+
+        ArrayList<Collection> collections=service1.search("mid",SearchCategory.EQUAL,sample.getMissionName());
+        for(int i=0;i<q.size();i++){
+            for(Collection c:collections){
+                if(c.getUid().equals(uid.get(i))){
+                    if(q.get(i)<c.getQuality()){
+                        c.setQuality(q.get(i));
+                        service1.update(c);
+                        break;
+                    }
+                }
+            }
+        }
+
+        award(sample.getMissionName());
     }
 
     /**
