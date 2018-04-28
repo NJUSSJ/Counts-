@@ -145,6 +145,7 @@ public class ReviewService {
             c.setCredit(result);
             User user=service2.findByKey(c.getUid());
             user.setCredit(user.getCredit()+result);
+            user.setLevel(user.getLevel()+1);//奖励分配以后用户等级升级
             service1.update(c);
             service2.update(user);
         }

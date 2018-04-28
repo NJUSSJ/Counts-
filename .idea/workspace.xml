@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3729c0cf-f7b5-4152-bf1f-4274979e7d26" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/ReadWriteFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/ReadWriteFileController.java" afterDir="false" />
@@ -27,6 +28,17 @@
       <change beforePath="$PROJECT_DIR$/target/classes/resources/js/upload1.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/js/upload1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/ReviewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/ReviewService.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/PersonalController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/PersonalController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/ReadWriteFileController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/ReadWriteFileController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" afterPath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" />
+>>>>>>> a27cb6689bad5690edc193332b274b1d9962a088
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +62,25 @@
       <file leaf-file-name="README" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="45">
               <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+=======
+            <state relative-caret-position="1112">
+              <caret line="147" column="59" lean-forward="false" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
+              <folding>
+                <element signature="e#400#412#0" expanded="true" />
+                <element signature="e#485#491#0" expanded="true" />
+                <element signature="e#560#569#0" expanded="true" />
+                <element signature="e#1023#1035#0" expanded="true" />
+                <element signature="e#1121#1127#0" expanded="true" />
+                <element signature="e#1683#1692#0" expanded="true" />
+                <element signature="e#1744#1752#0" expanded="true" />
+                <element signature="e#1807#1815#0" expanded="true" />
+                <element signature="e#1869#1878#0" expanded="true" />
+                <element signature="e#3691#3703#0" expanded="true" />
+              </folding>
+>>>>>>> a27cb6689bad5690edc193332b274b1d9962a088
             </state>
           </provider>
         </entry>
@@ -199,24 +228,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="seproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_II" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_II" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
@@ -570,7 +581,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改 统计部分bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改 统计部分bug" />
+    <MESSAGE value="v.2.7.x 增强统计方法，图集显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.2.7.x 增强统计方法，图集显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -580,8 +592,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/BasicBLService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="60">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> a27cb6689bad5690edc193332b274b1d9962a088
         </state>
       </provider>
     </entry>
@@ -597,8 +615,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="645">
           <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
+=======
+        <state relative-caret-position="1633">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#1867#1868#0" expanded="false" />
+            <element signature="e#1927#1928#0" expanded="false" />
+          </folding>
+>>>>>>> a27cb6689bad5690edc193332b274b1d9962a088
         </state>
       </provider>
     </entry>
@@ -771,6 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/singleEdit.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="86">
           <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
         </state>
@@ -794,6 +822,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+=======
+        <state relative-caret-position="1112">
+          <caret line="147" column="59" lean-forward="false" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
+          <folding>
+            <element signature="e#400#412#0" expanded="true" />
+            <element signature="e#485#491#0" expanded="true" />
+            <element signature="e#560#569#0" expanded="true" />
+            <element signature="e#1023#1035#0" expanded="true" />
+            <element signature="e#1121#1127#0" expanded="true" />
+            <element signature="e#1683#1692#0" expanded="true" />
+            <element signature="e#1744#1752#0" expanded="true" />
+            <element signature="e#1807#1815#0" expanded="true" />
+            <element signature="e#1869#1878#0" expanded="true" />
+            <element signature="e#3691#3703#0" expanded="true" />
+          </folding>
+>>>>>>> a27cb6689bad5690edc193332b274b1d9962a088
         </state>
       </provider>
     </entry>
