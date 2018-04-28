@@ -64,7 +64,7 @@ function loadSample(missionName) {
             }
         },
         error: function(){
-            alert("fail")
+            //alert("fail")
         }
     });
 }
@@ -111,7 +111,7 @@ function loadOneSample(index,missionName) {
 
 
     var imgInfo=eval(imageInfo[index]);
-    alert(imgInfo.imgid);
+    //alert(imgInfo.imgid);
 
     /*
     load rect and curl
@@ -335,7 +335,7 @@ function judgeLast(){
 }
 
 function sendJudgeResult() {
-    alert(quality);
+    //alert(quality);
     returnSample.imageInfo=imageInfo;
     returnSample.userId=userId;
     returnSample.picIndex=picIndex;

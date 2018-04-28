@@ -8,7 +8,7 @@ function userPhoneNumberObj(phoneNumber) {
 }
 
 function getChartData(phoneNumber, category) {
-    alert("category " + category);
+    //alert("category " + category);
 
     switch (category) {
         //发起者
@@ -24,7 +24,7 @@ function getChartData(phoneNumber, category) {
                     starterData = JSON.stringify(jsonResult);
                 },
                 error: function(msg){
-                    alert("fail")
+                    //alert("fail")
                 }
             });
             var starterDataObj = eval("(" + starterData + ")");
@@ -44,7 +44,7 @@ function getChartData(phoneNumber, category) {
                     workerData = JSON.stringify(jsonResult);
                 },
                 error: function(msg){
-                    alert("fail")
+                    //alert("fail")
                 }
             });
             var workerDataObj = eval("(" + workerData + ")");
@@ -64,13 +64,13 @@ function getChartData(phoneNumber, category) {
                     adminData = JSON.stringify(jsonResult);
                 },
                 error: function(msg){
-                    alert("fail")
+                    //alert("fail")
                 }
             });
             var adminDataObj = eval("(" + adminData + ")");
             loadAdminChartNumAndData(adminDataObj);
             break;
     }
-    alert("loadChartData Success");
+    //alert("loadChartData Success");
     return 0;
 }
