@@ -36,4 +36,5 @@ com\seproject\web\LoginController.class
 com\seproject\service\SearchCategory.class
 com\seproject\web\SampleController.class
 com\seproject\domain\Collection.class
+com\seproject\domain\TestDomain.class
 com\seproject\domain\StatisticsData\WorkerData.class

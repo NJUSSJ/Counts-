@@ -8,6 +8,7 @@ import com.seproject.domain.Sample;
 import com.seproject.service.BasicBLService;
 import com.seproject.service.ReviewService;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,6 +46,12 @@ public class SampleController {
     public void setSampleResult(@RequestBody String SampleInfo){
         JSONObject object=JSONObject.fromObject(SampleInfo);
         Sample sample=(Sample)JSONObject.toBean(object,Sample.class);
+        reviewService.setSampleResult(sample);
         System.out.println(sample.getQuality());
+    }
+
+    @Autowired
+    public void setReviewService(ReviewService service){
+        reviewService=service;
     }
 }
