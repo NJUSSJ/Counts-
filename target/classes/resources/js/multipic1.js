@@ -132,8 +132,12 @@ function addMissionToUser(missionName, userPhone) {
            contentType: "application/json",
            dataType: "json",
            data: JSON.stringify(collectionData),
-           success: function () {
-
+           success: function (returnData) {
+               if(returnData=="0"){
+                   alert("您的等级未达到任务要求！");
+               }else if(returnData=="1"){
+                   alert("该任务已截止！");
+               }
            },
            error: function () {
 

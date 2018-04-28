@@ -70,11 +70,8 @@ public class PersonalController {
     @RequestMapping(value = "/getPersonalCollectionInfo")
     @ResponseBody
     public ArrayList<String> getCollectionInfo(@RequestBody String userInfo) {
-        System.out.println("接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
-        System.out.println(phoneNumber);
         String category = userInfo.substring(40,41);
-        System.out.println(category);
         if(Integer.parseInt(category) == 2) {
             collectionBasicBLService.setT(new Collection());
             ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);

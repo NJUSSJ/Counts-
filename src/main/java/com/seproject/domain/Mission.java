@@ -20,7 +20,7 @@ public class Mission {
 
     @Searchable(varName = "requestorNumber")
     String requestorNumber;
-    int state;//0:未完成 1：完成
+    int state;//0:未完成 1：完成 2:已经评估
     public Mission(){
 
     }

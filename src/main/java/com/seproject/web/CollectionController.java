@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 @RestController
 public class CollectionController {
@@ -71,12 +73,25 @@ public class CollectionController {
 
     @RequestMapping(value = "/addMissionToUser")
     @ResponseBody
-    public void addMissionToUser(@RequestBody String collectionInfo){
-        System.out.println("Get!!!");
+    public String addMissionToUser(@RequestBody String collectionInfo){
         JSONObject object=new JSONObject().fromObject(collectionInfo);
         Collection collection=(Collection)JSONObject.toBean(object,Collection.class);
         String uid=collection.getUid();
         String mid=collection.getMid();
+        int uLevel=basicBLService.findByKey(uid).getLevel();
+        int mLevel=Integer.parseInt(missionBasicBLService.findByKey(mid).getWorkerLevel());
+        if(uLevel<mLevel){
+            return "0";
+        }
+
+        String missionDate=missionBasicBLService.findByKey(mid).getEndTime();
+        Date now=new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String nowDate=dateFormat.format(now);
+        if(missionDate.compareTo(nowDate)<0){
+            return "1";
+        }
+
         Mission tmpMission=missionBasicBLService.findByKey(mid);
         int picNum=tmpMission.getFileNum();
         collection.setKeyId(mid+uid);
@@ -87,5 +102,6 @@ public class CollectionController {
         }
         collection.setInfoList(tmpArray);
         collectionBasicBLService.add(collection);
+        return "2";
     }
 }
