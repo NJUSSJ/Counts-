@@ -4,13 +4,13 @@
     <list default="true" id="3729c0cf-f7b5-4152-bf1f-4274979e7d26" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/ReviewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/ReviewService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/StatisticsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/StatisticsService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/PersonalController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/ReadWriteFileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/ReadWriteFileController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/PersonalController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/PersonalController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/ReadWriteFileController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/ReadWriteFileController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" afterPath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +35,8 @@
       <file leaf-file-name="ReviewService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/ReviewService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="142" column="12" lean-forward="false" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
+            <state relative-caret-position="1112">
+              <caret line="147" column="59" lean-forward="false" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
               <folding>
                 <element signature="e#400#412#0" expanded="true" />
                 <element signature="e#485#491#0" expanded="true" />
@@ -241,24 +241,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="seproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_II" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_II" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
@@ -555,7 +537,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改 统计部分bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改 统计部分bug" />
+    <MESSAGE value="v.2.7.x 增强统计方法，图集显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.2.7.x 增强统计方法，图集显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -568,6 +551,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -584,8 +568,8 @@
         <state relative-caret-position="1633">
           <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
+            <element signature="e#1867#1868#0" expanded="false" />
+            <element signature="e#1927#1928#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -720,8 +704,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/ReviewService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="142" column="12" lean-forward="false" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
+        <state relative-caret-position="1112">
+          <caret line="147" column="59" lean-forward="false" selection-start-line="147" selection-start-column="59" selection-end-line="147" selection-end-column="59" />
           <folding>
             <element signature="e#400#412#0" expanded="true" />
             <element signature="e#485#491#0" expanded="true" />
