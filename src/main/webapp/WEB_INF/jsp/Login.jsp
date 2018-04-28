@@ -167,7 +167,7 @@
 
                                 }
                                 function sendVari() {
-                                    if(document.getElementById("phoneNumber").value==null||document.getElementById("phoneNumber").value==""||document.getElementById("phoneNumber").value.length!=11){
+                                    if(document.getElementById("phoneNumber").value==null||document.getElementById("phoneNumber").value==""||document.getElementById("phoneNumber").value.length!=11||isNaN(document.getElementById("phoneNumber").value)){
                                         alert("请正确输入手机号码");
                                         return;
                                     }
