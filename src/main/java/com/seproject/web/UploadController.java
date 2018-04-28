@@ -41,7 +41,6 @@ public class UploadController {
     @RequestMapping(value = "/uploadFinish.html")
     @ResponseBody
     public ModelAndView finish(HttpServletRequest request){
-        System.out.println(request.getParameter("phoneNumber"));
         String phoneNumber=request.getParameter("phoneNumber");
         User tmpUser=userBasicBLService.findByKey(phoneNumber);
         ModelAndView view=new ModelAndView("Main");
@@ -58,7 +57,6 @@ public class UploadController {
     public synchronized String addPics(MultipartHttpServletRequest request)throws IOException{
         Map<String, MultipartFile> fileMap = request.getFileMap();
         String missionName=request.getParameter("name");
-        System.out.println("MIssionName:"+missionName);
         missionBasicBLService.setT(new Mission());//lala
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         if(tmpMission==null){

@@ -209,10 +209,14 @@ public class StatisticsService {
             for(int j=0;j<missionNames.size();j++){
                 ArrayList<String> inner=new ArrayList<String>();
                 String uName=userNames.get(i),mName=missionNames.get(j);
-                inner.add(uName);
-                inner.add(mName);
-                inner.add(service1.findByKey(mName+uName).getQuality()+"");
-                details.add(inner);
+                Collection c=service1.findByKey(mName+uName);
+                if(c!=null) {
+                    inner.add(uName);
+                    inner.add(mName);
+                    System.out.println(mName + uName + "key of colletion");
+                    inner.add(c.getQuality() + "");
+                    details.add(inner);
+                }
             }
         }
         return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum,levelNames,levels,userNames,missionNames,details);
