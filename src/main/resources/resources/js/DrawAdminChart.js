@@ -14,8 +14,8 @@
             data: ['LEVEL']
         },
         xAxis: {
-            //data: adminObj.adminLevelName
-            data: ['LEVEL1','LEVEL2','LEVEL3','LEVEL4','LEVEL5','LEVEL6']
+            data: adminObj.adminLevelName
+            //data: ['LEVEL1','LEVEL2','LEVEL3','LEVEL4','LEVEL5','LEVEL6']
         },
         yAxis: {},
         series: [{
