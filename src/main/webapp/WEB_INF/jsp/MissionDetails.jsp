@@ -90,6 +90,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <a href="#work" class="icon fa-eye"><span>任务详情</span></a>
         <a href="#samplePanel" class="icon fa-tag"><span>评估任务</span></a>
         <a href="#charts" class="icon fa-pie-chart" onclick=""><span>任务统计</span></a>
+        <a href="JavaScript:history.go(-1)" class="icon fa-refresh"><span>Back</span></a>
     </nav>
 
     <!-- Main -->
