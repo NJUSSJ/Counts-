@@ -91,6 +91,7 @@ function veriInput() {
     }
 
     var existed;
+    var enough;
 
     $.ajax({
         async: false,
@@ -122,13 +123,33 @@ function veriInput() {
         alert("请输入任务描述!");
         return false;
     }
-    if(expectedNum==null||expectedNum==""){
+    if(expectedNum==null||expectedNum==""||isNaN(expectedNum)){
         alert("请设置期待标注人数！");
         return false;
     }
-    if(reward==null||reward==""){
-        alert("请设置奖励！");
+    if(reward==null||reward==""||isNaN(reward)){
+        alert("请正确设置奖励！");
         return false;
+    }
+
+    $.ajax({
+        async: false,
+        type: "POST",
+        url: "/findEnough",
+        contentType: "application/json",
+        dataType: "json",
+        data: reward+"#"+requestorPhone,
+        success: function (returnData){
+            enough=returnData;
+        },
+        error: function(){
+            alert("fail13")
+        }
+    });
+
+    if(enough==false){
+        alert("积分不足，请联系管理员进行充值！");
+        return;
     }
 
 
