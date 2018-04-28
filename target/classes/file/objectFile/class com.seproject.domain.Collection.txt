@@ -1,1 +1,0 @@
-1218192975169@##_##@18192975169@##_##@12@##_##@[{"sentids":[0],"imgid":"12-1-18192975169","sentences":[{"raw":"huiw","splitPart":["huiw"],"imgid":"12_1","sentid":0,"status":0}],"filename":"12_1","fixedx":[154],"fixedy":[93],"fixedwidth":[228],"fixedheight":[113],"list":[]}, {}]@##_##@0@##_##@0.0@##_##@0@##_##@

@@ -79,6 +79,9 @@ public class UploadController {
             tmpMission.setFileNum(0);
             tmpMission.setState(0);
             missionBasicBLService.add(tmpMission);
+            User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
+            tmpUser.setCredit(tmpUser.getCredit()-reward);
+            userBasicBLService.update(tmpUser);
 
         }
         for(MultipartFile multipartFile : fileMap.values()) {
@@ -92,10 +95,9 @@ public class UploadController {
             saveFileToLocalDisk(multipartFile, request.getParameter("name"),Integer.parseInt(request.getParameter("indexPic")));
         }
 
-        User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
-        double reward=Double.parseDouble(request.getParameter("reward"));
-        tmpUser.setCredit(tmpUser.getCredit()-reward);
-        userBasicBLService.update(tmpUser);
+
+
+
         return "";
     }
 
