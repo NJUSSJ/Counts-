@@ -6,7 +6,7 @@ import com.seproject.service.Searchable;
 public class TestDomain {
     @Key
     private int id;
-    @Searchable(varName = "name")
+    @Searchable(varName ="name")
     private String name;
     @Searchable(varName = "num")
     private int num;

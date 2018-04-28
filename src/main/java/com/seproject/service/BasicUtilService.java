@@ -148,7 +148,6 @@ public class BasicUtilService {
                         setter = each;
                     }
                 }
-
                 if (type.equals("class java.lang.String")) {
                     setter.invoke(model, info.get(j));
                 } else if (type.equals("java.util.ArrayList<java.lang.Integer>")) {
@@ -342,6 +341,9 @@ public class BasicUtilService {
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
         try {
             Method m=o.getClass().getMethod("get"+name);
+            if(m.invoke(o)==null){
+                return null;
+            }
             return m.invoke(o).toString();
         } catch (NoSuchMethodException e) {
             e.printStackTrace();

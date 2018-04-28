@@ -1,19 +1,13 @@
 package com.seproject.service;
 
-import com.seproject.dao.FileDao;
-import com.seproject.domain.Mission;
 import com.seproject.domain.TestDomain;
-import com.seproject.domain.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static org.junit.Assert.*;
 
-public class BasicBLServiceTest1 {
+public class BasicBLServiceTest2 {
     BasicBLService<TestDomain> service=new BasicBLService<TestDomain>(new TestDomain());
     TestDomain t1=new TestDomain();
     TestDomain t2=new TestDomain();
@@ -52,20 +46,24 @@ public class BasicBLServiceTest1 {
         service.delete("4");
         service.delete("5");
     }
+
     @Test
-    public void search() {
-        ArrayList<TestDomain> list1,list2,list3,list4,list5;
-        list1=service.search("name",SearchCategory.EQUAL,"ssj");
-        list2=service.search("name",SearchCategory.CONTAINS,"ssj");
-        list3=service.search("name",SearchCategory.NOT_EQUAL,"ssj");
-        list4=service.search("num",SearchCategory.SMALLER_THAN,"5");
-        list5=service.search("num",SearchCategory.LARGER_THAN,"3");
-        int size1=list1.size(),size2=list2.size(),size3=list3.size(),size4=list4.size(),size5=list5.size();
-        assertEquals(2,size1);
-        assertEquals(5,size2);
-        assertEquals(3,size3);
-        assertEquals(4,size4);
-        assertEquals(2,size5);
+    public void add() {
+        TestDomain nothing=null;
+        assertEquals(RM.FAILURE,service.add(nothing));
+        TestDomain noKey=new TestDomain();//int型主键会把0加进去，但string型不会
+        assertEquals(RM.SUCCESS,service.add(noKey));
+        assertEquals(RM.FAILURE,service.add(noKey));
+    }
+
+    @Test
+    public void findByKey() {
+        assertEquals(null,service.findByKey(null));
+    }
+
+    @Test
+    public void checkKeyExists() {
+        assertEquals(false,service.checkKeyExists(null));
     }
 
 }

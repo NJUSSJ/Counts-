@@ -1,3 +1,6 @@
-com\seproject\service\BasicBLServiceTest1.class
-com\seproject\dao\FileDaoTest2.class
 com\seproject\dao\FileDaoTest1.class
+com\seproject\service\BasicBLServiceTest2.class
+com\seproject\service\MathServiceTest.class
+com\seproject\dao\FileDaoTest2.class
+com\seproject\service\BasicBLServiceTest.class
+com\seproject\service\BasicBLServiceTest1.class

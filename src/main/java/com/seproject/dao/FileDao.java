@@ -167,7 +167,25 @@ public class FileDao {
         ArrayList <String > singleObject=new ArrayList<String>();
         ArrayList <String > objects=read_class(fileName);
         for(int i=0;i<objects.size();i++){
-            String temp[]=objects.get(i).split(this.separateString);
+            //String temp[]=objects.get(i).split(this.separateString);
+            //给这句话换实现
+            ArrayList<String> tempList=new ArrayList<String>();
+            String content=objects.get(i);
+            while(true) {
+                int index=content.indexOf(separateString);
+                if(index==-1){
+                    if(content!=null&&content.length()>=0) {
+                        tempList.add(content);
+                    }
+                    break;
+                }
+                tempList.add(content.substring(0,index));
+                content=content.substring(index+separateString.length());
+            }
+            String[] temp=new String[tempList.size()];
+            for(int k=0;k<temp.length;k++){
+                temp[k]=tempList.get(k);
+            }
             if(temp[keyID].equals(key)){
                 for(int j=0;j<temp.length;j++){
                     singleObject.add(temp[j]);

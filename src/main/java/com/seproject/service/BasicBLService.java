@@ -33,6 +33,13 @@ public class BasicBLService<T> {
 
    public synchronized RM add(T t0){
        //增加单个对象
+       if(t0==null){
+           return RM.FAILURE;
+       }
+       if(basicUtilService.getKeyValue(t0,basicUtilService.getKeyID(t0))==null){
+           return RM.FAILURE;//缺少主键
+       }
+
        if(findByKey(basicUtilService.getKeyValue(t0,basicUtilService.getKeyID(t0)))==null){
            this.basicUtilService.writeClass(t0);
            return RM.SUCCESS;
