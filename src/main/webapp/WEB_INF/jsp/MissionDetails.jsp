@@ -86,11 +86,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     <!-- Nav -->
     <nav id="nav">
-        <a href="#me" class="icon fa-home active"><span>任务主页</span></a>
-        <a href="#work" class="icon fa-eye"><span>任务详情</span></a>
-        <a href="#samplePanel" class="icon fa-tag"><span>评估任务</span></a>
-        <a href="#charts" class="icon fa-pie-chart" onclick=""><span>任务统计</span></a>
-        <a href="JavaScript:history.go(-1)" class="icon fa-refresh"><span>返回</span></a>
+        <a href="#me" class="icon fa-home active" onclick="addOne()"><span>任务主页</span></a>
+        <a href="#work" class="icon fa-eye" onclick="addOne()"><span>任务详情</span></a>
+        <a href="#samplePanel" class="icon fa-tag" onclick="addOne()"><span>评估任务</span></a>
+        <a href="#charts" class="icon fa-pie-chart" onclick="addOne()"><span>任务统计</span></a>
+        <a onclick="back()" class="icon fa-refresh"><span>返回</span></a>
     </nav>
 
     <!-- Main -->

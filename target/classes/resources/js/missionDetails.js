@@ -357,6 +357,15 @@ function sendJudgeResult() {
     });
 }
 
+var step=-1;
+
+function addOne() {
+    step--;
+}
+
+function back() {
+    window.history.go(step);
+}
 
 var number0;
 var number1;
