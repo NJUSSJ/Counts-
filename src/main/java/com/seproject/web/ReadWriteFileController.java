@@ -69,7 +69,7 @@ public class ReadWriteFileController {
      */
     @RequestMapping(value = "/submitTag")
     @ResponseBody
-    public String submitTagInfo(@RequestBody String str){
+    public int submitTagInfo(@RequestBody String str){
         JSONObject jsonObject = JSONObject.fromObject(str);
         String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
         Collection collection=null;
@@ -81,9 +81,19 @@ public class ReadWriteFileController {
             System.out.println("要提交的图集不存在"+"：主键为"+missionAndPhoneNumber);
         }
 
-        return "提交成功！";
+        return 1;
     }
 
+
+    @RequestMapping(value = "/getSubmitTag")
+    @ResponseBody
+    public int getSubmitTagInfo(@RequestBody String str){
+        JSONObject jsonObject = JSONObject.fromObject(str);
+        String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
+        Collection collection=null;
+
+        return collectionService.findByKey(missionAndPhoneNumber).getState();
+    }
 
 
 
