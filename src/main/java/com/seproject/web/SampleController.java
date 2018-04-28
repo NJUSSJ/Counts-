@@ -18,14 +18,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SampleController {
 
     BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
-    ReviewService reviewService=new ReviewService();
+    ReviewService reviewService;
 
     @RequestMapping(value = "/getSample")
     @ResponseBody
     public String getSample(@RequestBody String missionName){
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
-        tmpMission.setState(1);
-        missionBasicBLService.update(tmpMission);
         int state=tmpMission.getState();
 
         /*
