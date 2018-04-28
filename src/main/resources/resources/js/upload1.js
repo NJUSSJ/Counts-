@@ -103,7 +103,7 @@ function veriInput() {
             existed=returnData;
         },
         error: function(msg){
-            alert("fail12")
+            //alert("fail12")
         }
     });
 

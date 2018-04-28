@@ -88,12 +88,12 @@ var tmp123;
 从getImgInfo取json数据得到url 若不为空则加载此url
  */
 function loadPic(url, phoneNumber) {
-    alert("loading pic " + url);
+    //alert("loading pic " + url);
     loadPhoneNumber(phoneNumber);
     getImgInfo();
 
     var imgInfo = eval("(" + tmp123 + ")");
-    alert("imgInfo: " + imgInfo);
+    //alert("imgInfo: " + imgInfo);
 
 
     if(imgInfo!=null){

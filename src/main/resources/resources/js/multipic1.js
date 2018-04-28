@@ -122,8 +122,8 @@ function collection(uid, mid){
     this.mid=mid;
 }
 function addMissionToUser(missionName, userPhone) {
-        alert(missionName);
-        alert(userPhone);
+        //alert(missionName);
+        //alert(userPhone);
         var collectionData=new collection(userPhone,missionName);
         $.ajax({
            type: "POST",

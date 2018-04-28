@@ -21,8 +21,8 @@
         series: [{
             name: 'LEVEL',
             type: 'bar',
-            //data: adminObj.adminLevelWorkerNum
-            data: [10,20,30,25,44,33]
+            data: adminObj.adminLevelWorkerNum
+            //data: [10,20,30,25,44,33]
         }]
     };
 

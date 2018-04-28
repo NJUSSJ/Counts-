@@ -54,5 +54,5 @@ function loadChartArea(userCategory) {
             break;
     }
 
-    alert("chart加载完毕");
+    //alert("chart加载完毕");
 }
