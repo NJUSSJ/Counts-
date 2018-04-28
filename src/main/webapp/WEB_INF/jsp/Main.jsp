@@ -79,7 +79,7 @@
             <!-- Content -->
             <div class="content">
                 <section>
-                    <a href="#" class="image featured "><img src="images/banner.jpg" alt="" /></a>
+                    <a href="#" class="image featured "><img src="images/timg.jpg" alt="" /></a>
                     <header>
                         <h3>以下为一段说明文字</h3>
                     </header>

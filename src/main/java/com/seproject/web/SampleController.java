@@ -25,15 +25,16 @@ public class SampleController {
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         tmpMission.setState(1);
         missionBasicBLService.update(tmpMission);
-        /*
         int state=tmpMission.getState();
-        if(state==0){
+
+        /*
+         if(state==0){
             return "0";
-        }else if(state==2){
+        }else
+         */
+        if(state==2){
             return "2";
         }
-         */
-
         Sample sample=reviewService.getSample(missionName);
         JSONObject object=JSONObject.fromObject(sample);
         String sampleInfo=object.toString();
