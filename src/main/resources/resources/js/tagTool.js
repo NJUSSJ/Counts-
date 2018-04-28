@@ -173,23 +173,47 @@ function missionAndPhoneNumberObj(missionAndPhoneNumber) {
 
 function submitTagInfo() {
     var missionAndPhoneNumber = getNameAndCollection()[0] + phoneNumber;
-
+    var isSubmitted = false;
     //alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
+
     $.ajax({
         async: false,
         type: "POST",
-        url: "submitTag",
+        url: "getSubmitTag",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)),
-        success: function () {
-            //alert("提交成功!");
+        success: function (ret) {
+            //alert("state=" + ret);
+            if(ret === 1) {
+                isSubmitted = true;
+                alert("已提交过，请勿重复提交！");
+            }
         }
         ,
         error: function(){
             //alert("提交失败!");
         }
     });
-    alert("提交成功!");
+
+    if(!isSubmitted) {
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "submitTag",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)),
+            success: function (ret) {
+                if(ret === 1)
+                    alert("提交成功!");
+            }
+            ,
+            error: function () {
+                //alert("提交失败!");
+            }
+        });
+    }
+    //alert("提交成功!");
     return 0;
 }
