@@ -25,9 +25,6 @@ public class ReadWriteFileController {
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
-       // String imgid = params.getString("imgid");
-        System.out.println("获取到的json字符串：" + imgid);
-
         JSONObject jsonObject = JSONObject.fromObject(imgid);
         String temp0[]=jsonObject.getString("imgid").split("-");
         String starterMissionName=temp0[0];
@@ -35,14 +32,10 @@ public class ReadWriteFileController {
         String userName= temp0[2];
 
         Collection collection=collectionService.findByKey(starterMissionName+userName);
-        System.out.println(collection);
         ArrayList<String> infoList=collection.getInfoList();
-        System.out.println(infoList.size()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         infoList.set(Integer.parseInt(picName0)-1,imgid);
         collection.setInfoList(infoList);
         collectionService.update(collection);
-
-
         return "666";
     }
 /*
@@ -63,10 +56,8 @@ public class ReadWriteFileController {
         JSONObject jsonObject = JSONObject.fromObject(imageInfo);
         String collectionName=jsonObject.getString("collectionName");
         String picName=jsonObject.getString("picName");
-        System.out.println("picName: " + picName);
         String phoneNumber=jsonObject.getString("phoneNumber");
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
-        System.out.println("从后端往前端发送的json字符串：" + jsonString);
         return jsonString;
     }
 
@@ -81,7 +72,6 @@ public class ReadWriteFileController {
     public String submitTagInfo(@RequestBody String str){
         JSONObject jsonObject = JSONObject.fromObject(str);
         String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
-        System.out.println(missionAndPhoneNumber);
         Collection collection=null;
 
         if((collection=collectionService.findByKey(missionAndPhoneNumber))!=null){
