@@ -65,7 +65,7 @@ public class UploadController {
             String description=request.getParameter("description");
             String workLevel=request.getParameter("workLevel");
             String requestorPhone=request.getParameter("requestorPhone");
-            int reward=Integer.parseInt(request.getParameter("reward"));
+            double reward=Double.parseDouble(request.getParameter("reward"));
             int expectedNum=Integer.parseInt(request.getParameter("expectedNum"));
             tmpMission=new Mission();
             tmpMission.setName(missionName);
@@ -91,6 +91,11 @@ public class UploadController {
             missionBasicBLService.update(tmpMission);
             saveFileToLocalDisk(multipartFile, request.getParameter("name"),Integer.parseInt(request.getParameter("indexPic")));
         }
+
+        User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
+        double reward=Double.parseDouble(request.getParameter("reward"));
+        tmpUser.setCredit(tmpUser.getCredit()-reward);
+        userBasicBLService.update(tmpUser);
         return "";
     }
 
@@ -100,6 +105,17 @@ public class UploadController {
         return missionBasicBLService.checkKeyExists(missionName);
     }
 
+    @RequestMapping(value = "/findEnough")
+    @ResponseBody
+    public Boolean findEnough(@RequestBody String missionReward){
+        String userPhone=missionReward.split("#")[1];
+        double settedReward=Double.parseDouble(missionReward.split("#")[0]) ;
+        double existedReward=userBasicBLService.findByKey(userPhone).getCredit();
+        if(settedReward>existedReward){
+            return false;
+        }
+        return true;
+    }
     private void saveFileToLocalDisk(MultipartFile multipartFile, String missionName,int i) throws IOException,
             FileNotFoundException {
 
