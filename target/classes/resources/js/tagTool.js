@@ -184,7 +184,7 @@ function submitTagInfo() {
         dataType: "json",
         data: JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)),
         success: function (ret) {
-            alert("state=" + ret);
+            //alert("state=" + ret);
             if(ret === 1) {
                 isSubmitted = true;
                 alert("已提交过，请勿重复提交！");
