@@ -12,7 +12,7 @@ function loadPhoneNumber(_phoneNumber){
     //imgid 格式为 collectionName + picName + phoneNumber
     imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1] + "-" + phoneNumber;
 
-    alert("修改过的phoneNumber: " +phoneNumber);
+    //alert("修改过的phoneNumber: " +phoneNumber);
 }
 
 save.addEventListener("click", function save() {
@@ -91,7 +91,7 @@ function getSentIds() {
 function saveData() {
     var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
-    alert("已储存本图片信息");
+    //alert("已储存本图片信息");
 }
 
 //test
@@ -111,11 +111,11 @@ function ImageJson(imgs) {
         //data: JSON.stringify(a),
         success: function (jsonResult) {
             if(jsonResult.success) {
-                alert(jsonResult);
+                //alert(jsonResult);
             }
         },
         error:function () {
-            alert("fail");
+            //alert("fail");
         }
     });
 }
@@ -153,14 +153,14 @@ function getImgInfo() {
           }else{
               alert(JSON.stringify(jsonResult))
           }*/
-          alert(jsonResult);
+          //alert(jsonResult);
           tmp123 = JSON.stringify(jsonResult);
           //alert("qqq" + tmp123);
           //return ret;
         }
         ,
         error: function(){
-            alert("fail")
+            //alert("fail")
         }
     });
     return ret1;
@@ -173,23 +173,47 @@ function missionAndPhoneNumberObj(missionAndPhoneNumber) {
 
 function submitTagInfo() {
     var missionAndPhoneNumber = getNameAndCollection()[0] + phoneNumber;
+    var isSubmitted = false;
+    //alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
 
-    alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
     $.ajax({
         async: false,
         type: "POST",
-        url: "submitTag",
+        url: "getSubmitTag",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)),
-        success: function () {
-            alert("提交成功!");
+        success: function (ret) {
+            //alert("state=" + ret);
+            if(ret === 1) {
+                isSubmitted = true;
+                alert("已提交过，请勿重复提交！");
+            }
         }
         ,
         error: function(){
             //alert("提交失败!");
         }
     });
-    alert("提交成功!");
+
+    if(!isSubmitted) {
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "submitTag",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)),
+            success: function (ret) {
+                if(ret === 1)
+                    alert("提交成功!");
+            }
+            ,
+            error: function () {
+                //alert("提交失败!");
+            }
+        });
+    }
+    //alert("提交成功!");
     return 0;
 }

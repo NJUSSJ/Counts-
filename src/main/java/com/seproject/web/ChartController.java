@@ -54,8 +54,13 @@ public class ChartController {
 
         //需要通过uid获取相应data
         AdminData adminData =statisticsService.getAdminData();
+        System.out.println(adminData==null);
+        System.out.println(adminData.adminUserSum+"userSum");
+        System.out.println(adminData.adminLevelWorkerNum.size()+"size");
         JSONObject jsonObject = JSONObject.fromObject(adminData);
         String ret = jsonObject.toString();
+
+        System.out.println("AdminData:"+ret);
 
         return ret;
     }

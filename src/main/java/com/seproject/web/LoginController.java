@@ -26,12 +26,11 @@ public class LoginController {
 		ModelAndView view = new ModelAndView("Main");
 		boolean existed=false;
 		User tmpUser=basicBLService.findByKey(request.getParameter("userName"));
-		System.out.println(request.getParameter("userName"));
 		if(tmpUser!=null){
 		    existed=true;
         }
 		if(!existed){
-			System.out.println("not existed");
+			//System.out.println("not existed");
 			return new ModelAndView("Login", "error", "\'用户不存在\'");
 		}else {
 			User realUser=basicBLService.findByKey(user.getUserName());
@@ -59,7 +58,6 @@ public class LoginController {
 	public ModelAndView signUpCheck(HttpServletRequest request,User user){
 		ModelAndView view = new ModelAndView("Main");
 
-		System.out.println(user.getUserName()+"/"+user.getPassword()+"!!!!");
 		basicBLService.add(user);
 		boolean result=true;
 		if(!result){

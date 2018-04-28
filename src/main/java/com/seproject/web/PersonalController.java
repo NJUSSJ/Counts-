@@ -49,18 +49,15 @@ public class PersonalController {
     @ResponseBody
     public String readPersonal(@RequestBody String phoneNumberObj) {
         String phoneNumber = phoneNumberObj.substring(phoneNumberObj.indexOf(":")+1,phoneNumberObj.length()-1);
-        System.out.println("phoneNumber: " + phoneNumber);
         User user = basicBLService.findByKey(phoneNumber);
         JSONObject json = JSONObject.fromObject(user);//将java对象转换为json对象
         String res = json.toString();//将json对象转换为字符串
-        System.out.println("readPersonal：" + res);
         return res;
     }
 
     @RequestMapping(value = "/writePersonal")
     @ResponseBody
     public String writePersonal(@RequestBody String personalInfo){
-        System.out.println("writePersonal: " + personalInfo);
         JSONObject obj = new JSONObject().fromObject(personalInfo);
         User user = (User)JSONObject.toBean(obj,User.class);
         basicBLService.update(user);
@@ -73,11 +70,8 @@ public class PersonalController {
     @RequestMapping(value = "/getPersonalCollectionInfo")
     @ResponseBody
     public ArrayList<String> getCollectionInfo(@RequestBody String userInfo) {
-        System.out.println("接收到的userInfo: " + userInfo);
         String phoneNumber = userInfo.substring(16,27);//获取手机号
-        System.out.println(phoneNumber);
         String category = userInfo.substring(40,41);
-        System.out.println(category);
         if(Integer.parseInt(category) == 2) {
             collectionBasicBLService.setT(new Collection());
             ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);

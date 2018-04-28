@@ -44,8 +44,6 @@ public class MultiController {
     @ResponseBody
     public String[] getCollectionInfo(@RequestBody String user) {
 
-        System.out.println("GET COLLECTIONINFO");
-
         missionBasicBLService.setT(new Mission());
         ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
         int index=0;
@@ -54,15 +52,12 @@ public class MultiController {
             missionNames[index]=mission.getName()+"^"+mission.getDescription();
             index++;
         }
-
-        System.out.println(user);
         return missionNames;
     }
 
     @RequestMapping(value = "/getMissionDetails")
     @ResponseBody
     public ModelAndView getMissionDetais(HttpServletRequest request){
-        System.out.println("Get!!!!!!!!!!!!");
         String missionName=request.getParameter("missionName");
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();

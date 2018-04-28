@@ -119,19 +119,35 @@ public class ReviewService {
         ArrayList<Collection> subCollection=new ArrayList<Collection>();
         for(Collection c:collections){
             if(c.getMid().equals(missionID)){
-                subCollection.add(c);
+                if(c.getQuality()!=-1) {
+                    subCollection.add(c);
+                }
             }
         }
 
         double qualityAvg=0;
         double realCreditSum=0;
         for(Collection c:subCollection){ qualityAvg+=c.getQuality(); }
-        qualityAvg/=subCollection.size();
-        for(Collection c:subCollection){
-            double result=sumCredit*(baseCredit+(1-baseCredit)*c.getQuality()/qualityAvg)/subCollection.size();
-            realCreditSum+=result;
+        boolean allBad=false;
+        //如果总和是0，那么每张图的q都是0，进入特殊判断
+        if(qualityAvg==0){
+            allBad=true;
+        }
+        qualityAvg /= subCollection.size();
+        for (Collection c : subCollection) {
+            double result;
+            if(allBad){
+                result=sumCredit/subCollection.size();
+            }else {
+                result = sumCredit * (baseCredit + (1 - baseCredit) * c.getQuality() / qualityAvg) / subCollection.size();
+            }
+            realCreditSum += result;
             c.setCredit(result);
-
+            User user=service2.findByKey(c.getUid());
+            user.setCredit(user.getCredit()+result);
+            user.setLevel(user.getLevel()+1);//奖励分配以后用户等级升级
+            service1.update(c);
+            service2.update(user);
         }
 
         User starter=service2.findByKey(m.getRequestorNumber());

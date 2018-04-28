@@ -45,7 +45,7 @@ function loadMain(userPhone,userCategory) {
             setCollection();
         },
         error: function () {
-            alert("fail")
+            //alert("fail")
         }
     });
 

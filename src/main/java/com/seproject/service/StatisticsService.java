@@ -144,7 +144,7 @@ public class StatisticsService {
                 case 0:adminNum++;break;
                 case 1:starterNum++;break;
                 case 2:workerNum++;
-                    if(user.getLevel()>maxLevel){
+                    if(user.getLevel()>maxLevel&&user.getCategory()==2){
                         maxLevel=user.getLevel();
                     }
                      break;
@@ -204,18 +204,25 @@ public class StatisticsService {
             }
         }
 
-        ArrayList<ArrayList<String>> details=new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<Integer>> details=new ArrayList<ArrayList<Integer>>();
         for(int i=0;i<userNames.size();i++){
             for(int j=0;j<missionNames.size();j++){
-                ArrayList<String> inner=new ArrayList<String>();
+                ArrayList<Integer> inner=new ArrayList<Integer>();
                 String uName=userNames.get(i),mName=missionNames.get(j);
-                inner.add(uName);
-                inner.add(mName);
-                inner.add(service1.findByKey(mName+uName).getQuality()+"");
-                details.add(inner);
+                Collection c=service1.findByKey(mName+uName);
+                if(c!=null) {
+                    if(c.getQuality()>=0) {
+                        inner.add(i);
+                        inner.add(j);
+                        System.out.println(mName + uName + "key of colletion");
+                        inner.add(c.getQuality());
+                        details.add(inner);
+                    }
+                }
             }
         }
-        return factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum,levelNames,levels,userNames,missionNames,details);
+        AdminData data=factoryService.adminDataFactory(userSum,workerNum,adminNum,starterNum,missionSum,finishedMissionNum,ongoingMissionNum,levelNames,levels,userNames,missionNames,details);
+        return data;
 
     }
     public SingleMissionData getSingleMissionData(String missionID){
