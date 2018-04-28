@@ -27,7 +27,7 @@ function AdminDataObj(adminUserSum, adminWorkerNum, adminNum, adminStarterNum, a
 }
 
 function loadAdminChartNumAndData(adminDataObj) {
-    alert("adminDataObj: " + "adminUserSum " + adminDataObj.adminUserSum
+    /*alert("adminDataObj: " + "adminUserSum " + adminDataObj.adminUserSum
     + "adminWorkerNum " + adminDataObj.adminWorkerNum
     + "adminNum " + adminDataObj.adminNum
     + "adminStarterNum " + adminDataObj.adminStarterNum
@@ -38,7 +38,7 @@ function loadAdminChartNumAndData(adminDataObj) {
     + "adminLevelWorkerNum " + adminDataObj.adminLevelWorkerNum
     + "adminUserName " + adminDataObj.adminUserName
     + "adminMissionName " + adminDataObj.adminMissionName
-    + "adminUserMissionQuality " + adminDataObj.adminUserMissionQuality);
+    + "adminUserMissionQuality " + adminDataObj.adminUserMissionQuality);*/
 
     adminUserSum = adminDataObj.adminUserSum;
     adminWorkerNum = adminDataObj.adminWorkerNum;
@@ -77,13 +77,13 @@ function StarterDataObj(starterMissionSum, starterFinishedMissionNum, starterOng
 }
 
 function loadStarterChartNumAndData(starterDataObj) {
-    alert("starterDataObj: " + "starterMissionSum " + starterDataObj.starterMissionSum
+    /*alert("starterDataObj: " + "starterMissionSum " + starterDataObj.starterMissionSum
     + "starterFinishedMissionNum " + starterDataObj.starterFinishedMissionNum
     + "starterOngoingMissionNum " + starterDataObj.starterOngoingMissionNum
     + "starterParticipantSum " + starterDataObj.starterParticipantSum
     + "starterCreditSum " + starterDataObj.starterCreditSum
     + "starterCreditAvg " + starterDataObj.starterCreditAvg
-    + "starterMissionName " + starterDataObj.starterMissionName);
+    + "starterMissionName " + starterDataObj.starterMissionName);*/
 
     starterMissionSum = starterDataObj.starterMissionSum;
     starterFinishedMissionNum = starterDataObj.starterFinishedMissionNum;
@@ -125,7 +125,7 @@ function WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinis
 }
 
 function loadWorkerChartNumAndData(workerDataObj) {
-    alert("workerDataObj: " + "workerMissionSum " + workerDataObj.workerMissionSum
+    /*alert("workerDataObj: " + "workerMissionSum " + workerDataObj.workerMissionSum
     + "workerFinishedMissionNum " + workerDataObj.workerFinishedMissionNum
     + "workerUnfinishedMissionNum " + workerDataObj.workerUnfinishedMissionNum
     + "workerCredit " + workerDataObj.workerCredit
@@ -135,7 +135,7 @@ function loadWorkerChartNumAndData(workerDataObj) {
     + "workerCreditSum " + workerDataObj.workerCreditSum
     + "workerAverageCredit " + workerDataObj.workerAverageCredit
     + "workerMaxCredit" + workerDataObj.workerMaxCredit
-    + "workerMissionCreditQuality " + workerDataObj.workerMissionCreditQuality);
+    + "workerMissionCreditQuality " + workerDataObj.workerMissionCreditQuality);*/
 
     workerMissionSum = workerDataObj.workerMissionSum;
     workerFinishedMissionNum = workerDataObj.workerFinishedMissionNum;

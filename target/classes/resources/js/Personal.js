@@ -63,7 +63,7 @@ function savePersonalInfo(personalInfo) {
         data: JSON.stringify(personalInfo),
         success: function (jsonResult) {
             if(jsonResult.success) {
-                alert(jsonResult);
+                //alert(jsonResult);
             }
         },
         error:function () {

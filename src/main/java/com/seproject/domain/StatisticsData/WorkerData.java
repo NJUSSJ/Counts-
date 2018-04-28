@@ -14,15 +14,92 @@ public class WorkerData {
     public int workerCreditRank;
     public int workerSum;//总工人数
     public double workerCreditSum; //积分总数
-/*
-    public WorkerData(int adminMissionSum, int adminFinishedMissionNum, int workerUnfinishedMissionNum, ArrayList<Double> workerCredit, int workerCreditRank, int workersum, double starterCreditSum){
-        this.adminMissionSum = adminMissionSum;
-        this.adminFinishedMissionNum = adminFinishedMissionNum;
-        this.workerUnfinishedMissionNum = workerUnfinishedMissionNum;
-        this.workerCredit = workerCredit;
-        this.workerCreditRank = workerCreditRank;
-        this.workersum = workersum;
-        this.starterCreditSum = starterCreditSum;
+
+    public int getWorkerMissionSum() {
+        return workerMissionSum;
     }
-    */
+
+    public void setWorkerMissionSum(int workerMissionSum) {
+        this.workerMissionSum = workerMissionSum;
+    }
+
+    public int getWorkerFinishedMissionNum() {
+        return workerFinishedMissionNum;
+    }
+
+    public void setWorkerFinishedMissionNum(int workerFinishedMissionNum) {
+        this.workerFinishedMissionNum = workerFinishedMissionNum;
+    }
+
+    public int getWorkerUnfinishedMissionNum() {
+        return workerUnfinishedMissionNum;
+    }
+
+    public void setWorkerUnfinishedMissionNum(int workerUnfinishedMissionNum) {
+        this.workerUnfinishedMissionNum = workerUnfinishedMissionNum;
+    }
+
+    public ArrayList<Double> getWorkerCredit() {
+        return workerCredit;
+    }
+
+    public void setWorkerCredit(ArrayList<Double> workerCredit) {
+        this.workerCredit = workerCredit;
+    }
+
+    public ArrayList<String> getWorkerMissionName() {
+        return workerMissionName;
+    }
+
+    public void setWorkerMissionName(ArrayList<String> workerMissionName) {
+        this.workerMissionName = workerMissionName;
+    }
+
+    public ArrayList<Double> getWorkerAverageCredit() {
+        return workerAverageCredit;
+    }
+
+    public void setWorkerAverageCredit(ArrayList<Double> workerAverageCredit) {
+        this.workerAverageCredit = workerAverageCredit;
+    }
+
+    public ArrayList<Double> getWorkerMaxCredit() {
+        return workerMaxCredit;
+    }
+
+    public void setWorkerMaxCredit(ArrayList<Double> workerMaxCredit) {
+        this.workerMaxCredit = workerMaxCredit;
+    }
+
+    public ArrayList<ArrayList<Integer>> getWorkerMissionCreditQuality() {
+        return workerMissionCreditQuality;
+    }
+
+    public void setWorkerMissionCreditQuality(ArrayList<ArrayList<Integer>> workerMissionCreditQuality) {
+        this.workerMissionCreditQuality = workerMissionCreditQuality;
+    }
+
+    public int getWorkerCreditRank() {
+        return workerCreditRank;
+    }
+
+    public void setWorkerCreditRank(int workerCreditRank) {
+        this.workerCreditRank = workerCreditRank;
+    }
+
+    public int getWorkerSum() {
+        return workerSum;
+    }
+
+    public void setWorkerSum(int workerSum) {
+        this.workerSum = workerSum;
+    }
+
+    public double getWorkerCreditSum() {
+        return workerCreditSum;
+    }
+
+    public void setWorkerCreditSum(double workerCreditSum) {
+        this.workerCreditSum = workerCreditSum;
+    }
 }

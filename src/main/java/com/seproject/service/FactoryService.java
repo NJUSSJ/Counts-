@@ -43,7 +43,7 @@ public class FactoryService {
             ArrayList<Integer> adminLevelWorkerNum,
             ArrayList<String> adminUserName,
             ArrayList<String> adminMissionName,
-            ArrayList<ArrayList<String>> adminUserMissionQuality
+            ArrayList<ArrayList<Integer>> adminUserMissionQuality
     ){
         AdminData adminData=new AdminData();
         adminData.adminUserSum=adminUserSum;
