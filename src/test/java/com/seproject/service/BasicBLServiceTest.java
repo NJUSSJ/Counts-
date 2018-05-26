@@ -1,6 +1,7 @@
 package com.seproject.service;
 
 import com.seproject.domain.LoginLog;
+import com.seproject.service.blService.BasicBLService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +17,7 @@ public class BasicBLServiceTest {
     LoginLog log3=new LoginLog();
     LoginLog log4=new LoginLog();
     LoginLog log5=new LoginLog();
-    BasicBLService<LoginLog> service=new BasicBLService<LoginLog>(new LoginLog());
+    BasicBLService<LoginLog> service=Factory.getBasicBLService(new LoginLog());
     @Before
     public void setUp() throws Exception {
         log1.setId(1);

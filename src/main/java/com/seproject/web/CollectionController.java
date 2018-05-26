@@ -6,10 +6,10 @@ package com.seproject.web;
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
-import com.seproject.service.BasicBLService;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import com.seproject.service.FileIOService;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,9 +26,9 @@ public class CollectionController {
 
 
     private FileIOService fileIOService;
-    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
-    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
-    private BasicBLService<Collection> collectionBasicBLService=new BasicBLService<Collection>(new Collection());
+    private BasicBLService<User> basicBLService= Factory.<User>getBasicBLService(new User());
+    private BasicBLService<Mission> missionBasicBLService= Factory.<Mission>getBasicBLService(new Mission());
+    private BasicBLService<Collection> collectionBasicBLService= Factory.<Collection>getBasicBLService(new Collection());
 
     @RequestMapping(value = "/details.html")
     public ModelAndView getDetailofCollection(HttpServletRequest request){

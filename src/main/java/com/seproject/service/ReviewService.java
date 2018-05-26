@@ -4,11 +4,10 @@ import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.Sample;
 import com.seproject.domain.User;
+import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Service;
 
-import java.security.cert.CollectionCertStoreParameters;
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 
 /**
  * 评审的业务逻辑
@@ -19,9 +18,9 @@ public class ReviewService {
      * 抽样方法
      */
 
-    BasicBLService<Collection> service1=new BasicBLService<Collection>(new Collection());
-    BasicBLService<User> service2= new BasicBLService<User>(new User());
-    BasicBLService<Mission> service3=new BasicBLService<Mission>(new Mission());
+    BasicBLService<Collection> service1=Factory.getBasicBLService(new Collection());
+    BasicBLService<User> service2= Factory.getBasicBLService(new User());
+    BasicBLService<Mission> service3=Factory.getBasicBLService(new Mission());
 
     private double completeAward=0.2;
 

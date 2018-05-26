@@ -335,7 +335,7 @@ public class BasicUtilService {
      * @param key 主键位置
      * @return o里主键属性的值，以String类型返回
      */
-    public String getKeyValue(Object o,int key){
+    public static String getKeyValue(Object o,int key){
         Field[] fields=o.getClass().getDeclaredFields();
         String name = fields[key].getName();    //获取属性的名字
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
@@ -358,7 +358,7 @@ public class BasicUtilService {
     /**
      *方法重载，获得@Searchable(varName=keyName)的ID
      */
-    public int  getKeyID(Object model,String keyName){
+    public static int getKeyID(Object model,String keyName){
 
         Field[] field = model.getClass().getDeclaredFields();        //获取实体类的所有属性，返回Field数组
         int key=-1;

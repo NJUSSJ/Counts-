@@ -3,12 +3,10 @@ package com.seproject.web;
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
-import com.seproject.service.BasicBLService;
-import com.seproject.service.FileIOService;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import com.seproject.service.SearchCategory;
 import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,9 +19,9 @@ import java.util.ArrayList;
 @RestController
 public class PersonalController {
 
-    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
-    private BasicBLService<Collection> collectionBasicBLService=new BasicBLService<Collection>(new Collection());
-    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
+    private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
@@ -73,7 +71,6 @@ public class PersonalController {
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         String category = userInfo.substring(40,41);
         if(Integer.parseInt(category) == 2) {
-            collectionBasicBLService.setT(new Collection());
             ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);
             ArrayList<String > collectionNames =new ArrayList<String>();
             for(int i=0;i<tmpMission.size();i++){
@@ -81,7 +78,6 @@ public class PersonalController {
             }
             return collectionNames;
         }else if(Integer.parseInt(category) == 1){
-            missionBasicBLService.setT(new Mission());
             ArrayList<Mission> tmpMission = missionBasicBLService.search("requestorNumber", SearchCategory.EQUAL, phoneNumber);
             ArrayList<String > collectionNames =new ArrayList<String>();
             for(int i=0;i<tmpMission.size();i++){

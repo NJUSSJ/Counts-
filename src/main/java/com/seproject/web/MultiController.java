@@ -3,11 +3,10 @@
  */
 package com.seproject.web;
 
-import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
-import com.seproject.service.BasicBLService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,8 +18,8 @@ import java.util.ArrayList;
 
 @RestController
 public class MultiController {
-    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
-    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
+    private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
 
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
@@ -44,7 +43,6 @@ public class MultiController {
     @ResponseBody
     public String[] getCollectionInfo(@RequestBody String user) {
 
-        missionBasicBLService.setT(new Mission());
         ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
         int index=0;
         String[] missionNames=new String[1000];

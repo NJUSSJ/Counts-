@@ -2,9 +2,8 @@ package com.seproject.web;
 
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
-import com.seproject.service.BasicBLService;
-import net.sf.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ResourceUtils;
@@ -16,10 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 import java.io.*;
 import java.util.*;
 
@@ -29,8 +25,8 @@ import java.util.*;
 
 @Controller
 public class UploadController {
-    BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
-    BasicBLService<User> userBasicBLService=new BasicBLService<User>(new User());
+    BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
 
 
     @RequestMapping(value = "/upload.html")
@@ -57,7 +53,6 @@ public class UploadController {
     public synchronized String addPics(MultipartHttpServletRequest request)throws IOException{
         Map<String, MultipartFile> fileMap = request.getFileMap();
         String missionName=request.getParameter("name");
-        missionBasicBLService.setT(new Mission());//lala
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         if(tmpMission==null){
             String startTime=request.getParameter("startTime");

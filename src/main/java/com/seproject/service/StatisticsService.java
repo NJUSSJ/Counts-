@@ -1,9 +1,9 @@
 package com.seproject.service;
 import com.seproject.domain.Collection;
-import com.seproject.domain.ImageInfo;
 import com.seproject.domain.Mission;
 import com.seproject.domain.StatisticsData.*;
 import com.seproject.domain.User;
+import com.seproject.service.blService.BasicBLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,9 @@ public class StatisticsService {
     *  （3）获取系统管理员可见的统计数据包。
     *  （4）获取单个任务的所有统计数据包。
      */
-    BasicBLService<Collection> service1=new BasicBLService<Collection>(new Collection());
-    BasicBLService<User> service2= new BasicBLService<User>(new User());
-    BasicBLService<Mission> service3=new BasicBLService<Mission>(new Mission());
+    BasicBLService<Collection> service1=Factory.getBasicBLService(new Collection());
+    BasicBLService<User> service2= Factory.getBasicBLService(new User());
+    BasicBLService<Mission> service3=Factory.getBasicBLService(new Mission());
     FactoryService factoryService;
 
 

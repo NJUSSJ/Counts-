@@ -2,15 +2,14 @@ package com.seproject.web;
 
 import com.seproject.domain.Collection;
 import com.seproject.domain.User;
-import com.seproject.service.BasicBLService;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
 /**
@@ -19,8 +18,8 @@ import java.util.ArrayList;
 @Controller
 public class ReadWriteFileController {
 
-    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
-    BasicBLService<Collection> collectionService=new BasicBLService<Collection>(new Collection());
+    private BasicBLService<User> basicBLService=Factory.getBasicBLService(new User());
+    BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
 
     @RequestMapping(value = "/write")
     @ResponseBody

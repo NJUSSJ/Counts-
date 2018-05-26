@@ -1,7 +1,8 @@
 package com.seproject.web;
 
 import com.seproject.domain.Mission;
-import com.seproject.service.BasicBLService;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import com.seproject.domain.User;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,8 +13,8 @@ import java.util.ArrayList;
 @RestController
 public class LoginController {
 
-    private BasicBLService<User> basicBLService=new BasicBLService<User>(new User());
-    private BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
+    private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
 
 	@RequestMapping(value = "/")
 	public ModelAndView loginPage(){
@@ -35,7 +36,6 @@ public class LoginController {
 		}else {
 			User realUser=basicBLService.findByKey(user.getUserName());
 			if(realUser.getPassword().equals(user.getPassword())){
-			    missionBasicBLService.setT(new Mission());
                 ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
                 ArrayList<String> missionNames=new ArrayList<String>();
                 int index=0;

@@ -1,6 +1,7 @@
 package com.seproject.service;
 
 import com.seproject.domain.TestDomain;
+import com.seproject.service.blService.BasicBLService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BasicBLServiceTest2 {
-    BasicBLService<TestDomain> service=new BasicBLService<TestDomain>(new TestDomain());
+    BasicBLService<TestDomain> service=Factory.getBasicBLService(new TestDomain());
     TestDomain t1=new TestDomain();
     TestDomain t2=new TestDomain();
     TestDomain t3=new TestDomain();

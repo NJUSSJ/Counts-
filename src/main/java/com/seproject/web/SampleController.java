@@ -5,7 +5,8 @@ package com.seproject.web;
 
 import com.seproject.domain.Mission;
 import com.seproject.domain.Sample;
-import com.seproject.service.BasicBLService;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import com.seproject.service.ReviewService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SampleController {
 
-    BasicBLService<Mission> missionBasicBLService=new BasicBLService<Mission>(new Mission());
+    BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
     ReviewService reviewService;
 
     @RequestMapping(value = "/getSample")

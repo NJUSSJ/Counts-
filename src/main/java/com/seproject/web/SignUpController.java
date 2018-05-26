@@ -3,13 +3,12 @@ package com.seproject.web;
 import com.aliyuncs.exceptions.ClientException;
 import com.seproject.domain.MessageService;
 import com.seproject.domain.User;
-import com.seproject.service.BasicBLService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.seproject.service.Factory;
+import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ValueConstants;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ import java.util.Random;
 @Controller
 public class SignUpController {
 
-    private BasicBLService<User> userService=new BasicBLService<User>(new User());
+    private BasicBLService<User> userService= Factory.getBasicBLService(new User());
     @RequestMapping(value = "/sendVaricationCode")
     @ResponseBody
     public String sendVarication(@RequestBody String Number){

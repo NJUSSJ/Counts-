@@ -1,16 +1,21 @@
-package com.seproject.service;
+package com.seproject.service.blServiceImpl;
 
 import com.seproject.dao.FileDao;
-import com.seproject.domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.seproject.service.BasicUtilService;
+import com.seproject.service.RM;
+import com.seproject.service.SearchCategory;
+import com.seproject.service.blService.BasicBLService;
 
 import java.util.ArrayList;
 
-public class BasicBLService<T> {
+public class BasicBLImpl_File<T> implements BasicBLService<T> {
 
-    public BasicBLService(){}
-    public BasicBLService(T t){
+    public BasicBLImpl_File(){
+        fileDao=new FileDao();
+        basicUtilService=new BasicUtilService();
+        basicUtilService.setFileDao(fileDao);
+    }
+    public BasicBLImpl_File(T t){
         this.t=t;
         fileDao=new FileDao();
         basicUtilService=new BasicUtilService();
@@ -20,10 +25,6 @@ public class BasicBLService<T> {
    T t; //模板类实例，用于传参数
    FileDao fileDao;
    BasicUtilService basicUtilService;
-
-    public void setT(T t){
-        this.t=t;
-    }
 
     /*
     * 基本业务逻辑---增删改查的实现
@@ -79,7 +80,7 @@ public class BasicBLService<T> {
        return (T)basicUtilService.read(t,keyValue);
    }
 
-   public synchronized ArrayList<T> search(String keyName,SearchCategory category,String keyValue){
+   public synchronized ArrayList<T> search(String keyName, SearchCategory category, String keyValue){
        //多返回值查找，返回所有键值=keyValue的元组
        //可查找的成员变量要加@Searchable，并在此方法内给出所查找的变量的变量名
        /*

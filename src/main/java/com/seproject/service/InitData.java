@@ -1,12 +1,13 @@
 package com.seproject.service;
 
 import com.seproject.domain.*;
+import com.seproject.service.blService.BasicBLService;
 
 import java.util.ArrayList;
 
 public class InitData {
     FactoryService factoryService = new FactoryService();
-    BasicBLService<User> service1=new BasicBLService<User>(new User());
+    BasicBLService<User> service1=Factory.getBasicBLService(new User());
     public void initUserData() {
         ArrayList<User> userArrayList = new ArrayList<User>();
         if(service1.checkKeyExists("13700000000")){
