@@ -1,4 +1,4 @@
-package com.seproject.domain;
+package com.seproject.service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.seproject.service;
+package com.seproject.common;
 
 public enum SearchCategory {
     //查找策略：等于、包含（模糊）、大于（限数字）、小于、不等于

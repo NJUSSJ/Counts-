@@ -1,12 +1,10 @@
 package com.seproject.service;
 
-import com.seproject.domain.LoginLog;
+import com.seproject.domain.testDomain.LoginLog;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-
-import static org.junit.Assert.*;
 
 public class MathServiceTest {
     LoginLog log1=new LoginLog();

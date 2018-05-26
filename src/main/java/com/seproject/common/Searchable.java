@@ -1,4 +1,4 @@
-package com.seproject.service;
+package com.seproject.common;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

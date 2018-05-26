@@ -1,6 +1,7 @@
 package com.seproject.service;
 
-import com.seproject.domain.TestDomain;
+import com.seproject.common.SearchCategory;
+import com.seproject.domain.testDomain.TestDomain;
 import com.seproject.service.blService.BasicBLService;
 import org.junit.After;
 import org.junit.Before;
@@ -52,7 +53,7 @@ public class BasicBLServiceTest1 {
     @Test
     public void search() {
         ArrayList<TestDomain> list1,list2,list3,list4,list5;
-        list1=service.search("name",SearchCategory.EQUAL,"ssj");
+        list1=service.search("name", SearchCategory.EQUAL,"ssj");
         list2=service.search("name",SearchCategory.CONTAINS,"ssj");
         list3=service.search("name",SearchCategory.NOT_EQUAL,"ssj");
         list4=service.search("num",SearchCategory.SMALLER_THAN,"5");

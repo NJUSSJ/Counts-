@@ -18,7 +18,6 @@ public class LoginController {
 
 	@RequestMapping(value = "/")
 	public ModelAndView loginPage(){
-
 		return new ModelAndView("Login");
 	}
 	
@@ -73,6 +72,17 @@ public class LoginController {
 			view.addObject("phoneNumber",user.getPhoneNumber());
 		}
 		return view;
+	}
+	@RequestMapping(value = "/SignUp")
+	@ResponseBody
+	public String signUp(String phoneNumber,String password){
+		return null;
+	}
+
+	@RequestMapping(value = "/Login/changePassword")
+	@ResponseBody
+	public String changePassword(String phoneNumber,String password){
+		return null;
 	}
 
 }

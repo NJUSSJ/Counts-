@@ -1,25 +1,35 @@
 package com.seproject.domain;
 
-import com.seproject.service.Key;
-import com.seproject.service.Searchable;
-import java.util.ArrayList;
-import java.util.List;
+import com.seproject.common.Key;
+import com.seproject.common.Searchable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="User")
 public class User {
 
     @Key
+	@Id
+	@Column(name="phoneNumber")
  	private	String phoneNumber="";
-
+    @Column(name="userName")
 	private String userName="";
+    @Column(name="password")
 	private String password="";
+    @Column(name="credit")
 	private double credit=0;
+    @Column(name="category")
 	@Searchable(varName = "category")
 	private int category=0;//0是管理员，1 是发起者，2是工人
 
 	@Searchable(varName = "level")
+	@Column(name="level")
 	private int level=1;
-
+	@Column(name="description")
 	private String description="";
 
 	public String getDescription() {

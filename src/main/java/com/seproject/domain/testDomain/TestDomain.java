@@ -1,7 +1,7 @@
-package com.seproject.domain;
+package com.seproject.domain.testDomain;
 
-import com.seproject.service.Key;
-import com.seproject.service.Searchable;
+import com.seproject.common.Key;
+import com.seproject.common.Searchable;
 
 public class TestDomain {
     @Key

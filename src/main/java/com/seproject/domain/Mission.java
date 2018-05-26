@@ -1,25 +1,41 @@
 package com.seproject.domain;
 
-import com.seproject.service.Key;
-import com.seproject.service.Searchable;
+import com.seproject.common.Key;
+import com.seproject.common.Searchable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
-
+@Entity
+@Table(name="Mission")
 public class Mission {
     @Key
+    @Id
+    @Column(name="name")
     String name;
-
+    @Column(name="startTime")
     String startTime;
+    @Column(name="endTime")
     String endTime;
+    @Column(name="description")
     String description;
+    @Column(name="workerLevel")
     String workerLevel;
+    @Column(name="files")
     ArrayList<String> files=new ArrayList<String>();
+    @Column(name="fileNum")
     int fileNum;
+    @Column(name="reward")
     double reward;
+    @Column(name="expectedNum")
     int expectedNum;
 
     @Searchable(varName = "requestorNumber")
-    String requestorNumber;
+    @Column(name="requestorNumber")
+    String requestorNumber;//发起者ID
+    @Column(name="state")
     int state;//0:未完成 1：完成 2:已经评估
     public Mission(){
 

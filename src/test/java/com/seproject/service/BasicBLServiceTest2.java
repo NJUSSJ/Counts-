@@ -1,6 +1,7 @@
 package com.seproject.service;
 
-import com.seproject.domain.TestDomain;
+import com.seproject.common.RM;
+import com.seproject.domain.testDomain.TestDomain;
 import com.seproject.service.blService.BasicBLService;
 import org.junit.After;
 import org.junit.Before;

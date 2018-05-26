@@ -54,22 +54,19 @@ public class ChartController {
 
         //需要通过uid获取相应data
         AdminData adminData =statisticsService.getAdminData();
-        System.out.println(adminData==null);
-        System.out.println(adminData.adminUserSum+"userSum");
-        System.out.println(adminData.adminLevelWorkerNum.size()+"size");
         JSONObject jsonObject = JSONObject.fromObject(adminData);
         String ret = jsonObject.toString();
 
-        System.out.println("AdminData:"+ret);
-
         return ret;
     }
-    //向前端傳輸單個任務的chartDara
+    //向前端传输单个任务的chartDara
     @RequestMapping(value = "/singleMissionData")
     @ResponseBody
     public String getMissionChartData(@RequestBody String missionInfo){
-        SingleMissionData data=new SingleMissionData();
-        return "";
+        SingleMissionData data=statisticsService.getSingleMissionData(missionInfo);
+        JSONObject jsonObject = JSONObject.fromObject(data);
+        String ret = jsonObject.toString();
+        return ret;
     }
     @Autowired
     public void setStatisticsService(StatisticsService statisticsService) {

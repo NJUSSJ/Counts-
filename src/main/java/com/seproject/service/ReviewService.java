@@ -1,5 +1,6 @@
 package com.seproject.service;
 
+import com.seproject.common.SearchCategory;
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.Sample;
@@ -32,7 +33,7 @@ public class ReviewService {
          *        抽一张， 直接作为q
          */
         Mission m=service3.findByKey(mid);
-        ArrayList <Collection> collections=service1.search("mid",SearchCategory.EQUAL,m.getName());
+        ArrayList <Collection> collections=service1.search("mid", SearchCategory.EQUAL,m.getName());
         ArrayList<Collection> collections1=new ArrayList<Collection>();
         Sample sample=new Sample();
         ArrayList<User> userList=new ArrayList<User>();

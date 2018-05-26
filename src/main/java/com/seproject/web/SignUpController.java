@@ -1,7 +1,7 @@
 package com.seproject.web;
 
 import com.aliyuncs.exceptions.ClientException;
-import com.seproject.domain.MessageService;
+import com.seproject.service.MessageService;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;

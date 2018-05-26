@@ -2,8 +2,8 @@ package com.seproject.service.blServiceImpl;
 
 import com.seproject.dao.FileDao;
 import com.seproject.service.BasicUtilService;
-import com.seproject.service.RM;
-import com.seproject.service.SearchCategory;
+import com.seproject.common.RM;
+import com.seproject.common.SearchCategory;
 import com.seproject.service.blService.BasicBLService;
 
 import java.util.ArrayList;

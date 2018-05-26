@@ -16,9 +16,8 @@ import java.util.ArrayList;
  * Created by julia98 on 2018/3/22.
  */
 @Controller
-public class ReadWriteFileController {
+public class TagController {
 
-    private BasicBLService<User> basicBLService=Factory.getBasicBLService(new User());
     BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
 
     @RequestMapping(value = "/write")
@@ -37,16 +36,6 @@ public class ReadWriteFileController {
         collectionService.update(collection);
         return "666";
     }
-/*
-    @RequestMapping(value = "/tag")
-    @ResponseBody
-    public String getTag(@RequestBody String collectionNameAndPicName){
-        JSONObject jsonObject = JSONObject.fromObject(collectionNameAndPicName);
-        String collectionName = jsonObject.getString("collectionName");
-        String picName = jsonObject.getString("picName");
-
-        return "666";
-    }*/
 
     @RequestMapping(value = "/read")
     @ResponseBody

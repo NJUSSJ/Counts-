@@ -1,4 +1,5 @@
 package com.seproject.service;
+import com.seproject.common.SearchCategory;
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
 import com.seproject.domain.StatisticsData.*;
@@ -28,7 +29,7 @@ public class StatisticsService {
     public WorkerData getWorkerData(String userID){
 
 
-        ArrayList<Collection> collections=service1.search("uid",SearchCategory.EQUAL,userID);
+        ArrayList<Collection> collections=service1.search("uid", SearchCategory.EQUAL,userID);
         User u=service2.findByKey(userID);
 
         ArrayList<Double> credit=new ArrayList<Double>();

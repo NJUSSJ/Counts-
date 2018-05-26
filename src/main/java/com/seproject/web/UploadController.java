@@ -73,7 +73,7 @@ public class UploadController {
             tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
             tmpMission.setState(0);
-            missionBasicBLService.add(tmpMission);
+            missionBasicBLService.add(tmpMission);//此处需要修改
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
             userBasicBLService.update(tmpUser);
@@ -104,6 +104,9 @@ public class UploadController {
 
     @RequestMapping(value = "/findEnough")
     @ResponseBody
+    /**
+     * 检测发起者余额是否充足
+     */
     public Boolean findEnough(@RequestBody String missionReward){
         String userPhone=missionReward.split("#")[1];
         double settedReward=Double.parseDouble(missionReward.split("#")[0]) ;
@@ -123,9 +126,7 @@ public class UploadController {
 
     private String getOutputFilename(MultipartFile multipartFile,int i, String missionName) {
 
-
         String suffix=multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
-        //
         String path="";
         try {
             File nav=  ResourceUtils.getFile("classpath:resources/missionImages/navigation.txt");
@@ -138,7 +139,6 @@ public class UploadController {
             e.printStackTrace();
         }
 
-        //
 
         return path+"/"+missionName+"_"+i+suffix;
     }

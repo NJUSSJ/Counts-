@@ -5,7 +5,7 @@ import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
-import com.seproject.service.SearchCategory;
+import com.seproject.common.SearchCategory;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -101,5 +101,15 @@ public class PersonalController {
         }*/
     }
 
+    @RequestMapping(value = "/Icon")
+    @ResponseBody
+    public String chanegIcon(Number avatar,String phoneNumber){
+        return null;
+    }
 
+    @RequestMapping(value = "/Topup")
+    @ResponseBody
+    public String topUp(String phoneNumber,Number topupMoney){
+        return null;
+    }
 }

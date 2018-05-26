@@ -1,9 +1,8 @@
-package com.seproject.domain;
-import com.seproject.service.Key;
+package com.seproject.domain.testDomain;
+import com.seproject.common.Key;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class LoginLog implements Serializable{
 	@Key
