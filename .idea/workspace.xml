@@ -724,7 +724,8 @@
     <MESSAGE value="v 2.9.0 抽样评估结束的后续逻辑" />
     <MESSAGE value="v 3.1.0 更换框架" />
     <MESSAGE value="v 3.1.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 3.1.5" />
+    <MESSAGE value="v 3.1.5 添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 3.1.5 添加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -911,6 +912,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
