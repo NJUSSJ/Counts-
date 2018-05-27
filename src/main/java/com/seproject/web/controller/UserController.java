@@ -11,12 +11,12 @@ public class UserController {
     public String ban(String phoneNumber){
         return null;
     }
-    @RequestMapping(value = "/UserManage/filt")
+    @RequestMapping(value = "/Qualify")
     @ResponseBody
     /**
-     * 筛选异常行为用户
+     * 大v认证
      */
-    public String filt(){
+    public String qualify(String phoneNumber){
         return null;
     }
 }

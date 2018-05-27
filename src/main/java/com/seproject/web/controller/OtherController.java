@@ -14,20 +14,5 @@ public class OtherController {
     public String sign(String phoneNumber){
         return null;
     }
-    @RequestMapping(value = "/Qualify")
-    @ResponseBody
-    /**
-     * 大v认证
-     */
-    public String qualify(String phoneNumber){
-        return null;
-    }
-    @RequestMapping(value = "/Help")
-    @ResponseBody
-    /**
-     * 新手帮助
-     */
-    public String help(String phoneNumber){
-        return null;
-    }
+
 }

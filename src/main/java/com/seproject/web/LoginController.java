@@ -62,12 +62,6 @@ public class LoginController {
 		if(!result){
 			return new ModelAndView("Login", "error", "用户不存在。");
 		}else{
-			/*User realUser=basicBLService.findByKey(phoneNumber);
-			if(user.getPassword().equals(realUser.getPassword())){
-				return view;
-			}else{
-				return new ModelAndView("Login", "error", "密码错误。");
-			}*/
 			view.addObject("userName",user.getUserName());
 			view.addObject("phoneNumber",user.getPhoneNumber());
 		}

@@ -31,6 +31,10 @@ public class User {
 	private int level=1;
 	@Column(name="description")
 	private String description="";
+	@Column(name="state")
+	private int state;//-1被封禁，0正常用户，1大v用户
+	@Column(name="icon")
+	private int icon;//头像组
 
 	public String getDescription() {
 		return description;

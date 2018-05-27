@@ -43,8 +43,8 @@ public class SampleController {
     }
 
     @RequestMapping(value = "/getSampleResult")
-    public void setSampleResult(@RequestBody String SampleInfo){
-        JSONObject object=JSONObject.fromObject(SampleInfo);
+    public void setSampleResult(@RequestBody String sampleInfo){
+        JSONObject object=JSONObject.fromObject(sampleInfo);
         Sample sample=(Sample)JSONObject.toBean(object,Sample.class);
         reviewService.setSampleResult(sample);
         System.out.println(sample.getQuality());
