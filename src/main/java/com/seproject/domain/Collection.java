@@ -25,7 +25,7 @@ public class Collection {
     @Column(name="infoList")
     private ArrayList<String> infoList = new ArrayList<String>();
     @Column(name="state")
-    private int state;//0 保存 1 提交 2 未保存
+    private int state;//0 保存 1 提交 2 未保存 3 被删除
     @Column(name="credit")
     private double credit;
     @Column(name="quality")

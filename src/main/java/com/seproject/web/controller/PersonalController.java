@@ -1,4 +1,4 @@
-package com.seproject.web;
+package com.seproject.web.controller;
 
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
