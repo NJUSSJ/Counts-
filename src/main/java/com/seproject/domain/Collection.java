@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Collection {
     @Key
     @Id
-    @Column(name="keyId")
+    @Column(name="keyid")
     private String keyId;
     @Column(name="uid")
     @Searchable(varName = "uid")
@@ -22,7 +22,7 @@ public class Collection {
     @Column(name="mid")
     @Searchable(varName = "mid")
     private String mid;
-    @Column(name="infoList")
+    @Column(name="infolist")
     private ArrayList<String> infoList = new ArrayList<String>();
     @Column(name="state")
     private int state;//0 保存 1 提交 2 未保存 3 被删除

@@ -9,7 +9,7 @@ public class InitData {
     FactoryService factoryService = new FactoryService();
     BasicBLService<User> service1=Factory.getBasicBLService(new User());
     public void initUserData() {
-/*        ArrayList<User> userArrayList = new ArrayList<User>();
+        ArrayList<User> userArrayList = new ArrayList<User>();
         if(service1.checkKeyExists("13700000000")){
             //若主键已存在，不进行任何操作
         }
@@ -20,6 +20,6 @@ public class InitData {
                 service1.add(user1);
                 service1.add(user2);
             }
-        }*/
+        }
     }
 }

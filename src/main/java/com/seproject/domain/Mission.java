@@ -23,16 +23,16 @@ public class Mission {
     String workerLevel;
     @Column(name="files")
     ArrayList<String> files=new ArrayList<String>();
-    @Column(name="fileNum")
+    @Column(name="filenum")
     int fileNum;
     @Column(name="reward")
     double reward;
-    @Column(name="maxNum")
+    @Column(name="maxnum")
     int maxNum;
     @Column(name = "tags")
     private ArrayList<String> tags;
     @Searchable(varName = "requestorNumber")
-    @Column(name="requestorNumber")
+    @Column(name="requestornumber")
     String requestorNumber;//发起者ID
     @Column(name="state")
     int state;//0:未完成 1：完成 2:已经评估

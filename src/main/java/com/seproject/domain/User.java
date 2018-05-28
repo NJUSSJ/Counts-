@@ -14,9 +14,9 @@ public class User {
 
     @Key
 	@Id
-	@Column(name="phoneNumber")
+	@Column(name="phonenumber")
  	private	String phoneNumber="";
-    @Column(name="userName")
+    @Column(name="username")
 	private String userName="";
     @Column(name="password")
 	private String password="";
