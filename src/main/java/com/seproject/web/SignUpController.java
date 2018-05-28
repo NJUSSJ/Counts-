@@ -20,8 +20,8 @@ public class SignUpController {
     private BasicBLService<User> userService= Factory.getBasicBLService(new User());
     @RequestMapping(value = "/sendVaricationCode")
     @ResponseBody
-    public String sendVarication(@RequestBody String Number){
-        User user=userService.findByKey(Number);
+    public String sendVarication(@RequestBody String number){
+        User user=userService.findByKey(number);
         if(user!=null){
             return 0+"";
         }
@@ -31,7 +31,7 @@ public class SignUpController {
         Random random=new Random();
         int variCode=random.nextInt(90000)+10000;
 
-        MessageService.setPhonrNum(Number);
+        MessageService.setPhonrNum(number);
         MessageService.setVariCode(variCode);
         try {
             MessageService.sendSms();

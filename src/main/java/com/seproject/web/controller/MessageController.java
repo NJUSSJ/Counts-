@@ -1,5 +1,7 @@
 package com.seproject.web.controller;
 
+import com.seproject.web.parameter.MessageParameter;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,17 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageController {
     @RequestMapping(value = "/SendMessage")
     @ResponseBody
-    public String send(String phoneNumber,String missionName){
+    public String send(@RequestBody String messageParamter){
         return null;
     }
     @RequestMapping(value = "/DeleteMessage")
     @ResponseBody
-    public String delete(String phoneNumber,int index){
+    public String delete(@RequestBody String messageParamter){
         return null;
     }
     @RequestMapping(value = "/GetMessage")
     @ResponseBody
-    public String get(String phoneNumber){
+    public String get(@RequestBody String phoneNumber){
         return null;
     }
 }

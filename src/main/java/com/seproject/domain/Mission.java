@@ -15,8 +15,6 @@ public class Mission {
     @Id
     @Column(name="name")
     String name;
-    @Column(name="startTime")
-    String startTime;
     @Column(name="endTime")
     String endTime;
     @Column(name="description")
@@ -29,26 +27,28 @@ public class Mission {
     int fileNum;
     @Column(name="reward")
     double reward;
-    @Column(name="expectedNum")
-    int expectedNum;
-
+    @Column(name="maxNum")
+    int maxNum;
+    @Column(name = "tags")
+    private ArrayList<String> tags;
     @Searchable(varName = "requestorNumber")
     @Column(name="requestorNumber")
     String requestorNumber;//发起者ID
     @Column(name="state")
     int state;//0:未完成 1：完成 2:已经评估
+    @Column(name="difficulty")
+    private int difficulty;
     public Mission(){
 
     }
-    public Mission(String name, String startTime, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, int expectedNum, String requestorNumber){
+    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, int maxNum, String requestorNumber){
         this.name=name;
-        this.startTime=startTime;
         this.endTime=endTime;
         this.description=description;
         this.files=files;
         this.fileNum=fileNum;
         this.workerLevel=workerLevel;
-        this.expectedNum=expectedNum;
+        this.maxNum=maxNum;
         this.reward=reward;
         this.requestorNumber=requestorNumber;
     }
@@ -93,14 +93,6 @@ public class Mission {
         return this.description;
     }
 
-    public void setStartTime(String startTime){
-        this.startTime=startTime;
-    }
-
-    public String getStartTime(){
-        return startTime;
-    }
-
     public void setEndTime(String endTime){
         this.endTime=endTime;
     }
@@ -117,12 +109,12 @@ public class Mission {
         return this.reward;
     }
 
-    public void setExpectedNum(int expectedNum){
-        this.expectedNum=expectedNum;
+    public void setMaxNum(int maxNum){
+        this.maxNum=maxNum;
     }
 
-    public int getExpectedNum(){
-        return this.expectedNum;
+    public int getMaxNum(){
+        return this.maxNum;
     }
 
     public void setRequestorNumber(String requestorNumber){
@@ -137,4 +129,19 @@ public class Mission {
 
     public void setState(int state){this.state=state;}
 
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+    }
 }
