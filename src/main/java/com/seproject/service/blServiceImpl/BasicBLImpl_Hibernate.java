@@ -43,7 +43,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
                 System.out.println("新增失败，发生回滚");
                 tx.rollback();
 
-                //e.printStackTrace();
+                e.printStackTrace();
 
             }
 

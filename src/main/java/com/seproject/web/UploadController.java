@@ -65,11 +65,11 @@ public class UploadController {
             tmpMission=new Mission();
             tmpMission.setName(missionName);
             tmpMission.setWorkerLevel(workLevel);
-            tmpMission.setStartTime(startTime);
+            //tmpMission.setStartTime(startTime);
             tmpMission.setEndTime(endTime);
             tmpMission.setDescription(description);
             tmpMission.setReward(reward);
-            tmpMission.setExpectedNum(expectedNum);
+            tmpMission.setMaxNum(expectedNum);
             tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
             tmpMission.setState(0);

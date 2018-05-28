@@ -60,8 +60,8 @@ public class MultiController {
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
         double credit=tmpMission.getReward();
-        int expectedNum=tmpMission.getExpectedNum();
-        String startTime=tmpMission.getStartTime();
+        int expectedNum=tmpMission.getMaxNum();
+        //String startTime=tmpMission.getStartTime();
         String endTime=tmpMission.getEndTime();
         String Level=tmpMission.getWorkerLevel();
         String description=tmpMission.getDescription();
@@ -71,7 +71,7 @@ public class MultiController {
         view.addObject("picNum",picNum);
         view.addObject("credit",credit);
         view.addObject("expectedNum",expectedNum);
-        view.addObject("startTime", startTime);
+        //view.addObject("startTime", startTime);
         view.addObject("endTime", endTime);
         view.addObject("Level",Level);
         view.addObject("description",description);

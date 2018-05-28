@@ -36,8 +36,8 @@ public class CollectionController {
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
         double credit=tmpMission.getReward();
-        int expectedNum=tmpMission.getExpectedNum();
-        String startTime=tmpMission.getStartTime();
+        int expectedNum=tmpMission.getMaxNum();
+        //String startTime=tmpMission.getStartTime();
         String endTime=tmpMission.getEndTime();
         String Level=tmpMission.getWorkerLevel();
         String description=tmpMission.getDescription();
@@ -63,7 +63,7 @@ public class CollectionController {
 
         model.addObject("credit",credit);
         model.addObject("expectedNum",expectedNum);
-        model.addObject("startTime", startTime);
+        //model.addObject("startTime", startTime);
         model.addObject("endTime", endTime);
         model.addObject("Level",Level);
         model.addObject("description",description);
