@@ -1,4 +1,4 @@
-package com.seproject.domain.StatisticsData;
+package com.seproject.domain.statisticsData;
 
 import java.util.ArrayList;
 

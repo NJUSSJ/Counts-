@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.ArrayList;
 
 @Entity
 @Table(name="User")
@@ -34,7 +35,9 @@ public class User {
 	@Column(name="state")
 	private int state;//-1被封禁，0正常用户，1大v用户
 	@Column(name="icon")
-	private int icon;//头像组
+	private int icon;//头像
+	@Column(name="tags")
+	private ArrayList<String> tags;//擅长类别列表
 
 	public String getDescription() {
 		return description;
@@ -92,4 +95,27 @@ public class User {
 	    return this.category;
     }
 
+	public int getIcon() {
+		return icon;
+	}
+
+	public void setIcon(int icon) {
+		this.icon = icon;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+	public ArrayList<String> getTags() {
+		return tags;
+	}
+
+	public void setTags(ArrayList<String> tags) {
+		this.tags = tags;
+	}
 }

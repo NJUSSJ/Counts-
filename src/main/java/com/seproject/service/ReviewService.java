@@ -33,7 +33,7 @@ public class ReviewService {
          *        抽一张， 直接作为q
          */
         Mission m=service3.findByKey(mid);
-        ArrayList <Collection> collections=service1.search("mid", SearchCategory.EQUAL,m.getName());
+        ArrayList<Collection> collections=service1.search("mid", SearchCategory.EQUAL,m.getName());
         ArrayList<Collection> collections1=new ArrayList<Collection>();
         Sample sample=new Sample();
         ArrayList<User> userList=new ArrayList<User>();
@@ -54,15 +54,15 @@ public class ReviewService {
 
         averageLevel=averageLevel/userList.size();
 
-         ArrayList<Integer> picIndex=new ArrayList<Integer>();
+        ArrayList<Integer> picIndex=new ArrayList<Integer>();
 
-         ArrayList<String> userId=new ArrayList<String>();
+        ArrayList<String> userId=new ArrayList<String>();
 
-         ArrayList<String> imageInfo=new ArrayList<String>();
+        ArrayList<String> imageInfo=new ArrayList<String>();
 
-         ArrayList<Integer> quality=new ArrayList<Integer>();
+        ArrayList<Integer> quality=new ArrayList<Integer>();
 
-         sample.setMissionName(mid);
+        sample.setMissionName(mid);
 
         int num=m.getFileNum();
         for(int i=0;i<userList.size();i++){

@@ -1,8 +1,8 @@
 package com.seproject.web.parameter;
 
-public class MissionParameter {
+public class LoginParameter {
     private String uid;
-    private String keyword;
+    private String password;
 
     public String getUid() {
         return uid;
@@ -12,11 +12,11 @@ public class MissionParameter {
         this.uid = uid;
     }
 
-    public String getKeyword() {
-        return keyword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -2,6 +2,7 @@ package com.seproject.domain;
 
 import com.seproject.common.Key;
 import com.seproject.common.Searchable;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,15 +30,17 @@ public class Mission {
     double reward;
     @Column(name="maxnum")
     int maxNum;
-    @Column(name = "tags")
-    private ArrayList<String> tags;
+    @Column(name = "recommendlabel")
+    private ArrayList<String> recommendLabel;//推荐类别列表
     @Searchable(varName = "requestorNumber")
     @Column(name="requestornumber")
     String requestorNumber;//发起者ID
     @Column(name="state")
-    int state;//0:未完成 1：完成 2:已经评估
+    int state;//0:未完成 1：完成 2:已经评估 3：已被发起者删除
     @Column(name="difficulty")
     private int difficulty;
+    @Column(name="missionlabel")
+    private ArrayList<String> missionLabel;//标签式任务的标签列表
     public Mission(){
 
     }
@@ -129,19 +132,27 @@ public class Mission {
 
     public void setState(int state){this.state=state;}
 
-    public ArrayList<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(ArrayList<String> tags) {
-        this.tags = tags;
-    }
-
     public int getDifficulty() {
         return difficulty;
     }
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public ArrayList<String> getMissionLabel() {
+        return missionLabel;
+    }
+
+    public void setMissionLabel(ArrayList<String> missionLabel) {
+        this.missionLabel = missionLabel;
+    }
+
+    public ArrayList<String> getRecommendLabel() {
+        return recommendLabel;
+    }
+
+    public void setRecommendLabel(ArrayList<String> recommendLabel) {
+        this.recommendLabel = recommendLabel;
     }
 }
