@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 @Entity
 @Table(name="Collection")
+/**
+ * 工人和任务之间的匹配对象，每个工人接收任务之后就会产生
+ */
 public class Collection {
     @Key
     @Id
@@ -30,7 +33,6 @@ public class Collection {
     private double credit;
     @Column(name="quality")
     private int quality;
-
     public String getKeyId() {
         return keyId;
     }

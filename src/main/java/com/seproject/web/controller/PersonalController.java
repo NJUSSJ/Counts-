@@ -38,13 +38,6 @@ public class PersonalController {
         return model;
     }
 
-    /*
-    @RequestMapping(value = "/backMain.html")
-    public ModelAndView getBackMain(HttpServletRequest request){
-        ModelAndView model = new ModelAndView("Main");
-        return model;
-    }*/
-
     @RequestMapping(value = "/readPersonal")
     @ResponseBody
     public String readPersonal(@RequestBody String phoneNumberObj) {
@@ -94,13 +87,6 @@ public class PersonalController {
             }
             return collectionNames;
         }
-        /*  int index=0;
-        String[] collectionNames=new String[1000];
-        for(Collection collection: tmpMission){
-            collectionNames[index]= collection.getMid();
-            System.out.println("返回前端的collectionNames=" + collectionNames[index]);
-            index++;
-        }*/
     }
 
     @RequestMapping(value = "/Icon")

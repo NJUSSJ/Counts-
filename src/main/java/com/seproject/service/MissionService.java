@@ -3,12 +3,9 @@ package com.seproject.service;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
-import com.seproject.domain.Sample;
 import com.seproject.domain.User;
 import com.seproject.service.blService.BasicBLService;
-import org.omg.CORBA.CODESET_INCOMPATIBLE;
 
-import javax.persistence.Column;
 import java.util.ArrayList;
 
 public class MissionService {
@@ -17,7 +14,10 @@ public class MissionService {
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     /**
      *推荐排序
-     * @return 根据用户的擅长类别排序出的任务列表
+     * 算法1.计算用户之间的喜好相似度，统计当前相似用户正在进行的任务，推荐给该用户
+     * 算法2.计算任务标签与用户喜好的重合度，排序后推荐给该用户
+     * 算法3.计算任务之间的相似度 ，如果一个用户接了任务，推荐给其与该任务类似的任务
+     * 推荐列表是三者的结合，优先度1>2>3（算法1，算法2，算法3，算法1，算法2......），如果有重合则合并
      */
     public ArrayList<Mission> recommentSort(String uid){
         User user=userBasicBLService.findByKey(uid);
@@ -50,14 +50,28 @@ public class MissionService {
             }
         }
         return missions;
+
     }
     /**
      * 自动评估标签式任务
-     *
-     ***************************
-     * 算法：图片总数为pics，根据pics设定抽样系数p
-     * 根据每张图片获得的标签数排序，获得前pics*p个答案最统一的图片，统计每个用户在pics*p中答对的个数x，将100*x/pics*p作为最终得分*
-     *
+     ************************************************************************************************************
+     *                                                  定义                                                    *
+     ************************************************************************************************************
+     * “认可度”：对于一张图，将所有的工人对其标注的标签作为全集，其中出现次数最多的标签的出现次数与总标签出现次数的比*
+     * 认可度高，代表一张图的结果有较多的人达成统一意见
+     * “认可度梯度”：认可度每次下降的值
+     * “认可答案”：认可度超过一定值时，出现次数最多的答案
+     * **********************************************************************************************************
+     *                                                  算法                                                    *
+     * **********************************************************************************************************
+     * 1.为认可度设置起始值，梯度，下限（>0.5），设置抽样图片下限
+     * 2.计算出任务中每张图片的认可度
+     * 3.每张图片的认可度与当前认可度标准比较，达到标准的图片加入抽样图片
+     * 4.如果抽样图片数未达到下限，认可度下降，重复3，直到抽样图片数超过下限（进入5）或者认可度达到下限（进入6）
+     * 5.计算每个工人在抽样图片集中的答案和认可答案的重合率，乘100得到成绩，结束
+     * 6.将所有图片的认可度排序，选出认可度在0.5到下限之间的图片，将这些认可度求和得到sum，令each=0
+     * 7.比较每个工人的答案和认可答案，如果一致，each加认可度，否则为0
+     * 8.each*100/sum为成绩，结束
      **/
     public void autoEvaluate(String mid){
         Mission mission=missionBasicBLService.findByKey(mid);

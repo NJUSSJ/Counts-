@@ -1,10 +1,7 @@
 package com.seproject.service;
 
 import com.seproject.common.SearchCategory;
-import com.seproject.domain.Collection;
-import com.seproject.domain.Mission;
-import com.seproject.domain.Sample;
-import com.seproject.domain.User;
+import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +13,16 @@ import java.util.ArrayList;
 @Service
 public class ReviewService {
     /**
-     * 抽样方法
+     * 抽样方法Plus
+     * 根据评估策略，设置抽样数
+     * 如果由“评估工人”来参与，则抽样数设为较大值
+     * 如果发起者亲自评价，则抽样数设为1，2
      */
 
     BasicBLService<Collection> service1=Factory.getBasicBLService(new Collection());
     BasicBLService<User> service2= Factory.getBasicBLService(new User());
     BasicBLService<Mission> service3=Factory.getBasicBLService(new Mission());
+    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
 
     private double completeAward=0.2;
 
@@ -66,30 +67,36 @@ public class ReviewService {
 
         int num=m.getFileNum();
         for(int i=0;i<userList.size();i++){
+            Collection collection=collections.get(i);
+            CollectionResult collectionResult=new CollectionResult(collection);
             if(userList.get(i).getLevel()>averageLevel){
                 int x=(int)(Math.random()*num);
-                String info=collections.get(i).getInfoList().get(x);
+                String info=collection.getInfoList().get(x);
                 userId.add(userList.get(i).getPhoneNumber());
                 imageInfo.add(info);
                 quality.add(0);
                 picIndex.add(x+1);
+                int[] pics={x+1};
+                collectionResult.setPicId(pics);
             }else{
                 int x=(int)(Math.random()*num);
-                String info=collections.get(i).getInfoList().get(x);
+                int[] pics=new int[2];
+                String info=collection.getInfoList().get(x);
                 userId.add(userList.get(i).getPhoneNumber());
                 imageInfo.add(info);
                 quality.add(0);
                 picIndex.add(x+1);
-
+                pics[0]=x+1;
                 x=(x+num/2)%num;
-
+                pics[1]=x+1;
                 info=collections.get(i).getInfoList().get(x);
                 userId.add(userList.get(i).getPhoneNumber());
                 imageInfo.add(info);
                 quality.add(0);
                 picIndex.add(x+1);
-
+                collectionResult.setPicId(pics);
             }
+            collectionResultBasicBLService.add(collectionResult);
         }
 
         sample.setImageInfo(imageInfo);

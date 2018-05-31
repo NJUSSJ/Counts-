@@ -1,5 +1,8 @@
 package com.seproject.web.parameter;
 
+/**
+ * 在LoginController/changePassword中使用
+ */
 public class LoginParameter {
     private String uid;
     private String password;
