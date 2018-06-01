@@ -16,14 +16,22 @@ public class MissionService {
      *推荐排序
      * 算法1.计算用户之间的喜好相似度，统计当前相似用户正在进行的任务，推荐给该用户
      * 算法2.计算任务标签与用户喜好的重合度，排序后推荐给该用户
-     * 算法3.计算任务之间的相似度 ，如果一个用户接了任务，推荐给其与该任务类似的任务
-     * 推荐列表是三者的结合，优先度1>2>3（算法1，算法2，算法3，算法1，算法2......），如果有重合则合并
+     * 推荐列表是二者的结合，优先度1>2（算法1，算法2，算法1，算法2......），如果有重合则合并
      */
     public ArrayList<Mission> recommentSort(String uid){
         User user=userBasicBLService.findByKey(uid);
         ArrayList<String> userTags=user.getTags();
         ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
         ArrayList<Integer> nums=new ArrayList<Integer>();
+        ArrayList<Mission> toRemove=new ArrayList<Mission>();
+        for(Mission each:missions) {
+            if (each.getState() != 0) {
+                toRemove.add(each);
+            }
+        }
+        for(Mission each:toRemove){
+            missions.remove(each);
+        }//只留下尚未结束的任务
         for(int i=0;i<missions.size();i++){
             ArrayList<String> missionTags=missions.get(i).getRecommendLabel();
             int count=0;
@@ -34,17 +42,17 @@ public class MissionService {
             }
             nums.add(count);
             //排序
-            for(int j=0;i<missions.size()-1;i++){
+            for(int j=0;j<missions.size()-1;j++){
                 for(int k=j+1;k<missions.size();k++){
-                    int pre=nums.get(i);
-                    int back=nums.get(j);
+                    int pre=nums.get(j);
+                    int back=nums.get(k);
                     if(back>pre){
-                        nums.set(i,back);
-                        nums.set(j,pre);
-                        Mission mPre=missions.get(i);
-                        Mission mBack=missions.get(j);
-                        missions.set(i,mBack);
-                        missions.set(j,mPre);
+                        nums.set(j,back);
+                        nums.set(k,pre);
+                        Mission mPre=missions.get(j);
+                        Mission mBack=missions.get(k);
+                        missions.set(j,mBack);
+                        missions.set(k,mPre);
                     }
                 }
             }
@@ -52,6 +60,9 @@ public class MissionService {
         return missions;
 
     }
+
+
+
     /**
      * 自动评估标签式任务
      ************************************************************************************************************
