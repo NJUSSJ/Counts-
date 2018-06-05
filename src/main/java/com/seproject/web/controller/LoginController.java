@@ -4,6 +4,9 @@ import com.seproject.domain.Mission;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.domain.User;
+import com.seproject.web.parameter.LoginParameter;
+import com.seproject.web.parameter.PersonalParameter;
+import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,7 +17,7 @@ import java.util.ArrayList;
 @RestController
 public class LoginController {
 
-    private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
 
 	@RequestMapping(value = "/")
@@ -31,7 +34,7 @@ public class LoginController {
         ModelAndView viewAdmin = new ModelAndView("administer");
 
 		boolean existed=false;
-		User tmpUser=basicBLService.findByKey(request.getParameter("userName"));
+		User tmpUser=userBasicBLService.findByKey(request.getParameter("userName"));
 		if(tmpUser!=null){
 		    existed=true;
         }
@@ -39,7 +42,7 @@ public class LoginController {
 			//System.out.println("not existed");
 			return new ModelAndView("Login", "error", "\'用户不存在\'");
 		}else {
-			User realUser=basicBLService.findByKey(user.getUserName());
+			User realUser=userBasicBLService.findByKey(user.getUserName());
 			if(realUser.getPassword().equals(user.getPassword())){
                 ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
                 ArrayList<String> missionNames=new ArrayList<String>();
@@ -72,7 +75,7 @@ public class LoginController {
 	public ModelAndView signUpCheck(HttpServletRequest request,User user){
 		ModelAndView view = new ModelAndView("Main");
 
-		basicBLService.add(user);
+		userBasicBLService.add(user);
 		boolean result=true;
 		if(!result){
 			return new ModelAndView("Login", "error", "用户不存在。");
@@ -82,16 +85,15 @@ public class LoginController {
 		}
 		return view;
 	}
-	@RequestMapping(value = "/SignUp")
-	@ResponseBody
-	public String signUp(String phoneNumber,String password){
-		return null;
-	}
-
 	@RequestMapping(value = "/Login/changePassword")
 	@ResponseBody
-	public String changePassword(String phoneNumber,String password){
-		return null;
+	public String changePassword(@RequestBody String parameter){
+		JSONObject object=JSONObject.fromObject(parameter);
+		LoginParameter para=(LoginParameter) JSONObject.toBean(object,LoginParameter.class);
+		String uid=para.getUid();
+		User user=userBasicBLService.findByKey(uid);
+		user.setPassword(para.getPassword());
+		return "change password success";
 	}
 
 }

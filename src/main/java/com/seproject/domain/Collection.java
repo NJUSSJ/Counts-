@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 @Entity
 @Table(name="Collection")
+/**
+ * 工人和任务之间的匹配对象，每个工人接收任务之后就会产生
+ */
 public class Collection {
     @Key
     @Id
@@ -23,14 +26,13 @@ public class Collection {
     @Searchable(varName = "mid")
     private String mid;
     @Column(name="infolist")
-    private ArrayList<String> infoList = new ArrayList<String>();
+    private ArrayList<String> infoList = new ArrayList<String>();//如果是标签式，那么里面是按图集顺序的标签
     @Column(name="state")
-    private int state;//0 保存 1 提交 2 未保存 3 被删除
+    private int state;//0 保存 1 提交 2 未保存 3 已被工人删除
     @Column(name="credit")
     private double credit;
     @Column(name="quality")
     private int quality;
-
     public String getKeyId() {
         return keyId;
     }
@@ -54,8 +56,6 @@ public class Collection {
     public void setMid(String mid) {
         this.mid = mid;
     }
-
-
 
     public int getState(){return state;}
 

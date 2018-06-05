@@ -27,11 +27,6 @@ public class SampleController {
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int state=tmpMission.getState();
 
-        /*
-         if(state==0){
-            return "0";
-        }else
-         */
         if(state==2){
             return "2";
         }

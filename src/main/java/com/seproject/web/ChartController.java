@@ -1,9 +1,9 @@
 package com.seproject.web;
 
-import com.seproject.domain.StatisticsData.AdminData;
-import com.seproject.domain.StatisticsData.SingleMissionData;
-import com.seproject.domain.StatisticsData.StarterData;
-import com.seproject.domain.StatisticsData.WorkerData;
+import com.seproject.domain.statisticsData.AdminData;
+import com.seproject.domain.statisticsData.SingleMissionData;
+import com.seproject.domain.statisticsData.StarterData;
+import com.seproject.domain.statisticsData.WorkerData;
 import com.seproject.service.StatisticsService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

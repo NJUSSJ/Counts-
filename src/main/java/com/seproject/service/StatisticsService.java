@@ -2,7 +2,7 @@ package com.seproject.service;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.Collection;
 import com.seproject.domain.Mission;
-import com.seproject.domain.StatisticsData.*;
+import com.seproject.domain.statisticsData.*;
 import com.seproject.domain.User;
 import com.seproject.service.blService.BasicBLService;
 import org.springframework.beans.factory.annotation.Autowired;

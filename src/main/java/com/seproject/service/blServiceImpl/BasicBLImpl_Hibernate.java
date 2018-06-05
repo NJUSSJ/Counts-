@@ -52,7 +52,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
                 tx.rollback();
             }
             System.out.println("主键已经存在");
-           return RM.KEY_EXISTS;
+            return RM.KEY_EXISTS;
 
         } finally {
             session.close();

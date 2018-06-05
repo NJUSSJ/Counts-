@@ -6,6 +6,8 @@ import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.common.SearchCategory;
+import com.seproject.web.parameter.MissionParameter;
+import com.seproject.web.parameter.PersonalParameter;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
 @RestController
 public class PersonalController {
 
-    private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
     private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
 
@@ -30,24 +32,17 @@ public class PersonalController {
         model.addObject("userName",userName);
         String phoneNumber = request.getParameter("phoneNumber");
         model.addObject("phoneNumber", phoneNumber);
-        User user = basicBLService.findByKey(phoneNumber);
+        User user = userBasicBLService.findByKey(phoneNumber);
         String password = user.getPassword();
         model.addObject("password", password);
         return model;
     }
 
-    /*
-    @RequestMapping(value = "/backMain.html")
-    public ModelAndView getBackMain(HttpServletRequest request){
-        ModelAndView model = new ModelAndView("Main");
-        return model;
-    }*/
-
     @RequestMapping(value = "/readPersonal")
     @ResponseBody
     public String readPersonal(@RequestBody String phoneNumberObj) {
         String phoneNumber = phoneNumberObj.substring(phoneNumberObj.indexOf(":")+1,phoneNumberObj.length()-1);
-        User user = basicBLService.findByKey(phoneNumber);
+        User user = userBasicBLService.findByKey(phoneNumber);
         JSONObject json = JSONObject.fromObject(user);//将java对象转换为json对象
         String res = json.toString();//将json对象转换为字符串
         return res;
@@ -58,7 +53,7 @@ public class PersonalController {
     public String writePersonal(@RequestBody String personalInfo){
         JSONObject obj = new JSONObject().fromObject(personalInfo);
         User user = (User)JSONObject.toBean(obj,User.class);
-        basicBLService.update(user);
+        userBasicBLService.update(user);
 
         return "write personal info success";
     }
@@ -92,24 +87,50 @@ public class PersonalController {
             }
             return collectionNames;
         }
-        /*  int index=0;
-        String[] collectionNames=new String[1000];
-        for(Collection collection: tmpMission){
-            collectionNames[index]= collection.getMid();
-            System.out.println("返回前端的collectionNames=" + collectionNames[index]);
-            index++;
-        }*/
     }
 
     @RequestMapping(value = "/Icon")
     @ResponseBody
-    public String chanegIcon(Number avatar,String phoneNumber){
-        return null;
+    public String chanegIcon(@RequestBody String personalPara){
+        PersonalParameter para=toPersonalPara(personalPara);
+        int icon=para.getIcon();
+        String uid=para.getUid();
+        User user=userBasicBLService.findByKey(uid);
+        user.setIcon(icon);
+        userBasicBLService.update(user);
+        return "update success";
     }
 
     @RequestMapping(value = "/Topup")
     @ResponseBody
-    public String topUp(String phoneNumber,Number topupMoney){
-        return null;
+    public String topUp(@RequestBody String personalPara){
+        PersonalParameter para=toPersonalPara(personalPara);
+        double credit=para.getCredit();
+        String uid=para.getUid();
+        User user=userBasicBLService.findByKey(uid);
+        double temp=user.getCredit();
+        user.setCredit(temp+credit);
+        userBasicBLService.update(user);
+        return "top up success";
     }
+
+    /*****************************************************/
+    /**
+     * Json字符串转Personal对象
+     */
+    public PersonalParameter toPersonalPara(String jsonString){
+        JSONObject object=JSONObject.fromObject(jsonString);
+        PersonalParameter para=(PersonalParameter) JSONObject.toBean(object,PersonalParameter.class);
+        return para;
+    }
+
+    /**
+     *对象转json字符串
+     */
+    public String toJsonString(Object o){
+        JSONObject jsonObject = JSONObject.fromObject(o);
+        String ret = jsonObject.toString();
+        return ret;
+    }
+
 }
