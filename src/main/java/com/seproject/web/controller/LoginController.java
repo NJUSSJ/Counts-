@@ -7,6 +7,7 @@ import com.seproject.domain.User;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
@@ -23,7 +24,12 @@ public class LoginController {
 	
 	@RequestMapping(value = "/loginCheck.html")
 		public ModelAndView loginCheck(HttpServletRequest request,User user) {
+
+	    //View for common users
 		ModelAndView view = new ModelAndView("Main");
+        //View for admin
+        ModelAndView viewAdmin = new ModelAndView("administer");
+
 		boolean existed=false;
 		User tmpUser=basicBLService.findByKey(request.getParameter("userName"));
 		if(tmpUser!=null){
@@ -42,10 +48,19 @@ public class LoginController {
                     missionNames.add("\""+mission.getName()+"\"");
                     index++;
                 }
-				view.addObject("userName",realUser.getUserName());
-				view.addObject("phoneNumber",realUser.getPhoneNumber());
-				view.addObject("userCategory", realUser.getCategory());
-				return view;
+
+                if(realUser.getCategory()!=3){
+                    view.addObject("userName",realUser.getUserName());
+                    view.addObject("phoneNumber",realUser.getPhoneNumber());
+                    view.addObject("userCategory", realUser.getCategory());
+                    return view;
+                }else{
+                    viewAdmin.addObject("userName", realUser.getUserName());
+                    viewAdmin.addObject("phoneNumber", realUser.getPhoneNumber());
+                    viewAdmin.addObject("userCategory", realUser.getCategory());
+                    return viewAdmin;
+                }
+
 			}else{
 			    System.out.println("Wrong!");
 				return new ModelAndView("Login", "error", "\'密码错误\'");

@@ -23,6 +23,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
 
+
 </head>
 <style type="text/css">
     div.sidebar{
@@ -76,6 +77,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         width: 300px;
         height: 186px;
     }
+
+    .scale{background: #ddd; width: 600px; height: 12px; position: relative;margin: 20px;}
+
+    .scale span{background:#aaa;width:8px;height:24px;position:absolute;left:-2px;top:-6px;cursor:pointer; border-radius: 3px;}
+
+    .scale div{background: #123244; position: absolute; height: 12px; width: 0; left: 0; bottom: 0; display: inline}
 
 
 </style>
@@ -151,29 +158,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <h2 id="sample">抽样评估</h2>
             </header>
             <div class="row 150%" id="edit_area">
-                <div class="2u 12u(narrower)" align="center">
 
-                    <!-- Tool bar -->
-                    <div class="sidebar" align="left">
-                        <ul class="picturetools">
-                            <li><input type="button" name="" value="优" onclick="good()"></li>
-                            <li><input type="button" name="" value="良" onclick="fair()"></li>
-                            <li><input type="button" name="" value="中" onclick="middle()"></li>
-                            <li><input type="button" name="" value="差" onclick="bad()"></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div class="2u 12u(narrower)" align="center">
-
+                <div class="3u 12u(narrower)" align="center">
                     <!-- Tag Info-->
                     <div class="tag_info" id="textareaPlace" style="overflow: auto">
                         <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->
                         <!-- <a href="#" class="button special">保存</a> -->
                     </div>
                 </div>
-                <div class="8u 12u(narrower)">
+                <div class="9u 12u(narrower)">
 
                     <!-- Content -->
                     <div class="content" align="center">
@@ -184,9 +177,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                 </div>
+                <div class="10u 12u(narrower)" align="center" style="padding-top: 0px">
+                    <div class="scale" id="bar">
+                        <div></div>
+                        <span id="btn"></span>
+                    </div>
+                    <span id="title" style="font-weight: bold">分数：0</span>
+                </div>
+                <div class="2u 12u(narrower)" style="padding-top: 0px;"><a href="#" onclick="good()" class="button small2 " style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >确认</a></div>
+
             </div>
         </article>
-
         <article id="charts" class="panel">
             <header>
                 <h2>统计信息</h2>
@@ -226,6 +227,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
 <script src="js/missionDetails.js"></script>
+
 
 </body>
 </html>
