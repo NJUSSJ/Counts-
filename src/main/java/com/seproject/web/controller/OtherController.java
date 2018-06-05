@@ -31,7 +31,7 @@ public class OtherController {
             userDate = userDateBasicBLService.findByKey(phoneNumber);
         }
         Date[] dateArray = userDate.getDate();
-        int index = userDate.getIndex();
+        int index = userDate.getFlag();
         if(index==-1){//如果整个日期数组为空，添加第一项并令index=0
             reward=2;
             dateArray[0]=now;
@@ -58,7 +58,7 @@ public class OtherController {
             }
         }
         userDate.setDate(dateArray);
-        userDate.setIndex(index);
+        userDate.setFlag(index);
         if(existed) { userDateBasicBLService.update(userDate); }
         else{userDateBasicBLService.add(userDate);}
 
