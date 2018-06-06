@@ -9,6 +9,7 @@ import com.seproject.service.Factory;
 import com.seproject.service.MissionService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.MissionParameter;
+import com.seproject.web.parameter.RecommendParameter;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,8 +77,16 @@ public class MissionController {
     }
     @RequestMapping(value = "/MissionTake/Recommend")
     @ResponseBody
-    public String recommend(@RequestBody String phoneNumber){
-        ArrayList<Mission> missions=missionService.recommentSort(phoneNumber);
+    public String recommend(@RequestBody String recommendPara){
+        JSONObject object=JSONObject.fromObject(recommendPara);
+        RecommendParameter para=(RecommendParameter) JSONObject.toBean(object,RecommendParameter.class);
+        ArrayList<Mission> missions=missionService.recommendMission(para);
+        return toJsonString(missions);
+    }
+    @RequestMapping(value = "/MissionTake/RecommendByUser")
+    @ResponseBody
+    public String recommendByUser(@RequestBody String uid){
+        ArrayList<Mission> missions=missionService.recommendByAlikeUser(uid);
         return toJsonString(missions);
     }
     @RequestMapping(value = "/MissionCheck")

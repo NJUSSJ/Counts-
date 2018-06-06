@@ -6,41 +6,32 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-@Entity
-@Table(name="collectionresult")
 /**
  *评估任务结束后的工人查看结果，每个CollectionResult与对应的Collection有相同的id
  */
+@Entity
+@Table(name="collectionresult")
 public class CollectionResult {
     public CollectionResult(){}
     public CollectionResult(Collection c){
-        this.keyid=c.getKeyId();
-        this.credit=c.getCredit();
-        this.quality=c.getQuality();
+        this.resultId=c.getKeyId();
     }
     @Key
     @Id
-    @Column(name="keyid")
-    private String keyid;
+    @Column(name="resultid")
+    private String resultId;
     @Column(name="credit")
     private double credit;
     @Column(name="picid",columnDefinition = "blob")
-    private int picId[];
+    private int picId[];//被抽样的图
     @Column(name="picgrade",columnDefinition = "blob")
-    private int picGrade[];
+    private int picGrade[];//被抽样的图的得分
     @Column(name="rank")
     private int rank;
     @Column(name="quality")
     private int quality;
-
-    public String getKeyid() {
-        return keyid;
-    }
-
-    public void setKeyid(String keyid) {
-        this.keyid = keyid;
-    }
+    @Column(name="state")
+    private int state;//0 保存 1 提交 2 未保存 3 已被工人删除
 
     public double getCredit() {
         return credit;
@@ -81,4 +72,12 @@ public class CollectionResult {
     public void setPicGrade(int[] picGrade) {
         this.picGrade = picGrade;
     }
+
+    public int getState() { return state; }
+
+    public void setState(int state) { this.state = state; }
+
+    public String getResultId() { return resultId; }
+
+    public void setResultId(String resultId) { this.resultId = resultId; }
 }

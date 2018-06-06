@@ -3,11 +3,10 @@ package com.seproject.domain;
 import com.seproject.common.Key;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Entity;
 import java.sql.Date;
-import java.util.ArrayList;
 
 
 /**
@@ -29,7 +28,7 @@ public class UserDate {
     @Column(name="date",columnDefinition = "blob")
     private Date[] date;
     @Column(name="flag")
-    private int flag;
+    private int flag;//注意，index是mysql的保留字，不能起这种名字
 
     public String getUid() {
         return uid;
@@ -40,17 +39,10 @@ public class UserDate {
     }
 
     public Date[] getDate() {
-/*        Date[] result=new Date[7];
-        for(int i=0;i<7;i++){
-            result[i]=Date.valueOf(date.get(i));
-        }*/
         return date;
     }
 
     public void setDate(Date[] date) {
-/*        for(int i=0;i<7;i++){
-            this.date.set(i,date[i].toString());
-        }*/
         this.date=date;
     }
 

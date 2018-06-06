@@ -38,7 +38,7 @@ public class OtherController {
             index=0;
         }else {//否则比较上次签到时间和今天的差
             Date lastTime = dateArray[index];
-            int day = (int) ((now.getTime() - lastTime.getTime()) / (1000 * 3600 * 24));
+            int day = ((int) (now.getTime() / (1000 * 3600 * 24))) - ((int)(lastTime.getTime() / (1000 * 3600 * 24)));
             if (day < 1) {
                 message = "You have already signed today";
             } else if (day >= 1 && day < 2) {

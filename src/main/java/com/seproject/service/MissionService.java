@@ -1,66 +1,161 @@
 package com.seproject.service;
 
 import com.seproject.common.SearchCategory;
-import com.seproject.domain.Collection;
-import com.seproject.domain.Mission;
-import com.seproject.domain.User;
+import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.parameter.RecommendParameter;
+import sun.util.resources.cldr.ar.CalendarData_ar_YE;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MissionService {
     BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     /**
-     *推荐排序
-     * 算法1.计算用户之间的喜好相似度，统计当前相似用户正在进行的任务，推荐给该用户
-     * 算法2.计算任务标签与用户喜好的重合度，排序后推荐给该用户
-     * 推荐列表是二者的结合，优先度1>2（算法1，算法2，算法1，算法2......），如果有重合则合并
+     * 四维推荐排序
+     * 用户设置难度，期望积分
+     * 根据难度，期望积分，用户标签，用户等级四个维度进行任务推荐，故称为四维推荐
+     * 1.先选出正在进行的任务
+     * 2.从中选出等级符合的任务
+     * 3.从中根据难度选（可选）
+     * 4.从中根据用户标签选（可选）
+     * 5.从中根据期望积分选（可选）
      */
-    public ArrayList<Mission> recommentSort(String uid){
+    public ArrayList<Mission> recommendMission(RecommendParameter para){
+        ArrayList<Mission> result=new ArrayList<Mission>();
+        String uid=para.getUid();
         User user=userBasicBLService.findByKey(uid);
-        ArrayList<String> userTags=user.getTags();
-        ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
-        ArrayList<Integer> nums=new ArrayList<Integer>();
-        ArrayList<Mission> toRemove=new ArrayList<Mission>();
-        for(Mission each:missions) {
-            if (each.getState() != 0) {
-                toRemove.add(each);
-            }
+        int level=user.getLevel();
+
+        boolean useDifficulty=false,useTag=false,useWanted=false;
+        useTag=para.getUseTag();
+        int[] diffculty=para.getDifficulty();
+        if(diffculty.length>0){
+            useDifficulty=true;
         }
-        for(Mission each:toRemove){
-            missions.remove(each);
-        }//只留下尚未结束的任务
-        for(int i=0;i<missions.size();i++){
-            ArrayList<String> missionTags=missions.get(i).getRecommendLabel();
-            int count=0;
-            for(String eachTag:missionTags){
-                if(userTags.contains(eachTag)){
-                    count++;
+        double credit=para.getWantedCredit();
+        if(credit>0){
+            useWanted=true;
+        }
+        ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
+        for(Mission mission:missions){
+            if(mission.getState()!=0){
+                continue;
+            }
+            if(Integer.parseInt(mission.getWorkerLevel())>level){
+                continue;
+            }
+            //难度
+            if(useDifficulty){
+                int temp=mission.getDifficulty();
+                boolean in=false;
+                for(int i=0;i<diffculty.length;i++){
+                    if(diffculty[i]==temp){
+                        in=true;
+                        break;
+                    }
+                }
+                if(!in){
+                    continue;
                 }
             }
-            nums.add(count);
-            //排序
-            for(int j=0;j<missions.size()-1;j++){
-                for(int k=j+1;k<missions.size();k++){
-                    int pre=nums.get(j);
-                    int back=nums.get(k);
-                    if(back>pre){
-                        nums.set(j,back);
-                        nums.set(k,pre);
-                        Mission mPre=missions.get(j);
-                        Mission mBack=missions.get(k);
-                        missions.set(j,mBack);
-                        missions.set(k,mPre);
+            //标签
+            if(useTag){
+                ArrayList<String> tags=user.getTags();
+                ArrayList<String> labels=mission.getRecommendLabel();
+                boolean in=false;
+                for(String each:labels){
+                    if(tags.contains(each)){
+                        in=true;
+                        break;
+                    }
+                }
+                if(!in){
+                    continue;
+                }
+            }
+            //期望积分
+            if(useWanted){
+                double avg=mission.getReward()/mission.getMaxNum();
+                if(avg<credit){
+                    continue;
+                }
+            }
+            result.add(mission);
+        }
+
+        return result;
+    }
+
+    /**
+     *根据相似用户进行任务推荐
+     */
+    public ArrayList<Mission> recommendByAlikeUser(String uid){
+        ArrayList<User> alikeUsers=findAlikeUser(uid);
+        ArrayList<Mission> result=new ArrayList<Mission>();
+        ArrayList<Mission> ongoingMission=missionBasicBLService.search("state",SearchCategory.EQUAL,"0");
+        ArrayList<String> ongoingId=new ArrayList<String>();
+        for(Mission mission:ongoingMission){
+            ongoingId.add(mission.getName());
+        }
+        for(User user:alikeUsers){
+            ArrayList<Collection> tempCollection=collectionBasicBLService.search("uid",SearchCategory.EQUAL,user.getPhoneNumber());
+            for(Collection collection:tempCollection){
+                if(ongoingId.contains(collection.getMid())){
+                    Mission toAdd=ongoingMission.get(ongoingId.indexOf(collection.getMid()));
+                    if(!result.contains(toAdd)){
+                        result.add(toAdd);
                     }
                 }
             }
         }
-        return missions;
-
+        return result;
     }
 
+
+
+    /**
+     *根据历史行为寻找到相似的用户
+     *算法：比较两个用户曾经完成过的任务的表现情况，如果相似，并且相似的任务数占总任务数的比例超过一定值(0.6)，则证明相似
+     */
+    public ArrayList<User> findAlikeUser(String uid){
+        ArrayList<User> allUser=userBasicBLService.getAllObjects();
+        ArrayList<User> alikeUser=new ArrayList<User>();
+        ArrayList<Collection> originalCollection=collectionBasicBLService.search("uid",SearchCategory.EQUAL,uid);
+        Map<String,Integer> origin=new HashMap<String,Integer>();
+        for(Collection collection:originalCollection){
+            String key=collection.getMid();
+            int rank=collection.getRank();
+            origin.put(key,rank);
+        }
+        for(User user:allUser){
+            if(user.getPhoneNumber()!=uid) {//自己和自己必然是最相似的，所以不考虑
+                double alikeNum = 0;
+                ArrayList<Collection> tempCollection = collectionBasicBLService.search("uid", SearchCategory.EQUAL, user.getPhoneNumber());
+                for (Collection collection : tempCollection) {
+                    String mid = collection.getMid();
+                    if (!origin.containsKey(mid)) {
+                        continue;
+                    } else {
+                        int tempRank = collection.getRank();
+                        int rank = origin.get(mid);
+                        int distance = rank - tempRank;
+                        if (distance <= 1 || distance >= -1) {
+                            alikeNum++;
+                        }
+                    }
+                }
+                double likeRate = alikeNum / tempCollection.size();
+                if (likeRate > 0.6) {
+                    alikeUser.add(user);
+                }
+            }
+        }
+        return alikeUser;
+    }
 
 
     /**

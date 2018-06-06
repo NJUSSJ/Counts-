@@ -21,7 +21,7 @@ public class Mission {
     @Column(name="description")
     String description;
     @Column(name="workerLevel")
-    String workerLevel;
+    String workerLevel;//接受工人的最低等级
     @Column(name="files",columnDefinition = "blob")
     ArrayList<String> files=new ArrayList<String>();
     @Column(name="filenum")
@@ -36,7 +36,7 @@ public class Mission {
     @Column(name="requestornumber")
     String requestorNumber;//发起者ID
     @Column(name="state")
-    int state;//0:未完成 1：完成 2:已经评估 3：已被发起者删除
+    int state;//0:未结束 1：结束但未评估 2:已评估 3：已被发起者删除
     @Column(name="difficulty")
     private int difficulty;
     @Column(name="missionlabel",columnDefinition = "blob")
