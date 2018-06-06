@@ -19,16 +19,21 @@
     <link rel="stylesheet" href="css/main.css" />
 
     <style type="text/css">
-        .collection{
-            width: 400px;
-            height: 260px;
+        #functionBar{
+            margin-right: 5px;
+            padding-top: 0px;
         }
-        .admin{
-            font-size: large;
+        #userManagement{
+
         }
+        #admin{
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
     </style>
 </head>
-<body class="no-sidebar" onload="loadMain(${requestScope.phoneNumber},${requestScope.userCategory})">
+<body class="no-sidebar">
 <div id="page-wrapper">
 
     <!-- Header -->
@@ -37,59 +42,32 @@
         <nav id="nav">
             <ul>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
-                <li class="submenu" id="extra">
-                    <a id="menuTitle"></a>
-                </li>
-                <style type="text/css">
-                    #extra{
-                        display: none;
-                    }
-                </style>
                 <li><a href="/" class="button special">登出</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Banner -->
-    <section id="banner">
-
-        <div class="inner">
-
-            <header>
-                <h2>COUNTS</h2>
-            </header>
-            <p>This is <strong>COUNTS</strong>, a Crowdsourcing
-                <br />
-                Tagging System
-                <br />
-                by SOCIAL ENGINEERS.</p>
-            <footer>
-                <ul class="buttons vertical">
-                    <li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
-                </ul>
-            </footer>
-
-        </div>
-
+    <section id="banner" style="height: 10px">
+        <span id="admin">COUNTS 系统管理员</span>
     </section>
 
 
     <!-- Main -->
     <article id="main">
+        <div class="row 150%" id="fullScreen">
+            <div class="2u 12u(narrow)" align="center" id="functionBar">
+                <ul>
+                    <li><a href="#" class="button special2">用户管理</a></li>
+                    <li><a href="#" class="button special2">任务管理</a></li>
+                    <li><a href="#" class="button special2">消息系统</a></li>
+                    <li><a href="#" class="button special2">系统近况</a></li>
+                </ul>
+            </div>
+            <div class="9u 12u(narrow)" align="center" id="userManagement">
 
-        <header class="special container">
-            <span class="icon fa-user-md"></span>
-            <h2>在线众包标注系统<strong>系统管理员界面</strong></h2>
-        </header>
-
-        <!-- One -->
-        <section class="wrapper style4 container">
-            <ul class="icons">
-                <li><a href="#" class="button small">任务管理</a></li>
-                <li><a href="#" class="button small">用户管理</a></li>
-                <li><a href="#" class="button small">消息系统</a></li>
-            </ul>
-        </section>
+            </div>
+        </div>
     </article>
 
     <!-- Footer -->
@@ -120,7 +98,6 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
-<script src="js/Maincollection.js"></script>
 
 </body>
 </html>
