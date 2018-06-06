@@ -119,7 +119,7 @@ public class MissionService {
 
     /**
      *根据历史行为寻找到相似的用户
-     *算法：比较两个用户曾经完成过的任务的表现情况，如果相似，并且相似的任务数占总任务数的比例超过一定值(0.6)，则证明相似
+     *算法：比较两个用户曾经完成过的任务的排名情况，如果差的绝对值不大于1视为相似，并且相似的任务数占总任务数的比例超过一定值(0.6)，则证明相似
      */
     public ArrayList<User> findAlikeUser(String uid){
         ArrayList<User> allUser=userBasicBLService.getAllObjects();
