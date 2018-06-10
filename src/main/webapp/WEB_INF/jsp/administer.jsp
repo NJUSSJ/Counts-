@@ -30,7 +30,34 @@
             font-size: 1.5em;
             font-weight: bold;
         }
-
+        .userSearch{
+            margin-top: 0px;
+            height: 40px;
+            width: 250px;
+            margin-right: 5px;
+        }
+        #userSearchBt{
+            border: solid 1px;
+            color: inherit;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.8em;
+            font-weight: 900;
+            letter-spacing: 2px;
+            height: 40px;
+            width: 100px;
+            line-height: 40px;
+            padding: 0 0.75em 0.5em 0.75em;
+            text-align: -webkit-center;
+            text-decoration: none;
+        }
+        #userSearchBt:hover {
+            background: rgba(188, 202, 206, 0.15);
+            border-color: inherit;
+        }
+        input{
+            float: left;
+        }
     </style>
 </head>
 <body class="no-sidebar">
@@ -58,17 +85,33 @@
         <div class="row 150%" id="fullScreen">
             <div class="2u 12u(narrow)" align="center" id="functionBar">
                 <ul>
-                    <li><a href="#" class="button special2">用户管理</a></li>
+                    <li><a href="#" class="button special2" id="userManagementButton" onclick="userManagement()">用户管理</a></li>
                     <li><a href="#" class="button special2">任务管理</a></li>
                     <li><a href="#" class="button special2">消息系统</a></li>
                     <li><a href="#" class="button special2">系统近况</a></li>
                 </ul>
             </div>
-            <div class="9u 12u(narrow)" align="center" id="userManagement">
+            <div class="9u 12u(narrow)" align="left" id="userManagement" style="display: none;padding-top: 0px;padding-left: 90px">
+                <form>
+                    <input type="search" placeholder="用户名/手机号码" class="userSearch">
+                    <a id="userSearchBt">搜索</a>
+                </form>
 
+                <table id="userTable" class="default" style="margin-top: 20px">
+                    <tr>
+                        <td>手机号</td>
+                        <td>用户名</td>
+                        <td>类别</td>
+                        <td>等级</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </article>
+
+
+
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -98,6 +141,6 @@
 <script src="js/util.js"></script>
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
-
+<script src="js/admin.js"></script>
 </body>
 </html>
