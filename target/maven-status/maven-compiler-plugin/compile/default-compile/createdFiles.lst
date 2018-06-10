@@ -16,6 +16,7 @@ com\seproject\Application.class
 com\seproject\web\controller\MessageController.class
 com\seproject\service\blServiceImpl\BasicBLImpl_Hibernate$1.class
 com\seproject\service\InitData.class
+com\seproject\web\parameter\RecommendParameter.class
 com\seproject\service\MathService.class
 com\seproject\web\parameter\MessageParameter.class
 com\seproject\web\response\SignResponse.class
@@ -46,6 +47,7 @@ com\seproject\domain\Sample.class
 com\seproject\service\ReviewService.class
 com\seproject\domain\testDomain\TestH.class
 com\seproject\web\CollectionController.class
+com\seproject\dao\MySQL5DialectUTF8.class
 com\seproject\web\SampleController.class
 com\seproject\domain\Collection.class
 com\seproject\service\blServiceImpl\BasicBLImpl_Hibernate.class

@@ -95,6 +95,7 @@ public class CollectionController {
         Mission tmpMission=missionBasicBLService.findByKey(mid);
         int picNum=tmpMission.getFileNum();
         collection.setKeyId(mid+uid);
+        System.out.println(collection.getKeyId()+"!!!!!!!!!");
         collection.setState(0);
         ArrayList<String> tmpArray=new ArrayList<String>();
         for(int i=0;i<picNum;i++){
@@ -103,5 +104,17 @@ public class CollectionController {
         collection.setInfoList(tmpArray);
         collectionBasicBLService.add(collection);
         return "2";
+    }
+
+
+    @RequestMapping(value = "/addJudgeMissionToUser")
+    @ResponseBody
+    /*
+    添加成功返回“0”
+    添加失败返回失败原因
+     */
+    public String addJudgeMissionToUser(@RequestBody String collectionInfo){
+
+        return "";
     }
 }

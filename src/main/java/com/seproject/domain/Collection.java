@@ -27,7 +27,7 @@ public class Collection {
     private ArrayList<String> infoList = new ArrayList<String>();//如果是标签式，那么里面是按图集顺序的标签
     @OneToOne(cascade = CascadeType.ALL,targetEntity =CollectionResult.class)
     @JoinColumn(name="result",referencedColumnName = "resultid")
-    private CollectionResult result;
+    private CollectionResult result = new CollectionResult(this);
 
     public String getKeyId() { return keyId; }
 
