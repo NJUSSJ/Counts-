@@ -1,6 +1,7 @@
 package com.seproject.service;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.Collection;
+import com.seproject.domain.CollectionResult;
 import com.seproject.domain.Mission;
 import com.seproject.domain.statisticsData.*;
 import com.seproject.domain.User;
@@ -20,7 +21,7 @@ public class StatisticsService {
     *  （3）获取系统管理员可见的统计数据包。
     *  （4）获取单个任务的所有统计数据包。
      */
-    BasicBLService<Collection> service1=Factory.getBasicBLService(new Collection());
+    BasicBLService<CollectionResult> service1=Factory.getBasicBLService(new CollectionResult());
     BasicBLService<User> service2= Factory.getBasicBLService(new User());
     BasicBLService<Mission> service3=Factory.getBasicBLService(new Mission());
     FactoryService factoryService;
@@ -29,7 +30,7 @@ public class StatisticsService {
     public WorkerData getWorkerData(String userID){
 
 
-        ArrayList<Collection> collections=service1.search("uid", SearchCategory.EQUAL,userID);
+        ArrayList<CollectionResult> collections=service1.search("uid", SearchCategory.EQUAL,userID);
         User u=service2.findByKey(userID);
 
         ArrayList<Double> credit=new ArrayList<Double>();
@@ -60,7 +61,7 @@ public class StatisticsService {
         ArrayList<Double>creditAvg =new ArrayList<Double>();
         for(int i=0;i<missionName.size();i++){
             Mission mission1=service3.findByKey(missionName.get(i));
-            ArrayList<Collection> collection1=service1.search("mid",SearchCategory.EQUAL,missionName.get(i));
+            ArrayList<CollectionResult> collection1=service1.search("mid",SearchCategory.EQUAL,missionName.get(i));
             if(collection1.size()>0) {
                 creditAvg.add(mission1.getReward() / collection1.size());
             }else {
@@ -96,7 +97,7 @@ public class StatisticsService {
         ArrayList<Double> creditAvg=new ArrayList<Double>();
         ArrayList<String> missionName=new ArrayList<String>();
         ArrayList<Mission> missions=service3.getAllObjects();
-        ArrayList<Collection> collections=service1.getAllObjects();
+        ArrayList<CollectionResult> collections=service1.getAllObjects();
         for(Mission m:missions){
             if((m.getRequestorNumber()).equals(userID)){
                 missionSum++;
@@ -107,7 +108,7 @@ public class StatisticsService {
                     finishedMissionNum++;
                 }
                 int temp=0;
-                for(Collection c:collections){
+                for(CollectionResult c:collections){
                     if(c.getUid().equals(userID)){
                         temp++;
                     }
@@ -210,7 +211,7 @@ public class StatisticsService {
             for(int j=0;j<missionNames.size();j++){
                 ArrayList<Integer> inner=new ArrayList<Integer>();
                 String uName=userNames.get(i),mName=missionNames.get(j);
-                Collection c=service1.findByKey(mName+uName);
+                CollectionResult c=service1.findByKey(mName+uName);
                 if(c!=null) {
                     if(c.getQuality()>=0) {
                         inner.add(i);
@@ -233,7 +234,7 @@ public class StatisticsService {
         int number3=0;
         ArrayList<Double> credit=new ArrayList<Double>();
         ArrayList<Integer> level=new ArrayList<Integer>() ;
-        ArrayList<Collection> collections=service1.search("mid",SearchCategory.EQUAL,missionID);
+        ArrayList<CollectionResult> collections=service1.search("mid",SearchCategory.EQUAL,missionID);
         for(int i=0;i<collections.size();i++){
            int q= collections.get(i).getQuality();
            switch (q){

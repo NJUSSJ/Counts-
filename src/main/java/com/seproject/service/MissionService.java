@@ -14,6 +14,7 @@ public class MissionService {
     BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
+    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     /**
      * 四维推荐排序
      * 用户设置难度，期望积分
@@ -124,9 +125,9 @@ public class MissionService {
     public ArrayList<User> findAlikeUser(String uid){
         ArrayList<User> allUser=userBasicBLService.getAllObjects();
         ArrayList<User> alikeUser=new ArrayList<User>();
-        ArrayList<Collection> originalCollection=collectionBasicBLService.search("uid",SearchCategory.EQUAL,uid);
+        ArrayList<CollectionResult> originalCollection=collectionResultBasicBLService.search("uid",SearchCategory.EQUAL,uid);
         Map<String,Integer> origin=new HashMap<String,Integer>();
-        for(Collection collection:originalCollection){
+        for(CollectionResult collection:originalCollection){
             String key=collection.getMid();
             int rank=collection.getRank();
             origin.put(key,rank);
@@ -134,8 +135,8 @@ public class MissionService {
         for(User user:allUser){
             if(user.getPhoneNumber()!=uid) {//自己和自己必然是最相似的，所以不考虑
                 double alikeNum = 0;
-                ArrayList<Collection> tempCollection = collectionBasicBLService.search("uid", SearchCategory.EQUAL, user.getPhoneNumber());
-                for (Collection collection : tempCollection) {
+                ArrayList<CollectionResult> tempCollection = collectionResultBasicBLService.search("uid", SearchCategory.EQUAL, user.getPhoneNumber());
+                for (CollectionResult collection : tempCollection) {
                     String mid = collection.getMid();
                     if (!origin.containsKey(mid)) {
                         continue;
@@ -180,7 +181,7 @@ public class MissionService {
      * 8.each*100/sum为成绩，结束
      **/
     public void autoEvaluate(String mid){
-        Mission mission=missionBasicBLService.findByKey(mid);
+ /*       Mission mission=missionBasicBLService.findByKey(mid);
         ArrayList<Collection> collections=collectionBasicBLService.search("mid", SearchCategory.EQUAL,mid);
         int pics=mission.getFileNum();
         ArrayList<String> label=mission.getMissionLabel();
@@ -237,6 +238,6 @@ public class MissionService {
         }
         for(Collection collection:collections){
             collection.setQuality(collection.getQuality()*100/sampleNum);
-        }
+        }*/
     }
 }

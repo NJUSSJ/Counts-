@@ -4,6 +4,7 @@
 package com.seproject.web;
 
 import com.seproject.domain.Collection;
+import com.seproject.domain.CollectionResult;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
@@ -29,7 +30,7 @@ public class CollectionController {
     private BasicBLService<User> basicBLService= Factory.<User>getBasicBLService(new User());
     private BasicBLService<Mission> missionBasicBLService= Factory.<Mission>getBasicBLService(new Mission());
     private BasicBLService<Collection> collectionBasicBLService= Factory.<Collection>getBasicBLService(new Collection());
-
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     @RequestMapping(value = "/details.html")
     public ModelAndView getDetailofCollection(HttpServletRequest request){
         String missionName=request.getParameter("imageURL");
@@ -95,13 +96,15 @@ public class CollectionController {
         Mission tmpMission=missionBasicBLService.findByKey(mid);
         int picNum=tmpMission.getFileNum();
         collection.setKeyId(mid+uid);
-        collection.setState(0);
+        CollectionResult collectionResult=new CollectionResult(collection);
+        collectionResult.setState(0);
         ArrayList<String> tmpArray=new ArrayList<String>();
         for(int i=0;i<picNum;i++){
             tmpArray.add("{}");
         }
         collection.setInfoList(tmpArray);
         collectionBasicBLService.add(collection);
+        collectionResultBasicBLService.add(collectionResult);
         return "2";
     }
 }

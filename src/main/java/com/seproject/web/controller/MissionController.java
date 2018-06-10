@@ -65,8 +65,8 @@ public class MissionController {
                 }
             }
         }else if(identity==2) {//工人
-            ArrayList<Collection> collectionList = collectionService.search("uid", SearchCategory.EQUAL, uid);
-            for (Collection each : collectionList) {
+            ArrayList<CollectionResult> collectionList = collectionResultBasicBLService.search("uid", SearchCategory.EQUAL, uid);
+            for (CollectionResult each : collectionList) {
                 if (each.getMid() == keyword) {
                     each.setState(3);
                     break;

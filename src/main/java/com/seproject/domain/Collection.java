@@ -25,9 +25,6 @@ public class Collection {
     private String mid;
     @Column(name="infolist",columnDefinition = "blob")
     private ArrayList<String> infoList = new ArrayList<String>();//如果是标签式，那么里面是按图集顺序的标签
-    @OneToOne(cascade = CascadeType.ALL,targetEntity =CollectionResult.class)
-    @JoinColumn(name="result",referencedColumnName = "resultid")
-    private CollectionResult result;
 
     public String getKeyId() { return keyId; }
 
@@ -45,11 +42,8 @@ public class Collection {
 
     public void setInfoList(ArrayList<String> infoList) { this.infoList = infoList; }
 
-    public CollectionResult getResult() {return result; }
-
-    public void setResult(CollectionResult result){ this.result=result; }
     /*下面这段只是为了符合之前的结构，是对collectioniResult操作*/
-    public int getState(){return result.getState();}
+/*    public int getState(){return result.getState();}
 
     public void setState(int state){this.result.setState(state);}
 
@@ -63,5 +57,5 @@ public class Collection {
 
     public int getRank(){return this.result.getRank();}
 
-    public void setRank(int rank){this.result.setRank(rank);}
+    public void setRank(int rank){this.result.setRank(rank);}*/
 }

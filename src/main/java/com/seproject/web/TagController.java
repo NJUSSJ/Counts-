@@ -1,6 +1,7 @@
 package com.seproject.web;
 
 import com.seproject.domain.Collection;
+import com.seproject.domain.CollectionResult;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 public class TagController {
 
     BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
-
+    BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
@@ -60,11 +61,11 @@ public class TagController {
     public int submitTagInfo(@RequestBody String str){
         JSONObject jsonObject = JSONObject.fromObject(str);
         String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
-        Collection collection=null;
+        CollectionResult collection=null;
 
-        if((collection=collectionService.findByKey(missionAndPhoneNumber))!=null){
+        if((collection=collectionResultBasicBLService.findByKey(missionAndPhoneNumber))!=null){
             collection.setState(1);
-            collectionService.update(collection);
+            collectionResultBasicBLService.update(collection);
         }else{
             System.out.println("要提交的图集不存在"+"：主键为"+missionAndPhoneNumber);
         }
@@ -80,7 +81,7 @@ public class TagController {
         String missionAndPhoneNumber = jsonObject.getString("missionAndPhoneNumber");
         Collection collection=null;
 
-        return collectionService.findByKey(missionAndPhoneNumber).getState();
+        return collectionResultBasicBLService.findByKey(missionAndPhoneNumber).getState();
     }
 
 

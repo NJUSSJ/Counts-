@@ -17,6 +17,10 @@ public class CollectionResult {
     @Id
     @Column(name="resultid")
     private String resultId;
+    @Column(name="uid")
+    private String uid;
+    @Column(name="mid")
+    private String mid;
     @Column(name="credit")
     private double credit;
     @Column(name="picid")
@@ -110,4 +114,19 @@ public class CollectionResult {
         }
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getMid() {
+        return mid;
+    }
+
+    public void setMid(String mid) {
+        this.mid = mid;
+    }
 }

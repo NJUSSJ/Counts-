@@ -32,9 +32,9 @@
 		<property name="hbm2ddl.auto">
 			update
 		</property>
-		<mapping class="com.seproject.domain.CollectionResult"/>
-		<!-- List of XML mapping files
 
+		<!-- List of XML mapping files
+		<mapping class="com.seproject.domain.CollectionResult"/>
 		<mapping class="com.seproject.domain.testDomain.TestH"/>
 		<mapping class="com.seproject.domain.CollectionResult"/>
 		<mapping class="com.seproject.domain.Mission"/>
