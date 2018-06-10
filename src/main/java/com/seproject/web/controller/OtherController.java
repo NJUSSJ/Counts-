@@ -31,14 +31,14 @@ public class OtherController {
             userDate = userDateBasicBLService.findByKey(phoneNumber);
         }
         Date[] dateArray = userDate.getDate();
-        int index = userDate.getIndex();
+        int index = userDate.getFlag();
         if(index==-1){//如果整个日期数组为空，添加第一项并令index=0
             reward=2;
             dateArray[0]=now;
             index=0;
         }else {//否则比较上次签到时间和今天的差
             Date lastTime = dateArray[index];
-            int day = (int) ((now.getTime() - lastTime.getTime()) / (1000 * 3600 * 24));
+            int day = ((int) (now.getTime() / (1000 * 3600 * 24))) - ((int)(lastTime.getTime() / (1000 * 3600 * 24)));
             if (day < 1) {
                 message = "You have already signed today";
             } else if (day >= 1 && day < 2) {
@@ -58,7 +58,7 @@ public class OtherController {
             }
         }
         userDate.setDate(dateArray);
-        userDate.setIndex(index);
+        userDate.setFlag(index);
         if(existed) { userDateBasicBLService.update(userDate); }
         else{userDateBasicBLService.add(userDate);}
 
