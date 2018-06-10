@@ -2,10 +2,7 @@ package com.seproject.domain;
 
 import com.seproject.common.Key;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 /**
  *评估任务结束后的工人查看结果，每个CollectionResult与对应的Collection有相同的id
  */
@@ -22,10 +19,10 @@ public class CollectionResult {
     private String resultId;
     @Column(name="credit")
     private double credit;
-    @Column(name="picid",columnDefinition = "blob")
-    private int picId[];//被抽样的图
-    @Column(name="picgrade",columnDefinition = "blob")
-    private int picGrade[];//被抽样的图的得分
+    @Column(name="picid")
+    private String picId;//被抽样的图
+    @Column(name="picgrade")
+    private String picGrade;//被抽样的图的得分
     @Column(name="rank")
     private int rank;
     @Column(name="quality")
@@ -41,11 +38,11 @@ public class CollectionResult {
         this.credit = credit;
     }
 
-    public int[] getPicId() {
+    public String getPicId() {
         return picId;
     }
 
-    public void setPicId(int[] picId) {
+    public void setPicId(String picId) {
         this.picId = picId;
     }
 
@@ -65,11 +62,11 @@ public class CollectionResult {
         this.quality = quality;
     }
 
-    public int[] getPicGrade() {
+    public String getPicGrade() {
         return picGrade;
     }
 
-    public void setPicGrade(int[] picGrade) {
+    public void setPicGrade(String picGrade) {
         this.picGrade = picGrade;
     }
 
@@ -80,4 +77,37 @@ public class CollectionResult {
     public String getResultId() { return resultId; }
 
     public void setResultId(String resultId) { this.resultId = resultId; }
+
+    public int[] getPicIdValue(){
+        String[] str=picId.split("#@#");
+        int[] result=new int[str.length];
+        for(int i=0;i<str.length;i++){
+            result[i]=Integer.parseInt(str[i]);
+        }
+        return result;
+    }
+
+    public void setPicIdValue(int[] value){
+        picId="";
+        for(int i=0;i<value.length;i++){
+            picId+=value[i]+"#@#";
+        }
+    }
+
+    public int[] getPicGradeValue(){
+        String[] str=picGrade.split("#@#");
+        int[] result=new int[str.length];
+        for(int i=0;i<str.length;i++){
+            result[i]=Integer.parseInt(str[i]);
+        }
+        return result;
+    }
+
+    public void setPicGradeValue(int[] value){
+        picGrade="";
+        for(int i=0;i<value.length;i++){
+            picGrade+=value[i]+"#@#";
+        }
+    }
+
 }
