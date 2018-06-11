@@ -53,13 +53,11 @@ var myDropzone = new Dropzone("#myDropzone", {
                 expectedNum: document.getElementById("maxNum").value,
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
-                requestorPhone: requestorPhone
+                requestorPhone: requestorPhone,
+                tagNames: document.getElementById("tagNames").value,
+                type: document.getElementById("type").value
             };
             indexPic++;
-<<<<<<< HEAD
-            alert(indexPic);//
-=======
->>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
         });
     },
 
@@ -73,14 +71,6 @@ var myDropzone = new Dropzone("#myDropzone", {
     dictCancelUpload: "取消"
 });
 
-<<<<<<< HEAD
-function getIndexPic() {
-    alert(indexPic);
-    return indexPic;
-}
-=======
-
->>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
 function veriInput() {
     var name=document.getElementById("name").value;
     var startTime=document.getElementById("startTime").value;
@@ -89,20 +79,8 @@ function veriInput() {
     var description=document.getElementById("description").value;
     var expectedNum=document.getElementById("maxNum").value;
     var reward=document.getElementById("reward").value;
-<<<<<<< HEAD
-    var picNum = parseInt(document.getElementById("picNum").value);
 
-
-    if(indexPic > picNum){
-        alert("请正确填写图片数量！");
-        return false;
-    }
-=======
-
-
->>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
-
-    if(name==null||name==""){
+    if(name==null||name===""){
         alert("请填写任务名称！");
         return false;
     }

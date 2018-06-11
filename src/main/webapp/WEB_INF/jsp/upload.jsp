@@ -100,7 +100,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <!-- Content -->
             <div class="content">
                 <form action="/uploadFinish.html" method="post" id="formID">
-                    <div class="row 50%" id="phoneNumber">
+                    <div class="row 50%" id="phoneNumber" onload=loadPhoneNumber(${requestScope.phoneNumber});>
                         <div class="6u 12u(mobile)" >
                             <input type="text" name="phoneNumber" id="actualNumber" />
                         </div>
@@ -115,6 +115,20 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <div class="6u 12u(mobile)" align="left">
                             <span>任务名称：<input  id="name" type="text" name="name" />
                             </span>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>任务类型： </span>
+                            <select id="missionType" >
+                                <option value="1">人物</option>
+                                <option value="2">动物</option>
+                                <option value="3">风景</option>
+                                <option value="4">卡通动画</option>
+                                <option value="5">交通工具</option>
+                                <option value="6">生活用品</option>
+                            </select>
                         </div>
                     </div>
 
@@ -140,6 +154,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left" id="tagNames">
+
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
                             <span>限制工人最低等级：
                             <select id="workerLevel">
@@ -154,13 +174,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
                             <span>期望标注人数：<input  id="maxNum" type="text" name="maxNum" /></span>
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" align="left">
-                            <span>发布图片数量: </span>
-                            <input  id="picNum" type="text" name="picNum" />
                         </div>
                     </div>
 
@@ -190,7 +203,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                     </div>
 
-                    <div class="row 50%" onload=calMaxWorker(); >
+                    <div class="row 50%">
                         <div class="12u">
                             <div class="dropzone" id="myDropzone">
                                 <div class="am-text-success dz-message" id="files">

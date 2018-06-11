@@ -1,12 +1,23 @@
-var rewardBase = 0;
+//var rewardBase = 0;
 var reward = 0;
+var txt = "";
+var phoneNumber = "";
 var ensureBtn = document.getElementById("ensure");
+var typeBtn = document.getElementById("type");
 
+function loadPhoneNumber(_phoneNumber){
+    phoneNumber = _phoneNumber;
+}
+typeBtn.addEventListener("click", function () {
+    if (typeBtn.value === "1"){
+        txt = "<span>标签名称（不同标签请用空格隔开）：<input  type=\"text\"/></span>";
+        txt = document.getElementById("tagNames").innerHTML;
+    }
+})
 ensureBtn.addEventListener("click", function () {
     var difficulty = parseInt(document.getElementById("difficulty").value);
     var maxWorker = parseInt(document.getElementById("maxNum").value);
-    var picNum = parseInt(document.getElementById("picNum").value);
-
+/*
     if (difficulty === 1) {
         rewardBase = 0.1;
     }
@@ -16,8 +27,8 @@ ensureBtn.addEventListener("click", function () {
     if (difficulty === 3) {
         rewardBase = 0.2;
     }
-
-    alert(difficulty + " " + rewardBase + " " + maxWorker+ " " + picNum);
+*/
+    alert(difficulty + " "  + maxWorker+ " " + phoneNumber);
 
     $.ajax({
         async: false,
@@ -25,7 +36,7 @@ ensureBtn.addEventListener("click", function () {
         url: "/calReward",
         contentType: "application/json",
         dataType: "json",
-        data: {"rewardBase": rewardBase, "maxWorker": maxWorker, "picNum": picNum},
+        data: {"difficulty": difficulty, "maxWorker": maxWorker, "phoneNumber": phoneNumber},
         success: function (returnData){
             reward=returnData;
         },
