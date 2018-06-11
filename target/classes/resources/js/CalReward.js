@@ -9,7 +9,7 @@ function loadPhoneNumber(_phoneNumber){
     phoneNumber = _phoneNumber;
 }
 typeBtn.addEventListener("click", function () {
-    if (typeBtn.value == "1"){
+    if (typeBtn.value === "1"){
         txt = "<span>标签名称（不同标签请用空格隔开）：<input  type=\"text\"/></span>";
         txt = document.getElementById("tagNames").innerHTML;
     }

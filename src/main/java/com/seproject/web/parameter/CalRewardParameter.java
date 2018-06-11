@@ -3,7 +3,7 @@ package com.seproject.web.parameter;
 /**
  * 计算最高奖励值用参数
  */
-public class CallRewardParameter {
+public class CalRewardParameter {
     private int difficulty;
     private int maxNum;
     private String uid;

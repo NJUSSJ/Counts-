@@ -6,7 +6,7 @@ import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.MathService;
 import com.seproject.service.blService.BasicBLService;
-import com.seproject.web.parameter.CallRewardParameter;
+import com.seproject.web.parameter.CalRewardParameter;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -147,11 +147,11 @@ public class UploadController {
         return path+"/"+missionName+"_"+i+suffix;
     }
 
-    @RequestMapping(value = "/callReward")
+    @RequestMapping(value = "/calReward")
     @ResponseBody
-    public double callReward(@RequestBody String callRewardParameter){
+    public double calReward(@RequestBody String callRewardParameter){
         JSONObject object=JSONObject.fromObject(callRewardParameter);
-        CallRewardParameter para=(CallRewardParameter) JSONObject.toBean(object,CallRewardParameter.class);
+        CalRewardParameter para=(CalRewardParameter) JSONObject.toBean(object,CalRewardParameter.class);
         int difficulty=para.getDifficulty();
         double base=0;
         switch (difficulty){
