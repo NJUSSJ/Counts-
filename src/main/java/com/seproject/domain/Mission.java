@@ -21,8 +21,8 @@ public class Mission {
     @Column(name="description")
     String description;
     @Column(name="workerLevel")
-    String workerLevel;
-    @Column(name="files")
+    String workerLevel;//接受工人的最低等级
+    @Column(name="files",columnDefinition = "blob")
     ArrayList<String> files=new ArrayList<String>();
     @Column(name="filenum")
     int fileNum;
@@ -30,16 +30,16 @@ public class Mission {
     double reward;
     @Column(name="maxnum")
     int maxNum;
-    @Column(name = "recommendlabel")
+    @Column(name = "recommendlabel",columnDefinition = "blob")
     private ArrayList<String> recommendLabel;//推荐类别列表
     @Searchable(varName = "requestorNumber")
     @Column(name="requestornumber")
     String requestorNumber;//发起者ID
     @Column(name="state")
-    int state;//0:未完成 1：完成 2:已经评估 3：已被发起者删除
+    int state;//0:未结束 1：结束但未评估 2:已评估 3：已被发起者删除
     @Column(name="difficulty")
     private int difficulty;
-    @Column(name="missionlabel")
+    @Column(name="missionlabel",columnDefinition = "blob")
     private ArrayList<String> missionLabel;//标签式任务的标签列表
     public Mission(){
 

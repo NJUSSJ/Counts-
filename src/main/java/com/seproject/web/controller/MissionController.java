@@ -2,12 +2,14 @@ package com.seproject.web.controller;
 
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.Collection;
+import com.seproject.domain.CollectionResult;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.MissionService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.MissionParameter;
+import com.seproject.web.parameter.RecommendParameter;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,7 @@ public class MissionController {
     BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
     BasicBLService<User> userService=Factory.getBasicBLService(new User());
     BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
+    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     MissionService missionService=new MissionService();
     @RequestMapping(value = "/MissionManage/Search")
     @ResponseBody
@@ -62,8 +65,8 @@ public class MissionController {
                 }
             }
         }else if(identity==2) {//工人
-            ArrayList<Collection> collectionList = collectionService.search("uid", SearchCategory.EQUAL, uid);
-            for (Collection each : collectionList) {
+            ArrayList<CollectionResult> collectionList = collectionResultBasicBLService.search("uid", SearchCategory.EQUAL, uid);
+            for (CollectionResult each : collectionList) {
                 if (each.getMid() == keyword) {
                     each.setState(3);
                     break;
@@ -74,8 +77,16 @@ public class MissionController {
     }
     @RequestMapping(value = "/MissionTake/Recommend")
     @ResponseBody
-    public String recommend(@RequestBody String phoneNumber){
-        ArrayList<Mission> missions=missionService.recommentSort(phoneNumber);
+    public String recommend(@RequestBody String recommendPara){
+        JSONObject object=JSONObject.fromObject(recommendPara);
+        RecommendParameter para=(RecommendParameter) JSONObject.toBean(object,RecommendParameter.class);
+        ArrayList<Mission> missions=missionService.recommendMission(para);
+        return toJsonString(missions);
+    }
+    @RequestMapping(value = "/MissionTake/RecommendByUser")
+    @ResponseBody
+    public String recommendByUser(@RequestBody String uid){
+        ArrayList<Mission> missions=missionService.recommendByAlikeUser(uid);
         return toJsonString(missions);
     }
     @RequestMapping(value = "/MissionCheck")
@@ -86,9 +97,9 @@ public class MissionController {
     public String check(@RequestBody String missionPara){
         MissionParameter para=toMissionPara(missionPara);
         String uid=para.getUid();
-        String mid=para.getKeyword();
-
-        return null;
+        String resultName=para.getKeyword();
+        CollectionResult result=collectionResultBasicBLService.findByKey(resultName);
+        return toJsonString(result);
     }
 
 
@@ -98,7 +109,9 @@ public class MissionController {
     @RequestMapping(value = "/MissionEvaluate/AutoEvaluate/{missionName}}")
     @ResponseBody
     public void autoEvaluate(String missionName){
+        missionService.autoEvaluate(missionName);
     }
+
     /*****************************************************/
     /**
      * Json字符串转MissionParamter对象

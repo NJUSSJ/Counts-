@@ -145,3 +145,28 @@ function addMissionToUser(missionName, userPhone) {
         });
 }
 
+<<<<<<< HEAD
+=======
+function addJudgeMissionToUser(missionName, userPhone) {
+    //alert(missionName);
+    //alert(userPhone);
+    var collectionData=new collection(userPhone,missionName);
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/addJudgeMissionToUser",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(collectionData),
+        success: function (returnData) {
+            if(returnData!="0"){
+                alert(returnData);
+            }
+        },
+        error: function () {
+
+        }
+    });
+}
+
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d

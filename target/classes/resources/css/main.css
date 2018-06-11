@@ -2097,16 +2097,37 @@
         input[type="submit"].special2,
         input[type="reset"].special2,
         .button.special2 {
+<<<<<<< HEAD
 
         			color: #fff !important;
+=======
+					font-size: 0.7em;
+					min-width: 14em;
+					padding: 0.5em 0;
+        			color: #1c2021 !important;
+					border-left-width: 0px;
+					border-right-width: 2px;
+					border-top-width: 0px;
+					border-bottom-width: 0px;
+					border-color: #442440;
+					margin: 2px;
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
         		}
 
         			input[type="button"].special2:hover,
         			input[type="submit"].special2:hover,
         			input[type="reset"].special2:hover,
         			.button.special2:hover {
+<<<<<<< HEAD
         				background: #96dad1 !important;
         				border-color: #96dad1 !important;
+=======
+						font-size: 0.74em;
+						min-width: 14em;
+						padding: 0.5em 0;
+
+        				border-right-color: #96dad1 !important;
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
         			}
 
 		input[type="button"].fit,
@@ -2125,6 +2146,18 @@
 			padding: 0.5em 0;
 		}
 
+<<<<<<< HEAD
+=======
+		input[type="button"].small2,
+        		input[type="submit"].small2,
+        		input[type="reset"].small2,
+        		.button.small2 {
+        			width: 20%;
+        		}
+
+
+
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
 /* Wrapper */
 
 	.wrapper {
