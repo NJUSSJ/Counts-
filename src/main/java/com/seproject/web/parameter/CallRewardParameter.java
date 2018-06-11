@@ -1,7 +1,7 @@
 package com.seproject.web.parameter;
 
 /**
- * 计算最高奖励值使用的参数
+ * 计算最高奖励值用参数
  */
 public class CallRewardParameter {
     private int difficulty;
