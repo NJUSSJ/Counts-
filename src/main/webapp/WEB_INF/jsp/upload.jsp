@@ -25,7 +25,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <link rel="stylesheet" type="text/css" href="dropZoneCSS/dropzone.css">
     <link rel="stylesheet" type="text/css" href="dropZoneCSS/basic.css">
     <script src="dropZoneJS/dropzone.js"></script>
-
     <style type="text/css">
         /*  修改日历控件类型 */
         ::-webkit-datetime-edit { border-color: #cccccc; }  /*控制编辑区域的*/
@@ -113,44 +112,67 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         }
                     </style>
                     <div class="row 50%">
-                        <div class="6u 12u(mobile)">
-                            <input  id="name" type="text" name="name" placeholder="任务名称"/>
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)">
-                            <input  id="reward" type="text" name="reward" placeholder="任务奖励：积分" />
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)">
-                            <input  id="maxNum" type="text" name="maxNum" placeholder="期望标注人数：人" />
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>任务名称：<input  id="name" type="text" name="name" />
+                            </span>
                         </div>
                     </div>
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">起始时间： </span><input  id="startTime" type="date" name="startTime"  />
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">截至时间： </span><input id="endTime" type="date" name="endTime"  />
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">限制工人最低等级： </span>
-                            <select id="workerLevel">
-                            <option value="1">Lev1</option>
-                            <option value="2">Lev2</option>
-                            <option value="3">Lev3</option>
-                            <option value="4">Lev4</option>
+                            <span>任务难度： </span>
+                            <select id="difficulty" >
+                                <option value="1">Lev1</option>
+                                <option value="2">Lev2</option>
+                                <option value="3">Lev3</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>任务类型： </span>
+                            <select id="type">
+                                <option value="1">标签式</option>
+                                <option value="2">非标签式</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>限制工人最低等级：
+                            <select id="workerLevel">
+                                <option value="1">Lev1</option>
+                                <option value="2">Lev2</option>
+                                <option value="3">Lev3</option>
+                                <option value="4">Lev4</option>
+                            </select></span>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>期望标注人数：<input  id="maxNum" type="text" name="maxNum" /></span>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>发布图片数量: </span>
+                            <input  id="picNum" type="text" name="picNum" />
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span class="datePicker">起始时间： <input  id="startTime" type="date" name="startTime"  /></span>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span class="datePicker">截至时间： <input id="endTime" type="date" name="endTime"  /></span>
                         </div>
                     </div>
 
@@ -159,7 +181,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <textarea  id="description" name="despription" placeholder="任务描述" rows="4"></textarea>
                         </div>
                     </div>
-                    <div class="row 50%">
+
+                    <div class="row">
+                        <div class="12u">
+                            <ul class="buttons">
+                                <li><input type="button" class="special" value="确认信息" id="ensure"/></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row 50%" onload=calMaxWorker(); >
                         <div class="12u">
                             <div class="dropzone" id="myDropzone">
                                 <div class="am-text-success dz-message" id="files">
@@ -167,11 +198,20 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 </div>
                             </div>
 
+
                             <script type="text/javascript">
 
                             </script>
                         </div>
                     </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" id="rewardBlank" align="left">
+                            <span>任务奖励：</span>
+                            <input  id="reward" type="text" name="reward" value= "0" disabled="disabled"/>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
@@ -206,6 +246,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
+<script src="js/upload1.js"></script>
+<script src="js/CalReward.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>
