@@ -145,6 +145,8 @@ function addMissionToUser(missionName, userPhone) {
         });
 }
 
+<<<<<<< HEAD
+=======
 function addJudgeMissionToUser(missionName, userPhone) {
     //alert(missionName);
     //alert(userPhone);
@@ -167,3 +169,4 @@ function addJudgeMissionToUser(missionName, userPhone) {
     });
 }
 
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d

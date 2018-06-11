@@ -4,7 +4,11 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.dialect">
+<<<<<<< HEAD
+			org.hibernate.dialect.MySQLDialect
+=======
 			com.seproject.dao.MySQL5DialectUTF8
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
 		</property>
 		<property name="hibernate.connection.driver_class">
 			com.mysql.jdbc.Driver
@@ -32,6 +36,11 @@
 		<property name="hbm2ddl.auto">
 			update
 		</property>
+<<<<<<< HEAD
+		<!-- List of XML mapping files -->
+
+		<mapping class="com.seproject.domain.testDomain.TestH"/>
+=======
 
 		<!-- List of XML mapping files
 		<mapping class="com.seproject.domain.CollectionResult"/>
@@ -40,6 +49,7 @@
 		<mapping class="com.seproject.domain.Mission"/>
 		<mapping class="com.seproject.domain.User"/>
 		<mapping class="com.seproject.domain.UserDate"/>-->
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
 
 	</session-factory>
 </hibernate-configuration>
