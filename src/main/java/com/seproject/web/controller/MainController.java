@@ -2,10 +2,7 @@ package com.seproject.web.controller;
 
 import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
-import com.seproject.domain.Collection;
-import com.seproject.domain.CollectionResult;
-import com.seproject.domain.Mission;
-import com.seproject.domain.SubMission;
+import com.seproject.domain.*;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
@@ -57,6 +54,21 @@ public class MainController {
         mainService.createCollection(uid,mid);
         subMissionBasicBLService.update(subMissions.get(index));
         return RM.SUCCESS.toString();
+    }
+
+    @RequestMapping(value = "/getGoldMission")
+    @ResponseBody
+    public String getGoldMission (String parameter){
+        JSONObject object=JSONObject.fromObject(parameter);
+        GetLabelMissionParameter para= (GetLabelMissionParameter) JSONObject.toBean(object,GetLabelMissionParameter.class);
+        String uid=para.getUid();
+        String mid=para.getMid();
+        boolean res=mainService.getGoldMission(mid,uid);
+       if(res==true) {
+           return RM.SUCCESS.toString();
+       }else{
+           return RM.FAILURE.toString();
+       }
     }
 
     private int getMinIndex(ArrayList<Integer> arr){

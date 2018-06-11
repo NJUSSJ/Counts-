@@ -1,5 +1,6 @@
 package com.seproject.service;
 
+import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ public class MainService {
     BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     public void  createSubMission(Mission m){
         int n0=m.getFileNum()%10;
         int n1=m.getFileNum();
@@ -70,5 +72,19 @@ public class MainService {
         collectionResultBasicBLService.add(collectionResult);
     }
 
+    public boolean getGoldMission(String mid,String uid){
+        Mission mission=missionBasicBLService.findByKey(mid);
+        String name=mission.getRequestorNumber();
+        ArrayList<GoldMission> goldMissions=new ArrayList<GoldMission>();
+        goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(int i=0;i<goldMissions.size();i++){
+            if(goldMissions.get(i).getUid().equals(name)){
+                goldMissions.get(i).setUid(uid);
+                goldMissionBasicBLService.update(goldMissions.get(i));
+                return true;
+            }
+        }
 
+        return false;
+    }
 }
