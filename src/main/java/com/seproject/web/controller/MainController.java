@@ -11,6 +11,7 @@ import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.GetLabelMissionParameter;
 import com.seproject.web.parameter.MissionParameter;
+import com.seproject.web.parameter.UpdateLabelMissionParameter;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,6 +60,30 @@ public class MainController {
         return RM.SUCCESS.toString();
     }
 
+    @RequestMapping(value = "/updateLabelMission")
+    @ResponseBody
+    /**
+     * 更新用户对任务的标注
+     */
+    public String updateLabelMission(String parameter){
+        JSONObject object=JSONObject.fromObject(parameter);
+        UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
+        String uid=para.getUid();
+        String mid=para.getMid();
+        ArrayList<Integer> list=para.getNums();
+        ArrayList<SubMission> subMission=subMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(int i=0;i<subMission.size();i++){
+            SubMission sub=subMission.get(i);
+            ArrayList<String> user=sub.getUid();
+            if(user.contains(uid)){
+                sub.getAnswers().set(user.indexOf(uid),list);
+                subMissionBasicBLService.update(sub);
+                break;
+            }
+        }
+        return RM.SUCCESS.toString();
+    }
+
     private int getMinIndex(ArrayList<Integer> arr){
         int min=100;
         int minIndex=0;
@@ -70,6 +95,7 @@ public class MainController {
         }
         return minIndex;
     }
-@Autowired
+
+    @Autowired
     public void setMainService(MainService mainService){this.mainService=mainService;}
 }
