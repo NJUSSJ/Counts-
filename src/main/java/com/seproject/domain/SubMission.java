@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 public class SubMission {
     //子任务
-      String keyID="";//mid+uid
+      String keyID="";//mid+seed
       String mid=""; //任务ID
-      String uid="";
+      ArrayList<String> uid=new ArrayList<String>();
       int seed=0;//种子
-      ArrayList<Integer> answers=new ArrayList<Integer>();
+      ArrayList<ArrayList<Integer>> answers=new ArrayList<ArrayList<Integer>>();
       ArrayList<Integer> goldIndex=new ArrayList<Integer>();//金标索引
+
+
+
+    public SubMission() {
+    }
 
     public String getKeyID() {
         return keyID;
-    }
-
-    public SubMission() {
     }
 
     public void setKeyID(String keyID) {
@@ -30,11 +32,11 @@ public class SubMission {
         this.mid = mid;
     }
 
-    public String getUid() {
+    public ArrayList<String> getUid() {
         return uid;
     }
 
-    public void setUid(String uid) {
+    public void setUid(ArrayList<String> uid) {
         this.uid = uid;
     }
 
@@ -46,11 +48,11 @@ public class SubMission {
         this.seed = seed;
     }
 
-    public ArrayList<Integer> getAnswers() {
+    public ArrayList<ArrayList<Integer>> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(ArrayList<Integer> answers) {
+    public void setAnswers(ArrayList<ArrayList<Integer>> answers) {
         this.answers = answers;
     }
 
