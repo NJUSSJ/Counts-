@@ -6,6 +6,8 @@ var userId;
 var indexForSample=0;
 var lastIndex;
 var picName;
+<<<<<<< HEAD
+=======
 var grade;
 
 
@@ -71,6 +73,7 @@ var scale = function (btn,bar,title){
 new scale('btn','bar','title'); //实例化一个拖拽
 
 
+>>>>>>> bb00a6b27191e6aa8a0c0946e9726f17e044643d
 function loadDetails(picNum) {
     /*
     加载任务图片

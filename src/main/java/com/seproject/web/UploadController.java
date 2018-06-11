@@ -1,9 +1,13 @@
 package com.seproject.web;
 
+import com.seproject.common.Constant;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
+import com.seproject.service.MathService;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.parameter.CalRewardParameter;
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ResourceUtils;
@@ -142,4 +146,26 @@ public class UploadController {
 
         return path+"/"+missionName+"_"+i+suffix;
     }
+
+    @RequestMapping(value = "/calReward")
+    @ResponseBody
+    public double calReward(@RequestBody String callRewardParameter){
+        String str = callRewardParameter.replace('&', ',');
+        JSONObject object= JSONObject.fromObject("{" + str + "}");
+        CalRewardParameter para=(CalRewardParameter) JSONObject.toBean(object,CalRewardParameter.class);
+        int difficulty=para.getDifficulty();
+        double base=0;
+        switch (difficulty){
+            case 1:base=1;break;
+            case 2:base=1.1;break;
+            default:base=1.2;
+        }
+        User user=userBasicBLService.findByKey(para.getUid());
+        int level=user.getLevel();
+        double p=1+level*0.05;
+        double discount=0.9-level*Constant.DISCOUNT_ON_LEVEL;//这句话存疑
+        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxNum()*discount;
+    }
+
+
 }

@@ -10,5 +10,9 @@
       <user-name>root</user-name>
       <introspection-schemas>*:sedb</introspection-schemas>
     </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate [2]" uuid="0814c401-4f7a-4a65-845e-6fe6e8f238f1">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:sedb</introspection-schemas>
+    </data-source>
   </component>
 </project>

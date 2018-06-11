@@ -10,6 +10,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/Sign.js"></script>
+    <script src="js/Message.js"></script>
 
     <style type="text/css">
         .collection{
@@ -29,6 +31,13 @@
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
                 <li class="submenu" id="extra">
                     <a id="menuTitle"></a>
+                </li>
+                <li class="submenu">
+                    <a>任务</a>
+                    <ul>
+                        <li><a onclick="sign(${phoneNumber})">签到</a></li>
+                        <li><a href="<c:url value="message.html?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}"/>">消息</a></li>
+                    </ul>
                 </li>
                 <style type="text/css">
                     #extra{

@@ -53,7 +53,9 @@ var myDropzone = new Dropzone("#myDropzone", {
                 expectedNum: document.getElementById("maxNum").value,
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
-                requestorPhone: requestorPhone
+                requestorPhone: requestorPhone,
+                tagNames: document.getElementById("tagNames").value,
+                type: document.getElementById("type").value
             };
             indexPic++;
         });
@@ -69,7 +71,6 @@ var myDropzone = new Dropzone("#myDropzone", {
     dictCancelUpload: "取消"
 });
 
-
 function veriInput() {
     var name=document.getElementById("name").value;
     var startTime=document.getElementById("startTime").value;
@@ -79,9 +80,7 @@ function veriInput() {
     var expectedNum=document.getElementById("maxNum").value;
     var reward=document.getElementById("reward").value;
 
-
-
-    if(name==null||name==""){
+    if(name==null||name===""){
         alert("请填写任务名称！");
         return false;
     }
