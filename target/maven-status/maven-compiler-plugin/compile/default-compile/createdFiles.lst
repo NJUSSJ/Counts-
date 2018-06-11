@@ -12,7 +12,6 @@ com/seproject/service/MissionService.class
 com/seproject/common/RM.class
 com/seproject/domain/statisticsData/WorkerData.class
 com/seproject/domain/statisticsData/StarterData.class
-com/seproject/web/parameter/CallRewardParameter.class
 com/seproject/Application.class
 com/seproject/web/controller/OtherController.class
 com/seproject/domain/testDomain/TestH.class
@@ -44,6 +43,7 @@ com/seproject/service/MessageService.class
 com/seproject/service/InitData.class
 com/seproject/common/Constant.class
 com/seproject/web/parameter/PersonalParameter.class
+com/seproject/web/parameter/CalRewardParameter.class
 com/seproject/domain/testDomain/TestDomain.class
 com/seproject/web/controller/UserController.class
 com/seproject/service/MathService.class
