@@ -5,15 +5,20 @@ var phoneNumber = "";
 var ensureBtn = document.getElementById("ensure");
 var typeBtn = document.getElementById("type");
 
-function loadPhoneNumber(_phoneNumber){
+function loadPhone(_phoneNumber){
+    alert(_phoneNumber);
     phoneNumber = _phoneNumber;
 }
+
 typeBtn.addEventListener("click", function () {
     if (typeBtn.value === "1"){
         txt = "<span>标签名称（不同标签请用空格隔开）：<input  type=\"text\"/></span>";
-        txt = document.getElementById("tagNames").innerHTML;
+        document.getElementById("tagNames").innerHTML = txt;
+    }else{
+        document.getElementById("tagNames").innerHTML = "";
     }
-})
+});
+
 ensureBtn.addEventListener("click", function () {
     var difficulty = parseInt(document.getElementById("difficulty").value);
     var maxWorker = parseInt(document.getElementById("maxNum").value);
@@ -50,5 +55,8 @@ ensureBtn.addEventListener("click", function () {
         document.getElementById("reward").value = reward.toFixed(2);
     }*/
 
+    var txt2 = "<span>任务奖励：</span>\n" +
+        "      <input  id=\"reward\" type=\"text\" name=\"reward\" value= \"0\" disabled=\"disabled\"/>";
+    document.getElementById("rewardBlank").innerHTML = txt2;
     document.getElementById("reward").value = reward.toFixed(2);
 });

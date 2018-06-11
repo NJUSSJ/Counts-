@@ -51,7 +51,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         }
     </style>
 </head>
-<body class="contact" onload="load(${requestScope.requestorNum})">
+<body class="contact" onload="load(${requestScope.requestorNum}); loadPhone(${requestScope.requestorNum});">
 
 <div id="page-wrapper">
 
@@ -100,7 +100,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <!-- Content -->
             <div class="content">
                 <form action="/uploadFinish.html" method="post" id="formID">
-                    <div class="row 50%" id="phoneNumber" onload=loadPhoneNumber(${requestScope.phoneNumber});>
+                    <div class="row 50%" id="phoneNumber">
                         <div class="6u 12u(mobile)" >
                             <input type="text" name="phoneNumber" id="actualNumber" />
                         </div>
@@ -120,7 +120,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span>任务类型： </span>
+                            <span>图片类型： </span>
                             <select id="missionType" >
                                 <option value="1">人物</option>
                                 <option value="2">动物</option>
@@ -128,6 +128,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                                 <option value="4">卡通动画</option>
                                 <option value="5">交通工具</option>
                                 <option value="6">生活用品</option>
+                                <option value="7">其他</option>
                             </select>
                         </div>
                     </div>
@@ -154,8 +155,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
-                        <div class="6u 12u(mobile)" align="left" id="tagNames">
-
+                        <div class="12u" align="left" id="tagNames">
                         </div>
                     </div>
 
@@ -204,6 +204,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
+                        <div class="6u 12u(mobile)" id="rewardBlank" align="left">
+                            <!-- <span>任务奖励：</span>
+                            <input  id="reward" type="text" name="reward" value= "0" disabled="disabled"/> -->
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
                         <div class="12u">
                             <div class="dropzone" id="myDropzone">
                                 <div class="am-text-success dz-message" id="files">
@@ -215,13 +222,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <script type="text/javascript">
 
                             </script>
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" id="rewardBlank" align="left">
-                            <span>任务奖励：</span>
-                            <input  id="reward" type="text" name="reward" value= "0" disabled="disabled"/>
                         </div>
                     </div>
 
@@ -259,8 +259,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
-<script src="js/upload1.js"></script>
-<script src="js/CalReward.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>
@@ -270,7 +268,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
 <script src="js/upload1.js"></script>
-
+<script src="js/CalReward.js"></script>
 
 
 </body>

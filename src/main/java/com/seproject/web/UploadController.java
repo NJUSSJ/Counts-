@@ -150,7 +150,8 @@ public class UploadController {
     @RequestMapping(value = "/calReward")
     @ResponseBody
     public double calReward(@RequestBody String callRewardParameter){
-        JSONObject object=JSONObject.fromObject(callRewardParameter);
+        String str = callRewardParameter.replace('&', ',');
+        JSONObject object= JSONObject.fromObject("{" + str + "}");
         CalRewardParameter para=(CalRewardParameter) JSONObject.toBean(object,CalRewardParameter.class);
         int difficulty=para.getDifficulty();
         double base=0;
