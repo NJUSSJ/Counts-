@@ -116,9 +116,16 @@
                     <ul class="buttons" id="missionLabel">
                         <li><a href="#" class="button special" id="123"/> 测试标签</li>
                         <script>
+                            var clicked;
                             document.getElementById("123").addEventListener("click", function () {
-                                document.getElementById("123")//改背景颜色
-                            })
+                                clicked = !clicked;
+                                if(clicked) {
+                                    document.getElementById("123").style = "background-color: #44BB8C";//改背景颜色
+
+                                }else{
+                                    document.getElementById("123").style = "";
+                                }
+                            });
                         </script>
                     </ul>
                         <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->

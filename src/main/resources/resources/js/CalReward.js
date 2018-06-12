@@ -3,19 +3,19 @@ var reward = 0;
 var txt = "";
 var phoneNumber = "";
 var ensureBtn = document.getElementById("ensure");
-var typeBtn = document.getElementById("type");
+var tagTypeBtn = document.getElementById("tagType");
 
 function loadPhone(_phoneNumber){
     alert(_phoneNumber);
     phoneNumber = _phoneNumber;
 }
 
-typeBtn.addEventListener("click", function () {
-    if (typeBtn.value === "1"){
+tagTypeBtn.addEventListener("click", function () {
+    if (tagTypeBtn.value === "1"){
         txt = "<span>标签名称（不同标签请用空格隔开）：<input  type=\"text\"/></span>";
-        document.getElementById("tagNames").innerHTML = txt;
+        document.getElementById("missionLabel").innerHTML = txt;
     }else{
-        document.getElementById("tagNames").innerHTML = "";
+        document.getElementById("missionLabel").innerHTML = "";
     }
 });
 
