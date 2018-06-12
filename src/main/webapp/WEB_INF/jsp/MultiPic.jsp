@@ -52,17 +52,17 @@
             </div>
 
             <div class="6u 12u(narrower)">
-                <span style="display: block;margin-top: 5px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
+                <span style="display: block;margin-top: 8px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
+                <span style="display: block;margin-top: 8px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>起始时间：</span><span id="startTime">${requestScope.startTime}</span></span>
+                <span style="display: block;margin-top: 8px"><span>起始时间：</span><span id="startTime">${requestScope.startTime}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
+                <span style="display: block;margin-top: 8px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
+                <span style="display: block;margin-top: 8px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
+                <span style="display: block;margin-top: 8px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
             </div>
 
         </div>
