@@ -23,7 +23,7 @@
                     <a id="addMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">标注该任务集</a>
                 </li>
                 <li class="submenu">
-                    <a id="judgeMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">评估该任务集</a>
+                    <a id="judgeMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addJudgeMissionToUser(${requestScope.collection},${requestScope.userPhone}) )">评估该任务集</a>
                 </li>
                 <li><a href="/" class="button special">登出</a></li>
             </ul>
@@ -47,29 +47,25 @@
     <!-- Details -->
     <section class="wrapper style4 container">
         <div class="row">
-            <div class="6u$ 12u$(mobile)">
-                <span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span>
+            <div class="6u 12u(narrower)">
+
             </div>
-            <div class="6u 12u$(mobile)">
-                <span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span>
+
+            <div class="6u 12u(narrower)">
+                <span style="display: block;margin-top: 5px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>起始时间：</span><span id="startTime">${requestScope.startTime}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
             </div>
-            <div class="12u$ 12u$(mobile)">
-                <span>起始时间：</span><span id="startTime">${requestScope.startTime}</span>
-            </div>
-            <div class="12u 12u$(mobile)">
-                <span>截止时间：</span><span id="endTime">${requestScope.endTime}</span>
-            </div>
-            <div class="12u$">
-                <span>工人最低等级：</span><span id="level">${requestScope.Level}</span>
-            </div>
-            <div class="12u$ 12u$(mobile)">
-                <span>任务描述：</span><span id="missionDescription">${requestScope.description}</span>
-            </div>
+
         </div>
-    </section>
-
-    <section class="wrapper style1 container special" id="pictureSection">
-
     </section>
 
     <p id="info"></p>

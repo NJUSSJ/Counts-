@@ -48,3 +48,25 @@ function hideAllBlock() {
     document.getElementById("userManagement").style.display = "none";
     document.getElementById("missionManagement").style.display = "none";
 }
+
+function searchUser(info) {
+
+}
+
+function searchUser() {
+    var info = document.getElementsByClassName("userSearch");
+    $.ajax({
+        async: false,
+        type :"POST",
+        url: "",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(info),
+        success: function (returnData) {
+            alert(returnData);
+        },
+        error: function () {
+            alert("fail");
+        }
+    });
+}

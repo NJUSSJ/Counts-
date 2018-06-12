@@ -131,6 +131,10 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     public ArrayList<T> search(String keyName, SearchCategory category, String keyValue) {
         ArrayList<T> arr = new ArrayList<T>();
         ArrayList<T> objects = getAllObjects();
+        if(objects==null||objects.size()<=0){
+            return arr;
+        }
+        System.out.println("size:"+objects.size());
         int searchId = BasicUtilService.getKeyID(type, keyName);
         for (int i = 0; i < objects.size(); i++) {
             String value = BasicUtilService.getKeyValue(objects.get(i), searchId);

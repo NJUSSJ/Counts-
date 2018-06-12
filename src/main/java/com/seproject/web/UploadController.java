@@ -160,6 +160,7 @@ public class UploadController {
             case 2:base=1.1;break;
             default:base=1.2;
         }
+        System.out.println("uid"+para.getUid());
         User user=userBasicBLService.findByKey(para.getUid());
         int level=user.getLevel();
         double p=1+level*0.05;

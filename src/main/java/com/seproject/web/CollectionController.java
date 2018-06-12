@@ -97,6 +97,8 @@ public class CollectionController {
         int picNum=tmpMission.getFileNum();
         collection.setKeyId(mid+uid);
         CollectionResult collectionResult=new CollectionResult(collection);
+        collectionResult.setUid(uid);
+        collectionResult.setMid(mid);
         collectionResult.setState(0);
         ArrayList<String> tmpArray=new ArrayList<String>();
         for(int i=0;i<picNum;i++){
