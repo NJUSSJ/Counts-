@@ -36,9 +36,9 @@
 
 		<!-- List of XML mapping files
 		<mapping class="com.seproject.domain.CollectionResult"/>
+		<mapping class="com.seproject.domain.Mission"/>
 		<mapping class="com.seproject.domain.testDomain.TestH"/>
 		<mapping class="com.seproject.domain.CollectionResult"/>
-		<mapping class="com.seproject.domain.Mission"/>
 		<mapping class="com.seproject.domain.User"/>
 		<mapping class="com.seproject.domain.UserDate"/>-->
 

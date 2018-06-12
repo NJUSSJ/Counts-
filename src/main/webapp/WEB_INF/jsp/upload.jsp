@@ -121,7 +121,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
                             <span>图片类型： </span>
-                            <select id="missionType" >
+                            <select id="picType" >
                                 <option value="1">人物</option>
                                 <option value="2">动物</option>
                                 <option value="3">风景</option>
@@ -147,7 +147,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
                             <span>任务类型： </span>
-                            <select id="type">
+                            <select id="tagType">
                                 <option value="1">标签式</option>
                                 <option value="2">非标签式</option>
                             </select>
@@ -155,7 +155,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                     <div class="row 50%">
-                        <div class="12u" align="left" id="tagNames">
+                        <div class="12u" align="left" id="missionLabel">
                         </div>
                     </div>
 

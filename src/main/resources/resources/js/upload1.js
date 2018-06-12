@@ -54,8 +54,10 @@ var myDropzone = new Dropzone("#myDropzone", {
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
-                tagNames: document.getElementById("tagNames").value,
-                type: document.getElementById("type").value
+                difficulty: document.getElementById("difficulty").value,
+                missionLabel: document.getElementById("missionLabel").value,
+                tagType: document.getElementById("tagType").value,
+                picType: document.getElementById("picType").value
             };
             indexPic++;
         });

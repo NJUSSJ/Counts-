@@ -10,6 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/Sign.js"></script>
     <script src="js/Message.js"></script>
 
@@ -89,10 +90,14 @@
             <div class="content">
                 <section>
                     <a href="#" class="image featured "><img src="images/timg.jpg" alt="" /></a>
-                    <header>
-                        <h3>以下为一段说明文字</h3>
-                    </header>
-                    <p>众包标注</p>
+
+                    <div class="search d1">
+                        <form>
+                            <input type="text" placeholder="搜索从这里开始...">
+                            <button type="submit"></button>
+                        </form>
+                    </div>
+
                 </section>
             </div>
 
