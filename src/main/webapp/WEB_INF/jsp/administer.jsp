@@ -35,8 +35,24 @@
             height: 40px;
             width: 250px;
             margin-right: 5px;
+            line-height: 40px;
         }
         #userSearchBt{
+            border: solid 1px;
+            color: inherit;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.8em;
+            font-weight: 900;
+            letter-spacing: 2px;
+            height: 40px;
+            width: 100px;
+            line-height: 40px;
+            padding: 0 0.75em 0.5em 0.75em;
+            text-align: -webkit-center;
+            text-decoration: none;
+        }
+        #missionSearchBt{
             border: solid 1px;
             color: inherit;
             cursor: pointer;
@@ -86,7 +102,7 @@
             <div class="2u 12u(narrow)" align="center" id="functionBar">
                 <ul>
                     <li><a href="#" class="button special2" id="userManagementButton" onclick="userManagement()">用户管理</a></li>
-                    <li><a href="#" class="button special2">任务管理</a></li>
+                    <li><a href="#" class="button special2" id="missionManagementButton" onclick="missionManagement()">任务管理</a></li>
                     <li><a href="#" class="button special2">消息系统</a></li>
                     <li><a href="#" class="button special2">系统近况</a></li>
                 </ul>
@@ -94,7 +110,7 @@
             <div class="9u 12u(narrow)" align="left" id="userManagement" style="display: none;padding-top: 0px;padding-left: 90px">
                 <form>
                     <input type="search" placeholder="用户名/手机号码" class="userSearch">
-                    <a id="userSearchBt">搜索</a>
+                    <a id="userSearchBt" onclick="searchUser()">搜索</a>
                 </form>
 
                 <table id="userTable" class="default" style="margin-top: 20px">
@@ -103,6 +119,23 @@
                         <td>用户名</td>
                         <td>类别</td>
                         <td>等级</td>
+                        <td>状态</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="9u 12u(narrow)" align="left" id="missionManagement" style="display: none;padding-top: 0px;padding-left: 90px">
+                <form>
+                    <input type="search" placeholder="任务名" class="userSearch">
+                    <a id="missionSearchBt">搜索</a>
+                </form>
+
+                <table id="missionTable" class="default" style="margin-top: 20px">
+                    <tr>
+                        <td>任务名</td>
+                        <td>任务类型</td>
+                        <td>发起者</td>
+                        <td>状态</td>
                     </tr>
                 </table>
             </div>
