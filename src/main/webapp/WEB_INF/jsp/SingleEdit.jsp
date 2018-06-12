@@ -59,7 +59,7 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone})">
+<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone}); loadTagType(${requestScope.tagType}, ${requestScope.missionLabel});">
 <div id="page-wrapper">
     <!-- Header -->
     <header id="header">
@@ -100,7 +100,7 @@
 
                 <!-- Tool bar -->
                 <div class="sidebar" align="left">
-                    <ul class="picturetools">
+                    <ul class="picturetools" id="picTools">
                         <li><img src="images/graphics_editor.svg" align="center" id="RectTool"></li>
                         <li><img src="images/pen.svg" align="center" id="CurlTool"></li>
                         <li><img src="images/note.svg" align="center" id="OverallTag"></li>
@@ -113,6 +113,14 @@
 
                 <!-- Tag Info-->
                 <div class="tag_info" id="textareaPlace" style="overflow: auto">
+                    <ul class="buttons" id="missionLabel">
+                        <li><a href="#" class="button special" id="123"/> 测试标签</li>
+                        <script>
+                            document.getElementById("123").addEventListener("click", function () {
+                                document.getElementById("123")//改背景颜色
+                            })
+                        </script>
+                    </ul>
                         <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->
                         <!-- <a href="#" class="button special">保存</a> -->
                 </div>
@@ -202,6 +210,7 @@
 
 </footer>
 <!-- Scripts -->
+<script src="js/loadTagType.js"></script>
 <script src="js/singleEdit.js"></script>
 <script src="js/tagTool.js"></script>
 <script src="js/jquery.min.js"></script>

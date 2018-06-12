@@ -36,6 +36,10 @@ public class MultiController {
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
+        int tagType = missionBasicBLService.findByKey(collection).getTagType();
+        model.addObject("tagType", tagType);
+        ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
+        model.addObject("missionLabel", missionLabel);
         return model;
     }
 

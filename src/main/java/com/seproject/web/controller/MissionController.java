@@ -106,7 +106,7 @@ public class MissionController {
     /**
      *自动评估（标签式）任务
      */
-    @RequestMapping(value = "/MissionEvaluate/AutoEvaluate/{missionName}}")
+    @RequestMapping(value = "/MissionEvaluate/AutoEvaluate/{missionName}")
     @ResponseBody
     public void autoEvaluate(String missionName){
         missionService.autoEvaluate(missionName);
