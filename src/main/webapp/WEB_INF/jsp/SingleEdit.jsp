@@ -114,19 +114,7 @@
                 <!-- Tag Info-->
                 <div class="tag_info" id="textareaPlace" style="overflow: auto">
                     <ul class="buttons" id="missionLabel">
-                        <li><a href="#" class="button special" id="123"/> 测试标签</li>
-                        <script>
-                            var clicked;
-                            document.getElementById("123").addEventListener("click", function () {
-                                clicked = !clicked;
-                                if(clicked) {
-                                    document.getElementById("123").style = "background-color: #44BB8C";//改背景颜色
 
-                                }else{
-                                    document.getElementById("123").style = "";
-                                }
-                            });
-                        </script>
                     </ul>
                         <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->
                         <!-- <a href="#" class="button special">保存</a> -->
@@ -217,7 +205,7 @@
 
 </footer>
 <!-- Scripts -->
-<script src="js/loadTagType.js"></script>
+<script src="js/TagType.js"></script>
 <script src="js/singleEdit.js"></script>
 <script src="js/tagTool.js"></script>
 <script src="js/jquery.min.js"></script>

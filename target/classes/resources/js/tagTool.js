@@ -65,7 +65,7 @@ nextPage.addEventListener("click", function more() {
 })
 
 //data
-function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list) {
+function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list,missionLabel) {
     this.sentids = sentids;
     this.imgid = imgid;
     this.sentences = sentences;
@@ -75,6 +75,7 @@ function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedhei
     this.fixedwidth = fixedwidth;
     this.fixedheight = fixedheight;
     this.list = list;
+    this.missionLabel = missionLabel;
 }
 
 //imgid 格式为 collectionName + picName + phoneNumber
@@ -88,8 +89,11 @@ function getSentIds() {
     return sentids;
 }
 
+function getMissionLabel() {
+    return clickedMissionLabel;
+}
 function saveData() {
-    var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
+    var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray,getMissionLabel());
     ImageJson(imgData);
     //alert("已储存本图片信息");
 }
