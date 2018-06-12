@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 304a8f655a76d0bda07efa3fe96c2d2bd93fbd32
 (function($) {
 
 	var settings = {

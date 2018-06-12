@@ -190,4 +190,8 @@ public class ReviewService {
     /**
      *  private ArrayList<Double> calculateQ (String sampleID, ArrayList<Double> quality)
      */
+    /**
+     * calcAnswer 用于根据投票计算问题的正确答案
+     */
+
 }
