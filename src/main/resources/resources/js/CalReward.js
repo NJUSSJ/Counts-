@@ -38,7 +38,7 @@ ensureBtn.addEventListener("click", function () {
         rewardBase = 0.2;
     }
 */
-    alert(difficulty + " "  + maxWorkerNum+ " " + phoneNumber);
+    //alert(difficulty + " "  + maxWorkerNum+ " " + phoneNumber);
 
     $.ajax({
         async: false,
@@ -48,8 +48,8 @@ ensureBtn.addEventListener("click", function () {
         dataType: "json",
         data: {"difficulty": difficulty, "maxWorker": maxWorkerNum, "uid": phoneNumber},
         success: function (returnData){
-            //reward=returnData;
-            alert(returnData);
+            reward=returnData;
+            //alert(returnData);
         },
         error: function(){
             alert("fail14")

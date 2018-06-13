@@ -30,8 +30,6 @@ public class Mission {
     int fileNum;
     @Column(name="reward")
     double reward;
-    @Column(name="maxnum")
-    int maxNum;
     @Column(name = "recommendlabel",columnDefinition = "blob")
     private ArrayList<String> recommendLabel;//推荐类别列表
     @Searchable(varName = "requestorNumber")
@@ -138,14 +136,6 @@ public class Mission {
 
     public double getReward(){
         return this.reward;
-    }
-
-    public void setMaxNum(int maxNum){
-        this.maxNum=maxNum;
-    }
-
-    public int getMaxNum(){
-        return this.maxNum;
     }
 
     public void setRequestorNumber(String requestorNumber){

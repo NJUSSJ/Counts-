@@ -50,7 +50,7 @@ var myDropzone = new Dropzone("#myDropzone", {
                 endTime: document.getElementById("endTime").value,
                 workLevel: document.getElementById("workerLevel").value,
                 description: document.getElementById("description").value,
-                expectedNum: document.getElementById("maxNum").value,
+                maxWorkerNum: document.getElementById("maxWorkerNum").value,
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
@@ -79,7 +79,7 @@ function veriInput() {
     var endTime=document.getElementById("endTime").value;
     var workLevel=document.getElementById("workerLevel").value;
     var description=document.getElementById("description").value;
-    var expectedNum=document.getElementById("maxNum").value;
+    var maxWorkerNum=document.getElementById("maxWorkerNum").value;
     var reward=document.getElementById("reward").value;
 
     if(name==null||name===""){
@@ -124,7 +124,7 @@ function veriInput() {
         alert("请输入任务描述!");
         return false;
     }
-    if(expectedNum==null||expectedNum==""||isNaN(expectedNum)){
+    if(maxWorkerNum==null||maxWorkerNum==""||isNaN(maxWorkerNum)){
         alert("请设置期待标注人数！");
         return false;
     }

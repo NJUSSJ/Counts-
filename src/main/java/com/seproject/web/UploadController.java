@@ -65,7 +65,6 @@ public class UploadController {
             String workLevel=request.getParameter("workLevel");
             String requestorPhone=request.getParameter("requestorPhone");
             double reward=Double.parseDouble(request.getParameter("reward"));
-            int expectedNum=Integer.parseInt(request.getParameter("expectedNum"));
             int difficulty = Integer.parseInt(request.getParameter("difficulty"));
             String picType = request.getParameter("picType");
             int tagType = Integer.parseInt(request.getParameter("tagType"));
@@ -84,7 +83,7 @@ public class UploadController {
             tmpMission.setEndTime(endTime);
             tmpMission.setDescription(description);
             tmpMission.setReward(reward);
-            tmpMission.setMaxNum(expectedNum);
+            tmpMission.setMaxWorkerNum(maxWorkerNum);
             tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
             tmpMission.setState(0);
