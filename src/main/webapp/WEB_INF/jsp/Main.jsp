@@ -92,15 +92,15 @@
                     <a href="#" class="image featured "><img src="images/timg.jpg" alt="" /></a>
 
                     <div class="search d1">
-                        <form action="/MissionManage/Search" method="get" id="searchFromId">
-                            <select>
+                        <form id="searchFromId">
+                            <select id="searchType">
                                 <option value="all">全部</option>
                                 <option value="notEnded">未截止</option>
                                 <option value="ended">已截止</option>
                                 <option value="missionName">任务名</option>
                                 <option value="requester">发布者</option>
                             </select>
-                            <input type="text" placeholder="搜索从这里开始...">
+                            <input type="text" placeholder="搜索从这里开始..." id="searchContent">
                             <button type="submit" id="searchBtn"></button>
                         </form>
                     </div>

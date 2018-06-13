@@ -6,7 +6,7 @@ var ensureBtn = document.getElementById("ensure");
 var tagTypeBtn = document.getElementById("tagType");
 
 function loadPhone(_phoneNumber){
-    alert(_phoneNumber);
+    //alert(_phoneNumber);
     phoneNumber = _phoneNumber;
 }
 
