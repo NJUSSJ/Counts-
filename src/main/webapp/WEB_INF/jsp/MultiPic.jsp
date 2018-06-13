@@ -10,6 +10,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
 </head>
 
 <body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userCategory},${requestScope.Tagable},${requestScope.userPhone},${requestScope.picNum})">
@@ -35,33 +37,41 @@
 <!-- Main -->
 <article id="main">
 
-    <header class="special container">
-        <span class="icon fa-bar-chart-o"></span>
-        <h2>当前任务集--<strong id="strong">${requestScope.collection}</strong></h2>
-            <br/>
-    </header>
-
-
-
-
     <!-- Details -->
     <section class="wrapper style4 container">
         <div class="row">
             <div class="6u 12u(narrower)">
-
+                <div style="border-right-color: #333333;border-width: 5px;align-content: right">
+                    <img id="cover" class="image featured" width="400px" height="300px">
+                </div>
             </div>
 
-            <div class="6u 12u(narrower)">
-                <span style="display: block;margin-top: 8px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
+            <div class="3u 12u(narrower)">
+                <span style="display: block"><span>当前任务：</span><span id="missionName">${requestScope.collection}</span></span>
 
-                <span style="display: block;margin-top: 8px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
+                <span style="display: block;margin-top: 9px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
 
-                <span style="display: block;margin-top: 8px"><span>起始时间：</span><span id="startTime">${requestScope.startTime}</span></span>
+                <span style="display: block;margin-top: 9px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
 
-                <span style="display: block;margin-top: 8px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
 
-                <span style="display: block;margin-top: 8px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
+                <span style="display: block;margin-top: 9px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
 
+                <span style="display: block;margin-top: 9px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
+
+                <span style="display: block;margin-top: 9px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
+            </div>
+
+            <div class="3u 12u(narrower)">
+                <section>
+                    <div class="row">
+                        <div id="chart1" style="width: 300px;height:300px;">
+
+<<<<<<< HEAD
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="js/missionRest.js"></script>
+                </section>
+=======
                 <span style="display: block;margin-top: 8px"><span>工人最多数量：</span><span id="maxWorkerNum">${requestScope.maxWorkerNum}</span></span>
 
                 <span style="display: block;margin-top: 8px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
@@ -80,6 +90,7 @@
                         document.getElementById("missionLabel").value = content;
                     }
                 </script>
+>>>>>>> bd8fbd97900c09222137254a5ad69876f154a707
             </div>
 
         </div>
@@ -107,7 +118,7 @@
 </footer>
 
 <!-- Scripts -->
-<script src="js/multipic1.js"></script>
+<script src="js/multipic.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>

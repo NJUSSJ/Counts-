@@ -77,10 +77,7 @@ function setCollection(){
         img1.className="collection";
         img1.alt="";
         a1_1.appendChild(img1);
-        var p1=document.createElement("p");
-        var missionDescription=missionNames[i*3].substring(missionNames[i*3].indexOf("^")+1,missionNames[i*3].length);
 
-        p1.innerHTML=missionDescription;
         var footer1=document.createElement("footer");
         var ul1=document.createElement("ul");
         ul1.className="buttons";
@@ -94,7 +91,6 @@ function setCollection(){
         footer1.appendChild(ul1);
         section1.appendChild(header1);
         section1.appendChild(a1_1);
-        section1.appendChild(p1);
         section1.appendChild(footer1);
         div1.appendChild(section1);
         rowDiv.appendChild(div1);
@@ -114,10 +110,7 @@ function setCollection(){
         img2.className="collection";
         img2.alt="";
         a2_1.appendChild(img2);
-        var p2=document.createElement("p");
-        var missionDescription=missionNames[i*3+1].substring(missionNames[i*3+1].indexOf("^")+1,missionNames[i*3+1].length);
 
-        p2.innerHTML=missionDescription;
         var footer2=document.createElement("footer");
         var ul2=document.createElement("ul");
         ul2.className="buttons";
@@ -131,7 +124,7 @@ function setCollection(){
         footer2.appendChild(ul2);
         section2.appendChild(header2);
         section2.appendChild(a2_1);
-        section2.appendChild(p2);
+
         section2.appendChild(footer2);
         div2.appendChild(section2);
         rowDiv.appendChild(div2);
@@ -155,9 +148,7 @@ function setCollection(){
         img3.className="collection";
         img3.alt="";
         a3_1.appendChild(img3);
-        var p3=document.createElement("p");
-        var missionDescription=missionNames[i*3+2].substring(missionNames[i*3+2].indexOf("^")+1,missionNames[i*3+2].length);
-        p3.innerHTML=missionDescription;
+
         var footer3=document.createElement("footer");
         var ul3=document.createElement("ul");
         ul3.className="buttons";
@@ -171,7 +162,7 @@ function setCollection(){
         footer3.appendChild(ul3);
         section3.appendChild(header3);
         section3.appendChild(a3_1);
-        section3.appendChild(p3);
+
         section3.appendChild(footer3);
         div3.appendChild(section3);
         rowDiv.appendChild(div3);
@@ -197,10 +188,8 @@ function setCollection(){
         img1.className="collection";
         img1.alt="";
         a1_1.appendChild(img1);
-        var p1=document.createElement("p");
-        var missionDescription=missionNames[rowNum*3+i].substring(missionNames[rowNum*3+i].indexOf("^")+1,missionNames[rowNum*3+i].length);
 
-        p1.innerHTML=missionDescription;
+
         var footer1=document.createElement("footer");
         var ul1=document.createElement("ul");
         ul1.className="buttons";
@@ -214,7 +203,7 @@ function setCollection(){
         footer1.appendChild(ul1);
         section1.appendChild(header1);
         section1.appendChild(a1_1);
-        section1.appendChild(p1);
+
         section1.appendChild(footer1);
         div1.appendChild(section1);
         rowDiv.appendChild(div1);
