@@ -5,10 +5,12 @@ var userCategory1;
 var Tagable1;
 
 function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum) {
-    alert(userCategory);
-    if(userCategory === 3){
+  
+    if(userCategory === 1){
         document.getElementById("addMissionBtn").innerHTML = "";
         document.getElementById("addMissionBtn").style.display = "none";
+        document.getElementById("judgeMissionBtn").innerHTML = "";
+        document.getElementById("judgeMissionBtn").style.display = "none";
     }
 
     userCategory1=userCategory;

@@ -17,7 +17,7 @@
     <style type="text/css">
         .collection{
             width: 400px;
-            height: 260px;
+            height: 200px;
         }
     </style>
 </head>
@@ -88,7 +88,7 @@
 
             <!-- Content -->
             <div class="content">
-                <section>
+                <section style="margin-bottom: 3px">
                     <a href="#" class="image featured "><img src="images/timg.jpg" alt="" /></a>
 
                     <div class="search d1">
@@ -108,10 +108,12 @@
                 </section>
             </div>
 
+
+
         </section>
 
         <!-- Two -->
-        <section class="wrapper style1 container special" id="collections">
+        <section class="wrapper style container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
 
         </section>
 
