@@ -124,13 +124,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <div class="6u 12u(mobile)" align="left">
                             <span>图片类型： </span>
                             <select id="picType" >
-                                <option value="1">人物</option>
-                                <option value="2">动物</option>
-                                <option value="3">风景</option>
-                                <option value="4">卡通动画</option>
-                                <option value="5">交通工具</option>
-                                <option value="6">生活用品</option>
-                                <option value="7">其他</option>
+                                <option value="人物">人物</option>
+                                <option value="动物">动物</option>
+                                <option value="风景">风景</option>
+                                <option value="卡通动画">卡通动画</option>
+                                <option value="交通工具">交通工具</option>
+                                <option value="生活用品">生活用品</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
                     </div>

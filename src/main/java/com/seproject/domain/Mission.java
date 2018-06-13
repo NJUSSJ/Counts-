@@ -16,6 +16,8 @@ public class Mission {
     @Id
     @Column(name="name")
     String name;
+    @Column(name="startTime")
+    String startTime;
     @Column(name="endTime")
     String endTime;
     @Column(name="description")
@@ -102,6 +104,14 @@ public class Mission {
 
     public String getDescription(){
         return this.description;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     public void setEndTime(String endTime){

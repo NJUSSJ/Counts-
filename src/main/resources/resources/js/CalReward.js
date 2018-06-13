@@ -46,9 +46,10 @@ ensureBtn.addEventListener("click", function () {
         url: "/calReward",
         contentType: "application/json",
         dataType: "json",
-        data: {"difficulty": difficulty, "maxWorker": maxWorker, "phoneNumber": phoneNumber},
+        data: {"difficulty": difficulty, "maxWorker": maxWorker, "uid": phoneNumber},
         success: function (returnData){
             reward=returnData;
+            alert(returnData);
         },
         error: function(){
             alert("fail14")

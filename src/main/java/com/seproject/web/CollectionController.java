@@ -38,10 +38,14 @@ public class CollectionController {
         int picNum=tmpMission.getFileNum();
         double credit=tmpMission.getReward();
         int expectedNum=tmpMission.getMaxNum();
-        //String startTime=tmpMission.getStartTime();
+        String startTime=tmpMission.getStartTime();
         String endTime=tmpMission.getEndTime();
         String Level=tmpMission.getWorkerLevel();
         String description=tmpMission.getDescription();
+        String picType = tmpMission.getPicType();
+        int tagType = tmpMission.getTagType();
+        int difficulty = tmpMission.getDifficulty();
+        ArrayList<String> missionLabel = tmpMission.getMissionLabel();
 
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
         String fixx="\'missionImages/";
@@ -64,10 +68,15 @@ public class CollectionController {
 
         model.addObject("credit",credit);
         model.addObject("expectedNum",expectedNum);
-        //model.addObject("startTime", startTime);
+        model.addObject("startTime", startTime);
         model.addObject("endTime", endTime);
         model.addObject("Level",Level);
         model.addObject("description",description);
+
+        model.addObject("picTye",picType);
+        model.addObject("tagType",tagType);
+        model.addObject("difficulty",difficulty);
+        model.addObject("missionLabel",missionLabel);
 
         return model;
     }

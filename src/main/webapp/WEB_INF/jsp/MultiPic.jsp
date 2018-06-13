@@ -63,6 +63,14 @@
                 <span style="display: block;margin-top: 8px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
 
                 <span style="display: block;margin-top: 8px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>标签：</span><span id="missionLabel">${requestScope.missionLabel}</span></span>
             </div>
 
         </div>
