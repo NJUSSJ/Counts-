@@ -24,6 +24,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
     <link rel="stylesheet" type="text/css" href="dropZoneCSS/dropzone.css">
     <link rel="stylesheet" type="text/css" href="dropZoneCSS/basic.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
+    <script src="js/jquery.min.js"></script>
     <script src="dropZoneJS/dropzone.js"></script>
     <style type="text/css">
         /*  修改日历控件类型 */
@@ -259,7 +261,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
-<script src="js/jquery.min.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
+<script src="js/jquery.tag-editor.min.js"></script>
+<script src="js/CalReward.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>
 <script src="js/jquery.scrollgress.min.js"></script>
@@ -268,8 +273,5 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
 <script src="js/upload1.js"></script>
-<script src="js/CalReward.js"></script>
-
-
 </body>
 </html>

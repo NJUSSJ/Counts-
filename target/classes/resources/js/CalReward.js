@@ -12,7 +12,12 @@ function loadPhone(_phoneNumber){
 
 tagTypeBtn.addEventListener("click", function () {
     if (tagTypeBtn.value === "1"){
-        txt = "<span>标签名称（不同标签请用空格隔开）：<input  type=\"text\"/></span>";
+        txt = "标签名称（请用空格分开不同标签）：<textarea id=\"tag_editor\"></textarea>";
+        txt += "\n<script>\n" +
+            "                        $(function () {\n" +
+            "                            $('#tag_editor').tagEditor({ initialTags: ['tag1', 'tag2', 'tag3'] });\n" +
+            "                        });\n" +
+            "                    </script>";
         document.getElementById("missionLabel").innerHTML = txt;
     }else{
         document.getElementById("missionLabel").innerHTML = "";
