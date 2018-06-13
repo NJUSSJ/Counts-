@@ -5,16 +5,8 @@ package com.seproject.web.parameter;
  */
 public class CalRewardParameter {
     private int difficulty;
-    private int maxNum;
+    private int maxWorker;
     private String uid;
-
-    public int getMaxNum() {
-        return maxNum;
-    }
-
-    public void setMaxNum(int maxNum) {
-        this.maxNum = maxNum;
-    }
 
     public String getUid() {
         return uid;
@@ -30,5 +22,13 @@ public class CalRewardParameter {
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public int getMaxWorker() {
+        return maxWorker;
+    }
+
+    public void setMaxWorker(int maxWorker) {
+        this.maxWorker = maxWorker;
     }
 }

@@ -147,7 +147,7 @@ public class UploadController {
         return path+"/"+missionName+"_"+i+suffix;
     }
 
-    @RequestMapping(value = "/calReward")
+    @RequestMapping(value = "/calReward", method = RequestMethod.POST)
     @ResponseBody
     public double calReward(@RequestBody String callRewardParameter){
         String str = callRewardParameter.replace('&', ',');
@@ -160,12 +160,11 @@ public class UploadController {
             case 2:base=1.1;break;
             default:base=1.2;
         }
-        System.out.println("uid"+para.getUid());
         User user=userBasicBLService.findByKey(para.getUid());
         int level=user.getLevel();
         double p=1+level*0.05;
         double discount=0.9-level*Constant.DISCOUNT_ON_LEVEL;//这句话存疑
-        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxNum()*discount;
+        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxWorker()*discount;
     }
 
 
