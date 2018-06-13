@@ -80,7 +80,7 @@ public class MissionService {
             }
             //期望积分
             if(useWanted){
-                double avg=mission.getReward()/mission.getMaxNum();
+                double avg=mission.getReward()/mission.getMaxWorkerNum();
                 if(avg<credit){
                     continue;
                 }

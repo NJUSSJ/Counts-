@@ -24,6 +24,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
     <link rel="stylesheet" type="text/css" href="dropZoneCSS/dropzone.css">
     <link rel="stylesheet" type="text/css" href="dropZoneCSS/basic.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
+    <script src="js/jquery.min.js"></script>
     <script src="dropZoneJS/dropzone.js"></script>
     <style type="text/css">
         /*  修改日历控件类型 */
@@ -122,13 +124,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <div class="6u 12u(mobile)" align="left">
                             <span>图片类型： </span>
                             <select id="picType" >
-                                <option value="1">人物</option>
-                                <option value="2">动物</option>
-                                <option value="3">风景</option>
-                                <option value="4">卡通动画</option>
-                                <option value="5">交通工具</option>
-                                <option value="6">生活用品</option>
-                                <option value="7">其他</option>
+                                <option value="人物">人物</option>
+                                <option value="动物">动物</option>
+                                <option value="风景">风景</option>
+                                <option value="卡通动画">卡通动画</option>
+                                <option value="交通工具">交通工具</option>
+                                <option value="生活用品">生活用品</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
                     </div>
@@ -173,7 +175,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span>期望标注人数：<input  id="maxNum" type="text" name="maxNum" /></span>
+                            <span>期望标注人数：<input  id="maxWorkerNum" type="text" name="maxNum" /></span>
                         </div>
                     </div>
 
@@ -259,7 +261,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
-<script src="js/jquery.min.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
+<script src="js/jquery.tag-editor.min.js"></script>
+<script src="js/CalReward.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>
 <script src="js/jquery.scrollgress.min.js"></script>
@@ -268,8 +273,5 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="js/main.js"></script>
 <script src="js/upload1.js"></script>
-<script src="js/CalReward.js"></script>
-
-
 </body>
 </html>

@@ -65,18 +65,35 @@ public class UploadController {
             String workLevel=request.getParameter("workLevel");
             String requestorPhone=request.getParameter("requestorPhone");
             double reward=Double.parseDouble(request.getParameter("reward"));
-            int expectedNum=Integer.parseInt(request.getParameter("expectedNum"));
+            int difficulty = Integer.parseInt(request.getParameter("difficulty"));
+            String picType = request.getParameter("picType");
+            int tagType = Integer.parseInt(request.getParameter("tagType"));
+            String[] missionLabelString = request.getParameter("missionLabel").split(" ");
+            ArrayList<String> missionLabel = new ArrayList<String>();
+            System.out.println(missionLabelString);
+            for(int i = 0;i<missionLabelString.length;i++){
+                missionLabel.add(missionLabelString[i]);
+            }
+            int maxWorkerNum = Integer.parseInt(request.getParameter("maxWorkerNum"));
+
             tmpMission=new Mission();
             tmpMission.setName(missionName);
             tmpMission.setWorkerLevel(workLevel);
-            //tmpMission.setStartTime(startTime);
+            tmpMission.setStartTime(startTime);
             tmpMission.setEndTime(endTime);
             tmpMission.setDescription(description);
             tmpMission.setReward(reward);
-            tmpMission.setMaxNum(expectedNum);
+            tmpMission.setMaxWorkerNum(maxWorkerNum);
             tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
             tmpMission.setState(0);
+
+            tmpMission.setDifficulty(difficulty);
+            tmpMission.setPicType(picType);
+            tmpMission.setTagType(tagType);
+            tmpMission.setMissionLabel(missionLabel);
+            tmpMission.setMaxWorkerNum(maxWorkerNum);
+
             missionBasicBLService.add(tmpMission);//此处需要修改
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
@@ -147,7 +164,7 @@ public class UploadController {
         return path+"/"+missionName+"_"+i+suffix;
     }
 
-    @RequestMapping(value = "/calReward")
+    @RequestMapping(value = "/calReward", method = RequestMethod.POST)
     @ResponseBody
     public double calReward(@RequestBody String callRewardParameter){
         String str = callRewardParameter.replace('&', ',');
@@ -160,12 +177,11 @@ public class UploadController {
             case 2:base=1.1;break;
             default:base=1.2;
         }
-        System.out.println("uid"+para.getUid());
         User user=userBasicBLService.findByKey(para.getUid());
         int level=user.getLevel();
         double p=1+level*0.05;
         double discount=0.9-level*Constant.DISCOUNT_ON_LEVEL;//这句话存疑
-        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxNum()*discount;
+        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxWorker()*discount;
     }
 
 

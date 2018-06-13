@@ -66,10 +66,31 @@
                     <div class="row">
                         <div id="chart1" style="width: 300px;height:300px;">
 
+<<<<<<< HEAD
                         </div>
                     </div>
                     <script type="text/javascript" src="js/missionRest.js"></script>
                 </section>
+=======
+                <span style="display: block;margin-top: 8px"><span>工人最多数量：</span><span id="maxWorkerNum">${requestScope.maxWorkerNum}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
+
+                <span style="display: block;margin-top: 8px"><span>标签：</span><span id="missionLabel" onclick="loadMissionLabel(${requestScope.missionLabel})"></span></span>
+                <script>
+                    function loadMissionLabel(missionLabel) {
+                        console.log("missionLabel" + missionLabel);
+                        var content = "";
+                        document.getElementById("missionLabel").value = content;
+                    }
+                </script>
+>>>>>>> bd8fbd97900c09222137254a5ad69876f154a707
             </div>
 
         </div>

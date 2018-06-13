@@ -1560,7 +1560,7 @@
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
+/*textarea*/
 	body, input, select, textarea {
 		color: #7c8081;
 		font-family: 'Lato', sans-serif;

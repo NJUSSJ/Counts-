@@ -6,13 +6,18 @@ var ensureBtn = document.getElementById("ensure");
 var tagTypeBtn = document.getElementById("tagType");
 
 function loadPhone(_phoneNumber){
-    alert(_phoneNumber);
+    //alert(_phoneNumber);
     phoneNumber = _phoneNumber;
 }
 
 tagTypeBtn.addEventListener("click", function () {
     if (tagTypeBtn.value === "1"){
-        txt = "<span>标签名称（不同标签请用空格隔开）：<input  type=\"text\"/></span>";
+        txt = "标签名称（请用空格分开不同标签）：<textarea id=\"tag_editor\"></textarea>";
+        txt += "\n<script>\n" +
+            "                        $(function () {\n" +
+            "                            $('#tag_editor').tagEditor({ initialTags: ['tag1', 'tag2', 'tag3'] });\n" +
+            "                        });\n" +
+            "                    </script>";
         document.getElementById("missionLabel").innerHTML = txt;
     }else{
         document.getElementById("missionLabel").innerHTML = "";
@@ -21,7 +26,7 @@ tagTypeBtn.addEventListener("click", function () {
 
 ensureBtn.addEventListener("click", function () {
     var difficulty = parseInt(document.getElementById("difficulty").value);
-    var maxWorker = parseInt(document.getElementById("maxNum").value);
+    var maxWorkerNum = parseInt(document.getElementById("maxWorkerNum").value);
 /*
     if (difficulty === 1) {
         rewardBase = 0.1;
@@ -33,7 +38,7 @@ ensureBtn.addEventListener("click", function () {
         rewardBase = 0.2;
     }
 */
-    alert(difficulty + " "  + maxWorker+ " " + phoneNumber);
+    //alert(difficulty + " "  + maxWorkerNum+ " " + phoneNumber);
 
     $.ajax({
         async: false,
@@ -41,9 +46,10 @@ ensureBtn.addEventListener("click", function () {
         url: "/calReward",
         contentType: "application/json",
         dataType: "json",
-        data: {"difficulty": difficulty, "maxWorker": maxWorker, "phoneNumber": phoneNumber},
+        data: {"difficulty": difficulty, "maxWorker": maxWorkerNum, "uid": phoneNumber},
         success: function (returnData){
             reward=returnData;
+            //alert(returnData);
         },
         error: function(){
             alert("fail14")
