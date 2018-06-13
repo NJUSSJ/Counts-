@@ -26,7 +26,7 @@ tagTypeBtn.addEventListener("click", function () {
 
 ensureBtn.addEventListener("click", function () {
     var difficulty = parseInt(document.getElementById("difficulty").value);
-    var maxWorker = parseInt(document.getElementById("maxNum").value);
+    var maxWorkerNum = parseInt(document.getElementById("maxWorkerNum").value);
 /*
     if (difficulty === 1) {
         rewardBase = 0.1;
@@ -38,7 +38,7 @@ ensureBtn.addEventListener("click", function () {
         rewardBase = 0.2;
     }
 */
-    alert(difficulty + " "  + maxWorker+ " " + phoneNumber);
+    alert(difficulty + " "  + maxWorkerNum+ " " + phoneNumber);
 
     $.ajax({
         async: false,
@@ -46,9 +46,9 @@ ensureBtn.addEventListener("click", function () {
         url: "/calReward",
         contentType: "application/json",
         dataType: "json",
-        data: {"difficulty": difficulty, "maxWorker": maxWorker, "uid": phoneNumber},
+        data: {"difficulty": difficulty, "maxWorker": maxWorkerNum, "uid": phoneNumber},
         success: function (returnData){
-            reward=returnData;
+            //reward=returnData;
             alert(returnData);
         },
         error: function(){

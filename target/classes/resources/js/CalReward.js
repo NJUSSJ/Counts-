@@ -48,7 +48,7 @@ ensureBtn.addEventListener("click", function () {
         dataType: "json",
         data: {"difficulty": difficulty, "maxWorker": maxWorker, "uid": phoneNumber},
         success: function (returnData){
-            reward=returnData;
+            //reward=returnData;
             alert(returnData);
         },
         error: function(){

@@ -175,7 +175,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span>期望标注人数：<input  id="maxNum" type="text" name="maxNum" /></span>
+                            <span>期望标注人数：<input  id="maxWorkerNum" type="text" name="maxNum" /></span>
                         </div>
                     </div>
 

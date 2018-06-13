@@ -66,10 +66,21 @@ public class UploadController {
             String requestorPhone=request.getParameter("requestorPhone");
             double reward=Double.parseDouble(request.getParameter("reward"));
             int expectedNum=Integer.parseInt(request.getParameter("expectedNum"));
+            int difficulty = Integer.parseInt(request.getParameter("difficulty"));
+            String picType = request.getParameter("picType");
+            int tagType = Integer.parseInt(request.getParameter("tagType"));
+            String[] missionLabelString = request.getParameter("missionLabel").split(" ");
+            ArrayList<String> missionLabel = new ArrayList<String>();
+            System.out.println(missionLabelString);
+            for(int i = 0;i<missionLabelString.length;i++){
+                missionLabel.add(missionLabelString[i]);
+            }
+            int maxWorkerNum = Integer.parseInt(request.getParameter("maxWorkerNum"));
+
             tmpMission=new Mission();
             tmpMission.setName(missionName);
             tmpMission.setWorkerLevel(workLevel);
-            //tmpMission.setStartTime(startTime);
+            tmpMission.setStartTime(startTime);
             tmpMission.setEndTime(endTime);
             tmpMission.setDescription(description);
             tmpMission.setReward(reward);
@@ -77,6 +88,13 @@ public class UploadController {
             tmpMission.setRequestorNumber(requestorPhone);
             tmpMission.setFileNum(0);
             tmpMission.setState(0);
+
+            tmpMission.setDifficulty(difficulty);
+            tmpMission.setPicType(picType);
+            tmpMission.setTagType(tagType);
+            tmpMission.setMissionLabel(missionLabel);
+            tmpMission.setMaxWorkerNum(maxWorkerNum);
+
             missionBasicBLService.add(tmpMission);//此处需要修改
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);

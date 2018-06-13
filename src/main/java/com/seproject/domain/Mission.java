@@ -47,23 +47,33 @@ public class Mission {
     int tagType;//1:标签式 2:非标签式
     @Column(name="picType")
     String picType;
+    @Column(name="maxWorkerNum")
+    int maxWorkerNum;
     public Mission(){
 
     }
-    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, int maxNum, String requestorNumber, int difficulty, int tagType, String picType, ArrayList<String> missionLabel){
+    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, String requestorNumber, int difficulty, int tagType, String picType, ArrayList<String> missionLabel, int maxWorkerNum){
         this.name=name;
         this.endTime=endTime;
         this.description=description;
         this.files=files;
         this.fileNum=fileNum;
         this.workerLevel=workerLevel;
-        this.maxNum=maxNum;
         this.reward=reward;
         this.requestorNumber=requestorNumber;
         this.difficulty = difficulty;
         this.tagType = tagType;
         this.picType = picType;
         this.missionLabel = missionLabel;
+        this.maxWorkerNum = maxWorkerNum;
+    }
+
+    public int getMaxWorkerNum() {
+        return maxWorkerNum;
+    }
+
+    public void setMaxWorkerNum(int maxWorkerNum) {
+        this.maxWorkerNum = maxWorkerNum;
     }
 
     public void setWorkerLevel(String workerLevel){
