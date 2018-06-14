@@ -1,12 +1,31 @@
 package com.seproject.domain;
 
-import java.util.ArrayList;
+import com.seproject.common.Key;
+import com.seproject.common.Searchable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.ArrayList;
+@Entity
+@Table(name="GoldMission")
 public class GoldMission {
+    @Key
+    @Id
+    @Searchable(varName = "keyID")
+    @Column(name="keyIid")
     String keyID="";//mid+i
+    @Searchable(varName = "mid")
+    @Column(name="mid")
     String mid=""; //任务ID
+    @Searchable(varName = "uid")
+    @Column(name="uid")
     String uid="";
+
+    @Column(name="pictureindex")
     ArrayList<Integer> pictrueIndex=new ArrayList<Integer>();
+    @Column(name="result")
     ArrayList<Integer> result=new ArrayList<Integer>();
 
     public GoldMission(){}

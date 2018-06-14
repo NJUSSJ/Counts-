@@ -17,13 +17,13 @@ public class Mission {
     @Searchable(varName = "name")
     @Column(name="name")
     String name;
-    @Column(name="startTime")
+    @Column(name="starttime")
     String startTime;
-    @Column(name="endTime")
+    @Column(name="endtime")
     String endTime;
     @Column(name="description")
     String description;
-    @Column(name="workerLevel")
+    @Column(name="workerlevel")
     String workerLevel;//接受工人的最低等级
     @Column(name="files",columnDefinition = "blob")
     ArrayList<String> files=new ArrayList<String>();
@@ -40,13 +40,13 @@ public class Mission {
     int state;//0:未结束 1：结束但未评估 2:已评估 3：已被发起者删除
     @Column(name="difficulty")
     private int difficulty;//1,2,3
-    @Column(name="missionLabel",columnDefinition = "blob")
+    @Column(name="missionlabel",columnDefinition = "blob")
     private ArrayList<String> missionLabel;//标签式任务的标签列表
-    @Column(name="tagType")
+    @Column(name="tagtype")
     int tagType;//1:标签式 2:非标签式
-    @Column(name="picType")
+    @Column(name="pictype")
     String picType;
-    @Column(name="maxWorkerNum")
+    @Column(name="maxworkernum")
     int maxWorkerNum;
     public Mission(){
 
