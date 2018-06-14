@@ -4,7 +4,7 @@
 var userCategory1;
 var Tagable1;
 
-function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum,picType) {
+function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum) {
 
     if(userCategory === 1){
         document.getElementById("addMissionBtn").innerHTML = "";
@@ -18,6 +18,8 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum,picType
 
     var cover = document.getElementById("cover");
     cover.src = url+"1.jpg";
+
+
 
 }
 

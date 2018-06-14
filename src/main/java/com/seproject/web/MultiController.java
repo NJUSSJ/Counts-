@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
@@ -97,7 +99,16 @@ public class MultiController {
         return view;
     }
 
-
+    @RequestMapping(value = "/getSubmission")
+    @ResponseBody
+    public ModelAndView getSubMission(HttpServletRequest request){
+        String mid = "\'"+request.getParameter("imageURL")+"\'";
+        String uid = request.getParameter("userPhone");
+        ModelAndView view = new ModelAndView("personalSubmission");
+        view.addObject("mid", mid);
+        view.addObject("uid", uid);
+        return view;
+    }
 
 
 }
