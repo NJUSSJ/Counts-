@@ -40,7 +40,7 @@ dropzone setting
 Dropzone.autoDiscover = false;
 
 var myDropzone = new Dropzone("#myDropzone", {
-    url: "uploadPics",
+    url: "addLabelMission",
     addRemoveLinks: true,
     autoProcessQueue: false,
     method: 'post',
