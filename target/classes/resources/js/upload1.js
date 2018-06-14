@@ -13,7 +13,7 @@ submitButton.addEventListener("click", function () {
         return;
     }
     //tmpPrintMissionLabel();//
-    alert(document.getElementById("tag_editor").value);
+    //alert(document.getElementById("tag_editor").value);
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -40,7 +40,7 @@ dropzone setting
 Dropzone.autoDiscover = false;
 
 var myDropzone = new Dropzone("#myDropzone", {
-    url: "uploadPics",
+    url: "addLabelMission",
     addRemoveLinks: true,
     autoProcessQueue: false,
     method: 'post',

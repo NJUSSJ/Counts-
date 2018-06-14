@@ -11,19 +11,12 @@ function loadPhone(_phoneNumber){
 
 tagTypeBtn.addEventListener("click", function () {
     if (tagTypeBtn.value === "1"){
-        document.getElementById("tag_editor").style = "display:block";
-        //txt = "标签名称（请用空格分开不同标签）：<textarea id=\"tag_editor\"></textarea>";
-        /*
-        txt += "\n<script>\n" +
-            "                        $(function () {\n" +
-            "                            $('#tag_editor').tagEditor({ initialTags: ['tag1', 'tag2', 'tag3'] });\n" +
-            "                        });\n" +
-            "                    </script>";
-            */
-        //document.getElementById("missionLabel").innerHTML = txt;
+        //document.getElementById("tag_editor").disabled="";
+        document.getElementById("missionLabel").display="block";
+
     }else{
-        //document.getElementById("missionLabel").innerHTML = "";
-        document.getElementById("tag_editor").style = "display:none";
+        document.getElementById("missionLabel").display="none";
+        //document.getElementById("tag_editor").disabled="disabled";
     }
 });
 

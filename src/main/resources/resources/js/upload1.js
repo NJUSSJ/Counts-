@@ -13,7 +13,7 @@ submitButton.addEventListener("click", function () {
         return;
     }
     //tmpPrintMissionLabel();//
-    alert(document.getElementById("tag_editor").value);
+    //alert(document.getElementById("tag_editor").value);
 
     myDropzone.processQueue();
     alert("发布成功！");
