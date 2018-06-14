@@ -269,6 +269,7 @@ public class MainService {
 
 
     public ArrayList<Integer> getPictureIndexOfSubmission(String uid,String mid){
+
         return new ArrayList<Integer>();
     }
 
