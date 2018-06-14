@@ -6,6 +6,7 @@ import com.seproject.domain.CollectionResult;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
+import com.seproject.service.MainService;
 import com.seproject.service.MissionService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.MissionParameter;
@@ -26,6 +27,7 @@ public class MissionController {
     BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     MissionService missionService=new MissionService();
+    MainService mainService=new MainService();
     @RequestMapping(value = "/MissionManage/Search")
     @ResponseBody
     /**
@@ -149,6 +151,17 @@ public class MissionController {
     public void autoEvaluate(String missionName){
         missionService.autoEvaluate(missionName);
     }
+
+    @RequestMapping(value = "/MissionEvaluate/getPictureIndex")
+    @ResponseBody
+    /**
+     * 获取子任务的全部图片
+     */
+    public ArrayList<Integer> getPictureIndex(String missionParameter){
+        MissionParameter para=toMissionPara(missionParameter);
+        return mainService.getPictureIndexOfSubmission(para.getUid(),para.getKeyword());
+    }
+
 
     /*****************************************************/
     /**
