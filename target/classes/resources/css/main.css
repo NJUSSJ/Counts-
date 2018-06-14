@@ -1779,7 +1779,6 @@
 	}
 
 		.image:before {
-			background: url("images/overlay.png");
 			content: '';
 			height: 100%;
 			left: 0;
@@ -1797,14 +1796,23 @@
 				width: 100%;
 			}
 
+	    .image.fit:hover {
+		    top: -0.2em;
+		}
 		.image.featured {
 			display: block;
 			margin: 0 0 2em 0;
 		}
 
+
+
 			.image.featured img {
 				display: block;
 				width: 100%;
+			}
+
+			.image.featured:hover{
+				top: -0.2em;
 			}
 
 

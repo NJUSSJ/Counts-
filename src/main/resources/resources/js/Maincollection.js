@@ -57,7 +57,7 @@ function setCollection(){
     var rowNum=Math.floor(missionNum/3);
     var left=missionNum-rowNum*3;
 
-    document.getElementById("collections").innerHTML="";
+
     for(var i=0;i<rowNum;i++){
         var rowDiv=document.createElement("div");
         rowDiv.className="row";
