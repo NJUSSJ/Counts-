@@ -51,30 +51,13 @@
 
                 <span style="display: block;margin-top: 9px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
 
-                <span style="display: block;margin-top: 9px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
-
-
                 <span style="display: block;margin-top: 9px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
 
                 <span style="display: block;margin-top: 9px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
 
                 <span style="display: block;margin-top: 9px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
-            </div>
 
-            <div class="3u 12u(narrower)">
-                <section>
-                    <div class="row">
-                        <div id="chart1" style="width: 300px;height:300px;">
-
-<<<<<<< HEAD
-                        </div>
-                    </div>
-                    <script type="text/javascript" src="js/missionRest.js"></script>
-                </section>
-=======
-                <span style="display: block;margin-top: 8px"><span>工人最多数量：</span><span id="maxWorkerNum">${requestScope.maxWorkerNum}</span></span>
-
-                <span style="display: block;margin-top: 8px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
+                <span style="display: block;margin-top: 8px"><span>期待标注人数：</span><span id="maxWorkerNum">${requestScope.maxWorkerNum}</span></span>
 
                 <span style="display: block;margin-top: 8px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
 
@@ -90,7 +73,16 @@
                         document.getElementById("missionLabel").value = content;
                     }
                 </script>
->>>>>>> bd8fbd97900c09222137254a5ad69876f154a707
+            </div>
+
+            <div class="3u 12u(narrower)">
+                <section>
+                    <div class="row">
+                        <div id="chart1" style="width: 300px;height:300px;">
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="js/missionRest.js"></script>
+                </section>
             </div>
 
         </div>
