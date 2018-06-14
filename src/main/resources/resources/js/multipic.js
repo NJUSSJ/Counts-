@@ -19,8 +19,6 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum) {
     var cover = document.getElementById("cover");
     cover.src = url+"1.jpg";
 
-
-
 }
 
 function setButtons(num) {

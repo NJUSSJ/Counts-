@@ -129,7 +129,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span>
                     </div>
                     <div class="6u 12u$(mobile)">
-                        <span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span>
+                        <span>期待标注人数：</span><span id="maxWorkerNum">${requestScope.maxWorkerNum}</span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
                         <span>起始时间：</span><span id="startTime">${requestScope.startTime}</span>
