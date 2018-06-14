@@ -36,9 +36,13 @@
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
     <!-- end load 3D stat -->
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
-    <style>
+    <style type="text/css">
         /* filter table specific styling */
         td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+
+        .image.fit:hover{
+            top: -0.2em;
+        }
     </style>
 </head>
 <body onload="loadPersonal()">
@@ -77,7 +81,7 @@
                 <h2>Work</h2>
             </header>
             <p>
-                图集列表
+                任务列表
             </p>
             <section>
                 <div class="row" id="personalCollections">

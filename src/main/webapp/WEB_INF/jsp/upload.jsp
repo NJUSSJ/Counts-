@@ -158,6 +158,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="12u" align="left" id="missionLabel">
+                            <textarea id="tag_editor" style="display: none"></textarea>
+                            <script>
+                                $("#tag_editor").tagEditor();
+                            </script>
                         </div>
                     </div>
 
