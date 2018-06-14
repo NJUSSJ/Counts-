@@ -35,7 +35,7 @@
 
 <!-- Main -->
 <article id="main">
-    <section class="wrapper style4 container">
+    <section class="wrapper style4 container" id="submissionArea">
 
     </section>
 

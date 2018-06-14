@@ -1,6 +1,7 @@
 com\seproject\domain\UserDate.class
 com\seproject\service\FileIOService.class
 com\seproject\web\parameter\UpdateLabelMissionParameter.class
+com\seproject\web\controller\MainController.class
 com\seproject\service\StatisticsService.class
 com\seproject\web\parameter\MissionParameter.class
 com\seproject\common\SearchCategory.class
@@ -45,11 +46,13 @@ com\seproject\common\Searchable.class
 com\seproject\service\blService\BasicBLService.class
 com\seproject\domain\statisticsData\StarterData.class
 com\seproject\web\UploadController.class
+com\seproject\service\MainService.class
 com\seproject\web\controller\UserController.class
 com\seproject\web\parameter\PersonalParameter.class
 com\seproject\common\RM.class
 com\seproject\service\blServiceImpl\BasicBLImpl_File$1.class
 com\seproject\web\TagController.class
+com\seproject\web\controller\MissionController.class
 com\seproject\common\Key.class
 com\seproject\web\parameter\CalRewardParameter.class
 com\seproject\web\parameter\GetLabelMissionParameter.class
