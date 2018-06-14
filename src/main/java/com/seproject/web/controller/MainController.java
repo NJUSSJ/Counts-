@@ -6,8 +6,8 @@ import com.seproject.domain.*;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.parameter.FinishReviewParameter;
 import com.seproject.web.parameter.GetLabelMissionParameter;
-import com.seproject.web.parameter.MissionParameter;
 import com.seproject.web.parameter.UpdateLabelMissionParameter;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +29,7 @@ public class MainController {
     BasicBLService<SubMission> subMissionBasicBLService=Factory.getBasicBLService(new SubMission());
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
     @RequestMapping(value = "/addLabelMission")
     @ResponseBody
     public String addLabelMission(String mission){
@@ -52,6 +53,7 @@ public class MainController {
         for(SubMission subMission:subMissions){userNum.add(subMission.getUid().size());}
         int index=getMinIndex(userNum);
         subMissions.get(index).getUid().add(uid);
+        subMissions.get(index).getAnswers().add(new ArrayList<Integer>());
         mainService.createCollection(uid,mid);
         subMissionBasicBLService.update(subMissions.get(index));
         return RM.SUCCESS.toString();
@@ -75,10 +77,32 @@ public class MainController {
             if(user.contains(uid)){
                 sub.getAnswers().set(user.indexOf(uid),list);
                 subMissionBasicBLService.update(sub);
-                break;
+                return RM.SUCCESS.toString();
             }
         }
-        return RM.SUCCESS.toString();
+        return RM.FAILURE.toString();
+    }
+
+    @RequestMapping(value = "/updateGoldMission")
+    @ResponseBody
+    /**
+     * 更新高级用户的标注
+     */
+    public String updateGoldMission(String parameter){
+        JSONObject object=JSONObject.fromObject(parameter);
+        UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
+        String uid=para.getUid();
+        String mid=para.getMid();
+        ArrayList<Integer> list=para.getNums();
+        ArrayList<GoldMission> goldMission=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(GoldMission each:goldMission){
+            if(each.getUid().equals(uid)){
+                each.setResult(list);
+                goldMissionBasicBLService.update(each);
+                return RM.SUCCESS.toString();
+            }
+        }
+        return RM.FAILURE.toString();
     }
 
     @RequestMapping(value = "/getGoldMission")
@@ -94,6 +118,22 @@ public class MainController {
        }else{
            return RM.FAILURE.toString();
        }
+    }
+
+    @RequestMapping(value = "/startReview")
+    @ResponseBody
+    public String startReview(String mid){
+        JSONObject jsonObject = JSONObject.fromObject(mainService.getRestPictures(mid));//这里INT 数组是索引
+        String ret = jsonObject.toString();
+        return ret;
+    }
+
+    @RequestMapping(value = "/finishReview")
+    @ResponseBody
+    public void finishReview(String para){
+        JSONObject object=JSONObject.fromObject(para);
+        FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
+
     }
 
     private int getMinIndex(ArrayList<Integer> arr){
