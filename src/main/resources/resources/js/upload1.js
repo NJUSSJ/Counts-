@@ -13,7 +13,7 @@ submitButton.addEventListener("click", function () {
         return;
     }
     //tmpPrintMissionLabel();//
-    alert(JSON.stringify($("tag_editor").tagEditor('getTags')[0].tags));
+    alert(JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags));
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -40,7 +40,7 @@ dropzone setting
 Dropzone.autoDiscover = false;
 
 var myDropzone = new Dropzone("#myDropzone", {
-    url: "addLabelMission",
+    url: "/uploadPics",
     addRemoveLinks: true,
     autoProcessQueue: false,
     method: 'post',
@@ -74,7 +74,7 @@ var myDropzone = new Dropzone("#myDropzone", {
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
-                missionLabel: JSON.stringify($("tag_editor").tagEditor('getTags')[0].tags),
+                missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };

@@ -11,13 +11,16 @@ import com.seproject.web.parameter.GetLabelMissionParameter;
 import com.seproject.web.parameter.UpdateLabelMissionParameter;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
-@RestController
+@Controller
 public class MainController {
     MainService mainService;
     //用于写新加的主要系统流程
@@ -30,10 +33,12 @@ public class MainController {
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
+
     @RequestMapping(value = "/addLabelMission")
     @ResponseBody
-    public String addLabelMission(String mission){
-        JSONObject object=JSONObject.fromObject(mission);
+    public String addLabelMission(HttpServletRequest request){
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        JSONObject object=JSONObject.fromObject(request.getParameter(""));
         System.out.println("mission 转 object:"+object);
         Mission m =(Mission) JSONObject.toBean(object,Mission.class);
         missionBasicBLService.add(m);
@@ -43,7 +48,7 @@ public class MainController {
 
     @RequestMapping(value = "/getLabelMission")
     @ResponseBody
-    public String getLabelMission(String parameter){
+    public String getLabelMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
         GetLabelMissionParameter para= (GetLabelMissionParameter) JSONObject.toBean(object,GetLabelMissionParameter.class);
         String uid=para.getUid();
