@@ -159,6 +159,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row 50%">
                         <div class="12u" align="left" id="missionLabel">
                             <textarea id="tag_editor" style="display: none"></textarea>
+                            <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
+                            <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+                            <script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
+                            <script src="js/jquery.tag-editor.min.js"></script>
                             <script>
                                 $("#tag_editor").tagEditor();
                             </script>
