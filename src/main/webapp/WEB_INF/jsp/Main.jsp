@@ -22,6 +22,15 @@
         .image.featured:hover{
             top : -0.2em;
         }
+        #collections{
+            -moz-box-shadow: 3px 3px 4px #000;
+            -webkit-box-shadow: 3px 3px 4px #000;
+            box-shadow: 3px 3px 4px #000;
+            /* For IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+            /* For IE 5.5 - 7 */
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+        }
     </style>
 </head>
 <body class="no-sidebar" onload="loadMain(${requestScope.phoneNumber},${requestScope.userCategory})">
@@ -47,6 +56,8 @@
                     #extra{
                         display: none;
                     }
+
+
                 </style>
                 <li><a href="/" class="button special">登出</a></li>
             </ul>
@@ -68,7 +79,7 @@
                 by SOCIAL ENGINEERS.</p>
             <footer>
                 <ul class="buttons vertical">
-                    <li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+                    <li><a href="#search" class="button fit scrolly">Tell Me More</a></li>
                 </ul>
             </footer>
 
@@ -79,45 +90,23 @@
 
     <!-- Main -->
     <article id="main">
-
-        <header class="special container">
-            <span class="icon fa-user-md"></span>
-            <h2>在线众包标注系统<strong>主界面</strong></h2>
-            <p>登陆后请点击下方任意一个图片集开始进行标注</p>
-        </header>
-
-        <!-- One -->
-        <section class="wrapper style4 container">
-
-            <!-- Content -->
-            <div class="content">
-                <section style="margin-bottom: 3px">
-                    <a href="#" class="image featured "><img src="images/timg.jpg" alt="" /></a>
-
-                    <div class="search d1">
-                        <form id="searchFromId">
-                            <select id="searchType">
-                                <option value="all">全部</option>
-                                <option value="notEnded">未截止</option>
-                                <option value="ended">已截止</option>
-                                <option value="missionName">任务名</option>
-                                <option value="requester">发布者</option>
-                            </select>
-                            <input type="text" placeholder="搜索从这里开始..." id="searchContent">
-                            <button type="submit" id="searchBtn"></button>
-                        </form>
-                    </div>
-
-                </section>
-            </div>
-
-
-
-        </section>
-
         <!-- Two -->
-        <section class="wrapper style container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
-
+        <section class="wrapper style4 container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
+            <section style="margin-bottom: 3px;">
+                <div class="search d1" id="search" style="background-color: #ffffff;">
+                    <form id="searchFromId" style="margin-left: 79px">
+                        <select id="searchType" style="border-radius: 0.3em 0.3em 0.3em 0.3em">
+                            <option value="all">全部</option>
+                            <option value="notEnded">未截止</option>
+                            <option value="ended">已截止</option>
+                            <option value="missionName">任务名</option>
+                            <option value="requester">发布者</option>
+                        </select>
+                        <input type="text" placeholder="搜索从这里开始..." id="searchContent">
+                        <button type="submit" id="searchBtn"></button>
+                    </form>
+                </div>
+            </section>
         </section>
 
     </article>
