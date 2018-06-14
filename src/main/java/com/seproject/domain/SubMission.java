@@ -9,7 +9,7 @@ public class SubMission {
       ArrayList<String> uid=new ArrayList<String>();
       int seed=0;//种子
       ArrayList<ArrayList<Integer>> answers=new ArrayList<ArrayList<Integer>>();
-      int id1;
+      int id1;//第一个金标的索引
       int id2;
 
       public SubMission() {
