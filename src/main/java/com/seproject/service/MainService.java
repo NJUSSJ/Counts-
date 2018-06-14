@@ -159,6 +159,7 @@ public class MainService {
                 }
 
             }
+
             for(int j=0;j<subMissions.get(i).getAnswers().size();j++){
                 ArrayList<Integer> userAnswer=subMissions.get(i).getAnswers().get(j);
                 for(int k=0;k<userAnswer.size();k++){
@@ -169,8 +170,30 @@ public class MainService {
             /**
              * 找到了所有的标准答案，判断每个用户每题对不对，根据答题情况直接发奖励
              */
-            int standard[]=getStandard(vote);
+            int standardAnswers[]=getStandard(vote);
+            boolean isCorrect[][]=new boolean[subMissions.get(i).getUid().size()][12];
+            for(int j=0;j<isCorrect.length;j++){
+                ArrayList<Integer> userAnswer=subMissions.get(i).getAnswers().get(j);
+                for(int k=0;k<10;k++){
+                    if(userAnswer.get(k)==standardAnswers[k]){
+                        isCorrect[j][k]=true;
+                    }else{
+                        isCorrect[j][k]=false;
+                    }
+                }
+                if(userAnswer.get(10)==answer1){
+                    isCorrect[j][10]=true;
+                }else{
+                    isCorrect[j][10]=false;
+                }
 
+                if(userAnswer.get(11)==answer2){
+                    isCorrect[j][11]=true;
+                }else{
+                    isCorrect[j][11]=false;
+                }
+            }
+            giveMoney_DoubleNothing(isCorrect,subMissions.get(i).getUid());
 
         }
 
@@ -192,12 +215,9 @@ public class MainService {
         reviewLableMission(mid);
     }
 
-    /**
-     * 根据投票选出获取标准答案
-     * @param vote
-     * @return
-     */
+
     public int[] getStandard(double[][] vote){
+        //vote.length=10
         int result[]=new int[vote.length];
         for(int i=0;i<vote.length;i++){
             boolean isValid=false;
@@ -227,33 +247,29 @@ public class MainService {
         return result;
     }
 
-    /**
-     * 根据子任务的完成情况为每个工人设置collection
-     */
-    public void setCollection(double[] money,ArrayList<String> uid,String mid){
-
-        int rank[]=new int[money.length];
-
-        for(int j=0;j<money.length;j++){
-            rank[j]=1;
-            for(int i=0;i<money.length&&i!=j;i++){
-                if(money[j]<money[i]){
-                    rank[j]++;
+    public void  giveMoney_DoubleNothing(boolean x[][],ArrayList<String> uids){
+        double base=1.6;
+        double money[]=new double[x.length];
+        // x 是 横坐标用户，纵坐标12个题是否正确的二维数组
+        for(int i=0;i<x.length;i++){
+            double m=0.15;
+            for(int j=0;j<x[0].length;j++){
+                if(x[i][j]==true){
+                    m*=base;
+                }else{
+                    m=0;
                 }
             }
+            money[i]=m;
         }
-        ArrayList<CollectionResult> collectionResults=collectionResultBasicBLService.search("mid",SearchCategory.EQUAL,mid);
-        for(int i=0;i<uid.size();i++){
-            String each=uid.get(i);
-            for(CollectionResult collectionResult:collectionResults){
-                if(collectionResult.getUid()==each){
-                    collectionResult.setQuality(8);//默认值
-                    collectionResult.setCredit(money[i]);
-                    collectionResult.setRank(rank[i]);
-                    break;
-                }
-            }
-        }
+
+
+       // return money;
+    }
+
+
+    public ArrayList<Integer> getPictureIndexOfSubmission(String uid,String mid){
+        return new ArrayList<Integer>();
     }
 
 }
