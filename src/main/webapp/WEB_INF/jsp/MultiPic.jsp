@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
+    <style type="text/css">
+        #coverArea{
+            width: 400px;
+            height: 300px;
+            -moz-box-shadow: 3px 3px 4px #000;
+            -webkit-box-shadow: 3px 3px 4px #000;
+            box-shadow: 3px 3px 4px #000;
+            /* For IE 8 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+            /* For IE 5.5 - 7 */
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+        }
+
+    </style>
 </head>
 
 <body class="index" onload="load(${requestScope.picNum},${requestScope.url},${requestScope.collection},${requestScope.userCategory},${requestScope.Tagable},${requestScope.userPhone},${requestScope.picNum})">
@@ -42,23 +56,20 @@
         <div class="row">
             <div class="6u 12u(narrower)">
                 <div style="border-right-color: #333333;border-width: 5px;align-content: right">
-                    <img id="cover" class="image featured" width="400px" height="300px">
+                    <div id="coverArea"><img id="cover" width="400px" height="300px"></div>
                 </div>
             </div>
 
-            <div class="3u 12u(narrower)">
+            <div class="3u 12u(narrower)" style="margin-left: 0px;padding-left: 0px;">
                 <span style="display: block"><span>当前任务：</span><span id="missionName">${requestScope.collection}</span></span>
 
-                <span style="display: block;margin-top: 9px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
+                <span style="display: block;margin-top: 10px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
 
-                <span style="display: block;margin-top: 9px"><span>期待标注人数：</span><span id="expectedNum">${requestScope.expectedNum}</span></span>
+                <span style="display: block;margin-top: 10px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
 
+                <span style="display: block;margin-top: 10px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
 
-                <span style="display: block;margin-top: 9px"><span>截止时间：</span><span id="endTime">${requestScope.endTime}</span></span>
-
-                <span style="display: block;margin-top: 9px"><span>工人最低等级：</span><span id="level">${requestScope.Level}</span></span>
-
-                <span style="display: block;margin-top: 9px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
+                <span style="display: block;margin-top: 10px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
             </div>
 
             <div class="3u 12u(narrower)">
