@@ -159,7 +159,6 @@ public class MainService {
                 }
 
             }
-
             for(int j=0;j<subMissions.get(i).getAnswers().size();j++){
                 ArrayList<Integer> userAnswer=subMissions.get(i).getAnswers().get(j);
                 for(int k=0;k<userAnswer.size();k++){
@@ -193,8 +192,8 @@ public class MainService {
                     isCorrect[j][11]=false;
                 }
             }
-            giveMoney_DoubleNothing(isCorrect,subMissions.get(i).getUid());
-
+            double money[]=giveMoney_DoubleNothing(isCorrect,subMissions.get(i).getUid());
+            setCollection(money,subMissions.get(i).getUid(),mid);
         }
 
     }
@@ -215,7 +214,11 @@ public class MainService {
         reviewLableMission(mid);
     }
 
-
+    /**
+     * 根据投票选出获取标准答案
+     * @param vote
+     * @return
+     */
     public int[] getStandard(double[][] vote){
         //vote.length=10
         int result[]=new int[vote.length];
@@ -247,7 +250,36 @@ public class MainService {
         return result;
     }
 
-    public void  giveMoney_DoubleNothing(boolean x[][],ArrayList<String> uids){
+    /**
+     * 根据子任务的完成情况为每个工人设置collection
+     */
+    public void setCollection(double[] money,ArrayList<String> uid,String mid) {
+
+        int rank[] = new int[money.length];
+
+        for (int j = 0; j < money.length; j++) {
+            rank[j] = 1;
+            for (int i = 0; i < money.length && i != j; i++) {
+                if (money[j] < money[i]) {
+                    rank[j]++;
+                }
+            }
+        }
+        ArrayList<CollectionResult> collectionResults = collectionResultBasicBLService.search("mid", SearchCategory.EQUAL, mid);
+        for (int i = 0; i < uid.size(); i++) {
+            String each = uid.get(i);
+            for (CollectionResult collectionResult : collectionResults) {
+                if (collectionResult.getUid() == each) {
+                    collectionResult.setQuality(8);//默认值
+                    collectionResult.setCredit(money[i]);
+                    collectionResult.setRank(rank[i]);
+                    break;
+                }
+            }
+        }
+    }
+
+    public double[] giveMoney_DoubleNothing(boolean x[][],ArrayList<String> uids){
         double base=1.6;
         double money[]=new double[x.length];
         // x 是 横坐标用户，纵坐标12个题是否正确的二维数组
@@ -262,11 +294,8 @@ public class MainService {
             }
             money[i]=m;
         }
-
-
-       // return money;
+        return money;
     }
-
 
     public ArrayList<Integer> getPictureIndexOfSubmission(String uid,String mid){
         return new ArrayList<Integer>();
