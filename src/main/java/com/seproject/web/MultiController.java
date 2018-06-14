@@ -45,14 +45,19 @@ public class MultiController {
 
     @RequestMapping(value = "/getCollectionInfo")
     @ResponseBody
+    /**
+     * 未来会成为推荐任务的调用方法
+     */
     public String[] getCollectionInfo(@RequestBody String user) {
 
         ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
         int index=0;
         String[] missionNames=new String[1000];
-        for(Mission mission: tmpMission){
-            missionNames[index]=mission.getName()+"^"+mission.getDescription();
-            index++;
+        if(tmpMission!=null&&tmpMission.size()>0) {
+            for (Mission mission : tmpMission) {
+                missionNames[index] = mission.getName() + "^" + mission.getDescription();
+                index++;
+            }
         }
         return missionNames;
     }

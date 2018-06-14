@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Mission {
     @Key
     @Id
+    @Searchable(varName = "name")
     @Column(name="name")
     String name;
     @Column(name="startTime")

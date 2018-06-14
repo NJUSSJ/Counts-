@@ -5,13 +5,19 @@ var userCategory1;
 var Tagable1;
 
 function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum) {
-    if(userCategory === 3){
+
+    if(userCategory === 1){
         document.getElementById("addMissionBtn").innerHTML = "";
         document.getElementById("addMissionBtn").style.display = "none";
+        document.getElementById("judgeMissionBtn").innerHTML = "";
+        document.getElementById("judgeMissionBtn").style.display = "none";
     }
 
     userCategory1=userCategory;
     Tagable1=Tagable;
+
+    var cover = document.getElementById("cover");
+    cover.src = url+"1.jpg";
 
 
 
@@ -61,6 +67,7 @@ function addMissionToUser(missionName, userPhone) {
         });
 }
 
+
 function addJudgeMissionToUser(missionName, userPhone) {
     //alert(missionName);
     //alert(userPhone);
@@ -68,10 +75,10 @@ function addJudgeMissionToUser(missionName, userPhone) {
     $.ajax({
         type: "POST",
         async: false,
-        url: "/addJudgeMissionToUser",
+        url: "/getGoldMission",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(collectionData),
+        data: JSON.stringify(para),
         success: function (returnData) {
             if(returnData!="0"){
                 alert(returnData);

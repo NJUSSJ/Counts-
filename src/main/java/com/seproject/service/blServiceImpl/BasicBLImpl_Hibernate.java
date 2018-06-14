@@ -186,14 +186,11 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
 
         session=sessionFactory.openSession();
         Transaction tx=null;
-        List<T> list=null;
+        List<T> list=new ArrayList<T>();//初始化
         try {
             tx=session.beginTransaction();
             String s0="FROM "+type.getClass().getName();
             list=session.createQuery(s0).list();
-          /*  for(int i=0;i<list.size();i++){
-                System.out.print(list.get(i));
-            }*/
             tx.commit();
         }catch(HibernateException e){
             if(tx!=null){

@@ -9,6 +9,7 @@ import com.seproject.service.Factory;
 import com.seproject.service.MissionService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.MissionParameter;
+import com.seproject.web.parameter.MissionSearchParameter;
 import com.seproject.web.parameter.RecommendParameter;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,6 +46,43 @@ public class MissionController {
         }
         return result;
     }
+
+    @RequestMapping(value = "/MissionTake/SearchInHall")
+    @ResponseBody
+    /**
+     * 任务大厅的搜索
+     */
+    public ArrayList<Mission> searchInHall(@RequestBody String missionSearchParameter){
+        JSONObject object=JSONObject.fromObject(missionSearchParameter);
+        MissionSearchParameter para=(MissionSearchParameter) JSONObject.toBean(object,MissionSearchParameter.class);
+        String range=para.getRange();
+        String keyword=para.getKeyword();
+        ArrayList<Mission> result=new ArrayList<Mission>();
+        if(range.equals("missionName")){
+            result=missionBasicBLService.search("name",SearchCategory.CONTAINS,keyword);
+        }else if(range.equals("requestor")){
+            result=missionBasicBLService.search("requestorNumber",SearchCategory.EQUAL,keyword);
+        }else{
+            ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
+            if(range.equals("ended")){
+                for(Mission mission:missions){
+                    if(mission.getState()>0&&mission.getState()<3){
+                        result.add(mission);
+                    }
+                }
+            }else if(range.equals("notEnded")){
+                for(Mission mission:missions){
+                    if(mission.getState()==0){
+                        result.add(mission);
+                    }
+                }
+            }else{
+                result.addAll(missions);
+            }
+        }
+        return result;
+    }
+
     @RequestMapping(value = "/MissionManage/Delete")
     @ResponseBody
     /**
