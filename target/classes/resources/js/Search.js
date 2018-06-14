@@ -6,7 +6,7 @@ searchBtn.addEventListener("click", function () {
     $.ajax({
         async: false,
         method: "POST",
-        url: "search",//还没写好
+        url: "/MissionTake/SearchInHall",
         contentType: "application/json",
         dataType: "json",
         data: {"searchType":searchType, "searchContent":searchContent},
