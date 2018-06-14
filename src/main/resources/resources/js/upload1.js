@@ -13,7 +13,7 @@ submitButton.addEventListener("click", function () {
         return;
     }
     //tmpPrintMissionLabel();//
-    //alert(document.getElementById("tag_editor").value);
+    alert(JSON.stringify($("tag_editor").tagEditor('getTags')[0].tags));
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -74,7 +74,7 @@ var myDropzone = new Dropzone("#myDropzone", {
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
-                missionLabel: document.getElementById("tag_editor").value,
+                missionLabel: JSON.stringify($("tag_editor").tagEditor('getTags')[0].tags),
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };

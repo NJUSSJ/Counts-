@@ -11,11 +11,13 @@ function loadPhone(_phoneNumber){
 
 tagTypeBtn.addEventListener("click", function () {
     if (tagTypeBtn.value === "1"){
+        $("tag_editor").tagEditor({ placeholder: 'Enter tags ...' });
         //document.getElementById("tag_editor").disabled="";
-        document.getElementById("missionLabel").display="block";
+        //document.getElementById("missionLabel").display="block";
 
     }else{
-        document.getElementById("missionLabel").display="none";
+        $("tag_editor").tagEditor('destroy');
+        //document.getElementById("missionLabel").display="none";
         //document.getElementById("tag_editor").disabled="disabled";
     }
 });
