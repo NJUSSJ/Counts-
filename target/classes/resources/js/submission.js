@@ -24,7 +24,7 @@ function load(mid,uid) {
     var submissionArea = document.getElementById("");
 
 
-    for(var i=0;i<nr_row;i++){
+    for(var i=0;i<submission.length();i++){
         var div1=document.createElement("div");
         div1.className="4u 12u(narrower)";
         var section1=document.createElement("section");
@@ -33,10 +33,9 @@ function load(mid,uid) {
 
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="" +
-            "";
+        a1_1.href="" ;
         var img1=document.createElement("img");
-        img1.src="";
+        img1.src="missionImages/"+""+submission[i];
         img1.className="collection";
         img1.alt="";
         a1_1.appendChild(img1);

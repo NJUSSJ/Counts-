@@ -48,7 +48,7 @@ function addMissionToUser(missionName, userPhone) {
         $.ajax({
            type: "POST",
            async: false,
-           url: "/addMissionToUser",
+           url: "/getLabelMission",
            contentType: "application/json",
            dataType: "json",
            data: JSON.stringify(collectionData),
@@ -73,7 +73,7 @@ function addJudgeMissionToUser(missionName, userPhone) {
     $.ajax({
         type: "POST",
         async: false,
-        url: "/getGoldMission",
+        url: "/getLabelMission",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(para),
