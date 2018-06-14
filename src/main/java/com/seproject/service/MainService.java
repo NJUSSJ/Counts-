@@ -159,7 +159,6 @@ public class MainService {
                 }
 
             }
-
             for(int j=0;j<subMissions.get(i).getAnswers().size();j++){
                 ArrayList<Integer> userAnswer=subMissions.get(i).getAnswers().get(j);
                 for(int k=0;k<userAnswer.size();k++){
@@ -170,6 +169,7 @@ public class MainService {
             /**
              * 找到了所有的标准答案，判断每个用户每题对不对，根据答题情况直接发奖励
              */
+            int standard[]=getStandard(vote);
 
 
         }
@@ -192,7 +192,11 @@ public class MainService {
         reviewLableMission(mid);
     }
 
-
+    /**
+     * 根据投票选出获取标准答案
+     * @param vote
+     * @return
+     */
     public int[] getStandard(double[][] vote){
         int result[]=new int[vote.length];
         for(int i=0;i<vote.length;i++){
@@ -222,4 +226,34 @@ public class MainService {
         }
         return result;
     }
+
+    /**
+     * 根据子任务的完成情况为每个工人设置collection
+     */
+    public void setCollection(double[] money,ArrayList<String> uid,String mid){
+
+        int rank[]=new int[money.length];
+
+        for(int j=0;j<money.length;j++){
+            rank[j]=1;
+            for(int i=0;i<money.length&&i!=j;i++){
+                if(money[j]<money[i]){
+                    rank[j]++;
+                }
+            }
+        }
+        ArrayList<CollectionResult> collectionResults=collectionResultBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(int i=0;i<uid.size();i++){
+            String each=uid.get(i);
+            for(CollectionResult collectionResult:collectionResults){
+                if(collectionResult.getUid()==each){
+                    collectionResult.setQuality(8);//默认值
+                    collectionResult.setCredit(money[i]);
+                    collectionResult.setRank(rank[i]);
+                    break;
+                }
+            }
+        }
+    }
+
 }
