@@ -107,9 +107,11 @@ public class UploadController {
             tmpMission.setTagType(tagType);
             tmpMission.setMissionLabel(missionLabel);
             tmpMission.setMaxWorkerNum(maxWorkerNum);
+            System.out.println("任务类型为："+tmpMission.getTagType());
             if(tmpMission.getTagType()==2) {
                 missionBasicBLService.add(tmpMission);//此处需要修改
             }else{
+
                 missionBasicBLService.add(tmpMission);
                 mainService.createSubMission(tmpMission);
             }

@@ -9,12 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 @Entity
-@Table(name="GoldMission")
+@Table(name="goldmission")
 public class GoldMission {
     @Key
     @Id
     @Searchable(varName = "keyID")
-    @Column(name="keyIid")
+    @Column(name="keyid")
     String keyID="";//mid+i
     @Searchable(varName = "mid")
     @Column(name="mid")

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 @Entity
-@Table(name="Mission")
+@Table(name="mission")
 public class Mission {
     @Key
     @Id

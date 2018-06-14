@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 @Entity
-@Table(name="SubMission")
+@Table(name="submission")
 public class SubMission {
     //子任务
     @Key
