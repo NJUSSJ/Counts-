@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
@@ -36,49 +38,77 @@ public class MultiController {
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
+        int tagType = missionBasicBLService.findByKey(collection).getTagType();
+        model.addObject("tagType", tagType);
+        ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
+        model.addObject("missionLabel", missionLabel);
         return model;
     }
 
     @RequestMapping(value = "/getCollectionInfo")
     @ResponseBody
+    /**
+     * 未来会成为推荐任务的调用方法
+     */
     public String[] getCollectionInfo(@RequestBody String user) {
 
         ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
         int index=0;
         String[] missionNames=new String[1000];
-        for(Mission mission: tmpMission){
-            missionNames[index]=mission.getName()+"^"+mission.getDescription();
-            index++;
+        if(tmpMission!=null&&tmpMission.size()>0) {
+            for (Mission mission : tmpMission) {
+                missionNames[index] = mission.getName() + "^" + mission.getDescription();
+                index++;
+            }
         }
         return missionNames;
     }
 
     @RequestMapping(value = "/getMissionDetails")
     @ResponseBody
-    public ModelAndView getMissionDetais(HttpServletRequest request){
+    public ModelAndView getMissionDetails(HttpServletRequest request){
         String missionName=request.getParameter("missionName");
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
         double credit=tmpMission.getReward();
-        int expectedNum=tmpMission.getMaxNum();
-        //String startTime=tmpMission.getStartTime();
+        String startTime=tmpMission.getStartTime();
         String endTime=tmpMission.getEndTime();
         String Level=tmpMission.getWorkerLevel();
         String description=tmpMission.getDescription();
+
+        String picType = tmpMission.getPicType();
+        int tagType = tmpMission.getTagType();
+        int difficulty = tmpMission.getDifficulty();
+        ArrayList<String> missionLabel = tmpMission.getMissionLabel();
+        int maxWorkerNum = tmpMission.getMaxWorkerNum();
 
         ModelAndView view= new ModelAndView("MissionDetails");
         view.addObject("missionName",missionName);
         view.addObject("picNum",picNum);
         view.addObject("credit",credit);
-        view.addObject("expectedNum",expectedNum);
-        //view.addObject("startTime", startTime);
+        view.addObject("startTime", startTime);
         view.addObject("endTime", endTime);
         view.addObject("Level",Level);
         view.addObject("description",description);
+
+        view.addObject("picTye",picType);
+        view.addObject("tagType",tagType);
+        view.addObject("difficulty",difficulty);
+        view.addObject("missionLabel",missionLabel);
+        view.addObject("maxWorkerNum",maxWorkerNum);
         return view;
     }
 
-
+    @RequestMapping(value = "/getSubmission")
+    @ResponseBody
+    public ModelAndView getSubMission(HttpServletRequest request){
+        String mid = "\'"+request.getParameter("imageURL")+"\'";
+        String uid = request.getParameter("userPhone");
+        ModelAndView view = new ModelAndView("personalSubmission");
+        view.addObject("mid", mid);
+        view.addObject("uid", uid);
+        return view;
+    }
 
 
 }

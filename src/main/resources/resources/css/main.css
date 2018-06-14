@@ -1560,7 +1560,7 @@
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
+/*textarea*/
 	body, input, select, textarea {
 		color: #7c8081;
 		font-family: 'Lato', sans-serif;
@@ -1797,14 +1797,23 @@
 				width: 100%;
 			}
 
+	    .image.fit:hover {
+		    top: -0.2em;
+		}
 		.image.featured {
 			display: block;
 			margin: 0 0 2em 0;
 		}
 
+
+
 			.image.featured img {
 				display: block;
 				width: 100%;
+			}
+
+			.image.featured:hover{
+				top: -0.2em;
 			}
 
 

@@ -1,6 +1,7 @@
 package com.seproject.domain;
 
 import com.seproject.common.Key;
+import com.seproject.common.Searchable;
 
 import javax.persistence.*;
 /**
@@ -18,8 +19,10 @@ public class CollectionResult {
     @Column(name="resultid")
     private String resultId;
     @Column(name="uid")
+    @Searchable(varName = "uid")
     private String uid;
     @Column(name="mid")
+    @Searchable(varName = "mid")
     private String mid;
     @Column(name="credit")
     private double credit;

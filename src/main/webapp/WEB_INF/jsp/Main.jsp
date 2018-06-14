@@ -10,13 +10,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/Sign.js"></script>
     <script src="js/Message.js"></script>
 
     <style type="text/css">
         .collection{
             width: 400px;
-            height: 260px;
+            height: 200px;
+        }
+        .image.featured:hover{
+            top : -0.2em;
         }
     </style>
 </head>
@@ -87,19 +91,32 @@
 
             <!-- Content -->
             <div class="content">
-                <section>
+                <section style="margin-bottom: 3px">
                     <a href="#" class="image featured "><img src="images/timg.jpg" alt="" /></a>
-                    <header>
-                        <h3>以下为一段说明文字</h3>
-                    </header>
-                    <p>众包标注</p>
+
+                    <div class="search d1">
+                        <form id="searchFromId">
+                            <select id="searchType">
+                                <option value="all">全部</option>
+                                <option value="notEnded">未截止</option>
+                                <option value="ended">已截止</option>
+                                <option value="missionName">任务名</option>
+                                <option value="requester">发布者</option>
+                            </select>
+                            <input type="text" placeholder="搜索从这里开始..." id="searchContent">
+                            <button type="submit" id="searchBtn"></button>
+                        </form>
+                    </div>
+
                 </section>
             </div>
+
+
 
         </section>
 
         <!-- Two -->
-        <section class="wrapper style1 container special" id="collections">
+        <section class="wrapper style container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
 
         </section>
 

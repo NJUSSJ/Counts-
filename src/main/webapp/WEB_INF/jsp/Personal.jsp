@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css2/main.css" />
-    <link rel="stylesheet" href="samples-styles.css">
+    <link rel="stylesheet" href="css/samples-styles.css">
     <script src="js/Personal.js"></script>
     <script src="js/CreateChartArea.js"></script>
     <script src="js/echarts.min.js"></script>
@@ -36,9 +36,13 @@
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
     <!-- end load 3D stat -->
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
-    <style>
+    <style type="text/css">
         /* filter table specific styling */
         td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+
+        .image.fit:hover{
+            top: -0.2em;
+        }
     </style>
 </head>
 <body onload="loadPersonal()">
@@ -77,46 +81,11 @@
                 <h2>Work</h2>
             </header>
             <p>
-                图集列表
+                任务列表
             </p>
             <section>
                 <div class="row" id="personalCollections">
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic001.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic002.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic003.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic004.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-                    </div>
-                    <div class="4u$ 12u$(mobile)">
-                        <a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
-                    </div>
+
                 </div>
             </section>
         </article>

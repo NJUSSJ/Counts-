@@ -14,8 +14,11 @@ import java.util.ArrayList;
 public class Mission {
     @Key
     @Id
+    @Searchable(varName = "name")
     @Column(name="name")
     String name;
+    @Column(name="startTime")
+    String startTime;
     @Column(name="endTime")
     String endTime;
     @Column(name="description")
@@ -28,8 +31,6 @@ public class Mission {
     int fileNum;
     @Column(name="reward")
     double reward;
-    @Column(name="maxnum")
-    int maxNum;
     @Column(name = "recommendlabel",columnDefinition = "blob")
     private ArrayList<String> recommendLabel;//推荐类别列表
     @Searchable(varName = "requestorNumber")
@@ -38,22 +39,40 @@ public class Mission {
     @Column(name="state")
     int state;//0:未结束 1：结束但未评估 2:已评估 3：已被发起者删除
     @Column(name="difficulty")
-    private int difficulty;
-    @Column(name="missionlabel",columnDefinition = "blob")
+    private int difficulty;//1,2,3
+    @Column(name="missionLabel",columnDefinition = "blob")
     private ArrayList<String> missionLabel;//标签式任务的标签列表
+    @Column(name="tagType")
+    int tagType;//1:标签式 2:非标签式
+    @Column(name="picType")
+    String picType;
+    @Column(name="maxWorkerNum")
+    int maxWorkerNum;
     public Mission(){
 
     }
-    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, int maxNum, String requestorNumber){
+    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, String requestorNumber, int difficulty, int tagType, String picType, ArrayList<String> missionLabel, int maxWorkerNum){
         this.name=name;
         this.endTime=endTime;
         this.description=description;
         this.files=files;
         this.fileNum=fileNum;
         this.workerLevel=workerLevel;
-        this.maxNum=maxNum;
         this.reward=reward;
         this.requestorNumber=requestorNumber;
+        this.difficulty = difficulty;
+        this.tagType = tagType;
+        this.picType = picType;
+        this.missionLabel = missionLabel;
+        this.maxWorkerNum = maxWorkerNum;
+    }
+
+    public int getMaxWorkerNum() {
+        return maxWorkerNum;
+    }
+
+    public void setMaxWorkerNum(int maxWorkerNum) {
+        this.maxWorkerNum = maxWorkerNum;
     }
 
     public void setWorkerLevel(String workerLevel){
@@ -96,6 +115,14 @@ public class Mission {
         return this.description;
     }
 
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
     public void setEndTime(String endTime){
         this.endTime=endTime;
     }
@@ -110,14 +137,6 @@ public class Mission {
 
     public double getReward(){
         return this.reward;
-    }
-
-    public void setMaxNum(int maxNum){
-        this.maxNum=maxNum;
-    }
-
-    public int getMaxNum(){
-        return this.maxNum;
     }
 
     public void setRequestorNumber(String requestorNumber){
@@ -138,6 +157,22 @@ public class Mission {
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public int getTagType() {
+        return tagType;
+    }
+
+    public void setTagType(int tagType) {
+        this.tagType = tagType;
+    }
+
+    public String getPicType() {
+        return picType;
+    }
+
+    public void setPicType(String picType) {
+        this.picType = picType;
     }
 
     public ArrayList<String> getMissionLabel() {

@@ -37,11 +37,16 @@ public class CollectionController {
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
         double credit=tmpMission.getReward();
-        int expectedNum=tmpMission.getMaxNum();
-        //String startTime=tmpMission.getStartTime();
+        String startTime=tmpMission.getStartTime();
         String endTime=tmpMission.getEndTime();
         String Level=tmpMission.getWorkerLevel();
         String description=tmpMission.getDescription();
+        String picType = tmpMission.getPicType();
+        int tagType = tmpMission.getTagType();
+        int difficulty = tmpMission.getDifficulty();
+        ArrayList<String> missionLabel = tmpMission.getMissionLabel();
+        System.out.println("missionLabel: " + missionLabel.toString());
+        int maxWorkerNum = tmpMission.getMaxWorkerNum();
 
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
         String fixx="\'missionImages/";
@@ -63,11 +68,16 @@ public class CollectionController {
         model.addObject("Tagable", Tagable);
 
         model.addObject("credit",credit);
-        model.addObject("expectedNum",expectedNum);
-        //model.addObject("startTime", startTime);
+        model.addObject("startTime", startTime);
         model.addObject("endTime", endTime);
         model.addObject("Level",Level);
         model.addObject("description",description);
+
+        model.addObject("picType",picType);
+        model.addObject("tagType",tagType);
+        model.addObject("difficulty",difficulty);
+        model.addObject("missionLabel",missionLabel);
+        model.addObject("maxWorkerNum",maxWorkerNum);
 
         return model;
     }
@@ -97,6 +107,8 @@ public class CollectionController {
         int picNum=tmpMission.getFileNum();
         collection.setKeyId(mid+uid);
         CollectionResult collectionResult=new CollectionResult(collection);
+        collectionResult.setUid(uid);
+        collectionResult.setMid(mid);
         collectionResult.setState(0);
         ArrayList<String> tmpArray=new ArrayList<String>();
         for(int i=0;i<picNum;i++){

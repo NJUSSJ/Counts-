@@ -6,9 +6,11 @@ import com.seproject.domain.CollectionResult;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
+import com.seproject.service.MainService;
 import com.seproject.service.MissionService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.MissionParameter;
+import com.seproject.web.parameter.MissionSearchParameter;
 import com.seproject.web.parameter.RecommendParameter;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +27,7 @@ public class MissionController {
     BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     MissionService missionService=new MissionService();
+    MainService mainService=new MainService();
     @RequestMapping(value = "/MissionManage/Search")
     @ResponseBody
     /**
@@ -45,6 +48,43 @@ public class MissionController {
         }
         return result;
     }
+
+    @RequestMapping(value = "/MissionTake/SearchInHall")
+    @ResponseBody
+    /**
+     * 任务大厅的搜索
+     */
+    public ArrayList<Mission> searchInHall(@RequestBody String missionSearchParameter){
+        JSONObject object=JSONObject.fromObject(missionSearchParameter);
+        MissionSearchParameter para=(MissionSearchParameter) JSONObject.toBean(object,MissionSearchParameter.class);
+        String range=para.getRange();
+        String keyword=para.getKeyword();
+        ArrayList<Mission> result=new ArrayList<Mission>();
+        if(range.equals("missionName")){
+            result=missionBasicBLService.search("name",SearchCategory.CONTAINS,keyword);
+        }else if(range.equals("requestor")){
+            result=missionBasicBLService.search("requestorNumber",SearchCategory.EQUAL,keyword);
+        }else{
+            ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
+            if(range.equals("ended")){
+                for(Mission mission:missions){
+                    if(mission.getState()>0&&mission.getState()<3){
+                        result.add(mission);
+                    }
+                }
+            }else if(range.equals("notEnded")){
+                for(Mission mission:missions){
+                    if(mission.getState()==0){
+                        result.add(mission);
+                    }
+                }
+            }else{
+                result.addAll(missions);
+            }
+        }
+        return result;
+    }
+
     @RequestMapping(value = "/MissionManage/Delete")
     @ResponseBody
     /**
@@ -106,11 +146,24 @@ public class MissionController {
     /**
      *自动评估（标签式）任务
      */
-    @RequestMapping(value = "/MissionEvaluate/AutoEvaluate/{missionName}}")
+    @RequestMapping(value = "/MissionEvaluate/AutoEvaluate/{missionName}")
     @ResponseBody
     public void autoEvaluate(String missionName){
         missionService.autoEvaluate(missionName);
     }
+
+    @RequestMapping(value = "/MissionEvaluate/getPictureIndex")
+    @ResponseBody
+    /**
+     * 获取子任务的全部图片
+     */
+    public ArrayList<Integer> getPictureIndex(@RequestBody String missionParameter){
+        System.out.println(missionParameter);
+        MissionParameter para=toMissionPara(missionParameter);
+        System.out.println(mainService.getPictureIndexOfSubmission(para.getUid(),para.getKeyword()));
+        return mainService.getPictureIndexOfSubmission(para.getUid(),para.getKeyword());
+    }
+
 
     /*****************************************************/
     /**

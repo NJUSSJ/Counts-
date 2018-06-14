@@ -47,11 +47,12 @@ public class LoginController {
                 ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
                 ArrayList<String> missionNames=new ArrayList<String>();
                 int index=0;
-                for(Mission mission: missions){
-                    missionNames.add("\""+mission.getName()+"\"");
-                    index++;
-                }
-
+                if(missions!=null&&missions.size()>0) {
+					for (Mission mission : missions) {
+						missionNames.add("\"" + mission.getName() + "\"");
+						index++;
+					}
+				}
                 if(realUser.getCategory()!=3){
                     view.addObject("userName",realUser.getUserName());
                     view.addObject("phoneNumber",realUser.getPhoneNumber());

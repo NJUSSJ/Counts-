@@ -12,11 +12,27 @@ submitButton.addEventListener("click", function () {
     if(!veriInput()){
         return;
     }
+    //tmpPrintMissionLabel();//
+    alert(document.getElementById("tag_editor").value);
+
     myDropzone.processQueue();
     alert("发布成功！");
     var form=document.getElementById("formID");
     form.submit();
 });
+
+//以下方法是把missionLabel的String变成Array并返回
+/*
+function tmpPrintMissionLabel(){
+    var missionLabel = [];
+    var tmp = document.getElementById("tag_editor").value;
+    missionLabel = tmp.split(" ");
+    missionLabel.filter(function (value) { return value !== " "});
+    for(var i = 0;i<missionLabel.length;i++){
+        alert(missionLabel[i]);
+    }
+    return missionLabel;
+}*/
 
 /*
 dropzone setting
@@ -29,7 +45,7 @@ var myDropzone = new Dropzone("#myDropzone", {
     autoProcessQueue: false,
     method: 'post',
     filesizeBase: 1024,
-    parallelUploads: 100,
+    parallelUploads: 1000,
     acceptedFiles: ".jpg", //上传的类型
 
     sending: function(file, xhr, formData) {
@@ -43,6 +59,9 @@ var myDropzone = new Dropzone("#myDropzone", {
     },
 
     init: function () {
+        //var missionLabel = tmpPrintMissionLabel();
+
+
         this.on("processing", function (file) {
             this.options.params={
                 name: document.getElementById("name").value,
@@ -50,12 +69,14 @@ var myDropzone = new Dropzone("#myDropzone", {
                 endTime: document.getElementById("endTime").value,
                 workLevel: document.getElementById("workerLevel").value,
                 description: document.getElementById("description").value,
-                expectedNum: document.getElementById("maxNum").value,
+                maxWorkerNum: document.getElementById("maxWorkerNum").value,
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
-                tagNames: document.getElementById("tagNames").value,
-                type: document.getElementById("type").value
+                difficulty: document.getElementById("difficulty").value,
+                missionLabel: document.getElementById("tag_editor").value,
+                tagType: document.getElementById("tagType").value,
+                picType: document.getElementById("picType").value
             };
             indexPic++;
         });
@@ -77,7 +98,7 @@ function veriInput() {
     var endTime=document.getElementById("endTime").value;
     var workLevel=document.getElementById("workerLevel").value;
     var description=document.getElementById("description").value;
-    var expectedNum=document.getElementById("maxNum").value;
+    var maxWorkerNum=document.getElementById("maxWorkerNum").value;
     var reward=document.getElementById("reward").value;
 
     if(name==null||name===""){
@@ -122,7 +143,7 @@ function veriInput() {
         alert("请输入任务描述!");
         return false;
     }
-    if(expectedNum==null||expectedNum==""||isNaN(expectedNum)){
+    if(maxWorkerNum==null||maxWorkerNum==""||isNaN(maxWorkerNum)){
         alert("请设置期待标注人数！");
         return false;
     }

@@ -37,7 +37,7 @@ public class ChartController {
     @ResponseBody
     public String getWorkerChartData(@RequestBody String userInfo) {
         String phoneNumber = userInfo.substring(16,27);//获取手机号
-
+        System.out.println(phoneNumber+"!!!!!!!!!!!!!!!!");
         //需要通过uid获取相应data
         WorkerData workerData = statisticsService.getWorkerData(phoneNumber);
         JSONObject jsonObject = JSONObject.fromObject(workerData);
