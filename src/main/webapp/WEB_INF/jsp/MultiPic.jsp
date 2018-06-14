@@ -65,14 +65,18 @@
 
                 <span style="display: block;margin-top: 8px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
 
-                <span style="display: block;margin-top: 8px"><span>标签：</span><span id="missionLabel" onclick="loadMissionLabel(${requestScope.missionLabel})"></span></span>
-                <script>
+                <span style="display: block;margin-top: 8px"><span>标签：</span><span id="missionLabel">${requestScope.missionLabel}</span></span>
+                <!-- 以下方法是把missionLabel的list转变为String
+                <!-- <script>
                     function loadMissionLabel(missionLabel) {
-                        console.log("missionLabel" + missionLabel);
-                        var content = "";
-                        document.getElementById("missionLabel").value = content;
+                        var ret = "";
+                        for(var i = 0;i<missionLabel.length;i++){
+                            ret += missionLabel[i] + " "
+                        }
+                        alert(ret);
+                        document.getElementById("missionLabel").value = ret;
                     }
-                </script>
+                </script> -->
             </div>
 
             <div class="3u 12u(narrower)">

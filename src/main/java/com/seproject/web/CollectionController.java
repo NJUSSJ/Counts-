@@ -45,7 +45,7 @@ public class CollectionController {
         int tagType = tmpMission.getTagType();
         int difficulty = tmpMission.getDifficulty();
         ArrayList<String> missionLabel = tmpMission.getMissionLabel();
-        System.out.println(missionLabel);
+        System.out.println("missionLabel: " + missionLabel.toString());
         int maxWorkerNum = tmpMission.getMaxWorkerNum();
 
         picNum=missionBasicBLService.findByKey(missionName).getFileNum();
@@ -73,7 +73,7 @@ public class CollectionController {
         model.addObject("Level",Level);
         model.addObject("description",description);
 
-        model.addObject("picTye",picType);
+        model.addObject("picType",picType);
         model.addObject("tagType",tagType);
         model.addObject("difficulty",difficulty);
         model.addObject("missionLabel",missionLabel);

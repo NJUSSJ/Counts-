@@ -12,11 +12,27 @@ submitButton.addEventListener("click", function () {
     if(!veriInput()){
         return;
     }
+    //tmpPrintMissionLabel();//
+    alert(document.getElementById("tag_editor").value);
+
     myDropzone.processQueue();
     alert("发布成功！");
     var form=document.getElementById("formID");
     form.submit();
 });
+
+//以下方法是把missionLabel的String变成Array并返回
+/*
+function tmpPrintMissionLabel(){
+    var missionLabel = [];
+    var tmp = document.getElementById("tag_editor").value;
+    missionLabel = tmp.split(" ");
+    missionLabel.filter(function (value) { return value !== " "});
+    for(var i = 0;i<missionLabel.length;i++){
+        alert(missionLabel[i]);
+    }
+    return missionLabel;
+}*/
 
 /*
 dropzone setting
@@ -43,6 +59,9 @@ var myDropzone = new Dropzone("#myDropzone", {
     },
 
     init: function () {
+        //var missionLabel = tmpPrintMissionLabel();
+
+
         this.on("processing", function (file) {
             this.options.params={
                 name: document.getElementById("name").value,
@@ -55,7 +74,7 @@ var myDropzone = new Dropzone("#myDropzone", {
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
-                missionLabel: document.getElementById("missionLabel").value,
+                missionLabel: document.getElementById("tag_editor").value,
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };

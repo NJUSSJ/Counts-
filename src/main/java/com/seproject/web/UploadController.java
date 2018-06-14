@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -68,12 +69,23 @@ public class UploadController {
             int difficulty = Integer.parseInt(request.getParameter("difficulty"));
             String picType = request.getParameter("picType");
             int tagType = Integer.parseInt(request.getParameter("tagType"));
-            String[] missionLabelString = request.getParameter("missionLabel").split(" ");
+            String missionLabelString = request.getParameter("missionLabel");
+            System.out.println("missionLabelString: " + missionLabelString);
+            //如果以数组传过来 传过来的missionLabel为空 根本接收不到 所以我传String 处理一下再存
+            //String[] tmp = missionLabelString.substring(1,missionLabelString.length()-1).split(",");
+            //ArrayList<String> missionLabel = new ArrayList<String>();
+            //for(int i = 0;i<tmp.length;i++){
+              //  missionLabel.set(i, tmp[i]);
+            //}
             ArrayList<String> missionLabel = new ArrayList<String>();
-            System.out.println(missionLabelString);
-            for(int i = 0;i<missionLabelString.length;i++){
-                missionLabel.add(missionLabelString[i]);
+            String[] tmp = missionLabelString.split(" ");
+            int index = 0;
+            for(int i = 0;i<tmp.length;i++){
+                if(!tmp[i].equals("") && tmp[i] != null) {
+                    missionLabel.add(tmp[i]);
+                }
             }
+            System.out.println("missionLabel: "+ missionLabel.toString());
             int maxWorkerNum = Integer.parseInt(request.getParameter("maxWorkerNum"));
 
             tmpMission=new Mission();

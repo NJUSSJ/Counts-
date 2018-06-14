@@ -6,21 +6,24 @@ var ensureBtn = document.getElementById("ensure");
 var tagTypeBtn = document.getElementById("tagType");
 
 function loadPhone(_phoneNumber){
-    //alert(_phoneNumber);
     phoneNumber = _phoneNumber;
 }
 
 tagTypeBtn.addEventListener("click", function () {
     if (tagTypeBtn.value === "1"){
-        txt = "标签名称（请用空格分开不同标签）：<textarea id=\"tag_editor\"></textarea>";
+        document.getElementById("tag_editor").style = "display:block";
+        //txt = "标签名称（请用空格分开不同标签）：<textarea id=\"tag_editor\"></textarea>";
+        /*
         txt += "\n<script>\n" +
             "                        $(function () {\n" +
             "                            $('#tag_editor').tagEditor({ initialTags: ['tag1', 'tag2', 'tag3'] });\n" +
             "                        });\n" +
             "                    </script>";
-        document.getElementById("missionLabel").innerHTML = txt;
+            */
+        //document.getElementById("missionLabel").innerHTML = txt;
     }else{
-        document.getElementById("missionLabel").innerHTML = "";
+        //document.getElementById("missionLabel").innerHTML = "";
+        document.getElementById("tag_editor").style = "display:none";
     }
 });
 

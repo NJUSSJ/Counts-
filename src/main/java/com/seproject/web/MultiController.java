@@ -64,12 +64,11 @@ public class MultiController {
 
     @RequestMapping(value = "/getMissionDetails")
     @ResponseBody
-    public ModelAndView getMissionDetais(HttpServletRequest request){
+    public ModelAndView getMissionDetails(HttpServletRequest request){
         String missionName=request.getParameter("missionName");
         Mission tmpMission=missionBasicBLService.findByKey(missionName);
         int picNum=tmpMission.getFileNum();
         double credit=tmpMission.getReward();
-        int expectedNum=tmpMission.getMaxWorkerNum();
         String startTime=tmpMission.getStartTime();
         String endTime=tmpMission.getEndTime();
         String Level=tmpMission.getWorkerLevel();
@@ -85,7 +84,6 @@ public class MultiController {
         view.addObject("missionName",missionName);
         view.addObject("picNum",picNum);
         view.addObject("credit",credit);
-        view.addObject("expectedNum",expectedNum);
         view.addObject("startTime", startTime);
         view.addObject("endTime", endTime);
         view.addObject("Level",Level);
