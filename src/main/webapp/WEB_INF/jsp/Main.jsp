@@ -15,13 +15,7 @@
     <script src="js/Message.js"></script>
 
     <style type="text/css">
-        .collection{
-            width: 400px;
-            height: 200px;
-        }
-        .image.featured:hover{
-            top : -0.2em;
-        }
+
         #collections{
             -moz-box-shadow: 3px 3px 4px #000;
             -webkit-box-shadow: 3px 3px 4px #000;
