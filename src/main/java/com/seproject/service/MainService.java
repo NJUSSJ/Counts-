@@ -23,43 +23,8 @@ public class MainService {
      */
     public void  createSubMission(Mission m){
         int picNum=m.getFileNum();
-        int groupNum=0,goldNum=0,goldGroupNum=0;
-        if(picNum>=100) {
-        /*
-            如果图片数超过100，如876,则用87+6=93,向下找末尾是6的数，即86作为金标数
-            876-86=790，正好分79组
-            目标数金标数稍大于普通组数，如果不满足这个条件，就给金标数加10，直到满足为止
-         */
-            int tail=picNum%10;
-            goldNum=(picNum/10)+tail;
-            while(goldNum%10!=tail){
-                goldNum--;
-            }
-            groupNum=(picNum-goldNum)/10;
-            while(groupNum>goldNum){
-                goldNum+=10;
-                groupNum--;
-            }
-            goldGroupNum=goldNum/10;
-            if(goldNum%10!=0) goldGroupNum++;
-        }else if(picNum>10){
-            if(picNum>=11&&picNum<20){
-                goldNum=picNum%10;
-                groupNum=goldNum=1;
-            }else if(picNum%10==0){
-                goldNum=10;
-                goldGroupNum=1;
-                groupNum=picNum/10-goldGroupNum;
-            }else if(picNum%10<=5){
-                goldNum=picNum%10+10;
-                groupNum=(picNum-goldNum)/10;
-                goldGroupNum=2;
-            }else{
-                goldNum=picNum%10;
-                groupNum=(picNum-goldNum)/10;
-                goldGroupNum=1;
-            }
-        }
+        int[] array=getThreeNum(picNum);
+        int groupNum=array[0],goldNum=array[1],goldGroupNum=array[2];
         int base=groupNum*10;
         for(int i=0;i<groupNum;i++){
             SubMission subMission=new SubMission();
@@ -100,6 +65,55 @@ public class MainService {
 
     }
 
+    /**
+     * 获得图片组数，金标数，金标组数形成的数组
+     * @param picNum
+     * @return
+     */
+    public int[] getThreeNum(int picNum){
+        int[] result=new int[3];
+        int goldNum=0,groupNum=0,goldGroupNum=0;
+        if(picNum>=100) {
+        /*
+            如果图片数超过100，如876,则用87+6=93,向下找末尾是6的数，即86作为金标数
+            876-86=790，正好分79组
+            目标数金标数稍大于普通组数，如果不满足这个条件，就给金标数加10，直到满足为止
+         */
+            int tail=picNum%10;
+            goldNum=(picNum/10)+tail;
+            while(goldNum%10!=tail){
+                goldNum--;
+            }
+            groupNum=(picNum-goldNum)/10;
+            while(groupNum>goldNum){
+                goldNum+=10;
+                groupNum--;
+            }
+            goldGroupNum=goldNum/10;
+            if(goldNum%10!=0) goldGroupNum++;
+        }else if(picNum>10){
+            if(picNum>=11&&picNum<20){
+                goldNum=picNum%10;
+                groupNum=goldNum=1;//如果在11到20之间，直接取个位数做金标数，只要一组
+            }else if(picNum%10==0){
+                goldNum=10;
+                goldGroupNum=1;
+                groupNum=picNum/10-goldGroupNum;//如果是20,30...90,直接取10个做金标，一组
+            }else if(picNum%10<=5){
+                goldNum=picNum%10+10;
+                groupNum=(picNum-goldNum)/10;
+                goldGroupNum=2;//如果个位小于5，取（10+个位）做金标，两组
+            }else{
+                goldNum=picNum%10;
+                groupNum=(picNum-goldNum)/10;
+                goldGroupNum=1;//如果个位大于5，直接取个位，一组
+            }
+        }
+        result[0]=groupNum;
+        result[1]=goldNum;
+        result[2]=goldGroupNum;
+        return result;
+    }
 
     public void createCollection(String uid,String mid){
         Collection collection=new Collection();
@@ -107,6 +121,7 @@ public class MainService {
         collection.setUid(uid);
         collection.setMid(mid);
         CollectionResult collectionResult=new CollectionResult();
+        collectionResult.setResultId(collection.getKeyId());
         collectionResult.setMid(mid);
         collectionResult.setUid(uid);
         collectionBasicBLService.add(collection);
@@ -341,8 +356,25 @@ public class MainService {
         return money;
     }
 
+    /**
+     * 获取用户的子任务里图片的索引
+     * @param uid
+     * @param mid
+     * @return
+     */
     public ArrayList<Integer> getPictureIndexOfSubmission(String uid,String mid){
-
+        ArrayList<Integer> result=new ArrayList<Integer>();
+        ArrayList<SubMission> subMissions=subMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(SubMission subMission:subMissions){
+            ArrayList<String> user=subMission.getUid();
+            if(user.contains(uid)){
+                int seed=subMission.getSeed();
+                for(int j=0;j<10;j++){
+                    result.add(seed+j);
+                }
+                return result;
+            }
+        }
         return new ArrayList<Integer>();
     }
 
