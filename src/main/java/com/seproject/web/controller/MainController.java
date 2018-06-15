@@ -53,6 +53,8 @@ public class MainController {
         GetLabelMissionParameter para= (GetLabelMissionParameter) JSONObject.toBean(object,GetLabelMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
+        System.out.println("uid"+uid+"!!!!!!!!!");
+        System.out.println("mid"+mid+"!!!!!!!!!");
         ArrayList<SubMission> subMissions=subMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<Integer> userNum=new ArrayList<Integer>();
         for(SubMission subMission:subMissions){userNum.add(subMission.getUid().size());}
@@ -110,6 +112,11 @@ public class MainController {
         return RM.FAILURE.toString();
     }
 
+    /**
+     * 高级工人接金标任务
+     * @param parameter
+     * @return
+     */
     @RequestMapping(value = "/getGoldMission")
     @ResponseBody
     public String getGoldMission (String parameter){

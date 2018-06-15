@@ -42,20 +42,4 @@ public class Collection {
 
     public void setInfoList(ArrayList<String> infoList) { this.infoList = infoList; }
 
-    /*下面这段只是为了符合之前的结构，是对collectioniResult操作*/
-/*    public int getState(){return result.getState();}
-
-    public void setState(int state){this.result.setState(state);}
-
-    public double getCredit() { return result.getCredit(); }
-
-    public void setCredit(double credit) { this.result.setCredit(credit); }
-
-    public int getQuality() { return result.getQuality(); }
-
-    public void setQuality(int quality) { this.result.setQuality(quality); }
-
-    public int getRank(){return this.result.getRank();}
-
-    public void setRank(int rank){this.result.setRank(rank);}*/
 }
