@@ -71,6 +71,7 @@ var myDropzone = new Dropzone("#myDropzone", {
                 maxWorkerNum: document.getElementById("maxWorkerNum").value,
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
+                fileNum: document.getElementsByClassName("dz-image").length,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
                 missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),

@@ -24,7 +24,7 @@ function load(mid,uid) {
     var submissionArea = document.getElementById("");
 
 
-    for(var i=0;i<submission.length();i++){
+    for(var i=0;i<submission.length;i++){
         var div1=document.createElement("div");
         div1.className="4u 12u(narrower)";
         var section1=document.createElement("section");
