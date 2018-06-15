@@ -65,7 +65,6 @@ var myDropzone = new Dropzone("#myDropzone", {
         this.on("processing", function (file) {
             this.options.params={
                 name: document.getElementById("name").value,
-                startTime: document.getElementById("startTime").value,
                 endTime: document.getElementById("endTime").value,
                 workLevel: document.getElementById("workerLevel").value,
                 description: document.getElementById("description").value,
@@ -94,7 +93,6 @@ var myDropzone = new Dropzone("#myDropzone", {
 
 function veriInput() {
     var name=document.getElementById("name").value;
-    var startTime=document.getElementById("startTime").value;
     var endTime=document.getElementById("endTime").value;
     var workLevel=document.getElementById("workerLevel").value;
     var description=document.getElementById("description").value;
@@ -131,7 +129,7 @@ function veriInput() {
 
 
 
-    if(startTime==null||startTime==null||endTime==null||endTime==""||startTime>endTime){
+    if(endTime==null||endTime==""){
         alert("请正确设置起止时间！");
         return false;
     }
@@ -173,8 +171,8 @@ function veriInput() {
     }
 
 
-    if(document.getElementsByClassName("dz-image")[0]==null){
-        alert("请选择任务文件！");
+    if(document.getElementsByClassName("dz-image").length<15){
+        alert("任务图片数量不能少于15");
         return false;
     }
 

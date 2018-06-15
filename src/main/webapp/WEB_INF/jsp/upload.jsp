@@ -190,12 +190,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">起始时间： <input  id="startTime" type="date" name="startTime"  /></span>
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" align="left">
                             <span class="datePicker">截至时间： <input id="endTime" type="date" name="endTime"  /></span>
                         </div>
                     </div>
@@ -234,7 +228,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                             </script>
                         </div>
-                    </div>
+                    </div>/*图片数量不能少于15*/
 
                     <div class="row">
                         <div class="12u">
