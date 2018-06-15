@@ -16,7 +16,7 @@ public class Collection {
     @Key
     @Id
     @Column(name="keyid")
-    private String keyId;
+    private String keyId;//
     @Column(name="uid")
     @Searchable(varName = "uid")
     private String uid;
@@ -24,7 +24,7 @@ public class Collection {
     @Searchable(varName = "mid")
     private String mid;
     @Column(name="infolist",columnDefinition = "blob")
-    private ArrayList<String> infoList = new ArrayList<String>();//如果是标签式，那么里面是按图集顺序的标签
+    private ArrayList<String> infoList = new ArrayList<String>();//如果是标签式，那么里面是空的
 
     public String getKeyId() { return keyId; }
 

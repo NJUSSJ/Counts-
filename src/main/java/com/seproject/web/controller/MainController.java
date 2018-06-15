@@ -7,7 +7,8 @@ import com.seproject.service.Factory;
 import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.FinishReviewParameter;
-import com.seproject.web.parameter.GetLabelMissionParameter;
+import com.seproject.web.parameter.GetMissionParameter;
+import com.seproject.web.parameter.UpdateFreeMissionParameter;
 import com.seproject.web.parameter.UpdateLabelMissionParameter;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -29,10 +29,10 @@ public class MainController {
      * 自动评估标签式任务并分配奖励、手动评估标签式任务并分配奖励
      */
     BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    BasicBLService<SubMission> subMissionBasicBLService=Factory.getBasicBLService(new SubMission());
-    BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
-    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    BasicBLService<SubLabelMission> subTagMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
     BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
+    BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
+    BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
 
     @RequestMapping(value = "/addLabelMission")
     @ResponseBody
@@ -48,28 +48,50 @@ public class MainController {
 
     @RequestMapping(value = "/getLabelMission")
     @ResponseBody
+    /**
+     * 工人接标签式任务
+     */
     public String getLabelMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
-        GetLabelMissionParameter para= (GetLabelMissionParameter) JSONObject.toBean(object,GetLabelMissionParameter.class);
+        GetMissionParameter para= (GetMissionParameter) JSONObject.toBean(object,GetMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
-        System.out.println("uid"+uid+"!!!!!!!!!");
-        System.out.println("mid"+mid+"!!!!!!!!!");
-        ArrayList<SubMission> subMissions=subMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        ArrayList<SubLabelMission> subLabelMissions =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<Integer> userNum=new ArrayList<Integer>();
-        for(SubMission subMission:subMissions){userNum.add(subMission.getUid().size());}
+        for(SubLabelMission subLabelMission : subLabelMissions){userNum.add(subLabelMission.getUid().size());}
         int index=getMinIndex(userNum);
-        subMissions.get(index).getUid().add(uid);
-        subMissions.get(index).getAnswers().add(new ArrayList<Integer>());
+        subLabelMissions.get(index).getUid().add(uid);
+        subLabelMissions.get(index).getAnswers().add(new ArrayList<Integer>());
         mainService.createCollection(uid,mid);
-        subMissionBasicBLService.update(subMissions.get(index));
+        subTagMissionBasicBLService.update(subLabelMissions.get(index));
         return RM.SUCCESS.toString();
     }
+
+    @RequestMapping(value = "/getFreeMission")
+    @ResponseBody
+    /**
+     * 工人接自由式任务
+     */
+    public String getFreeMission(@RequestBody String parameter){
+        JSONObject object=JSONObject.fromObject(parameter);
+        GetMissionParameter para= (GetMissionParameter) JSONObject.toBean(object,GetMissionParameter.class);
+        String uid=para.getUid();
+        String mid=para.getMid();
+        ArrayList<SubFreeMission> subFreeMissions =subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        ArrayList<Integer> userNum=new ArrayList<Integer>();
+        for(SubFreeMission subFreeMission : subFreeMissions){userNum.add(subFreeMission.getUid().size());}
+        int index=getMinIndex(userNum);
+        subFreeMissions.get(index).getUid().add(uid);
+        mainService.createCollection(uid,mid);
+        subFreeMissionBasicBLService.update(subFreeMissions.get(index));
+        return RM.SUCCESS.toString();
+    }
+
 
     @RequestMapping(value = "/updateLabelMission")
     @ResponseBody
     /**
-     * 更新用户对任务的标注
+     * 更新用户对标签式任务的标注
      */
     public String updateLabelMission(String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
@@ -77,17 +99,33 @@ public class MainController {
         String uid=para.getUid();
         String mid=para.getMid();
         ArrayList<Integer> list=para.getNums();
-        ArrayList<SubMission> subMission=subMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
-        for(int i=0;i<subMission.size();i++){
-            SubMission sub=subMission.get(i);
+        ArrayList<SubLabelMission> subLabelMission =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(int i = 0; i< subLabelMission.size(); i++){
+            SubLabelMission sub= subLabelMission.get(i);
             ArrayList<String> user=sub.getUid();
             if(user.contains(uid)){
                 sub.getAnswers().set(user.indexOf(uid),list);
-                subMissionBasicBLService.update(sub);
+                subTagMissionBasicBLService.update(sub);
                 return RM.SUCCESS.toString();
             }
         }
         return RM.FAILURE.toString();
+    }
+
+    @RequestMapping(value = "/updateFreeMission")
+    @ResponseBody
+    /**
+     * 更新用户对自由式任务的标注
+     */
+    public String updateFreeMission(@RequestBody String parameter){
+        JSONObject object=JSONObject.fromObject(parameter);
+        UpdateFreeMissionParameter para= (UpdateFreeMissionParameter) JSONObject.toBean(object,UpdateFreeMissionParameter.class);
+        String uid=para.getUid();
+        String mid=para.getMid();
+        Collection collection=collectionBasicBLService.findByKey(uid+mid);
+        collection.setInfoList(para.getInfo());
+        collectionBasicBLService.update(collection);
+        return RM.SUCCESS.toString();
     }
 
     @RequestMapping(value = "/updateGoldMission")
@@ -121,7 +159,7 @@ public class MainController {
     @ResponseBody
     public String getGoldMission (String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
-        GetLabelMissionParameter para= (GetLabelMissionParameter) JSONObject.toBean(object,GetLabelMissionParameter.class);
+        GetMissionParameter para= (GetMissionParameter) JSONObject.toBean(object,GetMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
         boolean res=mainService.getGoldMission(mid,uid);

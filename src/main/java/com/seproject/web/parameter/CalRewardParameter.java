@@ -12,23 +12,23 @@ public class CalRewardParameter {
         return uid;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
     public int getDifficulty() {
         return difficulty;
-    }
-
-    public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
     }
 
     public int getMaxWorker() {
         return maxWorker;
     }
 
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+    }
+
     public void setMaxWorker(int maxWorker) {
         this.maxWorker = maxWorker;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

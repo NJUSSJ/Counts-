@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 @Entity
-@Table(name="submission")
-public class SubMission {
+@Table(name="subtagmission")
+public class SubLabelMission {
     //子任务
     @Key
     @Id
@@ -32,7 +32,7 @@ public class SubMission {
     @Column(name="id2")
       int id2;
 
-      public SubMission() {
+      public SubLabelMission() {
       }
 
 

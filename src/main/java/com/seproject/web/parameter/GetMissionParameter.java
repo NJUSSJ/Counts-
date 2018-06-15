@@ -1,15 +1,11 @@
 package com.seproject.web.parameter;
 
-public class GetLabelMissionParameter {
+public class GetMissionParameter {
     private String uid;
     private String mid;
 
     public String getUid() {
         return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
     }
 
     public String getMid() {
@@ -18,5 +14,9 @@ public class GetLabelMissionParameter {
 
     public void setMid(String mid) {
         this.mid = mid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
