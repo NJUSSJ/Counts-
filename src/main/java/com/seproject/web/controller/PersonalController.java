@@ -89,6 +89,20 @@ public class PersonalController {
         }
     }
 
+    @RequestMapping(value = "/getPersonalCollectionTagType")
+    @ResponseBody
+    public ArrayList<Integer> getPersonalCollectionTagType(@RequestBody String collectionNames) {
+        System.out.println("collectionNames:" + collectionNames);
+        ArrayList<Integer> tagTypes = new ArrayList<Integer>();
+        collectionNames = collectionNames.substring(1,collectionNames.length()-1);
+        String[] tmp = collectionNames.split(",");
+        for(int i = 0;i<tmp.length;i++) {
+            ArrayList<Mission> mission = missionBasicBLService.search("name", SearchCategory.EQUAL, tmp[i]);
+            tagTypes.add(mission.get(0).getTagType());
+        }
+        return tagTypes;
+    }
+
     @RequestMapping(value = "/Icon")
     @ResponseBody
     public String chanegIcon(@RequestBody String personalPara){

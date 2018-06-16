@@ -107,6 +107,7 @@ public class MultiController {
         ModelAndView view = new ModelAndView("personalSubmission");
         view.addObject("mid", mid);
         view.addObject("uid", uid);
+
         return view;
     }
 

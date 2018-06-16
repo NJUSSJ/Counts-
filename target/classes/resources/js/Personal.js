@@ -3,6 +3,7 @@ var userName = "";
 var person = "";
 var userCategory = "";
 var missionNames=[];
+var tagTypes=[];
 var index=0;
 
 function PersonalInfo(userName, phoneNumber, password, credit, level, category, description) {
@@ -149,7 +150,33 @@ function TmpUser(phoneNumber,category){
     this.phoneNumber=phoneNumber;
     this.category=category;
 }
-
+/*
+function loadPersonalCollectionTagType() {
+    $.ajax({
+        async: false,
+        method: "POST",
+        url: "getPersonalCollectionTagType",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(missionNames),
+        success: function (returnData) {
+            for (var i = 0; i < returnData.length; i++) {
+                if (returnData[i] == null) {
+                    break;
+                }
+                tagTypes[i] = returnData[i];
+                index++;
+            }
+            //alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
+            setPersonalCollection();
+        },
+        error: function () {
+            //alert("fail");
+        }
+    };
+    }
+}
+*/
 function loadPersonalCollection(phoneNumber, category) {
     var tmpUser = new TmpUser(phoneNumber, category);
     $.ajax({
@@ -169,6 +196,7 @@ function loadPersonalCollection(phoneNumber, category) {
             }
             //alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
             setPersonalCollection();
+            //loadPersonalCollectionTagType();
         },
         error: function () {
             //alert("fail");
