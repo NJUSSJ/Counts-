@@ -25,12 +25,18 @@ public class MultiController {
 
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
+        ModelAndView model;
         String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
-        ModelAndView model=new ModelAndView("SingleEdit");
-        model.addObject("url",url);
         String collection = request.getParameter("collection");
+        int tagType = missionBasicBLService.findByKey(collection).getTagType();
+        if(tagType == 1){
+            model = new ModelAndView("LabelEdit");
+        }else {
+            model = new ModelAndView("SingleEdit");
+        }
+        model.addObject("url",url);
         model.addObject("collection",collection);
         int picNum = missionBasicBLService.findByKey(collection).getFileNum();
         model.addObject("picNum",picNum);
@@ -38,7 +44,6 @@ public class MultiController {
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
-        int tagType = missionBasicBLService.findByKey(collection).getTagType();
         model.addObject("tagType", tagType);
         ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!" + missionLabel);

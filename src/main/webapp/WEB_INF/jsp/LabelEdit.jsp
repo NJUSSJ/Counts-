@@ -61,11 +61,11 @@
 </head>
 <body class="left-sidebar" onload='loadMissionLabel1(${requestScope.missionLabel},${requestScope.tagType});'>
 
-<div onload="loadPic(${requestScope.url},${requestScope.userPhone})">
+<div>
     <!-- Header -->
-    <header id="header">
+    <header id="header" onload="loadLabelPhone(${requestScope.userPhone})">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>
-        <nav id="nav" onload="loadPhoneNumber(${requestScope.userPhone})">
+        <nav id="nav">
             <ul>
                 <li class="submenu">
                     <a herf="#">Tag</a>
@@ -76,7 +76,7 @@
                     </ul>
                 </li>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
-                <li><a onclick="submitTagInfo()" class="button special">Submit</a></li>
+                <li><a onclick="submitLabelInfo()" class="button special">Submit</a></li>
                 <li><a href="/" class="button special">Sign Out</a></li>
             </ul>
         </nav>
@@ -97,91 +97,31 @@
     <section class="wrapper style5 container">
 
         <div class="row 150%" id="edit_area">
-            <div class="2u 12u(narrower)" align="center">
-
-                <!-- Tool bar -->
-                <div class="sidebar" align="left" id="picTool">
-                    <ul class="picturetools" id="picTools">
-                        <li><img src="images/graphics_editor.svg" align="center" id="RectTool"></li>
-                        <li><img src="images/pen.svg" align="center" id="CurlTool"></li>
-                        <li><img src="images/note.svg" align="center" id="OverallTag"></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="4u 12u(narrower)" align="center">
+            <div class="6u 12u(narrower)" align="center">
 
                 <!-- Tag Info-->
                 <div class="tag_info" id="textareaPlace" style="overflow: auto">
-                    <ul class="buttons" id="missionLabel">
 
-                    </ul>
-                        <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->
-                        <!-- <a href="#" class="button special">保存</a> -->
                 </div>
             </div>
             <div class="6u 12u(narrower)">
 
                 <!-- Content -->
                 <div class="content" align="center">
-                    <canvas id="canvas" width="500" height="500">
+                    <canvas id="canvas" width="500" height="500" onload="loadCanvas(${requestScope.url})">
 
                     </canvas>
-                    <p id="info">Tag info.</p>
+                    <script>
+                        function loadCanvas(url) {
+
+                        }
+                    </script>
+
+                    <ul id="info" class="buttons">
+
+                    </ul>
 
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Two -->
-    <section class="wrapper style1 container special">
-        <div class="row">
-            <div class="4u 12u(narrower)">
-
-                <section>
-                    <header>
-                        <h3>This is Something</h3>
-                    </header>
-                    <p>tag tag tag</p>
-                        <footer>
-                        <ul class="buttons">
-                            <li><a href="#" class="button small">Learn More</a></li>
-                        </ul>
-                    </footer>
-                </section>
-
-            </div>
-            <div class="4u 12u(narrower)">
-
-                <section>
-                    <header>
-                        <h3>Also Something</h3>
-                    </header>
-                    <p>tag tag tag</p>
-                    <footer>
-                        <ul class="buttons">
-                            <li><a href="#" class="button small">Learn More</a></li>
-                        </ul>
-                    </footer>
-                </section>
-
-            </div>
-            <div class="4u 12u(narrower)">
-
-                <section>
-                    <header>
-                        <h3>Probably Something</h3>
-                    </header>
-                    <p>tag tag tag</p>
-                    <footer>
-                        <ul class="buttons">
-                            <li><a href="#" class="button small">Learn More</a></li>
-                        </ul>
-                    </footer>
-                </section>
 
             </div>
         </div>
@@ -207,8 +147,7 @@
 </footer>
 <!-- Scripts -->
 <script src="js/TagType.js"></script>
-<script src="js/singleEdit.js"></script>
-<script src="js/tagTool.js"></script>
+<script src="js/LabelEdit.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>

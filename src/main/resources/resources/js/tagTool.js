@@ -5,14 +5,17 @@ var back = document.getElementById("back");
 var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521465839531&di=894d8615e5b830dffd2d3f5184ea90b1&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fdc54564e9258d109241f9f09da58ccbf6d814d88.jpg"
 var phoneNumber;
 var imgid;
+var tmp1;
 //var collectionName = getNameAndCollection()[0];
 
 function loadPhoneNumber(_phoneNumber){
     phoneNumber = _phoneNumber;
     //imgid 格式为 collectionName + picName + phoneNumber
     imgid = getNameAndCollection()[0] + "-" + getNameAndCollection()[1] + "-" + phoneNumber;
+    var imgInfo = eval("(" + tmp1 + ")");
+    if(imgInfo != null){
 
-    //alert("修改过的phoneNumber: " +phoneNumber);
+    }
 }
 
 save.addEventListener("click", function save() {
@@ -40,7 +43,7 @@ back.addEventListener("click", function back() {
     }else {
         alert("本图片为第一张");
     }
-})
+});
 
 nextPage.addEventListener("click", function more() {
     /*
@@ -62,7 +65,7 @@ nextPage.addEventListener("click", function more() {
     }else {
         alert("本图片为最后一张");
     }
-})
+});
 
 //data
 function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list,missionLabel) {
@@ -158,7 +161,7 @@ function getImgInfo() {
               alert(JSON.stringify(jsonResult))
           }*/
           //alert(jsonResult);
-          tmp123 = JSON.stringify(jsonResult);
+          tmp1 = JSON.stringify(jsonResult);
           //alert("qqq" + tmp123);
           //return ret;
         }

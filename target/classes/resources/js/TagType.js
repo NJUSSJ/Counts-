@@ -1,54 +1,59 @@
 var size = 0;
-var clicked = [];
+var clicked;
 var missionLabel = [];
 var clickedMissionLabel = [];
 
-function loadMissionLabel1(_missionLabel) {
-    //alert("_missionLabel:" + _missionLabel + " " + _missionLabel[0] + " " + _missionLabel[1]);
-    var missionLabel = _missionLabel;
+function loadMissionLabel1(_missionLabel,tagType) {
+    missionLabel = _missionLabel;
+    loadTagType(tagType);
 }
-function loadTagType(tagType) {
-    //alert("tagType: " + tagType + "missionLabel: " + missionLabel);
 
-    size = missionLabel.size();
+function loadTagType(tagType) {
+
+    size = missionLabel.length;
     clicked = [size];
     //对clicked初始化
     for(var clickIndex = 0;clickIndex<size;clickIndex++){
         clicked[clickIndex] = 0;
     }
 
-    if(tagType === "1"){
-        document.getElementById("picTools").style = "display=none";
-        document.getElementById("textareaPlace").style = "display=none";
-        //String testBtn = "<li><a href=\"#\" class=\"button special\" id=\"123\"/> 测试标签</li>";
+    if(tagType === "1" || tagType === 1){
         var btn = "";
         for(var i =0;i<size;i++){
-            btn += "<li><a href=\"#\" class=\"button special\" id=missionLabel_"+ i +"/> missionLabel[i]</li>";
+            btn += "<div style='margin-bottom: 10px'><input href=\"#\" style=\"width=30 height=50\" class=\"button special\" id="+ i +" value="+ missionLabel[i] +" onclick=clickLabel(" + i + ");  /></div>";
+            btn += "<br>";
         }
 
-        document.getElementById("missionLabel").innerHTML = btn;
+        document.getElementById("textareaPlace").innerHTML = btn;
 
-        //加单击标签后的响应
-        for(var index = 0;index<size;index++) {
-            document.getElementById("missionLabel_" + index).addEventListener("click", function () {
-                clicked[index] = !clicked[index];
-                if (clicked[index]) {
-                    document.getElementById("missionLabel_" + index).style = "background-color: #44BB8C";//改背景颜色
-
-                } else {
-                    document.getElementById("missionLabel_" + index).style = "";
-                }
-            });
-        }
-
-        var num = 0;
-        for(var p = 0;p<size;p++){
-            if(clicked[p]) {
-                clickedMissionLabel[num] = missionLabel[p];
-                num++;
-            }
-        }
     }else {
-        alert("nononono!!!!!!");
+        console.log("nononono!!!!!!");
     }
+}
+
+function clickLabel(i) {
+    var index = parseInt(i);
+
+    if(clicked[index] == 0){
+        clicked[index] = 1;
+        //alert(index + " clicked");
+        document.getElementById("info").innerHTML+="<li><a id=clicked"+ missionLabel[index] +" href=\"#\" class=\"button small\" style='width=40 height=60'>"+ missionLabel[index] +"</a></li>";
+    }else{
+        clicked[index] = 0;
+        //alert(index + " unclicked");
+        var thisNode = document.getElementById("clicked" + missionLabel[index]);
+        thisNode.parentNode.removeChild(thisNode);
+    }
+}
+
+function loadLabelInfo() {
+    var num = 0;
+    for(var p = 0;p<size;p++) {
+        if (clicked[p] == 1) {
+            clickedMissionLabel[num] = missionLabel[p];
+            num++;
+        }
+    }
+    alert("clickedMissionLabel: " + clickedMissionLabel);
+    return clickedMissionLabel;
 }
