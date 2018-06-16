@@ -43,6 +43,7 @@ public class MultiController {
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         model.addObject("tagType", tagType);
         ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!" + missionLabel);
         model.addObject("missionLabel", missionLabel);
         return model;
     }
