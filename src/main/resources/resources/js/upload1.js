@@ -1,6 +1,7 @@
 var submitButton=document.getElementById("submitButton");
 var indexPic=1;
 var requestorPhone;
+var tags;
 
 function load(userPhone) {
 
@@ -8,12 +9,18 @@ function load(userPhone) {
     document.getElementById("actualNumber").value=requestorPhone;
 }
 
+function loadTag(tags){
+    missionLabel = tmpPrintMissionLabel(tags);
+}
+
 submitButton.addEventListener("click", function () {
     if(!veriInput()){
         return;
     }
     //tmpPrintMissionLabel();//
-    alert(JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags));
+
+    alert(JSON.stringify(missionLabel));
+
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -22,17 +29,17 @@ submitButton.addEventListener("click", function () {
 });
 
 //以下方法是把missionLabel的String变成Array并返回
-/*
+
 function tmpPrintMissionLabel(){
     var missionLabel = [];
     var tmp = document.getElementById("tag_editor").value;
-    missionLabel = tmp.split(" ");
+    missionLabel = tmp.split(",");
     missionLabel.filter(function (value) { return value !== " "});
     for(var i = 0;i<missionLabel.length;i++){
-        alert(missionLabel[i]);
+        //alert(missionLabel[i]);
     }
     return missionLabel;
-}*/
+}
 
 /*
 dropzone setting
@@ -74,7 +81,9 @@ var myDropzone = new Dropzone("#myDropzone", {
                 fileNum: document.getElementsByClassName("dz-image").length,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
-                missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),
+                missionLabel: JSON.stringify(missionLabel),
+
+                //missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };

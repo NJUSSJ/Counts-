@@ -2,6 +2,7 @@ package com.seproject.web;
 
 import com.seproject.domain.Collection;
 import com.seproject.domain.CollectionResult;
+import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
@@ -21,6 +22,7 @@ public class TagController {
 
     BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
+    BasicBLService<Mission> missionBasicBLService = Factory.getBasicBLService(new Mission());
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
@@ -46,8 +48,18 @@ public class TagController {
         String collectionName=jsonObject.getString("collectionName");
         String picName=jsonObject.getString("picName");
         String phoneNumber=jsonObject.getString("phoneNumber");
+        System.out.println("!!!!!!!!!!!!!!!!!" + collectionName + " " + phoneNumber);
+        Mission mission = missionBasicBLService.findByKey(collectionName);
+        if(mission.getTagType() == 1){
+            return "{}";
+        }
+
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
         String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
+
+        if(jsonString==null){
+            jsonString="";
+        }
         return jsonString;
     }
 

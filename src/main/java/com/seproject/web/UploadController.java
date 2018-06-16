@@ -1,11 +1,13 @@
 package com.seproject.web;
 
 import com.seproject.common.Constant;
+import com.seproject.domain.Message;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
 import com.seproject.service.MathService;
+import com.seproject.service.NewsService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.CalRewardParameter;
 import net.sf.json.JSONObject;
@@ -35,6 +37,7 @@ public class UploadController {
     BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
     MainService mainService;
+    NewsService newsService;
 
     @RequestMapping(value = "/upload.html")
     public ModelAndView test(HttpServletRequest request){
@@ -73,7 +76,7 @@ public class UploadController {
             String picType = request.getParameter("picType");
             int tagType = Integer.parseInt(request.getParameter("tagType"));
             String missionLabelString = request.getParameter("missionLabel");
-            //System.out.println("missionLabelString: " + missionLabelString);
+            System.out.println("missionLabelString: " + missionLabelString);
             //如果以数组传过来 传过来的missionLabel为空 根本接收不到 所以我传String 处理一下再存
             //String[] tmp = missionLabelString.substring(1,missionLabelString.length()-1).split(",");
             //ArrayList<String> missionLabel = new ArrayList<String>();
@@ -81,6 +84,7 @@ public class UploadController {
               //  missionLabel.set(i, tmp[i]);
             //}
             ArrayList<String> missionLabel = new ArrayList<String>();
+            missionLabelString = missionLabelString.substring(1,missionLabelString.length()-1);
             String[] tmp = missionLabelString.split(" ");
             int index = 0;
             for(int i = 0;i<tmp.length;i++){
@@ -88,7 +92,7 @@ public class UploadController {
                     missionLabel.add(tmp[i]);
                 }
             }
-            //System.out.println("missionLabel: "+ missionLabel.toString());
+            System.out.println("missionLabel: "+ missionLabel.toString());
             int maxWorkerNum = Integer.parseInt(request.getParameter("maxWorkerNum"));
 
             tmpMission=new Mission();
@@ -110,7 +114,7 @@ public class UploadController {
             tmpMission.setMaxWorkerNum(maxWorkerNum);
             System.out.println("任务类型为："+tmpMission.getTagType());
             if(tmpMission.getTagType()==2) {
-                missionBasicBLService.add(tmpMission);//此处需要修改
+                missionBasicBLService.add(tmpMission);
             }else{
 
                 missionBasicBLService.add(tmpMission);
@@ -118,6 +122,8 @@ public class UploadController {
             }
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
+            newsService.sendMessage(new Message(mainService.getCurrentTime()+" * "+tmpUser.getPhoneNumber(),"System",tmpUser.getPhoneNumber(),0,"" +
+                    "尊敬的用户"+tmpUser.getUserName()+": 您已成功发布任务"+tmpMission.getName()+", 系统已自动扣除您"+reward+"积分。"));
             userBasicBLService.update(tmpUser);
 
         }
@@ -207,5 +213,6 @@ public class UploadController {
 
     @Autowired
     public void setMainService(MainService mainService){this.mainService=mainService;}
-
+    @Autowired
+    public void setNewsService(NewsService newsService){this.newsService=newsService;}
 }

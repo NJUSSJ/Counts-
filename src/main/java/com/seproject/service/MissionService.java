@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MissionService {
-    BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
-    BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
-    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     /**
      * 四维推荐排序
      * 用户设置难度，期望积分
@@ -31,7 +31,7 @@ public class MissionService {
         User user=userBasicBLService.findByKey(uid);
         int level=user.getLevel();
 
-        boolean useDifficulty=false,useTag=false,useWanted=false;
+        boolean useDifficulty=false,useTag,useWanted=false;
         useTag=para.getUseTag();
         int[] diffculty=para.getDifficulty();
         if(diffculty.length>0){
@@ -53,9 +53,9 @@ public class MissionService {
             if(useDifficulty){
                 int temp=mission.getDifficulty();
                 boolean in=false;
-                for(int i=0;i<diffculty.length;i++){
-                    if(diffculty[i]==temp){
-                        in=true;
+                for (int aDiffculty : diffculty) {
+                    if (aDiffculty == temp) {
+                        in = true;
                         break;
                     }
                 }
@@ -122,7 +122,7 @@ public class MissionService {
      *根据历史行为寻找到相似的用户
      *算法：比较两个用户曾经完成过的任务的排名情况，如果差的绝对值不大于1视为相似，并且相似的任务数占总任务数的比例超过一定值(0.6)，则证明相似
      */
-    public ArrayList<User> findAlikeUser(String uid){
+    private ArrayList<User> findAlikeUser(String uid){
         ArrayList<User> allUser=userBasicBLService.getAllObjects();
         ArrayList<User> alikeUser=new ArrayList<User>();
         ArrayList<CollectionResult> originalCollection=collectionResultBasicBLService.search("uid",SearchCategory.EQUAL,uid);
@@ -133,18 +133,16 @@ public class MissionService {
             origin.put(key,rank);
         }
         for(User user:allUser){
-            if(user.getPhoneNumber()!=uid) {//自己和自己必然是最相似的，所以不考虑
+            if(!user.getPhoneNumber().equals(uid)) {//自己和自己必然是最相似的，所以不考虑
                 double alikeNum = 0;
                 ArrayList<CollectionResult> tempCollection = collectionResultBasicBLService.search("uid", SearchCategory.EQUAL, user.getPhoneNumber());
                 for (CollectionResult collection : tempCollection) {
                     String mid = collection.getMid();
-                    if (!origin.containsKey(mid)) {
-                        continue;
-                    } else {
+                    if (origin.containsKey(mid)) {
                         int tempRank = collection.getRank();
                         int rank = origin.get(mid);
                         int distance = rank - tempRank;
-                        if (distance <= 1 || distance >= -1) {
+                        if (distance <= 1 &&distance >= -1) {
                             alikeNum++;
                         }
                     }

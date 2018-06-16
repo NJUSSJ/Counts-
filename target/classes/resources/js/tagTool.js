@@ -18,7 +18,7 @@ function loadPhoneNumber(_phoneNumber){
 save.addEventListener("click", function save() {
     saveData();
     alert("标注信息已保存");
-})
+});
 
 back.addEventListener("click", function back() {
     /*
@@ -164,7 +164,7 @@ function getImgInfo() {
         }
         ,
         error: function(){
-            //alert("fail")
+            alert("fail")
         }
     });
     return ret1;
