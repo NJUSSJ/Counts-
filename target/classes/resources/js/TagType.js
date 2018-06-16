@@ -1,18 +1,18 @@
 var size = 0;
 var clicked = [];
-var missionLabel = [];
+var missionLabel;
 var clickedMissionLabel = [];
 
-function loadTagType(tagType, _missionLabel) {
+function loadTagType(tagType,_missionLabel) {
     missionLabel = _missionLabel[0];
+    alert("tagType: " + tagType + "missionLabel: " + missionLabel[0].toString());
+
     size = missionLabel.size();
     clicked = [size];
     //对clicked初始化
     for(var clickIndex = 0;clickIndex<size;clickIndex++){
         clicked[clickIndex] = 0;
     }
-
-    alert("tagType: " + tagType + "missionLabel: " + missionLabel[0].toString());
 
     if(tagType === 1){
         document.getElementById("picTools").style = "display=none";

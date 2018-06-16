@@ -58,8 +58,10 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone}); loadTagType(${requestScope.tagType}, ${requestScope.missionLabel});">
-<div id="page-wrapper">
+<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone}); loadTagType(${requestScope.tagType},${requestScope.missionLabel});">
+{
+
+<div>
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></a></h1>
