@@ -158,13 +158,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="12u" align="left" id="missionLabel">
-                            <textarea id="tag_editor" style="display: none"></textarea>
+                            <textarea id="tag_editor" style="display: none" onchange="changeTag()"></textarea>
                             <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
                             <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
                             <script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
                             <script src="js/jquery.tag-editor.min.js"></script>
                             <script>
-                                $("#tag_editor").tagEditor({ placeholder: 'Enter tags ...' });
+                                $("#tag_editor").tagEditor({
+                                        placeholder: 'Enter tags ...',
+                                        onChange: function changeTag() {
+                                            var tags = $("tag_editor").tagEditor('getTags')[0].tags;
+                                            //var tags = document.getElementById("tag_editor").value;
+                                            loadTag(tags);
+                                        }
+                                    }
+                                );
                             </script>
                         </div>
                     </div>

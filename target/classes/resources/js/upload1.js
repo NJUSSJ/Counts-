@@ -1,6 +1,7 @@
 var submitButton=document.getElementById("submitButton");
 var indexPic=1;
 var requestorPhone;
+var tags;
 
 function load(userPhone) {
 
@@ -8,12 +9,16 @@ function load(userPhone) {
     document.getElementById("actualNumber").value=requestorPhone;
 }
 
+function loadTag(tags){
+    missionLabel = tags;
+}
+
 submitButton.addEventListener("click", function () {
     if(!veriInput()){
         return;
     }
     //tmpPrintMissionLabel();//
-    alert(JSON.stringify($("tag_editor").tagEditor('getTags')[0].tags));
+    alert(JSON.stringify(tags));
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -26,10 +31,10 @@ submitButton.addEventListener("click", function () {
 function tmpPrintMissionLabel(){
     var missionLabel = [];
     var tmp = document.getElementById("tag_editor").value;
-    missionLabel = tmp.split(" ");
+    missionLabel = tmp.split(",");
     missionLabel.filter(function (value) { return value !== " "});
     for(var i = 0;i<missionLabel.length;i++){
-        alert(missionLabel[i]);
+        //alert(missionLabel[i]);
     }
     return missionLabel;
 }*/
@@ -74,7 +79,7 @@ var myDropzone = new Dropzone("#myDropzone", {
                 indexPic: indexPic,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
-                missionLabel: JSON.stringify($("tag_editor").tagEditor('getTags')[0].tags),
+                missionLabel: JSON.stringify(tags),
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };
