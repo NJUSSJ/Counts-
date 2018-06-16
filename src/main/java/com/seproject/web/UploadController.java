@@ -76,7 +76,7 @@ public class UploadController {
             String picType = request.getParameter("picType");
             int tagType = Integer.parseInt(request.getParameter("tagType"));
             String missionLabelString = request.getParameter("missionLabel");
-            //System.out.println("missionLabelString: " + missionLabelString);
+            System.out.println("missionLabelString: " + missionLabelString);
             //如果以数组传过来 传过来的missionLabel为空 根本接收不到 所以我传String 处理一下再存
             //String[] tmp = missionLabelString.substring(1,missionLabelString.length()-1).split(",");
             //ArrayList<String> missionLabel = new ArrayList<String>();
@@ -84,6 +84,7 @@ public class UploadController {
               //  missionLabel.set(i, tmp[i]);
             //}
             ArrayList<String> missionLabel = new ArrayList<String>();
+            missionLabelString = missionLabelString.substring(1,missionLabelString.length()-1);
             String[] tmp = missionLabelString.split(" ");
             int index = 0;
             for(int i = 0;i<tmp.length;i++){
@@ -91,7 +92,7 @@ public class UploadController {
                     missionLabel.add(tmp[i]);
                 }
             }
-            //System.out.println("missionLabel: "+ missionLabel.toString());
+            System.out.println("missionLabel: "+ missionLabel.toString());
             int maxWorkerNum = Integer.parseInt(request.getParameter("maxWorkerNum"));
 
             tmpMission=new Mission();

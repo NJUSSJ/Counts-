@@ -30,6 +30,7 @@
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/web/parameter/MissionParameter.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/domain/Collection.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/web/response/SignResponse.java
+/Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/NewsService.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/MessageService.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/web/SignUpController.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/web/controller/UserController.java

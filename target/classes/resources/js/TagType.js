@@ -1,11 +1,14 @@
 var size = 0;
 var clicked = [];
-var missionLabel;
+var missionLabel = [];
 var clickedMissionLabel = [];
 
-function loadTagType(tagType,_missionLabel) {
-    missionLabel = _missionLabel[0];
-    alert("tagType: " + tagType + "missionLabel: " + missionLabel[0].toString());
+function loadMissionLabel1(_missionLabel) {
+    //alert("_missionLabel:" + _missionLabel + " " + _missionLabel[0] + " " + _missionLabel[1]);
+    var missionLabel = _missionLabel;
+}
+function loadTagType(tagType) {
+    //alert("tagType: " + tagType + "missionLabel: " + missionLabel);
 
     size = missionLabel.size();
     clicked = [size];
@@ -14,7 +17,7 @@ function loadTagType(tagType,_missionLabel) {
         clicked[clickIndex] = 0;
     }
 
-    if(tagType === 1){
+    if(tagType === "1"){
         document.getElementById("picTools").style = "display=none";
         document.getElementById("textareaPlace").style = "display=none";
         //String testBtn = "<li><a href=\"#\" class=\"button special\" id=\"123\"/> 测试标签</li>";
@@ -45,5 +48,7 @@ function loadTagType(tagType,_missionLabel) {
                 num++;
             }
         }
+    }else {
+        alert("nononono!!!!!!");
     }
 }
