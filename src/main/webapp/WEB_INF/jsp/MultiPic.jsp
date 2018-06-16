@@ -39,7 +39,7 @@
                     <a id="addMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addMissionToUser(${requestScope.collection},${requestScope.userPhone})">标注该任务集</a>
                 </li>
                 <li class="submenu">
-                    <a id="judgeMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addJudgeMissionToUser(${requestScope.collection},${requestScope.userPhone}) )">评估该任务集</a>
+                    <a id="judgeMissionBtn" href="/personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="addJudgeMissionToUser(${requestScope.collection},${requestScope.userPhone})">评估该任务集</a>
                 </li>
                 <li><a href="/" class="button special">登出</a></li>
             </ul>

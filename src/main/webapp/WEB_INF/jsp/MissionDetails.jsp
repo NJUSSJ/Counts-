@@ -84,6 +84,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
     .scale div{background: #123244; position: absolute; height: 12px; width: 0; left: 0; bottom: 0; display: inline}
 
+    .button.small2{
+        width: 150px;
+        height: 30px;
+        font-size: 1em;
+        text-decoration: none;
+        padding-left: 15px;
+        margin-left: 20px;
+        line-height: 30px;
+        padding-bottom: 60px;
+    }
 
 </style>
 <body onload="loadDetails(${requestScope.picNum})">
@@ -131,9 +141,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="6u 12u$(mobile)">
                         <span>期待标注人数：</span><span id="maxWorkerNum">${requestScope.maxWorkerNum}</span>
                     </div>
-                    <div class="12u$ 12u$(mobile)">
-                        <span>起始时间：</span><span id="startTime">${requestScope.startTime}</span>
-                    </div>
                     <div class="12u 12u$(mobile)">
                         <span>截止时间：</span><span id="endTime">${requestScope.endTime}</span>
                     </div>
@@ -157,16 +164,23 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <header>
                 <h2 id="sample">抽样评估</h2>
             </header>
-            <div class="row 150%" id="edit_area">
+            <div class="12u 12u(narrower)" style="margin-top: 20px;" id="choices" >
+                <div class="row 150%" style="padding-left: 15px;margin-top: 20px">
+                    <a class="button small2" style="padding-left: 23px" >自动化评估</a>
+                    <a class="button small2" style="padding-left: 35px" onclick="handJudge()">手动评估</a>
+                    <a class="button small2">发布评估任务</a>
+                </div>
+            </div>
+            <div class="row 150%" id="edit_area" style="margin-top: 12px;display: none;" >
 
-                <div class="3u 12u(narrower)" align="center">
+                <div class="3u 12u(narrower)" align="center"  id="tagInfo">
                     <!-- Tag Info-->
                     <div class="tag_info" id="textareaPlace" style="overflow: auto">
                         <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->
                         <!-- <a href="#" class="button special">保存</a> -->
                     </div>
                 </div>
-                <div class="9u 12u(narrower)">
+                <div class="9u 12u(narrower)"  id="image">
 
                     <!-- Content -->
                     <div class="content" align="center">
@@ -177,14 +191,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
 
                 </div>
-                <div class="10u 12u(narrower)" align="center" style="padding-top: 0px">
+                <div class="10u 12u(narrower)" align="center" style="padding-top: 0px;" id="barDiv">
                     <div class="scale" id="bar">
                         <div></div>
                         <span id="btn"></span>
                     </div>
                     <span id="title" style="font-weight: bold">分数：0</span>
                 </div>
-                <div class="2u 12u(narrower)" style="padding-top: 0px;"><a href="#" onclick="good()" class="button small2 " style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >确认</a></div>
+                <div class="2u 12u(narrower)" style="padding-top: 0px;display: none;"><a href="#" onclick="good()" class="button small2 " style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" id="confirmButton">确认</a></div>
 
             </div>
         </article>

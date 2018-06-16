@@ -28,14 +28,14 @@
     </style>
 </head>
 
-<body class="index" onload="load(${requestScope.mid}, ${requestScope.uid})">
+<body class="index" onload="load(${requestScope.mid}, ${requestScope.uid}, ${requestScope.tagType})">
 <div id="page-wrapper">
     <header id="header">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav">
             <ul>
                 <li class="current"><a href="#">${requestScope.userName}</a></li>
-                <li><a href="/" class="button special">登出</a></li>
+                <li><a href="/" class="button special" >登出</a></li>
             </ul>
         </nav>
     </header>

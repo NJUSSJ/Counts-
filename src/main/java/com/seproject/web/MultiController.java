@@ -29,6 +29,12 @@ public class MultiController {
         String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
+<<<<<<< HEAD
+=======
+        ModelAndView model=new ModelAndView("SingleEdit");
+        System.out.println(url+"!!!!!!!!!!");
+        model.addObject("url",url);
+>>>>>>> 23a53f0386986acef9b2aeb136159abb9117479b
         String collection = request.getParameter("collection");
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){
@@ -41,6 +47,8 @@ public class MultiController {
         int picNum = missionBasicBLService.findByKey(collection).getFileNum();
         model.addObject("picNum",picNum);
         User user = basicBLService.findByKey(phoneNumber);
+        System.out.println("phoneNumber:"+phoneNumber+"!!!!!*()()**");
+        System.out.println("userCategory:"+user.getCategory()+"!!!!!!!!!");
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
@@ -110,9 +118,13 @@ public class MultiController {
     public ModelAndView getSubMission(HttpServletRequest request){
         String mid = "\'"+request.getParameter("imageURL")+"\'";
         String uid = request.getParameter("userPhone");
+        Mission mission = missionBasicBLService.findByKey(request.getParameter("imageURL"));
+
+        int tagType = mission.getTagType();
         ModelAndView view = new ModelAndView("personalSubmission");
         view.addObject("mid", mid);
         view.addObject("uid", uid);
+        view.addObject("tagType", tagType);
 
         return view;
     }

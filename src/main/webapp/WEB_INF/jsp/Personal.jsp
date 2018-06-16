@@ -81,13 +81,23 @@
                 <h2>Work</h2>
             </header>
             <p>
-                任务列表
+                进行中...
             </p>
             <section>
                 <div class="row" id="personalCollections">
 
                 </div>
             </section>
+
+            <p>
+                已完成！
+            </p>
+            <section>
+                <div class="row" id="personalFinishedCollection">
+
+                </div>
+            </section>
+
         </article>
 
         <!-- Personal Info -->

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="60e41a6d-1861-45c4-8d6c-db4453165ec9" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/judgeMission.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/judgeMission.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/submission.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/submission.js" />
+=======
     <list default="true" id="60e41a6d-1861-45c4-8d6c-db4453165ec9" name="Default" comment="V3.7.0 短文本相似度">
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/NewsService.java" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
@@ -15,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,37 +33,69 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf>
+      <file leaf-file-name="personalSubmission.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/personalSubmission.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+=======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="MainService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
               <caret line="150" column="35" lean-forward="false" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Personal.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="633">
+              <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+=======
       <file leaf-file-name="MissionService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MissionService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-4592">
               <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="Personal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="157" column="29" lean-forward="false" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+=======
       <file leaf-file-name="TagController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/TagController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-138">
               <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="PersonalController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/PersonalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+=======
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,6 +141,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="39">
               <caret line="123" column="23" lean-forward="false" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
               <folding />
             </state>
           </provider>
@@ -122,7 +163,11 @@
       <find>image</find>
       <find>hover</find>
       <find>search</find>
+      <find>jpg</find>
     </findStrings>
+    <replaceStrings>
+      <replace>.jpg</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -145,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/CalReward.js" />
@@ -158,12 +202,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/personalSubmission.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/submission.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/judgeMission.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" />
+=======
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/MessageParameter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/domain/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/NewsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
       </list>
     </option>
   </component>
@@ -274,10 +323,16 @@
               <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB_INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="seproject" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
             </path>
           </expand>
           <select />
@@ -426,13 +481,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38353000" />
+    <option name="totallyTimeSpent" value="41614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296146" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.60246783" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+=======
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -453,6 +524,7 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -481,6 +553,19 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1794">
+          <caret line="78" column="40" lean-forward="true" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#section#0;n#section#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
@@ -506,6 +591,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java">
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2254">
           <caret line="123" column="47" lean-forward="true" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
@@ -605,6 +691,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/main.js">
+=======
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/singleEdit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -613,12 +702,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Login.jsp">
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-138">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/css/main.css">
+=======
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/SubMission.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/upload.jsp">
       <provider selected="true" editor-type-id="text-editor">
@@ -635,6 +728,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/personalSubmission.jsp">
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-204">
           <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
@@ -676,6 +770,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/submission.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
@@ -684,6 +781,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/CalRewardParameter.java">
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -780,6 +878,15 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#section#0;n#section#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/UploadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
@@ -793,6 +900,7 @@
         <state relative-caret-position="141">
           <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
           <folding />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
         </state>
       </provider>
     </entry>
@@ -822,10 +930,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/submission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-793">
+          <caret line="37" column="55" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+=======
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MissionService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4592">
           <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
           <folding />
         </state>
       </provider>
@@ -839,9 +954,79 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
+<<<<<<< HEAD
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/SignUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/TagController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="39" column="49" lean-forward="true" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/judgeMission.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1058">
+          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/personalSubmission.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="26" column="9" lean-forward="false" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="157" column="29" lean-forward="false" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/PersonalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+=======
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="150" column="35" lean-forward="false" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
+>>>>>>> c2e1ae01765bf22c0f2806f6a721f2338ae43489
           <folding />
         </state>
       </provider>

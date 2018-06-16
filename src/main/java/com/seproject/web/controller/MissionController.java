@@ -82,6 +82,19 @@ public class MissionController {
                 result.addAll(missions);
             }
         }
+
+        if(result.size()>3){//换一批
+            int random1=(int)(Math.random()*result.size());
+            int random2=(int)(Math.random()*result.size());
+            while(random2==random1){random2=(int)(Math.random()*result.size());}
+            int random3=(int)(Math.random()*result.size());
+            while(random3==random1||random3==random2){random3=(int)(Math.random()*result.size());}
+            ArrayList<Mission> randomResult=new ArrayList<Mission>();
+            randomResult.add(result.get(random1));
+            randomResult.add(result.get(random2));
+            randomResult.add(result.get(random3));
+            result=randomResult;
+        }
         return result;
     }
 
@@ -125,6 +138,9 @@ public class MissionController {
     }
     @RequestMapping(value = "/MissionTake/RecommendByUser")
     @ResponseBody
+    /**
+     * 根据相似用户推荐任务
+     */
     public String recommendByUser(@RequestBody String uid){
         ArrayList<Mission> missions=missionService.recommendByAlikeUser(uid);
         return toJsonString(missions);
