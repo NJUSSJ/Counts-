@@ -3,6 +3,7 @@ package com.seproject.web.controller;
 import com.seproject.common.RM;
 import com.seproject.domain.Message;
 import com.seproject.service.MainService;
+import com.seproject.service.NewsService;
 import com.seproject.web.parameter.GetMissionParameter;
 import com.seproject.web.parameter.MessageParameter;
 import net.sf.json.JSONObject;
@@ -21,6 +22,7 @@ import java.util.Date;
 @RestController
 public class MessageController {
     MainService mainService;
+    NewsService newsService;
     @RequestMapping(value = "/message.html")
     @ResponseBody
     public ModelAndView messagePage(HttpServletRequest request){
@@ -40,20 +42,20 @@ public class MessageController {
         message.setReceiverID(para.getReceiverID());
         message.setType(para.getType());
         message.setContent(para.getContent());
-        RM rm=mainService.sendMessage(message);
+        RM rm=newsService.sendMessage(message);
         return rm.toString();
     }
     @RequestMapping(value = "/DeleteMessage")
     @ResponseBody
     public String delete(@RequestBody String keyID){
 
-        return mainService.deleteMessage(keyID).toString();
+        return newsService.deleteMessage(keyID).toString();
     }
     @RequestMapping(value = "/GetMessage")
     @ResponseBody
     public String get(@RequestBody String phoneNumber){
         //获取某个用户信箱中的全部信息
-        ArrayList<Message> messages=mainService.getAllMessages(phoneNumber);
+        ArrayList<Message> messages=newsService.getAllMessages(phoneNumber);
 
         return toJsonString(messages);
     }
@@ -66,5 +68,7 @@ public class MessageController {
     }
     @Autowired
     public void setMainService(MainService mainService){this.mainService=mainService;}
+    @Autowired
+    public void setNewsService(NewsService newsService){this.newsService=newsService;}
 }
 

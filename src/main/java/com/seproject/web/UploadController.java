@@ -7,6 +7,7 @@ import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
 import com.seproject.service.MathService;
+import com.seproject.service.NewsService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.CalRewardParameter;
 import net.sf.json.JSONObject;
@@ -36,6 +37,7 @@ public class UploadController {
     BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
     MainService mainService;
+    NewsService newsService;
 
     @RequestMapping(value = "/upload.html")
     public ModelAndView test(HttpServletRequest request){
@@ -119,7 +121,7 @@ public class UploadController {
             }
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
-            mainService.sendMessage(new Message(mainService.getCurrentTime()+" * "+tmpUser.getPhoneNumber(),"System",tmpUser.getPhoneNumber(),0,"" +
+            newsService.sendMessage(new Message(mainService.getCurrentTime()+" * "+tmpUser.getPhoneNumber(),"System",tmpUser.getPhoneNumber(),0,"" +
                     "尊敬的用户"+tmpUser.getUserName()+": 您已成功发布任务"+tmpMission.getName()+", 系统已自动扣除您"+reward+"积分。"));
             userBasicBLService.update(tmpUser);
 
@@ -210,5 +212,6 @@ public class UploadController {
 
     @Autowired
     public void setMainService(MainService mainService){this.mainService=mainService;}
-
+    @Autowired
+    public void setNewsService(NewsService newsService){this.newsService=newsService;}
 }

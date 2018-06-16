@@ -20,7 +20,6 @@ public class MainService {
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
-    private BasicBLService<Message> messageBasicBLService=Factory.getBasicBLService(new Message());
     /**
      * 创建子任务
      */
@@ -149,7 +148,7 @@ public class MainService {
      */
     public void createCollection(String uid,String mid){
         Collection collection=new Collection();
-        collection.setKeyId(uid+mid);
+        collection.setKeyId(mid+uid);
         collection.setUid(uid);
         collection.setMid(mid);
         CollectionResult collectionResult=new CollectionResult();
@@ -488,30 +487,10 @@ public class MainService {
         return result;
     }
 
-    public RM sendMessage(Message message){
-        RM rm=messageBasicBLService.add(message);
-        if(rm.equals(RM.SUCCESS)){
-            return rm;
-        }else{
-            return RM.FAILURE;
-        }
-    }
-
-    public RM deleteMessage(String keyID){
-        RM rm=messageBasicBLService.delete(keyID);
-        if(rm.equals(RM.SUCCESS)){
-            return rm;
-        }else{
-            return RM.FAILURE;
-        }
-    }
-
-    public ArrayList<Message> getAllMessages(String uid){
-        return messageBasicBLService.search("receiverID",SearchCategory.EQUAL,uid);
-    }
-
+    /**
+     * 获取当前时间
+     */
     public  String getCurrentTime(){
-
         SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return  df.format(new Date());
     }
