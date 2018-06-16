@@ -1,5 +1,6 @@
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/dao/FileDao.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/FileIOService.java
+/Users/julia98/SEP_Phase_III/src/main/java/com/seproject/domain/Message.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/InitData.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/common/Constant.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/web/parameter/LoginParameter.java
@@ -7,6 +8,7 @@
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/MissionService.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/FreeMissionService.java
+/Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/LanguageService.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/web/parameter/UpdateLabelMissionParameter.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/domain/testDomain/TestH.java
 /Users/julia98/SEP_Phase_III/src/main/java/com/seproject/service/StatisticsService.java

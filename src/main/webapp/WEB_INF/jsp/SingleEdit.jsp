@@ -8,7 +8,6 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="js/tagTool.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <style type="text/css">
         div.sidebar{
@@ -64,7 +63,7 @@
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></a></h1>
-        <nav id="nav" onload="loadPhoneNumber(${requestScope.phoneNumber})">
+        <nav id="nav" onload="loadPhoneNumber(${requestScope.userPhone})">
             <ul>
                 <li class="submenu">
                     <a herf="#">Tag</a>

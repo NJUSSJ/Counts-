@@ -29,6 +29,7 @@ com/seproject/domain/statisticsData/SingleMissionData.class
 com/seproject/web/controller/MessageController.class
 com/seproject/web/SignUpController.class
 com/seproject/service/blService/BasicBLService.class
+com/seproject/service/LanguageService.class
 com/seproject/web/controller/MainController.class
 com/seproject/web/UploadController.class
 com/seproject/web/controller/LoginController.class
@@ -64,6 +65,7 @@ com/seproject/web/TagController.class
 com/seproject/domain/CollectionResult.class
 com/seproject/domain/Mission.class
 com/seproject/web/parameter/GetMissionParameter.class
+com/seproject/domain/Message.class
 com/seproject/domain/Sample.class
 com/seproject/common/Searchable.class
 com/seproject/domain/SubFreeMission.class
