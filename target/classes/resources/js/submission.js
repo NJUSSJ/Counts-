@@ -15,7 +15,6 @@ function load(mid,uid) {
         dataType: "json",
         data: JSON.stringify(info),
         success: function (returnData) {
-            alert(returnData);
             submission = returnData;
         },
         error:function () {
