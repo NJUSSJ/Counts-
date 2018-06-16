@@ -152,8 +152,6 @@ public class MainController {
 
     /**
      * 高级工人接金标任务
-     * @param parameter
-     * @return
      */
     @RequestMapping(value = "/getGoldMission")
     @ResponseBody
@@ -163,7 +161,7 @@ public class MainController {
         String uid=para.getUid();
         String mid=para.getMid();
         boolean res=mainService.getGoldMission(mid,uid);
-       if(res==true) {
+       if(res) {
            return RM.SUCCESS.toString();
        }else{
            return RM.FAILURE.toString();

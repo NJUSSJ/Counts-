@@ -1,12 +1,15 @@
 package com.seproject.service;
 
+import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 @Service
 public class MainService {
@@ -17,6 +20,7 @@ public class MainService {
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
+    private BasicBLService<Message> messageBasicBLService=Factory.getBasicBLService(new Message());
     /**
      * 创建子任务
      */
@@ -175,6 +179,9 @@ public class MainService {
         return false;
     }
 
+    /**
+     * 没评完的金标让发起者自己评
+     */
     public ArrayList<Integer> getRestPictures(String mid){
         ArrayList<Integer> result=new ArrayList<Integer>();
         Mission mission=missionBasicBLService.findByKey(mid);
@@ -254,6 +261,10 @@ public class MainService {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
                 for (int k = 0; k < 10; k++) {
                     isCorrect[j][k] = (userAnswer.get(k) == standardAnswers[k]);
+                    //如果一个任务没有得到标准答案，则自动算工人标的是对的
+                    if(standardAnswers[k]==-1){
+                        isCorrect[j][k]=true;
+                    }
                 }
                 isCorrect[j][10] = (userAnswer.get(10) == answer1);
                 isCorrect[j][11] = (userAnswer.get(11) == answer2);
@@ -343,6 +354,7 @@ public class MainService {
     }
 
     private double[] giveMoney_DoubleNothing(boolean x[][]){
+        //使用double_nothing策略分配奖励
         double base=1.6;
         double[] money = new double[x.length];
         // x 是 横坐标用户，纵坐标12个题是否正确的二维数组
@@ -360,6 +372,75 @@ public class MainService {
         return money;
     }
 
+    private double[] giveMoney_DoubleColorBall(boolean x[][]){
+        //使用双色球策略分配奖励
+        double [] money=new double[x.length];
+        for(int i=0;i<x.length;i++){
+            int blue=0;
+            int red=0;
+            if(!x[i][10] && !x[i][11]){
+                blue=0;
+            }else if(x[i][10]!=x[i][11]){
+                blue=1;
+            }else if(x[i][10] && x[i][11]){
+                blue=2;
+            }
+
+            for(int j=0;j<10;j++){
+                if(x[i][j]){
+                    red++;
+                }
+            }
+            /*
+             * 蓝球命中2个，则获得0.9RMB , 命中1个，则获得0.45RMB
+             * 10+2     0.15*12*10,则获得18 RMB
+             * 9+2      0.15*12*7.5，则获得13.5RMB
+             * 8+2 /10+1     0.15*12*5 则获得9RMB
+             * 7+2 /9+1     0.15*12*2.5 则获得4.5RMB
+             * 6+2/8+1      0.15*12  则获得1.8RMB
+             */
+
+            if(blue==2){
+                if(red==10){
+                    money[i]=18;
+                }else if(red==9){
+                    money[i]=9;
+                }else if(red==8){
+                    money[i]=4.5;
+                }else if(red==7){
+                    money[i]=2.25;
+                }else if(red==6){
+                    money[i]=1.5;
+                }else{
+                    money[i]=0.9;
+                }
+            }else if(blue==1){
+                if(red==10){
+                    money[i]=9;
+                }else if(red==9){
+                    money[i]=4.5;
+                }else if(red==8){
+                    money[i]=1.8;
+                }else{
+                    money[i]=0.45;
+                }
+            }else{
+                money[i]=0;
+            }
+
+        }
+        return money;
+    }
+
+    private double[] giveMoney_Average(int x[] ,double base){
+        //给评估工人分钱,传入的是每个工人标的图片张数，和一张多少钱
+        double money[]=new double[x.length];
+        for(int i=0;i<x.length;i++){
+            money[i]=x[i]*base;
+        }
+        return money;
+
+    }
     /**
      * 获取用户的子任务里图片的索引
      */
@@ -407,4 +488,31 @@ public class MainService {
         return result;
     }
 
+    public RM sendMessage(Message message){
+        RM rm=messageBasicBLService.add(message);
+        if(rm.equals(RM.SUCCESS)){
+            return rm;
+        }else{
+            return RM.FAILURE;
+        }
+    }
+
+    public RM deleteMessage(String keyID){
+        RM rm=messageBasicBLService.delete(keyID);
+        if(rm.equals(RM.SUCCESS)){
+            return rm;
+        }else{
+            return RM.FAILURE;
+        }
+    }
+
+    public ArrayList<Message> getAllMessages(String uid){
+        return messageBasicBLService.search("receiverID",SearchCategory.EQUAL,uid);
+    }
+
+    public  String getCurrentTime(){
+
+        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return  df.format(new Date());
+    }
 }
