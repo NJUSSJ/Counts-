@@ -36,6 +36,8 @@ public class MultiController {
         int picNum = missionBasicBLService.findByKey(collection).getFileNum();
         model.addObject("picNum",picNum);
         User user = basicBLService.findByKey(phoneNumber);
+        System.out.println("phoneNumber:"+phoneNumber+"!!!!!*()()**");
+        System.out.println("userCategory:"+user.getCategory()+"!!!!!!!!!");
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);

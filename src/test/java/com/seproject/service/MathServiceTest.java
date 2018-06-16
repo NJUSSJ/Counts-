@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class MathServiceTest {
-    LoginLog log1=new LoginLog();
+  /*  LoginLog log1=new LoginLog();
     LoginLog log2=new LoginLog();
     LoginLog log3=new LoginLog();
     LoginLog log4=new LoginLog();
@@ -91,5 +91,5 @@ public class MathServiceTest {
         for(LoginLog each:list){
             System.out.println(each.getId());
         }
-    }
+    }*/
 }

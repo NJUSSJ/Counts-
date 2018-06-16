@@ -148,7 +148,7 @@ public class MainService {
      */
     public void createCollection(String uid,String mid){
         Collection collection=new Collection();
-        collection.setKeyId(mid+uid);
+        collection.setKeyId(mid+uid);//collection的id是mid+uid
         collection.setUid(uid);
         collection.setMid(mid);
         CollectionResult collectionResult=new CollectionResult();

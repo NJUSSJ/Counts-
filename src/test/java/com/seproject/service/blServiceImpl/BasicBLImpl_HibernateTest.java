@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class BasicBLImpl_HibernateTest {
 
-    @Test
+/*    @Test
     public void add() {
         BasicBLImpl_Hibernate<TestH> bl=new BasicBLImpl_Hibernate<TestH>(new TestH());
         TestH po=new TestH();
@@ -47,5 +47,5 @@ public class BasicBLImpl_HibernateTest {
         TestH po=new TestH();
         po.setId("123");
         System.out.println(bl.checkKeyExists("188"));
-    }
+    }*/
 }
