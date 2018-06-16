@@ -254,6 +254,10 @@ public class MainService {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
                 for (int k = 0; k < 10; k++) {
                     isCorrect[j][k] = (userAnswer.get(k) == standardAnswers[k]);
+                    //如果一个任务没有得到标准答案，则自动算工人标的是对的
+                    if(standardAnswers[k]==-1){
+                        isCorrect[j][k]=true;
+                    }
                 }
                 isCorrect[j][10] = (userAnswer.get(10) == answer1);
                 isCorrect[j][11] = (userAnswer.get(11) == answer2);
