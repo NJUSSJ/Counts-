@@ -1,5 +1,6 @@
 package com.seproject.service;
 
+import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
@@ -17,6 +18,7 @@ public class MainService {
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
+    private BasicBLService<Message> messageBasicBLService=Factory.getBasicBLService(new Message());
     /**
      * 创建子任务
      */
@@ -397,13 +399,13 @@ public class MainService {
                 if(red==10){
                     money[i]=18;
                 }else if(red==9){
-                    money[i]=13.5;
-                }else if(red==8){
                     money[i]=9;
-                }else if(red==7){
+                }else if(red==8){
                     money[i]=4.5;
+                }else if(red==7){
+                    money[i]=2.25;
                 }else if(red==6){
-                    money[i]=1.8;
+                    money[i]=1.5;
                 }else{
                     money[i]=0.9;
                 }
@@ -482,4 +484,26 @@ public class MainService {
         return result;
     }
 
+    public RM sendMessage(Message message){
+        RM rm=messageBasicBLService.add(message);
+        if(rm.equals(RM.SUCCESS)){
+            return rm;
+        }else{
+            return RM.FAILURE;
+        }
+    }
+
+    public RM deleteMessage(String keyID){
+        RM rm=messageBasicBLService.delete(keyID);
+        if(rm.equals(RM.SUCCESS)){
+            return rm;
+        }else{
+            return RM.FAILURE;
+        }
+    }
+
+    public ArrayList<Message> getAllMessages(String uid){
+        ArrayList<Message> messages=messageBasicBLService.search("receiverID",SearchCategory.EQUAL,uid);
+        return messages;
+    }
 }

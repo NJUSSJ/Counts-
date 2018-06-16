@@ -1,14 +1,14 @@
 package com.seproject.web.parameter;
 
 public class MessageParameter {
-    private String keyID;
+
     private String senderID;
     private String receiverID;
-    private int type;//消息类型：0 常规消息
-    private String content;//消息内容，有时有用
+    private int type;//消息类型：0 常规消息 1 申诉消息
+    private String content;//消息内容，当且仅当 type=1 时这一项有用
 
-    public String getKeyID() {
-        return keyID;
+    public MessageParameter(){
+
     }
 
     public String getSenderID() {
@@ -27,9 +27,6 @@ public class MessageParameter {
         return content;
     }
 
-    public void setKeyID(String keyID) {
-        this.keyID = keyID;
-    }
 
     public void setSenderID(String senderID) {
         this.senderID = senderID;
