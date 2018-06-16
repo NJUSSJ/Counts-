@@ -177,6 +177,9 @@ public class MainService {
         return false;
     }
 
+    /**
+     * 没评完的金标让发起者自己评
+     */
     public ArrayList<Integer> getRestPictures(String mid){
         ArrayList<Integer> result=new ArrayList<Integer>();
         Mission mission=missionBasicBLService.findByKey(mid);
@@ -373,20 +376,20 @@ public class MainService {
         for(int i=0;i<x.length;i++){
             int blue=0;
             int red=0;
-            if(x[i][10]==false&&x[i][11]==false){
+            if(!x[i][10] && !x[i][11]){
                 blue=0;
             }else if(x[i][10]!=x[i][11]){
                 blue=1;
-            }else if(x[i][10]==true&&x[i][11]==true){
+            }else if(x[i][10] && x[i][11]){
                 blue=2;
             }
 
             for(int j=0;j<10;j++){
-                if(x[i][j]==true){
+                if(x[i][j]){
                     red++;
                 }
             }
-            /**
+            /*
              * 蓝球命中2个，则获得0.9RMB , 命中1个，则获得0.45RMB
              * 10+2     0.15*12*10,则获得18 RMB
              * 9+2      0.15*12*7.5，则获得13.5RMB
@@ -429,7 +432,6 @@ public class MainService {
 
     private double[] giveMoney_Average(int x[] ,double base){
         //给评估工人分钱,传入的是每个工人标的图片张数，和一张多少钱
-
         double money[]=new double[x.length];
         for(int i=0;i<x.length;i++){
             money[i]=x[i]*base;
@@ -503,7 +505,6 @@ public class MainService {
     }
 
     public ArrayList<Message> getAllMessages(String uid){
-        ArrayList<Message> messages=messageBasicBLService.search("receiverID",SearchCategory.EQUAL,uid);
-        return messages;
+        return messageBasicBLService.search("receiverID",SearchCategory.EQUAL,uid);
     }
 }
