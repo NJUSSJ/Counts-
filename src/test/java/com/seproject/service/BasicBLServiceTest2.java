@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BasicBLServiceTest2 {
-    BasicBLService<TestDomain> service=Factory.getBasicBLService(new TestDomain());
+  /*  BasicBLService<TestDomain> service=Factory.getBasicBLService(new TestDomain());
     TestDomain t1=new TestDomain();
     TestDomain t2=new TestDomain();
     TestDomain t3=new TestDomain();
@@ -67,5 +67,5 @@ public class BasicBLServiceTest2 {
     public void checkKeyExists() {
         assertEquals(false,service.checkKeyExists(null));
     }
-
+*/
 }
