@@ -73,10 +73,10 @@ function addJudgeMissionToUser(missionName, userPhone) {
     $.ajax({
         type: "POST",
         async: false,
-        url: "/getLabelMission",
+        url: "/addJudgeMission",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(para),
+        data: JSON.stringify(collectionData),
         success: function (returnData) {
             if(returnData!="0"){
                 alert(returnData);

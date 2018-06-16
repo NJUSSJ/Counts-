@@ -109,9 +109,9 @@ public class CollectionController {
         Mission mission = missionBasicBLService.findByKey(mid);
         int type = mission.getTagType();
         if(type==2){
-            return new MainController().getFreeMission(collectionInfo);
+            return new MainController().getGoldMission(collectionInfo);
         }else{
-            return new MainController().getLabelMission(collectionInfo);
+            return new MainController().getGoldMission(collectionInfo);
         }
     }
 

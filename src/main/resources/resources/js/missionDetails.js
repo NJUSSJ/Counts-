@@ -85,6 +85,8 @@ function loadDetails(picNum) {
         a.className="image fit picture";
         var img=document.createElement("img");
         img.src="missionImages/"+missionName+"_"+i+".jpg";
+        img.style.height = "150px";
+        img.style.width = "242.7px";
         a.appendChild(img);
         div.appendChild(a);
         picSection.appendChild(div);
@@ -93,6 +95,11 @@ function loadDetails(picNum) {
     loadSample(missionName);
 
 
+}
+
+function handJudge() {
+    document.getElementById("edit_area").style.display = "block";
+    document.getElementById("choices").style.display = "none";
 }
 
 /*
@@ -107,14 +114,14 @@ function loadSample(missionName) {
         data: missionName,
         success: function(returnData) {
             if(returnData=="0"){
-                var sampleArea=document.getElementById("edit_area");
+                var sampleArea=document.getElementById("choices");
                 sampleArea.style.display="none";
                 var samplePanel=document.getElementById("samplePanel");
                 var info=document.createElement("h6");
                 info.innerHTML="任务还未截止！请在任务结束后的三个工作日内进行评估。";
                 samplePanel.appendChild(info);
             }else if(returnData=="2"){
-                var sampleArea=document.getElementById("edit_area");
+                var sampleArea=document.getElementById("choices");
                 sampleArea.style.display="none";
                 var samplePanel=document.getElementById("samplePanel");
                 var info=document.createElement("h6");
