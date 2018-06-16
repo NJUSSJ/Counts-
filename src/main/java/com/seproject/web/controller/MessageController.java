@@ -35,7 +35,7 @@ public class MessageController {
         JSONObject object=JSONObject.fromObject(messageParamter);
         MessageParameter para= (MessageParameter) JSONObject.toBean(object,MessageParameter.class);
         Message message=new Message();
-        message.setKeyID(getCurrentTime()+" * "+para.getSenderID());
+        message.setKeyID(mainService.getCurrentTime()+" * "+para.getReceiverID());
         message.setSenderID(para.getSenderID());
         message.setReceiverID(para.getReceiverID());
         message.setType(para.getType());
@@ -58,11 +58,7 @@ public class MessageController {
         return toJsonString(messages);
     }
 
-    private String getCurrentTime(){
 
-        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return  df.format(new Date());
-    }
     public String toJsonString(Object o){
         JSONObject jsonObject = JSONObject.fromObject(o);
         String ret = jsonObject.toString();

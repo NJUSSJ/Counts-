@@ -6,8 +6,10 @@ import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 @Service
 public class MainService {
@@ -505,5 +507,11 @@ public class MainService {
     public ArrayList<Message> getAllMessages(String uid){
         ArrayList<Message> messages=messageBasicBLService.search("receiverID",SearchCategory.EQUAL,uid);
         return messages;
+    }
+
+    public  String getCurrentTime(){
+
+        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return  df.format(new Date());
     }
 }

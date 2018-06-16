@@ -9,8 +9,5 @@
         <module name="SEP" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SEP" target="1.6" />
-    </bytecodeTargetLevel>
   </component>
 </project>
