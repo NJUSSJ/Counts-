@@ -48,7 +48,7 @@ function addMissionToUser(missionName, userPhone) {
         $.ajax({
            type: "POST",
            async: false,
-           url: "/getLabelMission",
+           url: "/addMissionToUser",
            contentType: "application/json",
            dataType: "json",
            data: JSON.stringify(collectionData),

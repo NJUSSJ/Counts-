@@ -10,6 +10,7 @@ import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.service.FileIOService;
+import com.seproject.web.controller.MainController;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -89,34 +90,30 @@ public class CollectionController {
         Collection collection=(Collection)JSONObject.toBean(object,Collection.class);
         String uid=collection.getUid();
         String mid=collection.getMid();
-        int uLevel=basicBLService.findByKey(uid).getLevel();
-        int mLevel=Integer.parseInt(missionBasicBLService.findByKey(mid).getWorkerLevel());
-        if(uLevel<mLevel){
-            return "0";
+        Mission mission = missionBasicBLService.findByKey(mid);
+        int type = mission.getTagType();
+        if(type==2){
+            return new MainController().getFreeMission(collectionInfo);
+        }else{
+            return new MainController().getLabelMission(collectionInfo);
         }
-
-        String missionDate=missionBasicBLService.findByKey(mid).getEndTime();
-        Date now=new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String nowDate=dateFormat.format(now);
-        if(missionDate.compareTo(nowDate)<0){
-            return "1";
-        }
-
-        Mission tmpMission=missionBasicBLService.findByKey(mid);
-        int picNum=tmpMission.getFileNum();
-        collection.setKeyId(mid+uid);
-        CollectionResult collectionResult=new CollectionResult(collection);
-        collectionResult.setUid(uid);
-        collectionResult.setMid(mid);
-        collectionResult.setState(0);
-        ArrayList<String> tmpArray=new ArrayList<String>();
-        for(int i=0;i<picNum;i++){
-            tmpArray.add("{}");
-        }
-        collection.setInfoList(tmpArray);
-        collectionBasicBLService.add(collection);
-        collectionResultBasicBLService.add(collectionResult);
-        return "2";
     }
+
+    @RequestMapping(value = "/addJudgeMissionToUser")
+    @ResponseBody
+    public String addJudgeMissionToUser(@RequestBody String collectionInfo){
+        JSONObject object=new JSONObject().fromObject(collectionInfo);
+        Collection collection=(Collection)JSONObject.toBean(object,Collection.class);
+        String uid=collection.getUid();
+        String mid=collection.getMid();
+        Mission mission = missionBasicBLService.findByKey(mid);
+        int type = mission.getTagType();
+        if(type==2){
+            return new MainController().getFreeMission(collectionInfo);
+        }else{
+            return new MainController().getLabelMission(collectionInfo);
+        }
+    }
+
+
 }

@@ -77,6 +77,9 @@
 
         <!-- Work -->
         <article id="work" class="panel">
+            <header>
+                <h2>Work</h2>
+            </header>
             <p>
                 进行中...
             </p>

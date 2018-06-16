@@ -29,6 +29,7 @@ public class MultiController {
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
         ModelAndView model=new ModelAndView("SingleEdit");
+        System.out.println(url+"!!!!!!!!!!");
         model.addObject("url",url);
         String collection = request.getParameter("collection");
         model.addObject("collection",collection);
@@ -105,9 +106,13 @@ public class MultiController {
     public ModelAndView getSubMission(HttpServletRequest request){
         String mid = "\'"+request.getParameter("imageURL")+"\'";
         String uid = request.getParameter("userPhone");
+        Mission mission = missionBasicBLService.findByKey(request.getParameter("imageURL"));
+
+        int tagType = mission.getTagType();
         ModelAndView view = new ModelAndView("personalSubmission");
         view.addObject("mid", mid);
         view.addObject("uid", uid);
+        view.addObject("tagType", tagType);
 
         return view;
     }

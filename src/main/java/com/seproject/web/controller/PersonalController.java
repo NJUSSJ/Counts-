@@ -69,7 +69,12 @@ public class PersonalController {
             ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);
             ArrayList<String > collectionNames =new ArrayList<String>();
             for(int i=0;i<tmpMission.size();i++){
-                collectionNames.add(tmpMission.get(i).getMid());
+                Mission mission = missionBasicBLService.findByKey(tmpMission.get(i).getMid());
+                int state = mission.getState();
+                if(state == 0){
+                    collectionNames.add(tmpMission.get(i).getMid());
+                }
+
             }
             return collectionNames;
         }else if(Integer.parseInt(category) == 1){

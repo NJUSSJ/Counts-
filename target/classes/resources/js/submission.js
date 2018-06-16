@@ -1,11 +1,13 @@
 var submission;
 var missionName;
 var phoneNumber;
+var type;
 function submissioninfo(keyword, uid) {
     this.keyword = keyword;
     this.uid = uid;
 }
-function load(mid,uid) {
+function load(mid,uid, tagType) {
+    type = tagType;
     var info = new submissioninfo(mid, uid);
     missionName = mid;
     phoneNumber = uid;
@@ -40,7 +42,7 @@ function load(mid,uid) {
         var section1=document.createElement("section");
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href = "test1.html?collection="+encodeURI(mid)+"&imageURL="+(i*3+1)+"&phoneNumber=" + phoneNumber;
+        a1_1.href = "test1.html?collection="+mid+"&imageURL="+submission[i*3+1]+"&phoneNumber=" + phoneNumber;
         var img1=document.createElement("img");
         img1.src="missionImages/"+missionName+"_"+submission[i*3+1]+".jpg";
         img1.className="collection";
