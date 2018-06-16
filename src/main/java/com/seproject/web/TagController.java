@@ -48,6 +48,7 @@ public class TagController {
         String phoneNumber=jsonObject.getString("phoneNumber");
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
         String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!"+ jsonString);
         return jsonString;
     }
 

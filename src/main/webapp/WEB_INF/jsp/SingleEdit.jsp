@@ -58,13 +58,12 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone}); loadTagType(${requestScope.tagType},${requestScope.missionLabel});">
-{
+<body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone});">
 
 <div>
     <!-- Header -->
     <header id="header">
-        <h1 id="logo"><img src="images/logo.png" width="25" height="25"> COUNTS <span>by Social Engineers</span></a></h1>
+        <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav" onload="loadPhoneNumber(${requestScope.userPhone})">
             <ul>
                 <li class="submenu">

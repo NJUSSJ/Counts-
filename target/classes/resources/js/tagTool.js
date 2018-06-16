@@ -164,7 +164,7 @@ function getImgInfo() {
         }
         ,
         error: function(){
-            //alert("fail")
+            alert("fail")
         }
     });
     return ret1;
