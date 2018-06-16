@@ -27,6 +27,13 @@ public class Message {
     @Column(name="content")
     String content="";
 
+    public Message(String keyID,String senderID,String receiverID,int type,String content){
+        setKeyID(keyID);
+        setSenderID(senderID);
+        setReceiverID(receiverID);
+        setType(type);
+        setContent(content);
+    }
     public String getKeyID() {
         return keyID;
     }

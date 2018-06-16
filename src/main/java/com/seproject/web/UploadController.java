@@ -1,6 +1,7 @@
 package com.seproject.web;
 
 import com.seproject.common.Constant;
+import com.seproject.domain.Message;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
@@ -110,7 +111,7 @@ public class UploadController {
             tmpMission.setMaxWorkerNum(maxWorkerNum);
             System.out.println("任务类型为："+tmpMission.getTagType());
             if(tmpMission.getTagType()==2) {
-                missionBasicBLService.add(tmpMission);//此处需要修改
+                missionBasicBLService.add(tmpMission);
             }else{
 
                 missionBasicBLService.add(tmpMission);
@@ -118,6 +119,8 @@ public class UploadController {
             }
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
+            mainService.sendMessage(new Message(mainService.getCurrentTime()+" * "+tmpUser.getPhoneNumber(),"System",tmpUser.getPhoneNumber(),0,"" +
+                    "尊敬的用户"+tmpUser.getUserName()+": 您已成功发布任务"+tmpMission.getName()+", 系统已自动扣除您"+reward+"积分。"));
             userBasicBLService.update(tmpUser);
 
         }
