@@ -11,36 +11,36 @@ public class MessageParameter {
         return keyID;
     }
 
-    public void setKeyID(String keyID) {
-        this.keyID = keyID;
-    }
-
     public String getSenderID() {
         return senderID;
-    }
-
-    public void setSenderID(String senderID) {
-        this.senderID = senderID;
     }
 
     public String getReceiverID() {
         return receiverID;
     }
 
-    public void setReceiverID(String receiverID) {
-        this.receiverID = receiverID;
-    }
-
     public int getType() {
         return type;
     }
 
-    public void setType(int type) {
-        this.type = type;
-    }
-
     public String getContent() {
         return content;
+    }
+
+    public void setKeyID(String keyID) {
+        this.keyID = keyID;
+    }
+
+    public void setSenderID(String senderID) {
+        this.senderID = senderID;
+    }
+
+    public void setReceiverID(String receiverID) {
+        this.receiverID = receiverID;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public void setContent(String content) {

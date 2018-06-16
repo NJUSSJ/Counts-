@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * 对于一个user，同时维持一个具有相同id的userDate
  */
 @Entity
-@Table(name="User")
+@Table(name="user")
 public class User {
 
     @Key

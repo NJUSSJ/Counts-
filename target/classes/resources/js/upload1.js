@@ -18,7 +18,11 @@ submitButton.addEventListener("click", function () {
         return;
     }
     //tmpPrintMissionLabel();//
+<<<<<<< HEAD
     alert(JSON.stringify(tags));
+=======
+    alert(JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags));
+>>>>>>> 50752dd4cebc14afeb5e60370163e921d595b5ac
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -45,7 +49,7 @@ dropzone setting
 Dropzone.autoDiscover = false;
 
 var myDropzone = new Dropzone("#myDropzone", {
-    url: "addLabelMission",
+    url: "/uploadPics",
     addRemoveLinks: true,
     autoProcessQueue: false,
     method: 'post',
@@ -70,16 +74,20 @@ var myDropzone = new Dropzone("#myDropzone", {
         this.on("processing", function (file) {
             this.options.params={
                 name: document.getElementById("name").value,
-                startTime: document.getElementById("startTime").value,
                 endTime: document.getElementById("endTime").value,
                 workLevel: document.getElementById("workerLevel").value,
                 description: document.getElementById("description").value,
                 maxWorkerNum: document.getElementById("maxWorkerNum").value,
                 reward: document.getElementById("reward").value,
                 indexPic: indexPic,
+                fileNum: document.getElementsByClassName("dz-image").length,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
+<<<<<<< HEAD
                 missionLabel: JSON.stringify(tags),
+=======
+                missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),
+>>>>>>> 50752dd4cebc14afeb5e60370163e921d595b5ac
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };
@@ -99,7 +107,6 @@ var myDropzone = new Dropzone("#myDropzone", {
 
 function veriInput() {
     var name=document.getElementById("name").value;
-    var startTime=document.getElementById("startTime").value;
     var endTime=document.getElementById("endTime").value;
     var workLevel=document.getElementById("workerLevel").value;
     var description=document.getElementById("description").value;
@@ -136,7 +143,7 @@ function veriInput() {
 
 
 
-    if(startTime==null||startTime==null||endTime==null||endTime==""||startTime>endTime){
+    if(endTime==null||endTime==""){
         alert("请正确设置起止时间！");
         return false;
     }
@@ -178,8 +185,8 @@ function veriInput() {
     }
 
 
-    if(document.getElementsByClassName("dz-image")[0]==null){
-        alert("请选择任务文件！");
+    if(document.getElementsByClassName("dz-image").length<15){
+        alert("任务图片数量不能少于15");
         return false;
     }
 

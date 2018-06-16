@@ -4,10 +4,12 @@ import com.seproject.common.Constant;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
+import com.seproject.service.MainService;
 import com.seproject.service.MathService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.CalRewardParameter;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ResourceUtils;
@@ -32,7 +34,7 @@ import java.util.*;
 public class UploadController {
     BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
-
+    MainService mainService;
 
     @RequestMapping(value = "/upload.html")
     public ModelAndView test(HttpServletRequest request){
@@ -67,6 +69,7 @@ public class UploadController {
             String requestorPhone=request.getParameter("requestorPhone");
             double reward=Double.parseDouble(request.getParameter("reward"));
             int difficulty = Integer.parseInt(request.getParameter("difficulty"));
+            int fileNum = Integer.parseInt(request.getParameter("fileNum"));
             String picType = request.getParameter("picType");
             int tagType = Integer.parseInt(request.getParameter("tagType"));
             String missionLabelString = request.getParameter("missionLabel");
@@ -97,7 +100,7 @@ public class UploadController {
             tmpMission.setReward(reward);
             tmpMission.setMaxWorkerNum(maxWorkerNum);
             tmpMission.setRequestorNumber(requestorPhone);
-            tmpMission.setFileNum(0);
+            tmpMission.setFileNum(fileNum);
             tmpMission.setState(0);
 
             tmpMission.setDifficulty(difficulty);
@@ -105,8 +108,14 @@ public class UploadController {
             tmpMission.setTagType(tagType);
             tmpMission.setMissionLabel(missionLabel);
             tmpMission.setMaxWorkerNum(maxWorkerNum);
+            System.out.println("任务类型为："+tmpMission.getTagType());
+            if(tmpMission.getTagType()==2) {
+                missionBasicBLService.add(tmpMission);//此处需要修改
+            }else{
 
-            missionBasicBLService.add(tmpMission);//此处需要修改
+                missionBasicBLService.add(tmpMission);
+                mainService.createSubMission(tmpMission);
+            }
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
             userBasicBLService.update(tmpUser);
@@ -196,5 +205,7 @@ public class UploadController {
         return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxWorker()*discount;
     }
 
+    @Autowired
+    public void setMainService(MainService mainService){this.mainService=mainService;}
 
 }

@@ -17,6 +17,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <style type="text/css">
+        .collection{
+            width: 400px;
+            height: 200px;
+        }
+        .image.featured:hover{
+            top : -0.2em;
+        }
+    </style>
 </head>
 
 <body class="index" onload="load(${requestScope.mid}, ${requestScope.uid})">
@@ -35,7 +44,7 @@
 
 <!-- Main -->
 <article id="main">
-    <section class="wrapper style4 container">
+    <section class="wrapper style4 container" id="submissionArea">
 
     </section>
 

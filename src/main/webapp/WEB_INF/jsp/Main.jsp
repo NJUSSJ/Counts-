@@ -15,13 +15,7 @@
     <script src="js/Message.js"></script>
 
     <style type="text/css">
-        .collection{
-            width: 400px;
-            height: 200px;
-        }
-        .image.featured:hover{
-            top : -0.2em;
-        }
+
         #collections{
             -moz-box-shadow: 3px 3px 4px #000;
             -webkit-box-shadow: 3px 3px 4px #000;
@@ -94,7 +88,7 @@
         <section class="wrapper style4 container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
             <section style="margin-bottom: 3px;">
                 <div class="search d1" id="search" style="background-color: #ffffff;">
-                    <form id="searchFromId" style="margin-left: 79px">
+                    <form id="searchFromId" style="margin-left: 80px">
                         <select id="searchType" style="border-radius: 0.3em 0.3em 0.3em 0.3em">
                             <option value="all">全部</option>
                             <option value="notEnded">未截止</option>

@@ -156,6 +156,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div class="row 50%">
                         <div class="12u" align="left" id="missionLabel">
                             <textarea id="tag_editor" style="display: none" onchange="changeTag()"></textarea>
@@ -163,6 +164,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                             <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
                             <script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
                             <script src="js/jquery.tag-editor.min.js"></script>
+=======
+                    <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
+                    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+                    <script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
+                    <script src="js/jquery.tag-editor.min.js"></script>
+
+                    <div class="row 50%"id="missionLabel">
+                        <div class="12u" align="left" >
+                            <textarea id="tag_editor" style="display: none"></textarea>
+>>>>>>> 50752dd4cebc14afeb5e60370163e921d595b5ac
                             <script>
                                 $("#tag_editor").tagEditor({
                                         placeholder: 'Enter tags ...',
@@ -192,12 +203,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
                             <span>期望标注人数：<input  id="maxWorkerNum" type="text" name="maxNum" /></span>
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" align="left">
-                            <span class="datePicker">起始时间： <input  id="startTime" type="date" name="startTime"  /></span>
                         </div>
                     </div>
 
@@ -241,7 +246,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                             </script>
                         </div>
-                    </div>
+                    </div>/*图片数量不能少于15*/
 
                     <div class="row">
                         <div class="12u">
