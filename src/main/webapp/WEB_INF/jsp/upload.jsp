@@ -156,30 +156,20 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                     </div>
 
-<<<<<<< HEAD
                     <div class="row 50%">
                         <div class="12u" align="left" id="missionLabel">
-                            <textarea id="tag_editor" style="display: none" onchange="changeTag()"></textarea>
+                            <textarea id="tag_editor" style="display: none"></textarea>
                             <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
                             <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
                             <script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
                             <script src="js/jquery.tag-editor.min.js"></script>
-=======
-                    <link rel="stylesheet" type="text/css" href="css/jquery.tag-editor.css">
-                    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-                    <script src="http://www.jq22.com/jquery/jquery-ui-1.10.2.js"></script>
-                    <script src="js/jquery.tag-editor.min.js"></script>
-
-                    <div class="row 50%"id="missionLabel">
-                        <div class="12u" align="left" >
-                            <textarea id="tag_editor" style="display: none"></textarea>
->>>>>>> 50752dd4cebc14afeb5e60370163e921d595b5ac
                             <script>
                                 $("#tag_editor").tagEditor({
                                         placeholder: 'Enter tags ...',
                                         onChange: function changeTag() {
-                                            var tags = $("tag_editor").tagEditor('getTags')[0].tags;
-                                            //var tags = document.getElementById("tag_editor").value;
+                                            //var tags = $("#tag_editor").tagEditor('getTags')[0].tags;
+                                            var tags = document.getElementById("tag_editor").value;
+                                            //alert(tags.toString());
                                             loadTag(tags);
                                         }
                                     }

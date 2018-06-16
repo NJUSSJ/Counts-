@@ -10,7 +10,7 @@ function load(userPhone) {
 }
 
 function loadTag(tags){
-    missionLabel = tags;
+    missionLabel = tmpPrintMissionLabel(tags);
 }
 
 submitButton.addEventListener("click", function () {
@@ -18,11 +18,9 @@ submitButton.addEventListener("click", function () {
         return;
     }
     //tmpPrintMissionLabel();//
-<<<<<<< HEAD
-    alert(JSON.stringify(tags));
-=======
-    alert(JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags));
->>>>>>> 50752dd4cebc14afeb5e60370163e921d595b5ac
+
+    alert(JSON.stringify(missionLabel));
+
 
     myDropzone.processQueue();
     alert("发布成功！");
@@ -31,7 +29,7 @@ submitButton.addEventListener("click", function () {
 });
 
 //以下方法是把missionLabel的String变成Array并返回
-/*
+
 function tmpPrintMissionLabel(){
     var missionLabel = [];
     var tmp = document.getElementById("tag_editor").value;
@@ -41,7 +39,7 @@ function tmpPrintMissionLabel(){
         //alert(missionLabel[i]);
     }
     return missionLabel;
-}*/
+}
 
 /*
 dropzone setting
@@ -83,11 +81,9 @@ var myDropzone = new Dropzone("#myDropzone", {
                 fileNum: document.getElementsByClassName("dz-image").length,
                 requestorPhone: requestorPhone,
                 difficulty: document.getElementById("difficulty").value,
-<<<<<<< HEAD
-                missionLabel: JSON.stringify(tags),
-=======
-                missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),
->>>>>>> 50752dd4cebc14afeb5e60370163e921d595b5ac
+                missionLabel: JSON.stringify(missionLabel),
+
+                //missionLabel: JSON.stringify($("#tag_editor").tagEditor('getTags')[0].tags),
                 tagType: document.getElementById("tagType").value,
                 picType: document.getElementById("picType").value
             };
