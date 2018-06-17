@@ -87,7 +87,7 @@ public class MainService {
         for(int i=0;i<groupNum;i++){
             SubFreeMission subFreeMission=new SubFreeMission();
             subFreeMission.setKeyID(m.getName()+i);
-            subFreeMission.setMid(m.getEndTime());
+            subFreeMission.setMid(m.getName());
             subFreeMission.setSeed(i);
             ArrayList<String> user=new ArrayList<String>();
             subFreeMission.setUid(user);

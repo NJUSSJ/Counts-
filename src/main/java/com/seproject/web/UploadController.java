@@ -113,13 +113,12 @@ public class UploadController {
             tmpMission.setMissionLabel(missionLabel);
             tmpMission.setMaxWorkerNum(maxWorkerNum);
             System.out.println("任务类型为："+tmpMission.getTagType());
-            if(tmpMission.getTagType()==2) {
-                missionBasicBLService.add(tmpMission);
-            }else{
+
+
 
                 missionBasicBLService.add(tmpMission);
                 mainService.createSubMission(tmpMission);
-            }
+
             User tmpUser=userBasicBLService.findByKey(request.getParameter("requestorPhone"));
             tmpUser.setCredit(tmpUser.getCredit()-reward);
             newsService.sendMessage(new Message(mainService.getCurrentTime()+" * "+tmpUser.getPhoneNumber(),"System",tmpUser.getPhoneNumber(),0,"" +
