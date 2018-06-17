@@ -326,7 +326,6 @@ function loadPic(url, phoneNumber) {
         }
     }
 
-    loadTagType(tagType);
 }
 
 

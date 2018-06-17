@@ -3,6 +3,7 @@ var userName = "";
 var person = "";
 var userCategory = "";
 var missionNames=[];
+var finishedNames=[];
 var tagTypes=[];
 var index=0;
 
@@ -107,6 +108,7 @@ function loadPersonal() {
 
     //加载collectionInfo
     loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
+    loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category)
 
     //获取chart相关后端数据
     getChartData(personalInfo.phoneNumber, personalInfo.category);
@@ -205,6 +207,33 @@ function loadPersonalCollection(phoneNumber, category) {
     //alert("loadPersonalCollection success");
 }
 
+function loadPersonalFinishedCollection(phoneNumber, category) {
+    var tmpUser = new TmpUser(phoneNumber, category);
+    $.ajax({
+        async: false,
+        method: "POST",
+        url: "getPersonalFinishedCollectionInfo",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(tmpUser),
+        success: function takePersonalCollectionInfo(returnData) {
+            for (var i = 0; i < returnData.length; i++) {
+                if (returnData[i] == null) {
+                    break;
+                }
+                finishedNames[i] = returnData[i];
+                index++;
+            }
+            //alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
+            setFinishedCollection();
+            //loadPersonalCollectionTagType();
+        },
+        error: function () {
+            //alert("fail");
+        }
+    });
+}
+
 function setPersonalCollection() {
     document.getElementById("personalCollections").innerHTML = "";
     for (var i = 0; i < missionNames.length; i++) {
@@ -231,5 +260,34 @@ function setPersonalCollection() {
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalCollections").appendChild(div);
+    }
+}
+
+function setFinishedCollection() {
+    document.getElementById("personalFinishedCollections").innerHTML = "";
+    for (var i = 0; i < finishedNames.length; i++) {
+        var div = document.createElement("div");
+        div.className = "4u 12u$(mobile)";
+        var a = document.createElement("a");
+        a.className = "image fit";
+        switch (userCategory) {
+            case "1":
+                a.href = "/getMissionDetails?missionName=" + missionNames[i];
+                break;
+
+            case "2":
+                a.href = "/getSubmission?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 1;
+                break;
+
+            case "3":
+                a.href = "/details.html?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 0;
+                break;
+        }
+        var img = document.createElement("img");
+        img.src = "missionImages/" + finishedNames[i] + "_1.jpg";
+        img.alt = "";
+        a.appendChild(img);
+        div.appendChild(a);
+        document.getElementById("personalFinishedCollections").appendChild(div);
     }
 }

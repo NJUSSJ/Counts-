@@ -93,7 +93,7 @@
                 已完成！
             </p>
             <section>
-                <div class="row" id="personalFinishedCollection">
+                <div class="row" id="personalFinishedCollections">
 
                 </div>
             </section>
