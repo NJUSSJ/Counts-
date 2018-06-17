@@ -32,17 +32,6 @@ public class MainController {
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
 
-    @RequestMapping(value = "/addLabelMission")
-    @ResponseBody
-    public String addLabelMission(HttpServletRequest request){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        JSONObject object=JSONObject.fromObject(request.getParameter(""));
-        System.out.println("mission 转 object:"+object);
-        Mission m =(Mission) JSONObject.toBean(object,Mission.class);
-        missionBasicBLService.add(m);
-        mainService.createSubMission(m);
-        return RM.SUCCESS.toString();
-    }
 
     @RequestMapping(value = "/getLabelMission")
     @ResponseBody
