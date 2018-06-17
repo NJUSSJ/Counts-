@@ -148,6 +148,28 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left">
+                            <span>评估策略： </span>
+                            <select id="evaluateStrategy" >
+                                <option value="1">系统自动评估</option>
+                                <option value="2">手动评估</option>
+                                <option value="3">雇佣工人评估</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
+                            <span>奖励分配策略： </span>
+                            <select id="bonusStrategy" >
+                                <option value="1">平均分配</option>
+                                <option value="2">double or nothing</option>
+                                <option value="3">彩票策略</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" align="left">
                             <span>任务类型： </span>
                             <select id="tagType">
                                 <option value="1">标签式</option>
@@ -208,21 +230,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="12u">
-                            <ul class="buttons">
-                                <li><input type="button" class="special" value="确认信息" id="ensure"/></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="row 50%">
-                        <div class="6u 12u(mobile)" id="rewardBlank" align="left">
-                            <!-- <span>任务奖励：</span>
-                            <input  id="reward" type="text" name="reward" value= "0" disabled="disabled"/> -->
-                        </div>
-                    </div>
-
                     <div class="row 50%">
                         <div class="12u">
                             <div class="dropzone" id="myDropzone">
@@ -241,10 +248,25 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="row">
                         <div class="12u">
                             <ul class="buttons">
-                                <li><input type="button" class="special" value="发布任务" id="submitButton"/></li>
+                                <li><input type="button" class="special" value="确认信息" id="ensure"/></li>
                             </ul>
                         </div>
                     </div>
+
+                    <div class="row 50%">
+                        <div class="6u 12u(mobile)" id="rewardBlank" align="left">
+                            <!-- <span>任务奖励：</span>
+                            <input  id="reward" type="text" name="reward" value= "0" disabled="disabled"/> -->
+                        </div>
+                    </div>
+                    <!--
+                    <div class="row">
+                        <div class="12u">
+                            <ul class="buttons">
+                                <li><input type="button" class="special" value="发布任务" id="submitButton"/></li>
+                            </ul>
+                        </div>
+                    </div> -->
                 </form>
             </div>
 
