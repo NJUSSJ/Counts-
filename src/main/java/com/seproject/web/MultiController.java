@@ -29,12 +29,11 @@ public class MultiController {
         String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
-<<<<<<< HEAD
-=======
-        ModelAndView model=new ModelAndView("SingleEdit");
+
+         model=new ModelAndView("SingleEdit");
         System.out.println(url+"!!!!!!!!!!");
         model.addObject("url",url);
->>>>>>> 23a53f0386986acef9b2aeb136159abb9117479b
+
         String collection = request.getParameter("collection");
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){
