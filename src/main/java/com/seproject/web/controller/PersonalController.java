@@ -98,6 +98,41 @@ public class PersonalController {
         }
     }
 
+    //筛选用户的标注过的mission
+    @RequestMapping(value = "/getPersonalFinishedCollectionInfo")
+    @ResponseBody
+    public ArrayList<String> getCollectionFinishedInfo(@RequestBody String userInfo) {
+        String phoneNumber = userInfo.substring(16,27);//获取手机号
+        String category = userInfo.substring(40,41);
+        if(Integer.parseInt(category) == 2) {
+            ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);
+            ArrayList<String > collectionNames =new ArrayList<String>();
+            for(int i=0;i<tmpMission.size();i++){
+                Mission mission = missionBasicBLService.findByKey(tmpMission.get(i).getMid());
+                int state = mission.getState();
+                if(state == 2||state == 1){
+                    collectionNames.add(tmpMission.get(i).getMid());
+                }
+
+            }
+            return collectionNames;
+        }else if(Integer.parseInt(category) == 1){
+            ArrayList<Mission> tmpMission = missionBasicBLService.search("requestorNumber", SearchCategory.EQUAL, phoneNumber);
+            ArrayList<String > collectionNames =new ArrayList<String>();
+            for(int i=0;i<tmpMission.size();i++){
+                collectionNames.add(tmpMission.get(i).getName());
+            }
+            return collectionNames;
+        }else{
+            ArrayList<Mission> tmpMission = missionBasicBLService.getAllObjects();
+            ArrayList<String > collectionNames =new ArrayList<String>();
+            for(int i=0;i<tmpMission.size();i++){
+                collectionNames.add(tmpMission.get(i).getName());
+            }
+            return collectionNames;
+        }
+    }
+
     @RequestMapping(value = "/getPersonalCollectionTagType")
     @ResponseBody
     public ArrayList<Integer> getPersonalCollectionTagType(@RequestBody String collectionNames) {

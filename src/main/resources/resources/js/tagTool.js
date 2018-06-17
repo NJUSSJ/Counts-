@@ -94,13 +94,10 @@ function getSentIds() {
     return sentids;
 }
 
-function getMissionLabel() {
-    return clickedMissionLabel;
-}
 function saveData() {
-    var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray,getMissionLabel());
+    var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
-    //alert("已储存本图片信息");
+    alert("已储存本图片信息");
 }
 
 //test
@@ -169,7 +166,7 @@ function getImgInfo() {
         }
         ,
         error: function(){
-            alert("fail")
+            //alert("fail")
         }
     });
     return ret1;
