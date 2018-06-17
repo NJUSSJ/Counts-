@@ -59,15 +59,10 @@
         }
     </style>
 </head>
-<<<<<<< HEAD
-<body class="left-sidebar" onload='loadMissionLabel1(${requestScope.missionLabel},${requestScope.tagType});'>
 
-<div onload="loadPic(${requestScope.url},${requestScope.userPhone})">
-=======
 <body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone})">
 
 <div >
->>>>>>> 23a53f0386986acef9b2aeb136159abb9117479b
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>

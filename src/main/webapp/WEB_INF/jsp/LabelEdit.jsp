@@ -59,7 +59,7 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload='loadMissionLabel1(${requestScope.missionLabel},${requestScope.tagType});'>
+<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType})">
 
 <div>
     <!-- Header -->
@@ -108,11 +108,48 @@
 
                 <!-- Content -->
                 <div class="content" align="center">
-                    <canvas id="canvas" width="500" height="500" onload="loadCanvas(${requestScope.url})">
+                    <canvas id="canvas" width="500" height="500">
 
                     </canvas>
                     <script>
                         function loadCanvas(url) {
+                            var canvas = document.getElementById("canvas");
+                            var cxt = canvas.getContext("2d");
+                            /*
+                                parameters for Pic
+                             */
+                            var Pic_width;
+                            var Pic_height;
+                            var Pic_x;
+                            var Pic_y;
+                            var image = new Image();
+
+                            image.src = url;
+
+                            var width = image.width;
+                            var height = image.height;
+
+                            var MulX = canvas.width/width;
+                            var MulY = canvas.height/height;
+
+
+
+                            if(MulX<= MulY){
+                                Pic_width = width*MulX;
+                                Pic_height = height*MulX;
+                                Pic_x = 0;
+                                Pic_y = 0;
+                            }
+                            else{
+                                Pic_width = width*MulY;
+                                Pic_height = height*MulY;
+                                Pic_y = 0;
+                                Pic_x = 0;
+                            }
+                            canvas.width=Pic_width;
+                            canvas.height=Pic_height;
+
+                            cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
 
                         }
                     </script>

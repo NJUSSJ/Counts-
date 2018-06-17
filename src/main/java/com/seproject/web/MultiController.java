@@ -29,16 +29,17 @@ public class MultiController {
         String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
-<<<<<<< HEAD
-=======
-        ModelAndView model=new ModelAndView("SingleEdit");
-        System.out.println(url+"!!!!!!!!!!");
-        model.addObject("url",url);
->>>>>>> 23a53f0386986acef9b2aeb136159abb9117479b
         String collection = request.getParameter("collection");
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){
             model = new ModelAndView("LabelEdit");
+            ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
+            String label = "";
+            for(int i=0;i<missionLabel.size()-1;i++){
+                label += missionLabel.get(i)+',';
+            }
+            label += missionLabel.get(missionLabel.size()-1);
+            model.addObject("label", label);
         }else {
             model = new ModelAndView("SingleEdit");
         }
@@ -47,15 +48,12 @@ public class MultiController {
         int picNum = missionBasicBLService.findByKey(collection).getFileNum();
         model.addObject("picNum",picNum);
         User user = basicBLService.findByKey(phoneNumber);
-        System.out.println("phoneNumber:"+phoneNumber+"!!!!!*()()**");
-        System.out.println("userCategory:"+user.getCategory()+"!!!!!!!!!");
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
         model.addObject("tagType", tagType);
-        ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!" + missionLabel);
-        model.addObject("missionLabel", missionLabel);
+
+
         return model;
     }
 

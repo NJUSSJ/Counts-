@@ -57,7 +57,7 @@ function load(mid,uid, tagType) {
         var section2=document.createElement("section");
         var a2_1=document.createElement("a");
         a2_1.className="image featured";
-        a2_1.href="test1.html?collection="+encodeURI(mid)+"&imageURL="+(i*3+2)+"&phoneNumber=" + phoneNumber;
+        a2_1.href="test1.html?collection="+encodeURI(mid)+"&imageURL="+submission[i*3+2]+"&phoneNumber=" + phoneNumber;
         var img2=document.createElement("img");
         img2.src="missionImages/"+missionName+"_"+submission[i*3+2]+".jpg";
         img2.className="collection";
@@ -76,7 +76,7 @@ function load(mid,uid, tagType) {
         var section3=document.createElement("section");
         var a3_1=document.createElement("a");
         a3_1.className="image featured";
-        a3_1.href="test1.html?collection="+encodeURI(mid)+"&imageURL="+(i*3+3)+"&phoneNumber=${requestScope.phoneNumber}";
+        a3_1.href="test1.html?collection="+encodeURI(mid)+"&imageURL="+submission[i*3+3]+"&phoneNumber="+phoneNumber;
         var img3=document.createElement("img");
         img3.src="missionImages/"+missionName+"_"+submission[i*3+3]+".jpg";
         img3.className="collection";
@@ -96,7 +96,7 @@ function load(mid,uid, tagType) {
         var section1=document.createElement("section");
         var a1_1=document.createElement("a");
         a1_1.className="image featured";
-        a1_1.href="test1.html?collection="+encodeURI(mid)+"&imageURL="+(3*rowNum+i+1)+"&phoneNumber=${requestScope.phoneNumber}";
+        a1_1.href="test1.html?collection="+encodeURI(mid)+"&imageURL="+submission[3*rowNum+i+1]+"&phoneNumber=${requestScope.phoneNumber}";
         var img1=document.createElement("img");
         img1.src="missionImages/"+missionName+"_"+submission[3*rowNum+i+1]+".jpg";
         img1.className="collection";

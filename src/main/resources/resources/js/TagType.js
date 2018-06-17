@@ -3,9 +3,10 @@ var clicked;
 var missionLabel = [];
 var clickedMissionLabel = [];
 
-function loadMissionLabel1(_missionLabel,tagType) {
+function loadMissionLabel1(_missionLabel,url, tagType) {
     missionLabel = _missionLabel;
     loadTagType(tagType);
+    loadCanvas(url);
 }
 
 function loadTagType(tagType) {
