@@ -59,7 +59,13 @@ public class MainController {
         for(SubLabelMission subLabelMission : subLabelMissions){userNum.add(subLabelMission.getUid().size());}
         int index=getMinIndex(userNum);
         subLabelMissions.get(index).getUid().add(uid);
-        subLabelMissions.get(index).getAnswers().add(new ArrayList<Integer>());
+
+        ArrayList<Integer> tempAnswer=new ArrayList<Integer>();
+        for(int i=0;i<12;i++){
+            tempAnswer.add(-1);
+        }
+        subLabelMissions.get(index).getAnswers().add(tempAnswer);
+
         mainService.createCollection(uid,mid);
         subTagMissionBasicBLService.update(subLabelMissions.get(index));
         return RM.SUCCESS.toString();
@@ -96,18 +102,18 @@ public class MainController {
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
-        ArrayList<Integer> list=para.getNums();
+         int k=para.getNum();
         ArrayList<SubLabelMission> subLabelMission =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(int i = 0; i< subLabelMission.size(); i++){
             SubLabelMission sub= subLabelMission.get(i);
             ArrayList<String> user=sub.getUid();
             if(user.contains(uid)){
-                sub.getAnswers().set(user.indexOf(uid),list);
+                ArrayList<Integer> tempanswer=sub.getAnswers().get(user.indexOf(uid));
+                tempanswer.set(k,para.getAnswer());
+
                 subTagMissionBasicBLService.update(sub);
-                //修改状态为已经提交
-                CollectionResult cr=collectionResultBasicBLService.findByKey(mid+uid);
-                cr.setState(1);
-                collectionResultBasicBLService.update(cr);
+
+
                 return RM.SUCCESS.toString();
             }
         }
@@ -130,11 +136,9 @@ public class MainController {
         return RM.SUCCESS.toString();
     }
 
-    @RequestMapping(value = "/updateGoldMission")
+ /*   @RequestMapping(value = "/updateGoldMission")
     @ResponseBody
-    /**
-     * 更新高级用户的标注
-     */
+
     public String updateGoldMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
@@ -156,6 +160,7 @@ public class MainController {
         return RM.FAILURE.toString();
     }
 
+**/
     /**
      * 高级工人接金标任务
      */
@@ -196,22 +201,18 @@ public class MainController {
         mainService.finishReview(index,answer,mid);
     }
 
-    @RequestMapping(value = "/checkCommit")
+    @RequestMapping(value = "/commit")
     @ResponseBody
-    public int checkCommit(@RequestBody String missionPara){
+    public void checkCommit(@RequestBody String missionPara){
         JSONObject object=JSONObject.fromObject(missionPara);
         MissionParameter missionParameter=(MissionParameter)JSONObject.toBean(object,MissionParameter.class);
         String mid=missionParameter.getKeyword();
         String uid=missionParameter.getUid();
-        int check=collectionResultBasicBLService.findByKey(mid+uid).getState();
-        if(check==1){
-            //已经提交
-            return 1;
-        }
-        else{
-            //其他状态
-            return 2;
-        }
+        System.out.println(mid+uid+"!!!!!!!");
+        CollectionResult cr=collectionResultBasicBLService.findByKey(mid+uid);
+        cr.setState(1);
+
+
     }
 
     private int getMinIndex(ArrayList<Integer> arr){
