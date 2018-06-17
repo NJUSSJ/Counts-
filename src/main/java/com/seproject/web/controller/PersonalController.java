@@ -58,13 +58,17 @@ public class PersonalController {
         return "write personal info success";
     }
 
-
-    //筛选用户的标注过的mission
     @RequestMapping(value = "/getPersonalCollectionInfo")
     @ResponseBody
+    /**
+     * 筛选用户的标注过的mission
+     */
     public ArrayList<String> getCollectionInfo(@RequestBody String userInfo) {
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         String category = userInfo.substring(40,41);
+        System.out.println("userInfo:"+userInfo);
+        System.out.println("phonrNumber:"+phoneNumber);
+        System.out.println("category:"+category);
         if(Integer.parseInt(category) == 2) {
             ArrayList<Collection> tmpMission = collectionBasicBLService.search("uid", SearchCategory.EQUAL, phoneNumber);
             ArrayList<String > collectionNames =new ArrayList<String>();

@@ -176,6 +176,9 @@ public class MainController {
 
     @RequestMapping(value = "/startReview")
     @ResponseBody
+    /**
+     * 把没有评完的金标还给发起者评,如果没有则直接开始评价，返回一个空值
+     */
     public String startReview(@RequestBody String mid){
         JSONObject jsonObject = JSONObject.fromObject(mainService.getRestPictures(mid));//这里INT 数组是索引
         String ret = jsonObject.toString();
@@ -187,7 +190,10 @@ public class MainController {
     public void finishReview(@RequestBody String para){
         JSONObject object=JSONObject.fromObject(para);
         FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
-
+        ArrayList<Integer> index=finishReviewParameter.getIndexs();
+        ArrayList<Integer> answer=finishReviewParameter.getAnswers();
+        String mid=finishReviewParameter.getMid();
+        mainService.finishReview(index,answer,mid);
     }
 
     @RequestMapping(value = "/checkCommit")

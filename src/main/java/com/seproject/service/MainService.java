@@ -197,6 +197,9 @@ public class MainService {
         return result;
     }
 
+    /**
+     * 标签式任务评审入口
+     */
     private void reviewLabelMission(String mid){
         Mission mission=missionBasicBLService.findByKey(mid);
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
