@@ -24,6 +24,7 @@
     <script src="js/echarts-wordcloud.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.filterTable.js"></script>
+    <script src="js/Message.js"></script>
     <!-- load 3D stat -->
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
@@ -45,7 +46,7 @@
         }
     </style>
 </head>
-<body onload="loadPersonal()">
+<body onload="loadPersonal(); getMessage(${requestScope.phoneNumber});">
 
 <!-- Wrapper-->
 <div id="wrapper">
@@ -164,7 +165,7 @@
                             <input class="form-control" type="search" id="input-filter" size="15" placeholder="输入过滤条件"/>
                         </div>
                         <br>
-                        <table class="" onload="getMessage(${requestScope.phoneNumber});">
+                        <table class="">
                             <thead>
                             <tr>
                                 <th scope="col" title="Number">#</th>
@@ -174,16 +175,7 @@
                             </tr>
                             </thead>
                             <tbody id="messageArea">
-                            <tr><td>1</td><td>George Washington</td><td>two</td><td>1789-1797</td></tr>
-                            <tr><td>2</td><td>John Adams</td><td>one</td><td>1797-1801</td></tr>
-                            <tr><td>3</td><td>Thomas Jefferson</td><td>two</td><td>1801-1809</td></tr>
-                            <tr><td>4</td><td>James Madison</td><td>two</td><td>1809-1817</td></tr>
-                            <tr><td>5</td><td>James Monroe</td><td>two</td><td>1817-1825</td></tr>
-                            <tr><td>6</td><td>John Quincy Adams</td><td>one</td><td>1825-1829</td></tr>
-                            <tr><td>7</td><td>Andrew Jackson</td><td>two</td><td>1829-1837</td></tr>
-                            <tr><td>8</td><td>Martin Van Buren</td><td>one</td><td>1837-1841</td></tr>
-                            <tr><td>9</td><td>William Henry Harrison</td><td>one-partial</td><td>1841</td></tr>
-                            <tr><td>10</td><td>John Tyler</td><td>one-partial</td><td>1841-1845</td></tr>
+
                             </tbody>
                         </table>
                     </div>

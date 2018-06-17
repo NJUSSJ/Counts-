@@ -4,7 +4,7 @@ function getMessage(phoneNumber) {
     alert("!!!!!!!!!!!!!!!!!");
     $.ajax({
         async: false,
-        type: "GET",
+        type: "POST",
         url: "GetMessage",
         contentType: "application/json",
         dataType: "json",
@@ -25,8 +25,8 @@ function changeForm(res) {
     showMessage(res);
 }
 function showMessage(message) {
-    for(var i = 0;i<message.length;i++){
-        document.getElementById("messageArea").innerHTML += "<tr id=" + i + "><td>" + i + "</td><td>" + message[i].content + "</td><td>" + message[i].senderid + "</td><td>" + message[i].keyid + "</td></tr>";
+    for(var i = 1;i<message.length;i++){
+        document.getElementById("messageArea").innerHTML += "<tr id=" + i + "><td>" + i + "</td><td>" + message[i].content + "</td><td>" + message[i].senderID + "</td><td>" + message[i].keyID + "</td></tr>";
     }
 }
 /*

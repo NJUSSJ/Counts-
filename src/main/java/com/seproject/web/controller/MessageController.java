@@ -6,7 +6,9 @@ import com.seproject.service.MainService;
 import com.seproject.service.NewsService;
 import com.seproject.web.parameter.GetMissionParameter;
 import com.seproject.web.parameter.MessageParameter;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import net.sf.json.JSONString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,12 +55,15 @@ public class MessageController {
     }
     @RequestMapping(value = "/GetMessage")
     @ResponseBody
-    public String get(@RequestBody String phoneNumber){
+    public JSONArray get(@RequestBody String phoneNumber){
         System.out.println("!!!!!!!!!!!!!!!!!!!!!" + phoneNumber);
         //获取某个用户信箱中的全部信息
-        ArrayList<Message> messages=newsService.getAllMessages(phoneNumber);
+        String uid = phoneNumber.split(":")[1];
+        uid = uid.substring(0,uid.length()-1);
+        ArrayList<Message> messages=newsService.getAllMessages(uid);
 
-        return toJsonString(messages);
+        //return toJsonString(messages);
+        return JSONArray.fromObject(messages);
     }
 
 
