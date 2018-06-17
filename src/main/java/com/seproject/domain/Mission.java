@@ -48,10 +48,14 @@ public class Mission {
     String picType;
     @Column(name="maxworkernum")
     int maxWorkerNum;
+    @Column(name = "bonusStrategy")
+    int bonusStrategy;
+    @Column(name = "evaluateStrategy")
+    int evaluateStrategy;
     public Mission(){
 
     }
-    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, String requestorNumber, int difficulty, int tagType, String picType, ArrayList<String> missionLabel, int maxWorkerNum){
+    public Mission(String name, String endTime, String description, ArrayList<String> files, int fileNum, String workerLevel, int reward, String requestorNumber, int difficulty, int tagType, String picType, ArrayList<String> missionLabel, int maxWorkerNum, int evaluateStrategy, int bonusStrategy){
         this.name=name;
         this.endTime=endTime;
         this.description=description;
@@ -65,6 +69,24 @@ public class Mission {
         this.picType = picType;
         this.missionLabel = missionLabel;
         this.maxWorkerNum = maxWorkerNum;
+        this.evaluateStrategy = evaluateStrategy;
+        this.bonusStrategy = bonusStrategy;
+    }
+
+    public void setEvaluateStrategy(int evaluateStrategy) {
+        this.evaluateStrategy = evaluateStrategy;
+    }
+
+    public int getEvaluateStrategy() {
+        return evaluateStrategy;
+    }
+
+    public void setBonusStrategy(int bonusStrategy) {
+        this.bonusStrategy = bonusStrategy;
+    }
+
+    public int getBonusStrategy() {
+        return bonusStrategy;
     }
 
     public int getMaxWorkerNum() {

@@ -88,6 +88,7 @@
         <section class="wrapper style4 container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
             <section style="margin-bottom: 3px;">
                 <div class="search d1" id="search" style="background-color: #ffffff;">
+                    <a onclick="loadMain(${requestScope.phoneNumber},${requestScope.userCategory})" style="padding-right: 3px; float: right"><img src="images/refresh.png" width="30" height="30"></a>
                     <form id="searchFromId" style="margin-left: 80px">
                         <select id="searchType" style="border-radius: 0.3em 0.3em 0.3em 0.3em">
                             <option value="all">全部</option>
