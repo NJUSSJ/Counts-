@@ -3,8 +3,10 @@ package com.seproject.service;
 import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
+import com.seproject.domain.Collection;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.FreeMissionParameter;
+import com.seproject.web.response.ReviewResponse;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.management.remote.SubjectDelegationPermission;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.*;
 
 @Service
 public class MainService {
@@ -52,8 +52,9 @@ public class MainService {
             subLabelMission.setSeed(i);
             subLabelMission.setKeyID(m.getName()+i);
             int random1=base+(int)(Math.random()*goldNum);
+            int random2=base+(random1+goldNum/2)%goldNum;
             subLabelMission.setId1(random1 );
-            subLabelMission.setId2(random1+goldNum/2);
+            subLabelMission.setId2(random2);
             ArrayList<ArrayList<Integer>> temparr =new ArrayList<ArrayList<Integer>>();
             ArrayList<String> userarr=new ArrayList<String>();
             subLabelMission.setUid(userarr);
@@ -566,7 +567,7 @@ public class MainService {
     /**
      * 评审自由式任务
      */
-    public void reviewFreeMission(String mid){
+    public void autoReviewFreeMission(String mid){
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> users=subFreeMission.getUid();
@@ -662,6 +663,107 @@ public class MainService {
             }
         return grade;
     }
+
+    /**
+     * 给自由式任务抽样
+     */
+    public void createFreeMissionSample(ReviewResponse response,String mid){
+        ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(SubFreeMission subFreeMission:subFreeMissions){
+            ArrayList<String> uid=subFreeMission.getUid();
+            ArrayList<Integer> levels=new ArrayList<Integer>();
+            int avgLevel=0;
+            for(String eachUid:uid){
+                User user=userBasicBLService.findByKey(eachUid);
+                levels.add(user.getLevel());
+                avgLevel+=user.getLevel();
+            }
+            avgLevel/=uid.size();
+            for(int k=0;k<uid.size();k++){
+                if(levels.get(k)>=avgLevel){//高级工人抽一张
+                    int random1=(int)(Math.random()*10);
+                    response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
+                    response.getUid().add(uid.get(k));
+                }else{//低级工人抽两张
+                    int random1=(int)(Math.random()*10);
+                    int random2=(random1+5)%10;
+                    response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
+                    response.getUid().add(uid.get(k));
+                    response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
+                    response.getUid().add(uid.get(k));
+                }
+            }
+        }
+    }
+
+    /**
+     *抽样评估自由式任务
+     */
+    public void manualReviewFreeMission(ArrayList<Integer> pic,ArrayList<Integer> quality,ArrayList<String> uid,String mid){
+        Map<String,Integer> result=new HashMap<String,Integer>();
+        for(int i=0;i<quality.size();i++){
+            if(result.containsKey(uid.get(i))) {
+                if (result.get(uid.get(i)) > quality.get(i)) {
+                    result.put(uid.get(i), quality.get(i));//取最差的做质量
+                }
+            }else {
+                result.put(uid.get(i), quality.get(i));
+            }
+        }
+        ArrayList<Integer> qua=new ArrayList<Integer>();
+        ArrayList<String> u=new ArrayList<String>();
+        int[] rank=new int[u.size()];
+        for(String key:result.keySet()){
+            u.add(key);
+            qua.add(result.get(u));
+        }
+
+        for(int i=0;i<qua.size();i++){
+            rank[i]=1;
+            for(int j=0;j<qua.size();j++){
+                if(i!=j){
+                    if(qua.get(j)>qua.get(i)){
+                        rank[i]++;
+                    }
+                }
+            }
+        }
+
+        for(int i=0;i<u.size();i++){
+            String key=u.get(i);
+            User user=userBasicBLService.findByKey(key);
+            int q=result.get(key);
+            CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+q);
+            user.setCredit(user.getCredit()+1.5*q/10);
+            userBasicBLService.update(user);
+
+            collectionResult.setQuality(q);
+            collectionResult.setCredit(1.5*q/10);
+            collectionResult.setRank(rank[i]);
+            ArrayList<Integer> picIndex=new ArrayList<Integer>();
+            ArrayList<Integer> picGrade=new ArrayList<Integer>();
+            int count=0;
+            for(int j=0;j<uid.size();j++){
+                if(uid.get(j).equals(key)){
+                    picIndex.add(pic.get(j));
+                    picGrade.add(quality.get(j));
+                    count++;
+                    if(count==2) break;
+                }
+            }
+            int[] picInd=new int[picIndex.size()];
+            int[] pivGra=new int[picGrade.size()];
+            for(int k=0;k<picIndex.size();k++){
+                picInd[k]=picIndex.get(k);
+                pivGra[k]=picGrade.get(k);
+            }
+            collectionResult.setPicIdValue(picInd);
+            collectionResult.setPicGradeValue(pivGra);
+            collectionResultBasicBLService.update(collectionResult);
+        }
+
+    }
+
     /**
      * 获取当前时间
      */
