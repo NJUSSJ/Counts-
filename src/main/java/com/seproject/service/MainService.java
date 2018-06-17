@@ -4,8 +4,13 @@ import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.parameter.FreeMissionParameter;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.management.remote.SubjectDelegationPermission;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +18,8 @@ import java.util.Date;
 
 @Service
 public class MainService {
+    LanguageService languageService;
+    BasicBLService<FreeMissionDetail> detailBasicBLService=Factory.getBasicBLService(new FreeMissionDetail());
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
     private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
@@ -284,7 +291,9 @@ public class MainService {
 
     }
 
-
+    /**
+     *把发起者自己评好的金标设置好答案，启动标签评估
+     */
     public void finishReview(ArrayList<Integer> index,ArrayList<Integer> answer,String mid){
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(int i=0;i<index.size();i++){
@@ -342,20 +351,27 @@ public class MainService {
 
         for (int j = 0; j < money.length; j++) {
             rank[j] = 1;
-            for (int i = 0; i < money.length && i != j; i++) {
-                if (money[j] < money[i]) {
-                    rank[j]++;
+            for (int i = 0; i < money.length ; i++) {
+                if(i!=j) {
+                    if (money[j] < money[i]) {
+                        rank[j]++;
+                    }
                 }
             }
         }
         ArrayList<CollectionResult> collectionResults = collectionResultBasicBLService.search("mid", SearchCategory.EQUAL, mid);
         for (int i = 0; i < uid.size(); i++) {
             String each = uid.get(i);
+            User user=userBasicBLService.findByKey(each);
+            user.setCredit(user.getCredit()+money[i]);
+            userBasicBLService.update(user);
+
             for (CollectionResult collectionResult : collectionResults) {
                 if (collectionResult.getUid().equals(each)) {
                     collectionResult.setQuality(8);//默认值
                     collectionResult.setCredit(money[i]);
                     collectionResult.setRank(rank[i]);
+                    collectionResultBasicBLService.update(collectionResult);
                     break;
                 }
             }
@@ -498,10 +514,163 @@ public class MainService {
     }
 
     /**
+     * 更新自由式任务用户对单张图的标注参数
+     */
+    public void updateFreeMissionDetail(String mid,String uid,int picIndex,FreeMissionParameter parameter){
+        FreeMissionDetail detail=detailBasicBLService.findByKey(mid+uid+picIndex);
+        boolean firstTime=false;
+        if(detail==null){
+            detail=new FreeMissionDetail();
+            firstTime=true;
+            detail.setPicIndex(picIndex);
+            detail.setUid(uid);
+            detail.setSummary("");
+        }
+        ArrayList<Integer> tempX=parameter.getFixedx();
+        ArrayList<Integer> tempY=parameter.getFixedy();
+        ArrayList<Integer> tempHeight=parameter.getFixedheight();
+        ArrayList<Integer> tempWeight=parameter.getFixedwidth();
+        ArrayList<Integer> x=new ArrayList<Integer>();
+        ArrayList<Integer> y=new ArrayList<Integer>();
+        ArrayList<Integer> height=new ArrayList<Integer>();
+        ArrayList<Integer> width=new ArrayList<Integer>();
+        for(int i=0;i<tempHeight.size();i++){
+            if(tempHeight.get(i)!=0){
+                x.add(tempX.get(i));
+                y.add(tempY.get(i));
+                height.add(tempHeight.get(i));
+                width.add(tempWeight.get(i));
+            }
+        }
+        detail.setX(x);
+        detail.setY(y);
+        detail.setHeight(height);
+        detail.setWeight(width);
+        String info=parameter.getSentences().toString();
+        System.out.println(info);
+        if(info.contains("status=2")){
+            int index=info.indexOf("status=2");
+            info=info.substring(0,index);
+            index=info.lastIndexOf("[");
+            int endIndex= info.lastIndexOf("]");
+            System.out.println(info.substring(index+1,endIndex));
+        }
+        if(firstTime) {
+            detailBasicBLService.add(detail);
+        }
+        else{
+            detailBasicBLService.update(detail);
+        }
+    }
+
+    /**
+     * 评审自由式任务
+     */
+    public void reviewFreeMission(String mid){
+        ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(SubFreeMission subFreeMission:subFreeMissions){
+            ArrayList<String> users=subFreeMission.getUid();
+            if(users!=null&&users.size()>0) {
+                ArrayList<Integer> index = getPictureIndexOfSubmission(users.get(0), mid);
+                ArrayList<Double> grade=getGrade(index,users,mid);
+                double avg=0.0;
+                for(Double each:grade){
+                    avg+=each;
+                }
+                avg/=users.size();
+                int[] rank=new int[grade.size()];//排名列表
+                for(int i=0;i<rank.length;i++){rank[i]=1;}
+                for(int i=0;i<rank.length;i++){
+                    for(int j=0;j<rank.length;j++){
+                        if(j!=i){
+                            if(grade.get(j)>grade.get(i)){
+                                rank[i]++;
+                            }
+                        }
+                    }
+                }
+                //用得分存储排名和积分到相应的结果中
+                for(int i=0;i<users.size();i++){
+                    User user=userBasicBLService.findByKey(users.get(i));
+                    double reward=1.5*grade.get(i)/avg;
+                    user.setCredit(user.getCredit()+reward);//1.5*得分/平均得分
+                    userBasicBLService.update(user);
+
+                    CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+users.get(i));
+                    collectionResult.setRank(rank[i]);
+                    collectionResult.setCredit(reward);
+                    double eachGrade=grade.get(i);
+                    collectionResult.setQuality((int)eachGrade);
+                    collectionResultBasicBLService.update(collectionResult);
+                }
+            }
+        }
+    }
+
+    /**
+     * 计算自由式任务中子任务的得分
+     */
+    public ArrayList<Double> getGrade(ArrayList<Integer> index,ArrayList<String> uid,String mid){
+        ArrayList<Double> grade=new ArrayList<Double>();//对应每个用户的所有图片的得分之和
+        for(int i=0;i<uid.size();i++){
+            grade.add(0.0);
+        }
+        for(int eachIndex:index) {
+            ArrayList<FreeMissionDetail> details = new ArrayList<FreeMissionDetail>();
+            for (int j = 0; j < uid.size(); j++) {
+                details.add(detailBasicBLService.findByKey(mid + uid.get(j) + eachIndex));
+            }
+            double avgFrameNum = 0;
+            double avgFrameSquare = 0;
+            for (FreeMissionDetail eachDetail : details) {
+                avgFrameNum += eachDetail.getX().size();
+                for (int k = 0; k < eachDetail.getHeight().size(); k++) {
+                    avgFrameSquare += eachDetail.getHeight().get(k) * eachDetail.getWeight().get(k);
+                }
+            }
+            avgFrameNum /= uid.size();//平均框数量
+            avgFrameSquare /= uid.size();//平均框面积
+            for (int j = 0; j < uid.size(); j++) {//多人标的情况
+                int limit = uid.size() / 2;
+                int eachGrade = 0;
+                String summary = details.get(j).getSummary();
+                for (int p = 0; p < uid.size(); p++) {
+                    if (p != j) {
+                        double similar = languageService.simliarityOfText(summary, details.get(p).getSummary());
+                        if (similar < 0.5) {
+                            limit--;
+                            if (limit < 0) {//如果和超一半的人文本都不相似，那么视为无效答案
+                                eachGrade = 0;
+                                break;
+                            }
+                        }else {
+                            eachGrade+=similar;
+                        }
+                    }
+                }
+                if (eachGrade > 0) {
+                    double frame = details.get(j).getX().size();
+                    double frameSquare = 0.0;
+                    for (int m = 0; m < details.get(j).getHeight().size(); m++) {
+                        frameSquare += details.get(j).getHeight().get(m) * details.get(j).getWeight().get(m);
+                    }
+                    eachGrade *= (1 - (Math.abs(frame - avgFrameNum)) / avgFrameNum) * 100;
+                    eachGrade *= (1 - (Math.abs(frameSquare - avgFrameSquare)) / avgFrameSquare) * 100;
+                }
+                grade.set(j,grade.get(j)+eachGrade);
+            }
+            }
+        return grade;
+    }
+    /**
      * 获取当前时间
      */
     public  String getCurrentTime(){
         SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return  df.format(new Date());
+    }
+    @Autowired
+    public void setLanguageService(LanguageService languageService){
+        this.languageService=languageService;
     }
 }
