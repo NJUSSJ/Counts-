@@ -680,17 +680,22 @@ public class MainService {
             }
             avgLevel/=uid.size();
             for(int k=0;k<uid.size();k++){
+                Collection collection=collectionBasicBLService.findByKey(mid+uid.get(k));
                 if(levels.get(k)>=avgLevel){//高级工人抽一张
                     int random1=(int)(Math.random()*10);
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
+                    response.getInfo().add(collection.getInfoList().get(random1));
                 }else{//低级工人抽两张
                     int random1=(int)(Math.random()*10);
                     int random2=(random1+5)%10;
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
+                    response.getInfo().add(collection.getInfoList().get(random1));
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
+                    response.getInfo().add(collection.getInfoList().get(random2));
+
                 }
             }
         }

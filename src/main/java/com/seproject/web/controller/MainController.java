@@ -173,7 +173,7 @@ public class MainController {
     @RequestMapping(value = "/startReview")
     @ResponseBody
     /**
-     * 把没有评完的金标还给发起者评,如果没有则直接开始评价，返回一个空值
+     * 开启评估
      */
     public String startReview(@RequestBody String mid){
         Mission mission=missionBasicBLService.findByKey(mid);
@@ -201,6 +201,9 @@ public class MainController {
 
     @RequestMapping(value = "/finishReview")
     @ResponseBody
+    /**
+     * 处理完评估以后的结果，重新发起评估
+     */
     public void finishReview(@RequestBody String para){
         JSONObject object=JSONObject.fromObject(para);
         FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
