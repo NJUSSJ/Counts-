@@ -146,6 +146,10 @@ public class MainController {
             if(each.getUid().equals(uid)){
                 each.setResult(list);
                 goldMissionBasicBLService.update(each);
+
+                CollectionResult cr=collectionResultBasicBLService.findByKey(mid+uid);
+                cr.setState(1);
+                collectionResultBasicBLService.update(cr);
                 return RM.SUCCESS.toString();
             }
         }
