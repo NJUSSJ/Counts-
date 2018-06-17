@@ -151,6 +151,13 @@ public class MainService {
         collection.setKeyId(mid+uid);//collection的id是mid+uid
         collection.setUid(uid);
         collection.setMid(mid);
+        Mission m=missionBasicBLService.findByKey(mid);
+        int picnum=m.getFileNum();
+        ArrayList<String> ars=new ArrayList<String>();
+        for(int i=0;i<picnum;i++){
+            ars.add("");
+        }
+        collection.setInfoList(ars);
         CollectionResult collectionResult=new CollectionResult();
         collectionResult.setResultId(collection.getKeyId());
         collectionResult.setMid(mid);

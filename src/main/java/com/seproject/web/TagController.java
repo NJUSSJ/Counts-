@@ -54,7 +54,9 @@ public class TagController {
             return "{}";
         }
 
+
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
+
         String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
 
         if(jsonString==null){
