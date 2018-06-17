@@ -9,7 +9,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
-    <script src="js/TagType.js"></script>
     <style type="text/css">
         div.sidebar{
             width: 90px;
@@ -59,15 +58,8 @@
         }
     </style>
 </head>
-<<<<<<< HEAD
-<body class="left-sidebar" onload='loadMissionLabel1(${requestScope.missionLabel},${requestScope.tagType});'>
-
-<div onload="loadPic(${requestScope.url},${requestScope.userPhone})">
-=======
 <body class="left-sidebar" onload="loadPic(${requestScope.url},${requestScope.userPhone})">
-
-<div >
->>>>>>> 23a53f0386986acef9b2aeb136159abb9117479b
+<div>
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>
@@ -120,9 +112,6 @@
 
                 <!-- Tag Info-->
                 <div class="tag_info" id="textareaPlace" style="overflow: auto">
-                    <ul class="buttons" id="missionLabel">
-
-                    </ul>
                         <!-- <textarea placeholder="请输入标注信息..." id="tagArea"></textarea> -->
                         <!-- <a href="#" class="button special">保存</a> -->
                 </div>
@@ -212,7 +201,6 @@
 
 </footer>
 <!-- Scripts -->
-<script src="js/TagType.js"></script>
 <script src="js/singleEdit.js"></script>
 <script src="js/tagTool.js"></script>
 <script src="js/jquery.min.js"></script>
