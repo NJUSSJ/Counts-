@@ -15,7 +15,6 @@
     <script src="js/Message.js"></script>
 
     <style type="text/css">
-
         #collections{
             -moz-box-shadow: 3px 3px 4px #000;
             -webkit-box-shadow: 3px 3px 4px #000;
@@ -24,6 +23,10 @@
             -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
             /* For IE 5.5 - 7 */
             filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+        }
+        .collection{
+            width: 400px;
+            height: 247.2px;
         }
     </style>
 </head>

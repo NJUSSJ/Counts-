@@ -3,6 +3,8 @@ var clicked;
 var missionLabel = [];
 var clickedMissionLabel = [];
 
+
+
 function loadMissionLabel1(_missionLabel,url,tagType) {
     missionLabel = _missionLabel.split(",");
     loadTagType(tagType);
@@ -57,4 +59,49 @@ function loadLabelInfo() {
     }
     alert("clickedMissionLabel: " + clickedMissionLabel);
     return clickedMissionLabel;
+}
+
+function loadCanvas(url) {
+    var canvas = document.getElementById("canvas");
+    /*
+        parameters for Pic
+     */
+    var Pic_width;
+    var Pic_height;
+    var Pic_x;
+    var Pic_y;
+
+    var image = new Image();
+    image.src = url;
+
+
+
+    image.onload = function () {
+        var width = image.width;
+        var height = image.height;
+
+        var MulX = canvas.width/width;
+        var MulY = canvas.height/height;
+
+
+
+        if(MulX<= MulY){
+            Pic_width = width*MulX;
+            Pic_height = height*MulX;
+            Pic_x = 0;
+            Pic_y = 0;
+        }
+        else{
+            Pic_width = width*MulY;
+            Pic_height = height*MulY;
+            Pic_y = 0;
+            Pic_x = 0;
+        }
+        canvas.width=Pic_width;
+        canvas.height=Pic_height;
+        var cxt = canvas.getContext("2d");
+        cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
+    };
+
+
 }
