@@ -6,10 +6,7 @@ import com.seproject.domain.*;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
-import com.seproject.web.parameter.FinishReviewParameter;
-import com.seproject.web.parameter.GetMissionParameter;
-import com.seproject.web.parameter.UpdateFreeMissionParameter;
-import com.seproject.web.parameter.UpdateLabelMissionParameter;
+import com.seproject.web.parameter.*;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +30,7 @@ public class MainController {
     BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
     BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
+    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
 
     @RequestMapping(value = "/addLabelMission")
     @ResponseBody
@@ -93,7 +91,7 @@ public class MainController {
     /**
      * 更新用户对标签式任务的标注
      */
-    public String updateLabelMission(String parameter){
+    public String updateLabelMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
@@ -106,6 +104,10 @@ public class MainController {
             if(user.contains(uid)){
                 sub.getAnswers().set(user.indexOf(uid),list);
                 subTagMissionBasicBLService.update(sub);
+                //修改状态为已经提交
+                CollectionResult cr=collectionResultBasicBLService.findByKey(mid+uid);
+                cr.setState(1);
+                collectionResultBasicBLService.update(cr);
                 return RM.SUCCESS.toString();
             }
         }
@@ -133,7 +135,7 @@ public class MainController {
     /**
      * 更新高级用户的标注
      */
-    public String updateGoldMission(String parameter){
+    public String updateGoldMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
@@ -155,7 +157,7 @@ public class MainController {
      */
     @RequestMapping(value = "/getGoldMission")
     @ResponseBody
-    public String getGoldMission (String parameter){
+    public String getGoldMission (@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
         GetMissionParameter para= (GetMissionParameter) JSONObject.toBean(object,GetMissionParameter.class);
         String uid=para.getUid();
@@ -170,7 +172,7 @@ public class MainController {
 
     @RequestMapping(value = "/startReview")
     @ResponseBody
-    public String startReview(String mid){
+    public String startReview(@RequestBody String mid){
         JSONObject jsonObject = JSONObject.fromObject(mainService.getRestPictures(mid));//这里INT 数组是索引
         String ret = jsonObject.toString();
         return ret;
@@ -178,10 +180,28 @@ public class MainController {
 
     @RequestMapping(value = "/finishReview")
     @ResponseBody
-    public void finishReview(String para){
+    public void finishReview(@RequestBody String para){
         JSONObject object=JSONObject.fromObject(para);
         FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
 
+    }
+
+    @RequestMapping(value = "/checkCommit")
+    @ResponseBody
+    public int checkCommit(@RequestBody String missionPara){
+        JSONObject object=JSONObject.fromObject(missionPara);
+        MissionParameter missionParameter=(MissionParameter)JSONObject.toBean(object,MissionParameter.class);
+        String mid=missionParameter.getKeyword();
+        String uid=missionParameter.getUid();
+        int check=collectionResultBasicBLService.findByKey(mid+uid).getState();
+        if(check==1){
+            //已经提交
+            return 1;
+        }
+        else{
+            //其他状态
+            return 2;
+        }
     }
 
     private int getMinIndex(ArrayList<Integer> arr){
