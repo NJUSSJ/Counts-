@@ -59,7 +59,7 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType});loadLabelPhone(${requestScope.userPhone},${requestScope.seed}, ${requestScope.gold1}, ${requestScope.gold2},${requestScope.collection}, ${requestScope.index})">
+<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType});loadLabelPhone(${requestScope.userPhone},${requestScope.collection},${requestScope.index})">
 
 <div>
     <!-- Header -->

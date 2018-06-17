@@ -20,11 +20,8 @@ function getNameAndCollection() {
     return nameAndCollection;
 }
 
-function loadLabelPhone(_phoneNumber,seed, gold1, gold2, collection, index){
+function loadLabelPhone(_phoneNumber,collection, index){
     this.phoneNumber = _phoneNumber;
-    this.index = seed;
-    this.g1 = gold1;
-    this.g2 = gold2;
     this.mid = collection;
     this.count = index;
 }
@@ -47,7 +44,7 @@ function nextImage() {
         url: "/updateLabelMission",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify({"mid":getNameAndCollection()[0], "uid":getNameAndCollection()[2], "num":count, "answer":answer}),
+        data: JSON.stringify({"mid":getNameAndCollection()[0], "uid":getNameAndCollection()[2], "num":count-1, "answer":answer}),
         success: function (ret) {
             //alert("state=" + ret);
             if(ret === 1) {
@@ -62,14 +59,12 @@ function nextImage() {
     });
     index++;
     count++;
-    if(count == 11){
-        index = g1;
-    }else if(count ==12){
-        index = g2;
-    }else if(count == 13){
+    if(count == 13){
         alert("任务已完成！");
+        window.location.href = "personal.html?phoneNumber="+phoneNumber;
+    }else{
+        window.location.href = "test1.html?collection=" + mid + "&phoneNumber=" + phoneNumber + "&index=" + (count-1);
     }
-    window.location.href = "test1.html?collection=" + mid + "&phoneNumber=" + phoneNumber + "&index=" + (count-1);
 
 
 }

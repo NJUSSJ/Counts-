@@ -62,9 +62,6 @@ public class MultiController {
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
         model.addObject("tagType", tagType);
-        model.addObject("gold1", submission.get(10)+1);
-        model.addObject("gold2", submission.get(11)+1);
-        model.addObject("seed", submission.get(0)+1);
         model.addObject("index", index+1);
 
 

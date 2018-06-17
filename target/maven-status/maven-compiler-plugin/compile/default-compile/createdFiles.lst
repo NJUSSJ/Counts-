@@ -1,5 +1,6 @@
 com\seproject\domain\UserDate.class
 com\seproject\service\FileIOService.class
+com\seproject\domain\FreeMissionDetail.class
 com\seproject\web\parameter\UpdateLabelMissionParameter.class
 com\seproject\web\controller\MainController.class
 com\seproject\service\StatisticsService.class
@@ -25,6 +26,7 @@ com\seproject\service\BasicUtilService.class
 com\seproject\domain\Sample.class
 com\seproject\service\ReviewService.class
 com\seproject\domain\testDomain\TestH.class
+com\seproject\web\parameter\FreeMissionParameter.class
 com\seproject\service\LanguageService.class
 com\seproject\web\response\MissionCheckResponse.class
 com\seproject\web\parameter\UpdateFreeMissionParameter.class

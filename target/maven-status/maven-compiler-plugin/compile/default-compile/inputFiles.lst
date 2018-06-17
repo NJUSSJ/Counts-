@@ -14,6 +14,7 @@ C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\parameter\MissionPa
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\common\RM.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\TagController.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\Application.java
+C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\domain\FreeMissionDetail.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\parameter\GetMissionParameter.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\domain\Mission.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\CollectionController.java
@@ -27,6 +28,7 @@ C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\service\MissionService.
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\response\MissionCheckResponse.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\service\blServiceImpl\BasicBLImpl_File.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\controller\UserController.java
+C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\parameter\FreeMissionParameter.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\parameter\MissionSearchParameter.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\web\controller\OtherController.java
 C:\Users\shisj\SEP_Phase_III\src\main\java\com\seproject\domain\SubLabelMission.java
