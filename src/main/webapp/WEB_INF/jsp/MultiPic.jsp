@@ -77,9 +77,9 @@
 
                 <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="bonusStrategy">${requestScope.bonusStrategy}</span></span>
+                <span style="display: block;margin-top: 5px"><span>奖励分配策略：</span><span id="bonusStrategy">${requestScope.bonusStrategy}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="evaluateStrategy">${requestScope.evaluateStrategy}</span></span>
+                <span style="display: block;margin-top: 5px"><span>评估策略：</span><span id="evaluateStrategy">${requestScope.evaluateStrategy}</span></span>
 
                 <script>
                     function loadMissionLabel(missionLabel) {
