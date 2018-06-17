@@ -61,7 +61,7 @@
             </div>
 
             <div class="3u 12u(narrower)" style="margin-left: 0px;padding-left: 0px;">
-                <span style="display: bloc;margin-top: 0px"><span>当前任务：</span><span id="missionName">${requestScope.collection}</span></span>
+                <span style="display: block;margin-top: 0px"><span>当前任务：</span><span id="missionName">${requestScope.collection}</span></span>
 
                 <span style="display: block;margin-top: 5px"><span>任务积分：</span><span id="missionCredit">${requestScope.credit}</span></span>
 
@@ -76,6 +76,10 @@
                 <span style="display: block;margin-top: 5px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
 
                 <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="bonusStrategy">${requestScope.bonusStrategy}</span></span>
+
+                <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="evaluateStrategy">${requestScope.evaluateStrategy}</span></span>
 
                 <script>
                     function loadMissionLabel(missionLabel) {

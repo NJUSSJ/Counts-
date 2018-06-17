@@ -45,6 +45,8 @@ public class CollectionController {
         String picType = tmpMission.getPicType();
         int tagType = tmpMission.getTagType();
         int difficulty = tmpMission.getDifficulty();
+        int evaluateStrategy = tmpMission.getEvaluateStrategy();
+        int bonusStrategy = tmpMission.getBonusStrategy();
         ArrayList<String> missionLabel = tmpMission.getMissionLabel();
         System.out.println("missionLabel: " + missionLabel.toString());
         int maxWorkerNum = tmpMission.getMaxWorkerNum();
@@ -79,6 +81,8 @@ public class CollectionController {
         model.addObject("difficulty",difficulty);
         model.addObject("missionLabel",missionLabel);
         model.addObject("maxWorkerNum",maxWorkerNum);
+        model.addObject("bonusStrategy",bonusStrategy);
+        model.addObject("evaluateStrategy",evaluateStrategy);
 
         return model;
     }
