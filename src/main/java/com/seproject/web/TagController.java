@@ -1,17 +1,18 @@
 package com.seproject.web;
 
-import com.seproject.domain.Collection;
-import com.seproject.domain.CollectionResult;
-import com.seproject.domain.Mission;
-import com.seproject.domain.User;
+import com.seproject.domain.*;
 import com.seproject.service.Factory;
+import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.parameter.FreeMissionParameter;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +20,7 @@ import java.util.ArrayList;
  */
 @Controller
 public class TagController {
-
+    MainService mainService;
     BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
     BasicBLService<Mission> missionBasicBLService = Factory.getBasicBLService(new Mission());
@@ -28,10 +29,13 @@ public class TagController {
     public String writeFile(@RequestBody String imgid){
         JSONObject jsonObject = JSONObject.fromObject(imgid);
         String temp0[]=jsonObject.getString("imgid").split("-");
+        System.out.println("imgid:"+imgid);
+        FreeMissionParameter parameter =(FreeMissionParameter) JSONObject.toBean(jsonObject,FreeMissionParameter.class);
         String starterMissionName=temp0[0];
         String picName0= temp0[1]; //这个属性必须是数字,且从1开始
         String userName= temp0[2];
-
+        mainService.updateFreeMissionDetail(starterMissionName,userName,(Integer.parseInt(picName0)),parameter);
+        //更新用户对这张图的标注信息
         Collection collection=collectionService.findByKey(starterMissionName+userName);
         ArrayList<String> infoList=collection.getInfoList();
         infoList.set(Integer.parseInt(picName0)-1,imgid);
@@ -99,6 +103,6 @@ public class TagController {
         return collectionResultBasicBLService.findByKey(missionAndPhoneNumber).getState();
     }
 
-
-
+    @Autowired
+    public void setMainService(MainService mainService){this.mainService=mainService;}
 }
