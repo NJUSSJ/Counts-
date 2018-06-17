@@ -67,7 +67,7 @@
         <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav">
             <ul>
-                <li><a id="more"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
+                <li><a id="more" onclick="nextImage(${requestScope.picNum})"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
                 <li><a onclick="submitLabelInfo()" class="button special">Submit</a></li>
                 <li><a href="/" class="button special">Sign Out</a></li>
@@ -101,7 +101,7 @@
 
                 <!-- Content -->
                 <div class="content" align="center">
-                    <canvas id="canvas" width="500" height="500">
+                    <canvas id="canvas" width="500" height="500" onload="loadCanvas(${requestScope.url})">
 
                     </canvas>
                     <script>

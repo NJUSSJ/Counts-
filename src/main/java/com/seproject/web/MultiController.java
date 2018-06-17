@@ -51,8 +51,8 @@ public class MultiController {
         }
         model.addObject("url",url);
         model.addObject("collection",collection);
-        int picNum = missionBasicBLService.findByKey(collection).getFileNum();
-        model.addObject("picNum",picNum);
+        //int picNum = missionBasicBLService.findByKey(collection).getFileNum();
+        model.addObject("picNum",12);
         User user = basicBLService.findByKey(phoneNumber);
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
@@ -125,10 +125,12 @@ public class MultiController {
         Mission mission = missionBasicBLService.findByKey(request.getParameter("imageURL"));
 
         int tagType = mission.getTagType();
+        int picNum = mission.getFileNum();
         ModelAndView view = new ModelAndView("personalSubmission");
         view.addObject("mid", mid);
         view.addObject("uid", uid);
         view.addObject("tagType", tagType);
+        view.addObject("picNum", picNum);
 
         return view;
     }
