@@ -203,15 +203,20 @@ public class MainController {
 
     @RequestMapping(value = "/commit")
     @ResponseBody
-    public void checkCommit(@RequestBody String missionPara){
+    public int commit(@RequestBody String missionPara){
         JSONObject object=JSONObject.fromObject(missionPara);
         MissionParameter missionParameter=(MissionParameter)JSONObject.toBean(object,MissionParameter.class);
         String mid=missionParameter.getKeyword();
         String uid=missionParameter.getUid();
         System.out.println(mid+uid+"!!!!!!!");
         CollectionResult cr=collectionResultBasicBLService.findByKey(mid+uid);
-        cr.setState(1);
-
+        if(cr.getState() == 1){
+            return 2;//已提交过
+        }else {
+            cr.setState(1);
+            collectionResultBasicBLService.update(cr);
+            return 1;
+        }
 
     }
 

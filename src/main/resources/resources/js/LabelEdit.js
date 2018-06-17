@@ -73,47 +73,22 @@ function LabelData(mid, uid, missionLabel) {
 }*/
 
 function updateData() {
-    var isSubmitted = false;
-    //alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
-
     $.ajax({
-        async: false,
-        type: "POST",
-        url: "/checkCommit",
-        contentType: "application/json",
-        dataType: "json",
-        data: JSON.stringify({"keyword":getNameAndCollection()[0], "uid":getNameAndCollection()[2]}),
-        success: function (ret) {
-            //alert("state=" + ret);
-            if(ret === 1) {
-                isSubmitted = true;
-                alert("已提交过，请勿重复提交！");
-            }
-        }
-        ,
-        error: function(){
-            //alert("提交失败!");
-        }
-    });
-
-    if(!isSubmitted) {
-        $.ajax({
             async: false,
             type: "POST",
             url: "/commit",
             contentType: "application/json",
             dataType: "json",
-            data: JSON.stringify({"keyword":getNameAndCollection()[1], "uid":getNameAndCollection()[2]}),
+            data: JSON.stringify({"keyword":getNameAndCollection()[0], "uid":getNameAndCollection()[2]}),
             success: function (ret) {
                 if(ret === 1)
                     alert("提交成功!");
+                else if(ret === 2)
+                    alert("提交失败!请勿重复提交！");
             }
             ,
             error: function () {
-                //alert("提交失败!");
             }
         });
-    }
-    //alert("提交成功!");
     return 0;
 }
