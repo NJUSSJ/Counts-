@@ -34,11 +34,17 @@ public class MultiController {
         if(tagType == 1){
             model = new ModelAndView("LabelEdit");
             ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
-            String label = "";
-            for(int i=0;i<missionLabel.size()-1;i++){
-                label += missionLabel.get(i)+',';
+            System.out.println(missionLabel.get(0));
+            String label = missionLabel.get(0);
+            String labels[] = label.split(",");
+            System.out.println(labels[0]);
+            label = "";
+            for(int i=0;i<labels.length-1;i++){
+                label+=labels[i].substring(1, labels[i].length()-1)+",";
             }
-            label += missionLabel.get(missionLabel.size()-1);
+            label+=labels[labels.length-1].substring(1, labels[labels.length-1].length()-1);
+            label = "\'"+label+"\'";
+            System.out.println(label);
             model.addObject("label", label);
         }else {
             model = new ModelAndView("SingleEdit");

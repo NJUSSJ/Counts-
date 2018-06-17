@@ -3,8 +3,8 @@ var clicked;
 var missionLabel = [];
 var clickedMissionLabel = [];
 
-function loadMissionLabel1(_missionLabel,url, tagType) {
-    missionLabel = _missionLabel;
+function loadMissionLabel1(_missionLabel,url,tagType) {
+    missionLabel = _missionLabel.split(",");
     loadTagType(tagType);
     loadCanvas(url);
 }
