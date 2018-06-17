@@ -1,30 +1,40 @@
-var personalMessage = ''
+var personalMessage = '';
 
 function getMessage(phoneNumber) {
+    alert("!!!!!!!!!!!!!!!!!");
     $.ajax({
         async: false,
         type: "GET",
-        url: "getMessage",
+        url: "GetMessage",
         contentType: "application/json",
         dataType: "json",
-        data: {"phoneNumber":phoneNumber},
+        data: JSON.stringify({"phoneNumber":phoneNumber}),
         success: function (res) {
-            personalMessage = JSON.parse(res)
-            alert(personalMessage)
+            //personalMessage = JSON.parse(res);
+            alert(res);
+            changeForm(res);
+
         },
         error:function () {
             //alert("fail");
         }
     });
 
-
 }
-
+function changeForm(res) {
+    showMessage(res);
+}
+function showMessage(message) {
+    for(var i = 0;i<message.length;i++){
+        document.getElementById("messageArea").innerHTML += "<tr id=" + i + "><td>" + i + "</td><td>" + message[i].content + "</td><td>" + message[i].senderid + "</td><td>" + message[i].keyid + "</td></tr>";
+    }
+}
+/*
 function sendMessage(phoneNumber) {
     $.ajax({
         async: false,
         type: "GET",
-        url: "getMessage",
+        url: "sendMessage",
         contentType: "application/json",
         dataType: "json",
         data: {"phoneNumber":phoneNumber},
@@ -36,19 +46,19 @@ function sendMessage(phoneNumber) {
             //alert("fail");
         }
     });
-}
+}*/
 
 function deleteMessage(phoneNumber) {
     $.ajax({
         async: false,
         type: "GET",
-        url: "getMessage",
+        url: "DeleteMessage",
         contentType: "application/json",
         dataType: "json",
         data: {"phoneNumber":phoneNumber},
         success: function (res) {
-            personalMessage = JSON.parse(res)
-            alert(personalMessage)
+            //personalMessage = JSON.parse(res);
+            alert(res);
         },
         error:function () {
             //alert("fail");

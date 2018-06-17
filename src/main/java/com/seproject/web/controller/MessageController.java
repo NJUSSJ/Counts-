@@ -54,6 +54,7 @@ public class MessageController {
     @RequestMapping(value = "/GetMessage")
     @ResponseBody
     public String get(@RequestBody String phoneNumber){
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!" + phoneNumber);
         //获取某个用户信箱中的全部信息
         ArrayList<Message> messages=newsService.getAllMessages(phoneNumber);
 

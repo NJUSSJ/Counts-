@@ -43,7 +43,7 @@
                     <a>任务</a>
                     <ul>
                         <li><a onclick="sign(${phoneNumber})">签到</a></li>
-                        <li><a href="<c:url value="message.html?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}"/>">消息</a></li>
+                        <li><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.phoneNumber}&userCategory=${requestScope.userCategory}#message" />" >消息</a></li>
                     </ul>
                 </li>
                 <style type="text/css">

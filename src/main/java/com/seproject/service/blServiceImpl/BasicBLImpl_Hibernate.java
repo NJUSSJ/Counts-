@@ -138,6 +138,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
         int searchId = BasicUtilService.getKeyID(type, keyName);
         for (int i = 0; i < objects.size(); i++) {
             String value = BasicUtilService.getKeyValue(objects.get(i), searchId);
+
             switch (category) {
                 case EQUAL:
                     if (value.equals(keyValue)) {

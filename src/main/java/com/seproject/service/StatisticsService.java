@@ -28,8 +28,10 @@ public class StatisticsService {
 
 
     public WorkerData getWorkerData(String userID){
-
-
+        System.out.println("service1IsNull:"+(service1==null));
+        System.out.println("userIDisNull:"+(userID==null));
+        CollectionResult re=service1.findByKey("haha");
+        System.out.println(re==null);
         ArrayList<CollectionResult> collections=service1.search("uid", SearchCategory.EQUAL,userID);
         User u=service2.findByKey(userID);
 

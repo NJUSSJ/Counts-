@@ -84,7 +84,7 @@ function updateData() {
                 if(ret === 1)
                     alert("提交成功!");
                 else if(ret === 2)
-                    alert("提交失败！");
+                    alert("提交失败!请勿重复提交！");
             }
             ,
             error: function () {

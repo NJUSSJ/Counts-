@@ -39,6 +39,7 @@ public class ChartController {
         String phoneNumber = userInfo.substring(16,27);//获取手机号
         System.out.println(phoneNumber+"!!!!!!!!!!!!!!!!");
         //需要通过uid获取相应data
+        System.out.println("staticsService is null"+(statisticsService==null));
         WorkerData workerData = statisticsService.getWorkerData(phoneNumber);
         JSONObject jsonObject = JSONObject.fromObject(workerData);
         String ret = jsonObject.toString();
