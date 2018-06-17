@@ -6,6 +6,7 @@ var url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1
 var phoneNumber;
 var imgid;
 var tmp1;
+var picNum;
 //var collectionName = getNameAndCollection()[0];
 
 function loadPhoneNumber(_phoneNumber){
@@ -45,7 +46,7 @@ back.addEventListener("click", function back() {
     }
 });
 
-nextPage.addEventListener("click", function more() {
+function nextImage(_picNum) {
     /*
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -57,7 +58,8 @@ nextPage.addEventListener("click", function more() {
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
     var i = tmp[1].substring(tmp[1].indexOf("=")+1);
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
-    var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
+    //var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
+    this.picNum = _picNum;
 
     if(Number(i)<picNum) {
         i = Number(i) + 1;
@@ -65,7 +67,7 @@ nextPage.addEventListener("click", function more() {
     }else {
         alert("本图片为最后一张");
     }
-});
+};
 
 //data
 function imgs(sentids,imgid,sentences,filename,fixedx,fixedy,fixedwidth,fixedheight,list,missionLabel) {
