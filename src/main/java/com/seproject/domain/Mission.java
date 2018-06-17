@@ -48,6 +48,10 @@ public class Mission {
     String picType;
     @Column(name="maxworkernum")
     int maxWorkerNum;
+    @Column(name = "bonusStrategy")
+    int bonusStrategy;
+    @Column(name = "evaluateStrategy")
+    int evaluateStrategy;
     public Mission(){
 
     }

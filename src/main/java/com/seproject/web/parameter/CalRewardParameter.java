@@ -7,6 +7,8 @@ public class CalRewardParameter {
     private int difficulty;
     private int maxWorker;
     private String uid;
+    private int bonusStrategy;
+    private int evaluateStrategy;
 
     public String getUid() {
         return uid;
@@ -30,5 +32,21 @@ public class CalRewardParameter {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public int getBonusStrategy() {
+        return bonusStrategy;
+    }
+
+    public void setBonusStrategy(int bonusStrategy) {
+        this.bonusStrategy = bonusStrategy;
+    }
+
+    public int getEvaluateStrategy() {
+        return evaluateStrategy;
+    }
+
+    public void setEvaluateStrategy(int evaluateStrategy) {
+        this.evaluateStrategy = evaluateStrategy;
     }
 }

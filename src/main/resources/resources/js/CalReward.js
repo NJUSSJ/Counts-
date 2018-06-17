@@ -26,6 +26,8 @@ ensureBtn.addEventListener("click", function () {
     var difficulty = parseInt(document.getElementById("difficulty").value);
     var maxWorkerNum = parseInt(document.getElementById("maxWorkerNum").value);
     var picNum = document.getElementsByClassName("dz-image").length;
+    var bonusStrategy = parseInt(document.getElementById("bonusStrategy").value);
+    var evaluateStrategy = parseInt(document.getElementById("evaluateStrategy").value);
 
     $.ajax({
         async: false,
