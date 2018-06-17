@@ -10,7 +10,8 @@ function getNameAndCollection() {
         collectionName = decodeURI(collectionName);
     }
     var picName = tmp[1].substring(tmp[1].indexOf("=")+1,tmp[1].length);
-    var nameAndCollection = [collectionName,picName];
+    var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
+    var nameAndCollection = [collectionName,picName,phoneNumber];
     return nameAndCollection;
 }
 
@@ -47,7 +48,6 @@ function LabelData(mid, uid, missionLabel) {
 }
 
 function updateData() {
-    var missionAndPhoneNumber = getNameAndCollection()[0] + phoneNumber;
     var isSubmitted = false;
     //alert(JSON.stringify(new missionAndPhoneNumberObj(missionAndPhoneNumber)));
 
@@ -57,7 +57,7 @@ function updateData() {
         url: "/checkCommit",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify({"keyword":getNameAndCollection()[1], "uid":getNameAndCollection()[0]}),
+        data: JSON.stringify({"keyword":getNameAndCollection()[0], "uid":getNameAndCollection()[2]}),
         success: function (ret) {
             //alert("state=" + ret);
             if(ret === 1) {

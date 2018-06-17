@@ -73,7 +73,7 @@
                     <ul>
                         <li><a id="save"><img src="images/save.png" width="20" height="20" align="center">SAVE</a></li>
                         <li><a id="back"><img src="images/back.png" width="20" height="20" align="center">BACK</a></li>
-                        <li><a id="more"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
+                        <li><a id="more" onclick="nextImage(${requestScope.picNum})"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                     </ul>
                 </li>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
