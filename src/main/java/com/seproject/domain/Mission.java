@@ -49,9 +49,9 @@ public class Mission {
     @Column(name="maxworkernum")
     int maxWorkerNum;
     @Column(name = "bonusStrategy")
-    int bonusStrategy;//1.自动 2.手动 3.雇佣工人
+    int bonusStrategy;//1,自动 2，手动 3，雇用工人
     @Column(name = "evaluateStrategy")
-    int evaluateStrategy;//1.平均分配 2.double-nothing 3.双色球
+    int evaluateStrategy;//1，平均分配 2，double-nothing 3,双色球
     public Mission(){
 
     }

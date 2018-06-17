@@ -59,15 +59,15 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType})">
+<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType});loadLabelPhone(${requestScope.userPhone},${requestScope.seed}, ${requestScope.gold1}, ${requestScope.gold2},${requestScope.collection}, ${requestScope.index})">
 
 <div>
     <!-- Header -->
-    <header id="header" onload="loadLabelPhone(${requestScope.userPhone})">
+    <header id="header" onload="">
         <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav">
             <ul>
-                <li><a id="more" onclick="nextImage(${requestScope.picNum})"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
+                <li><a id="more" onclick="nextImage(${requestScope.seed})"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
                 <li><a onclick="submitLabelInfo()" class="button special">Submit</a></li>
                 <li><a href="/" class="button special">Sign Out</a></li>
@@ -101,50 +101,11 @@
 
                 <!-- Content -->
                 <div class="content" align="center">
-                    <canvas id="canvas" width="500" height="500" onload="loadCanvas(${requestScope.url})">
+                    <canvas id="canvas" width="500" height="500">
 
                     </canvas>
                     <script>
-                        function loadCanvas(url) {
-                            var canvas = document.getElementById("canvas");
-                            var cxt = canvas.getContext("2d");
-                            /*
-                                parameters for Pic
-                             */
-                            var Pic_width;
-                            var Pic_height;
-                            var Pic_x;
-                            var Pic_y;
-                            var image = new Image();
 
-                            image.src = url;
-
-                            var width = image.width;
-                            var height = image.height;
-
-                            var MulX = canvas.width/width;
-                            var MulY = canvas.height/height;
-
-
-
-                            if(MulX<= MulY){
-                                Pic_width = width*MulX;
-                                Pic_height = height*MulX;
-                                Pic_x = 0;
-                                Pic_y = 0;
-                            }
-                            else{
-                                Pic_width = width*MulY;
-                                Pic_height = height*MulY;
-                                Pic_y = 0;
-                                Pic_x = 0;
-                            }
-                            canvas.width=Pic_width;
-                            canvas.height=Pic_height;
-
-                            cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
-
-                        }
                     </script>
 
                     <ul id="info" class="buttons">

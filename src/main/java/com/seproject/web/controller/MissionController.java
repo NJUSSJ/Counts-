@@ -173,11 +173,9 @@ public class MissionController {
     /**
      * 获取子任务的全部图片
      */
-    public ArrayList<Integer> getPictureIndex(@RequestBody String missionParameter){
-        System.out.println(missionParameter);
-        MissionParameter para=toMissionPara(missionParameter);
-        System.out.println(mainService.getPictureIndexOfSubmission(para.getUid(),para.getKeyword()));
-        return mainService.getPictureIndexOfSubmission(para.getUid(),para.getKeyword());
+    public ArrayList<Integer> getPictureIndex(String uid, String mid){
+        System.out.println(mainService.getPictureIndexOfSubmission(uid,mid));
+        return mainService.getPictureIndexOfSubmission(uid,mid);
     }
 
 
