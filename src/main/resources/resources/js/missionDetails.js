@@ -7,7 +7,7 @@ var indexForSample=0;
 var lastIndex;
 var picName;
 var grade;
-var labels;
+var labels = [];
 
 function finishReviewPara(mid, indexs, answers, uid) {
     this.mid = mid;
@@ -81,7 +81,10 @@ new scale('btn','bar','title'); //实例化一个拖拽
 加载抽样
  */
 function loadSample() {
+<<<<<<< HEAD
     //alert("!!!");
+=======
+>>>>>>> c00b92c5ac5fb295e68687b5e0f1fe6f9ddd745d
     $.ajax({
         type: "POST",
         url: "/getSample",
@@ -401,23 +404,35 @@ function loadChartsData() {
 
 function sampleSet2(Sample, mid) {
     picIndex = Sample.picIndex;
-    labels = Sample.label;
+    labels = Sample.label[0].split(",");
+    alert(labels[0]);
     lastIndex=labels.length-1;
 
-    var btn = "";
     for(var i =0;i<labels.length;i++){
-        btn += "<div style='margin-bottom: 10px'><input href=\"#\" style=\"width=30 height=50\" class=\"button special\" id="+ i +" value="+ labels[i] +" onclick=clickLabel(" + i + ");  /></div>";
-        btn += "<br>";
+        var div = document.createElement("div");
+        div.style.paddingTop = "0px";
+        div.style.marginTop = "10px";
+        var a = document.createElement("a");
+        a.onclick = clickLabel(i);
+        a.className = "button";
+        a.style.height = "60px";
+        a.style.fontSize = "0.7em";
+        a.style.textDecoration = "none";
+        a.style.fontWeight = "bold";
+        a.innerHTML = labels[i];
+        div.appendChild(a)
+        document.getElementById("textareaPlace2").appendChild(div);
     }
 
-    document.getElementById("textareaPlace2").innerHTML = btn;
+
+    document.getElementById("edit_area2").style.display = "block";
 
     loadOneSample2(indexForSample, mid);
 
 }
 
 function loadOneSample2(index, mid) {
-    var url = "missionImages/"+mid+"_"+index+".jpg";
+    var url = "missionImages/"+mid+"_"+picIndex[index]+".jpg";
     loadCanvas(url);
 }
 
