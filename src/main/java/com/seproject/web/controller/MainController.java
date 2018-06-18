@@ -197,6 +197,7 @@ public class MainController {
         }
         JSONObject jsonObject = JSONObject.fromObject(reviewResponse);//这里INT 数组是索引
         String ret = jsonObject.toString();
+        System.out.println(ret);
         return ret;
     }
 

@@ -8,6 +8,7 @@ var lastIndex;
 var picName;
 var grade;
 var labels = [];
+var labelIndex = 0;
 
 function finishReviewPara(mid, indexs, answers, uid) {
     this.mid = mid;
@@ -401,27 +402,15 @@ function loadChartsData() {
 function sampleSet2(Sample, mid) {
     picIndex = Sample.picIndex;
     labels = Sample.label[0].split(",");
-    alert(labels[0]);
-    lastIndex=labels.length-1;
+    lastIndex=picIndex.length;
 
+    var btn = "";
     for(var i =0;i<labels.length;i++){
-        var div = document.createElement("div");
-        div.style.paddingTop = "0px";
-        div.style.marginTop = "10px";
-        var a = document.createElement("a");
-        a.onclick = clickLabel(i);
-        a.className = "button";
-        a.style.height = "60px";
-        a.style.fontSize = "0.7em";
-        a.style.textDecoration = "none";
-        a.style.fontWeight = "bold";
-        a.innerHTML = labels[i];
-        div.appendChild(a)
-        document.getElementById("textareaPlace2").appendChild(div);
+        btn += "<div><input href=\"#\" style=\"width=30 height=50\" class=\"button special\" id="+ i +" value="+ labels[i] +" onclick=clickLabel(" + i + ");  /></div>";
+        btn += "<br>";
     }
 
-
-    document.getElementById("edit_area2").style.display = "block";
+    document.getElementById("textareaPlace2").innerHTML = btn;
 
     loadOneSample2(indexForSample, mid);
 
@@ -468,15 +457,42 @@ function loadCanvas(url) {
             Pic_y = 0;
             Pic_x = 0;
         }
-        canvas.width=Pic_width;
-        canvas.height=Pic_height;
         var cxt = canvas.getContext("2d");
+        cxt.clearRect(0,0,canvas.width,canvas.height);
         cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
     };
 
 
 }
 
+
+
 function clickLabel(i) {
-    
+    if(labelIndex == lastIndex-1){
+        answers[labelIndex] = i;
+        alert(answers);
+        finishReview();
+    }else{
+        answers[labelIndex] = i;
+        labelIndex++;
+        loadOneSample2(labelIndex, mid);
+    }
+}
+function finishReview() {
+    var para = new finishReviewPara(mid, picIndex, answers, uid);
+    $.ajax({
+        async: true,
+        type: "POST",
+        url: "/finishReview",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(para),
+        success: function (returnData) {
+
+        }
+        ,
+        error: function(){
+            alert("提交失败!");
+        }
+    });
 }

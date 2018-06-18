@@ -28,12 +28,15 @@ function startJudge(tagType) {
 }
 
 function judge(Sample) {
+    document.getElementById("choices").style.display = "none";
     if(type == 1){
         //标签式
-
+        var sampleArea =  document.getElementById("edit_area2")
+        sampleArea.style.display = "block";
         sampleSet2(Sample, mid);
     }else{
-        document.getElementById("edit_area").style.display = "block";
+        var sampleArea =  document.getElementById("edit_area")
+        sampleArea.style.display = "block";
         sampleSet(Sample, mid);
     }
 }
