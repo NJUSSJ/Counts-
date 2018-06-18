@@ -46,7 +46,7 @@
         }
     </style>
 </head>
-<body onload="loadPersonal(); getMessage(${requestScope.phoneNumber});">
+<body onload="loadPersonal(${requestScope.phoneNumber});">
 
 <!-- Wrapper-->
 <div id="wrapper">

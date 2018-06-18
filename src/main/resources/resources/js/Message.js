@@ -1,7 +1,6 @@
 var personalMessage = '';
 
 function getMessage(phoneNumber) {
-    alert("!!!!!!!!!!!!!!!!!");
     $.ajax({
         async: false,
         type: "POST",
@@ -11,7 +10,6 @@ function getMessage(phoneNumber) {
         data: JSON.stringify({"phoneNumber":phoneNumber}),
         success: function (res) {
             //personalMessage = JSON.parse(res);
-            alert(res);
             changeForm(res);
 
         },

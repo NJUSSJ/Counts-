@@ -75,7 +75,9 @@ function savePersonalInfo(personalInfo) {
     return 1;
 }
 
-function loadPersonal() {
+function loadPersonal(phoneNumber) {
+
+    getMessage(phoneNumber);
 
     var tmp = window.location.search.split("&");
     this.userName = tmp[0].substring(tmp[0].indexOf("=")+1);
