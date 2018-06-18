@@ -225,6 +225,7 @@ function loadPersonalFinishedCollection(phoneNumber, category) {
                 if (returnData[i] == null) {
                     break;
                 }
+                alert("!!!");
                 finishedNames[i] = returnData[i];
                 index++;
             }

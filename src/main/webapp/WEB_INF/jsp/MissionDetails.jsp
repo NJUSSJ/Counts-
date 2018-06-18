@@ -74,7 +74,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         height: 700px;
     }
     #edit_area2{
-        height: 700px;
+        height: 600px;
     }
 
     .picture{
@@ -223,7 +223,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <!-- Content -->
                     <div class="content" align="center">
-                        <canvas id="canvas" width="500" height="500">
+                        <canvas id="canvas" width="500px" height="500px">
 
                         </canvas>
                         <script>

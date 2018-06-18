@@ -5,18 +5,22 @@ import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
-import com.seproject.service.ReviewService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.*;
+import com.seproject.web.response.DownloadFileResponse;
 import com.seproject.web.response.ReviewResponse;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -197,6 +201,7 @@ public class MainController {
         }
         JSONObject jsonObject = JSONObject.fromObject(reviewResponse);//这里INT 数组是索引
         String ret = jsonObject.toString();
+        System.out.println(ret);
         return ret;
     }
 
@@ -235,6 +240,36 @@ public class MainController {
             collectionResultBasicBLService.update(cr);
             return 1;
         }
+
+    }
+
+    @RequestMapping(value="/downloadFile")
+    @ResponseBody
+    public DownloadFileResponse downloadFile(@RequestBody String mid){
+        File nav= null;
+        try {
+            nav = ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
+            FileWriter writer=new FileWriter(nav,false);
+            ArrayList<Collection> collections=collectionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+            for(int i=0;i<collections.size();i++){
+                for(int j=0;j<collections.get(i).getInfoList().size();j++){
+                    writer.write(collections.get(i).getInfoList().get(j)+"\n");
+                }
+            }
+            writer.flush();
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String path=nav.getAbsolutePath();
+
+        DownloadFileResponse downloadFileResponse=new DownloadFileResponse();
+        downloadFileResponse.setPath(path);
+
+        return downloadFileResponse;
+
 
     }
 

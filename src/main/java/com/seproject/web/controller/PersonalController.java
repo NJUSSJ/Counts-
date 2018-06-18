@@ -87,6 +87,8 @@ public class PersonalController {
             ArrayList<Mission> tmpMission = missionBasicBLService.search("requestorNumber", SearchCategory.EQUAL, phoneNumber);
             ArrayList<String > collectionNames =new ArrayList<String>();
             for(int i=0;i<tmpMission.size();i++){
+                int state = tmpMission.get(i).getState();
+                if(state == 1||state == 0)
                 collectionNames.add(tmpMission.get(i).getName());
             }
             return collectionNames;
@@ -122,14 +124,17 @@ public class PersonalController {
             ArrayList<Mission> tmpMission = missionBasicBLService.search("requestorNumber", SearchCategory.EQUAL, phoneNumber);
             ArrayList<String > collectionNames =new ArrayList<String>();
             for(int i=0;i<tmpMission.size();i++){
-                collectionNames.add(tmpMission.get(i).getName());
+                int state = tmpMission.get(i).getState();
+                if(state == 2){
+                    collectionNames.add(tmpMission.get(i).getName());
+                }
             }
             return collectionNames;
         }else{
             ArrayList<Mission> tmpMission = missionBasicBLService.getAllObjects();
             ArrayList<String > collectionNames =new ArrayList<String>();
             for(int i=0;i<tmpMission.size();i++){
-                collectionNames.add(tmpMission.get(i).getName());
+
             }
             return collectionNames;
         }

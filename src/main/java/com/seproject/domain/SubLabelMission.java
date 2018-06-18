@@ -25,7 +25,7 @@ public class SubLabelMission {
     @Searchable(varName = "seed")
     @Column(name="seed")
       int seed=0;//种子
-    @Column(name="answers")
+    @Column(name="answers",columnDefinition = "blob")
       ArrayList<ArrayList<Integer>> answers=new ArrayList<ArrayList<Integer>>();
     @Column(name="id1")
       int id1;//第一个金标的索引
