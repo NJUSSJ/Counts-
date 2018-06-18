@@ -49,7 +49,8 @@ public class TagController {
         String collectionName=jsonObject.getString("collectionName");
         String picName=jsonObject.getString("picName");
         String phoneNumber=jsonObject.getString("phoneNumber");
-        System.out.println("!!!!!!!!!!!!!!!!!" + collectionName + " " + phoneNumber);
+
+        System.out.println("!!!!!!!!!!!!!!!!!" + collectionName + " " + phoneNumber+" "+picName);
         Mission mission = missionBasicBLService.findByKey(collectionName);
         if(mission.getTagType() == 1){
             return "{}";
