@@ -7,6 +7,7 @@ var phoneNumber;
 var imgid;
 var tmp1;
 var picNum;
+var count = 1;
 //var collectionName = getNameAndCollection()[0];
 
 function loadPhoneNumber(_phoneNumber){
@@ -46,7 +47,7 @@ back.addEventListener("click", function back() {
     }
 });
 
-function nextImage(_picNum) {
+function nextImage() {
     /*
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -54,18 +55,11 @@ function nextImage(_picNum) {
     img.src = url;
     ctx.drawImage(img,0,0,canvas.width,canvas.height);
     */
-    var tmp = window.location.search.split("&");
-    var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
-    var i = tmp[1].substring(tmp[1].indexOf("=")+1);
-    var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
-    //var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
-    this.picNum = _picNum;
-
-    if(Number(i)<picNum) {
-        i = Number(i) + 1;
-        window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber + "&picNum=" + picNum;
-    }else {
-        alert("本图片为最后一张");
+    count++;
+    if(count == 13){
+        alert("已到达任务末尾！");
+    }else{
+        window.location.href = "test1.html?collection=" + mid + "&phoneNumber=" + phoneNumber + "&index=" + (count-1);
     }
 };
 
@@ -160,7 +154,7 @@ function getImgInfo() {
               alert(JSON.stringify(jsonResult))
           }*/
           //alert(jsonResult);
-          tmp1 = JSON.stringify(jsonResult);
+          tmp123 = JSON.stringify(jsonResult);
           //alert("qqq" + tmp123);
           //return ret;
         }

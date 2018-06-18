@@ -9,7 +9,7 @@ function loadChart1(mid) {
         dataType: "json",
         data: mid,
         success: function (returnData){
-            chart1Data =returnData;
+            chart1Data = returnData;
         },
         error: function(){
             alert("fail13");
@@ -34,4 +34,68 @@ function loadChart1(mid) {
         }]
     };
     chart1.setOption(option1);
+}
+
+/* ------------------------------------------------------------------- */
+function loadChart3(mid) {
+    var chart3Data = "";
+
+    $.ajax({
+        async: false,
+        type: "POST",
+        url: "/singleChart/getChart3",
+        contentType: "application/json",
+        dataType: "json",
+        data: mid,
+        success: function (returnData){
+            chart3Data = returnData;
+        },
+        error: function(){
+            alert("fail13");
+        }
+    });
+
+    var chart3 = echarts.init(document.getElementById('_chart3'));
+    var option3 = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            x: 'left',
+            data: ['总支出', '总收入']
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    {value: 335, name: '总支出'},
+                    {value: 310, name: '总收入'}
+                ]
+            }
+        ]
+    };
+    chart3.setOption(option3);
 }

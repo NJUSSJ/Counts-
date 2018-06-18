@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SEP.iml" filepath="$PROJECT_DIR$/SEP.iml" />
       <module fileurl="file://$PROJECT_DIR$/SEP (2).iml" filepath="$PROJECT_DIR$/SEP (2).iml" />
     </modules>
   </component>
