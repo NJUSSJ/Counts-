@@ -90,6 +90,7 @@ public class MainController {
      */
     public String updateLabelMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
+        System.out.println("更新标签标传来的参数:"+parameter);
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
@@ -101,10 +102,7 @@ public class MainController {
             if(user.contains(uid)){
                 ArrayList<Integer> tempanswer=sub.getAnswers().get(user.indexOf(uid));
                 tempanswer.set(k,para.getAnswer());
-
                 subTagMissionBasicBLService.update(sub);
-
-
                 return RM.SUCCESS.toString();
             }
         }
