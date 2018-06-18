@@ -63,25 +63,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <nav id="nav">
             <ul>
                 <li class="current"><a href="/">Welcome</a></li>
-                <li class="submenu">
-                    <a href="#">Layouts</a>
-                    <ul>
-                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="no-sidebar.html">No Sidebar</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li class="submenu">
-                            <a href="#">Submenu</a>
-                            <ul>
-                                <li><a href="#">Dolore Sed</a></li>
-                                <li><a href="#">Consequat</a></li>
-                                <li><a href="#">Lorem Magna</a></li>
-                                <li><a href="#">Sed Magna</a></li>
-                                <li><a href="#">Ipsum Nisl</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
                 <li><a href="/" class="button special">Log out</a></li>
             </ul>
         </nav>
