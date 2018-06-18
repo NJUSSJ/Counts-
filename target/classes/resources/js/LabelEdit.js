@@ -63,7 +63,7 @@ function nextImage() {
         url: "/updateLabelMission",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify({"mid":getNameAndCollection()[0], "uid":getNameAndCollection()[2], "num":count-1, "answer":answer}),
+        data: JSON.stringify({"mid":getNameAndCollection()[0], "uid":getNameAndCollection()[2], "num":getNameAndCollection()[1], "answer":answer}),
         success: function (ret) {
             //alert("state=" + ret);
             if(ret === 1) {

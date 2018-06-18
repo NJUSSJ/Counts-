@@ -63,10 +63,10 @@ function searchUser() {
         dataType: "json",
         data: JSON.stringify(info),
         success: function (returnData) {
-            alert(returnData);
+            //alert(returnData);
         },
         error: function () {
-            alert("fail");
+            //alert("fail");
         }
     });
 }

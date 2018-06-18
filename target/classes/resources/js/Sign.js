@@ -15,8 +15,8 @@ function sign(phoneNumber) {
         dataType: "json",
         data: {"phoneNumber":phoneNumber},
         success: function (res) {
-            signDetails = JSON.parse(res)
-            alert(signDetails)
+            signDetails = JSON.parse(res);
+            //alert(signDetails)
         },
         error:function () {
             //alert("fail");
