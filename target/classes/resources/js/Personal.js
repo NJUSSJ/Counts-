@@ -224,6 +224,7 @@ function loadPersonalFinishedCollection(phoneNumber, category) {
                 if (returnData[i] == null) {
                     break;
                 }
+                alert("!!!");
                 finishedNames[i] = returnData[i];
                 index++;
             }
@@ -269,7 +270,6 @@ function setPersonalCollection() {
 function setFinishedCollection() {
     document.getElementById("personalFinishedCollections").innerHTML = "";
     for (var i = 0; i < finishedNames.length; i++) {
-        alert("!!!!");
         var div = document.createElement("div");
         div.className = "4u 12u$(mobile)";
         var a = document.createElement("a");
