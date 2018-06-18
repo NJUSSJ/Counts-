@@ -279,10 +279,11 @@ public class MainService {
             }
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
-
+                System.out.println(userAnswer);
                 for (int k = 0; k < 10; k++) {/////////////////////////
-
-                    vote[k][userAnswer.get(k)] += weight.get(j);
+                    if(userAnswer.get(k)>=0) {
+                        vote[k][userAnswer.get(k)] += weight.get(j);
+                    }
                 }
             }
 
