@@ -62,7 +62,7 @@ function nextImage() {
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
 
     i++;
-    if(i == 13){
+    if(i == 12){
         alert("已到达任务末尾！");
     }else{
         window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;

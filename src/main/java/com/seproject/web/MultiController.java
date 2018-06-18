@@ -51,7 +51,7 @@ public class MultiController {
             label = "\'"+label+"\'";
             System.out.println(label);
             model.addObject("label", label);
-            model.addObject("imageURL", index+1);
+            //model.addObject("imageURL", index+1);
         }else {
             model = new ModelAndView("SingleEdit");
         }

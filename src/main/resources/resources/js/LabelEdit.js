@@ -48,7 +48,6 @@ function nextImage() {
         success: function (ret) {
             //alert("state=" + ret);
             if(ret === 1) {
-                isSubmitted = true;
                 alert("已提交过，请勿重复提交！");
             }
         }
@@ -57,13 +56,16 @@ function nextImage() {
             //alert("提交失败!");
         }
     });
-    index++;
-    count++;
-    if(count == 13){
-        alert("任务已完成！");
-        window.location.href = "personal.html?phoneNumber="+phoneNumber;
+    var tmp = window.location.search.split("&");
+    var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
+    var i = tmp[1].substring(tmp[1].indexOf("=")+1);
+    var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
+
+    i++;
+    if(i == 13){
+        alert("已到达任务末尾！");
     }else{
-        window.location.href = "test1.html?collection=" + mid + "&phoneNumber=" + phoneNumber + "&index=" + (count-1);
+        window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
     }
 
 
