@@ -259,8 +259,18 @@ public class MainService {
                     weight.add(0.0);
                 }
             }
-            int labelNumber = mission.getMissionLabel().size();
+            /*System.out.println("missionLabel:"+mission.getMissionLabel());
+            int gog=0;
+            System.out.println(mission.getMissionLabel().get(0));*/
+            String[] mLabel=mission.getMissionLabel().get(0).split(",");
+            int labelNumber=mLabel.length;
+            /*for(String str:mission.getMissionLabel()){
+                System.out.println(gog);
+                gog++;
+            }
+            int labelNumber = mission.getMissionLabel().size();*/
             double vote[][] = new double[10][labelNumber];//
+            System.out.println(labelNumber+"*****!!!!!");
             for (int j = 0; j < 10; j++) {
                 for (int k = 0; k < labelNumber; k++) {
                     vote[j][k] = 0;
@@ -269,7 +279,9 @@ public class MainService {
             }
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
-                for (int k = 0; k < userAnswer.size(); k++) {
+
+                for (int k = 0; k < 10; k++) {/////////////////////////
+
                     vote[k][userAnswer.get(k)] += weight.get(j);
                 }
             }

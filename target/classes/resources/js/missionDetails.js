@@ -10,73 +10,13 @@ var grade;
 var labels = [];
 var labelIndex = 0;
 
+
 function finishReviewPara(mid, indexs, answers, uid) {
     this.mid = mid;
     this.indexs = indexs;
     this.answers = answers;
     this.uid = uid;
 }
-var scale = function (btn,bar,title){
-
-    this.btn = document.getElementById("btn");
-
-    this.bar = document.getElementById("bar");
-
-    this.title = document.getElementById("title");
-
-    this.step = this.bar.getElementsByTagName("div")[0];
-
-
-
-    this.init = function (){
-
-        var f=this,g=document,b=window,m=Math;
-
-        f.btn.onmousedown=function (e){
-
-            var x=(e||b.event).clientX;
-
-            var l=this.offsetLeft;
-
-            var max=f.bar.offsetWidth-this.offsetWidth;
-
-            g.onmousemove=function (e){
-
-                var thisX=(e||b.event).clientX;
-
-                var to=m.min(max,m.max(-2,l+(thisX-x)));
-
-                f.btn.style.left=to+'px';
-
-                f.ondrag(m.round(m.max(0,to/max)*100),to);
-
-                b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();
-
-            };
-
-            g.onmouseup=new Function('this.onmousemove=null');
-
-        };
-
-    };
-
-    this.ondrag = function (pos,x){
-
-        this.step.style.width=Math.max(0,x)+'px';
-
-        this.title.innerHTML='分数：'+pos+'';
-
-        grade = pos;
-    };
-
-    this.init();
-
-}
-
-
-
-new scale('btn','bar','title'); //实例化一个拖拽
-
 
 /*
 加载抽样
@@ -115,7 +55,7 @@ function loadSample() {
 /*
 parameters for canvas
  */
-var canvas = document.getElementById("canvasForSample");
+var canvas = document.getElementById("canvas1");
 var cxt = canvas.getContext("2d");
 
 //已确定的矩形框
@@ -141,7 +81,7 @@ var Pic_y;
 
 function sampleSet(sample, missionName) {
     picIndex=sample.picIndex;
-    imageInfo=sample.imageInfo;
+    imageInfo=sample.info;
 
     uid=sample.uid;
     lastIndex=uid.length-1;
@@ -422,7 +362,7 @@ function loadOneSample2(index, mid) {
 }
 
 function loadCanvas(url) {
-    var canvas = document.getElementById("canvas");
+    var canvas2 = document.getElementById("canvas");
     /*
         parameters for Pic
      */
@@ -457,9 +397,9 @@ function loadCanvas(url) {
             Pic_y = 0;
             Pic_x = 0;
         }
-        var cxt = canvas.getContext("2d");
-        cxt.clearRect(0,0,canvas.width,canvas.height);
-        cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
+        var cxt2 = canvas2.getContext("2d");
+        cxt2.clearRect(0,0,canvas.width,canvas.height);
+        cxt2.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
     };
 
 

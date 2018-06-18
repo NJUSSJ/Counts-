@@ -492,7 +492,7 @@ function finishReview() {
         }
         ,
         error: function(){
-            alert("提交失败!");
+            //alert("提交失败!");
         }
     });
 }
