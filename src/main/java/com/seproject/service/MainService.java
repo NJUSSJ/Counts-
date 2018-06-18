@@ -19,6 +19,7 @@ import java.util.*;
 @Service
 public class MainService {
     LanguageService languageService;
+    NewsService newsService;
     BasicBLService<FreeMissionDetail> detailBasicBLService=Factory.getBasicBLService(new FreeMissionDetail());
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
@@ -366,6 +367,11 @@ public class MainService {
             User user=userBasicBLService.findByKey(each);
             user.setCredit(user.getCredit()+money[i]);
             userBasicBLService.update(user);
+
+            Message m1=new Message(uid.get(i)+" * "+getCurrentTime(),"System",uid.get(i),0,
+                    "尊敬的用户 "+user.getUserName()+" : 您已成功完成任务 "+mid+" ,您在本次任务中表现出色，获得了"+money[i]+"积分,"
+            +"希望您再接再厉！");
+            newsService.sendMessage(m1);
 
             for (CollectionResult collectionResult : collectionResults) {
                 if (collectionResult.getUid().equals(each)) {
@@ -780,4 +786,7 @@ public class MainService {
     public void setLanguageService(LanguageService languageService){
         this.languageService=languageService;
     }
+
+    @Autowired
+    public void setNewsService(NewsService newsService){this.newsService=newsService;}
 }
