@@ -292,5 +292,6 @@ function setFinishedCollection() {
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalFinishedCollections").appendChild(div);
+        document.getElementById("personalFinishedCollections").innerHTML += "<a id=downloadFile download=" + str + " ></a>";//str待定
     }
 }

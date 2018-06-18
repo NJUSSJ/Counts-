@@ -180,23 +180,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left" id="evaluatePlace">
-                            <!-- <span>评估策略： </span>
+                            <span>评估策略： </span>
                             <select id="evaluateStrategy" >
-                                <option value="1">系统自动评估</option>
                                 <option value="2">手动评估</option>
                                 <option value="3">雇佣工人评估</option>
-                            </select> -->
+                            </select>
                         </div>
                     </div>
 
                     <div class="row 50%">
                         <div class="6u 12u(mobile)" align="left" id="bonusPlace">
-                            <!-- <span>奖励分配策略： </span>
+                            <span>奖励分配策略： </span>
                             <select id="bonusStrategy" >
-                                <option value="1">平均分配</option>
                                 <option value="2">double or nothing</option>
                                 <option value="3">彩票策略</option>
-                            </select> -->
+                            </select>
                         </div>
                     </div>
 
