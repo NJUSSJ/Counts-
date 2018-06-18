@@ -5,8 +5,10 @@ import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
+import com.seproject.service.ReviewService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.*;
+import com.seproject.web.response.ReviewResponse;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,17 +34,6 @@ public class MainController {
     BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
 
-    @RequestMapping(value = "/addLabelMission")
-    @ResponseBody
-    public String addLabelMission(HttpServletRequest request){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        JSONObject object=JSONObject.fromObject(request.getParameter(""));
-        System.out.println("mission 转 object:"+object);
-        Mission m =(Mission) JSONObject.toBean(object,Mission.class);
-        missionBasicBLService.add(m);
-        mainService.createSubMission(m);
-        return RM.SUCCESS.toString();
-    }
 
     @RequestMapping(value = "/getLabelMission")
     @ResponseBody
@@ -182,23 +173,50 @@ public class MainController {
     @RequestMapping(value = "/startReview")
     @ResponseBody
     /**
-     * 把没有评完的金标还给发起者评,如果没有则直接开始评价，返回一个空值
+     * 开启评估
      */
     public String startReview(@RequestBody String mid){
-        JSONObject jsonObject = JSONObject.fromObject(mainService.getRestPictures(mid));//这里INT 数组是索引
+        System.out.println(mid);
+        Mission mission=missionBasicBLService.findByKey(mid);
+        int type=mission.getTagType();
+        int bonus=mission.getBonusStrategy();
+        int evaluate=mission.getEvaluateStrategy();
+        ReviewResponse reviewResponse=new ReviewResponse();
+        reviewResponse.setType(type);
+        if(type==1){//标签式
+            reviewResponse.setPicIndex(mainService.getRestPictures(mid));//不管是工人评还是自己评，都需要金标的答案
+            reviewResponse.setLabel(mission.getMissionLabel());
+            reviewResponse.setUid(new ArrayList<String>());
+        }else {//自由式
+            if(evaluate==2) {//手动评，需要获取抽样的结果
+                mainService.createFreeMissionSample(reviewResponse, mid);
+                reviewResponse.setLabel(new ArrayList<String>());
+            }else{//自动评，直接开始
+                mainService.autoReviewFreeMission(mid);
+            }
+        }
+        JSONObject jsonObject = JSONObject.fromObject(reviewResponse);//这里INT 数组是索引
         String ret = jsonObject.toString();
         return ret;
     }
 
     @RequestMapping(value = "/finishReview")
     @ResponseBody
+    /**
+     * 处理完评估以后的结果，重新发起评估
+     */
     public void finishReview(@RequestBody String para){
         JSONObject object=JSONObject.fromObject(para);
         FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
         ArrayList<Integer> index=finishReviewParameter.getIndexs();
         ArrayList<Integer> answer=finishReviewParameter.getAnswers();
         String mid=finishReviewParameter.getMid();
-        mainService.finishReview(index,answer,mid);
+        Mission mission=missionBasicBLService.findByKey(mid);
+        if(mission.getTagType()==1) {//如果是标签式，那么调用这个方法的目的是完善金标的答案
+            mainService.finishReview(index, answer, mid);
+        }else{//如果是自由式，那么调用这个方法获得了对样本的评价结果
+            mainService.manualReviewFreeMission(index,answer,finishReviewParameter.getUid(),mid);
+        }
     }
 
     @RequestMapping(value = "/commit")

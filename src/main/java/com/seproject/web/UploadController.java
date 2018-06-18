@@ -83,6 +83,9 @@ public class UploadController {
             //for(int i = 0;i<tmp.length;i++){
               //  missionLabel.set(i, tmp[i]);
             //}
+            int bonusStrategy=Integer.parseInt(request.getParameter("bonusStrategy"));
+            int evaluateStrategy=Integer.parseInt(request.getParameter("evaluateStrategy"));
+
             ArrayList<String> missionLabel = new ArrayList<String>();
             missionLabelString = missionLabelString.substring(1,missionLabelString.length()-1);
             String[] tmp = missionLabelString.split(" ");
@@ -112,6 +115,8 @@ public class UploadController {
             tmpMission.setTagType(tagType);
             tmpMission.setMissionLabel(missionLabel);
             tmpMission.setMaxWorkerNum(maxWorkerNum);
+            tmpMission.setEvaluateStrategy(evaluateStrategy);
+            tmpMission.setBonusStrategy(bonusStrategy);
             System.out.println("任务类型为："+tmpMission.getTagType());
 
 
@@ -203,11 +208,24 @@ public class UploadController {
             case 2:base=1.1;break;
             default:base=1.2;
         }
-        User user=userBasicBLService.findByKey(para.getUid());
+        int n1=para.getMaxWorker();
+        int n2=para.getEvaluateStrategy();
+
+        double x2=0;
+
+        if(n2==3){
+            x2=0.825;
+        }else{
+            x2=0.75;
+        }
+        System.out.println(n2);
+        System.out.println(n1*x2*base);
+        return n1*x2*base;
+        /*User user=userBasicBLService.findByKey(para.getUid());
         int level=user.getLevel();
         double p=1+level*0.05;
         double discount=0.9-level*Constant.DISCOUNT_ON_LEVEL;//这句话存疑
-        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxWorker()*discount;
+        return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxWorker()*discount;*/
     }
 
     @Autowired

@@ -7,6 +7,7 @@ import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.controller.MissionController;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,9 +28,12 @@ public class MultiController {
     public ModelAndView getTagPage(HttpServletRequest request){
         ModelAndView model;
         String phoneNumber = request.getParameter("phoneNumber");
+        int index = Integer.parseInt(request.getParameter("index"));
         String sufixx="\'missionImages/";
-        String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
+        String url=sufixx+request.getParameter("collection")+"_";
         String collection = request.getParameter("collection");
+        ArrayList<Integer> submission = new MissionController().getPictureIndex(phoneNumber, collection);
+        url += (submission.get(index)+1)+".jpg\'";
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){
             model = new ModelAndView("LabelEdit");
@@ -50,7 +54,7 @@ public class MultiController {
             model = new ModelAndView("SingleEdit");
         }
         model.addObject("url",url);
-        model.addObject("collection",collection);
+        model.addObject("collection","\'"+collection+"\'");
         //int picNum = missionBasicBLService.findByKey(collection).getFileNum();
         model.addObject("picNum",12);
         User user = basicBLService.findByKey(phoneNumber);
@@ -58,6 +62,7 @@ public class MultiController {
         model.addObject("userName",user.getUserName());
         model.addObject("userPhone",phoneNumber);
         model.addObject("tagType", tagType);
+        model.addObject("index", index+1);
 
 
         return model;

@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class FinishReviewParameter {
     private String mid;
-    private ArrayList<Integer > indexs=new ArrayList<Integer>();//金标图片是第几张
-    private ArrayList<Integer > answers=new ArrayList<Integer>();
+    private ArrayList<Integer> indexs=new ArrayList<Integer>();//标签式里面是金标图片位置，自由式里面是样本图片位置
+    private ArrayList<Integer> answers=new ArrayList<Integer>();//标签式里面是金标答案，自由式里面是quality
+    private ArrayList<String> uid=new ArrayList<String>();//只有标签式才有用的用户id
 
     public String getMid() {
         return mid;
@@ -29,5 +30,13 @@ public class FinishReviewParameter {
 
     public void setAnswers(ArrayList<Integer> answers) {
         this.answers = answers;
+    }
+
+    public ArrayList<String> getUid() {
+        return uid;
+    }
+
+    public void setUid(ArrayList<String> uid) {
+        this.uid = uid;
     }
 }

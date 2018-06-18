@@ -1,7 +1,12 @@
 var save = document.getElementById("save");
 var phoneNumber;
-var picNum;
+var index;
 var tmp;
+var g1;
+var g2;
+var count = 1;
+var mid;
+
 
 function getNameAndCollection() {
     tmp = window.location.search.split("&");
@@ -15,8 +20,10 @@ function getNameAndCollection() {
     return nameAndCollection;
 }
 
-function loadLabelPhone(_phoneNumber){
+function loadLabelPhone(_phoneNumber,collection, index){
     this.phoneNumber = _phoneNumber;
+    this.mid = collection;
+    this.count = index;
 }
 
 function submitLabelInfo() {
@@ -24,14 +31,8 @@ function submitLabelInfo() {
     alert("标注信息已保存");
 }
 
-function nextImage(picNum) {
-    this.picNum = picNum;
-    tmp = window.location.search.split("&");
-    var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
-    var i = tmp[1].substring(tmp[1].indexOf("=")+1);
-    var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
+function nextImage() {
     //var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
-
     var answer = loadLabelInfo()[0];
     if(answer == null){
         answer = -1;
@@ -40,10 +41,10 @@ function nextImage(picNum) {
     $.ajax({
         async: false,
         type: "POST",
-        url: "/uploadLabelMission",
+        url: "/updateLabelMission",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify({"mid":getNameAndCollection()[0], "uid":getNameAndCollection()[2], "num":picNum, "answer":answer}),
+        data: JSON.stringify({"mid":getNameAndCollection()[0], "uid":getNameAndCollection()[2], "num":count-1, "answer":answer}),
         success: function (ret) {
             //alert("state=" + ret);
             if(ret === 1) {
@@ -56,14 +57,17 @@ function nextImage(picNum) {
             //alert("提交失败!");
         }
     });
-
-    if(Number(i)<picNum) {
-        i = Number(i) + 1;
-        window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber + "&picNum=" + picNum;
-    }else {
-        alert("本图片为最后一张");
+    index++;
+    count++;
+    if(count == 13){
+        alert("任务已完成！");
+        window.location.href = "personal.html?phoneNumber="+phoneNumber;
+    }else{
+        window.location.href = "test1.html?collection=" + mid + "&phoneNumber=" + phoneNumber + "&index=" + (count-1);
     }
-};
+
+
+}
 /*
 function LabelData(mid, uid, missionLabel) {
     tmp = window.location.search.split("&");

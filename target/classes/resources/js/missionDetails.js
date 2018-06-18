@@ -92,53 +92,7 @@ function loadDetails(picNum) {
         picSection.appendChild(div);
     }
 
-    loadSample(missionName);
 
-
-}
-
-function handJudge() {
-    document.getElementById("edit_area").style.display = "block";
-    document.getElementById("choices").style.display = "none";
-}
-
-/*
-加载抽样
- */
-function loadSample(missionName) {
-    $.ajax({
-        type: "POST",
-        url: "/getSample",
-        contentType: "application/json",
-        dataType: "json",
-        data: missionName,
-        success: function(returnData) {
-            if(returnData=="0"){
-                var sampleArea=document.getElementById("choices");
-                sampleArea.style.display="none";
-                var samplePanel=document.getElementById("samplePanel");
-                var info=document.createElement("h6");
-                info.innerHTML="任务还未截止！请在任务结束后的三个工作日内进行评估。";
-                samplePanel.appendChild(info);
-            }else if(returnData=="2"){
-                var sampleArea=document.getElementById("choices");
-                sampleArea.style.display="none";
-                var samplePanel=document.getElementById("samplePanel");
-                var info=document.createElement("h6");
-                info.innerHTML="该任务已完成过评估！";
-                samplePanel.appendChild(info);
-            } else{
-                var jsonString=returnData;
-                var Sample=eval(jsonString);
-                returnSample=Sample;
-                picName=Sample.missionName;
-                sampleSet(Sample, Sample.missionName);
-            }
-        },
-        error: function(){
-            //alert("fail")
-        }
-    });
 }
 
 /*

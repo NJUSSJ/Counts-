@@ -28,10 +28,12 @@ public class PersonalController {
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
         ModelAndView model = new ModelAndView("Personal");
-        String userName = request.getParameter("userName");
-        model.addObject("userName",userName);
         String phoneNumber = request.getParameter("phoneNumber");
         model.addObject("phoneNumber", phoneNumber);
+
+        String userName = userBasicBLService.findByKey(phoneNumber).getUserName();
+        model.addObject("userName",userName);
+
         User user = userBasicBLService.findByKey(phoneNumber);
         String password = user.getPassword();
         model.addObject("password", password);
