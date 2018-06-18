@@ -24,35 +24,43 @@ public class FreeMissionDetail {
     public FreeMissionDetail(String jsonString,int picIndex){
         this.picIndex=picIndex;
         this.summary="";
-        JSONObject jsonObject = JSONObject.fromObject(jsonString);
-        FreeMissionParameter parameter =(FreeMissionParameter) JSONObject.toBean(jsonObject,FreeMissionParameter.class);
-        ArrayList<Integer> tempX=parameter.getFixedx();
-        ArrayList<Integer> tempY=parameter.getFixedy();
-        ArrayList<Integer> tempHeight=parameter.getFixedheight();
-        ArrayList<Integer> tempWeight=parameter.getFixedwidth();
-        ArrayList<Integer> x=new ArrayList<Integer>();
-        ArrayList<Integer> y=new ArrayList<Integer>();
-        ArrayList<Integer> height=new ArrayList<Integer>();
-        ArrayList<Integer> width=new ArrayList<Integer>();
-        for(int i=0;i<tempHeight.size();i++){
-            if(tempHeight.get(i)!=0){
-                x.add(tempX.get(i));
-                y.add(tempY.get(i));
-                height.add(tempHeight.get(i));
-                width.add(tempWeight.get(i));
+        System.out.println(jsonString+"!!!");
+        if(jsonString==null||jsonString.length()<=0){
+            x=new ArrayList<Integer>();
+            y=new ArrayList<Integer>();
+            height=new ArrayList<Integer>();
+            weight=new ArrayList<Integer>();
+        }else {
+            JSONObject jsonObject = JSONObject.fromObject(jsonString);
+            FreeMissionParameter parameter = (FreeMissionParameter) JSONObject.toBean(jsonObject, FreeMissionParameter.class);
+            ArrayList<Integer> tempX = parameter.getFixedx();
+            ArrayList<Integer> tempY = parameter.getFixedy();
+            ArrayList<Integer> tempHeight = parameter.getFixedheight();
+            ArrayList<Integer> tempWeight = parameter.getFixedwidth();
+            ArrayList<Integer> x = new ArrayList<Integer>();
+            ArrayList<Integer> y = new ArrayList<Integer>();
+            ArrayList<Integer> height = new ArrayList<Integer>();
+            ArrayList<Integer> width = new ArrayList<Integer>();
+            for (int i = 0; i < tempHeight.size(); i++) {
+                if (tempHeight.get(i) != 0) {
+                    x.add(tempX.get(i));
+                    y.add(tempY.get(i));
+                    height.add(tempHeight.get(i));
+                    width.add(tempWeight.get(i));
+                }
             }
-        }
-        this.x=x;
-        this.y=y;
-        this.height=height;
-        this.weight=width;
-        String info=parameter.getSentences().toString();
-        if(info.contains("status=2")){
-            int index=info.indexOf("status=2");
-            info=info.substring(0,index);
-            index=info.lastIndexOf("[");
-            int endIndex= info.lastIndexOf("]");
-            this.summary=info.substring(index+1,endIndex);
+            this.x = x;
+            this.y = y;
+            this.height = height;
+            this.weight = width;
+            String info = parameter.getSentences().toString();
+            if (info.contains("status=2")) {
+                int index = info.indexOf("status=2");
+                info = info.substring(0, index);
+                index = info.lastIndexOf("[");
+                int endIndex = info.lastIndexOf("]");
+                this.summary = info.substring(index + 1, endIndex);
+            }
         }
     }
 

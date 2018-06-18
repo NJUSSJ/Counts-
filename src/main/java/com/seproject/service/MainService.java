@@ -539,6 +539,7 @@ public class MainService {
             if(users!=null&&users.size()>0) {
                 ArrayList<Integer> index = getPictureIndexOfSubmission(users.get(0), mid);
                 ArrayList<Double> grade=getGrade(index,users,mid);
+                System.out.println("grade"+grade);
                 double avg=0.0;
                 for(Double each:grade){
                     avg+=each;
@@ -562,6 +563,11 @@ public class MainService {
                     user.setCredit(user.getCredit()+reward);//1.5*得分/平均得分
                     userBasicBLService.update(user);
 
+                    Message m1=new Message(user.getPhoneNumber()+" * "+getCurrentTime(),"System",user.getPhoneNumber(),0,
+                            "尊敬的用户 "+user.getUserName()+" : 您已成功完成任务 "+mid+" ,您在本次任务中表现出色，获得了"+reward+"积分,"
+                                    +"希望您再接再厉！");
+                    newsService.sendMessage(m1);
+
                     CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+users.get(i));
                     collectionResult.setRank(rank[i]);
                     collectionResult.setCredit(reward);
@@ -582,9 +588,26 @@ public class MainService {
             grade.add(0.0);
         }
         for(int eachIndex:index) {
+            System.out.println("eachIndex:"+eachIndex);
+
             ArrayList<FreeMissionDetail> details = new ArrayList<FreeMissionDetail>();
+            if(uid.size()==1){//如果只有一个用户标，直接拿分即可
+                grade.set(0,1.0);
+                return grade;
+            }
+
             for (int j = 0; j < uid.size(); j++) {
                 Collection collection=collectionBasicBLService.findByKey(mid+uid.get(j));
+                System.out.println("keyId:"+collection.getKeyId());
+                System.out.println(collection.getInfoList());
+                int count=0;
+                for(String eachIn:collection.getInfoList()){
+                    if(eachIn!=""&&eachIn.length()>3){
+                        System.out.println(count);
+                        count++;
+                    }
+                }
+                System.out.println(collection.getInfoList().get(eachIndex)+" $$$$");
                 details.add(new FreeMissionDetail(collection.getInfoList().get(eachIndex),eachIndex));
             }
             double avgFrameNum = 0;
@@ -637,7 +660,7 @@ public class MainService {
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> uid=subFreeMission.getUid();
-            if(uid==null||uid.size()<=0) continue;;//如果这个子任务没人做，直接跳过
+            if(uid==null||uid.size()<=0) continue;//如果这个子任务没人做，直接跳过
             ArrayList<Integer> levels=new ArrayList<Integer>();
             int avgLevel=0;
             for(String eachUid:uid){
@@ -653,6 +676,7 @@ public class MainService {
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
                     response.getInfo().add(collection.getInfoList().get(random1));
+                    System.out.println(collection.getInfoList().get(random1)+"  当前标注信息");
                 }else{//低级工人抽两张
                     int random1=(int)(Math.random()*10);
                     int random2=(random1+5)%10;
