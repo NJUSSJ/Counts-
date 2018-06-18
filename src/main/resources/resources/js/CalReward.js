@@ -13,7 +13,7 @@ tagTypeBtn.addEventListener("click", function () {
     if (tagTypeBtn.value === "1"){
         $("tag_editor").tagEditor({ placeholder: 'Enter tags ...' });
         //document.getElementById("tag_editor").disabled="";
-        //document.getElementById("missionLabel").display="block";
+        document.getElementById("missionLabel").style= "display=block";
         document.getElementById("evaluatePlace").innerHTML ="<span>评估策略： </span>\n" +
             "                            <select id=\"evaluateStrategy\" >\n" +
             "                                <option value=\"2\">手动评估</option>\n" +
@@ -29,7 +29,7 @@ tagTypeBtn.addEventListener("click", function () {
 
     }else{
         $("tag_editor").tagEditor('destroy');
-        //document.getElementById("missionLabel").display="none";
+        document.getElementById("missionLabel").style= "display=none";
         //document.getElementById("tag_editor").disabled="disabled";
         document.getElementById("evaluatePlace").innerHTML = "<span>评估策略： </span>\n" +
             "                            <select id=\"evaluateStrategy\" >\n" +

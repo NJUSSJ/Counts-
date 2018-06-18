@@ -30,7 +30,7 @@ public class MultiController {
         String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_";
-        int index = Integer.parseInt(request.getParameter("index"));
+        int index = Integer.parseInt(request.getParameter("imageURL"));
 
         String collection = request.getParameter("collection");
         ArrayList<Integer> submission = new MissionController().getPictureIndex(phoneNumber, collection);
@@ -51,7 +51,7 @@ public class MultiController {
             label = "\'"+label+"\'";
             System.out.println(label);
             model.addObject("label", label);
-            model.addObject("index", index+1);
+            model.addObject("imageURL", index+1);
         }else {
             model = new ModelAndView("SingleEdit");
         }
