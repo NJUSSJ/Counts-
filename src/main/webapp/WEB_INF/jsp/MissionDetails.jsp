@@ -73,6 +73,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     #edit_area{
         height: 700px;
     }
+    #edit_area2{
+        height: 700px;
+    }
 
     .picture{
         width: 300px;
@@ -88,6 +91,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     .button.small2{
         height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold;
     }
+
+
 
 </style>
 <body onload="loadSample()">
@@ -207,14 +212,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
             </div>
             <div class="row 150%" id="edit_area2" style="margin-top: 12px;display: none;">
-                <div class="6u 12u(narrower)" align="center">
+                <div class="3u 12u(narrower)" align="center">
 
                     <!-- Tag Info-->
                     <div class="tag_info" id="textareaPlace2" style="overflow: auto">
 
                     </div>
                 </div>
-                <div class="6u 12u(narrower)">
+                <div class="9u 12u(narrower)">
 
                     <!-- Content -->
                     <div class="content" align="center">
