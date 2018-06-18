@@ -22,7 +22,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
-
+    <script src="js/judge.js"></script>
 
 </head>
 <style type="text/css">
@@ -85,14 +85,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     .scale div{background: #123244; position: absolute; height: 12px; width: 0; left: 0; bottom: 0; display: inline}
 
     .button.small2{
-        width: 150px;
-        height: 30px;
-        font-size: 1em;
-        text-decoration: none;
-        padding-left: 15px;
-        margin-left: 20px;
-        line-height: 30px;
-        padding-bottom: 60px;
+        height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold;
     }
 
 </style>
@@ -166,9 +159,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             </header>
             <div class="12u 12u(narrower)" style="margin-top: 20px;" id="choices" >
                 <div class="row 150%" style="padding-left: 15px;margin-top: 20px">
-                    <a class="button small2" style="padding-left: 23px" >自动化评估</a>
-                    <a class="button small2" style="padding-left: 35px" onclick="handJudge()">手动评估</a>
-                    <a class="button small2">发布评估任务</a>
+                    <a class="button small2" onclick="startJudge(${requestScope.tagType})">开始评估</a>
                 </div>
             </div>
             <div class="row 150%" id="edit_area" style="margin-top: 12px;display: none;" >

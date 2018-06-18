@@ -10,7 +10,7 @@ public class ReviewResponse {
     private ArrayList<String> label;//对于非标签，这一项没有用
     private ArrayList<Integer> picIndex;
     private ArrayList<String> uid;//对于标签式，这一项没有用
-    private ArrayList<String> info;//对于标签式，这一项没有用
+    private ArrayList<String> imageInfo;//对于标签式，这一项没有用
 
     public int getType() {
         return type;
@@ -45,10 +45,10 @@ public class ReviewResponse {
     }
 
     public ArrayList<String> getInfo() {
-        return info;
+        return imageInfo;
     }
 
     public void setInfo(ArrayList<String> info) {
-        this.info = info;
+        this.imageInfo = info;
     }
 }

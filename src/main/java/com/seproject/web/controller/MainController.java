@@ -176,6 +176,7 @@ public class MainController {
      * 开启评估
      */
     public String startReview(@RequestBody String mid){
+        System.out.println(mid);
         Mission mission=missionBasicBLService.findByKey(mid);
         int type=mission.getTagType();
         int bonus=mission.getBonusStrategy();
