@@ -118,6 +118,7 @@ function loadPersonal(phoneNumber) {
     //加载collectionInfo
     loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
     loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category);
+    loadDownloadFile();
 }
 
 function savePersonalBlanks() {
@@ -238,6 +239,26 @@ function loadPersonalFinishedCollection(phoneNumber, category) {
     });
 }
 
+function loadDownloadFile() {
+    $.ajax({
+        async: false,
+        method: "POST",
+        url: "/downloadFile",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(finishedNames),
+        success: function (url) {
+
+            //alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
+            setDownloadFile(url);
+            //loadPersonalCollectionTagType();
+        },
+        error: function () {
+            //alert("fail");
+        }
+    });
+}
+
 function setPersonalCollection() {
     document.getElementById("personalCollections").innerHTML = "";
     for (var i = 0; i < missionNames.length; i++) {
@@ -293,6 +314,11 @@ function setFinishedCollection() {
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalFinishedCollections").appendChild(div);
-        document.getElementById("personalFinishedCollections").innerHTML += "<a id=downloadFile download=" + str + " ></a>";//str待定
+        document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href='images/add.png' download="+ finishedNames[i] +" >点击此处下载该任务标注信息</a></div>";
+
     }
+}
+
+function setDownloadFile(url) {
+    document.getElementById("personalFinishedCollections").innerHTML += "<a id='downloadFile' download=" + url[0] + " >点击此处下载该任务标注信息</a>";
 }

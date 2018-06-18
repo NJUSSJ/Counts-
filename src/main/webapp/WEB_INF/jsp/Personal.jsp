@@ -97,6 +97,9 @@
                 <div class="row" id="personalFinishedCollections">
 
                 </div>
+                <div id="downloadArea">
+
+                </div>
             </section>
 
         </article>
