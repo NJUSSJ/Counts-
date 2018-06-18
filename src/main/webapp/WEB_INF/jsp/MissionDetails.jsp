@@ -23,6 +23,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
     <script src="js/judge.js"></script>
+    <script src="js/missionDetails.js"></script>
 
 </head>
 <style type="text/css">
@@ -205,6 +206,33 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <div class="2u 12u(narrower)" style="padding-top: 0px;"><a href="#" onclick="good()" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" id="confirmButton">确认</a></div>
 
             </div>
+            <div class="row 150%" id="edit_area2" style="margin-top: 12px;display: none;">
+                <div class="6u 12u(narrower)" align="center">
+
+                    <!-- Tag Info-->
+                    <div class="tag_info" id="textareaPlace2" style="overflow: auto">
+
+                    </div>
+                </div>
+                <div class="6u 12u(narrower)">
+
+                    <!-- Content -->
+                    <div class="content" align="center">
+                        <canvas id="canvas" width="500" height="500">
+
+                        </canvas>
+                        <script>
+
+                        </script>
+
+                        <ul id="info2" class="buttons">
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
         </article>
         <article id="charts" class="panel">
             <header>
@@ -251,7 +279,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/skel-viewport.min.js"></script>
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
-<script src="js/missionDetails.js"></script>
+
 
 
 </body>

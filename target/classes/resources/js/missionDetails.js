@@ -1,14 +1,20 @@
 var returnSample;
 var picIndex;
 var imageInfo;
-var quality;
-var userId;
+var answers = [];
+var uid;
 var indexForSample=0;
 var lastIndex;
 var picName;
 var grade;
+var labels;
 
-
+function finishReviewPara(mid, indexs, answers, uid) {
+    this.mid = mid;
+    this.indexs = indexs;
+    this.answers = answers;
+    this.uid = uid;
+}
 var scale = function (btn,bar,title){
 
     this.btn = document.getElementById(btn);
@@ -99,6 +105,45 @@ function loadDetails(picNum) {
 }
 
 /*
+加载抽样
+ */
+function loadSample(missionName) {
+    $.ajax({
+        type: "POST",
+        url: "/getSample",
+        contentType: "application/json",
+        dataType: "json",
+        data: missionName,
+        success: function(returnData) {
+            if(returnData=="0"){
+                var sampleArea=document.getElementById("choices");
+                sampleArea.style.display="none";
+                var samplePanel=document.getElementById("samplePanel");
+                var info=document.createElement("h6");
+                info.innerHTML="任务还未截止！请在任务结束后的三个工作日内进行评估。";
+                samplePanel.appendChild(info);
+            }else if(returnData=="2"){
+                var sampleArea=document.getElementById("choices");
+                sampleArea.style.display="none";
+                var samplePanel=document.getElementById("samplePanel");
+                var info=document.createElement("h6");
+                info.innerHTML="该任务已完成过评估！";
+                samplePanel.appendChild(info);
+            } else{
+                var jsonString=returnData;
+                var Sample=eval(jsonString);
+                returnSample=Sample;
+                picName=Sample.missionName;
+                sampleSet(Sample, Sample.missionName);
+            }
+        },
+        error: function(){
+            //alert("fail")
+        }
+    });
+}
+
+/*
 parameters for canvas
  */
 var canvas = document.getElementById("canvasForSample");
@@ -123,18 +168,19 @@ var Pic_width;
 var Pic_height;
 var Pic_x;
 var Pic_y;
-var image = new Image();
+
 
 function sampleSet(sample, missionName) {
     picIndex=sample.picIndex;
     imageInfo=sample.imageInfo;
-    quality=sample.quality;
-    userId=sample.userId;
-    lastIndex=userId.length-1;
+
+    uid=sample.uid;
+    lastIndex=uid.length-1;
     loadOneSample(indexForSample,missionName);
 }
 
 function loadOneSample(index,missionName) {
+    var image = new Image();
     image.src="";
     document.getElementById("textareaPlace").innerHTML="";
 
@@ -184,30 +230,33 @@ function loadOneSample(index,missionName) {
     image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
 
 
-    var width = image.width;
-    var height = image.height;
+    image.onload = function (ev) {
+        var width = image.width;
+        var height = image.height;
 
-    var MulX = canvas.width/width;
-    var MulY = canvas.height/height;
+        var MulX = canvas.width/width;
+        var MulY = canvas.height/height;
 
 
 
-    if(MulX<= MulY){
-        Pic_width = width*MulX;
-        Pic_height = height*MulX;
-        Pic_x = 0;
-        Pic_y = 0;
-    }
-    else{
-        Pic_width = width*MulY;
-        Pic_height = height*MulY;
-        Pic_y = 0;
-        Pic_x = 0;
-    }
-    canvas.width=Pic_width;
-    canvas.height=Pic_height;
+        if(MulX<= MulY){
+            Pic_width = width*MulX;
+            Pic_height = height*MulX;
+            Pic_x = 0;
+            Pic_y = 0;
+        }
+        else{
+            Pic_width = width*MulY;
+            Pic_height = height*MulY;
+            Pic_y = 0;
+            Pic_x = 0;
+        }
+        canvas.width=Pic_width;
+        canvas.height=Pic_height;
 
-    drawImage();
+        drawImage();
+    };
+
 
     var indexOfRectSentence=0;
     var indexOfCurlSentence=0;
@@ -305,47 +354,16 @@ function drawImage() {
 
 function good() {
     if(!judgeLast()){
-        quality[indexForSample]=3;
+        answers[indexForSample]= grade;
         indexForSample++;
         loadOneSample(indexForSample,picName);
     }else{
-        quality[indexForSample]=3;
+        quality[indexForSample]=grade;
         sendJudgeResult();
     }
 }
 
-function fair() {
-    if(!judgeLast()){
-        quality[indexForSample]=2;
-        indexForSample++;
-        loadOneSample(indexForSample,picName);
-    }else{
-        quality[indexForSample]=2;
-        sendJudgeResult();
-    }
-}
 
-function middle() {
-    if(!judgeLast()){
-        quality[indexForSample]=1;
-        indexForSample++;
-        loadOneSample(indexForSample,picName);
-    }else{
-        quality[indexForSample]=1;
-        sendJudgeResult();
-    }
-}
-
-function bad() {
-    if(!judgeLast()){
-        quality[indexForSample]=0;
-        indexForSample++;
-        loadOneSample(indexForSample,picName);
-    }else{
-        quality[indexForSample]=0;
-        sendJudgeResult();
-    }
-}
 
 function judgeLast(){
     if(indexForSample==lastIndex){
@@ -362,21 +380,15 @@ function judgeLast(){
         return false;
     }
 }
-
 function sendJudgeResult() {
+    var returnInfo = new finishReviewPara(mid, picIndex, answers, uid);
     //alert(quality);
-    returnSample.imageInfo=imageInfo;
-    returnSample.userId=userId;
-    returnSample.picIndex=picIndex;
-    returnSample.quality=quality;
-    returnSample.missionName=picName;
-
     $.ajax({
         type: "POST",
-        url: "getSampleResult",
+        url: "/finishReview",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(returnSample),
+        data: JSON.stringify(returnInfo),
         success: function() {
 
         },
@@ -418,3 +430,69 @@ function loadChartsData() {
 }
 
 
+function sampleSet2(Sample, mid) {
+    picIndex = Sample.picIndex;
+    labels = Sample.label;
+    lastIndex=labels.length-1;
+
+    var btn = "";
+    for(var i =0;i<labels.length;i++){
+        btn += "<div style='margin-bottom: 10px'><input href=\"#\" style=\"width=30 height=50\" class=\"button special\" id="+ i +" value="+ labels[i] +" onclick=clickLabel(" + i + ");  /></div>";
+        btn += "<br>";
+    }
+
+    document.getElementById("textareaPlace2").innerHTML = btn;
+
+    loadOneSample2(indexForSample, document.getElementById("missionName").innerHTML);
+
+}
+
+function loadOneSample2(index, mid) {
+    var url = "missionImages/"+mid+"_"+index+".jpg";
+    loadCanvas(url);
+}
+
+function loadCanvas(url) {
+    var canvas = document.getElementById("canvas");
+    /*
+        parameters for Pic
+     */
+    var Pic_width;
+    var Pic_height;
+    var Pic_x;
+    var Pic_y;
+
+    var image = new Image();
+    image.src = url;
+
+
+
+    image.onload = function () {
+        var width = image.width;
+        var height = image.height;
+
+        var MulX = canvas.width/width;
+        var MulY = canvas.height/height;
+
+
+
+        if(MulX<= MulY){
+            Pic_width = width*MulX;
+            Pic_height = height*MulX;
+            Pic_x = 0;
+            Pic_y = 0;
+        }
+        else{
+            Pic_width = width*MulY;
+            Pic_height = height*MulY;
+            Pic_y = 0;
+            Pic_x = 0;
+        }
+        canvas.width=Pic_width;
+        canvas.height=Pic_height;
+        var cxt = canvas.getContext("2d");
+        cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
+    };
+
+
+}
