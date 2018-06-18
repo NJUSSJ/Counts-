@@ -35,7 +35,7 @@ public class CollectionResult {
     @Column(name="quality")
     private int quality;
     @Column(name="state")
-    private int state;//0 保存 1 提交 2 未保存 3 已被工人删除
+    private int state;//0 保存 1 提交 2 未保存 3 已被工人删除 4 评估已经结束
 
     public double getCredit() {
         return credit;

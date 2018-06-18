@@ -24,7 +24,6 @@ public class FreeMissionDetail {
     public FreeMissionDetail(String jsonString,int picIndex){
         this.picIndex=picIndex;
         this.summary="";
-        System.out.println(jsonString+"!!!");
         if(jsonString==null||jsonString.length()<=0){
             x=new ArrayList<Integer>();
             y=new ArrayList<Integer>();

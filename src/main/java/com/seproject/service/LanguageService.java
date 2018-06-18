@@ -39,6 +39,7 @@ public class LanguageService {
      * 两个短文本相似度
      */
     public double simliarityOfText(String text1,String text2){
+        if(text1==null||text1.length()<=0||text2==null||text2.length()<=0) return 0;//和空串比结果是0
         initNlp();
         // 调用接口
         // 传入可选参数调用接口
@@ -48,6 +49,8 @@ public class LanguageService {
         // 短文本相似度
         JSONObject res = client.simnet(text1, text2, options);
         String origin=res.toString(2);
+        System.out.println("短文本相似度");
+        System.out.println(res);
         int index=origin.lastIndexOf("score");
         String subString=origin.substring(index);
         index=subString.indexOf(":")+2;
