@@ -3,10 +3,6 @@ var mid;
 function startJudge(tagType) {
     mid = document.getElementById("missionName").innerHTML;
     this.type = tagType;
-<<<<<<< HEAD
-    //alert(mid);
-=======
->>>>>>> c00b92c5ac5fb295e68687b5e0f1fe6f9ddd745d
     $.ajax({
         async: true,
         type: "POST",
