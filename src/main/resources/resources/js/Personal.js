@@ -247,7 +247,7 @@ function setPersonalCollection() {
                 break;
 
             case "2":
-                a.href = "/test1.html?collection=" + missionNames[i] + "&phoneNumber=" + phoneNumber + "&userCategory=" + userCategory + "&index=" + 0;
+                a.href = "/test1.html?collection=" + missionNames[i] + "&index=" + 0 + "&phoneNumber=" + phoneNumber + "&userCategory=" + userCategory;
                 break;
 
             case "3":
