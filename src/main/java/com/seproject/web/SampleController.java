@@ -29,12 +29,11 @@ public class SampleController {
 
         if(state==2){
             return "2";
+        }else if(state == 0){
+            return "";
         }
-        Sample sample=reviewService.getSample(missionName);
-        JSONObject object=JSONObject.fromObject(sample);
-        String sampleInfo=object.toString();
-        System.out.println(sampleInfo);
-        return sampleInfo;
+
+        return "";
     }
 
     @RequestMapping(value = "/getSampleResult")
