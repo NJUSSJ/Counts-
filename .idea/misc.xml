@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://D:/SEP/SEP_Phase_III" />
     <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="file://D:/SEP/SEP_Phase_III" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

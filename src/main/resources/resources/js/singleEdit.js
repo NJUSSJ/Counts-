@@ -5,6 +5,7 @@
 /*
 parameters for tools bar
  */
+var mid;
 var tool1 = document.getElementById("RectTool");
 var img1 = document.getElementById("RectTool");
 var tool2 = document.getElementById("CurlTool");
@@ -87,9 +88,10 @@ var tmp123;
 /*
 从getImgInfo取json数据得到url 若不为空则加载此url
  */
-function loadPic(url, phoneNumber) {
+function loadPic(url, phoneNumber, collection) {
     //alert("loading pic " + url);
     loadPhoneNumber(phoneNumber);
+    this.mid = collection;
     getImgInfo();
 
     var imgInfo = eval("(" + tmp123 + ")");
@@ -118,30 +120,34 @@ function loadPic(url, phoneNumber) {
 
     image.src = url;
 
-    var width = image.width;
-    var height = image.height;
+    image.onload = function () {
+        var width = image.width;
+        var height = image.height;
 
-    var MulX = canvas.width/width;
-    var MulY = canvas.height/height;
+        var MulX = canvas.width/width;
+        var MulY = canvas.height/height;
 
 
 
-    if(MulX<= MulY){
-        Pic_width = width*MulX;
-        Pic_height = height*MulX;
-        Pic_x = 0;
-        Pic_y = 0;
-    }
-    else{
-        Pic_width = width*MulY;
-        Pic_height = height*MulY;
-        Pic_y = 0;
-        Pic_x = 0;
-    }
-    canvas.width=Pic_width;
-    canvas.height=Pic_height;
+        if(MulX<= MulY){
+            Pic_width = width*MulX;
+            Pic_height = height*MulX;
+            Pic_x = 0;
+            Pic_y = 0;
+        }
+        else{
+            Pic_width = width*MulY;
+            Pic_height = height*MulY;
+            Pic_y = 0;
+            Pic_x = 0;
+        }
+        canvas.width=Pic_width;
+        canvas.height=Pic_height;
 
-    drawImage();
+        drawImage();
+    };
+
+
 
     var indexOfRectSentence=0;
     var indexOfCurlSentence=0;
