@@ -1,6 +1,7 @@
 var personalMessage = '';
 
 function getMessage(phoneNumber) {
+    //alert("getting message");
     $.ajax({
         async: false,
         type: "POST",
@@ -10,7 +11,7 @@ function getMessage(phoneNumber) {
         data: JSON.stringify({"phoneNumber":phoneNumber}),
         success: function (res) {
             //personalMessage = JSON.parse(res);
-            changeForm(res);
+            showMessage(res);
 
         },
         error:function () {
@@ -23,7 +24,7 @@ function changeForm(res) {
     showMessage(res);
 }
 function showMessage(message) {
-    for(var i = 1;i<message.length;i++){
+    for(var i = 0;i<message.length;i++){
         document.getElementById("messageArea").innerHTML += "<tr id=" + i + "><td>" + i + "</td><td>" + message[i].content + "</td><td>" + message[i].senderID + "</td><td>" + message[i].keyID + "</td></tr>";
     }
 }
