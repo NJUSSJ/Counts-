@@ -29,12 +29,36 @@ function loadLabelPhone(_phoneNumber,collection, index){
 }
 
 function submitLabelInfo() {
-    updateData();
-    alert("标注信息已保存");
+    $.ajax({
+        async: false,
+        type: "POST",
+        url: "/commit",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({"keyword":getNameAndCollection()[0], "uid":getNameAndCollection()[2]}),
+        success: function (ret) {
+            if(ret === 1)
+                alert("提交成功!");
+            else if(ret === 2)
+                alert("提交失败!请勿重复提交！");
+        }
+        ,
+        error: function () {
+        }
+    });
+    return 0;
 }
 
 function nextImage() {
     //var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
+
+    i++;
+    if(i == 12){
+        alert("已到达任务末尾！");
+    }else{
+        window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
+    }
+
     var answer = loadLabelInfo()[0];
     if(answer == null){
         answer = -1;
@@ -63,14 +87,6 @@ function nextImage() {
     var i = tmp[1].substring(tmp[1].indexOf("=")+1);
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
 
-    i++;
-    if(i == 13){
-        alert("已到达任务末尾！");
-    }else{
-        window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
-    }
-
-
 }
 /*
 function LabelData(mid, uid, missionLabel) {
@@ -79,24 +95,3 @@ function LabelData(mid, uid, missionLabel) {
     this.uid = window.location.search.split("&")[2].substring(tmp[2].indexOf("=")+1);
     this.missionLabel = loadLabelInfo();
 }*/
-
-function updateData() {
-    $.ajax({
-            async: false,
-            type: "POST",
-            url: "/commit",
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify({"keyword":getNameAndCollection()[0], "uid":getNameAndCollection()[2]}),
-            success: function (ret) {
-                if(ret === 1)
-                    alert("提交成功!");
-                else if(ret === 2)
-                    alert("提交失败!请勿重复提交！");
-            }
-            ,
-            error: function () {
-            }
-        });
-    return 0;
-}
