@@ -77,33 +77,6 @@ var scale = function (btn,bar,title){
 new scale('btn','bar','title'); //实例化一个拖拽
 
 
-function loadDetails(picNum) {
-    /*
-    加载任务图片
-     */
-    var missionName=document.getElementById("Name").innerText;
-
-    loadChart1(missionName);//
-    loadSample(missionName);
-    var picSection=document.getElementById("picSection");
-    for(var i=1;i<=picNum;i++){
-        var div=document.createElement("div");
-        div.className="4u 12u$(mobile)";
-        var a=document.createElement("a");
-        a.href="#";
-        a.className="image fit picture";
-        var img=document.createElement("img");
-        img.src="missionImages/"+missionName+"_"+i+".jpg";
-        img.style.height = "150px";
-        img.style.width = "242.7px";
-        a.appendChild(img);
-        div.appendChild(a);
-        picSection.appendChild(div);
-    }
-
-
-}
-
 /*
 加载抽样
  */

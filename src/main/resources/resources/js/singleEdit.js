@@ -328,7 +328,10 @@ function loadPic(url, phoneNumber, collection) {
                     break;
                 }
             }
-            document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
+            if(imgInfo.sentences[OverallIndex]!=null){
+                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
+            }
+
         }
     }
 
