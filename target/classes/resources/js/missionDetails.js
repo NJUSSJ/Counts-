@@ -84,7 +84,7 @@ function loadDetails(picNum) {
     var missionName=document.getElementById("Name").innerText;
 
     loadChart1(missionName);//
-
+    loadSample(missionName);
     var picSection=document.getElementById("picSection");
     for(var i=1;i<=picNum;i++){
         var div=document.createElement("div");
@@ -130,11 +130,6 @@ function loadSample(missionName) {
                 info.innerHTML="该任务已完成过评估！";
                 samplePanel.appendChild(info);
             } else{
-                var jsonString=returnData;
-                var Sample=eval(jsonString);
-                returnSample=Sample;
-                picName=Sample.missionName;
-                sampleSet(Sample, Sample.missionName);
             }
         },
         error: function(){
