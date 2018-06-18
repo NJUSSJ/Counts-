@@ -158,9 +158,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                 <h2 id="sample">抽样评估</h2>
             </header>
             <div class="12u 12u(narrower)" style="margin-top: 20px;" id="choices" >
-                <div class="row 150%" style="padding-left: 15px;margin-top: 20px">
-                    <a class="button small2" onclick="startJudge(${requestScope.tagType})">开始评估</a>
-                </div>
+                <div class="2u 12u(narrower)" style="padding-top: 0px;"><a href="#" onclick="startJudge(${requestScope.tagType})" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >开始评估</a></div>
             </div>
             <div class="row 150%" id="edit_area" style="margin-top: 12px;display: none;" >
 
@@ -189,7 +187,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     </div>
                     <span id="title" style="font-weight: bold">分数：0</span>
                 </div>
-                <div class="2u 12u(narrower)" style="padding-top: 0px;display: none;"><a href="#" onclick="good()" class="button small2 " style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" id="confirmButton">确认</a></div>
+                <div class="2u 12u(narrower)" style="padding-top: 0px;"><a href="#" onclick="good()" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" id="confirmButton">确认</a></div>
 
             </div>
         </article>
