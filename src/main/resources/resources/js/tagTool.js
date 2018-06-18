@@ -55,7 +55,6 @@ function nextImage() {
     img.src = url;
     ctx.drawImage(img,0,0,canvas.width,canvas.height);
     */
-<<<<<<< HEAD
 
     var tmp = window.location.search.split("&");
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
@@ -64,13 +63,9 @@ function nextImage() {
 
     i++;
     if(i == 12){
-=======
-    count++;
-    if(count == 13){
->>>>>>> 9a07028dc788e8792839033b0140fed9bbe9746b
         alert("已到达任务末尾！");
     }else{
-        window.location.href = "test1.html?collection=" + mid + "&index=" + (count-1) + "&phoneNumber=" + phoneNumber;
+        window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
     }
 };
 

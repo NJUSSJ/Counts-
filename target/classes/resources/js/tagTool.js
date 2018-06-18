@@ -65,9 +65,8 @@ function nextImage() {
     if(i == 12){
         alert("已到达任务末尾！");
     }else{
-        window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
+        window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
     }
-
 };
 
 //data
