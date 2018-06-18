@@ -299,7 +299,8 @@ public class MainService {
             }
             setCollection(money, subLabelMission.getUid(), mid);
         }
-
+        mission.setState(2);
+        missionBasicBLService.update(mission);
     }
 
     /**
@@ -387,6 +388,7 @@ public class MainService {
                     collectionResult.setQuality(8);//默认值
                     collectionResult.setCredit(money[i]);
                     collectionResult.setRank(rank[i]);
+                    collectionResult.setState(4);
                     collectionResultBasicBLService.update(collectionResult);
                     break;
                 }
@@ -533,6 +535,10 @@ public class MainService {
      * 评审自由式任务
      */
     public void autoReviewFreeMission(String mid){
+        Mission mission=missionBasicBLService.findByKey(mid);
+        mission.setState(2);
+        missionBasicBLService.update(mission);
+
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> users=subFreeMission.getUid();
@@ -573,6 +579,7 @@ public class MainService {
                     collectionResult.setCredit(reward);
                     double eachGrade=grade.get(i);
                     collectionResult.setQuality((int)eachGrade);
+                    collectionResult.setState(4);
                     collectionResultBasicBLService.update(collectionResult);
                 }
             }
@@ -710,6 +717,10 @@ public class MainService {
      *抽样评估自由式任务
      */
     public void manualReviewFreeMission(ArrayList<Integer> pic,ArrayList<Integer> quality,ArrayList<String> uid,String mid){
+        Mission mission=missionBasicBLService.findByKey(mid);
+        mission.setState(2);
+        missionBasicBLService.update(mission);
+
         Map<String,Integer> result=new HashMap<String,Integer>();
         for(int i=0;i<quality.size();i++){
             if(result.containsKey(uid.get(i))) {
@@ -769,6 +780,7 @@ public class MainService {
             }
             collectionResult.setPicIdValue(picInd);
             collectionResult.setPicGradeValue(pivGra);
+            collectionResult.setState(4);
             collectionResultBasicBLService.update(collectionResult);
         }
 
