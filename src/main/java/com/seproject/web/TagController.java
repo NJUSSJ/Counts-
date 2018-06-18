@@ -30,15 +30,12 @@ public class TagController {
         JSONObject jsonObject = JSONObject.fromObject(imgid);
         String temp0[]=jsonObject.getString("imgid").split("-");
         System.out.println("imgid:"+imgid);
-        FreeMissionParameter parameter =(FreeMissionParameter) JSONObject.toBean(jsonObject,FreeMissionParameter.class);
         String starterMissionName=temp0[0];
         String picName0= temp0[1]; //这个属性必须是数字,且从1开始
         String userName= temp0[2];
-        mainService.updateFreeMissionDetail(starterMissionName,userName,(Integer.parseInt(picName0)),parameter);
-        //更新用户对这张图的标注信息
         Collection collection=collectionService.findByKey(starterMissionName+userName);
         ArrayList<String> infoList=collection.getInfoList();
-        infoList.set(Integer.parseInt(picName0)-1,imgid);
+        infoList.set(Integer.parseInt(picName0),imgid);
         collection.setInfoList(infoList);
         collectionService.update(collection);
         return "666";
@@ -60,9 +57,13 @@ public class TagController {
 
 
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
-
-        String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
-
+        System.out.println("collectionIsNull:"+collection==null);
+        System.out.println(collection.getInfoList());
+        System.out.println("picName"+picName);
+        String jsonString=collection.getInfoList().get(Integer.parseInt(picName));
+        System.out.println("jsonString:"+jsonString);
+        String tempTest=collection.getInfoList().get(Integer.parseInt(picName)+1);
+        System.out.println("tempTest:"+tempTest);
         if(jsonString==null){
             jsonString="";
         }

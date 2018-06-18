@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/julia98/SEP_Phase_III/src/test/java/com/seproject/service/blServiceImpl/BasicBLImpl_HibernateTest.java
 /Users/julia98/SEP_Phase_III/src/test/java/com/seproject/dao/FileDaoTest2.java
 /Users/julia98/SEP_Phase_III/src/test/java/com/seproject/service/BasicBLServiceTest.java
@@ -5,3 +6,12 @@
 /Users/julia98/SEP_Phase_III/src/test/java/com/seproject/service/BasicBLServiceTest2.java
 /Users/julia98/SEP_Phase_III/src/test/java/com/seproject/service/MathServiceTest.java
 /Users/julia98/SEP_Phase_III/src/test/java/com/seproject/dao/FileDaoTest1.java
+=======
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\service\BasicBLServiceTest2.java
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\service\blServiceImpl\BasicBLImpl_HibernateTest.java
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\service\BasicBLServiceTest1.java
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\service\MathServiceTest.java
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\dao\FileDaoTest1.java
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\service\BasicBLServiceTest.java
+D:\SEP3\SEP_Phase_III\src\test\java\com\seproject\dao\FileDaoTest2.java
+>>>>>>> 07837779bd2dd51b97acbf2f900aa34f1f86a77d
