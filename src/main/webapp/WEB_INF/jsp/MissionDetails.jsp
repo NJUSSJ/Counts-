@@ -194,7 +194,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <!-- Content -->
                     <div class="content" align="center">
-                        <canvas id="canvasForSample" width="500" height="500">
+                        <canvas id="canvas1" width="500" height="500">
 
                         </canvas>
                         <p id="info">Tag info.</p>

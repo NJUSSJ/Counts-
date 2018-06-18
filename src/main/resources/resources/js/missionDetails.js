@@ -115,7 +115,7 @@ function loadSample() {
 /*
 parameters for canvas
  */
-var canvas = document.getElementById("canvasForSample");
+var canvas = document.getElementById("canvas1");
 var cxt = canvas.getContext("2d");
 
 //已确定的矩形框
@@ -141,7 +141,7 @@ var Pic_y;
 
 function sampleSet(sample, missionName) {
     picIndex=sample.picIndex;
-    imageInfo=sample.imageInfo;
+    imageInfo=sample.info;
 
     uid=sample.uid;
     lastIndex=uid.length-1;
@@ -177,29 +177,12 @@ function loadOneSample(index,missionName) {
         }
     }
 
-    /*
-    load overall
-     */
-    if(imgInfo!=null){
-        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
-            var OverallIndex=0;
-            while(imgInfo.sentences[OverallIndex].status!=2){
-                OverallIndex++;
-                if(OverallIndex==imgInfo.sentences.length){
-                    break;
-                }
-            }
-            if(OverallIndex<imgInfo.sentences.length){
-                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
-            }
 
-        }
-    }
 
     image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
 
 
-    image.onload = function (ev) {
+
         var width = image.width;
         var height = image.height;
 
@@ -222,10 +205,7 @@ function loadOneSample(index,missionName) {
         }
         canvas.width=Pic_width;
         canvas.height=Pic_height;
-
         drawImage();
-    };
-
 
     var indexOfRectSentence=0;
     var indexOfCurlSentence=0;
