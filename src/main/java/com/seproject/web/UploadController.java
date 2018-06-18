@@ -48,6 +48,7 @@ public class UploadController {
     @ResponseBody
     public ModelAndView finish(HttpServletRequest request){
         String phoneNumber=request.getParameter("phoneNumber");
+        System.out.println("phonenumber is?"+phoneNumber);
         User tmpUser=userBasicBLService.findByKey(phoneNumber);
         ModelAndView view=new ModelAndView("Main");
         view.addObject("userCategory",tmpUser.getCategory());

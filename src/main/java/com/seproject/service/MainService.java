@@ -207,8 +207,10 @@ public class MainService {
             }
         }
         if(goldMissions.size()==0){
+            System.out.println("金标已经评完，开启标签式自动评估");
             reviewLabelMission(mid);
         }
+        System.out.println("金标没评完，自己平去吧");
         return result;
     }
 
