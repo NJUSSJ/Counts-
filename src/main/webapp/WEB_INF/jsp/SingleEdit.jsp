@@ -68,14 +68,7 @@
         <h1 id="logo"><img src="images/logo.png" width="25" height="25" /> COUNTS <span>by Social Engineers</span></h1>
         <nav id="nav" onload="loadPhoneNumber(${requestScope.userPhone})">
             <ul>
-                <li class="submenu">
-                    <a herf="#">Tag</a>
-                    <ul>
-                        <li><a id="save"><img src="images/save.png" width="20" height="20" align="center">SAVE</a></li>
-                        <li><a id="back"><img src="images/back.png" width="20" height="20" align="center">BACK</a></li>
-                        <li><a id="more" onclick="nextImage()"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
-                    </ul>
-                </li>
+                <li><a id="more" onclick="nextImage()"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
                 <li><a onclick="submitTagInfo()" class="button special">Submit</a></li>
                 <li><a href="/" class="button special">Sign Out</a></li>

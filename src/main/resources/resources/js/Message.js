@@ -20,9 +20,7 @@ function getMessage(phoneNumber) {
     });
 
 }
-function changeForm(res) {
-    showMessage(res);
-}
+
 function showMessage(message) {
     for(var i = 0;i<message.length;i++){
         document.getElementById("messageArea").innerHTML += "<tr id=" + i + "><td>" + i + "</td><td>" + message[i].content + "</td><td>" + message[i].senderID + "</td><td>" + message[i].keyID + "</td></tr>";
@@ -57,7 +55,7 @@ function deleteMessage(phoneNumber) {
         data: {"phoneNumber":phoneNumber},
         success: function (res) {
             //personalMessage = JSON.parse(res);
-            alert(res);
+            //alert(res);
         },
         error:function () {
             //alert("fail");

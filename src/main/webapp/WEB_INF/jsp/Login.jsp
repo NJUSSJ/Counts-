@@ -20,7 +20,7 @@
 <script>
     function judge(returnData) {
         if(returnData!=null){
-            alert(returnData);
+            //alert(returnData);
         }
     }
 </script>
@@ -185,7 +185,7 @@
                                                 return;
                                             }
                                             variCode=returnData;
-                                            alert(returnData);
+                                            //alert(returnData);
                                             document.getElementById("variCodeArea").style.display="block";
                                             document.getElementById("button1").style.display="none";
                                             document.getElementById("button2").style.display="block";

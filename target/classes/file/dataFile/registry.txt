@@ -1,6 +1,0 @@
-cat1,5
-cat2,5
-dog1,5
-dog2,5
-parrot1,5
-parrot2,5
