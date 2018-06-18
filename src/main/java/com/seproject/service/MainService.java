@@ -589,10 +589,11 @@ public class MainService {
         }
         for(int eachIndex:index) {
             System.out.println("eachIndex:"+eachIndex);
-
+            System.out.println(uid);
             ArrayList<FreeMissionDetail> details = new ArrayList<FreeMissionDetail>();
             if(uid.size()==1){//如果只有一个用户标，直接拿分即可
                 grade.set(0,1.0);
+
                 return grade;
             }
 
@@ -628,8 +629,10 @@ public class MainService {
                     if (p != j) {
                         double similar = languageService.simliarityOfText(summary, details.get(p).getSummary());
                         if (similar < 0.5) {
+                            eachGrade+=0.1;//加一个较低的分
                             limit--;
                             if (limit < 0) {//如果和超一半的人文本都不相似，那么视为无效答案
+                                System.out.println("A invalid answer!!!");
                                 eachGrade = 0;
                                 break;
                             }
@@ -644,8 +647,11 @@ public class MainService {
                     for (int m = 0; m < details.get(j).getHeight().size(); m++) {
                         frameSquare += details.get(j).getHeight().get(m) * details.get(j).getWeight().get(m);
                     }
+                    System.out.println("tempGrade1:"+eachGrade);
                     eachGrade *= (1 - (Math.abs(frame - avgFrameNum)) / avgFrameNum) * 100;
+                    System.out.println("tempGrade2:"+eachGrade);
                     eachGrade *= (1 - (Math.abs(frameSquare - avgFrameSquare)) / avgFrameSquare) * 100;
+                    System.out.println("tempGrade3:"+eachGrade);
                 }
                 grade.set(j,grade.get(j)+eachGrade);
             }
