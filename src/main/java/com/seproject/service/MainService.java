@@ -588,51 +588,60 @@ public class MainService {
             grade.add(0.0);
         }
         for(int eachIndex:index) {
-            System.out.println("eachIndex:"+eachIndex);
-            System.out.println(uid);
             ArrayList<FreeMissionDetail> details = new ArrayList<FreeMissionDetail>();
             if(uid.size()==1){//如果只有一个用户标，直接拿分即可
                 grade.set(0,1.0);
-
                 return grade;
             }
-
             for (int j = 0; j < uid.size(); j++) {
                 Collection collection=collectionBasicBLService.findByKey(mid+uid.get(j));
-                System.out.println("keyId:"+collection.getKeyId());
-                System.out.println(collection.getInfoList());
-                int count=0;
-                for(String eachIn:collection.getInfoList()){
-                    if(eachIn!=""&&eachIn.length()>3){
-                        System.out.println(count);
-                        count++;
-                    }
-                }
-                System.out.println(collection.getInfoList().get(eachIndex)+" $$$$");
                 details.add(new FreeMissionDetail(collection.getInfoList().get(eachIndex),eachIndex));
             }
             double avgFrameNum = 0;
             double avgFrameSquare = 0;
+            double maxFrameNum=0;
+            double minFrameNum=0;
+            double maxFrameSquare=0;
+            double minFrameSquare=0;
             for (FreeMissionDetail eachDetail : details) {
+                double frameNum=eachDetail.getX().size();
+                double frameSq=0;
                 avgFrameNum += eachDetail.getX().size();
                 for (int k = 0; k < eachDetail.getHeight().size(); k++) {
                     avgFrameSquare += eachDetail.getHeight().get(k) * eachDetail.getWeight().get(k);
+                    frameSq+=eachDetail.getHeight().get(k) * eachDetail.getWeight().get(k);
                 }
+                if(frameNum>maxFrameNum) maxFrameNum=frameNum;
+                if(frameNum<minFrameNum) minFrameNum=frameNum;
+                if(frameSq>maxFrameSquare) maxFrameSquare=frameSq;
+                if(frameSq<minFrameSquare) minFrameNum=frameSq;
+
             }
             avgFrameNum /= uid.size();//平均框数量
             avgFrameSquare /= uid.size();//平均框面积
-            for (int j = 0; j < uid.size(); j++) {//多人标的情况
+            if(avgFrameNum==0||avgFrameSquare==0) continue;//说明这张图无效
+
+
+            for(int j=0;j<uid.size();j++){
+                FreeMissionDetail detail=details.get(j);
+                System.out.println("X:"+detail.getX());
+                System.out.println("Y:"+detail.getY());
+                System.out.println("height:"+detail.getHeight());
+                System.out.println("width:"+detail.getWeight());
+            }
+
+            for (int j = 0; j < uid.size(); j++) {
                 int limit = uid.size() / 2;
-                int eachGrade = 0;
+                double eachGrade = 0;
                 String summary = details.get(j).getSummary();
                 for (int p = 0; p < uid.size(); p++) {
+                    System.out.println("P:"+p);
                     if (p != j) {
                         double similar = languageService.simliarityOfText(summary, details.get(p).getSummary());
                         if (similar < 0.5) {
                             eachGrade+=0.1;//加一个较低的分
                             limit--;
                             if (limit < 0) {//如果和超一半的人文本都不相似，那么视为无效答案
-                                System.out.println("A invalid answer!!!");
                                 eachGrade = 0;
                                 break;
                             }
@@ -647,11 +656,10 @@ public class MainService {
                     for (int m = 0; m < details.get(j).getHeight().size(); m++) {
                         frameSquare += details.get(j).getHeight().get(m) * details.get(j).getWeight().get(m);
                     }
-                    System.out.println("tempGrade1:"+eachGrade);
-                    eachGrade *= (1 - (Math.abs(frame - avgFrameNum)) / avgFrameNum) * 100;
-                    System.out.println("tempGrade2:"+eachGrade);
-                    eachGrade *= (1 - (Math.abs(frameSquare - avgFrameSquare)) / avgFrameSquare) * 100;
-                    System.out.println("tempGrade3:"+eachGrade);
+                    eachGrade*=100;
+                    double temp=Math.abs(frame - avgFrameNum)/ (maxFrameNum-minFrameNum);
+                    eachGrade *= (1.0 - temp);
+                    eachGrade *= (1.0 - (Math.abs(frameSquare - avgFrameSquare)) / maxFrameSquare-minFrameSquare);
                 }
                 grade.set(j,grade.get(j)+eachGrade);
             }
