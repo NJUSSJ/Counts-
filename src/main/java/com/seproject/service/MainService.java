@@ -635,6 +635,7 @@ public class MainService {
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> uid=subFreeMission.getUid();
+            if(uid==null||uid.size()<=0) continue;;//如果这个子任务没人做，直接跳过
             ArrayList<Integer> levels=new ArrayList<Integer>();
             int avgLevel=0;
             for(String eachUid:uid){

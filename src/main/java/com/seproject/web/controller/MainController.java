@@ -183,14 +183,16 @@ public class MainController {
         int evaluate=mission.getEvaluateStrategy();
         ReviewResponse reviewResponse=new ReviewResponse();
         reviewResponse.setType(type);
+        reviewResponse.setPicIndex(new ArrayList<Integer>());
+        reviewResponse.setLabel(new ArrayList<String>());
+        reviewResponse.setUid(new ArrayList<String>());
+        reviewResponse.setInfo(new ArrayList<String>());
         if(type==1){//标签式
             reviewResponse.setPicIndex(mainService.getRestPictures(mid));//不管是工人评还是自己评，都需要金标的答案
             reviewResponse.setLabel(mission.getMissionLabel());
-            //reviewResponse.setUid(new ArrayList<String>());
         }else {//自由式
             if(evaluate==2) {//手动评，需要获取抽样的结果
                 mainService.createFreeMissionSample(reviewResponse, mid);
-              //  reviewResponse.setLabel(new ArrayList<String>());
             }else{//自动评，直接开始
                 mainService.autoReviewFreeMission(mid);
             }

@@ -35,7 +35,8 @@ public class TagController {
         String userName= temp0[2];
         Collection collection=collectionService.findByKey(starterMissionName+userName);
         ArrayList<String> infoList=collection.getInfoList();
-        infoList.set(Integer.parseInt(picName0),imgid);
+        System.out.println("writePicName:"+(Integer.parseInt(picName0)-1));
+        infoList.set(Integer.parseInt(picName0)-1,imgid);
         collection.setInfoList(infoList);
         collectionService.update(collection);
         return "666";
@@ -59,11 +60,9 @@ public class TagController {
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
         System.out.println("collectionIsNull:"+collection==null);
         System.out.println(collection.getInfoList());
-        System.out.println("picName"+picName);
+        System.out.println("readPicName"+(Integer.parseInt(picName)));
         String jsonString=collection.getInfoList().get(Integer.parseInt(picName));
         System.out.println("jsonString:"+jsonString);
-        String tempTest=collection.getInfoList().get(Integer.parseInt(picName)+1);
-        System.out.println("tempTest:"+tempTest);
         if(jsonString==null){
             jsonString="";
         }
@@ -73,8 +72,6 @@ public class TagController {
     /**
      * 用户提交任务的方法
      * 改变图集状态从0变到1
-     * @param str
-     * @return
      */
     @RequestMapping(value = "/submitTag")
     @ResponseBody
