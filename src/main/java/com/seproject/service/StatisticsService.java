@@ -117,7 +117,11 @@ public class StatisticsService {
                 }
                 participantSum.add(temp);
                 creditSum.add(m.getReward());
-                creditAvg.add(m.getReward()/temp);
+                if(temp!=0) {
+                    creditAvg.add(m.getReward() / temp);
+                }else{
+                    creditAvg.add(0.0);
+                }
 
             }
         }
