@@ -443,7 +443,7 @@ function sampleSet2(Sample, mid) {
 
     document.getElementById("textareaPlace2").innerHTML = btn;
 
-    loadOneSample2(indexForSample, document.getElementById("missionName").innerHTML);
+    loadOneSample2(indexForSample, mid);
 
 }
 
@@ -495,4 +495,8 @@ function loadCanvas(url) {
     };
 
 
+}
+
+function clickLabel(i) {
+    
 }
