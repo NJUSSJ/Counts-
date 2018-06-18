@@ -11,9 +11,10 @@ var mid;
 function getNameAndCollection() {
     tmp = window.location.search.split("&");
     var collectionName = tmp[0].substring(tmp[0].indexOf("=")+1,tmp[0].length);
-    if (collectionName[0] === '%'){
-        collectionName = decodeURI(collectionName);
-        alert(collectionName);
+    for(var i = 0;i<collectionName.length;i++) {
+        if (collectionName[i] === '%') {
+            collectionName = decodeURI(collectionName);
+        }
     }
     var picName = tmp[1].substring(tmp[1].indexOf("=")+1,tmp[1].length);
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
