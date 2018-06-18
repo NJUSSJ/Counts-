@@ -38,7 +38,7 @@ public class TagController {
         //更新用户对这张图的标注信息
         Collection collection=collectionService.findByKey(starterMissionName+userName);
         ArrayList<String> infoList=collection.getInfoList();
-        infoList.set(Integer.parseInt(picName0)-1,imgid);
+        infoList.set(Integer.parseInt(picName0),imgid);
         collection.setInfoList(infoList);
         collectionService.update(collection);
         return "666";
@@ -60,9 +60,13 @@ public class TagController {
 
 
         Collection collection=collectionService.findByKey(collectionName+phoneNumber);
-
-        String jsonString=collection.getInfoList().get(Integer.parseInt(picName)-1);
-
+        System.out.println("collectionIsNull:"+collection==null);
+        System.out.println(collection.getInfoList());
+        System.out.println("picName"+picName);
+        String jsonString=collection.getInfoList().get(Integer.parseInt(picName));
+        System.out.println("jsonString:"+jsonString);
+        String tempTest=collection.getInfoList().get(Integer.parseInt(picName)+1);
+        System.out.println("tempTest:"+tempTest);
         if(jsonString==null){
             jsonString="";
         }

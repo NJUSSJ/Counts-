@@ -218,6 +218,7 @@ public class MainService {
      */
     private void reviewLabelMission(String mid){
         Mission mission=missionBasicBLService.findByKey(mid);
+        int evaluate=mission.getEvaluateStrategy();
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for (SubLabelMission subLabelMission : subLabelMissions) {
@@ -287,7 +288,14 @@ public class MainService {
                 isCorrect[j][10] = (userAnswer.get(10) == answer1);
                 isCorrect[j][11] = (userAnswer.get(11) == answer2);
             }
-            double money[] = giveMoney_DoubleNothing(isCorrect);
+
+            //根据事先设置的策略分配
+            double[] money=null;
+            if(evaluate==2) {//2号策略：double nothing
+                money = giveMoney_DoubleNothing(isCorrect);
+            }else if(evaluate==3){//3号策略：双色球
+                money=giveMoney_DoubleColorBall(isCorrect);
+            }
             setCollection(money, subLabelMission.getUid(), mid);
         }
 
@@ -312,7 +320,7 @@ public class MainService {
     }
 
     /**
-     * 根据投票选出获取标准答案
+     * 根据投票选出获取标准答案(标签式)
      */
     private int[] getStandard(double[][] vote){
         //vote.length=10
@@ -529,6 +537,7 @@ public class MainService {
         if(detail==null){
             detail=new FreeMissionDetail();
             firstTime=true;
+            detail.setKeyid(mid+uid+picIndex);
             detail.setPicIndex(picIndex);
             detail.setUid(uid);
             detail.setSummary("");
@@ -554,13 +563,11 @@ public class MainService {
         detail.setHeight(height);
         detail.setWeight(width);
         String info=parameter.getSentences().toString();
-        System.out.println(info);
         if(info.contains("status=2")){
             int index=info.indexOf("status=2");
             info=info.substring(0,index);
             index=info.lastIndexOf("[");
             int endIndex= info.lastIndexOf("]");
-            System.out.println(info.substring(index+1,endIndex));
         }
         if(firstTime) {
             detailBasicBLService.add(detail);
@@ -569,6 +576,7 @@ public class MainService {
             detailBasicBLService.update(detail);
         }
     }
+
 
     /**
      * 评审自由式任务
@@ -625,7 +633,10 @@ public class MainService {
         for(int eachIndex:index) {
             ArrayList<FreeMissionDetail> details = new ArrayList<FreeMissionDetail>();
             for (int j = 0; j < uid.size(); j++) {
-                details.add(detailBasicBLService.findByKey(mid + uid.get(j) + eachIndex));
+               // Collection collection=collectionBasicBLService.findByKey(mid+uid.get(j));
+                //ArrayList<>
+                //details.add(detailBasicBLService.findByKey(mid + uid.get(j) + eachIndex));
+               // details.add()
             }
             double avgFrameNum = 0;
             double avgFrameSquare = 0;
