@@ -34,7 +34,7 @@ public class MultiController {
 
         String collection = request.getParameter("collection");
         ArrayList<Integer> submission = new MissionController().getPictureIndex(phoneNumber, collection);
-        url += (submission.get(index-1))+".jpg\'";
+        url += (submission.get(index))+".jpg\'";
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){
             model = new ModelAndView("LabelEdit");

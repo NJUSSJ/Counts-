@@ -52,13 +52,6 @@ function submitLabelInfo() {
 function nextImage() {
     //var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
 
-    i++;
-    if(i == 12){
-        alert("已到达任务末尾！");
-    }else{
-        window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
-    }
-
     var answer = loadLabelInfo()[0];
     if(answer == null){
         answer = -1;
@@ -82,10 +75,18 @@ function nextImage() {
             //alert("提交失败!");
         }
     });
+
     var tmp = window.location.search.split("&");
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
     var i = tmp[1].substring(tmp[1].indexOf("=")+1);
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
+
+    i++;
+    if(i == 13){
+        alert("已到达任务末尾！");
+    }else{
+        window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
+    }
 
 }
 /*
