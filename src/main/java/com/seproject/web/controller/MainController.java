@@ -5,18 +5,22 @@ import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.Factory;
 import com.seproject.service.MainService;
-import com.seproject.service.ReviewService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.*;
+import com.seproject.web.response.DownloadFileResponse;
 import com.seproject.web.response.ReviewResponse;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -186,13 +190,21 @@ public class MainController {
         reviewResponse.setUid(new ArrayList<String>());
         reviewResponse.setInfo(new ArrayList<String>());
         if(type==1){//标签式
-            reviewResponse.setPicIndex(mainService.getRestPictures(mid));//不管是工人评还是自己评，都需要金标的答案
+            ArrayList<Integer> picIn=mainService.getRestPictures(mid);
+            reviewResponse.setPicIndex(picIn);//不管是工人评还是自己评，都需要金标的答案
             reviewResponse.setLabel(mission.getMissionLabel());
+            if(picIn==null||picIn.size()==0){
+                reviewResponse.setGoldMissionAllDone(1);
+            }else{
+                reviewResponse.setGoldMissionAllDone(0);
+            }
         }else {//自由式
             if(evaluate==2) {//手动评，需要获取抽样的结果
                 mainService.createFreeMissionSample(reviewResponse, mid);
+                reviewResponse.setGoldMissionAllDone(0);
             }else{//自动评，直接开始
                 mainService.autoReviewFreeMission(mid);
+                reviewResponse.setGoldMissionAllDone(1);
             }
         }
         JSONObject jsonObject = JSONObject.fromObject(reviewResponse);//这里INT 数组是索引
@@ -236,6 +248,36 @@ public class MainController {
             collectionResultBasicBLService.update(cr);
             return 1;
         }
+
+    }
+
+    @RequestMapping(value="/downloadFile")
+    @ResponseBody
+    public DownloadFileResponse downloadFile(@RequestBody String mid){
+        File nav= null;
+        try {
+            nav = ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
+            FileWriter writer=new FileWriter(nav,false);
+            ArrayList<Collection> collections=collectionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+            for(int i=0;i<collections.size();i++){
+                for(int j=0;j<collections.get(i).getInfoList().size();j++){
+                    writer.write(collections.get(i).getInfoList().get(j)+"\n");
+                }
+            }
+            writer.flush();
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String path=nav.getAbsolutePath();
+
+        DownloadFileResponse downloadFileResponse=new DownloadFileResponse();
+        downloadFileResponse.setPath(path);
+
+        return downloadFileResponse;
+
 
     }
 

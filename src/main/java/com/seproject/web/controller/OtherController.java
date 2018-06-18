@@ -4,6 +4,7 @@ import com.seproject.domain.User;
 import com.seproject.domain.UserDate;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
+import net.sf.json.JSONString;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +22,7 @@ public class OtherController {
      * 签到
      */
     public String sign(@RequestBody String phoneNumber){
+        phoneNumber = phoneNumber.split("=")[1];
         System.out.println(phoneNumber);
         String message="sign up success";
         Date now=new Date(System.currentTimeMillis());
