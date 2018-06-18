@@ -77,7 +77,7 @@ public class PersonalController {
             for(int i=0;i<tmpMission.size();i++){
                 Mission mission = missionBasicBLService.findByKey(tmpMission.get(i).getMid());
                 int state = mission.getState();
-                if(state == 0){
+                if(state == 0 || state ==1){
                     collectionNames.add(tmpMission.get(i).getMid());
                 }
 
@@ -112,7 +112,7 @@ public class PersonalController {
             for(int i=0;i<tmpMission.size();i++){
                 Mission mission = missionBasicBLService.findByKey(tmpMission.get(i).getMid());
                 int state = mission.getState();
-                if(state == 2||state == 1){
+                if(state == 2){
                     collectionNames.add(tmpMission.get(i).getMid());
                 }
 

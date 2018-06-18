@@ -20,7 +20,6 @@ import java.util.*;
 public class MainService {
     LanguageService languageService;
     NewsService newsService;
-    BasicBLService<FreeMissionDetail> detailBasicBLService=Factory.getBasicBLService(new FreeMissionDetail());
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
     private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
@@ -218,6 +217,7 @@ public class MainService {
      */
     private void reviewLabelMission(String mid){
         Mission mission=missionBasicBLService.findByKey(mid);
+        int evaluate=mission.getEvaluateStrategy();
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for (SubLabelMission subLabelMission : subLabelMissions) {
@@ -287,7 +287,14 @@ public class MainService {
                 isCorrect[j][10] = (userAnswer.get(10) == answer1);
                 isCorrect[j][11] = (userAnswer.get(11) == answer2);
             }
-            double money[] = giveMoney_DoubleNothing(isCorrect);
+
+            //根据事先设置的策略分配
+            double[] money=null;
+            if(evaluate==2) {//2号策略：double nothing
+                money = giveMoney_DoubleNothing(isCorrect);
+            }else if(evaluate==3){//3号策略：双色球
+                money=giveMoney_DoubleColorBall(isCorrect);
+            }
             setCollection(money, subLabelMission.getUid(), mid);
         }
 
@@ -312,7 +319,7 @@ public class MainService {
     }
 
     /**
-     * 根据投票选出获取标准答案
+     * 根据投票选出获取标准答案(标签式)
      */
     private int[] getStandard(double[][] vote){
         //vote.length=10
@@ -521,56 +528,6 @@ public class MainService {
     }
 
     /**
-     * 更新自由式任务用户对单张图的标注参数
-     */
-    public void updateFreeMissionDetail(String mid,String uid,int picIndex,FreeMissionParameter parameter){
-        FreeMissionDetail detail=detailBasicBLService.findByKey(mid+uid+picIndex);
-        boolean firstTime=false;
-        if(detail==null){
-            detail=new FreeMissionDetail();
-            firstTime=true;
-            detail.setPicIndex(picIndex);
-            detail.setUid(uid);
-            detail.setSummary("");
-        }
-        ArrayList<Integer> tempX=parameter.getFixedx();
-        ArrayList<Integer> tempY=parameter.getFixedy();
-        ArrayList<Integer> tempHeight=parameter.getFixedheight();
-        ArrayList<Integer> tempWeight=parameter.getFixedwidth();
-        ArrayList<Integer> x=new ArrayList<Integer>();
-        ArrayList<Integer> y=new ArrayList<Integer>();
-        ArrayList<Integer> height=new ArrayList<Integer>();
-        ArrayList<Integer> width=new ArrayList<Integer>();
-        for(int i=0;i<tempHeight.size();i++){
-            if(tempHeight.get(i)!=0){
-                x.add(tempX.get(i));
-                y.add(tempY.get(i));
-                height.add(tempHeight.get(i));
-                width.add(tempWeight.get(i));
-            }
-        }
-        detail.setX(x);
-        detail.setY(y);
-        detail.setHeight(height);
-        detail.setWeight(width);
-        String info=parameter.getSentences().toString();
-        System.out.println(info);
-        if(info.contains("status=2")){
-            int index=info.indexOf("status=2");
-            info=info.substring(0,index);
-            index=info.lastIndexOf("[");
-            int endIndex= info.lastIndexOf("]");
-            System.out.println(info.substring(index+1,endIndex));
-        }
-        if(firstTime) {
-            detailBasicBLService.add(detail);
-        }
-        else{
-            detailBasicBLService.update(detail);
-        }
-    }
-
-    /**
      * 评审自由式任务
      */
     public void autoReviewFreeMission(String mid){
@@ -625,7 +582,8 @@ public class MainService {
         for(int eachIndex:index) {
             ArrayList<FreeMissionDetail> details = new ArrayList<FreeMissionDetail>();
             for (int j = 0; j < uid.size(); j++) {
-                details.add(detailBasicBLService.findByKey(mid + uid.get(j) + eachIndex));
+                Collection collection=collectionBasicBLService.findByKey(mid+uid.get(j));
+                details.add(new FreeMissionDetail(collection.getInfoList().get(eachIndex),eachIndex));
             }
             double avgFrameNum = 0;
             double avgFrameSquare = 0;

@@ -30,13 +30,13 @@ public class MultiController {
         String phoneNumber = request.getParameter("phoneNumber");
         String sufixx="\'missionImages/";
         String url=sufixx+request.getParameter("collection")+"_";
+        int index = Integer.parseInt(request.getParameter("imageURL"));
+
         String collection = request.getParameter("collection");
         ArrayList<Integer> submission = new MissionController().getPictureIndex(phoneNumber, collection);
-
+        url += (submission.get(index))+".jpg\'";
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){
-            int index = Integer.parseInt(request.getParameter("index"));
-            url += (submission.get(index)+1)+".jpg\'";
             model = new ModelAndView("LabelEdit");
             ArrayList<String> missionLabel = missionBasicBLService.findByKey(collection).getMissionLabel();
             System.out.println(missionLabel.get(0));
@@ -51,9 +51,8 @@ public class MultiController {
             label = "\'"+label+"\'";
             System.out.println(label);
             model.addObject("label", label);
-            model.addObject("index", index+1);
+            //model.addObject("imageURL", index+1);
         }else {
-            url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
             model = new ModelAndView("SingleEdit");
         }
         model.addObject("url",url);
