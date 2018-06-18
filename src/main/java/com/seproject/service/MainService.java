@@ -202,7 +202,7 @@ public class MainService {
         String starter=mission.getRequestorNumber();
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(GoldMission goldMission:goldMissions){
-            if(!goldMission.getUid().equals(starter)){
+            if(goldMission.getUid().equals(starter)){
                 result.addAll(goldMission.getPictrueIndex());
             }
         }
