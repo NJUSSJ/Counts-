@@ -53,7 +53,7 @@ public class MultiController {
             model.addObject("label", label);
             model.addObject("index", index+1);
         }else {
-            String url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
+            url=sufixx+request.getParameter("collection")+"_"+request.getParameter("imageURL")+".jpg\'";
             model = new ModelAndView("SingleEdit");
         }
         model.addObject("url",url);
