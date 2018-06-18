@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
@@ -184,15 +185,23 @@ public class MainController {
         ReviewResponse reviewResponse=new ReviewResponse();
         reviewResponse.setType(type);
         if(type==1){//标签式
-            reviewResponse.setPicIndex(mainService.getRestPictures(mid));//不管是工人评还是自己评，都需要金标的答案
+            ArrayList<Integer> picIndex=mainService.getRestPictures(mid);
+
+            reviewResponse.setPicIndex(picIndex);//不管是工人评还是自己评，都需要金标的答案
             reviewResponse.setLabel(mission.getMissionLabel());
+            if(picIndex==null||picIndex.size()==0){
+                reviewResponse.setGoldMissionAllDone(1);//说明金标已经全部评完了
+            }
             //reviewResponse.setUid(new ArrayList<String>());
+            System.out.println("标签式评估--mainController");
         }else {//自由式
             if(evaluate==2) {//手动评，需要获取抽样的结果
                 mainService.createFreeMissionSample(reviewResponse, mid);
               //  reviewResponse.setLabel(new ArrayList<String>());
+                System.out.println("自由式评估手动--mainController");
             }else{//自动评，直接开始
                 mainService.autoReviewFreeMission(mid);
+                System.out.println("自由式评估自动--mainController");
             }
         }
         JSONObject jsonObject = JSONObject.fromObject(reviewResponse);//这里INT 数组是索引

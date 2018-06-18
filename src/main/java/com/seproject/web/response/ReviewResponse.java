@@ -11,6 +11,7 @@ public class ReviewResponse {
     private ArrayList<Integer> picIndex;
     private ArrayList<String> uid;//对于标签式，这一项没有用
     private ArrayList<String> imageInfo;//对于标签式，这一项没有用
+    private int goldMissionAllDone;
 
     public int getType() {
         return type;
@@ -50,5 +51,13 @@ public class ReviewResponse {
 
     public void setInfo(ArrayList<String> info) {
         this.imageInfo = info;
+    }
+
+    public int getGoldMissionAllDone() {
+        return goldMissionAllDone;
+    }
+
+    public void setGoldMissionAllDone(int goldMissionAllDone) {
+        this.goldMissionAllDone = goldMissionAllDone;
     }
 }
