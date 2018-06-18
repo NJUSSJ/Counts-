@@ -1,7 +1,8 @@
 var type;
+var mid = document.getElementById("missionName").innerHTML;
 function startJudge(tagType) {
+    mid = document.getElementById("missionName").innerHTML;
     this.type = tagType;
-    var mid = document.getElementById("missionName").innerHTML;
     alert(mid);
     $.ajax({
         async: true,
@@ -11,11 +12,11 @@ function startJudge(tagType) {
         dataType: "json",
         data: mid,
         success: function (ret) {
-            alert(ret);
-            if(ret.length == 0) {
+            if(ret == null) {
                 alert("评估已完成！")
             }else{
-                judge();
+                var Sample = eval(ret);
+                judge(Sample);
             }
         }
         ,
@@ -26,10 +27,13 @@ function startJudge(tagType) {
 
 }
 
-function judge() {
+function judge(Sample) {
     if(type == 1){
         //标签式
+        document.getElementById("edit_area2").style.display = "block";
+        sampleSet2(Sample, mid);
     }else{
         document.getElementById("edit_area").style.display = "block";
+        sampleSet(Sample, mid);
     }
 }
