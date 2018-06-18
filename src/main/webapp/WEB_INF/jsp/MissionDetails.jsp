@@ -23,7 +23,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="js/echarts-wordcloud.min.js"></script>
     <noscript><link rel="stylesheet" href="css2/noscript.css" /></noscript>
     <script src="js/judge.js"></script>
-    <script src="js/missionDetails.js"></script>
+
 
 </head>
 <style type="text/css">
@@ -284,7 +284,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/skel-viewport.min.js"></script>
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
-
+<script src="js/missionDetails.js"></script>
 
 
 </body>
