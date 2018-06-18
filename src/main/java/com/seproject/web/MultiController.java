@@ -104,6 +104,8 @@ public class MultiController {
         int difficulty = tmpMission.getDifficulty();
         ArrayList<String> missionLabel = tmpMission.getMissionLabel();
         int maxWorkerNum = tmpMission.getMaxWorkerNum();
+        int bonusStrategy = tmpMission.getBonusStrategy();
+        int evaluateStrategy = tmpMission.getEvaluateStrategy();
 
         ModelAndView view= new ModelAndView("MissionDetails");
         view.addObject("missionName",missionName);
@@ -119,6 +121,8 @@ public class MultiController {
         view.addObject("difficulty",difficulty);
         view.addObject("missionLabel",missionLabel);
         view.addObject("maxWorkerNum",maxWorkerNum);
+        view.addObject("bonusStrategy",bonusStrategy);
+        view.addObject("evaluateStrategy",evaluateStrategy);
         return view;
     }
 

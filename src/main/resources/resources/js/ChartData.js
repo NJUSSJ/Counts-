@@ -108,7 +108,7 @@ var workerSum;//总工人数
 var workerCreditSum; //积分总数
 var workerAverageCredit = [];//每个任务平均分
 var workerMaxCredit = [];//每个任务最大分
-var workerMissionCreditQuality = []//
+var workerMissionCreditQuality = [];//
 
 function WorkerDataObj(workerMissionSum, workerFinishedMissionNum, workerUnfinishedMissionNum, workerCredit, workerMissionName, workerCreditRank, workerSum, workerCreditSum, workerAverageCredit, workerMaxCredit, workerMissionCreditQuality) {
     this.workerMissionSum = workerMissionSum;

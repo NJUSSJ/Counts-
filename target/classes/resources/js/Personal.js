@@ -106,15 +106,17 @@ function loadPersonal() {
     document.getElementById("_password").value = personalInfo.password;
     document.getElementById("_description").value = personalInfo.description;
 
-    //加载collectionInfo
-    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
-    loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category)
-
+    alert("load chart data");
     //获取chart相关后端数据
     getChartData(personalInfo.phoneNumber, personalInfo.category);
 
     //加载chart
+    alert("load chart area");
     loadChartArea(personalInfo.category);
+
+    //加载collectionInfo
+    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
+    loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category);
 }
 
 function savePersonalBlanks() {

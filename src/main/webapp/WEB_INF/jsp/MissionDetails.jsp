@@ -143,6 +143,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                     <div class="12u$ 12u$(mobile)">
                         <span>任务描述：</span><span id="missionDescription">${requestScope.description}</span>
                     </div>
+                    <div class="12u$ 12u$(mobile)">
+                        <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
+                    </div>
+                    <div class="12u$ 12u$(mobile)">
+                        <span style="display: block;margin-top: 5px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
+                    </div>
+                    <div class="12u$ 12u$(mobile)">
+                        <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
+                    </div>
+                    <div class="12u$ 12u$(mobile)">
+                        <span style="display: block;margin-top: 5px"><span>奖励分配策略：</span><span id="bonusStrategy">${requestScope.bonusStrategy}</span></span>
+                    </div>
+                    <div class="12u$ 12u$(mobile)">
+                        <span style="display: block;margin-top: 5px"><span>评估策略：</span><span id="evaluateStrategy">${requestScope.evaluateStrategy}</span></span>
+                    </div>
 
                 </div>
 
@@ -208,6 +223,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     </div>
                 </div>
+
+                <div class="row">
+                    <div id="_chart1" onload="loadChart1(${requestScope.missionName})" style="width: 600px;height:400px;">
+
+                    </div>
+                </div>
                 <script type="text/javascript" src="js/missionDetailsCharts.js"></script>
             </section>
         </article>
@@ -224,6 +245,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
+<script src="js/charts.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

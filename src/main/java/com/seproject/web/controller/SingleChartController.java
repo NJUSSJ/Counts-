@@ -7,6 +7,7 @@ import com.seproject.domain.User;
 import com.seproject.domain.chart.*;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
+import net.sf.json.JSONObject;
 import org.hibernate.action.internal.CollectionRecreateAction;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class SingleChartController {
     //返回各种单张的图表
     @RequestMapping(value = "/singleChart/getChart1")
     @ResponseBody
-    public Chart1 getChart1(@RequestBody String mid){
+    public JSONObject getChart1(@RequestBody String mid){
 
         Chart1 chart1=new Chart1();
         chart1.setMid(mid);
@@ -36,7 +37,8 @@ public class SingleChartController {
         }
         chart1.setMoney(money);
         chart1.setUid(uid);
-        return chart1;
+
+        return JSONObject.fromObject(chart1);
     }
 
     @RequestMapping(value = "/singleChart/getChart2")

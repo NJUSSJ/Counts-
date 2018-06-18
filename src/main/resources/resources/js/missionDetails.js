@@ -76,6 +76,9 @@ function loadDetails(picNum) {
     加载任务图片
      */
     var missionName=document.getElementById("Name").innerText;
+
+    loadChart1(missionName);//
+
     var picSection=document.getElementById("picSection");
     for(var i=1;i<=picNum;i++){
         var div=document.createElement("div");

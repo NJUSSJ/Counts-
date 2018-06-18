@@ -1,5 +1,5 @@
 var adminSumCharts = 4;
-var starterSumCharts = 2;
+var starterSumCharts = 3;
 var workerSumCharts = 2;
 
 function loadChartArea(userCategory) {
@@ -53,6 +53,4 @@ function loadChartArea(userCategory) {
             }
             break;
     }
-
-    //alert("chart加载完毕");
 }
