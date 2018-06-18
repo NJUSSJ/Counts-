@@ -22,7 +22,7 @@ function load(mid,uid, tagType) {
             submission = returnData;
         },
         error:function () {
-            alert("fail");
+            //alert("fail");
         }
     });
 

@@ -62,7 +62,7 @@ ensureBtn.addEventListener("click", function () {
             //alert(returnData);
         },
         error: function(){
-            alert("fail14")
+            //alert("fail14")
         }
     });
 

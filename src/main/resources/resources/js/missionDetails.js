@@ -81,7 +81,7 @@ new scale('btn','bar','title'); //实例化一个拖拽
 加载抽样
  */
 function loadSample() {
-    alert("!!!");
+    //alert("!!!");
     $.ajax({
         type: "POST",
         url: "/getSample",

@@ -19,7 +19,7 @@ function submitMission() {
     }
     //tmpPrintMissionLabel();//
 
-    alert(JSON.stringify(missionLabel));
+    //alert(JSON.stringify(missionLabel));
 
 
     myDropzone.processQueue();
@@ -179,7 +179,7 @@ function veriInput() {
             enough=returnData;
         },
         error: function(){
-            alert("fail13")
+            //alert("fail13")
         }
     });
 

@@ -19,20 +19,15 @@ function loadPhoneNumber(_phoneNumber){
 
     }
 }
-
+/*
 save.addEventListener("click", function save() {
     saveData();
     alert("标注信息已保存");
 });
-
+*/
+/*
 back.addEventListener("click", function back() {
-    /*
-    var tmp = confirm("返回上一页面?");
-    if(tmp == true){
-        history.go(-1);
-    }else{
-    }
-    */
+
     var tmp = window.location.search.split("&");
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
     var i = tmp[1].substring(tmp[1].indexOf("=")+1);
@@ -46,7 +41,7 @@ back.addEventListener("click", function back() {
         alert("本图片为第一张");
     }
 });
-
+*/
 function nextImage() {
     /*
     var canvas = document.getElementById("canvas");
@@ -55,6 +50,7 @@ function nextImage() {
     img.src = url;
     ctx.drawImage(img,0,0,canvas.width,canvas.height);
     */
+    saveData();
 
     var tmp = window.location.search.split("&");
     var collection = tmp[0].substring(tmp[0].indexOf("=")+1);
