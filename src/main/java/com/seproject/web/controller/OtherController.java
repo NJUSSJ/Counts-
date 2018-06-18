@@ -4,6 +4,7 @@ import com.seproject.domain.User;
 import com.seproject.domain.UserDate;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,8 @@ public class OtherController {
     /**
      * 签到
      */
-    public String sign(String phoneNumber){
+    public String sign(@RequestBody String phoneNumber){
+        System.out.println(phoneNumber);
         String message="sign up success";
         Date now=new Date(System.currentTimeMillis());
         User user=userBasicBLService.findByKey(phoneNumber);
@@ -40,7 +42,7 @@ public class OtherController {
             Date lastTime = dateArray[index];
             int day = ((int) (now.getTime() / (1000 * 3600 * 24))) - ((int)(lastTime.getTime() / (1000 * 3600 * 24)));
             if (day < 1) {
-                message = "You have already signed today";
+                message = "";
             } else if (day >= 1 && day < 2) {
                 index++;
                 reward = (index+1) * 2;
@@ -66,6 +68,7 @@ public class OtherController {
             user.setCredit(user.getCredit() + reward);
             userBasicBLService.update(user);
         }
+        System.out.println(message);
         return message;
     }
 

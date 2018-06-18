@@ -10,19 +10,22 @@ function sign(phoneNumber) {
     $.ajax({
         async: false,
         type: "POST",
-        url: "sign",
+        url: "/Sign",
         contentType: "application/json",
         dataType: "json",
         data: {"phoneNumber":phoneNumber},
         success: function (res) {
-            signDetails = JSON.parse(res);
-            //alert(signDetails)
+            signDetails = res;
         },
         error:function () {
             //alert("fail");
         }
     });
-
-    alert("签到成功！ 获得积分: " + signDetails.bonus + "您已连续签到: " + signDetails.continuity + "天");
+    if(signDetails == "") {
+        alert("您今日已经签过到了！");
+    }else {
+        alert(signDetails);
+    }
+    //alert("签到成功！ 获得积分: " + signDetails.bonus + "您已连续签到: " + signDetails.continuity + "天");
 
 }
