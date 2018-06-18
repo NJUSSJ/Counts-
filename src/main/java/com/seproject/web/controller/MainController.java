@@ -190,13 +190,21 @@ public class MainController {
         reviewResponse.setUid(new ArrayList<String>());
         reviewResponse.setInfo(new ArrayList<String>());
         if(type==1){//标签式
-            reviewResponse.setPicIndex(mainService.getRestPictures(mid));//不管是工人评还是自己评，都需要金标的答案
+            ArrayList<Integer> picIn=mainService.getRestPictures(mid);
+            reviewResponse.setPicIndex(picIn);//不管是工人评还是自己评，都需要金标的答案
             reviewResponse.setLabel(mission.getMissionLabel());
+            if(picIn==null||picIn.size()==0){
+                reviewResponse.setGoldMissionAllDone(1);
+            }else{
+                reviewResponse.setGoldMissionAllDone(0);
+            }
         }else {//自由式
             if(evaluate==2) {//手动评，需要获取抽样的结果
                 mainService.createFreeMissionSample(reviewResponse, mid);
+                reviewResponse.setGoldMissionAllDone(0);
             }else{//自动评，直接开始
                 mainService.autoReviewFreeMission(mid);
+                reviewResponse.setGoldMissionAllDone(1);
             }
         }
         JSONObject jsonObject = JSONObject.fromObject(reviewResponse);//这里INT 数组是索引
