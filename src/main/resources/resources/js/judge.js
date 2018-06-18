@@ -1,5 +1,5 @@
 var type;
-var mid = document.getElementById("missionName").innerHTML;
+var mid;
 function startJudge(tagType) {
     mid = document.getElementById("missionName").innerHTML;
     this.type = tagType;

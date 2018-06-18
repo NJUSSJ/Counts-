@@ -17,11 +17,11 @@ function finishReviewPara(mid, indexs, answers, uid) {
 }
 var scale = function (btn,bar,title){
 
-    this.btn = document.getElementById(btn);
+    this.btn = document.getElementById("btn");
 
-    this.bar = document.getElementById(bar);
+    this.bar = document.getElementById("bar");
 
-    this.title = document.getElementById(title);
+    this.title = document.getElementById("title");
 
     this.step = this.bar.getElementsByTagName("div")[0];
 
@@ -107,13 +107,14 @@ function loadDetails(picNum) {
 /*
 加载抽样
  */
-function loadSample(missionName) {
+function loadSample() {
+    alert("!!!");
     $.ajax({
         type: "POST",
         url: "/getSample",
         contentType: "application/json",
         dataType: "json",
-        data: missionName,
+        data: document.getElementById("missionName").innerHTML,
         success: function(returnData) {
             if(returnData=="0"){
                 var sampleArea=document.getElementById("choices");

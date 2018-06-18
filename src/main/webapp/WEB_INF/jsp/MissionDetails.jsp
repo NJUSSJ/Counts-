@@ -90,7 +90,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     }
 
 </style>
-<body onload="loadDetails(${requestScope.picNum})">
+<body onload="loadSample()">
 
 <!-- Wrapper-->
 <div id="wrapper">
