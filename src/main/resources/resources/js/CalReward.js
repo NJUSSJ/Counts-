@@ -14,11 +14,32 @@ tagTypeBtn.addEventListener("click", function () {
         $("tag_editor").tagEditor({ placeholder: 'Enter tags ...' });
         //document.getElementById("tag_editor").disabled="";
         //document.getElementById("missionLabel").display="block";
+        document.getElementById("evaluatePlace").innerHTML ="<span>评估策略： </span>\n" +
+            "                            <select id=\"evaluateStrategy\" >\n" +
+            "                                <option value=\"2\">手动评估</option>\n" +
+            "                                <option value=\"3\">雇佣工人评估</option>\n" +
+            "                            </select>";
+
+        document.getElementById("bonusPlace").innerHTML = "<span>奖励分配策略： </span>\n" +
+            "                            <select id=\"bonusStrategy\" >\n" +
+            "                                <option value=\"2\">double or nothing</option>\n" +
+            "                                <option value=\"3\">彩票策略</option>\n" +
+            "                            </select>";
+
 
     }else{
         $("tag_editor").tagEditor('destroy');
         //document.getElementById("missionLabel").display="none";
         //document.getElementById("tag_editor").disabled="disabled";
+        document.getElementById("evaluatePlace").innerHTML = "<span>评估策略： </span>\n" +
+            "                            <select id=\"evaluateStrategy\" >\n" +
+            "                                <option value=\"1\">系统自动评估</option>\n" +
+            "                                <option value=\"2\">手动评估</option>\n" +
+            "                            </select>";
+        document.getElementById("bonusPlace").innerHTML = "<span>奖励分配策略： </span>\n" +
+            "                            <select id=\"bonusStrategy\" >\n" +
+            "                                <option value=\"1\">平均分配</option>\n" +
+            "                            </select>";
     }
 });
 

@@ -106,12 +106,11 @@ function loadPersonal() {
     document.getElementById("_password").value = personalInfo.password;
     document.getElementById("_description").value = personalInfo.description;
 
-    alert("load chart data");
+
     //获取chart相关后端数据
     getChartData(personalInfo.phoneNumber, personalInfo.category);
 
     //加载chart
-    alert("load chart area");
     loadChartArea(personalInfo.category);
 
     //加载collectionInfo

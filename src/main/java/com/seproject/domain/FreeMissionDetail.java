@@ -1,6 +1,8 @@
 package com.seproject.domain;
 
 import com.seproject.common.Key;
+import com.seproject.web.parameter.FreeMissionParameter;
+import net.sf.json.JSONObject;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,34 +13,47 @@ import java.util.ArrayList;
 /**
  * 记录自由式任务中，每个用户每张图的标注信息
  */
-@Entity
-@Table(name="freemissiondetail")
 public class FreeMissionDetail {
-    @Key
-    @Id
-    @Column(name="keyid")
-    private String keyid;//是mid+uid+picIndex
-    @Column(name="uid")
-    private String uid;
-    @Column(name="picindex")
     private int picIndex;//图片索引
-    @Column(name="x")
     private ArrayList<Integer> x;
-    @Column(name="y")
     private ArrayList<Integer> y;
-    @Column(name="height")
     private ArrayList<Integer> height;
-    @Column(name="weight")
     private ArrayList<Integer> weight;
-    @Column(name="summary")
     private String summary;//整体标
 
-    public String getKeyid() {
-        return keyid;
-    }
-
-    public void setKeyid(String keyid) {
-        this.keyid = keyid;
+    public FreeMissionDetail(String jsonString,int picIndex){
+        this.picIndex=picIndex;
+        this.summary="";
+        JSONObject jsonObject = JSONObject.fromObject(jsonString);
+        FreeMissionParameter parameter =(FreeMissionParameter) JSONObject.toBean(jsonObject,FreeMissionParameter.class);
+        ArrayList<Integer> tempX=parameter.getFixedx();
+        ArrayList<Integer> tempY=parameter.getFixedy();
+        ArrayList<Integer> tempHeight=parameter.getFixedheight();
+        ArrayList<Integer> tempWeight=parameter.getFixedwidth();
+        ArrayList<Integer> x=new ArrayList<Integer>();
+        ArrayList<Integer> y=new ArrayList<Integer>();
+        ArrayList<Integer> height=new ArrayList<Integer>();
+        ArrayList<Integer> width=new ArrayList<Integer>();
+        for(int i=0;i<tempHeight.size();i++){
+            if(tempHeight.get(i)!=0){
+                x.add(tempX.get(i));
+                y.add(tempY.get(i));
+                height.add(tempHeight.get(i));
+                width.add(tempWeight.get(i));
+            }
+        }
+        this.x=x;
+        this.y=y;
+        this.height=height;
+        this.weight=width;
+        String info=parameter.getSentences().toString();
+        if(info.contains("status=2")){
+            int index=info.indexOf("status=2");
+            info=info.substring(0,index);
+            index=info.lastIndexOf("[");
+            int endIndex= info.lastIndexOf("]");
+            this.summary=info.substring(index+1,endIndex);
+        }
     }
 
     public int getPicIndex() {
@@ -87,13 +102,5 @@ public class FreeMissionDetail {
 
     public void setSummary(String summary) {
         this.summary = summary;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
     }
 }
