@@ -12,20 +12,12 @@ searchBtn.addEventListener("click", function () {
         dataType: "json",
         data: JSON.stringify({"range":searchType, "keyword":searchContent}),
         success: function takePersonalInfo(returnData) {
-            /*for (var i = 0; i < returnData.length; i++) {
+            for (var i = 0; i < returnData.length; i++) {
                 if (returnData[i].name == null) {
                     break;
                 }
                 missionNames[i] = returnData[i].name;
                 alert(missionNames[i]);
-                index++;
-            }*/
-
-            for (var i = 0; i < returnData.length; i++) {
-                if (returnData[i] == null) {
-                    break;
-                }
-                missionNames[i] = returnData[i];
                 index++;
             }
             setMissionNames(missionNames, index);
@@ -37,8 +29,3 @@ searchBtn.addEventListener("click", function () {
     });
 
 });
-
-function refreshMission() {
-    getCollectionInfo();
-    setCollection();
-}
