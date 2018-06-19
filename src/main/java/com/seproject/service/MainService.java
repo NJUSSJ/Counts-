@@ -584,6 +584,7 @@ public class MainService {
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> users=subFreeMission.getUid();
+            System.out.println("users:"+users);
             if(users!=null&&users.size()>0) {
                 ArrayList<Integer> index = getPictureIndexOfSubmission(users.get(0), mid);
                 ArrayList<Double> grade=getGrade(index,users,mid);
@@ -605,7 +606,9 @@ public class MainService {
                     }
                 }
                 //用得分存储排名和积分到相应的结果中
-                for(int i=0;i<users.size();i++){
+
+                System.out.println("users:"+users);
+                for(int i=0;i<users.size();i++){ ;
                     User user=userBasicBLService.findByKey(users.get(i));
                     double reward=1.5*grade.get(i)/avg;
                     user.setCredit(user.getCredit()+reward);//1.5*得分/平均得分
@@ -723,7 +726,7 @@ public class MainService {
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> uid=subFreeMission.getUid();
-            if(uid==null||uid.size()<=0) continue;//如果这个子任务没人做，直接跳过
+            if(uid==null||uid.size()<=0||uid.get(0).length()<=0) continue;//如果这个子任务没人做，直接跳过
             ArrayList<Integer> levels=new ArrayList<Integer>();
             int avgLevel=0;
             for(String eachUid:uid){
@@ -739,7 +742,6 @@ public class MainService {
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
                     response.getInfo().add(collection.getInfoList().get(random1));
-                    System.out.println(collection.getInfoList().get(random1)+"  当前标注信息");
                 }else{//低级工人抽两张
                     int random1=(int)(Math.random()*10);
                     int random2=(random1+5)%10;

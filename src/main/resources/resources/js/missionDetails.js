@@ -88,7 +88,7 @@ function loadSample() {
         tagType.innerHTML = "非标签式";
     }
 
-    var bonusStrategy = document.getElementById("bonusStrategy");
+    var bonusStrategy = document.getElementById("evaluateStrategy");
     if(bonusStrategy.innerHTML == "1"){
         bonusStrategy.innerHTML = "自动评估";
     }else if(bonusStrategy.innerHTML == "2"){
@@ -97,7 +97,7 @@ function loadSample() {
         bonusStrategy.innerHTML = "雇佣评估";
     }
 
-    var evaluateStrategy = document.getElementById("evaluateStrategy");
+    var evaluateStrategy = document.getElementById("bonusStrategy");
     if(evaluateStrategy.innerHTML == "1"){
         evaluateStrategy.innerHTML = "平均分配";
     }else if(evaluateStrategy.innerHTML == "2"){
