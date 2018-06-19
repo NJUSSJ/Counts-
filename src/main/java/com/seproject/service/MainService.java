@@ -261,8 +261,7 @@ public class MainService {
                         weight.add(0.5);
                     }
                 } else {
-                    //用户接了任务但没做
-                    weight.add(0.0);
+                    weight.add(0.0); //用户接了任务但没做
                 }
             }
             String[] mLabel=mission.getMissionLabel().get(0).split(",");
@@ -277,7 +276,7 @@ public class MainService {
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
                 System.out.println(userAnswer);
-                for (int k = 0; k < 10; k++) {/////////////////////////
+                for (int k = 0; k < 10; k++) {
                     if(userAnswer.get(k)>=0) {
                         vote[k][userAnswer.get(k)] += weight.get(j);
                     }
@@ -290,37 +289,36 @@ public class MainService {
             for(int a=0;a<standardAnswers.length;a++){
                 System.out.println(standardAnswers[a]);
             }
-            System.out.println("--------");
-            boolean isCorrect[][] = new boolean[subLabelMission.getUid().size()][12];
+            int isCorrect[][] = new int[subLabelMission.getUid().size()][12];
             for (int j = 0; j < isCorrect.length; j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
                 for (int k = 0; k < 10; k++) {
-                    isCorrect[j][k] = (userAnswer.get(k) == standardAnswers[k]);
+                    if(userAnswer.get(k)==-1){//如果跳过
+                        isCorrect[j][k]=-1;
+                    }else if (userAnswer.get(k) == standardAnswers[k]) {
+                        isCorrect[j][k] =1;
+                    }else {
+                        isCorrect[j][k]=0;
+                    }
                     //如果一个任务没有得到标准答案，则自动算工人标的是对的
                     if(standardAnswers[k]==-1){
-                        isCorrect[j][k]=true;
+                        isCorrect[j][k]=1;
                     }
                 }
-                System.out.println("金标1");
-                System.out.println(userAnswer.get(10));
-                System.out.println(answer1);
-                System.out.println("金标2");
-                System.out.println(userAnswer.get(11));
-                System.out.println(answer2);
-                isCorrect[j][10] = (userAnswer.get(10) == answer1);
-                isCorrect[j][11] = (userAnswer.get(11) == answer2);
+                if(userAnswer.get(10)==-1){
+                    isCorrect[j][10]=-1;
+                }else if(userAnswer.get(10)==answer1){
+                    isCorrect[j][10]=1;
+                }else isCorrect[j][10]=0;
+                if(userAnswer.get(11)==-1){
+                    isCorrect[j][11]=-1;
+                }else if(userAnswer.get(11)==answer2){
+                    isCorrect[j][11]=1;
+                }else isCorrect[j][11]=0;
             }
 
             //根据事先设置的策略分配
             double[] money=null;
-            System.out.println(evaluate);
-            if(evaluate==2){
-                System.out.println("double nothing");
-            }else if(evaluate==3){
-                System.out.println("双色球");
-            }else{
-                System.out.println("策略没收到！");
-            }
             if(evaluate==2) {//2号策略：double nothing
                 money = giveMoney_DoubleNothing(isCorrect);
             }else if(evaluate==3){//3号策略：双色球
@@ -358,7 +356,6 @@ public class MainService {
      * 根据投票选出获取标准答案(标签式)
      */
     private int[] getStandard(double[][] vote){
-        //vote.length=10
         int result[]=new int[vote.length];
         for(int i=0;i<vote.length;i++){
             boolean isValid=false;
@@ -432,7 +429,7 @@ public class MainService {
         }
     }
 
-    private double[] giveMoney_DoubleNothing(boolean x[][]){
+    private double[] giveMoney_DoubleNothing(int x[][]){
         //使用double_nothing策略分配奖励
         System.out.println("vote:");
         for(int a=0;a<x.length;a++){
@@ -446,9 +443,9 @@ public class MainService {
         for(int i=0;i<x.length;i++){
             double m=0.15;
             for(int j=0;j<x[0].length;j++){
-                if(x[i][j]){
+                if(x[i][j]==1){
                     m*=base;
-                }else{
+                }else if(x[i][j]==0){
                     m=0;
                 }
             }
@@ -461,22 +458,22 @@ public class MainService {
         return money;
     }
 
-    private double[] giveMoney_DoubleColorBall(boolean x[][]){
+    private double[] giveMoney_DoubleColorBall(int x[][]){
         //使用双色球策略分配奖励
         double [] money=new double[x.length];
         for(int i=0;i<x.length;i++){
             int blue=0;
             int red=0;
-            if(!x[i][10] && !x[i][11]){
+            if(x[i][10]!=1 && x[i][11]!=1){
                 blue=0;
-            }else if(x[i][10]!=x[i][11]){
+            }else if((x[i][10]==1&&x[i][11]!=1)||(x[i][10]!=1&&x[i][11]==1)){
                 blue=1;
-            }else if(x[i][10] && x[i][11]){
+            }else if(x[i][10]==1 && x[i][11]==1){
                 blue=2;
             }
 
             for(int j=0;j<10;j++){
-                if(x[i][j]){
+                if(x[i][j]==1){
                     red++;
                 }
             }
