@@ -184,7 +184,8 @@ public class MainService {
                 goldMission.setUid(uid);
                 goldMissionBasicBLService.update(goldMission);
                 User user = userBasicBLService.findByKey(uid);
-                user.setCredit(user.getCredit() + 160);
+                user.setCredit(user.getCredit() + 15);
+                userBasicBLService.update(user);
                 createCollection(uid,mid);
                 return true;
             }
@@ -205,7 +206,7 @@ public class MainService {
                 result.addAll(goldMission.getPictrueIndex());
             }
         }
-        if(goldMissions.size()==0){
+        if(result.size()==0){
             System.out.println("金标已经评完，开启标签式自动评估");
             reviewLabelMission(mid);
         }

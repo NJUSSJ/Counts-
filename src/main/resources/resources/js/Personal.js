@@ -300,7 +300,7 @@ function setFinishedCollection() {
                 break;
 
             case "2":
-                a.href ="" ;
+                a.href ="/getMissionResultResponse?mid=" + finishedNames[i]+"&uid="+phoneNumber;
                 break;
 
             case "3":

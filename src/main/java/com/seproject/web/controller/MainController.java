@@ -17,7 +17,9 @@ import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -300,16 +302,22 @@ public class MainController {
 
     @RequestMapping(value = "/getMissionResultResponse")
     @ResponseBody
-    public String  getMissionResultResponse(@RequestBody  MissionParameter missionParameter){
+    public ModelAndView getMissionResultResponse(HttpServletRequest request){
         MissionResultResponse missionResultResponse=new MissionResultResponse();
-        CollectionResult collectionResult=collectionResultBasicBLService.findByKey(missionParameter.getKeyword()+missionParameter.getUid());
+        CollectionResult collectionResult=collectionResultBasicBLService.findByKey(request.getParameter("mid")+request.getParameter("uid"));
         missionResultResponse.setCredit(collectionResult.getCredit());
         missionResultResponse.setQuality(collectionResult.getQuality());
         missionResultResponse.setRank(collectionResult.getRank());
-        ArrayList<Collection> collections= collectionBasicBLService.search("mid",SearchCategory.EQUAL,missionParameter.getKeyword());
+        ArrayList<Collection> collections= collectionBasicBLService.search("mid",SearchCategory.EQUAL,request.getParameter("mid"));
         missionResultResponse.setTotal(collections.size());
 
-        return JSONObject.fromObject(missionResultResponse).toString();
+        ModelAndView view = new ModelAndView("missionResult");
+        view.addObject("quality", missionResultResponse.getQuality());
+        view.addObject("credit", missionResultResponse.getCredit());
+        view.addObject("rank",missionResultResponse.getRank());
+        view.addObject("total", missionResultResponse.getTotal());
+        return view;
+
     }
     private int getMinIndex(ArrayList<Integer> arr){
         int min=100;
