@@ -482,6 +482,13 @@ function clickLabel(i) {
     if(labelIndex == lastIndex-1){
         answers[labelIndex] = i;
         alert(answers);
+        document.getElementById("choices").style.display = "none";
+        var sampleArea=document.getElementById("edit_area2");
+        sampleArea.style.display="none";
+        var samplePanel=document.getElementById("samplePanel");
+        var info=document.createElement("h6");
+        info.innerHTML="评估已完成！";
+        samplePanel.appendChild(info);
         finishReview();
     }else{
         answers[labelIndex] = i;

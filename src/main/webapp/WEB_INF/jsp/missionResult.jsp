@@ -121,8 +121,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <section>
                 <div class="row">
                     <div class="12u 12u$(mobile)" id="blank">
-                        <span>任务得分：</span><span id="missionScore"></span>
+                        <span>任务得分：</span><span id="missionQuality"></span>
                         <span>任务排名：</span><span id="missionRank"></span>
+                        <span>任务获得积分：<span id="missionCredit"></span></span>
                         <span>在该任务中您超越了</span><span id="percent"></span><span>的用户</span>
                     </div>
                 </div>

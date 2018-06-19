@@ -8,6 +8,7 @@ import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.*;
 import com.seproject.web.response.DownloadFileResponse;
+import com.seproject.web.response.MissionResultResponse;
 import com.seproject.web.response.ReviewResponse;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -297,6 +298,19 @@ public class MainController {
 
     }
 
+    @RequestMapping(value = "/getMissionResultResponse")
+    @ResponseBody
+    public String  getMissionResultResponse(@RequestBody  MissionParameter missionParameter){
+        MissionResultResponse missionResultResponse=new MissionResultResponse();
+        CollectionResult collectionResult=collectionResultBasicBLService.findByKey(missionParameter.getKeyword()+missionParameter.getUid());
+        missionResultResponse.setCredit(collectionResult.getCredit());
+        missionResultResponse.setQuality(collectionResult.getQuality());
+        missionResultResponse.setRank(collectionResult.getRank());
+        ArrayList<Collection> collections= collectionBasicBLService.search("mid",SearchCategory.EQUAL,missionParameter.getKeyword());
+        missionResultResponse.setTotal(collections.size());
+
+        return JSONObject.fromObject(missionResultResponse).toString();
+    }
     private int getMinIndex(ArrayList<Integer> arr){
         int min=100;
         int minIndex=0;
