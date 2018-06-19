@@ -1,18 +1,13 @@
 package com.seproject.service;
 
-import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
-import com.seproject.domain.*;
 import com.seproject.domain.Collection;
+import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
-import com.seproject.web.parameter.FreeMissionParameter;
 import com.seproject.web.response.ReviewResponse;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.management.remote.SubjectDelegationPermission;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -279,10 +274,11 @@ public class MainService {
             }
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
-
+                System.out.println(userAnswer);
                 for (int k = 0; k < 10; k++) {/////////////////////////
-
-                    vote[k][userAnswer.get(k)] += weight.get(j);
+                    if(userAnswer.get(k)>=0) {
+                        vote[k][userAnswer.get(k)] += weight.get(j);
+                    }
                 }
             }
 

@@ -6,7 +6,7 @@ import com.seproject.service.blServiceImpl.BasicBLImpl_Hibernate;
 
 public class Factory {
     public static <T> BasicBLService<T> getBasicBLService(T t){
-        return new BasicBLImpl_Hibernate<T>(t);
+        return new BasicBLImpl_File<T>(t);
     }
 
 }

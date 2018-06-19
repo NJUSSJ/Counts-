@@ -337,7 +337,6 @@ function judgeLast(){
     }
 }
 function sendJudgeResult() {
-    alert(answers);
     var returnInfo = new finishReviewPara(mid, picIndex, answers, uid);
     //alert(quality);
     $.ajax({
