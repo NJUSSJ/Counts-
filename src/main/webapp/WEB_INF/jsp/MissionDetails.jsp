@@ -150,10 +150,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <span>任务描述：</span><span id="missionDescription">${requestScope.description}</span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
-                        <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
-                    </div>
-                    <div class="12u$ 12u$(mobile)">
-                        <span style="display: block;margin-top: 5px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
+                        <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">Level${requestScope.difficulty}</span></span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
                         <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>

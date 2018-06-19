@@ -59,7 +59,7 @@ function nextImage() {
 
     i++;
     if(i == 10){
-        alert("已到达任务末尾！");
+        alert("已到达任务末尾！点击Submit提交任务...");
     }else{
         window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
     }

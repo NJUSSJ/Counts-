@@ -81,6 +81,30 @@ new scale('btn','bar','title'); //实例化一个拖拽
 加载抽样
  */
 function loadSample() {
+    var tagType = document.getElementById("tagType");
+    if(tagType.innerHTML == "1"){
+        tagType.innerHTML = "标签式";
+    }else{
+        tagType.innerHTML = "非标签式";
+    }
+
+    var bonusStrategy = document.getElementById("bonusStrategy");
+    if(bonusStrategy.innerHTML == "1"){
+        bonusStrategy.innerHTML = "自动评估";
+    }else if(bonusStrategy.innerHTML == "2"){
+        bonusStrategy.innerHTML = "手动评估";
+    }else {
+        bonusStrategy.innerHTML = "雇佣评估";
+    }
+
+    var evaluateStrategy = document.getElementById("evaluateStrategy");
+    if(evaluateStrategy.innerHTML == "1"){
+        evaluateStrategy.innerHTML = "平均分配";
+    }else if(evaluateStrategy.innerHTML == "2"){
+        evaluateStrategy.innerHTML = "Double or nothing";
+    }else{
+        evaluateStrategy.innerHTML = "双色球分配";
+    }
     $.ajax({
         type: "POST",
         url: "/getSample",
@@ -337,7 +361,6 @@ function judgeLast(){
     }
 }
 function sendJudgeResult() {
-    alert(answers);
     var returnInfo = new finishReviewPara(mid, picIndex, answers, uid);
     //alert(quality);
     $.ajax({

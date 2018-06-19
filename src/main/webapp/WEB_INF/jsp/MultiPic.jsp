@@ -71,7 +71,7 @@
 
                 <span style="display: block;margin-top: 5px"><span>任务描述：</span><span id="missionDescription">${requestScope.description}</span></span>
 
-                <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
+                <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">Level${requestScope.difficulty}</span></span>
 
                 <span style="display: block;margin-top: 5px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
 
