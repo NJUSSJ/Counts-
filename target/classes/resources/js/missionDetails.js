@@ -1,4 +1,3 @@
-var returnSample;
 var picIndex;
 var imageInfo;
 var answers = [];
@@ -117,6 +116,7 @@ parameters for canvas
  */
 var canvas = document.getElementById("canvas1");
 var cxt = canvas.getContext("2d");
+var image = new Image();
 
 //已确定的矩形框
 var fixedX = [];
@@ -149,17 +149,11 @@ function sampleSet(sample, missionName) {
 }
 
 function loadOneSample(index,missionName) {
-    var image = new Image();
+
     image.src="";
     document.getElementById("textareaPlace").innerHTML="";
-
-
-    var imgInfo=eval(imageInfo[index]);
-    //alert(imgInfo.imgid);
-
-    /*
-    load rect and curl
-     */
+    var jsonString = JSON.stringify(imageInfo[index]);
+    var imgInfo=eval("("+jsonString+")");
     if(imgInfo!=null){
         if(imgInfo.fixedx!=null||imgInfo.list!=null) {
 
@@ -177,12 +171,9 @@ function loadOneSample(index,missionName) {
         }
     }
 
+    image.src = "missionImages/"+missionName+"_"+(picIndex[indexForSample]+1)+".jpg";
 
-
-    image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
-
-
-
+    image.onload = function () {
         var width = image.width;
         var height = image.height;
 
@@ -205,7 +196,10 @@ function loadOneSample(index,missionName) {
         }
         canvas.width=Pic_width;
         canvas.height=Pic_height;
-         drawImage();
+
+        drawImage();
+    };
+
 
     var indexOfRectSentence=0;
     var indexOfCurlSentence=0;
@@ -213,9 +207,6 @@ function loadOneSample(index,missionName) {
 
     var parent=document.getElementById("textareaPlace");
 
-    /*
-    add rect info
-     */
     for(var i=0;i<fixedX.length;i++){
         if(fixedWidth[i]==0){
             continue;
@@ -250,6 +241,8 @@ function loadOneSample(index,missionName) {
             }
         }
 
+
+
         textarea.innerHTML=imgInfo.sentences[indexOfCurlSentence].raw;
 
         indexOfCurlSentence++;
@@ -258,13 +251,25 @@ function loadOneSample(index,missionName) {
         textarea.style.margin = "5px";
         textarea.style.width = "90px";
         textarea.id="curlArea"+i;
-
         textarea.style.borderStyle = "dotted";
         parent.appendChild(textarea);
-
     }
 
+    if(imgInfo!=null){
+        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
+            var OverallIndex=0;
+            while(imgInfo.sentences[OverallIndex].status!=2){
+                OverallIndex++;
+                if(OverallIndex==imgInfo.sentences.length){
+                    break;
+                }
+            }
+            if(imgInfo.sentences[OverallIndex]!=null){
+                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
+            }
 
+        }
+    }
 }
 
 /*
@@ -301,13 +306,15 @@ function drawImage() {
 
 
 
+
+
 function good() {
     if(!judgeLast()){
         answers[indexForSample]= grade;
         indexForSample++;
         loadOneSample(indexForSample,picName);
     }else{
-        quality[indexForSample]=grade;
+        answers[indexForSample]=grade;
         sendJudgeResult();
     }
 }
@@ -330,6 +337,7 @@ function judgeLast(){
     }
 }
 function sendJudgeResult() {
+    alert(answers);
     var returnInfo = new finishReviewPara(mid, picIndex, answers, uid);
     //alert(quality);
     $.ajax({

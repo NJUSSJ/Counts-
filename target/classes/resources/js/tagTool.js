@@ -93,7 +93,6 @@ function getSentIds() {
 function saveData() {
     var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
-    alert("已储存本图片信息");
 }
 
 //test

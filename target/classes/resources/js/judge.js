@@ -14,7 +14,7 @@ function startJudge(tagType) {
             var jsonString = JSON.stringify(returnData);
             var Sample = eval("("+jsonString+")");
             if(Sample.goldMissionAllDone == 1) {
-                alert("评估已完成！")
+                alert("后台评估已完成！")
             }else{
                 judge(Sample);
             }

@@ -223,6 +223,9 @@ public class MainController {
         FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
         ArrayList<Integer> index=finishReviewParameter.getIndexs();
         ArrayList<Integer> answer=finishReviewParameter.getAnswers();
+        System.out.println(index);
+        System.out.println(answer);
+        System.out.println(finishReviewParameter.getUid());
         String mid=finishReviewParameter.getMid();
         Mission mission=missionBasicBLService.findByKey(mid);
         if(mission.getTagType()==1) {//如果是标签式，那么调用这个方法的目的是完善金标的答案

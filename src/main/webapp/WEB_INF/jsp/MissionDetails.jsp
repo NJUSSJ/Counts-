@@ -174,7 +174,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         </article>
 
         <!-- Contact -->
-        <article id="samplePanel" class="panel">
+        <article id="samplePanel" class="panel" style="height: 900px;">
             <header>
                 <h2 id="sample">抽样评估</h2>
             </header>
@@ -194,7 +194,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <!-- Content -->
                     <div class="content" align="center">
-                        <canvas id="canvas1" width="500" height="500">
+                        <canvas id="canvas1" width="500" height="350">
 
                         </canvas>
                         <p id="info">Tag info.</p>
@@ -285,7 +285,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
 <script src="js/missionDetails.js"></script>
-
+<script src="js/freeJudge.js"></script>
 
 </body>
 </html>

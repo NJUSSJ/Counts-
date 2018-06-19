@@ -14,7 +14,13 @@ function startJudge(tagType) {
             var jsonString = JSON.stringify(returnData);
             var Sample = eval("("+jsonString+")");
             if(Sample.goldMissionAllDone == 1) {
-                alert("评估已完成！")
+                alert("后台评估已完成！")
+                var sampleArea=document.getElementById("edit_area");
+                sampleArea.style.display="none";
+                var samplePanel=document.getElementById("samplePanel");
+                var info=document.createElement("h6");
+                info.innerHTML="评估已完成！";
+                samplePanel.appendChild(info);
             }else{
                 judge(Sample);
             }
