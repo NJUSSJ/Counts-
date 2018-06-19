@@ -105,7 +105,6 @@
                 <ul>
                     <li><a href="#" class="button special2" id="userManagementButton" onclick="userManagement()">用户管理</a></li>
                     <li><a href="#" class="button special2" id="missionManagementButton" onclick="missionManagement()">任务管理</a></li>
-                    <li><a href="#" class="button special2">消息系统</a></li>
                     <li><a href="#" class="button special2" id="recentButton" onclick="recent()">系统近况</a></li>
                 </ul>
             </div>
