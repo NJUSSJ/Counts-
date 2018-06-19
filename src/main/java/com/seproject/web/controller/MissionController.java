@@ -54,33 +54,38 @@ public class MissionController {
     /**
      * 任务大厅的搜索
      */
-    public ArrayList<Mission> searchInHall(@RequestBody String missionSearchParameter){
+    public String[] searchInHall(@RequestBody String missionSearchParameter){
         JSONObject object=JSONObject.fromObject(missionSearchParameter);
         MissionSearchParameter para=(MissionSearchParameter) JSONObject.toBean(object,MissionSearchParameter.class);
         String range=para.getRange();
         String keyword=para.getKeyword();
-        ArrayList<Mission> result=new ArrayList<Mission>();
+        ArrayList<String> result=new ArrayList<String>();
+        ArrayList<Mission> missionRe=new ArrayList<Mission>();
         if(range.equals("missionName")){
-            result=missionBasicBLService.search("name",SearchCategory.CONTAINS,keyword);
+            missionRe=missionBasicBLService.search("name",SearchCategory.CONTAINS,keyword);
         }else if(range.equals("requestor")){
-            result=missionBasicBLService.search("requestorNumber",SearchCategory.EQUAL,keyword);
+            missionRe=missionBasicBLService.search("requestorNumber",SearchCategory.EQUAL,keyword);
         }else{
             ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
             if(range.equals("ended")){
                 for(Mission mission:missions){
                     if(mission.getState()>0&&mission.getState()<3){
-                        result.add(mission);
+                        missions.add(mission);
                     }
                 }
             }else if(range.equals("notEnded")){
                 for(Mission mission:missions){
                     if(mission.getState()==0){
-                        result.add(mission);
+                        missions.add(mission);
                     }
                 }
             }else{
-                result.addAll(missions);
+                missionRe.addAll(missions);
             }
+        }
+
+        for(Mission mission:missionRe){
+            result.add(mission.getName()+"^"+mission.getDescription());
         }
 
         if(result.size()>3){//换一批
@@ -89,13 +94,13 @@ public class MissionController {
             while(random2==random1){random2=(int)(Math.random()*result.size());}
             int random3=(int)(Math.random()*result.size());
             while(random3==random1||random3==random2){random3=(int)(Math.random()*result.size());}
-            ArrayList<Mission> randomResult=new ArrayList<Mission>();
+            ArrayList<String> randomResult=new ArrayList<String>();
             randomResult.add(result.get(random1));
             randomResult.add(result.get(random2));
             randomResult.add(result.get(random3));
             result=randomResult;
         }
-        return result;
+        return result.toArray(new String[result.size()]);
     }
 
     @RequestMapping(value = "/MissionManage/Delete")
