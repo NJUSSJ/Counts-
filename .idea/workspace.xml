@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MainController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/resources/js/multipic.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MainController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/multipic.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/multipic.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission1_9.jpg" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +71,30 @@
       <file leaf-file-name="MainService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="558" column="34" lean-forward="false" selection-start-line="558" selection-start-column="34" selection-end-line="558" selection-end-column="34" />
+            <state relative-caret-position="299">
+              <caret line="699" column="50" lean-forward="false" selection-start-line="699" selection-start-column="50" selection-end-line="699" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="missionDetails.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="485" column="58" lean-forward="false" selection-start-line="485" selection-start-column="58" selection-end-line="485" selection-end-column="58" />
+              <folding>
+                <marker date="1529403294315" expanded="true" signature="10063:10081" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="judge.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/judge.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="23" column="46" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="23" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -72,7 +103,7 @@
       <file leaf-file-name="MultiController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="1012">
               <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
               <folding />
             </state>
@@ -89,20 +120,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TagType.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-              <folding>
-                <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
-                <marker date="1529386569817" expanded="true" signature="614:632" ph="..." />
-                <marker date="1529386569817" expanded="true" signature="1192:1210" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SubLabelMission.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/SubLabelMission.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -113,20 +130,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LabelEdit.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1679">
-              <caret line="85" column="18" lean-forward="false" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LabelEdit.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="1702">
               <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
               <folding />
             </state>
@@ -136,7 +143,7 @@
       <file leaf-file-name="SingleEdit.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="1656">
               <caret line="72" column="156" lean-forward="false" selection-start-line="72" selection-start-column="156" selection-end-line="72" selection-end-column="156" />
               <folding />
             </state>
@@ -146,7 +153,7 @@
       <file leaf-file-name="MissionController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3102">
+            <state relative-caret-position="667">
               <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
               <folding />
             </state>
@@ -156,7 +163,7 @@
       <file leaf-file-name="multipic.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/multipic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
+            <state relative-caret-position="2438">
               <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
               <folding />
             </state>
@@ -211,18 +218,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionDetailsCharts.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/TagType.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionRest.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/judge.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MultiPic.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" />
       </list>
     </option>
   </component>
@@ -284,6 +291,9 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -406,9 +416,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -418,368 +425,6 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/seproject/web/TagController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/SEPF.war</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/SEPM.war</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/application.properties</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/Application.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/common/Constant.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/common/Key.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/common/RM.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/common/SearchCategory.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/common/Searchable.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/dao/FileDao.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/dao/MySQL5DialectUTF8.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/Collection.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/CollectionResult.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/FreeMissionDetail.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/GoldMission.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/Message.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/Mission.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/Sample.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/SubFreeMission.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/SubLabelMission.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/User.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/UserDate.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart3.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart7.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart8.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/AdminData.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/SingleMissionData.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/StarterData.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/WorkerData.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/LoginLog.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/TestDomain.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/TestH.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/BasicUtilService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/Factory.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/FactoryService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/FileIOService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/FreeMissionService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/InitData.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/LabelMissionService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/LanguageService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/MathService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/MessageService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/MissionService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/NewsService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blService/BasicBLService.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_File$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_File.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/ChartController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/CollectionController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/SampleController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/SignUpController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/TagController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/LoginController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/MainController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/MessageController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/MissionController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/OtherController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/PersonalController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/SingleChartController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/controller/UserController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/CalRewardParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/FinishReviewParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/FreeMissionParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/GetMissionParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/LoginParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MessageParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MissionParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MissionSearchParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/PersonalParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/RecommendParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/UpdateFreeMissionParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/parameter/UpdateLabelMissionParameter.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/response/DownloadFileResponse.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/response/MissionCheckResponse.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/response/ReviewResponse.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/web/response/SignResponse.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/cat1.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/cat2.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/dog1.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/dog2.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/parrot1.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/parrot2.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/registry.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/dataFile/test1.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/navigation.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/objectFile/ObjectFileReadMe</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/objectFile/navigation.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/userFile/test2.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/file/userFile/user.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/hibernate.cfg.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/res_readme</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/960_12_col.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/SubCollection.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/base.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/delete.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/font-awesome.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/ie8.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/ie9.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/dark-bl.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/dark-br.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/dark-tl.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/dark-tr.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/light-bl.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/light-br.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/light-tl.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/light-tr.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/overlay.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/images/upload.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/jquery.tag-editor.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/samples-styles.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css/style.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css2/font-awesome.min.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css2/ie8.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css2/images/bg.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css2/images/overlay.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css2/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/css2/noscript.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/dropZoneCSS/basic.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/dropZoneCSS/dropzone.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/dropZoneJS/dropzone.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/FontAwesome.otf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/Quicksand_Book-webfont.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff2</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/add.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/back.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/banner.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/delete.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/edit.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/graphics_editor.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/logo.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/logo.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/more.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/more4.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/note.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/pen.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/refresh.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/save.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/search_ico.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/search_ico_hover.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/sign.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/images/timg.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/CalReward.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/ChartData.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/CreateChartArea.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/DrawAdminChart.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/DrawStarterChart.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/DrawWorkerChart.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/GetChartData.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Maincollection.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Message.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Personal.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Search.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Sign.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/TagType.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/admin.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/charts.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/echarts-wordcloud.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/echarts.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/freeJudge.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/ie/backgroundsize.min.htc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/ie/html5shiv.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/ie/respond.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery-1.11.0.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery-1.8.3.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.dropotron.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.filtertable.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.scrollgress.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.scrolly.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.select.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/jquery.tag-editor.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/judge.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/main.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/missionDetails.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/missionDetailsCharts.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/missionRest.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/multipic.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/object.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/signUp.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/singleEdit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/skel.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/submission.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/tagTool.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/upload1.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/util.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/ie/backgroundsize.min.htc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/ie/html5shiv.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/ie/respond.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/jquery.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/main.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/skel-viewport.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/skel.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js2/util.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_1.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_10.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_11.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_12.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_13.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_14.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_15.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_2.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_3.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_4.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_5.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_6.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_7.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_8.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/m8_9.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/navigation.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/ie8.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/ie9.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/libs/_functions.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/libs/_mixins.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/libs/_skel.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/libs/_vars.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass/main.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/ie8.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/libs/_functions.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/libs/_mixins.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/libs/_skel.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/libs/_vars.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/main.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/sass2/noscript.scss</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/service/MathServiceTest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/com/seproject/service/blServiceImpl/BasicBLImpl_HibernateTest.class</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -875,7 +520,8 @@
       <workItem from="1529379238230" duration="46000" />
       <workItem from="1529382535411" duration="7071000" />
       <workItem from="1529390957093" duration="2252000" />
-      <workItem from="1529393346154" duration="4122000" />
+      <workItem from="1529393346154" duration="5453000" />
+      <workItem from="1529401240655" duration="2043000" />
     </task>
     <task id="LOCAL-00001" summary="V 3.9.5">
       <created>1529333485898</created>
@@ -888,7 +534,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19140000" />
+    <option name="totallyTimeSpent" value="22514000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -905,7 +551,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -918,7 +564,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1014,7 +660,7 @@
         <state relative-caret-position="4646">
           <caret line="202" column="0" lean-forward="true" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
           <folding>
-            <marker date="1529390874098" expanded="true" signature="10063:10081" ph="..." />
+            <marker date="1529403294315" expanded="true" signature="10063:10081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1190,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-644">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,19 +862,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/judge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/CollectionResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1237,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,16 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="99" column="57" lean-forward="false" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
-          <folding>
-            <marker date="1529390874098" expanded="true" signature="10063:10081" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1277,45 +902,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3102">
+        <state relative-caret-position="667">
           <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="558" column="34" lean-forward="false" selection-start-line="558" selection-start-column="34" selection-end-line="558" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/multipic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
+        <state relative-caret-position="2438">
           <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
-            <marker date="1529386569817" expanded="true" signature="614:632" ph="..." />
-            <marker date="1529386569817" expanded="true" signature="1192:1210" ph="..." />
-          </folding>
+        <state relative-caret-position="1012">
+          <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="72" column="156" lean-forward="false" selection-start-line="72" selection-start-column="156" selection-end-line="72" selection-end-column="156" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1702">
+          <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,35 +956,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+        <state relative-caret-position="23">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding>
+            <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
+            <marker date="1529386569817" expanded="true" signature="614:632" ph="..." />
+            <marker date="1529386569817" expanded="true" signature="1192:1210" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="72" column="156" lean-forward="false" selection-start-line="72" selection-start-column="156" selection-end-line="72" selection-end-column="156" />
+        <state relative-caret-position="299">
+          <caret line="699" column="50" lean-forward="false" selection-start-line="699" selection-start-column="50" selection-end-line="699" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/judge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+        <state relative-caret-position="322">
+          <caret line="23" column="46" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="23" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1679">
-          <caret line="85" column="18" lean-forward="false" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="123">
+          <caret line="485" column="58" lean-forward="false" selection-start-line="485" selection-start-column="58" selection-end-line="485" selection-end-column="58" />
+          <folding>
+            <marker date="1529403294315" expanded="true" signature="10063:10081" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

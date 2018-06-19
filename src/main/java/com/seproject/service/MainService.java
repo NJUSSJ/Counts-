@@ -685,8 +685,9 @@ public class MainService {
             }
             avgFrameNum /= uid.size();//平均框数量
             avgFrameSquare /= uid.size();//平均框面积
+            System.out.println("平均框数量:"+avgFrameNum);
+            System.out.println("平均框面积："+avgFrameSquare);
             if(avgFrameNum==0||avgFrameSquare==0) continue;//说明这张图无效
-
 
             for(int j=0;j<uid.size();j++){
                 FreeMissionDetail detail=details.get(j);
@@ -697,7 +698,6 @@ public class MainService {
             }
 
             for (int j = 0; j < uid.size(); j++) {
-                int limit = uid.size() / 2;
                 double eachGrade = 0;
                 String summary = details.get(j).getSummary();
                 for (int p = 0; p < uid.size(); p++) {
@@ -706,11 +706,6 @@ public class MainService {
                         double similar = languageService.simliarityOfText(summary, details.get(p).getSummary());
                         if (similar < 0.5) {
                             eachGrade+=0.1;//加一个较低的分
-                            limit--;
-                            if (limit < 0) {//如果和超一半的人文本都不相似，那么视为无效答案
-                                eachGrade = 0;
-                                break;
-                            }
                         }else {
                             eachGrade+=similar;
                         }
