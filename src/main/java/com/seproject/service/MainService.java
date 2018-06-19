@@ -175,13 +175,17 @@ public class MainService {
     public boolean getGoldMission(String mid,String uid){
         Mission mission=missionBasicBLService.findByKey(mid);
         String name=mission.getRequestorNumber();
+        System.out.println("发起者账号:"+name);
         ArrayList<GoldMission> goldMissions = goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        System.out.println("goldMission.size():"+goldMissions.size());
         for (GoldMission goldMission : goldMissions) {
+            System.out.println("goldMissionOldName:"+goldMission.getUid());
             if (goldMission.getUid().equals(name)) {
                 goldMission.setUid(uid);
                 goldMissionBasicBLService.update(goldMission);
                 User user = userBasicBLService.findByKey(uid);
                 user.setCredit(user.getCredit() + 160);
+                createCollection(uid,mid);
                 return true;
             }
         }
@@ -545,6 +549,16 @@ public class MainService {
                     result.add(subLabelMission.getId2());//把金标也加上
                     return result;
                 }
+            }
+            //如果子任务没有，就到金标任务去找
+            ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+            for(GoldMission goldMission:goldMissions){
+                String tempUid=goldMission.getUid();
+                if(tempUid.equals(uid)){
+                    result.addAll(goldMission.getPictrueIndex());
+                    return result;
+                }
+
             }
         }else{
             int groupNum=mission.getFileNum()/10;
