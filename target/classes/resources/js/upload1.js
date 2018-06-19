@@ -113,7 +113,6 @@ function veriInput() {
     var reward=document.getElementById("reward").value;
     var tagType=document.getElementById("tagType").value;
 
-    alert(missionLabel.length);
     if(tagType == "1" && missionLabel.length<2){
         alert("标签式任务标签不能少于2个");
         return false;

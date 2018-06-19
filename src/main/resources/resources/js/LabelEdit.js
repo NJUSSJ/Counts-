@@ -90,10 +90,3 @@ function nextImage() {
     }
 
 }
-/*
-function LabelData(mid, uid, missionLabel) {
-    tmp = window.location.search.split("&");
-    this.mid = window.location.search.split("&")[0].substring(tmp[0].indexOf("=")+1);
-    this.uid = window.location.search.split("&")[2].substring(tmp[2].indexOf("=")+1);
-    this.missionLabel = loadLabelInfo();
-}*/
