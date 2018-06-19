@@ -169,15 +169,19 @@ public class MainController {
     @RequestMapping(value = "/getGoldMission")
     @ResponseBody
     public String getGoldMission (@RequestBody String parameter){
+        System.out.println("1234455667898765432");
         JSONObject object=JSONObject.fromObject(parameter);
         GetMissionParameter para= (GetMissionParameter) JSONObject.toBean(object,GetMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
         boolean res=mainService.getGoldMission(mid,uid);
        if(res) {
-           return RM.SUCCESS.toString();
+           System.out.println(res+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+           return "1";
+
        }else{
-           return RM.FAILURE.toString();
+           System.out.println(res+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+           return "0";
        }
     }
 

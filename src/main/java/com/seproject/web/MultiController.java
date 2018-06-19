@@ -56,7 +56,7 @@ public class MultiController {
         model.addObject("url",url);
         model.addObject("collection","\'"+collection+"\'");
         //int picNum = missionBasicBLService.findByKey(collection).getFileNum();
-        model.addObject("picNum",12);
+        model.addObject("picNum", submission.size());
         User user = basicBLService.findByKey(phoneNumber);
         model.addObject("userCategory",user.getCategory());
         model.addObject("userName",user.getUserName());
