@@ -27,6 +27,7 @@ public class TagController {
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
+        System.out.println("infoList is writing!!!!!!!");
         JSONObject jsonObject = JSONObject.fromObject(imgid);
         String temp0[]=jsonObject.getString("imgid").split("-");
         System.out.println("imgid:"+imgid);

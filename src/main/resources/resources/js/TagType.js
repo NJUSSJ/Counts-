@@ -57,8 +57,12 @@ function loadLabelInfo() {
             num++;
         }
     }
+<<<<<<< HEAD
     alert("已选择标签: " + clickedMissionLabel[0]);
     return clickedMissionLabel[0];
+=======
+    return clickedMissionLabel;
+>>>>>>> 8656d905c0da804be643a60663c239228514c7f5
 }
 
 function loadCanvas(url) {

@@ -1,4 +1,3 @@
-var returnSample;
 var picIndex;
 var imageInfo;
 var answers = [];
@@ -82,6 +81,30 @@ new scale('btn','bar','title'); //实例化一个拖拽
 加载抽样
  */
 function loadSample() {
+    var tagType = document.getElementById("tagType");
+    if(tagType.innerHTML == "1"){
+        tagType.innerHTML = "标签式";
+    }else{
+        tagType.innerHTML = "非标签式";
+    }
+
+    var bonusStrategy = document.getElementById("evaluateStrategy");
+    if(bonusStrategy.innerHTML == "1"){
+        bonusStrategy.innerHTML = "自动评估";
+    }else if(bonusStrategy.innerHTML == "2"){
+        bonusStrategy.innerHTML = "手动评估";
+    }else {
+        bonusStrategy.innerHTML = "雇佣评估";
+    }
+
+    var evaluateStrategy = document.getElementById("bonusStrategy");
+    if(evaluateStrategy.innerHTML == "1"){
+        evaluateStrategy.innerHTML = "平均分配";
+    }else if(evaluateStrategy.innerHTML == "2"){
+        evaluateStrategy.innerHTML = "Double or nothing";
+    }else{
+        evaluateStrategy.innerHTML = "双色球分配";
+    }
     $.ajax({
         type: "POST",
         url: "/getSample",
@@ -115,8 +138,9 @@ function loadSample() {
 /*
 parameters for canvas
  */
-var canvas = document.getElementById("canvasForSample");
+var canvas = document.getElementById("canvas1");
 var cxt = canvas.getContext("2d");
+var image = new Image();
 
 //已确定的矩形框
 var fixedX = [];
@@ -141,7 +165,7 @@ var Pic_y;
 
 function sampleSet(sample, missionName) {
     picIndex=sample.picIndex;
-    imageInfo=sample.imageInfo;
+    imageInfo=sample.info;
 
     uid=sample.uid;
     lastIndex=uid.length-1;
@@ -149,17 +173,11 @@ function sampleSet(sample, missionName) {
 }
 
 function loadOneSample(index,missionName) {
-    var image = new Image();
+
     image.src="";
     document.getElementById("textareaPlace").innerHTML="";
-
-
-    var imgInfo=eval(imageInfo[index]);
-    //alert(imgInfo.imgid);
-
-    /*
-    load rect and curl
-     */
+    var jsonString = JSON.stringify(imageInfo[index]);
+    var imgInfo=eval("("+jsonString+")");
     if(imgInfo!=null){
         if(imgInfo.fixedx!=null||imgInfo.list!=null) {
 
@@ -177,29 +195,9 @@ function loadOneSample(index,missionName) {
         }
     }
 
-    /*
-    load overall
-     */
-    if(imgInfo!=null){
-        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
-            var OverallIndex=0;
-            while(imgInfo.sentences[OverallIndex].status!=2){
-                OverallIndex++;
-                if(OverallIndex==imgInfo.sentences.length){
-                    break;
-                }
-            }
-            if(OverallIndex<imgInfo.sentences.length){
-                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
-            }
+    image.src = "missionImages/"+missionName+"_"+(picIndex[indexForSample]+1)+".jpg";
 
-        }
-    }
-
-    image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
-
-
-    image.onload = function (ev) {
+    image.onload = function () {
         var width = image.width;
         var height = image.height;
 
@@ -233,9 +231,6 @@ function loadOneSample(index,missionName) {
 
     var parent=document.getElementById("textareaPlace");
 
-    /*
-    add rect info
-     */
     for(var i=0;i<fixedX.length;i++){
         if(fixedWidth[i]==0){
             continue;
@@ -270,6 +265,8 @@ function loadOneSample(index,missionName) {
             }
         }
 
+
+
         textarea.innerHTML=imgInfo.sentences[indexOfCurlSentence].raw;
 
         indexOfCurlSentence++;
@@ -278,13 +275,25 @@ function loadOneSample(index,missionName) {
         textarea.style.margin = "5px";
         textarea.style.width = "90px";
         textarea.id="curlArea"+i;
-
         textarea.style.borderStyle = "dotted";
         parent.appendChild(textarea);
-
     }
 
+    if(imgInfo!=null){
+        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
+            var OverallIndex=0;
+            while(imgInfo.sentences[OverallIndex].status!=2){
+                OverallIndex++;
+                if(OverallIndex==imgInfo.sentences.length){
+                    break;
+                }
+            }
+            if(imgInfo.sentences[OverallIndex]!=null){
+                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
+            }
 
+        }
+    }
 }
 
 /*
@@ -321,13 +330,15 @@ function drawImage() {
 
 
 
+
+
 function good() {
     if(!judgeLast()){
         answers[indexForSample]= grade;
         indexForSample++;
         loadOneSample(indexForSample,picName);
     }else{
-        quality[indexForSample]=grade;
+        answers[indexForSample]=grade;
         sendJudgeResult();
     }
 }
@@ -471,6 +482,13 @@ function clickLabel(i) {
     if(labelIndex == lastIndex-1){
         answers[labelIndex] = i;
         alert(answers);
+        document.getElementById("choices").style.display = "none";
+        var sampleArea=document.getElementById("edit_area2");
+        sampleArea.style.display="none";
+        var samplePanel=document.getElementById("samplePanel");
+        var info=document.createElement("h6");
+        info.innerHTML="评估已完成！";
+        samplePanel.appendChild(info);
         finishReview();
     }else{
         answers[labelIndex] = i;

@@ -32,21 +32,47 @@ function missionManagement() {
     userManagement.style.display = "block";
 }
 
-function setButtonsDown() {
-    setButtonDown("userManagementButton");
-    setButtonDown("missionManagementButton")
+function recent() {
+    if(sign==1){
+        setButtonsDown();
+        hideAllBlock();
+    }
+    sign=1;
+    var button = document.getElementById("recentButton");
+    button.style.fontSize = "0.74em";
+    button.style.minWidth = "14em";
+    button.style.padding = "0.5em 0";
+    button.style.borderRightColor = "#96dad1";
+    button.style.borderRightWidth = "2.5px";
+    var userManagement = document.getElementById("recent");
+    userManagement.style.display = "block";
 }
 
-function setButtonDown(buttonname) {
-    var button = document.getElementById(buttonname);
-    button.style.fontSize = "0.7em";
-    button.style.borderRightColor = "#442440";
-    button.style.borderRightWidth = "2px";
+function setButtonsDown() {
+    var button1 = document.getElementById("missionManagementButton");
+    button1.style.fontSize = "0.7em";
+    button1.style.borderRightColor = "#442440";
+    button1.style.borderRightWidth = "2px";
+
+    var button2 = document.getElementById("userManagementButton");
+    button2.style.fontSize = "0.7em";
+    button2.style.borderRightColor = "#442440";
+    button2.style.borderRightWidth = "2px";
+
+    var button3 = document.getElementById("recentButton");
+    button3.style.fontSize = "0.7em";
+    button3.style.borderRightColor = "#442440";
+    button3.style.borderRightWidth = "2px";
+
 }
+
+
 
 function hideAllBlock() {
     document.getElementById("userManagement").style.display = "none";
     document.getElementById("missionManagement").style.display = "none";
+    document.getElementById("recent").style.display = "none";
+
 }
 
 function searchUser(info) {

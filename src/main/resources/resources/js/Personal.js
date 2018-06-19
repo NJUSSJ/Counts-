@@ -295,11 +295,11 @@ function setFinishedCollection() {
         a.className = "image fit";
         switch (userCategory) {
             case "1":
-                a.href = "/getMissionDetails?missionName=" + missionNames[i];
+                a.href = "/getMissionDetails?missionName=" + finishedNames[i];
                 break;
 
             case "2":
-                a.href = "/getSubmission?imageURL=" + missionNames[i] + "&userPhone=" + phoneNumber + "&userCategory=" + userCategory + "&Tagable=" + 1;
+                a.href ="/getMissionResultResponse?mid=" + finishedNames[i]+"&uid="+phoneNumber;
                 break;
 
             case "3":

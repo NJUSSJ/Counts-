@@ -150,10 +150,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                         <span>任务描述：</span><span id="missionDescription">${requestScope.description}</span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
-                        <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">${requestScope.difficulty}</span></span>
-                    </div>
-                    <div class="12u$ 12u$(mobile)">
-                        <span style="display: block;margin-top: 5px"><span>图片类型：</span><span id="picType">${requestScope.picType}</span></span>
+                        <span style="display: block;margin-top: 5px"><span>任务难度：</span><span id="difficulty">Level${requestScope.difficulty}</span></span>
                     </div>
                     <div class="12u$ 12u$(mobile)">
                         <span style="display: block;margin-top: 5px"><span>标注类型：</span><span id="tagType">${requestScope.tagType}</span></span>
@@ -174,7 +171,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         </article>
 
         <!-- Contact -->
-        <article id="samplePanel" class="panel">
+        <article id="samplePanel" class="panel" style="height: 900px;">
             <header>
                 <h2 id="sample">抽样评估</h2>
             </header>
@@ -194,7 +191,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
                     <!-- Content -->
                     <div class="content" align="center">
-                        <canvas id="canvasForSample" width="500" height="500">
+                        <canvas id="canvas1" width="500" height="350">
 
                         </canvas>
                         <p id="info">Tag info.</p>
@@ -285,7 +282,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
 <script src="js/missionDetails.js"></script>
-
+<script src="js/freeJudge.js"></script>
 
 </body>
 </html>

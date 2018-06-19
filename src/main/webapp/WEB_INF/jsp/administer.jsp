@@ -17,6 +17,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
 
     <style type="text/css">
         #functionBar{
@@ -104,7 +106,7 @@
                     <li><a href="#" class="button special2" id="userManagementButton" onclick="userManagement()">用户管理</a></li>
                     <li><a href="#" class="button special2" id="missionManagementButton" onclick="missionManagement()">任务管理</a></li>
                     <li><a href="#" class="button special2">消息系统</a></li>
-                    <li><a href="#" class="button special2">系统近况</a></li>
+                    <li><a href="#" class="button special2" id="recentButton" onclick="recent()">系统近况</a></li>
                 </ul>
             </div>
             <div class="9u 12u(narrow)" align="left" id="userManagement" style="display: none;padding-top: 0px;padding-left: 90px">
@@ -138,6 +140,158 @@
                         <td>状态</td>
                     </tr>
                 </table>
+            </div>
+
+            <div class="9u 12u(narrow)" align="left" id="recent" style="display: none;padding-top: 0px;padding-left: 90px">
+                <div id="revenue" style="width: 1000px;height: 500px"></div>
+                <script>
+                    var dom = document.getElementById("revenue");
+                    var myChart = echarts.init(dom);
+                    var app = {};
+                    option = null;
+                    var posList = [
+                        'left', 'right', 'top', 'bottom',
+                        'inside',
+                        'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+                        'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+                    ];
+
+                    app.configParameters = {
+                        rotate: {
+                            min: -90,
+                            max: 90
+                        },
+                        align: {
+                            options: {
+                                left: 'left',
+                                center: 'center',
+                                right: 'right'
+                            }
+                        },
+                        verticalAlign: {
+                            options: {
+                                top: 'top',
+                                middle: 'middle',
+                                bottom: 'bottom'
+                            }
+                        },
+                        position: {
+                            options: echarts.util.reduce(posList, function (map, pos) {
+                                map[pos] = pos;
+                                return map;
+                            }, {})
+                        },
+                        distance: {
+                            min: 0,
+                            max: 100
+                        }
+                    };
+
+                    app.config = {
+                        rotate: 90,
+                        align: 'left',
+                        verticalAlign: 'middle',
+                        position: 'insideBottom',
+                        distance: 15,
+                        onChange: function () {
+                            var labelOption = {
+                                normal: {
+                                    rotate: app.config.rotate,
+                                    align: app.config.align,
+                                    verticalAlign: app.config.verticalAlign,
+                                    position: app.config.position,
+                                    distance: app.config.distance
+                                }
+                            };
+                            myChart.setOption({
+                                series: [{
+                                    label: labelOption
+                                }, {
+                                    label: labelOption
+                                }, {
+                                    label: labelOption
+                                }, {
+                                    label: labelOption
+                                }]
+                            });
+                        }
+                    };
+
+
+                    var labelOption = {
+                        normal: {
+                            show: true,
+                            position: app.config.position,
+                            distance: app.config.distance,
+                            align: app.config.align,
+                            verticalAlign: app.config.verticalAlign,
+                            rotate: app.config.rotate,
+                            formatter: '{c}  {name|{a}}',
+                            fontSize: 16,
+                            rich: {
+                                name: {
+                                    textBorderColor: '#fff'
+                                }
+                            }
+                        }
+                    };
+
+                    option = {
+                        color: ['#4cabce', '#e5323e'],
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        },
+                        legend: {
+                            data: ['收入', '支出']
+                        },
+                        toolbox: {
+                            show: true,
+                            orient: 'vertical',
+                            left: 'right',
+                            top: 'center',
+                            feature: {
+                                mark: {show: true},
+                                dataView: {show: true, readOnly: false},
+                                magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                                restore: {show: true},
+                                saveAsImage: {show: true}
+                            }
+                        },
+                        calculable: true,
+                        xAxis: [
+                            {
+                                type: 'category',
+                                axisTick: {show: false},
+                                data: ['6.14', "6.15",'6.16', '6.17', '6.18', '6.19', '6.20']
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'value'
+                            }
+                        ],
+                        series: [
+                            {
+                                name: '收入',
+                                type: 'bar',
+                                label: labelOption,
+                                data: [0, 0, 150, 232, 201, 154, 190]
+                            },
+                            {
+                                name: '支出',
+                                type: 'bar',
+                                label: labelOption,
+                                data: [0, 0, 98, 77, 101, 99, 40]
+                            }
+                        ]
+                    };;
+                    if (option && typeof option === "object") {
+                        myChart.setOption(option, true);
+                    }
+                </script>
             </div>
         </div>
     </article>

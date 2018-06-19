@@ -1,3 +1,5 @@
+var already = RandomNum(60,100);
+var rest= RandomNum(10,30);
 var chart1 = echarts.init(document.getElementById('chart1'));
 var option1 = {
     title : {
@@ -16,8 +18,8 @@ var option1 = {
             radius : '55%',
             center: ['50%', '60%'],
             data:[
-                {value:335, name:'已接人数'},
-                {value:100, name:'剩余名额'}
+                {value:already, name:'已接人数'},
+                {value:rest, name:'剩余名额'}
 
 
             ],
@@ -32,3 +34,10 @@ var option1 = {
     ]
 };
 chart1.setOption(option1);
+
+function RandomNum(Min, Max) {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    var num = Min + Math.floor(Rand * Range); //舍去
+    return num;
+}

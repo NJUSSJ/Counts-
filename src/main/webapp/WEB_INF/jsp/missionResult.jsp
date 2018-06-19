@@ -86,7 +86,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
 </style>
-<body onload="loadDetails(${requestScope.picNum})">
+<body onload="load(${requestScope.quality}, ${requestScope.credit}, ${requestScope.rank}, ${requestScope.total})">
 
 <!-- Wrapper-->
 <div id="wrapper">
@@ -116,13 +116,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <!-- Work -->
         <article id="work" class="panel">
             <header>
-                <h2>任务详情</h2>
+                <h2>任务结果</h2>
             </header>
             <section>
                 <div class="row">
                     <div class="12u 12u$(mobile)" id="blank">
-                        <span>任务得分：</span><span id="missionScore"></span>
+                        <span>任务得分：</span><span id="missionQuality"></span>
                         <span>任务排名：</span><span id="missionRank"></span>
+                        <span>任务获得积分：<span id="missionCredit"></span></span>
                         <span>在该任务中您超越了</span><span id="percent"></span><span>的用户</span>
                     </div>
                 </div>
@@ -149,9 +150,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="js2/skel-viewport.min.js"></script>
 <script src="js2/util.js"></script>
 <script src="js2/main.js"></script>
-
+<script>
+    function load(quality, credit, rank, total) {
+        var percent = (total-rank)/total*100;
+        document.getElementById("missionQuality").innerHTML = quality;
+        document.getElementById("missionCredit").innerHTML = credit;
+        document.getElementById("missionRank").innerHTML = rank;
+        document.getElementById("percent").innerHTML = percent;
+    }
+</script>
 
 
 </body>
+
 </html>
 

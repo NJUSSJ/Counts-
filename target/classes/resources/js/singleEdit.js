@@ -393,7 +393,6 @@ function mouseUpRect(e){
 
     var rectPrompt  =  prompt("请对上一步画框操作进行标注。");
     if(rectPrompt!=  null) {
-        alert(rectPrompt);
 
         var rectTextarea  =  document.getElementById("textareaPlace");
 
@@ -512,7 +511,7 @@ function mouseUpCurl() {
     //saveImgURL  =  canvas.toDataURL(); // 每次 mouseup 都保存一次画布状态
     var curlPrompt  =  prompt("请对上一步画线操作进行标注。");
     if(curlPrompt !=  null) {
-        alert(curlPrompt);
+
         var curlTextarea  =  document.getElementById("textareaPlace");
         var textarea  =  document.createElement("textarea");
         textarea.id="curlArea"+index2;
@@ -669,7 +668,6 @@ tool3.addEventListener("click",function () {
 
         var overallPrompt = prompt("请对整体图像进行标注。");
         if(overallPrompt !=  null) {
-            alert(overallPrompt);
             document.getElementById("info").innerHTML=overallPrompt;
             clicked = "Over";
         }

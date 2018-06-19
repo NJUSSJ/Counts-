@@ -59,7 +59,7 @@
         }
     </style>
 </head>
-<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType});loadLabelPhone(${requestScope.userPhone},${requestScope.collection},${requestScope.index})">
+<body class="left-sidebar" onload="loadMissionLabel1(${requestScope.label},${requestScope.url},${requestScope.tagType});loadLabelPhone(${requestScope.userPhone},${requestScope.collection},${requestScope.picNum})">
 
 <div>
     <!-- Header -->
@@ -69,7 +69,7 @@
             <ul>
                 <li><a id="more" onclick="nextImage(${requestScope.seed})"><img src="images/more.png" width="20" height="20" align="center">NEXT</a></li>
                 <li class="current"><a href="<c:url value="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}"/>">${requestScope.userName}</a></li>
-                <li><a onclick="submitLabelInfo()" class="button special">Submit</a></li>
+                <li><a href="personal.html?userName=${requestScope.userName}&phoneNumber=${requestScope.userPhone}&userCategory=${requestScope.userCategory}" onclick="submitLabelInfo()" class="button special">Submit</a></li>
                 <li><a href="/" class="button special">Sign Out</a></li>
             </ul>
         </nav>

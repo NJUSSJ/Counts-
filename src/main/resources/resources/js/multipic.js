@@ -19,6 +19,31 @@ function load(num,url,collection,userCategory,Tagable,phoneNumber,picNum,picType
     var cover = document.getElementById("cover");
     cover.src = url+"1.jpg";
 
+    var tagType = document.getElementById("tagType");
+    if(tagType.innerHTML == "1"){
+        tagType.innerHTML = "标签式";
+    }else{
+        tagType.innerHTML = "非标签式";
+        document.getElementById("judgeMissionBtn").style.display ="none";
+    }
+
+    var bonusStrategy = document.getElementById("evaluateStrategy");
+    if(bonusStrategy.innerHTML == "1"){
+        bonusStrategy.innerHTML = "自动评估";
+    }else if(bonusStrategy.innerHTML == "2"){
+        bonusStrategy.innerHTML = "手动评估";
+    }else {
+        bonusStrategy.innerHTML = "雇佣评估";
+    }
+
+    var evaluateStrategy = document.getElementById("bonusStrategy");
+    if(evaluateStrategy.innerHTML == "1"){
+        evaluateStrategy.innerHTML = "平均分配";
+    }else if(evaluateStrategy.innerHTML == "2"){
+        evaluateStrategy.innerHTML = "Double or nothing";
+    }else{
+        evaluateStrategy.innerHTML = "双色球分配";
+    }
 }
 
 function setButtons(num) {
@@ -73,13 +98,13 @@ function addJudgeMissionToUser(missionName, userPhone) {
     $.ajax({
         type: "POST",
         async: false,
-        url: "/addJudgeMission",
+        url: "/getGoldMission",
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(collectionData),
         success: function (returnData) {
-            if(returnData!="0"){
-                alert(returnData);
+            if(returnData=="0"){
+                alert("该任务评估入口已关闭！");
             }
         },
         error: function () {

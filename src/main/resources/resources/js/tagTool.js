@@ -59,7 +59,7 @@ function nextImage() {
 
     i++;
     if(i == 10){
-        alert("已到达任务末尾！");
+        alert("已到达任务末尾！点击Submit提交任务...");
     }else{
         window.location.href = "test1.html?collection=" + collection + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;
     }
@@ -93,7 +93,6 @@ function getSentIds() {
 function saveData() {
     var imgData = new imgs(getSentIds(),imgid,getSentences(),getNameAndCollection()[0] + "_" + getNameAndCollection()[1],fixedX,fixedY,fixedWidth,fixedHeight,curlArray);
     ImageJson(imgData);
-    alert("已储存本图片信息");
 }
 
 //test
@@ -105,6 +104,7 @@ a.collectionName = "cat1";
 /* ajax */
 function ImageJson(imgs) {
     $.ajax({
+        async: false,
         type: "POST",
         url: "write",
         contentType: "application/json",

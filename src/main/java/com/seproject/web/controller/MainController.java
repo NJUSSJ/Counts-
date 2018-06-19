@@ -8,6 +8,7 @@ import com.seproject.service.MainService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.*;
 import com.seproject.web.response.DownloadFileResponse;
+import com.seproject.web.response.MissionResultResponse;
 import com.seproject.web.response.ReviewResponse;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,9 @@ import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -90,7 +93,7 @@ public class MainController {
     @RequestMapping(value = "/updateLabelMission")
     @ResponseBody
     /**
-     * 更新用户对标签式任务的标注
+     * 更新用户对标签式任务（或金标）的标注
      */
     public String updateLabelMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
@@ -98,14 +101,23 @@ public class MainController {
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
-         int k=para.getNum();
+        int k=para.getNum();
+        ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(GoldMission goldMission:goldMissions){
+            String tempUid=goldMission.getUid();
+            if(tempUid.equals(uid)){
+                goldMission.getResult().set(k,para.getAnswer());
+                goldMissionBasicBLService.update(goldMission);
+                return RM.SUCCESS.toString();
+            }
+        }
+        //如果不是金标，到子任务里取
         ArrayList<SubLabelMission> subLabelMission =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
-        for(int i = 0; i< subLabelMission.size(); i++){
-            SubLabelMission sub= subLabelMission.get(i);
-            ArrayList<String> user=sub.getUid();
-            if(user.contains(uid)){
-                ArrayList<Integer> tempanswer=sub.getAnswers().get(user.indexOf(uid));
-                tempanswer.set(k,para.getAnswer());
+        for (SubLabelMission sub : subLabelMission) {
+            ArrayList<String> user = sub.getUid();
+            if (user.contains(uid)) {
+                ArrayList<Integer> tempanswer = sub.getAnswers().get(user.indexOf(uid));
+                tempanswer.set(k, para.getAnswer());
                 subTagMissionBasicBLService.update(sub);
                 return RM.SUCCESS.toString();
             }
@@ -160,15 +172,19 @@ public class MainController {
     @RequestMapping(value = "/getGoldMission")
     @ResponseBody
     public String getGoldMission (@RequestBody String parameter){
+        System.out.println("1234455667898765432");
         JSONObject object=JSONObject.fromObject(parameter);
         GetMissionParameter para= (GetMissionParameter) JSONObject.toBean(object,GetMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
         boolean res=mainService.getGoldMission(mid,uid);
        if(res) {
-           return RM.SUCCESS.toString();
+           System.out.println(res+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+           return "1";
+
        }else{
-           return RM.FAILURE.toString();
+           System.out.println(res+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+           return "0";
        }
     }
 
@@ -223,6 +239,9 @@ public class MainController {
         FinishReviewParameter finishReviewParameter= (FinishReviewParameter) JSONObject.toBean(object,FinishReviewParameter.class);
         ArrayList<Integer> index=finishReviewParameter.getIndexs();
         ArrayList<Integer> answer=finishReviewParameter.getAnswers();
+        System.out.println(index);
+        System.out.println(answer);
+        System.out.println(finishReviewParameter.getUid());
         String mid=finishReviewParameter.getMid();
         Mission mission=missionBasicBLService.findByKey(mid);
         if(mission.getTagType()==1) {//如果是标签式，那么调用这个方法的目的是完善金标的答案
@@ -281,6 +300,25 @@ public class MainController {
 
     }
 
+    @RequestMapping(value = "/getMissionResultResponse")
+    @ResponseBody
+    public ModelAndView getMissionResultResponse(HttpServletRequest request){
+        MissionResultResponse missionResultResponse=new MissionResultResponse();
+        CollectionResult collectionResult=collectionResultBasicBLService.findByKey(request.getParameter("mid")+request.getParameter("uid"));
+        missionResultResponse.setCredit(collectionResult.getCredit());
+        missionResultResponse.setQuality(collectionResult.getQuality());
+        missionResultResponse.setRank(collectionResult.getRank());
+        ArrayList<Collection> collections= collectionBasicBLService.search("mid",SearchCategory.EQUAL,request.getParameter("mid"));
+        missionResultResponse.setTotal(collections.size());
+
+        ModelAndView view = new ModelAndView("missionResult");
+        view.addObject("quality", missionResultResponse.getQuality());
+        view.addObject("credit", missionResultResponse.getCredit());
+        view.addObject("rank",missionResultResponse.getRank());
+        view.addObject("total", missionResultResponse.getTotal());
+        return view;
+
+    }
     private int getMinIndex(ArrayList<Integer> arr){
         int min=100;
         int minIndex=0;

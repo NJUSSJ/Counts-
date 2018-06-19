@@ -1,18 +1,13 @@
 package com.seproject.service;
 
-import com.seproject.common.RM;
 import com.seproject.common.SearchCategory;
-import com.seproject.domain.*;
 import com.seproject.domain.Collection;
+import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
-import com.seproject.web.parameter.FreeMissionParameter;
 import com.seproject.web.response.ReviewResponse;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.management.remote.SubjectDelegationPermission;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -180,13 +175,18 @@ public class MainService {
     public boolean getGoldMission(String mid,String uid){
         Mission mission=missionBasicBLService.findByKey(mid);
         String name=mission.getRequestorNumber();
+        System.out.println("发起者账号:"+name);
         ArrayList<GoldMission> goldMissions = goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        System.out.println("goldMission.size():"+goldMissions.size());
         for (GoldMission goldMission : goldMissions) {
+            System.out.println("goldMissionOldName:"+goldMission.getUid());
             if (goldMission.getUid().equals(name)) {
                 goldMission.setUid(uid);
                 goldMissionBasicBLService.update(goldMission);
                 User user = userBasicBLService.findByKey(uid);
-                user.setCredit(user.getCredit() + 160);
+                user.setCredit(user.getCredit() + 15);
+                userBasicBLService.update(user);
+                createCollection(uid,mid);
                 return true;
             }
         }
@@ -206,7 +206,7 @@ public class MainService {
                 result.addAll(goldMission.getPictrueIndex());
             }
         }
-        if(goldMissions.size()==0){
+        if(result.size()==0){
             System.out.println("金标已经评完，开启标签式自动评估");
             reviewLabelMission(mid);
         }
@@ -222,10 +222,17 @@ public class MainService {
         int evaluate=mission.getEvaluateStrategy();
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        System.out.println("金标排列");
+        for(GoldMission goldMission:goldMissions){
+            System.out.println(goldMission.getPictrueIndex());
+            System.out.println(goldMission.getResult());
+        }
         for (SubLabelMission subLabelMission : subLabelMissions) {
             ArrayList<Double> weight = new ArrayList<Double>();
             int index1 = subLabelMission.getId1();
+            System.out.println("index1:"+index1);
             int index2 = subLabelMission.getId2();
+            System.out.println("index2:"+index2);
             int answer1 = -1;
             int answer2 = -1;
             for (GoldMission g : goldMissions) {
@@ -255,22 +262,12 @@ public class MainService {
                         weight.add(0.5);
                     }
                 } else {
-                    //用户接了任务但没做
-                    weight.add(0.0);
+                    weight.add(0.0); //用户接了任务但没做
                 }
             }
-            /*System.out.println("missionLabel:"+mission.getMissionLabel());
-            int gog=0;
-            System.out.println(mission.getMissionLabel().get(0));*/
             String[] mLabel=mission.getMissionLabel().get(0).split(",");
             int labelNumber=mLabel.length;
-            /*for(String str:mission.getMissionLabel()){
-                System.out.println(gog);
-                gog++;
-            }
-            int labelNumber = mission.getMissionLabel().size();*/
             double vote[][] = new double[10][labelNumber];//
-            System.out.println(labelNumber+"*****!!!!!");
             for (int j = 0; j < 10; j++) {
                 for (int k = 0; k < labelNumber; k++) {
                     vote[j][k] = 0;
@@ -279,27 +276,46 @@ public class MainService {
             }
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
-
-                for (int k = 0; k < 10; k++) {/////////////////////////
-
-                    vote[k][userAnswer.get(k)] += weight.get(j);
+                System.out.println(userAnswer);
+                for (int k = 0; k < 10; k++) {
+                    if(userAnswer.get(k)>=0) {
+                        vote[k][userAnswer.get(k)] += weight.get(j);
+                    }
                 }
             }
 
             //找到了所有的标准答案，判断每个用户每题对不对，根据答题情况直接发奖励
             int standardAnswers[] = getStandard(vote);
-            boolean isCorrect[][] = new boolean[subLabelMission.getUid().size()][12];
+            System.out.println("标准答案");
+            for(int a=0;a<standardAnswers.length;a++){
+                System.out.println(standardAnswers[a]);
+            }
+            int isCorrect[][] = new int[subLabelMission.getUid().size()][12];
             for (int j = 0; j < isCorrect.length; j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
                 for (int k = 0; k < 10; k++) {
-                    isCorrect[j][k] = (userAnswer.get(k) == standardAnswers[k]);
+                    if(userAnswer.get(k)==-1){//如果跳过
+                        isCorrect[j][k]=-1;
+                    }else if (userAnswer.get(k) == standardAnswers[k]) {
+                        isCorrect[j][k] =1;
+                    }else {
+                        isCorrect[j][k]=0;
+                    }
                     //如果一个任务没有得到标准答案，则自动算工人标的是对的
                     if(standardAnswers[k]==-1){
-                        isCorrect[j][k]=true;
+                        isCorrect[j][k]=1;
                     }
                 }
-                isCorrect[j][10] = (userAnswer.get(10) == answer1);
-                isCorrect[j][11] = (userAnswer.get(11) == answer2);
+                if(userAnswer.get(10)==-1){
+                    isCorrect[j][10]=-1;
+                }else if(userAnswer.get(10)==answer1){
+                    isCorrect[j][10]=1;
+                }else isCorrect[j][10]=0;
+                if(userAnswer.get(11)==-1){
+                    isCorrect[j][11]=-1;
+                }else if(userAnswer.get(11)==answer2){
+                    isCorrect[j][11]=1;
+                }else isCorrect[j][11]=0;
             }
 
             //根据事先设置的策略分配
@@ -307,7 +323,7 @@ public class MainService {
             if(evaluate==2) {//2号策略：double nothing
                 money = giveMoney_DoubleNothing(isCorrect);
             }else if(evaluate==3){//3号策略：双色球
-                money=giveMoney_DoubleColorBall(isCorrect);
+                money = giveMoney_DoubleColorBall(isCorrect);
             }
             setCollection(money, subLabelMission.getUid(), mid);
         }
@@ -320,12 +336,16 @@ public class MainService {
      */
     public void finishReview(ArrayList<Integer> index,ArrayList<Integer> answer,String mid){
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        System.out.println("index:"+index);
+        System.out.println("answer:"+answer);
+        System.out.println("goldMissionSize:"+goldMissions.size());
         for(int i=0;i<index.size();i++){
             int eachIndex = index.get(i);
             for(GoldMission goldMission:goldMissions){
                 ArrayList<Integer> picIndex=goldMission.getPictrueIndex();
                 if(picIndex.contains(eachIndex)){
                     goldMission.getResult().set(picIndex.indexOf(eachIndex),answer.get(i));
+                    goldMissionBasicBLService.update(goldMission);
                     break;
                 }
             }
@@ -337,13 +357,15 @@ public class MainService {
      * 根据投票选出获取标准答案(标签式)
      */
     private int[] getStandard(double[][] vote){
-        //vote.length=10
         int result[]=new int[vote.length];
         for(int i=0;i<vote.length;i++){
             boolean isValid=false;
             double temp[]= vote[i];
+            double[] origin=new double[temp.length];
+            for(int b=0;b<temp.length;b++){
+                origin[b]=temp[b];
+            }
             Arrays.sort(temp);//升序
-
             if(temp[temp.length-2]!=0){
                 if(temp[temp.length-1]/temp[temp.length-2]>=3){
                     isValid=true;
@@ -355,7 +377,7 @@ public class MainService {
                 result[i]=-1;
             }else{
                 double max=temp[temp.length-1];
-                temp=vote[i];
+                temp=origin;
                 for(int k=0;k<temp.length;k++){
                     if(temp[k]==max){
                         result[i]=k;
@@ -408,41 +430,51 @@ public class MainService {
         }
     }
 
-    private double[] giveMoney_DoubleNothing(boolean x[][]){
+    private double[] giveMoney_DoubleNothing(int x[][]){
         //使用double_nothing策略分配奖励
+        System.out.println("vote:");
+        for(int a=0;a<x.length;a++){
+            for(int b=0;b<x[0].length;b++){
+                System.out.println(x[a][b]);
+            }
+        }
         double base=1.6;
         double[] money = new double[x.length];
         // x 是 横坐标用户，纵坐标12个题是否正确的二维数组
         for(int i=0;i<x.length;i++){
             double m=0.15;
             for(int j=0;j<x[0].length;j++){
-                if(x[i][j]){
+                if(x[i][j]==1){
                     m*=base;
-                }else{
+                }else if(x[i][j]==0){
                     m=0;
                 }
             }
             money[i]=m;
         }
+        System.out.println("money:");
+        for(int i=0;i<money.length;i++){
+            System.out.println(money[i]);
+        }
         return money;
     }
 
-    private double[] giveMoney_DoubleColorBall(boolean x[][]){
+    private double[] giveMoney_DoubleColorBall(int x[][]){
         //使用双色球策略分配奖励
         double [] money=new double[x.length];
         for(int i=0;i<x.length;i++){
             int blue=0;
             int red=0;
-            if(!x[i][10] && !x[i][11]){
+            if(x[i][10]!=1 && x[i][11]!=1){
                 blue=0;
-            }else if(x[i][10]!=x[i][11]){
+            }else if((x[i][10]==1&&x[i][11]!=1)||(x[i][10]!=1&&x[i][11]==1)){
                 blue=1;
-            }else if(x[i][10] && x[i][11]){
+            }else if(x[i][10]==1 && x[i][11]==1){
                 blue=2;
             }
 
             for(int j=0;j<10;j++){
-                if(x[i][j]){
+                if(x[i][j]==1){
                     red++;
                 }
             }
@@ -516,6 +548,16 @@ public class MainService {
                     return result;
                 }
             }
+            //如果子任务没有，就到金标任务去找
+            ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+            for(GoldMission goldMission:goldMissions){
+                String tempUid=goldMission.getUid();
+                if(tempUid.equals(uid)){
+                    result.addAll(goldMission.getPictrueIndex());
+                    return result;
+                }
+
+            }
         }else{
             int groupNum=mission.getFileNum()/10;
             int tail=mission.getFileNum()%10;
@@ -554,6 +596,7 @@ public class MainService {
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> users=subFreeMission.getUid();
+            System.out.println("users:"+users);
             if(users!=null&&users.size()>0) {
                 ArrayList<Integer> index = getPictureIndexOfSubmission(users.get(0), mid);
                 ArrayList<Double> grade=getGrade(index,users,mid);
@@ -575,7 +618,9 @@ public class MainService {
                     }
                 }
                 //用得分存储排名和积分到相应的结果中
-                for(int i=0;i<users.size();i++){
+
+                System.out.println("users:"+users);
+                for(int i=0;i<users.size();i++){ ;
                     User user=userBasicBLService.findByKey(users.get(i));
                     double reward=1.5*grade.get(i)/avg;
                     user.setCredit(user.getCredit()+reward);//1.5*得分/平均得分
@@ -638,8 +683,9 @@ public class MainService {
             }
             avgFrameNum /= uid.size();//平均框数量
             avgFrameSquare /= uid.size();//平均框面积
+            System.out.println("平均框数量:"+avgFrameNum);
+            System.out.println("平均框面积："+avgFrameSquare);
             if(avgFrameNum==0||avgFrameSquare==0) continue;//说明这张图无效
-
 
             for(int j=0;j<uid.size();j++){
                 FreeMissionDetail detail=details.get(j);
@@ -650,7 +696,6 @@ public class MainService {
             }
 
             for (int j = 0; j < uid.size(); j++) {
-                int limit = uid.size() / 2;
                 double eachGrade = 0;
                 String summary = details.get(j).getSummary();
                 for (int p = 0; p < uid.size(); p++) {
@@ -659,11 +704,6 @@ public class MainService {
                         double similar = languageService.simliarityOfText(summary, details.get(p).getSummary());
                         if (similar < 0.5) {
                             eachGrade+=0.1;//加一个较低的分
-                            limit--;
-                            if (limit < 0) {//如果和超一半的人文本都不相似，那么视为无效答案
-                                eachGrade = 0;
-                                break;
-                            }
                         }else {
                             eachGrade+=similar;
                         }
@@ -693,7 +733,7 @@ public class MainService {
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
             ArrayList<String> uid=subFreeMission.getUid();
-            if(uid==null||uid.size()<=0) continue;//如果这个子任务没人做，直接跳过
+            if(uid==null||uid.size()<=0||uid.get(0).length()<=0) continue;//如果这个子任务没人做，直接跳过
             ArrayList<Integer> levels=new ArrayList<Integer>();
             int avgLevel=0;
             for(String eachUid:uid){
@@ -709,7 +749,6 @@ public class MainService {
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
                     response.getInfo().add(collection.getInfoList().get(random1));
-                    System.out.println(collection.getInfoList().get(random1)+"  当前标注信息");
                 }else{//低级工人抽两张
                     int random1=(int)(Math.random()*10);
                     int random2=(random1+5)%10;
@@ -745,12 +784,13 @@ public class MainService {
         }
         ArrayList<Integer> qua=new ArrayList<Integer>();
         ArrayList<String> u=new ArrayList<String>();
-        int[] rank=new int[u.size()];
         for(String key:result.keySet()){
             u.add(key);
-            qua.add(result.get(u));
+            qua.add(result.get(key));
         }
-
+        int[] rank=new int[u.size()];
+        System.out.println("qua:"+qua);
+        System.out.println("u:"+u);
         for(int i=0;i<qua.size();i++){
             rank[i]=1;
             for(int j=0;j<qua.size();j++){
@@ -766,10 +806,11 @@ public class MainService {
             String key=u.get(i);
             User user=userBasicBLService.findByKey(key);
             int q=result.get(key);
-            CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+q);
+            CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+key);
+
             user.setCredit(user.getCredit()+1.5*q/10);
             userBasicBLService.update(user);
-
+            System.out.println("collectionResult:"+(collectionResult==null));
             collectionResult.setQuality(q);
             collectionResult.setCredit(1.5*q/10);
             collectionResult.setRank(rank[i]);

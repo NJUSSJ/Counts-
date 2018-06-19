@@ -4,8 +4,8 @@ var index;
 var tmp;
 var g1;
 var g2;
-var count = 1;
 var mid;
+var picNum;
 
 
 function getNameAndCollection() {
@@ -22,7 +22,8 @@ function getNameAndCollection() {
     return nameAndCollection;
 }
 
-function loadLabelPhone(_phoneNumber,collection, index){
+function loadLabelPhone(_phoneNumber,collection, _picNum){
+    picNum = _picNum;
     this.phoneNumber = _phoneNumber;
     this.mid = collection;
     this.count = index;
@@ -30,7 +31,7 @@ function loadLabelPhone(_phoneNumber,collection, index){
 
 function submitLabelInfo() {
     $.ajax({
-        async: false,
+        async: true,
         type: "POST",
         url: "/commit",
         contentType: "application/json",
@@ -58,7 +59,7 @@ function nextImage() {
     }
 
     $.ajax({
-        async: false,
+        async: true,
         type: "POST",
         url: "/updateLabelMission",
         contentType: "application/json",
@@ -82,7 +83,7 @@ function nextImage() {
     var phoneNumber = tmp[2].substring(tmp[2].indexOf("=")+1);
 
     i++;
-    if(i == 12){
+    if(i == picNum){
         alert("已到达任务末尾！");
     }else{
         window.location.href = "test1.html?collection=" + collection  + "&imageURL=" + i + "&phoneNumber=" + phoneNumber;

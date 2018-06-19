@@ -1,4 +1,3 @@
-var returnSample;
 var picIndex;
 var imageInfo;
 var answers = [];
@@ -10,18 +9,102 @@ var grade;
 var labels = [];
 var labelIndex = 0;
 
-
 function finishReviewPara(mid, indexs, answers, uid) {
     this.mid = mid;
     this.indexs = indexs;
     this.answers = answers;
     this.uid = uid;
 }
+var scale = function (btn,bar,title){
+
+    this.btn = document.getElementById("btn");
+
+    this.bar = document.getElementById("bar");
+
+    this.title = document.getElementById("title");
+
+    this.step = this.bar.getElementsByTagName("div")[0];
+
+
+
+    this.init = function (){
+
+        var f=this,g=document,b=window,m=Math;
+
+        f.btn.onmousedown=function (e){
+
+            var x=(e||b.event).clientX;
+
+            var l=this.offsetLeft;
+
+            var max=f.bar.offsetWidth-this.offsetWidth;
+
+            g.onmousemove=function (e){
+
+                var thisX=(e||b.event).clientX;
+
+                var to=m.min(max,m.max(-2,l+(thisX-x)));
+
+                f.btn.style.left=to+'px';
+
+                f.ondrag(m.round(m.max(0,to/max)*100),to);
+
+                b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();
+
+            };
+
+            g.onmouseup=new Function('this.onmousemove=null');
+
+        };
+
+    };
+
+    this.ondrag = function (pos,x){
+
+        this.step.style.width=Math.max(0,x)+'px';
+
+        this.title.innerHTML='分数：'+pos+'';
+
+        grade = pos;
+    };
+
+    this.init();
+
+}
+
+
+
+new scale('btn','bar','title'); //实例化一个拖拽
+
 
 /*
 加载抽样
  */
 function loadSample() {
+    var tagType = document.getElementById("tagType");
+    if(tagType.innerHTML == "1"){
+        tagType.innerHTML = "标签式";
+    }else{
+        tagType.innerHTML = "非标签式";
+    }
+
+    var bonusStrategy = document.getElementById("evaluateStrategy");
+    if(bonusStrategy.innerHTML == "1"){
+        bonusStrategy.innerHTML = "自动评估";
+    }else if(bonusStrategy.innerHTML == "2"){
+        bonusStrategy.innerHTML = "手动评估";
+    }else {
+        bonusStrategy.innerHTML = "雇佣评估";
+    }
+
+    var evaluateStrategy = document.getElementById("bonusStrategy");
+    if(evaluateStrategy.innerHTML == "1"){
+        evaluateStrategy.innerHTML = "平均分配";
+    }else if(evaluateStrategy.innerHTML == "2"){
+        evaluateStrategy.innerHTML = "Double or nothing";
+    }else{
+        evaluateStrategy.innerHTML = "双色球分配";
+    }
     $.ajax({
         type: "POST",
         url: "/getSample",
@@ -57,6 +140,7 @@ parameters for canvas
  */
 var canvas = document.getElementById("canvas1");
 var cxt = canvas.getContext("2d");
+var image = new Image();
 
 //已确定的矩形框
 var fixedX = [];
@@ -89,17 +173,11 @@ function sampleSet(sample, missionName) {
 }
 
 function loadOneSample(index,missionName) {
-    var image = new Image();
+
     image.src="";
     document.getElementById("textareaPlace").innerHTML="";
-
-
-    var imgInfo=eval(imageInfo[index]);
-    //alert(imgInfo.imgid);
-
-    /*
-    load rect and curl
-     */
+    var jsonString = JSON.stringify(imageInfo[index]);
+    var imgInfo=eval("("+jsonString+")");
     if(imgInfo!=null){
         if(imgInfo.fixedx!=null||imgInfo.list!=null) {
 
@@ -117,29 +195,9 @@ function loadOneSample(index,missionName) {
         }
     }
 
-    /*
-    load overall
-     */
-    if(imgInfo!=null){
-        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
-            var OverallIndex=0;
-            while(imgInfo.sentences[OverallIndex].status!=2){
-                OverallIndex++;
-                if(OverallIndex==imgInfo.sentences.length){
-                    break;
-                }
-            }
-            if(OverallIndex<imgInfo.sentences.length){
-                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
-            }
+    image.src = "missionImages/"+missionName+"_"+(picIndex[indexForSample]+1)+".jpg";
 
-        }
-    }
-
-    image.src ="missionImages/"+missionName+"_"+picIndex[indexForSample]+".jpg";
-
-
-    image.onload = function (ev) {
+    image.onload = function () {
         var width = image.width;
         var height = image.height;
 
@@ -173,9 +231,6 @@ function loadOneSample(index,missionName) {
 
     var parent=document.getElementById("textareaPlace");
 
-    /*
-    add rect info
-     */
     for(var i=0;i<fixedX.length;i++){
         if(fixedWidth[i]==0){
             continue;
@@ -210,6 +265,8 @@ function loadOneSample(index,missionName) {
             }
         }
 
+
+
         textarea.innerHTML=imgInfo.sentences[indexOfCurlSentence].raw;
 
         indexOfCurlSentence++;
@@ -218,13 +275,25 @@ function loadOneSample(index,missionName) {
         textarea.style.margin = "5px";
         textarea.style.width = "90px";
         textarea.id="curlArea"+i;
-
         textarea.style.borderStyle = "dotted";
         parent.appendChild(textarea);
-
     }
 
+    if(imgInfo!=null){
+        if(imgInfo.fixedx!=null||imgInfo.list!=null||imgInfo.sentences!=null){
+            var OverallIndex=0;
+            while(imgInfo.sentences[OverallIndex].status!=2){
+                OverallIndex++;
+                if(OverallIndex==imgInfo.sentences.length){
+                    break;
+                }
+            }
+            if(imgInfo.sentences[OverallIndex]!=null){
+                document.getElementById("info").innerHTML=imgInfo.sentences[OverallIndex].raw;
+            }
 
+        }
+    }
 }
 
 /*
@@ -261,13 +330,15 @@ function drawImage() {
 
 
 
+
+
 function good() {
     if(!judgeLast()){
         answers[indexForSample]= grade;
         indexForSample++;
         loadOneSample(indexForSample,picName);
     }else{
-        quality[indexForSample]=grade;
+        answers[indexForSample]=grade;
         sendJudgeResult();
     }
 }
@@ -362,7 +433,7 @@ function loadOneSample2(index, mid) {
 }
 
 function loadCanvas(url) {
-    var canvas2 = document.getElementById("canvas");
+    var canvas = document.getElementById("canvas");
     /*
         parameters for Pic
      */
@@ -397,9 +468,9 @@ function loadCanvas(url) {
             Pic_y = 0;
             Pic_x = 0;
         }
-        var cxt2 = canvas2.getContext("2d");
-        cxt2.clearRect(0,0,canvas.width,canvas.height);
-        cxt2.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
+        var cxt = canvas.getContext("2d");
+        cxt.clearRect(0,0,canvas.width,canvas.height);
+        cxt.drawImage(image,Pic_x,Pic_y,Pic_width,Pic_height);
     };
 
 
@@ -411,6 +482,13 @@ function clickLabel(i) {
     if(labelIndex == lastIndex-1){
         answers[labelIndex] = i;
         alert(answers);
+        document.getElementById("choices").style.display = "none";
+        var sampleArea=document.getElementById("edit_area2");
+        sampleArea.style.display="none";
+        var samplePanel=document.getElementById("samplePanel");
+        var info=document.createElement("h6");
+        info.innerHTML="评估已完成！";
+        samplePanel.appendChild(info);
         finishReview();
     }else{
         answers[labelIndex] = i;
@@ -432,7 +510,7 @@ function finishReview() {
         }
         ,
         error: function(){
-            alert("提交失败!");
+            //alert("提交失败!");
         }
     });
 }
