@@ -111,6 +111,12 @@ function veriInput() {
     var description=document.getElementById("description").value;
     var maxWorkerNum=document.getElementById("maxWorkerNum").value;
     var reward=document.getElementById("reward").value;
+    var tagType=document.getElementById("tagType").value;
+
+    if(tagType == "1" && missionLabel.length<2){
+        alert("标签式任务标签不能少于2个");
+        return false;
+    }
 
     if(maxWorkerNum < document.getElementsByClassName("dz-image").length/2){
         alert("标注人数至少需大于图片数一半");

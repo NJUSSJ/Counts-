@@ -52,7 +52,7 @@ function submitLabelInfo() {
 function nextImage() {
     //var picNum = tmp[3].substring(tmp[3].indexOf("=")+1);
 
-    var answer = loadLabelInfo()[0];
+    var answer = loadLabelInfo();
     if(answer == null){
         answer = -1;
     }

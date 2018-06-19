@@ -40,7 +40,7 @@ function clickLabel(i) {
     if(clicked[index] == 0){
         clicked[index] = 1;
         //alert(index + " clicked");
-        document.getElementById("info").innerHTML+="<li><a id=clicked"+ missionLabel[index] +" href=\"#\" class=\"button small\" style='width=40 height=60'>"+ missionLabel[index] +"</a></li>";
+        document.getElementById("info").innerHTML="<li><a id=clicked"+ missionLabel[index] +" href=\"#\" class=\"button small\" style='width=40 height=60'>"+ missionLabel[index] +"</a></li>";//多选改为单选
     }else{
         clicked[index] = 0;
         //alert(index + " unclicked");
@@ -57,8 +57,8 @@ function loadLabelInfo() {
             num++;
         }
     }
-    alert("clickedMissionLabel: " + clickedMissionLabel);
-    return clickedMissionLabel;
+    alert("已选择标签: " + clickedMissionLabel[0]);
+    return clickedMissionLabel[0];
 }
 
 function loadCanvas(url) {

@@ -108,17 +108,16 @@ function loadPersonal(phoneNumber) {
     document.getElementById("_password").value = personalInfo.password;
     document.getElementById("_description").value = personalInfo.description;
 
+    //加载collectionInfo
+    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
+    loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category);
+    loadDownloadFile();
 
     //获取chart相关后端数据
     getChartData(personalInfo.phoneNumber, personalInfo.category);
 
     //加载chart
     loadChartArea(personalInfo.category);
-
-    //加载collectionInfo
-    loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
-    loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category);
-    loadDownloadFile();
 }
 
 function savePersonalBlanks() {
@@ -225,7 +224,6 @@ function loadPersonalFinishedCollection(phoneNumber, category) {
                 if (returnData[i] == null) {
                     break;
                 }
-                alert("!!!");
                 finishedNames[i] = returnData[i];
                 index++;
             }
