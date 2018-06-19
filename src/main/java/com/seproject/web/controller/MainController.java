@@ -90,7 +90,7 @@ public class MainController {
     @RequestMapping(value = "/updateLabelMission")
     @ResponseBody
     /**
-     * 更新用户对标签式任务的标注
+     * 更新用户对标签式任务（或金标）的标注
      */
     public String updateLabelMission(@RequestBody String parameter){
         JSONObject object=JSONObject.fromObject(parameter);
@@ -98,14 +98,23 @@ public class MainController {
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
-         int k=para.getNum();
+        int k=para.getNum();
+        ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        for(GoldMission goldMission:goldMissions){
+            String tempUid=goldMission.getUid();
+            if(tempUid.equals(uid)){
+                goldMission.getResult().set(k,para.getAnswer());
+                goldMissionBasicBLService.update(goldMission);
+                return RM.SUCCESS.toString();
+            }
+        }
+        //如果不是金标，到子任务里取
         ArrayList<SubLabelMission> subLabelMission =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
-        for(int i = 0; i< subLabelMission.size(); i++){
-            SubLabelMission sub= subLabelMission.get(i);
-            ArrayList<String> user=sub.getUid();
-            if(user.contains(uid)){
-                ArrayList<Integer> tempanswer=sub.getAnswers().get(user.indexOf(uid));
-                tempanswer.set(k,para.getAnswer());
+        for (SubLabelMission sub : subLabelMission) {
+            ArrayList<String> user = sub.getUid();
+            if (user.contains(uid)) {
+                ArrayList<Integer> tempanswer = sub.getAnswers().get(user.indexOf(uid));
+                tempanswer.set(k, para.getAnswer());
                 subTagMissionBasicBLService.update(sub);
                 return RM.SUCCESS.toString();
             }
