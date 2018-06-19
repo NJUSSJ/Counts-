@@ -51,8 +51,14 @@ function loadMain(userPhone,userCategory) {
 
 }
 
+function setMissionNames(_missionNames, _index) {
+    missionNames = _missionNames;
+    index = _index;
+}
 
 function setCollection(){
+    document.getElementById("collections").innerHTML = "";
+    
     var missionNum=index;
     var rowNum=Math.floor(missionNum/3);
     var left=missionNum-rowNum*3;

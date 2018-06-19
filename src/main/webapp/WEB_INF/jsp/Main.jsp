@@ -88,24 +88,28 @@
     <!-- Main -->
     <article id="main">
         <!-- Two -->
-        <section class="wrapper style4 container special" id="collections" style="padding-top: 0px; margin-top: 3px" >
+        <section class="wrapper style4 container special" style="padding-top: 0px; margin-top: 3px" >
             <section style="margin-bottom: 3px;">
                 <div class="search d1" id="search" style="background-color: #ffffff;">
-                    <a onclick="loadMain(${requestScope.phoneNumber},${requestScope.userCategory})" style="padding-right: 3px; float: right"><img src="images/refresh.png" width="30" height="30"></a>
-                    <form id="searchFromId" style="margin-left: 80px">
-                        <select id="searchType" style="border-radius: 0.3em 0.3em 0.3em 0.3em">
-                            <option value="all">全部</option>
-                            <option value="notEnded">未截止</option>
-                            <option value="ended">已截止</option>
-                            <option value="missionName">任务名</option>
-                            <option value="requester">发布者</option>
-                        </select>
-                        <input type="text" placeholder="搜索从这里开始..." id="searchContent">
-                        <button type="submit" id="searchBtn"></button>
+                    <a onclick="refreshMission()" style="padding-right: 3px; float: right"><img src="images/refresh.png" width="30" height="30"></a>
+                    <form style="margin-left: 80px">
+                                <select id="searchType" style="border-radius: 0.3em 0.3em 0.3em 0.3em">
+                                    <option value="all">全部</option>
+                                    <option value="notEnded">未截止</option>
+                                    <option value="ended">已截止</option>
+                                    <option value="missionName">任务名</option>
+                                    <option value="requestor">发布者</option>
+                                </select>
+                                <input type="text" placeholder="搜索从这里开始..." id="searchContent">
+                                <button type="button" id="searchBtn"></button>
                     </form>
                 </div>
             </section>
+            <div id="collections">
+
+            </div>
         </section>
+
 
     </article>
 
@@ -129,6 +133,7 @@
 </div>
 
 <!-- Scripts -->
+<script src="js/Search.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/jquery.scrolly.min.js"></script>

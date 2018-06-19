@@ -14,19 +14,22 @@ function user(userPhone,category){
 
 function loadMain(userPhone,userCategory) {
     var tmpUser = new user(userPhone, userCategory);
-    userPhone1=userPhone;
-    userCategory1=userCategory;
+    userPhone1 = userPhone;
+    userCategory1 = userCategory;
 
-    if(userCategory==1){
-        var li=document.getElementById("extra");
-        li.style.display="inline";
-        document.getElementById("menuTitle").innerHTML="发布一个新任务";
-        document.getElementById("menuTitle").href="/upload.html?userPhone="+userPhone;
+    if (userCategory == 1) {
+        var li = document.getElementById("extra");
+        li.style.display = "inline";
+        document.getElementById("menuTitle").innerHTML = "发布一个新任务";
+        document.getElementById("menuTitle").href = "/upload.html?userPhone=" + userPhone;
     } else {
-        var li=document.getElementById("extra");
-        li.style.display="none";
+        var li = document.getElementById("extra");
+        li.style.display = "none";
     }
+    getCollectionInfo();
+}
 
+function getCollectionInfo() {
     $.ajax({
         async: false,
         method: "POST",
@@ -48,11 +51,16 @@ function loadMain(userPhone,userCategory) {
             //alert("fail")
         }
     });
-
 }
 
+function setMissionNames(_missionNames, _index) {
+    missionNames = _missionNames;
+    index = _index;
+}
 
 function setCollection(){
+    document.getElementById("collections").innerHTML = "";
+
     var missionNum=index;
     var rowNum=Math.floor(missionNum/3);
     var left=missionNum-rowNum*3;
