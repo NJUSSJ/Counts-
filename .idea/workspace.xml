@@ -3,10 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/judge.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/judge.js" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class" afterPath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Collection.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.CollectionResult.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Message.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.Mission.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.SubFreeMission.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/class com.seproject.domain.User.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/base.css" afterPath="$PROJECT_DIR$/target/classes/resources/css/base.css" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.11.0.min.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.11.0.min.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.8.3.min.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.select.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/jquery.select.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/backgroundsize.min.htc" afterPath="$PROJECT_DIR$/target/classes/resources/js2/ie/backgroundsize.min.htc" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/main.js" afterPath="$PROJECT_DIR$/target/classes/resources/js2/main.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/util.js" afterPath="$PROJECT_DIR$/target/classes/resources/js2/util.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_functions.scss" afterPath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_functions.scss" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_mixins.scss" afterPath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_mixins.scss" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_skel.scss" afterPath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_skel.scss" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_vars.scss" afterPath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_vars.scss" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/noscript.scss" afterPath="$PROJECT_DIR$/target/classes/resources/sass2/noscript.scss" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +74,7 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
+            <state relative-caret-position="1222">
               <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
               <folding />
             </state>
@@ -64,17 +84,17 @@
       <file leaf-file-name="MainService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1764">
+            <state relative-caret-position="13110">
               <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Personal.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Personal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1503">
+            <state relative-caret-position="775">
               <caret line="302" column="26" lean-forward="false" selection-start-line="302" selection-start-column="26" selection-end-line="302" selection-end-column="26" />
               <folding />
             </state>
@@ -94,7 +114,7 @@
       <file leaf-file-name="TagType.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1127">
+            <state relative-caret-position="1334">
               <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
@@ -105,11 +125,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multipic.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="multipic.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/multipic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+            <state relative-caret-position="207">
+              <caret line="99" column="19" lean-forward="false" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="judge.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/judge.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -118,7 +148,7 @@
       <file leaf-file-name="MissionDetails.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MissionDetails.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2711">
+            <state relative-caret-position="3519">
               <caret line="153" column="26" lean-forward="false" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
               <folding />
             </state>
@@ -128,18 +158,8 @@
       <file leaf-file-name="missionDetailsCharts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetailsCharts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="920">
               <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CollectionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="78" column="39" lean-forward="false" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -151,7 +171,7 @@
             <state relative-caret-position="348">
               <caret line="99" column="57" lean-forward="false" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
               <folding>
-                <marker date="1529389596829" expanded="true" signature="10063:10081" ph="..." />
+                <marker date="1529390874098" expanded="true" signature="10063:10081" ph="..." />
               </folding>
             </state>
           </provider>
@@ -201,7 +221,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/singleEdit.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/freeJudge.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/resources/js/judge.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MultiPic.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MissionDetails.jsp" />
@@ -209,9 +228,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/TagType.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionRest.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/resources/js/judge.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/resources/js/multipic.js" />
       </list>
     </option>
   </component>
@@ -272,10 +292,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -492,6 +512,7 @@
       <workItem from="1529376560778" duration="1928000" />
       <workItem from="1529379238230" duration="46000" />
       <workItem from="1529382535411" duration="7071000" />
+      <workItem from="1529390957093" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="V 3.9.5">
       <created>1529333485898</created>
@@ -504,7 +525,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12766000" />
+    <option name="totallyTimeSpent" value="13566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -517,6 +538,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -533,8 +555,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -590,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2162">
           <caret line="94" column="23" lean-forward="false" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,7 +651,7 @@
         <state relative-caret-position="10787">
           <caret line="469" column="12" lean-forward="true" selection-start-line="469" selection-start-column="12" selection-end-line="469" selection-end-column="12" />
           <folding>
-            <marker date="1529389596829" expanded="true" signature="10063:10081" ph="..." />
+            <marker date="1529390874098" expanded="true" signature="10063:10081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -658,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2162">
           <caret line="94" column="23" lean-forward="false" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,7 +717,7 @@
         <state relative-caret-position="4646">
           <caret line="202" column="0" lean-forward="true" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
           <folding>
-            <marker date="1529389596829" expanded="true" signature="10063:10081" ph="..." />
+            <marker date="1529390874098" expanded="true" signature="10063:10081" ph="..." />
           </folding>
         </state>
       </provider>
@@ -750,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2162">
           <caret line="94" column="23" lean-forward="false" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,15 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/judge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-411">
           <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +909,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
+        <state relative-caret-position="1334">
           <caret line="78" column="39" lean-forward="false" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
           <folding />
         </state>
@@ -913,7 +917,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MissionDetails.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2711">
+        <state relative-caret-position="3519">
           <caret line="153" column="26" lean-forward="false" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
           <folding />
         </state>
@@ -921,13 +925,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
+        <state relative-caret-position="1334">
           <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
           <folding>
             <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
             <marker date="1529386569817" expanded="true" signature="614:632" ph="..." />
             <marker date="1529386569817" expanded="true" signature="1192:1210" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetailsCharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13110">
+          <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="302" column="26" lean-forward="false" selection-start-line="302" selection-start-column="26" selection-end-line="302" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="99" column="57" lean-forward="false" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
+          <folding>
+            <marker date="1529390874098" expanded="true" signature="10063:10081" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/judge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="17" column="74" lean-forward="false" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1222">
+          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -939,52 +993,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetailsCharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="99" column="57" lean-forward="false" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
-          <folding>
-            <marker date="1529389596829" expanded="true" signature="10063:10081" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/multipic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1503">
-          <caret line="302" column="26" lean-forward="false" selection-start-line="302" selection-start-column="26" selection-end-line="302" selection-end-column="26" />
+        <state relative-caret-position="207">
+          <caret line="99" column="19" lean-forward="false" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
           <folding />
         </state>
       </provider>

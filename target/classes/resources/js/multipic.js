@@ -97,7 +97,7 @@ function addJudgeMissionToUser(missionName, userPhone) {
     var collectionData=new collection(userPhone,missionName);
     $.ajax({
         type: "POST",
-        async: false,
+        async: true,
         url: "/addJudgeMission",
         contentType: "application/json",
         dataType: "json",
