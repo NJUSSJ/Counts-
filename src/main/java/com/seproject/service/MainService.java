@@ -217,10 +217,17 @@ public class MainService {
         int evaluate=mission.getEvaluateStrategy();
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        System.out.println("金标排列");
+        for(GoldMission goldMission:goldMissions){
+            System.out.println(goldMission.getPictrueIndex());
+            System.out.println(goldMission.getResult());
+        }
         for (SubLabelMission subLabelMission : subLabelMissions) {
             ArrayList<Double> weight = new ArrayList<Double>();
             int index1 = subLabelMission.getId1();
+            System.out.println("index1:"+index1);
             int index2 = subLabelMission.getId2();
+            System.out.println("index2:"+index2);
             int answer1 = -1;
             int answer2 = -1;
             for (GoldMission g : goldMissions) {
@@ -254,18 +261,9 @@ public class MainService {
                     weight.add(0.0);
                 }
             }
-            /*System.out.println("missionLabel:"+mission.getMissionLabel());
-            int gog=0;
-            System.out.println(mission.getMissionLabel().get(0));*/
             String[] mLabel=mission.getMissionLabel().get(0).split(",");
             int labelNumber=mLabel.length;
-            /*for(String str:mission.getMissionLabel()){
-                System.out.println(gog);
-                gog++;
-            }
-            int labelNumber = mission.getMissionLabel().size();*/
             double vote[][] = new double[10][labelNumber];//
-            System.out.println(labelNumber+"*****!!!!!");
             for (int j = 0; j < 10; j++) {
                 for (int k = 0; k < labelNumber; k++) {
                     vote[j][k] = 0;
@@ -284,6 +282,11 @@ public class MainService {
 
             //找到了所有的标准答案，判断每个用户每题对不对，根据答题情况直接发奖励
             int standardAnswers[] = getStandard(vote);
+            System.out.println("标准答案");
+            for(int a=0;a<standardAnswers.length;a++){
+                System.out.println(standardAnswers[a]);
+            }
+            System.out.println("--------");
             boolean isCorrect[][] = new boolean[subLabelMission.getUid().size()][12];
             for (int j = 0; j < isCorrect.length; j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
@@ -294,16 +297,30 @@ public class MainService {
                         isCorrect[j][k]=true;
                     }
                 }
+                System.out.println("金标1");
+                System.out.println(userAnswer.get(10));
+                System.out.println(answer1);
+                System.out.println("金标2");
+                System.out.println(userAnswer.get(11));
+                System.out.println(answer2);
                 isCorrect[j][10] = (userAnswer.get(10) == answer1);
                 isCorrect[j][11] = (userAnswer.get(11) == answer2);
             }
 
             //根据事先设置的策略分配
             double[] money=null;
+            System.out.println(evaluate);
+            if(evaluate==2){
+                System.out.println("double nothing");
+            }else if(evaluate==3){
+                System.out.println("双色球");
+            }else{
+                System.out.println("策略没收到！");
+            }
             if(evaluate==2) {//2号策略：double nothing
                 money = giveMoney_DoubleNothing(isCorrect);
             }else if(evaluate==3){//3号策略：双色球
-                money=giveMoney_DoubleColorBall(isCorrect);
+                money = giveMoney_DoubleColorBall(isCorrect);
             }
             setCollection(money, subLabelMission.getUid(), mid);
         }
@@ -316,12 +333,16 @@ public class MainService {
      */
     public void finishReview(ArrayList<Integer> index,ArrayList<Integer> answer,String mid){
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        System.out.println("index:"+index);
+        System.out.println("answer:"+answer);
+        System.out.println("goldMissionSize:"+goldMissions.size());
         for(int i=0;i<index.size();i++){
             int eachIndex = index.get(i);
             for(GoldMission goldMission:goldMissions){
                 ArrayList<Integer> picIndex=goldMission.getPictrueIndex();
                 if(picIndex.contains(eachIndex)){
                     goldMission.getResult().set(picIndex.indexOf(eachIndex),answer.get(i));
+                    goldMissionBasicBLService.update(goldMission);
                     break;
                 }
             }
@@ -338,8 +359,11 @@ public class MainService {
         for(int i=0;i<vote.length;i++){
             boolean isValid=false;
             double temp[]= vote[i];
+            double[] origin=new double[temp.length];
+            for(int b=0;b<temp.length;b++){
+                origin[b]=temp[b];
+            }
             Arrays.sort(temp);//升序
-
             if(temp[temp.length-2]!=0){
                 if(temp[temp.length-1]/temp[temp.length-2]>=3){
                     isValid=true;
@@ -351,7 +375,7 @@ public class MainService {
                 result[i]=-1;
             }else{
                 double max=temp[temp.length-1];
-                temp=vote[i];
+                temp=origin;
                 for(int k=0;k<temp.length;k++){
                     if(temp[k]==max){
                         result[i]=k;
@@ -406,6 +430,12 @@ public class MainService {
 
     private double[] giveMoney_DoubleNothing(boolean x[][]){
         //使用double_nothing策略分配奖励
+        System.out.println("vote:");
+        for(int a=0;a<x.length;a++){
+            for(int b=0;b<x[0].length;b++){
+                System.out.println(x[a][b]);
+            }
+        }
         double base=1.6;
         double[] money = new double[x.length];
         // x 是 横坐标用户，纵坐标12个题是否正确的二维数组
@@ -419,6 +449,10 @@ public class MainService {
                 }
             }
             money[i]=m;
+        }
+        System.out.println("money:");
+        for(int i=0;i<money.length;i++){
+            System.out.println(money[i]);
         }
         return money;
     }
