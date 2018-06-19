@@ -4,8 +4,8 @@
     <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resources/js/admin.js" afterPath="$PROJECT_DIR$/src/main/resources/resources/js/admin.js" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" afterPath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MissionDetails.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MissionDetails.jsp">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="307">
+              <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -89,21 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiPic.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MultiPic.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-529">
-              <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="administer.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="286" column="45" lean-forward="false" selection-start-line="286" selection-start-column="45" selection-end-line="286" selection-end-column="45" />
+            <state relative-caret-position="1610">
+              <caret line="106" column="132" lean-forward="false" selection-start-line="106" selection-start-column="132" selection-end-line="106" selection-end-column="132" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -114,22 +104,41 @@
       <file leaf-file-name="TagType.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="-981">
               <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
               <folding>
-                <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
-                <marker date="1529386569817" expanded="true" signature="614:632" ph="..." />
-                <marker date="1529386569817" expanded="true" signature="1192:1210" ph="..." />
+                <marker date="1529426103980" expanded="true" signature="567:586" ph="..." />
+                <marker date="1529426103980" expanded="true" signature="614:632" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LabelEdit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LabelEdit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            <state relative-caret-position="348">
+              <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload1.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/upload1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tagTool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-237">
+              <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -148,18 +157,8 @@
       <file leaf-file-name="MultiController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2530">
-              <caret line="124" column="60" lean-forward="true" selection-start-line="124" selection-start-column="60" selection-end-line="124" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maincollection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Maincollection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1587">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-2113">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -332,25 +331,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="chart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -433,6 +413,173 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/Personal.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/TagType.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/upload1.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Personal.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/TagType.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/upload1.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_9.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_9.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_9.jpg</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -530,7 +677,7 @@
       <workItem from="1529390957093" duration="2252000" />
       <workItem from="1529393346154" duration="5453000" />
       <workItem from="1529401240655" duration="9428000" />
-      <workItem from="1529412859796" duration="3483000" />
+      <workItem from="1529412859796" duration="4749000" />
     </task>
     <task id="LOCAL-00001" summary="V 3.9.5">
       <created>1529333485898</created>
@@ -543,7 +690,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33382000" />
+    <option name="totallyTimeSpent" value="34648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,8 +720,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -608,16 +755,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/singleEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2093">
-          <caret line="91" column="11" lean-forward="false" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5313">
@@ -752,13 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411">
-          <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-644">
@@ -876,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6762">
-          <caret line="318" column="20" lean-forward="false" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/missionResult.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1419">
@@ -931,14 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="124" column="60" lean-forward="true" selection-start-line="124" selection-start-column="60" selection-end-line="124" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MultiPic.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-529">
@@ -973,6 +1087,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-981">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding>
+            <marker date="1529426103980" expanded="true" signature="567:586" ph="..." />
+            <marker date="1529426103980" expanded="true" signature="614:632" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2113">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1610">
+          <caret line="106" column="132" lean-forward="false" selection-start-line="106" selection-start-column="132" selection-end-line="106" selection-end-column="132" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -981,32 +1132,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="286" column="45" lean-forward="false" selection-start-line="286" selection-start-column="45" selection-end-line="286" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <marker date="1529386569817" expanded="true" signature="567:586" ph="..." />
-            <marker date="1529386569817" expanded="true" signature="614:632" ph="..." />
-            <marker date="1529386569817" expanded="true" signature="1192:1210" ph="..." />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state relative-caret-position="348">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/upload1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
