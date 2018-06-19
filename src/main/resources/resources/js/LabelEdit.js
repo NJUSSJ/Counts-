@@ -31,7 +31,7 @@ function loadLabelPhone(_phoneNumber,collection, _picNum){
 
 function submitLabelInfo() {
     $.ajax({
-        async: false,
+        async: true,
         type: "POST",
         url: "/commit",
         contentType: "application/json",
@@ -59,7 +59,7 @@ function nextImage() {
     }
 
     $.ajax({
-        async: false,
+        async: true,
         type: "POST",
         url: "/updateLabelMission",
         contentType: "application/json",

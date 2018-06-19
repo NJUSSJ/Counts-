@@ -31,6 +31,7 @@ com\seproject\domain\Sample.class
 com\seproject\service\ReviewService.class
 com\seproject\domain\testDomain\TestH.class
 com\seproject\web\parameter\FreeMissionParameter.class
+com\seproject\web\response\MissionResultResponse.class
 com\seproject\domain\chart\Chart1.class
 com\seproject\service\LanguageService.class
 com\seproject\web\response\MissionCheckResponse.class
