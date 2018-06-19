@@ -777,12 +777,13 @@ public class MainService {
         }
         ArrayList<Integer> qua=new ArrayList<Integer>();
         ArrayList<String> u=new ArrayList<String>();
-        int[] rank=new int[u.size()];
         for(String key:result.keySet()){
             u.add(key);
-            qua.add(result.get(u));
+            qua.add(result.get(key));
         }
-
+        int[] rank=new int[u.size()];
+        System.out.println("qua:"+qua);
+        System.out.println("u:"+u);
         for(int i=0;i<qua.size();i++){
             rank[i]=1;
             for(int j=0;j<qua.size();j++){
@@ -798,10 +799,11 @@ public class MainService {
             String key=u.get(i);
             User user=userBasicBLService.findByKey(key);
             int q=result.get(key);
-            CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+q);
+            CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+key);
+
             user.setCredit(user.getCredit()+1.5*q/10);
             userBasicBLService.update(user);
-
+            System.out.println("collectionResult:"+(collectionResult==null));
             collectionResult.setQuality(q);
             collectionResult.setCredit(1.5*q/10);
             collectionResult.setRank(rank[i]);

@@ -104,6 +104,7 @@ a.collectionName = "cat1";
 /* ajax */
 function ImageJson(imgs) {
     $.ajax({
+        async: false,
         type: "POST",
         url: "write",
         contentType: "application/json",
