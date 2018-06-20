@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+com\seproject\dao\FileDaoTest1.class
+com\seproject\service\blServiceImpl\BasicBLImpl_HibernateTest.class
+com\seproject\service\BasicBLServiceTest2.class
+com\seproject\service\MathServiceTest.class
+com\seproject\dao\FileDaoTest2.class
+com\seproject\service\BasicBLServiceTest.class
+com\seproject\service\BasicBLServiceTest1.class
+=======
 com/seproject/dao/FileDaoTest1.class
 com/seproject/service/MathServiceTest.class
 com/seproject/service/BasicBLServiceTest.class
@@ -5,3 +14,4 @@ com/seproject/dao/FileDaoTest2.class
 com/seproject/service/BasicBLServiceTest2.class
 com/seproject/service/blServiceImpl/BasicBLImpl_HibernateTest.class
 com/seproject/service/BasicBLServiceTest1.class
+>>>>>>> 86db4a81d7c9c3d1de70aa4ecc8ce596eafcbcd0

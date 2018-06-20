@@ -38,8 +38,13 @@ searchBtn.addEventListener("click", function () {
 
 });
 
+<<<<<<< HEAD
+function refreshMission() {
+    getCollectionInfo();
+=======
 function refreshMission(phoneNumber,category) {
     var tmpUser = new TmpUser(phoneNumber,category);
     getCollectionInfo(tmpUser);
+>>>>>>> 86db4a81d7c9c3d1de70aa4ecc8ce596eafcbcd0
     setCollection();
 }

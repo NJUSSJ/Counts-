@@ -19,6 +19,16 @@
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
+    <!-- load 3D stat -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 
     <style type="text/css">
         #functionBar{
@@ -142,7 +152,14 @@
             </div>
 
             <div class="9u 12u(narrow)" align="left" id="recent" style="display: none;padding-top: 0px;padding-left: 90px">
-                <div id="revenue" style="width: 1000px;height: 500px"></div>
+                <header>近一周系统收支情况</header>
+                <div id="revenue" style="width: 900px;height: 400px;margin-bottom: 30px"></div>
+
+                <div id="adminChart2" style="width: 800px;height: 400px;margin-bottom: 30px"></div>
+
+                <div id="adminChart3" style="width: 1000px;height: 400px;margin-bottom: 30px"></div>
+
+                <div id="adminChart4" style="width: 1000px;height: 400px"></div>
                 <script>
                     var dom = document.getElementById("revenue");
                     var myChart = echarts.init(dom);
@@ -328,5 +345,6 @@
 <!--[if lte IE 8]><script src="js2/ie/respond.min.js2"></script><![endif]-->
 <script src="js/main.js"></script>
 <script src="js/admin.js"></script>
+<script src="js/DrawAdminChart.js"></script>
 </body>
 </html>
