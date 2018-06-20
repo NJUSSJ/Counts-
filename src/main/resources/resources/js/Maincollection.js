@@ -26,10 +26,10 @@ function loadMain(userPhone,userCategory) {
         var li = document.getElementById("extra");
         li.style.display = "none";
     }
-    getCollectionInfo();
+    getCollectionInfo(tmpUser);
 }
 
-function getCollectionInfo() {
+function getCollectionInfo(tmpUser) {
     $.ajax({
         async: false,
         method: "POST",
