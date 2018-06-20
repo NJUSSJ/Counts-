@@ -75,24 +75,129 @@ function hideAllBlock() {
 
 }
 
-function searchUser(info) {
 
+function para1(info) {
+    this.info = info;
 }
 
 function searchUser() {
-    var info = document.getElementsByClassName("userSearch");
+    var info = document.getElementById("userInfo").value;
+    var para = new para1(info);
     $.ajax({
         async: false,
         type :"POST",
-        url: "",
+        url: "/findUserByAdmin",
         contentType: "application/json",
         dataType: "json",
-        data: JSON.stringify(info),
+        data: JSON.stringify(para),
         success: function (returnData) {
-            //alert(returnData);
+            if(returnData == "0"){
+                alert("未找到该用户！");
+            }else{
+                var string = JSON.stringify(returnData);
+                var user = eval("("+string+")");
+                setUser(user);
+            }
+
         },
         error: function () {
             //alert("fail");
         }
     });
+}
+
+function setUser(user) {
+    var category = user.category;
+    var credit = user.credit;
+    var level = user.level;
+    var phone = user.uid;
+    var userName = user.userName;
+
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+    var td5 = document.createElement("td");
+
+    td1.innerHTML = phone;
+    td2.innerHTML = userName;
+    if(category==1){
+        td3.innerHTML = "发起者";
+    }else if(category==2){
+        td3.innerHTML = "工人";
+    }else{
+        td3.innerHTML = "管理员";
+    }
+    td4.innerHTML = level;
+    td5.innerHTML = "正常";
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+
+    document.getElementById("userTable").appendChild(tr);
+}
+
+function searchMission() {
+    var info = document.getElementById("missionName").value;
+    var para = new para1(info);
+    $.ajax({
+        async: false,
+        type :"POST",
+        url: "/findMissionByAdmin",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(para),
+        success: function (returnData) {
+            if(returnData == "0"){
+                alert("未找到该任务！");
+            }else{
+                var string = JSON.stringify(returnData);
+                var mission = eval("("+string+")");
+                setMission(mission);
+            }
+
+        },
+        error: function () {
+            //alert("fail");
+        }
+    });
+}
+
+function setMission(mission) {
+    var mid = mission.mid;
+    var type = mission.tagType;
+    var starterName = mission.starterName;
+    var state = mission.state;
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+    var td5 = document.createElement("td");
+
+    td1.innerHTML = mid;
+    if(type == 1){
+        td2.innerHTML = "标签式";
+    }else{
+        td2.innerHTML = "非标签式";
+    }
+    td3.innerHTML = starterName;
+    if(state == 2){
+        td4.innerHTML = "已完成";
+    }else{
+        td4.innerHTML = "进行中";
+    }
+
+
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+
+    document.getElementById("missionTable").appendChild(tr);
 }

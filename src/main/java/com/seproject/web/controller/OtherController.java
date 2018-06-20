@@ -1,12 +1,18 @@
 package com.seproject.web.controller;
 
+import com.seproject.common.SearchCategory;
+import com.seproject.domain.Collection;
+import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.domain.UserDate;
 import com.seproject.service.Factory;
 import com.seproject.service.FileIOService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.ChangeCreditParameter;
+import com.seproject.web.response.FindMissionResponse;
+import com.seproject.web.response.FindUserResponse;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import net.sf.json.JSONString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +30,8 @@ public class OtherController {
     BasicBLService<UserDate> userDateBasicBLService= Factory.getUserDateBasicBLService();
     //BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     BasicBLService<User> userBasicBLService=Factory.getUserBasicBLService();
+    BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
+    BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
     FileIOService fileIOService;
     @RequestMapping(value = "/Sign")
     @ResponseBody
@@ -101,6 +109,46 @@ public class OtherController {
             user.setCredit(origin);
             userBasicBLService.update(user);
             return 1;
+        }
+    }
+
+    @RequestMapping(value = "/findUserByAdmin")
+    @ResponseBody
+    public String findUser(@RequestBody String uid){
+        uid = uid.substring(9, uid.lastIndexOf("\""));
+        FindUserResponse findUserResponse=new FindUserResponse();
+        User user=userBasicBLService.findByKey(uid);
+        if(user==null){
+            return "0";
+        }else{
+            findUserResponse.setCategory(user.getCategory());
+            findUserResponse.setCredit(user.getCredit());
+            findUserResponse.setLevel(user.getLevel());
+            findUserResponse.setUid(user.getPhoneNumber());
+            findUserResponse.setUserName(user.getUserName());
+            JSONObject object = JSONObject.fromObject(findUserResponse);
+            return object.toString();
+        }
+
+    }
+
+    @RequestMapping(value = "/findMissionByAdmin")
+    @ResponseBody
+    public String findMission(@RequestBody String mid){
+        mid = mid.substring(9, mid.lastIndexOf("\""));
+        FindMissionResponse findMissionResponse=new FindMissionResponse();
+        Mission mission=missionBasicBLService.findByKey(mid);
+        ArrayList<Collection> collections=collectionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        if(mission==null){
+            return "0";
+        }else{
+            findMissionResponse.setMemberNum(collections.size());
+            findMissionResponse.setMid(mid);
+            findMissionResponse.setStarterName(mission.getRequestorNumber());
+            findMissionResponse.setState(mission.getState());
+            findMissionResponse.setTagType(mission.getTagType());
+            JSONObject object = JSONObject.fromObject(findMissionResponse);
+            return object.toString();
         }
     }
 

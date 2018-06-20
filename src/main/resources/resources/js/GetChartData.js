@@ -7,7 +7,14 @@ function userPhoneNumberObj(phoneNumber) {
     this.phoneNumber = phoneNumber;
 }
 
+function para(uid) {
+    this.uid = uid;
+}
+
 function getChartData(phoneNumber, category) {
+
+
+
     //alert("category " + category);
 
     switch (category) {

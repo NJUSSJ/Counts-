@@ -7,6 +7,7 @@ var finishedNames=[];
 var tagTypes=[];
 var index=0;
 
+
 function PersonalInfo(userName, phoneNumber, password, credit, level, category, description) {
     this.userName = userName;
     this.phoneNumber = phoneNumber;
@@ -328,12 +329,34 @@ function setFinishedCollection() {
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalFinishedCollections").appendChild(div);
-        if(userCategory == "1") {//userCategory == 1
-            document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href=file/downloadFile/" + finishedNames[i] + ".txt download=" + finishedNames[i] + " />点击此处下载该任务标注信息</a></div>";
-        }
+        //document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href" + finishedNames[i] + ".txt download="+ finishedNames[i] +" />点击此处下载该任务标注信息</a></div>";
+        document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href=file/downloadFile/" + finishedNames[i] + ".txt download="+ finishedNames[i] +" />点击此处下载该任务标注信息</a></div>";
+
     }
 }
-/*
+
 function setDownloadFile(url) {
     //document.getElementById("personalFinishedCollections").innerHTML += "<a id='downloadFile' download=" + url[0] + " >点击此处下载该任务标注信息</a>";
-}*/
+}
+
+function para(uid) {
+    this.uid = uid;
+}
+
+function loadRader() {
+    var para1 = new para(phoneNumber);
+    $.ajax({
+        async: false,
+        type: "POST",
+        url: "/singleChart/getChart9",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(para1),
+        success: function (jsonResult) {
+            dataRader = JSON.stringify(jsonResult);
+        },
+        error: function(msg){
+            //alert("fail")
+        }
+    });
+}
