@@ -4,6 +4,7 @@ import com.seproject.domain.User;
 import com.seproject.domain.UserDate;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
+import com.seproject.web.parameter.ChangeCreditParameter;
 import net.sf.json.JSONString;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,7 @@ public class OtherController {
      */
     public String sign(@RequestBody String phoneNumber){
         phoneNumber = phoneNumber.split("=")[1];
-        System.out.println(phoneNumber);
+        System.out.println("phoneNumber:"+phoneNumber);
         String message="sign up success";
         Date now=new Date(System.currentTimeMillis());
         User user=userBasicBLService.findByKey(phoneNumber);
@@ -37,11 +38,13 @@ public class OtherController {
         Date[] dateArray = userDate.getDate();
         int index = userDate.getFlag();
         if(index==-1){//如果整个日期数组为空，添加第一项并令index=0
+            System.out.println("firstTimeNow:"+now);
             reward=2;
             dateArray[0]=now;
             index=0;
         }else {//否则比较上次签到时间和今天的差
             Date lastTime = dateArray[index];
+            System.out.println("lastTime:"+lastTime);
             int day = ((int) (now.getTime() / (1000 * 3600 * 24))) - ((int)(lastTime.getTime() / (1000 * 3600 * 24)));
             if (day < 1) {
                 message = "";
@@ -72,6 +75,22 @@ public class OtherController {
         }
         System.out.println(message);
         return message;
+    }
+    @RequestMapping(value = "/ChangeCredit")
+    @ResponseBody
+    public int changeCredit(@RequestBody ChangeCreditParameter changeCreditParameter){
+        String uid=changeCreditParameter.getUid();
+        double delta=changeCreditParameter.getDelta();
+        User user=userBasicBLService.findByKey(uid);
+        double origin=changeCreditParameter.getDelta();
+        if(origin+delta<0){
+            return 0;//积分减完为负数，不能进行此操作
+        }else {
+            origin=origin+delta;
+            user.setCredit(origin);
+            userBasicBLService.update(user);
+            return 1;
+        }
     }
 
     public void clearArray(Date[] dateArray){
