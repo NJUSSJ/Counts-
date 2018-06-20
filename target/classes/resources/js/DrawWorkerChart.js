@@ -118,20 +118,7 @@ workerChart2.setOption(workerOption2);
 var workerChart3 = echarts.init(document.getElementById('workerChart3'));
 
 var dataRader =  [];
-$.ajax({
-    async: true,
-    type: "POST",
-    url: "",
-    contentType: "application/json",
-    dataType: "json",
-    data: toJsonString(phoneNumber),
-    success: function (jsonResult) {
-       dataRader = JSON.stringify(jsonResult);
-    },
-    error: function(msg){
-        //alert("fail")
-    }
-});
+
 
 //var mission = workerObj.workerMissionName;
 //var credit = workerObj.workerCredit;
@@ -178,7 +165,7 @@ var workerOption3 = {
         // areaStyle: {normal: {}},
         data : [
             {
-                value : dataRader,
+                value : [0, 15234, 0, 0, 0 , 0],
                 name : '能力值'
             }
         ]

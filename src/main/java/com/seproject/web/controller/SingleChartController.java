@@ -126,4 +126,10 @@ public class SingleChartController {
         return chart8;
     }
 
+    @RequestMapping(value = "/singleChart/getChart9")
+    @ResponseBody
+    public String getChart9(@RequestBody String mid){
+        return null;
+    }
+
 }
