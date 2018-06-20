@@ -328,12 +328,12 @@ function setFinishedCollection() {
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalFinishedCollections").appendChild(div);
-        //document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href" + finishedNames[i] + ".txt download="+ finishedNames[i] +" />点击此处下载该任务标注信息</a></div>";
-        document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href=file/downloadFile/" + finishedNames[i] + ".txt download="+ finishedNames[i] +" />点击此处下载该任务标注信息</a></div>";
-
+        if(userCategory == "1") {//userCategory == 1
+            document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href=file/downloadFile/" + finishedNames[i] + ".txt download=" + finishedNames[i] + " />点击此处下载该任务标注信息</a></div>";
+        }
     }
 }
-
+/*
 function setDownloadFile(url) {
     //document.getElementById("personalFinishedCollections").innerHTML += "<a id='downloadFile' download=" + url[0] + " >点击此处下载该任务标注信息</a>";
-}
+}*/

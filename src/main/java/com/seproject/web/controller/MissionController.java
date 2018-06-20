@@ -32,7 +32,7 @@ public class MissionController {
     //private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
     private MissionService missionService;
-    private MainService mainService;
+    private MainService mainService=new MainService();
     @RequestMapping(value = "/MissionManage/Search")
     @ResponseBody
     /**
