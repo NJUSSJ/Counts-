@@ -6,6 +6,7 @@ import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.ChangeCreditParameter;
 import net.sf.json.JSONString;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -76,13 +77,15 @@ public class OtherController {
         System.out.println(message);
         return message;
     }
+
     @RequestMapping(value = "/ChangeCredit")
     @ResponseBody
     public int changeCredit(@RequestBody ChangeCreditParameter changeCreditParameter){
+        System.out.println("收钱啦！！！！！！！！！！！！！");
         String uid=changeCreditParameter.getUid();
         double delta=changeCreditParameter.getDelta();
         User user=userBasicBLService.findByKey(uid);
-        double origin=changeCreditParameter.getDelta();
+        double origin=user.getCredit();
         if(origin+delta<0){
             return 0;//积分减完为负数，不能进行此操作
         }else {

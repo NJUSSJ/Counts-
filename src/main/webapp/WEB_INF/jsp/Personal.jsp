@@ -44,6 +44,10 @@
         .image.fit:hover{
             top: -0.2em;
         }
+
+        .button.small2{
+            height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold;
+        }
     </style>
 </head>
 <body onload="loadPersonal(${requestScope.phoneNumber});">
@@ -187,10 +191,63 @@
             </header>
         </article>
 
-        <article id="money" class="panel">
-            <div class="row 150%" id="worker">
+        <article id="money" class="panel" style="height: 700px;">
+            <div id="worker">
+                <header>充值</header><br>
+                <div class="row 150%">
+                    <div class="2u 12u(narrower)" style="padding-top: 0px;"><a id="20button" onclick="charge(20)" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >20元</a></div>
+                    <div class="2u 12u(narrower)" style="padding-top: 0px;"><a id="50button" onclick="charge(50)" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >50元</a></div>
+                    <div class="2u 12u(narrower)" style="padding-top: 0px;"><a id="100button" onclick="charge(100)" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >100元</a></div>
+                </div>
 
+                <br>
+                <div id="20yuan" style="display: none">
+                    <img src="images/20.jpg">
+                    <div class="2u 12u(narrower)" style="padding-top: 0px;"><a onclick="chargeCredit(20)" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >完成支付</a></div>
+                </div>
+
+                <div id="50yuan" style="display: none;">
+                    <img src="images/50.jpg">
+                    <div class="2u 12u(narrower)" style="padding-top: 0px;"><a onclick="chargeCredit(50)" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >完成支付</a></div>
+                </div>
+
+                <div id="100yuan" style="display: none;">
+                    <img src="images/100.jpg">
+                    <div class="2u 12u(narrower)" style="padding-top: 0px;"><a onclick="chargeCredit(100)" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >完成支付</a></div>
+                </div>
             </div>
+            <script>
+                function para(uid, delta) {
+                    this.uid = uid;
+                    this.delta = delta;
+                }
+                function charge(num) {
+                    document.getElementById("20yuan").style.display = "none";
+                    document.getElementById("50yuan").style.display = "none";
+                    document.getElementById("100yuan").style.display = "none";
+                    document.getElementById(num+"yuan").style.display = "block";
+                }
+
+                function chargeCredit(num) {
+                    var chargePara = new para(phoneNumber, num);
+                    $.ajax({
+                        async: true,
+                        method: "POST",
+                        url: "/ChangeCredit",
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: JSON.stringify(chargePara),
+                        success: function (returnData) {
+                            if(returnData != 0){
+                                alert("充值成功！")
+                            }
+                        },
+                        error: function () {
+                            //alert("fail")
+                        }
+                    });
+                }
+            </script>
             <div class="row 150%" id="requester">
 
             </div>
