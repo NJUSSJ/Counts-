@@ -105,7 +105,7 @@ public class MissionController {
                         missionRe.add(mission);
                     }
                 }
-            } else if(range.equals("refresh")){//相似用户推荐
+            } else if(range.equals("refresh")){
                 missionRe=missionService.recommendByAlikeUser(keyword);
             }else{
                 missionRe.addAll(missions);

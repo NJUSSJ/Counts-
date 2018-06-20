@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
+import static java.lang.Thread.sleep;
+
 /**
  * 百度自然语言处理接口
  */
@@ -48,6 +50,11 @@ public class LanguageService {
 
         // 短文本相似度
         JSONObject res = client.simnet(text1, text2, options);
+        try {
+            sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }//一次发送太多请求会报错
         String origin=res.toString(2);
         System.out.println("短文本相似度");
         System.out.println(res);

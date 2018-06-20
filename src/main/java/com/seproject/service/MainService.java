@@ -14,7 +14,7 @@ import java.util.*;
 @Service
 public class MainService {
     private FileIOService fileIOService=new FileIOService();
-    private LanguageService languageService;
+    private LanguageService languageService=new LanguageService();
     private NewsService newsService=new NewsService();
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
@@ -733,9 +733,9 @@ public class MainService {
                     if (p != j) {
                         double similar = languageService.simliarityOfText(summary, details.get(p).getSummary());
                         if (similar < 0.5) {
-                            eachGrade+=0.1;//加一个较低的分
+                            eachGrade+=0.01;//加一个较低的分
                         }else {
-                            eachGrade+=similar;
+                            eachGrade+=1;
                         }
                     }
                 }

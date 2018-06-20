@@ -75,6 +75,24 @@ public class MultiController {
         return model;
     }
 
+    @RequestMapping(value = "/getCollectionInfo")
+    @ResponseBody
+    /**
+     * 任务大厅加载所有任务
+     */
+    public String[] getCollectionInfo(@RequestBody String mi) {
+
+        ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
+        int index=0;
+        String[] missionNames=new String[1000];
+        if(tmpMission!=null&&tmpMission.size()>0) {
+            for (Mission mission : tmpMission) {
+                missionNames[index] = mission.getName() + "^" + mission.getDescription();
+                index++;
+            }
+        }
+        return missionNames;
+    }
 
     @RequestMapping(value = "/getMissionDetails")
     @ResponseBody
