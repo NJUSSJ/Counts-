@@ -13,8 +13,8 @@ import java.util.*;
 
 @Service
 public class MainService {
-    LanguageService languageService;
-    NewsService newsService;
+    private LanguageService languageService;
+    private NewsService newsService;
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
     private BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
