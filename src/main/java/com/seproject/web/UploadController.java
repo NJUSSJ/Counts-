@@ -209,7 +209,7 @@ public class UploadController {
             case 2:base=1.1;break;
             default:base=1.2;
         }
-        int n1=para.getMaxWorker();
+        int n1=para.getPicNum();
         int n2=para.getEvaluateStrategy();
 
         double x2=0;

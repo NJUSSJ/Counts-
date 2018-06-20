@@ -35,12 +35,12 @@ public class MainController {
      * 增加标签式任务、接受子任务、高级工人接受评估式任务
      * 自动评估标签式任务并分配奖励、手动评估标签式任务并分配奖励
      */
-    BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    BasicBLService<SubLabelMission> subTagMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
-    BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
-    BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
-    BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
-    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
+    private BasicBLService<SubLabelMission> subTagMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
+    private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
+    private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getSubFreeMissionBasicBLService();
+    private BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
 
 
     @RequestMapping(value = "/getLabelMission")

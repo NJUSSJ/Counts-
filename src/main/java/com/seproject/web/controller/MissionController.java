@@ -22,12 +22,12 @@ import java.util.ArrayList;
 
 @RestController
 public class MissionController {
-    BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
-    BasicBLService<User> userService=Factory.getBasicBLService(new User());
-    BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
-    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
-    MissionService missionService=new MissionService();
-    MainService mainService=new MainService();
+    private BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
+    private BasicBLService<User> userService=Factory.getBasicBLService(new User());
+    private BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    private MissionService missionService=new MissionService();
+    private MainService mainService=new MainService();
     @RequestMapping(value = "/MissionManage/Search")
     @ResponseBody
     /**
@@ -70,13 +70,13 @@ public class MissionController {
             if(range.equals("ended")){
                 for(Mission mission:missions){
                     if(mission.getState()>0&&mission.getState()<3){
-                        missions.add(mission);
+                        missionRe.add(mission);
                     }
                 }
             }else if(range.equals("notEnded")){
                 for(Mission mission:missions){
                     if(mission.getState()==0){
-                        missions.add(mission);
+                        missionRe.add(mission);
                     }
                 }
             }else{
@@ -86,19 +86,6 @@ public class MissionController {
 
         for(Mission mission:missionRe){
             result.add(mission.getName()+"^"+mission.getDescription());
-        }
-
-        if(result.size()>3){//换一批
-            int random1=(int)(Math.random()*result.size());
-            int random2=(int)(Math.random()*result.size());
-            while(random2==random1){random2=(int)(Math.random()*result.size());}
-            int random3=(int)(Math.random()*result.size());
-            while(random3==random1||random3==random2){random3=(int)(Math.random()*result.size());}
-            ArrayList<String> randomResult=new ArrayList<String>();
-            randomResult.add(result.get(random1));
-            randomResult.add(result.get(random2));
-            randomResult.add(result.get(random3));
-            result=randomResult;
         }
         return result.toArray(new String[result.size()]);
     }

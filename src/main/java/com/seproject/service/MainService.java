@@ -15,13 +15,13 @@ import java.util.*;
 public class MainService {
     LanguageService languageService;
     NewsService newsService;
-    private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
-    private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
-    private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
-    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
-    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
-    private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
+    private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
+    private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
+    private BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
+    private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
+    private BasicBLService<User> userBasicBLService=Factory.getUserBasicBLService();
+    private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getSubFreeMissionBasicBLService();
     /**
      * 创建子任务
      */
@@ -410,6 +410,9 @@ public class MainService {
             String each = uid.get(i);
             User user=userBasicBLService.findByKey(each);
             user.setCredit(user.getCredit()+money[i]);
+            if(rank[i]<=(uid.size()/2)){
+                user.setLevel(user.getLevel()+1);
+            }
             userBasicBLService.update(user);
 
             Message m1=new Message(uid.get(i)+" * "+getCurrentTime(),"System",uid.get(i),0,
@@ -624,6 +627,9 @@ public class MainService {
                     User user=userBasicBLService.findByKey(users.get(i));
                     double reward=1.5*grade.get(i)/avg;
                     user.setCredit(user.getCredit()+reward);//1.5*得分/平均得分
+                    if(rank[i]<=users.size()/2){
+                        user.setLevel(user.getLevel()+1);
+                    }
                     userBasicBLService.update(user);
 
                     Message m1=new Message(user.getPhoneNumber()+" * "+getCurrentTime(),"System",user.getPhoneNumber(),0,
@@ -683,16 +689,12 @@ public class MainService {
             }
             avgFrameNum /= uid.size();//平均框数量
             avgFrameSquare /= uid.size();//平均框面积
-            System.out.println("平均框数量:"+avgFrameNum);
-            System.out.println("平均框面积："+avgFrameSquare);
+
             if(avgFrameNum==0||avgFrameSquare==0) continue;//说明这张图无效
 
             for(int j=0;j<uid.size();j++){
                 FreeMissionDetail detail=details.get(j);
-                System.out.println("X:"+detail.getX());
-                System.out.println("Y:"+detail.getY());
-                System.out.println("height:"+detail.getHeight());
-                System.out.println("width:"+detail.getWeight());
+
             }
 
             for (int j = 0; j < uid.size(); j++) {
@@ -809,6 +811,9 @@ public class MainService {
             CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+key);
 
             user.setCredit(user.getCredit()+1.5*q/10);
+            if(rank[i]<=(u.size()/2)){
+                user.setLevel(user.getLevel()+1);
+            }
             userBasicBLService.update(user);
             System.out.println("collectionResult:"+(collectionResult==null));
             collectionResult.setQuality(q);

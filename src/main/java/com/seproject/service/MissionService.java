@@ -4,12 +4,13 @@ import com.seproject.common.SearchCategory;
 import com.seproject.domain.*;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.RecommendParameter;
+import org.springframework.stereotype.Service;
 import sun.util.resources.cldr.ar.CalendarData_ar_YE;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+@Service
 public class MissionService {
     private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
