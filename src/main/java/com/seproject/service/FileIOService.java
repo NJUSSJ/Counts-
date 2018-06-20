@@ -76,32 +76,30 @@ public class FileIOService {
     }
 
     /**
-     * 返回每个任务对应的下载文件的地址
+     * 记录任务信息
      */
-    public ArrayList<String> getDownloadAddress(String[] mid){
-        ArrayList<String> result=null;
+    public synchronized void writeMissionResult(String name,String content){
         try {
-            result=new ArrayList<String>();
-            File nav= null;
-            nav = ResourceUtils.getFile("classpath:file/downloadFile/navigation.txt");
+            File nav = ResourceUtils.getFile("classpath:resources/file/downloadFile/navigation.txt");
             String path=nav.getAbsolutePath();
             path=path.replace("\\","/");
             int index=path.lastIndexOf("/");
             path=path.substring(0,index);
-            for(String eachMid:mid) {
-                String filePath=path + "/" + eachMid + ".txt";
-                result.add(filePath);
-                File file0 = new File(filePath);
-                if (!file0.exists()) {
-                    file0.createNewFile();
-                }
+            File file0=new File(path+"/"+name+".txt");
+            if(!file0.exists()){
+                file0.createNewFile();
             }
+            File file= ResourceUtils.getFile(path+"/"+name+".txt");
+
+            FileWriter writer=new FileWriter(file,true);
+            writer.write(content+"\n");
+            writer.flush();
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return result;
     }
 
 
