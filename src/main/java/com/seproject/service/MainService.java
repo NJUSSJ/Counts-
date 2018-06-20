@@ -13,7 +13,7 @@ import java.util.*;
 
 @Service
 public class MainService {
-    private FileIOService fileIOService;
+    private FileIOService fileIOService=new FileIOService();
     private LanguageService languageService;
     private NewsService newsService;
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
@@ -339,6 +339,7 @@ public class MainService {
                 }//记录最好的标注信息
             }
         }
+        System.out.println("fileServiceIsNull:"+(fileIOService==null));
         fileIOService.writeMissionResult(mid,missionRecord);
         mission.setState(2);
         missionBasicBLService.update(mission);
@@ -901,7 +902,4 @@ public class MainService {
 
     @Autowired
     public void setNewsService(NewsService newsService){this.newsService=newsService;}
-
-    @Autowired
-    public void setFileIOService(FileIOService fileIOService){this.fileIOService=fileIOService;}
 }

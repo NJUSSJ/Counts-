@@ -309,35 +309,6 @@ public class MainController {
 
     }
 
-    @RequestMapping(value="/downloadFile")
-    @ResponseBody
-    public DownloadFileResponse downloadFile(@RequestBody String mid){
-        File nav= null;
-        try {
-            nav = ResourceUtils.getFile("classpath:file/objectFile/navigation.txt");
-            FileWriter writer=new FileWriter(nav,false);
-            ArrayList<Collection> collections=collectionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
-            for(int i=0;i<collections.size();i++){
-                for(int j=0;j<collections.get(i).getInfoList().size();j++){
-                    writer.write(collections.get(i).getInfoList().get(j)+"\n");
-                }
-            }
-            writer.flush();
-            writer.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String path=nav.getAbsolutePath();
-
-        DownloadFileResponse downloadFileResponse=new DownloadFileResponse();
-        downloadFileResponse.setPath(path);
-
-        return downloadFileResponse;
-
-
-    }
 
     @RequestMapping(value = "/getMissionResultResponse")
     @ResponseBody
