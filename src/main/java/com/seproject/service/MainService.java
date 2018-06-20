@@ -13,6 +13,7 @@ import java.util.*;
 
 @Service
 public class MainService {
+    private FileIOService fileIOService=new FileIOService();
     private LanguageService languageService;
     private NewsService newsService;
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
@@ -221,6 +222,7 @@ public class MainService {
      * 标签式任务评审入口
      */
     private void reviewLabelMission(String mid){
+        String missionRecord="";
         Mission mission=missionBasicBLService.findByKey(mid);
         int bonus=mission.getBonusStrategy();
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
@@ -329,8 +331,16 @@ public class MainService {
             }else if(bonus==3){//3号策略：双色球
                 money = giveMoney_DoubleColorBall(isCorrect);
             }
-            setCollection(money, subLabelMission.getUid(), mid);
+            int best=setCollection(money, subLabelMission.getUid(), mid);
+            if(best>=0) {
+                ArrayList<Integer> bestAnswer = subLabelMission.getAnswers().get(best);
+                for (int i = 0; i < 10; i++) {
+                    missionRecord += (i + subLabelMission.getSeed() * 10) + "号图片的答案是" + bestAnswer.get(i) + ";";
+                }//记录最好的标注信息
+            }
         }
+        System.out.println("fileServiceIsNull:"+(fileIOService==null));
+        fileIOService.writeMissionResult(mid,missionRecord);
         mission.setState(2);
         missionBasicBLService.update(mission);
     }
@@ -394,11 +404,11 @@ public class MainService {
     }
 
     /**
-     * 根据标签式子任务的完成情况为每个工人设置collection
+     * 根据标签式子任务的完成情况为每个工人设置collection,返回排名第一的人的序号
      */
-    private void setCollection(double[] money, ArrayList<String> uid, String mid) {
+    private int setCollection(double[] money, ArrayList<String> uid, String mid) {
+        int best=-1;
         int[] rank = new int[money.length];
-
         for (int j = 0; j < money.length; j++) {
             rank[j] = 1;
             for (int i = 0; i < money.length ; i++) {
@@ -429,12 +439,14 @@ public class MainService {
                     collectionResult.setQuality(8);//默认值
                     collectionResult.setCredit(money[i]);
                     collectionResult.setRank(rank[i]);
+                    if(rank[i]==1) best=i;
                     collectionResult.setState(4);
                     collectionResultBasicBLService.update(collectionResult);
                     break;
                 }
             }
         }
+        return best;
     }
 
     private double[] giveMoney_DoubleNothing(int x[][]){
@@ -599,9 +611,11 @@ public class MainService {
         Mission mission=missionBasicBLService.findByKey(mid);
         mission.setState(2);
         missionBasicBLService.update(mission);
+        String missionRecord="";
 
         ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(SubFreeMission subFreeMission:subFreeMissions){
+            int best=-1;
             ArrayList<String> users=subFreeMission.getUid();
             System.out.println("users:"+users);
             if(users!=null&&users.size()>0) {
@@ -643,14 +657,24 @@ public class MainService {
 
                     CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+users.get(i));
                     collectionResult.setRank(rank[i]);
+                    if(rank[i]==1) best=i;
                     collectionResult.setCredit(reward);
                     double eachGrade=grade.get(i);
                     collectionResult.setQuality((int)eachGrade);
                     collectionResult.setState(4);
                     collectionResultBasicBLService.update(collectionResult);
                 }
+
+                if(best>=0){
+                    Collection bestCollection=collectionBasicBLService.findByKey(mid+users.get(best));
+                    ArrayList<String> bestAnswer=bestCollection.getInfoList();
+                    for(int i=0;i<10;i++){
+                        missionRecord+=(i+subFreeMission.getSeed()*10)+"号图的答案为"+bestAnswer.get(i)+";";
+                    }
+                }
             }
         }
+        fileIOService.writeMissionResult(mid,missionRecord);//在txt记录最好的答案
     }
 
     /**
@@ -771,13 +795,14 @@ public class MainService {
     }
 
     /**
-     *抽样评估自由式任务
+     *手动（抽样）评估自由式任务
      */
     public void manualReviewFreeMission(ArrayList<Integer> pic,ArrayList<Integer> quality,ArrayList<String> uid,String mid){
+        String missionRecord="";
         Mission mission=missionBasicBLService.findByKey(mid);
         mission.setState(2);
         missionBasicBLService.update(mission);
-
+        ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         Map<String,Integer> result=new HashMap<String,Integer>();
         for(int i=0;i<quality.size();i++){
             if(result.containsKey(uid.get(i))) {
@@ -819,10 +844,25 @@ public class MainService {
                 user.setLevel(user.getLevel()+1);
             }
             userBasicBLService.update(user);
-            System.out.println("collectionResult:"+(collectionResult==null));
             collectionResult.setQuality(q);
             collectionResult.setCredit(1.5*q/10);
             collectionResult.setRank(rank[i]);
+
+            Collection collection=collectionBasicBLService.findByKey(mid+user.getPhoneNumber());
+
+            ArrayList<String> infoList=collection.getInfoList();
+            int seed=-1;
+            for(SubFreeMission each:subFreeMissions){
+                if(each.getUid().contains(user.getPhoneNumber())){
+                    seed=each.getSeed();
+                    break;
+                }
+            }
+            missionRecord+="用户"+user.getPhoneNumber()+"的答案为";
+            for(int t=0;t<10;t++){
+                missionRecord+=(t+seed*10)+"号图片答案为"+infoList.get(t)+";";
+            }
+
             ArrayList<Integer> picIndex=new ArrayList<Integer>();
             ArrayList<Integer> picGrade=new ArrayList<Integer>();
             int count=0;
@@ -845,7 +885,7 @@ public class MainService {
             collectionResult.setState(4);
             collectionResultBasicBLService.update(collectionResult);
         }
-
+        fileIOService.writeMissionResult(mid,missionRecord);
     }
 
     /**

@@ -104,20 +104,7 @@ public class OtherController {
         }
     }
 
-
-    @RequestMapping(value = "/getDownloadPath")
-    @ResponseBody
-    /**
-     * 获得任务对应的下载地址
-     */
-    public String[] getDownloadPath(@RequestBody String midList){
-        JSONArray array=JSONArray.fromObject(midList);
-        String[] mid= (String[]) array.toArray(new String[array.size()]);
-        ArrayList<String> result=fileIOService.getDownloadAddress(mid);
-        return result.toArray(new String[result.size()]);
-    }
-
-    public void clearArray(Date[] dateArray){
+    private void clearArray(Date[] dateArray){
         for(int i=0;i<7;i++) {
             dateArray[i] = null;
         }

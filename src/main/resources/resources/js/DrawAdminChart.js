@@ -173,42 +173,105 @@ adminChart3.setOption(adminOption3);
 /* ------------------------------------------------------------------- */
 //所有任务已完成未完成数
 var adminChart4 = echarts.init(document.getElementById('adminChart4'));
-var adminOption4 = {
-    title : {
-        text: '所有任务完成情况统计',
-        subtext: '',
-        x:'center'
+var data = [
+    [18, 486.24],
+    [17, 529.47],
+    [16, 593.45],
+    [15, 717.10],
+    [14, 896.44],
+    [13, 1020.22],
+    [12, 1196.25],
+    [11, 1492.83],
+    [10, 1690.92],
+    [9, 1854.79],
+    [8, 2161.78],
+    [7, 2663.81],
+    [6, 3463.44],
+    [5, 4675.94],
+    [4, 5847.81],
+    [3, 6788.46],
+    [2, 7446.26],
+    [1, 7939.57]
+];
+
+// See https://github.com/ecomfe/echarts-stat
+var myRegression = ecStat.regression('exponential', data);
+
+myRegression.points.sort(function(a, b) {
+    return a[0] - b[0];
+});
+
+adminOption4 = {
+    title: {
+        text: '近一周发起者支出散点图',
+        subtext: '实时数据',
+        left: 'center'
     },
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
     },
-    legend: {
-        orient: 'vertical',
-        left: 'left',
-        data: ['已完成','进行中']
+    xAxis: {
+        type: 'value',
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
+            }
+        },
+        splitNumber: 20
     },
-    series : [
-        {
-            name: '任务数',
-            type: 'pie',
-            radius : '55%',
-            center: ['50%', '60%'],
-            data:[
-                //{value:adminObj.adminFinishedMissionNum, name:'已完成'},
-                //{value:adminObj.adminOngoingMissionNum, name:'进行中'},
-                {value:30, name:'已完成'},
-                {value:40, name:'进行中'},
-            ],
-            itemStyle: {
-                emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
+    yAxis: {
+        type: 'value',
+        splitLine: {
+            lineStyle: {
+                type: 'dashed'
             }
         }
-    ]
+    },
+    series: [{
+        name: 'scatter',
+        type: 'scatter',
+        label: {
+            emphasis: {
+                show: true,
+                position: 'left',
+                textStyle: {
+                    color: 'blue',
+                    fontSize: 16
+                }
+            }
+        },
+        data: data
+    }, {
+        name: 'line',
+        type: 'line',
+        showSymbol: false,
+        smooth: true,
+        data: myRegression.points,
+        markPoint: {
+            itemStyle: {
+                normal: {
+                    color: 'transparent'
+                }
+            },
+            label: {
+                normal: {
+                    show: true,
+                    position: 'left',
+                    formatter: myRegression.expression,
+                    textStyle: {
+                        color: '#333',
+                        fontSize: 14
+                    }
+                }
+            },
+            data: [{
+                coord: myRegression.points[myRegression.points.length - 1]
+            }]
+        }
+    }]
 };
 adminChart4.setOption(adminOption4);
 /* ------------------------------------------------------------------- */

@@ -7,7 +7,9 @@ import com.seproject.domain.User;
 import com.seproject.domain.chart.*;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
+import net.sf.json.JSON;
 import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
 import org.hibernate.action.internal.CollectionRecreateAction;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -124,6 +126,33 @@ public class SingleChartController {
         chart8.setUid(uid);
         chart8.setQuality(quality);
         return chart8;
+    }
+
+    @RequestMapping(value = "/singleChart/getChart9")
+    @ResponseBody
+    public String getChart9(@RequestBody String mid){
+        ArrayList<Mission> missions=missionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+        int x[]=new int[7];
+        for(int i=0;i<missions.size();i++){
+            String type=missions.get(i).getPicType();
+            if(type.equals("人物")){
+                x[0]++;
+            }else if(type.equals("任务")){
+                x[1]++;
+            }else if(type.equals("风景")){
+                x[2]++;
+            }else if(type.equals("卡通")){
+                x[3]++;
+            }else if(type.equals("交通")){
+                x[4]++;
+            }else if(type.equals("生活")){
+                x[5]++;
+            }else if(type.equals("其它")){
+                x[6]++;
+            }
+        }
+        JSONObject object = JSONObject.fromObject(x);
+        return object.toString();
     }
 
 }

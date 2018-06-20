@@ -28,8 +28,8 @@ var starterOption1 = {
             data:[
                 //{value:starterObj.starterFinishedMissionNum, name:'已完成'},
                 //{value:starterObj.starterOngoingMissionNum, name:'未完成'},
-                {value:10, name:'已完成'},
-                {value:20, name:'未完成'},
+                {value:finishedNames.length+1, name:'已完成'},
+                {value:missionNames.length+1, name:'未完成'},
             ],
             itemStyle: {
                 emphasis: {
@@ -66,7 +66,7 @@ var starterOption2 ={
         }
     },
     legend: {
-        data:['平均分数','总分数','参与人数']
+        data:['平均获得积分','总积分','参与人数']
     },
     xAxis: [
         {
@@ -123,3 +123,90 @@ var starterOption2 ={
     ]
 };
 starterChart2.setOption(starterOption2);
+
+
+/* ------------------------------------------------------------------- */
+var data = echarts.dataTool.prepareBoxplotData([
+    [5, 4, 6, 8, 9, 10, 8, 8, 2, 10],
+    [6, 6, 7, 9, 9, 10, 4, 6, 6, 6],
+    [2, 4, 6, 8, 4, 5, 3, 6, 3, 1],
+    [4, 6, 7, 9, 5, 10, 5, 7, 10, 1],
+    [1, 9, 7, 9, 10, 7, 9, 10, 10, 8]
+]);
+
+var starterChart3 = echarts.init(document.getElementById('starterChart3'));
+var starterOption3 ={
+    title: [
+        {
+            text: '任务质量分布盒状图',
+            left: 'center',
+        },
+        {
+            borderColor: '#999',
+            borderWidth: 1,
+            textStyle: {
+                fontSize: 14
+            },
+            left: '10%',
+            top: '90%'
+        }
+    ],
+    tooltip: {
+        trigger: 'item',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    grid: {
+        left: '10%',
+        right: '10%',
+        bottom: '15%'
+    },
+    xAxis: {
+        type: 'category',
+        data: data.axisData,
+        boundaryGap: true,
+        nameGap: 30,
+        splitArea: {
+            show: false
+        },
+        axisLabel: {
+            formatter: 'mission {value}'
+        },
+        splitLine: {
+            show: false
+        }
+    },
+    yAxis: {
+        type: 'value',
+        name: 'correct answer',
+        splitArea: {
+            show: true
+        }
+    },
+    series: [
+        {
+            name: 'boxplot',
+            type: 'boxplot',
+            data: data.boxData,
+            tooltip: {
+                formatter: function (param) {
+                    return [
+                        'Mission ' + param.name + ': ',
+                        'upper: ' + param.data[5],
+                        'Q3: ' + param.data[4],
+                        'median: ' + param.data[3],
+                        'Q1: ' + param.data[2],
+                        'lower: ' + param.data[1]
+                    ].join('<br/>')
+                }
+            }
+        },
+        {
+            name: 'outlier',
+            type: 'scatter',
+            data: data.outliers
+        }
+    ]
+};
+starterChart3.setOption(starterOption3);
