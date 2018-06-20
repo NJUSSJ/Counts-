@@ -91,6 +91,7 @@ public class OtherController {
         System.out.println("收钱啦！！！！！！！！！！！！！");
         String uid=changeCreditParameter.getUid();
         double delta=changeCreditParameter.getDelta();
+        System.out.println(delta);
         User user=userBasicBLService.findByKey(uid);
         double origin=user.getCredit();
         if(origin+delta<0){
