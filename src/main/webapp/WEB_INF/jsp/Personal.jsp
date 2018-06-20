@@ -234,7 +234,7 @@
                 </div>
             </div>
             <script>
-                function para(uid, delta) {
+                function para3(uid, delta) {
                     this.uid = uid;
                     this.delta = delta;
                 }
@@ -246,7 +246,7 @@
                 }
 
                 function chargeCredit(num) {
-                    var chargePara = new para(phoneNumber, num);
+                    var chargePara = new para3(phoneNumber, num);
                     $.ajax({
                         async: true,
                         method: "POST",
@@ -267,7 +267,7 @@
                 function withdraw() {
                     var num = document.getElementById("num").value;
                     alert(num);
-                    var chargePara = new para(phoneNumber, -num);
+                    var chargePara = new para3(phoneNumber, -num);
                     $.ajax({
                         async: true,
                         method: "POST",
