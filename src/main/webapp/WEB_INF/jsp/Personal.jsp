@@ -48,6 +48,24 @@
         .button.small2{
             height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold;
         }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #7c8081;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #7c8081;
+        }
+
+        input:-ms-input-placeholder,
+        textarea:-ms-input-placeholder {
+            color: #7c8081;
+        }
+
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            color: #7c8081;
+        }
     </style>
 </head>
 <body onload="loadPersonal(${requestScope.phoneNumber});">
@@ -247,9 +265,32 @@
                         }
                     });
                 }
+                function withdraw() {
+                    var num = document.getElementById("num").value;
+                    alert(num);
+                    var chargePara = new para(phoneNumber, -num);
+                    $.ajax({
+                        async: true,
+                        method: "POST",
+                        url: "/ChangeCredit",
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: JSON.stringify(chargePara),
+                        success: function (returnData) {
+                            if(returnData != 0){
+                                alert("提现成功！")
+                            }
+                        },
+                        error: function () {
+                            //alert("fail")
+                        }
+                    });
+                }
             </script>
             <div class="row 150%" id="requester">
-
+                <input type="text" id="num" placeholder="提现金额" style="width: 250px; height: 48px;padding-top: 5px;padding-left: 3px;display: block;margin-right: 20px">
+                <input type="text" placeholder="支付宝账号" style="width: 250px; height: 48px;padding-top: 5px;padding-left: 3px">
+                <div class="2u 12u(narrower)" style="padding-top: 0px;"><a id="withdraw" onclick="withdraw()" class="button small2" style="height: 50px;font-size: 0.7em;text-decoration: none;font-weight: bold" >提现</a></div>
             </div>
 
         </article>

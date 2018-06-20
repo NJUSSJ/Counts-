@@ -75,7 +75,15 @@ function savePersonalInfo(personalInfo) {
     return 1;
 }
 
+function setMoney(cate) {
+    if(cate == 1){
+        document.getElementById("requester").style.display = "none";
+    }else{
+        document.getElementById("worker").style.display = "none";
+    }
+}
 function loadPersonal(phoneNumber) {
+
 
     getMessage(phoneNumber);
 
@@ -84,14 +92,17 @@ function loadPersonal(phoneNumber) {
     this.phoneNumber = tmp[1].substring(tmp[1].indexOf("=")+1);
     userCategory = tmp[2].substring(tmp[2].indexOf("=")+1);
     //alert(userName + " " + phoneNumber + " " + userCategory);
-
     getPersonalInfo();
     //alert(person);
     var personalInfo = eval("(" + person + ")");
 
+
     document.getElementById("_userName").value = personalInfo.userName;
     document.getElementById("_userNameCard").innerHTML = personalInfo.userName;
     document.getElementById("_phoneNumber").value = personalInfo.phoneNumber;
+
+    setMoney(personalInfo.category);
+
     switch (personalInfo.category) {
         case 1:
             document.getElementById("_userType").value = "众包发起者";
