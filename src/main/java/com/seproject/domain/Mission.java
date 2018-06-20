@@ -39,10 +39,12 @@ public class Mission {
     @Column(name="state")
     int state;//0:未结束 1：结束但未评估 2:已评估 3：已被发起者删除
     @Column(name="difficulty")
+    @Searchable(varName = "difficulty")
     private int difficulty;//1,2,3
     @Column(name="missionlabel",columnDefinition = "blob")
     private ArrayList<String> missionLabel;//标签式任务的标签列表
     @Column(name="tagtype")
+    @Searchable(varName = "tagType")
     private int tagType;//1:标签式 2:非标签式
     @Column(name="pictype")
     private String picType;

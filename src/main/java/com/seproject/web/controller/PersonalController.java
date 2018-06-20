@@ -56,7 +56,7 @@ public class PersonalController {
     @RequestMapping(value = "/writePersonal")
     @ResponseBody
     public String writePersonal(@RequestBody String personalInfo){
-        JSONObject obj = new JSONObject().fromObject(personalInfo);
+        JSONObject obj = JSONObject.fromObject(personalInfo);
         User user = (User)JSONObject.toBean(obj,User.class);
         userBasicBLService.update(user);
 

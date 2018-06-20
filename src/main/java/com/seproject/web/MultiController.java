@@ -75,37 +75,6 @@ public class MultiController {
         return model;
     }
 
-    @RequestMapping(value = "/getCollectionInfo")
-    @ResponseBody
-    /**
-     * 未来会成为推荐任务的调用方法
-     */
-    public String[] getCollectionInfo(@RequestBody String user) {
-
-        ArrayList<Mission> tmpMission=missionBasicBLService.getAllObjects();
-        int index=0;
-        String[] missionNames=new String[1000];
-        if(tmpMission!=null&&tmpMission.size()>0) {
-            for (Mission mission : tmpMission) {
-                missionNames[index] = mission.getName() + "^" + mission.getDescription();
-                index++;
-            }
-        }
-/*        if(result.size()>3){//换一批
-            int random1=(int)(Math.random()*result.size());
-            int random2=(int)(Math.random()*result.size());
-            while(random2==random1){random2=(int)(Math.random()*result.size());}
-            int random3=(int)(Math.random()*result.size());
-            while(random3==random1||random3==random2){random3=(int)(Math.random()*result.size());}
-            ArrayList<String> randomResult=new ArrayList<String>();
-            randomResult.add(result.get(random1));
-            randomResult.add(result.get(random2));
-            randomResult.add(result.get(random3));
-            result=randomResult;
-        }*/
-
-        return missionNames;
-    }
 
     @RequestMapping(value = "/getMissionDetails")
     @ResponseBody

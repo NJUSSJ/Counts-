@@ -23,13 +23,9 @@ import java.util.ArrayList;
 
 @RestController
 public class MissionController {
-    //private BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
     private BasicBLService<Mission> missionBasicBLService= Factory.getMissionBasicBLService();
-    //private BasicBLService<User> userService=Factory.getBasicBLService(new User());
     private BasicBLService<User> userService=Factory.getUserBasicBLService();
-    //private BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
     private BasicBLService<Collection> collectionService=Factory.getCollectionBasicBLService();
-    //private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
     private MissionService missionService;
     private MainService mainService;
@@ -70,7 +66,15 @@ public class MissionController {
             missionRe=missionBasicBLService.search("name",SearchCategory.CONTAINS,keyword);
         }else if(range.equals("requestor")){
             missionRe=missionBasicBLService.search("requestorNumber",SearchCategory.EQUAL,keyword);
-        }else{
+        }else if(range.equals("difficulty")){
+            missionRe=missionBasicBLService.search("diffculty",SearchCategory.EQUAL,keyword);
+        }else if(range.equals("wantedCredit")){
+            missionRe=missionBasicBLService.search("wantedCredit",SearchCategory.LARGER_THAN,keyword);
+        }else if(range.equals("tagEdit")){
+            missionRe=missionBasicBLService.search("tagType",SearchCategory.EQUAL,"1");
+        }else if(range.equals("freeEdit")){
+            missionRe=missionBasicBLService.search("tagType",SearchCategory.EQUAL,"2");
+        } else{
             ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
             if(range.equals("ended")){
                 for(Mission mission:missions){
@@ -155,15 +159,6 @@ public class MissionController {
         return toJsonString(result);
     }
 
-
-    /**
-     *自动评估（标签式）任务
-     */
-    @RequestMapping(value = "/MissionEvaluate/AutoEvaluate/{missionName}")
-    @ResponseBody
-    public void autoEvaluate(String missionName){
-        missionService.autoEvaluate(missionName);
-    }
 
     @RequestMapping(value = "/MissionEvaluate/getPictureIndex")
     @ResponseBody

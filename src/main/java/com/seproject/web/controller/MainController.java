@@ -180,31 +180,6 @@ public class MainController {
         return RM.SUCCESS.toString();
     }
 
- /*   @RequestMapping(value = "/updateGoldMission")
-    @ResponseBody
-
-    public String updateGoldMission(@RequestBody String parameter){
-        JSONObject object=JSONObject.fromObject(parameter);
-        UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
-        String uid=para.getUid();
-        String mid=para.getMid();
-        ArrayList<Integer> list=para.getNums();
-        ArrayList<GoldMission> goldMission=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
-        for(GoldMission each:goldMission){
-            if(each.getUid().equals(uid)){
-                each.setResult(list);
-                goldMissionBasicBLService.update(each);
-
-                CollectionResult cr=collectionResultBasicBLService.findByKey(mid+uid);
-                cr.setState(1);
-                collectionResultBasicBLService.update(cr);
-                return RM.SUCCESS.toString();
-            }
-        }
-        return RM.FAILURE.toString();
-    }
-
-**/
     /**
      * 高级工人接金标任务
      */
