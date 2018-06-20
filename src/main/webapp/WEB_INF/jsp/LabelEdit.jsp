@@ -81,9 +81,7 @@
 <article id="main">
 
     <header class="special container">
-        <span class="icon fa-laptop"></span>
         <h2><strong>Tag Page</strong></h2>
-        <p>Where the picture is taged.</p>
     </header>
 
     <!-- One -->
