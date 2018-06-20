@@ -104,8 +104,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <!-- Me -->
         <article id="me" class="panel">
             <header>
-                <h1 id="Name">${requestScope.missionName}</h1>
-                <p>Croudsourcing Requestor</p>
+                <h1 id="Name">任务结果</h1>
+                <p>Croudsourcing Worker</p>
             </header>
             <a href="#work" class="jumplink pic">
                 <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
@@ -121,9 +121,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
             <section>
                 <div class="row">
                     <div class="12u 12u$(mobile)" id="blank">
-                        <span>任务得分：</span><span id="missionQuality"></span>
-                        <span>任务排名：</span><span id="missionRank"></span>
-                        <span>任务获得积分：<span id="missionCredit"></span></span>
+                        <span>任务得分：</span><span id="missionQuality"></span><br>
+                        <span>任务排名：</span><span id="missionRank"></span><br>
+                        <span>任务获得积分：<span id="missionCredit"></span></span><br>
                         <span>在该任务中您超越了</span><span id="percent"></span><span>的用户</span>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         document.getElementById("missionQuality").innerHTML = quality;
         document.getElementById("missionCredit").innerHTML = credit;
         document.getElementById("missionRank").innerHTML = rank;
-        document.getElementById("percent").innerHTML = percent;
+        document.getElementById("percent").innerHTML = "%"+percent;
     }
 </script>
 

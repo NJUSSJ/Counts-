@@ -58,6 +58,7 @@
         <a href="#info" class="icon fa-envelope"><span>Personal</span></a>
         <a href="#charts" class="icon fa-pie-chart"><span>Charts</span></a>
         <a href="#message" class="icon fa-info"><span>Message</span></a>
+        <a href="#money" class="icon fa-money"><span>Money</span></a>
         <a href="<c:url value="loginCheck.html?userName=${requestScope.phoneNumber}&password=${requestScope.password}"/>" class="icon fa-refresh"><span>Back</span></a>
     </nav>
 
@@ -184,6 +185,16 @@
                     </div>
                 </section>
             </header>
+        </article>
+
+        <article id="money" class="panel">
+            <div class="row 150%" id="worker">
+
+            </div>
+            <div class="row 150%" id="requester">
+
+            </div>
+
         </article>
     </div>
 
