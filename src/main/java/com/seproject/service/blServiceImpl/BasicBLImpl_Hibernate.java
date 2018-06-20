@@ -27,7 +27,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     }
 
     @Override
-    public RM add(T t0) {
+    public synchronized RM add(T t0) {
 
         session = sessionFactory.openSession();
         Transaction tx = null;
@@ -61,7 +61,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     }
 
     @Override
-    public RM delete(String keyValue) {
+    public synchronized RM delete(String keyValue) {
         boolean res = true;
         session = sessionFactory.openSession();
         Transaction tx = null;
@@ -82,7 +82,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     }
 
     @Override
-    public RM update(T t0) {
+    public synchronized RM update(T t0) {
 
         boolean res = true;
         session = sessionFactory.openSession();
@@ -106,7 +106,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     }
 
     @Override
-    public T findByKey(String keyValue) {
+    public synchronized T findByKey(String keyValue) {
         session = sessionFactory.openSession();
         Transaction tx = null;
         T po = null;
@@ -128,7 +128,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     }
 
     @Override
-    public ArrayList<T> search(String keyName, SearchCategory category, String keyValue) {
+    public synchronized ArrayList<T> search(String keyName, SearchCategory category, String keyValue) {
         ArrayList<T> arr = new ArrayList<T>();
         ArrayList<T> objects = getAllObjects();
         if(objects==null||objects.size()<=0){
@@ -173,7 +173,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
 
 
     @Override
-    public boolean checkKeyExists(String keyValue) {
+    public synchronized boolean checkKeyExists(String keyValue) {
         if(findByKey(keyValue)==null) {
             return false;
         }else{
@@ -183,7 +183,7 @@ public class BasicBLImpl_Hibernate<T> implements BasicBLService<T> {
     }
 
     @Override
-    public ArrayList<T> getAllObjects() {
+    public synchronized ArrayList<T> getAllObjects() {
 
         session=sessionFactory.openSession();
         Transaction tx=null;
