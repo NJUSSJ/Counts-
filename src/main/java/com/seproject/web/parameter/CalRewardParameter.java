@@ -9,6 +9,15 @@ public class CalRewardParameter {
     private String uid;
     private int bonusStrategy;
     private int evaluateStrategy;
+    private int picNum;
+
+    public int getPicNum() {
+        return picNum;
+    }
+
+    public void setPicNum(int picNum) {
+        this.picNum = picNum;
+    }
 
     public String getUid() {
         return uid;

@@ -683,16 +683,12 @@ public class MainService {
             }
             avgFrameNum /= uid.size();//平均框数量
             avgFrameSquare /= uid.size();//平均框面积
-            System.out.println("平均框数量:"+avgFrameNum);
-            System.out.println("平均框面积："+avgFrameSquare);
+
             if(avgFrameNum==0||avgFrameSquare==0) continue;//说明这张图无效
 
             for(int j=0;j<uid.size();j++){
                 FreeMissionDetail detail=details.get(j);
-                System.out.println("X:"+detail.getX());
-                System.out.println("Y:"+detail.getY());
-                System.out.println("height:"+detail.getHeight());
-                System.out.println("width:"+detail.getWeight());
+
             }
 
             for (int j = 0; j < uid.size(); j++) {
