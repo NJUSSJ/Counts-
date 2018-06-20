@@ -15,13 +15,13 @@ import java.util.*;
 public class MainService {
     LanguageService languageService;
     NewsService newsService;
-    private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getBasicBLService(new SubLabelMission());
-    private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getBasicBLService(new GoldMission());
-    private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
-    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
-    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    private BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
-    private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getBasicBLService(new SubFreeMission());
+    private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
+    private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
+    private BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
+    private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
+    private BasicBLService<User> userBasicBLService=Factory.getUserBasicBLService();
+    private BasicBLService<SubFreeMission> subFreeMissionBasicBLService=Factory.getSubFreeMissionBasicBLService();
     /**
      * 创建子任务
      */

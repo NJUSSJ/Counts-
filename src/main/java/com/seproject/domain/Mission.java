@@ -43,15 +43,15 @@ public class Mission {
     @Column(name="missionlabel",columnDefinition = "blob")
     private ArrayList<String> missionLabel;//标签式任务的标签列表
     @Column(name="tagtype")
-    int tagType;//1:标签式 2:非标签式
+    private int tagType;//1:标签式 2:非标签式
     @Column(name="pictype")
-    String picType;
+    private String picType;
     @Column(name="maxworkernum")
-    int maxWorkerNum;
+    private int maxWorkerNum;
     @Column(name = "bonusStrategy")
-    int bonusStrategy; //1，平均分配 2，double-nothing 3,双色球
+    private int bonusStrategy; //1，平均分配 2，double-nothing 3,双色球
     @Column(name = "evaluateStrategy")
-    int evaluateStrategy;//1,自动 2，手动 3，雇用工人
+    private int evaluateStrategy;//1,自动 2，手动 3，雇用工人
     public Mission(){
 
     }

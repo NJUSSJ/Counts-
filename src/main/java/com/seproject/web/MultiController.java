@@ -6,8 +6,10 @@ package com.seproject.web;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
 import com.seproject.service.Factory;
+import com.seproject.service.MissionService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.controller.MissionController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 public class MultiController {
     private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
     private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-
+    private MissionService missionService;
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){
         ModelAndView model;
@@ -84,6 +86,19 @@ public class MultiController {
                 index++;
             }
         }
+/*        if(result.size()>3){//换一批
+            int random1=(int)(Math.random()*result.size());
+            int random2=(int)(Math.random()*result.size());
+            while(random2==random1){random2=(int)(Math.random()*result.size());}
+            int random3=(int)(Math.random()*result.size());
+            while(random3==random1||random3==random2){random3=(int)(Math.random()*result.size());}
+            ArrayList<String> randomResult=new ArrayList<String>();
+            randomResult.add(result.get(random1));
+            randomResult.add(result.get(random2));
+            randomResult.add(result.get(random3));
+            result=randomResult;
+        }*/
+
         return missionNames;
     }
 
@@ -143,6 +158,8 @@ public class MultiController {
 
         return view;
     }
-
-
+    @Autowired
+    public void setMissionService(MissionService missionService){
+        this.missionService=missionService;
+    }
 }
