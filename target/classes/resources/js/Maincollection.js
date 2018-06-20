@@ -53,9 +53,39 @@ function getCollectionInfo(tmpUser) {
     });
 }
 
+function searchInHall(searchType,searchContent) {
+    var index = 0;
+    var missionNames = [];
+
+    $.ajax({
+        async: false,
+        method: "POST",
+        url: "/MissionTake/SearchInHall",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({"range":searchType, "keyword":searchContent}),
+        success: function takePersonalInfo(returnData) {
+
+            for (var i = 0; i < returnData.length; i++) {
+                if (returnData[i] == null) {
+                    break;
+                }
+                missionNames[i] = returnData[i];
+                index++;
+            }
+            setMissionNames(missionNames, index);
+        },
+        error: function () {
+            //alert("fail")
+        }
+    });
+}
+
 function setMissionNames(_missionNames, _index) {
     missionNames = _missionNames;
     index = _index;
+
+    setCollection();
 }
 
 function setCollection(){
