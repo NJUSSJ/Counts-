@@ -21,9 +21,13 @@ import java.util.ArrayList;
 @Controller
 public class TagController {
     MainService mainService;
-    BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
-    BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
-    BasicBLService<Mission> missionBasicBLService = Factory.getBasicBLService(new Mission());
+    //BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
+    BasicBLService<Collection> collectionService= Factory.getCollectionBasicBLService();
+   // BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
+   BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getCollectionResultBasicBLService();
+
+    //BasicBLService<Mission> missionBasicBLService = Factory.getBasicBLService(new Mission());
+    BasicBLService<Mission> missionBasicBLService = Factory.getMissionBasicBLService();
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){

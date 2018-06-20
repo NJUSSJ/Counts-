@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
-    BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
+    //BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
+    BasicBLService<User> userBasicBLService= Factory.getUserBasicBLService();
     @RequestMapping(value = "/UserManage/ban/{phoneNumber}")
     @ResponseBody
     public String ban(String phoneNumber){

@@ -13,6 +13,7 @@ import com.seproject.web.parameter.MissionParameter;
 import com.seproject.web.parameter.MissionSearchParameter;
 import com.seproject.web.parameter.RecommendParameter;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,12 +23,16 @@ import java.util.ArrayList;
 
 @RestController
 public class MissionController {
-    private BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
-    private BasicBLService<User> userService=Factory.getBasicBLService(new User());
-    private BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
-    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
-    private MissionService missionService=new MissionService();
-    private MainService mainService=new MainService();
+    //private BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
+    private BasicBLService<Mission> missionBasicBLService= Factory.getMissionBasicBLService();
+    //private BasicBLService<User> userService=Factory.getBasicBLService(new User());
+    private BasicBLService<User> userService=Factory.getUserBasicBLService();
+    //private BasicBLService<Collection> collectionService=Factory.getBasicBLService(new Collection());
+    private BasicBLService<Collection> collectionService=Factory.getCollectionBasicBLService();
+    //private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
+    private MissionService missionService;
+    private MainService mainService;
     @RequestMapping(value = "/MissionManage/Search")
     @ResponseBody
     /**
@@ -190,4 +195,9 @@ public class MissionController {
         return ret;
     }
 
+    @Autowired
+    public void setMainService(MainService mainService){this.mainService=mainService;}
+
+    @Autowired
+    public void setMissionService(MissionService missionService){this.missionService=missionService;}
 }

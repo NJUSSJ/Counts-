@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 @Controller
 public class MainController {
-    MainService mainService =new MainService();
+    MainService mainService ;
     //用于写新加的主要系统流程
     /**
      * 增加标签式任务、接受子任务、高级工人接受评估式任务

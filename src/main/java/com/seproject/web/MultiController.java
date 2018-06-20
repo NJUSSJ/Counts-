@@ -21,8 +21,10 @@ import java.util.ArrayList;
 
 @RestController
 public class MultiController {
-    private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
-    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    //private BasicBLService<User> basicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<User> basicBLService= Factory.getUserBasicBLService();
+    //private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
     private MissionService missionService;
     @RequestMapping(value = "/test1.html")
     public ModelAndView getTagPage(HttpServletRequest request){

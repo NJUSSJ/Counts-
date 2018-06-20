@@ -17,9 +17,10 @@ import java.util.ArrayList;
 @RestController
 public class LoginController {
 
-    private BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
-    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-
+    //private BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
+	private BasicBLService<User> userBasicBLService= Factory.getUserBasicBLService();
+    //private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+	private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
 	@RequestMapping(value = "/")
 	public ModelAndView loginPage(){
 		return new ModelAndView("Login");

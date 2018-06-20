@@ -16,8 +16,10 @@ import java.sql.Date;
 
 @RestController
 public class OtherController {
-    BasicBLService<UserDate> userDateBasicBLService= Factory.getBasicBLService(new UserDate());
-    BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
+    //BasicBLService<UserDate> userDateBasicBLService= Factory.getBasicBLService(new UserDate());
+    BasicBLService<UserDate> userDateBasicBLService= Factory.getUserDateBasicBLService();
+    //BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
+    BasicBLService<User> userBasicBLService=Factory.getUserBasicBLService();
     @RequestMapping(value = "/Sign")
     @ResponseBody
     /**
