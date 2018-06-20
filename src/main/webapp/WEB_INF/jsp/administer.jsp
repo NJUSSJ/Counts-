@@ -159,7 +159,8 @@
 
                 <div id="adminChart3" style="width: 1000px;height: 400px;margin-bottom: 30px"></div>
 
-                <div id="adminChart4" style="width: 1000px;height: 400px"></div>
+                <div id="adminChart4" style="width: 1000px;height: 400px;margin-bottom: 30px"></div>
+                
                 <script>
                     var dom = document.getElementById("revenue");
                     var myChart = echarts.init(dom);
