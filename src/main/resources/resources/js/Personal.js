@@ -256,10 +256,14 @@ function loadDownloadFile() {
         contentType: "application/json",
         dataType: "json",
         data: JSON.stringify(finishedNames),
-        success: function (url) {
-
+        success: function (returnData) {
+            if(returnData == 1){
+                console.log("成功加载txt");
+            }else {
+                console.log("加载txt失败");
+            }
             //alert("获取personal collection数据完毕 开始加载 第一个missionName=" + missionNames[0]);
-            setDownloadFile(url);
+            //setDownloadFile(url);
             //loadPersonalCollectionTagType();
         },
         error: function () {
@@ -323,11 +327,11 @@ function setFinishedCollection() {
         a.appendChild(img);
         div.appendChild(a);
         document.getElementById("personalFinishedCollections").appendChild(div);
-        document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href='images/add.png' download="+ finishedNames[i] +" >点击此处下载该任务标注信息</a></div>";
+        document.getElementById("personalFinishedCollections").innerHTML += "<div><a id='downloadFile' href='downloadFile/" + finishedNames[i] + ".txt' download="+ finishedNames[i] +" >点击此处下载该任务标注信息</a></div>";
 
     }
 }
 
 function setDownloadFile(url) {
-    document.getElementById("personalFinishedCollections").innerHTML += "<a id='downloadFile' download=" + url[0] + " >点击此处下载该任务标注信息</a>";
+    //document.getElementById("personalFinishedCollections").innerHTML += "<a id='downloadFile' download=" + url[0] + " >点击此处下载该任务标注信息</a>";
 }
