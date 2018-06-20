@@ -1,7 +1,403 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="" />
+=======
+    <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/UpdateLabelMissionParameter.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/UpdateLabelMissionParameter.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SEPF.war" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SEPM.war" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/Application.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/Constant.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/Key.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/RM.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/SearchCategory.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/Searchable.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/FileDao.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/MySQL5DialectUTF8.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Collection.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/CollectionResult.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/FreeMissionDetail.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/GoldMission.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Message.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Mission.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Sample.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/SubFreeMission.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/SubLabelMission.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/User.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/UserDate.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart3.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart7.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart8.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/AdminData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/SingleMissionData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/StarterData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/WorkerData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/LoginLog.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/TestDomain.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/TestH.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/BasicUtilService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/Factory.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FactoryService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FileIOService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FreeMissionService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/InitData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/LabelMissionService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/LanguageService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MathService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MessageService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MissionService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/NewsService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blService/BasicBLService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_File$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_File.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/ChartController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/CollectionController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/SampleController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/SignUpController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/TagController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/LoginController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MainController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MessageController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MissionController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/OtherController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/PersonalController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/SingleChartController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/UserController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/CalRewardParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/FinishReviewParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/FreeMissionParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/GetMissionParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/LoginParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MessageParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MissionParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MissionSearchParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/PersonalParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/RecommendParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/UpdateFreeMissionParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/UpdateLabelMissionParameter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/DownloadFileResponse.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/MissionCheckResponse.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/MissionResultResponse.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/ReviewResponse.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/SignResponse.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/cat1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/cat2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/dog1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/dog2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/parrot1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/parrot2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/registry.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/dataFile/test1.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/navigation.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/ObjectFileReadMe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/objectFile/navigation.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/userFile/test2.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/file/userFile/user.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/res_readme" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/960_12_col.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/SubCollection.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/base.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/delete.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/font-awesome.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/ie8.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/ie9.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-bl.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-br.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-tl.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-tr.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-bl.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-br.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-tl.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-tr.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/overlay.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/upload.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/jquery.tag-editor.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/main.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/samples-styles.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/font-awesome.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/ie8.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/images/bg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/images/overlay.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/main.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/noscript.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneCSS/basic.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneCSS/dropzone.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneJS/dropzone.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/FontAwesome.otf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/Quicksand_Book-webfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/add.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/back.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/banner.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/delete.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/edit.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/graphics_editor.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/logo.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/more.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/more4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/note.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pen.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/refresh.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/save.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/search_ico.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/search_ico_hover.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/sign.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/timg.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/CalReward.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ChartData.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/CreateChartArea.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawAdminChart.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawStarterChart.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawWorkerChart.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/GetChartData.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Maincollection.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Message.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Personal.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Search.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Sign.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/TagType.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/admin.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/charts.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/echarts-wordcloud.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/echarts.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/freeJudge.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/backgroundsize.min.htc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/html5shiv.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/respond.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.11.0.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.8.3.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.dropotron.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.filtertable.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.scrollgress.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.scrolly.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.select.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.tag-editor.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/judge.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/main.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionDetails.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionDetailsCharts.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionRest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/multipic.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/object.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/signUp.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/singleEdit.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/skel.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/submission.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/tagTool.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/upload1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/util.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/backgroundsize.min.htc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/html5shiv.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/respond.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/main.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/skel-viewport.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/skel.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/util.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/123_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/labelM1_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission2_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission55_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission5_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_19.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_21.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_22.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_23.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_24.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/mission6_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/navigation.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test12_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/test1_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/ie8.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/ie9.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_functions.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_skel.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_vars.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/main.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/ie8.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_functions.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_skel.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_vars.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/main.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/noscript.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/MathServiceTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/blServiceImpl/BasicBLImpl_HibernateTest.class" afterPath="" />
+    </list>
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,88 +448,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="missionDetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="102" column="38" lean-forward="false" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
-              <folding>
-                <marker date="1529403294315" expanded="true" signature="10063:10081" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+            <state relative-caret-position="52">
+              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multipic.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/multipic.js">
+      <file leaf-file-name="Mission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="996">
-              <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
+            <state relative-caret-position="-299">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="administer.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp">
+      <file leaf-file-name="UpdateLabelMissionParameter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/UpdateLabelMissionParameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1610">
-              <caret line="106" column="132" lean-forward="false" selection-start-line="106" selection-start-column="132" selection-end-line="106" selection-end-column="132" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TagType.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-981">
-              <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-              <folding>
-                <marker date="1529426103980" expanded="true" signature="567:586" ph="..." />
-                <marker date="1529426103980" expanded="true" signature="614:632" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabelEdit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload1.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/upload1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tagTool.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-237">
-              <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+            <state relative-caret-position="282">
+              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -142,8 +481,62 @@
       <file leaf-file-name="CollectionController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+            <state relative-caret-position="1863">
+              <caret line="101" column="44" lean-forward="false" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MissionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1144">
+              <caret line="101" column="9" lean-forward="false" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+              <folding>
+                <element signature="e#2751#2759#0" expanded="true" />
+                <element signature="e#2813#2822#0" expanded="true" />
+                <element signature="e#4329#4337#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="391">
+              <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+              <folding />
+=======
+            <state relative-caret-position="46">
+              <caret line="278" column="45" lean-forward="false" selection-start-line="278" selection-start-column="45" selection-end-line="278" selection-end-column="45" />
+              <folding>
+                <element signature="e#8941#8949#0" expanded="true" />
+                <element signature="e#33509#33510#0" expanded="true" />
+                <element signature="e#33561#33562#0" expanded="true" />
+              </folding>
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabelEdit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-207">
+              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -152,8 +545,18 @@
       <file leaf-file-name="MultiController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2113">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="40">
+              <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonalController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/PersonalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="67" column="29" lean-forward="false" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -214,14 +617,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/LabelEdit.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/SingleEdit.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/Personal.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/missionResult.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/admin.js" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/missionDetails.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/administer.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/UpdateLabelMissionParameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java" />
       </list>
     </option>
   </component>
@@ -282,10 +687,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,58 +750,12 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB_INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB_INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,6 +765,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SearchEverywhereHistoryKey" value="sear&#9;PSI&#9;JAVA://com.seproject.web.controller.MissionController#search&#10;getCollecti&#9;PSI&#9;JAVA://com.seproject.web.MultiController#getCollectionInfo&#10;getCollection&#9;PSI&#9;JAVA://com.seproject.web.controller.PersonalController#getCollectionInfo&#10;getCollec&#9;PSI&#9;JAVA://com.seproject.web.MultiController#getCollectionInfo&#10;searchInHall&#9;PSI&#9;JAVA://com.seproject.web.controller.MissionController#searchInHall&#10;getColl&#9;PSI&#9;JAVA://com.seproject.web.MultiController#getCollectionInfo" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -423,19 +781,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/Personal.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/TagType.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/upload1.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Personal.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/TagType.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/upload1.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -443,51 +788,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_1.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_10.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_11.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_12.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_13.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_14.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_15.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_2.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_3.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_4.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_5.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_6.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_7.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_8.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_9.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_1.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_10.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_11.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_12.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_13.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_14.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_15.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_2.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_3.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_4.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_5.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_6.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_7.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_8.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_9.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_1.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_10.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_11.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_12.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_13.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_14.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_15.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_2.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_3.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_4.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_5.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_6.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_7.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_8.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_9.jpg</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -573,6 +873,1100 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/Personal.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/TagType.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/resources/js/upload1.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/Personal.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/TagType.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/js/upload1.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</PATH>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test12_9.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/test1_9.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/resources/missionImages/标签式123_9.jpg</PATH>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
@@ -698,12 +2092,39 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32611173" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053647" sideWeight="0.4931973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27575108" sideWeight="0.50680274" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -715,7 +2136,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -723,14 +2149,9 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2832618" sideWeight="0.4931973" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27575108" sideWeight="0.50680274" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,30 +2171,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/Personal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5313">
-          <caret line="231" column="36" lean-forward="true" selection-start-line="231" selection-start-column="36" selection-end-line="231" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/MissionDetails.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4508">
-          <caret line="196" column="43" lean-forward="false" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3864">
-          <caret line="182" column="1" lean-forward="false" selection-start-line="182" selection-start-column="1" selection-end-line="182" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/response/ReviewResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
@@ -814,7 +2211,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3864">
           <caret line="182" column="1" lean-forward="false" selection-start-line="182" selection-start-column="1" selection-end-line="182" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#8941#8949#0" expanded="true" />
+            <element signature="e#33509#33510#0" expanded="true" />
+            <element signature="e#33561#33562#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -867,28 +2268,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/d79df43a/d6496bfb-fc65-415f-a2da-7cc14d8f1cc4/sedb.subtagmission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/d79df43a/d6496bfb-fc65-415f-a2da-7cc14d8f1cc4/sedb.subtagmission" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/singleEdit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9772">
           <caret line="141" column="22" lean-forward="false" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-644">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +2310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1702">
           <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,15 +2332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="23" column="46" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="23" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="570" column="65" lean-forward="false" selection-start-line="570" selection-start-column="65" selection-end-line="570" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +2339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +2362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6946">
           <caret line="302" column="95" lean-forward="false" selection-start-line="302" selection-start-column="95" selection-end-line="302" selection-end-column="95" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,7 +2377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1419">
           <caret line="151" column="35" lean-forward="false" selection-start-line="151" selection-start-column="35" selection-end-line="151" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,30 +2384,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1403">
           <caret line="61" column="49" lean-forward="false" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/d79df43a/d6496bfb-fc65-415f-a2da-7cc14d8f1cc4/sedb.mission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="176" column="51" lean-forward="false" selection-start-line="176" selection-start-column="51" selection-end-line="176" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/d79df43a/d6496bfb-fc65-415f-a2da-7cc14d8f1cc4/sedb.mission" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Main.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2338">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,7 +2399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1587">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +2406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-529">
           <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,7 +2413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,7 +2420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="996">
           <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,35 +2427,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="102" column="38" lean-forward="false" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
-          <folding>
-            <marker date="1529403294315" expanded="true" signature="10063:10081" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/TagType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-981">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="460">
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
-            <marker date="1529426103980" expanded="true" signature="567:586" ph="..." />
-            <marker date="1529426103980" expanded="true" signature="614:632" ph="..." />
+            <marker date="1529426344447" expanded="true" signature="567:586" ph="..." />
+            <marker date="1529426344447" expanded="true" signature="614:632" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2113">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/tagTool.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-237">
-          <caret line="104" column="9" lean-forward="false" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+        <state relative-caret-position="273">
+          <caret line="92" column="9" lean-forward="false" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1113,41 +2453,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1610">
           <caret line="106" column="132" lean-forward="false" selection-start-line="106" selection-start-column="132" selection-end-line="106" selection-end-column="132" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#article#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/LabelEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        <state relative-caret-position="-207">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources/js/upload1.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/CollectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1863">
+          <caret line="101" column="44" lean-forward="false" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/parameter/UpdateLabelMissionParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/PersonalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="67" column="29" lean-forward="false" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="391">
           <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+=======
+        <state relative-caret-position="40">
+          <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="278" column="45" lean-forward="false" selection-start-line="278" selection-start-column="45" selection-end-line="278" selection-end-column="45" />
+          <folding>
+            <element signature="e#8941#8949#0" expanded="true" />
+            <element signature="e#33509#33510#0" expanded="true" />
+            <element signature="e#33561#33562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/controller/MissionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="101" column="9" lean-forward="false" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+          <folding>
+            <element signature="e#2751#2759#0" expanded="true" />
+            <element signature="e#2813#2822#0" expanded="true" />
+            <element signature="e#4329#4337#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

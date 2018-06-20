@@ -219,7 +219,7 @@ public class MainService {
      */
     private void reviewLabelMission(String mid){
         Mission mission=missionBasicBLService.findByKey(mid);
-        int evaluate=mission.getEvaluateStrategy();
+        int bonus=mission.getBonusStrategy();
         ArrayList<SubLabelMission> subLabelMissions =subLabelMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         System.out.println("金标排列");
@@ -276,7 +276,7 @@ public class MainService {
             }
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
-                System.out.println(userAnswer);
+                System.out.println("用户的答案是："+userAnswer);
                 for (int k = 0; k < 10; k++) {
                     if(userAnswer.get(k)>=0) {
                         vote[k][userAnswer.get(k)] += weight.get(j);
@@ -285,7 +285,7 @@ public class MainService {
             }
 
             //找到了所有的标准答案，判断每个用户每题对不对，根据答题情况直接发奖励
-            int standardAnswers[] = getStandard(vote);
+            int[] standardAnswers = getStandard(vote);
             System.out.println("标准答案");
             for(int a=0;a<standardAnswers.length;a++){
                 System.out.println(standardAnswers[a]);
@@ -320,9 +320,9 @@ public class MainService {
 
             //根据事先设置的策略分配
             double[] money=null;
-            if(evaluate==2) {//2号策略：double nothing
+            if(bonus==2) {//2号策略：double nothing
                 money = giveMoney_DoubleNothing(isCorrect);
-            }else if(evaluate==3){//3号策略：双色球
+            }else if(bonus==3){//3号策略：双色球
                 money = giveMoney_DoubleColorBall(isCorrect);
             }
             setCollection(money, subLabelMission.getUid(), mid);

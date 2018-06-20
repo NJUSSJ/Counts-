@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -101,12 +102,29 @@ public class MainController {
         UpdateLabelMissionParameter para= (UpdateLabelMissionParameter) JSONObject.toBean(object,UpdateLabelMissionParameter.class);
         String uid=para.getUid();
         String mid=para.getMid();
-        int k=para.getNum();
+
+        Mission mission=missionBasicBLService.findByKey(mid);
+
+        int numIndex=para.getNum();
+        String lab=mission.getMissionLabel().get(0);
+        lab=lab.replace("[","").replace("]","");
+        String[] labList=lab.split(",");
+        int ans=-1;
+        String ansTemp=para.getAnswer();
+        if(ansTemp!=null&&ansTemp.length()>0) {
+            ansTemp="\""+ansTemp+"\"";
+            for (int d = 0; d < labList.length; d++) {
+                if (ansTemp.equals(labList[d])) {
+                    ans = d;
+                    break;
+                }
+            }
+        }
         ArrayList<GoldMission> goldMissions=goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for(GoldMission goldMission:goldMissions){
             String tempUid=goldMission.getUid();
             if(tempUid.equals(uid)){
-                goldMission.getResult().set(k,para.getAnswer());
+                goldMission.getResult().set(numIndex,ans);
                 goldMissionBasicBLService.update(goldMission);
                 return RM.SUCCESS.toString();
             }
@@ -115,10 +133,20 @@ public class MainController {
         ArrayList<SubLabelMission> subLabelMission =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         for (SubLabelMission sub : subLabelMission) {
             ArrayList<String> user = sub.getUid();
+            System.out.println("子任务的userList："+user);
             if (user.contains(uid)) {
-                ArrayList<Integer> tempanswer = sub.getAnswers().get(user.indexOf(uid));
-                tempanswer.set(k, para.getAnswer());
+                System.out.println("找到了！！！！！！！！！！！");
+                System.out.println("在："+user.indexOf(uid));
+                ArrayList<ArrayList<Integer>> tempAllAnswer=sub.getAnswers();
+                ArrayList<Integer> tempAnswer = tempAllAnswer.get(user.indexOf(uid));
+                tempAnswer.set(numIndex, ans);
+                sub.setAnswers(tempAllAnswer);//更新
                 subTagMissionBasicBLService.update(sub);
+                tempAllAnswer=sub.getAnswers();
+                System.out.println("更新以后的答案集");
+                for(ArrayList<Integer> list:tempAllAnswer){
+                    System.out.println(list);
+                }
                 return RM.SUCCESS.toString();
             }
         }
