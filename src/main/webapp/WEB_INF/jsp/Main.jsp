@@ -99,6 +99,10 @@
                                     <option value="ended">已截止</option>
                                     <option value="missionName">任务名</option>
                                     <option value="requestor">发布者</option>
+                                    <option value="difficulty">难度</option>
+                                    <option value="wantedCredit">总积分</option>
+                                    <option value="tagEdit">标签式</option>
+                                    <option value="freeEdit">非标签式</option>
                                 </select>
                                 <input type="text" placeholder="搜索从这里开始..." id="searchContent">
                                 <button type="button" id="searchBtn"></button>

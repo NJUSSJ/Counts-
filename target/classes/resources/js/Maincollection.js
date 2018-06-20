@@ -26,17 +26,10 @@ function loadMain(userPhone,userCategory) {
         var li = document.getElementById("extra");
         li.style.display = "none";
     }
-<<<<<<< HEAD
-    getCollectionInfo();
-}
-
-function getCollectionInfo() {
-=======
     getCollectionInfo(tmpUser);
 }
 
 function getCollectionInfo(tmpUser) {
->>>>>>> 86db4a81d7c9c3d1de70aa4ecc8ce596eafcbcd0
     $.ajax({
         async: false,
         method: "POST",
