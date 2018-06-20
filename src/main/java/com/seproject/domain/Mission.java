@@ -37,6 +37,7 @@ public class Mission {
     @Column(name="requestornumber")
     String requestorNumber;//发起者ID
     @Column(name="state")
+    @Searchable(varName = "state")
     int state;//0:未结束 1：结束但未评估 2:已评估 3：已被发起者删除
     @Column(name="difficulty")
     @Searchable(varName = "difficulty")
