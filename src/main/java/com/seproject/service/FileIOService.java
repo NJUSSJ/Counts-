@@ -3,7 +3,13 @@ package com.seproject.service;
 import com.seproject.dao.FileDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,6 +74,36 @@ public class FileIOService {
         String result=info[id-1].substring(name.length()+3);//如果是两位数id记得要修改这一段
         return result;
     }
+
+    /**
+     * 返回每个任务对应的下载文件的地址
+     */
+    public ArrayList<String> getDownloadAddress(String[] mid){
+        ArrayList<String> result=null;
+        try {
+            result=new ArrayList<String>();
+            File nav= null;
+            nav = ResourceUtils.getFile("classpath:file/downloadFile/navigation.txt");
+            String path=nav.getAbsolutePath();
+            path=path.replace("\\","/");
+            int index=path.lastIndexOf("/");
+            path=path.substring(0,index);
+            for(String eachMid:mid) {
+                String filePath=path + "/" + eachMid + ".txt";
+                result.add(filePath);
+                File file0 = new File(filePath);
+                if (!file0.exists()) {
+                    file0.createNewFile();
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 
     @Autowired
     public void setFileDao(FileDao fileDao){
