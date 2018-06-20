@@ -21,9 +21,13 @@ import java.util.ArrayList;
 @Controller
 public class TagController {
     MainService mainService;
-    BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
-    BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
-    BasicBLService<Mission> missionBasicBLService = Factory.getBasicBLService(new Mission());
+    //BasicBLService<Collection> collectionService= Factory.getBasicBLService(new Collection());
+    BasicBLService<Collection> collectionService= Factory.getCollectionBasicBLService();
+   // BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getBasicBLService(new CollectionResult());
+   BasicBLService<CollectionResult> collectionResultBasicBLService= Factory.getCollectionResultBasicBLService();
+
+    //BasicBLService<Mission> missionBasicBLService = Factory.getBasicBLService(new Mission());
+    BasicBLService<Mission> missionBasicBLService = Factory.getMissionBasicBLService();
     @RequestMapping(value = "/write")
     @ResponseBody
     public String writeFile(@RequestBody String imgid){
@@ -36,8 +40,8 @@ public class TagController {
         String userName= temp0[2];
         Collection collection=collectionService.findByKey(starterMissionName+userName);
         ArrayList<String> infoList=collection.getInfoList();
-        System.out.println("writePicName:"+(Integer.parseInt(picName0)-1));
-        infoList.set(Integer.parseInt(picName0)-1,imgid);
+        System.out.println("writePicName:"+(Integer.parseInt(picName0)));
+        infoList.set(Integer.parseInt(picName0),imgid);
         collection.setInfoList(infoList);
         collectionService.update(collection);
         return "666";

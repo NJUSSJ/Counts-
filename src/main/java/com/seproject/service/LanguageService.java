@@ -12,11 +12,11 @@ import java.util.HashMap;
 @Service
 public class LanguageService {
     //设置APPID/AK/SK
-    public static final String APP_ID = "11407628";
-    public static final String API_KEY = "ReGNELPKDvnOyKEs2LlqCiPq";
-    public static final String SECRET_KEY = "55j1ab3svr9ot8UrNR11250vdZy53Dfx";
+    private static final String APP_ID = "11407628";
+    private static final String API_KEY = "ReGNELPKDvnOyKEs2LlqCiPq";
+    private static final String SECRET_KEY = "55j1ab3svr9ot8UrNR11250vdZy53Dfx";
     private static AipNlp client=null;//建议单例模式使用
-    public void initNlp(){
+    private void initNlp(){
         // 初始化一个AipNlp
         if(client==null) {
             client = new AipNlp(APP_ID, API_KEY, SECRET_KEY);

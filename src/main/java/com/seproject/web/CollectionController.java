@@ -28,10 +28,14 @@ public class CollectionController {
 
 
     private FileIOService fileIOService;
-    private BasicBLService<User> basicBLService= Factory.<User>getBasicBLService(new User());
-    private BasicBLService<Mission> missionBasicBLService= Factory.<Mission>getBasicBLService(new Mission());
-    private BasicBLService<Collection> collectionBasicBLService= Factory.<Collection>getBasicBLService(new Collection());
-    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    //private BasicBLService<User> basicBLService= Factory.<User>getBasicBLService(new User());
+    private BasicBLService<User> basicBLService= Factory.getUserBasicBLService();
+    //private BasicBLService<Mission> missionBasicBLService= Factory.<Mission>getBasicBLService(new Mission());
+    private BasicBLService<Mission> missionBasicBLService= Factory.getMissionBasicBLService();
+    //private BasicBLService<Collection> collectionBasicBLService= Factory.<Collection>getBasicBLService(new Collection());
+    private BasicBLService<Collection> collectionBasicBLService= Factory.getCollectionBasicBLService();
+    //private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    private BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
     @RequestMapping(value = "/details.html")
     public ModelAndView getDetailofCollection(HttpServletRequest request){
         String missionName=request.getParameter("imageURL");

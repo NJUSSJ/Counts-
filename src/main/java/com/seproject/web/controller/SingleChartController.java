@@ -18,9 +18,12 @@ import java.util.ArrayList;
 
 @RestController
 public class SingleChartController {
-    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
-    BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User()) ;
+    //BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
+    BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
+    //BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
+    //BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User()) ;
+    BasicBLService<User> userBasicBLService=Factory.getUserBasicBLService();
     //返回各种单张的图表
     @RequestMapping(value = "/singleChart/getChart1")
     @ResponseBody

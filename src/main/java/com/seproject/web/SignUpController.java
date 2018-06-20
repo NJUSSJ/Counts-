@@ -17,7 +17,8 @@ import java.util.Random;
 @Controller
 public class SignUpController {
 
-    private BasicBLService<User> userService= Factory.getBasicBLService(new User());
+    //private BasicBLService<User> userService= Factory.getBasicBLService(new User());
+    private BasicBLService<User> userService= Factory.getUserBasicBLService();
     @RequestMapping(value = "/sendVaricationCode")
     @ResponseBody
     public String sendVarication(@RequestBody String number){

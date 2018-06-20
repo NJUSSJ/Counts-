@@ -3,9 +3,12 @@ package com.seproject.web.controller;
 import com.seproject.domain.User;
 import com.seproject.domain.UserDate;
 import com.seproject.service.Factory;
+import com.seproject.service.FileIOService;
 import com.seproject.service.blService.BasicBLService;
 import com.seproject.web.parameter.ChangeCreditParameter;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONString;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +16,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 @RestController
 public class OtherController {
-    BasicBLService<UserDate> userDateBasicBLService= Factory.getBasicBLService(new UserDate());
-    BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
+    //BasicBLService<UserDate> userDateBasicBLService= Factory.getBasicBLService(new UserDate());
+    BasicBLService<UserDate> userDateBasicBLService= Factory.getUserDateBasicBLService();
+    //BasicBLService<User> userBasicBLService=Factory.getBasicBLService(new User());
+    BasicBLService<User> userBasicBLService=Factory.getUserBasicBLService();
+    FileIOService fileIOService;
     @RequestMapping(value = "/Sign")
     @ResponseBody
     /**
@@ -84,6 +91,7 @@ public class OtherController {
         System.out.println("收钱啦！！！！！！！！！！！！！");
         String uid=changeCreditParameter.getUid();
         double delta=changeCreditParameter.getDelta();
+        System.out.println(delta);
         User user=userBasicBLService.findByKey(uid);
         double origin=user.getCredit();
         if(origin+delta<0){
@@ -96,10 +104,27 @@ public class OtherController {
         }
     }
 
+
+    @RequestMapping(value = "/getDownloadPath")
+    @ResponseBody
+    /**
+     * 获得任务对应的下载地址
+     */
+    public String[] getDownloadPath(@RequestBody String midList){
+        JSONArray array=JSONArray.fromObject(midList);
+        String[] mid= (String[]) array.toArray(new String[array.size()]);
+        ArrayList<String> result=fileIOService.getDownloadAddress(mid);
+        return result.toArray(new String[result.size()]);
+    }
+
     public void clearArray(Date[] dateArray){
         for(int i=0;i<7;i++) {
             dateArray[i] = null;
         }
+    }
+    @Autowired
+    public void setFileIOService(FileIOService fileIOService){
+        this.fileIOService=fileIOService;
     }
 
 }

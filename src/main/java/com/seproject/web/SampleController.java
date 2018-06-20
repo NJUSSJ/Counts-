@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SampleController {
 
-    BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
+    //BasicBLService<Mission> missionBasicBLService= Factory.getBasicBLService(new Mission());
+    BasicBLService<Mission> missionBasicBLService= Factory.getMissionBasicBLService();
     ReviewService reviewService;
 
     @RequestMapping(value = "/getSample")

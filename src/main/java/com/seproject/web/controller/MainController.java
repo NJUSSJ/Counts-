@@ -29,12 +29,12 @@ import java.util.ArrayList;
 
 @Controller
 public class MainController {
-    MainService mainService =new MainService();
     //用于写新加的主要系统流程
     /**
      * 增加标签式任务、接受子任务、高级工人接受评估式任务
      * 自动评估标签式任务并分配奖励、手动评估标签式任务并分配奖励
      */
+    private MainService mainService=new MainService();
     private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
     private BasicBLService<SubLabelMission> subTagMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
@@ -70,7 +70,7 @@ public class MainController {
             tempAnswer.add(-1);
         }
         subLabelMissions.get(index).getAnswers().add(tempAnswer);
-
+        System.out.println("&^^%%$$#kdsjfljdsfkl"+(mainService==null));
         mainService.createCollection(uid,mid);
         subTagMissionBasicBLService.update(subLabelMissions.get(index));
         return RM.SUCCESS.toString();
@@ -370,6 +370,4 @@ public class MainController {
         return minIndex;
     }
 
-    @Autowired
-    public void setMainService(MainService mainService){this.mainService=mainService;}
 }

@@ -34,8 +34,10 @@ import java.util.*;
 
 @Controller
 public class UploadController {
-    BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
-    BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
+    //BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
+    //BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
+    BasicBLService<User> userBasicBLService= Factory.getUserBasicBLService();
     MainService mainService;
     NewsService newsService;
 

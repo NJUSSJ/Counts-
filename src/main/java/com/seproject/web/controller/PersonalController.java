@@ -21,9 +21,12 @@ import java.util.ArrayList;
 @RestController
 public class PersonalController {
 
-    private BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
-    private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
-    private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    //private BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
+    private BasicBLService<User> userBasicBLService= Factory.getUserBasicBLService();
+    //private BasicBLService<Collection> collectionBasicBLService=Factory.getBasicBLService(new Collection());
+    private BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
+    //private BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
+    private BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
 
     @RequestMapping(value = "/personal.html")
     public ModelAndView getPersonalInfo(HttpServletRequest request){
