@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 
 @RestController
@@ -66,14 +67,6 @@ public class MissionController {
             missionRe=missionBasicBLService.search("name",SearchCategory.CONTAINS,keyword);
         }else if(range.equals("requestor")){
             missionRe=missionBasicBLService.search("requestorNumber",SearchCategory.EQUAL,keyword);
-        }else if(range.equals("difficulty")){
-            missionRe=missionBasicBLService.search("diffculty",SearchCategory.EQUAL,keyword);
-        }else if(range.equals("wantedCredit")){
-            missionRe=missionBasicBLService.search("wantedCredit",SearchCategory.LARGER_THAN,keyword);
-        }else if(range.equals("tagEdit")){
-            missionRe=missionBasicBLService.search("tagType",SearchCategory.EQUAL,"1");
-        }else if(range.equals("freeEdit")){
-            missionRe=missionBasicBLService.search("tagType",SearchCategory.EQUAL,"2");
         } else{
             ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
             if(range.equals("ended")){
@@ -88,6 +81,32 @@ public class MissionController {
                         missionRe.add(mission);
                     }
                 }
+            }else if(range.equals("difficulty")){
+                for(Mission mission:missions){
+                    if(mission.getDifficulty()== Integer.parseInt(keyword)){
+                        missionRe.add(mission);
+                    }
+                }
+            }else if(range.equals("wantedCredit")){
+                for(Mission mission:missions){
+                    if(mission.getReward()>=Double.parseDouble(keyword)){
+                        missionRe.add(mission);
+                    }
+                }
+            }else if(range.equals("tagEdit")){
+                for(Mission mission:missions){
+                    if(mission.getTagType()==1&&mission.getName().contains(keyword)){
+                        missionRe.add(mission);
+                    }
+                }
+            }else if(range.equals("freeEdit")){
+                for(Mission mission:missions){
+                    if(mission.getTagType()==2&&mission.getName().contains(keyword)){
+                        missionRe.add(mission);
+                    }
+                }
+            } else if(range.equals("refresh")){//相似用户推荐
+                missionRe=missionService.recommendByAlikeUser(keyword);
             }else{
                 missionRe.addAll(missions);
             }
