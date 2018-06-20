@@ -335,7 +335,9 @@ public class MainService {
             if(best>=0) {
                 ArrayList<Integer> bestAnswer = subLabelMission.getAnswers().get(best);
                 for (int i = 0; i < 10; i++) {
-                    missionRecord += (i + subLabelMission.getSeed() * 10) + "号图片的答案是" + bestAnswer.get(i) + ";";
+                    int pictureInd=i+subLabelMission.getSeed()*10;
+                    if(pictureInd>=mission.getFileNum()) break;
+                    missionRecord+=pictureInd+"号图的答案为"+bestAnswer.get(i)+";";
                 }//记录最好的标注信息
             }
         }
@@ -380,6 +382,10 @@ public class MainService {
                 origin[b]=temp[b];
             }
             Arrays.sort(temp);//升序
+            for(double each:temp){
+                System.out.print(each+" ");
+            }
+            System.out.println();
             if(temp[temp.length-2]!=0){
                 if(temp[temp.length-1]/temp[temp.length-2]>=3){
                     isValid=true;
@@ -578,7 +584,7 @@ public class MainService {
 
             }
         }else{
-            int groupNum=mission.getFileNum()/10;
+            int groupNum=(mission.getFileNum()/10)+1;
             int tail=mission.getFileNum()%10;
             ArrayList<SubFreeMission> subFreeMissions=subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
             for(SubFreeMission subFreeMission:subFreeMissions){
@@ -669,7 +675,9 @@ public class MainService {
                     Collection bestCollection=collectionBasicBLService.findByKey(mid+users.get(best));
                     ArrayList<String> bestAnswer=bestCollection.getInfoList();
                     for(int i=0;i<10;i++){
-                        missionRecord+=(i+subFreeMission.getSeed()*10)+"号图的答案为"+bestAnswer.get(i)+";";
+                        int pictureInd=i+subFreeMission.getSeed()*10;
+                        if(pictureInd>=mission.getFileNum()) break;
+                        missionRecord+=pictureInd+"号图的答案为"+bestAnswer.get(i)+";";
                     }
                 }
             }
@@ -739,6 +747,7 @@ public class MainService {
                         }
                     }
                 }
+                System.out.println(uid.get(j)+"的eachGrade:"+eachGrade);
                 if (eachGrade > 0) {
                     double frame = details.get(j).getX().size();
                     double frameSquare = 0.0;
@@ -746,9 +755,12 @@ public class MainService {
                         frameSquare += details.get(j).getHeight().get(m) * details.get(j).getWeight().get(m);
                     }
                     eachGrade*=100;
+                    System.out.println(uid.get(j)+"的eachGrade:"+eachGrade);
                     double temp=Math.abs(frame - avgFrameNum)/ (maxFrameNum-minFrameNum);
                     eachGrade *= (1.0 - temp);
+                    System.out.println(uid.get(j)+"的eachGrade:"+eachGrade);
                     eachGrade *= (1.0 - (Math.abs(frameSquare - avgFrameSquare)) / maxFrameSquare-minFrameSquare);
+                    System.out.println(uid.get(j)+"的eachGrade:"+eachGrade);
                 }
                 grade.set(j,grade.get(j)+eachGrade);
             }
@@ -775,20 +787,24 @@ public class MainService {
             for(int k=0;k<uid.size();k++){
                 Collection collection=collectionBasicBLService.findByKey(mid+uid.get(k));
                 if(levels.get(k)>=avgLevel){//高级工人抽一张
+                    System.out.println(uid.get(k)+"是高级");
                     int random1=(int)(Math.random()*10);
+                    System.out.println("random1:"+random1);
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
                     response.getInfo().add(collection.getInfoList().get(random1));
                 }else{//低级工人抽两张
+                    System.out.println(uid.get(k)+"是低级");
                     int random1=(int)(Math.random()*10);
+                    System.out.println("random1:"+random1);
                     int random2=(random1+5)%10;
+                    System.out.println("random2:"+random2);
                     response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
                     response.getInfo().add(collection.getInfoList().get(random1));
-                    response.getPicIndex().add(random1+subFreeMission.getSeed()*10);
+                    response.getPicIndex().add(random2+subFreeMission.getSeed()*10);
                     response.getUid().add(uid.get(k));
                     response.getInfo().add(collection.getInfoList().get(random2));
-
                 }
             }
         }
