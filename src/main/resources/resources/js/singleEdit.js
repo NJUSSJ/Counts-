@@ -686,4 +686,4 @@ tool3.addEventListener("click",function () {
     var sentence = new eachSentence(txt,getNameAndCollection()[0] + "_" + getNameAndCollection()[1],sentidsCount-1,2);
     sentences.push(sentence);
 
-})
+});

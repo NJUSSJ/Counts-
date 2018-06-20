@@ -15,7 +15,7 @@ import java.util.*;
 public class MainService {
     private FileIOService fileIOService=new FileIOService();
     private LanguageService languageService;
-    private NewsService newsService;
+    private NewsService newsService=new NewsService();
     private BasicBLService<SubLabelMission> subLabelMissionBasicBLService=Factory.getSubLabelMissionBasicBLService();
     private BasicBLService<GoldMission> goldMissionBasicBLService=Factory.getGoldBasicBLService();
     private BasicBLService<Collection> collectionBasicBLService=Factory.getCollectionBasicBLService();
