@@ -410,6 +410,9 @@ public class MainService {
             String each = uid.get(i);
             User user=userBasicBLService.findByKey(each);
             user.setCredit(user.getCredit()+money[i]);
+            if(rank[i]<=(uid.size()/2)){
+                user.setLevel(user.getLevel()+1);
+            }
             userBasicBLService.update(user);
 
             Message m1=new Message(uid.get(i)+" * "+getCurrentTime(),"System",uid.get(i),0,
@@ -624,6 +627,9 @@ public class MainService {
                     User user=userBasicBLService.findByKey(users.get(i));
                     double reward=1.5*grade.get(i)/avg;
                     user.setCredit(user.getCredit()+reward);//1.5*得分/平均得分
+                    if(rank[i]<=users.size()/2){
+                        user.setLevel(user.getLevel()+1);
+                    }
                     userBasicBLService.update(user);
 
                     Message m1=new Message(user.getPhoneNumber()+" * "+getCurrentTime(),"System",user.getPhoneNumber(),0,
@@ -809,6 +815,9 @@ public class MainService {
             CollectionResult collectionResult=collectionResultBasicBLService.findByKey(mid+key);
 
             user.setCredit(user.getCredit()+1.5*q/10);
+            if(rank[i]<=(u.size()/2)){
+                user.setLevel(user.getLevel()+1);
+            }
             userBasicBLService.update(user);
             System.out.println("collectionResult:"+(collectionResult==null));
             collectionResult.setQuality(q);
