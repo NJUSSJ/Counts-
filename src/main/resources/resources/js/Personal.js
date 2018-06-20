@@ -122,7 +122,7 @@ function loadPersonal(phoneNumber) {
     //加载collectionInfo
     loadPersonalCollection(personalInfo.phoneNumber, personalInfo.category);
     loadPersonalFinishedCollection(personalInfo.phoneNumber, personalInfo.category);
-    loadDownloadFile();
+    //loadDownloadFile();
 
     //获取chart相关后端数据
     getChartData(personalInfo.phoneNumber, personalInfo.category);
@@ -248,6 +248,7 @@ function loadPersonalFinishedCollection(phoneNumber, category) {
     });
 }
 
+/*
 function loadDownloadFile() {
     $.ajax({
         async: false,
@@ -271,7 +272,7 @@ function loadDownloadFile() {
         }
     });
 }
-
+*/
 function setPersonalCollection() {
     document.getElementById("personalCollections").innerHTML = "";
     for (var i = 0; i < missionNames.length; i++) {
