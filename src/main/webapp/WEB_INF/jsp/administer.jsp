@@ -120,7 +120,7 @@
             </div>
             <div class="9u 12u(narrow)" align="left" id="userManagement" style="display: none;padding-top: 0px;padding-left: 90px">
                 <form>
-                    <input type="search" placeholder="用户名/手机号码" class="userSearch">
+                    <input type="search" placeholder="用户名/手机号码" class="userSearch" id="userInfo">
                     <a id="userSearchBt" onclick="searchUser()">搜索</a>
                 </form>
 

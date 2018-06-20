@@ -15,10 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ResourceUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,14 +29,14 @@ import java.util.*;
  * @author Fortune
  */
 
-@Controller
+@RestController
 public class UploadController {
     //BasicBLService<Mission> missionBasicBLService=Factory.getBasicBLService(new Mission());
     BasicBLService<Mission> missionBasicBLService=Factory.getMissionBasicBLService();
     //BasicBLService<User> userBasicBLService= Factory.getBasicBLService(new User());
     BasicBLService<User> userBasicBLService= Factory.getUserBasicBLService();
-    MainService mainService;
-    NewsService newsService;
+    MainService mainService=new MainService();
+    NewsService newsService=new NewsService();
 
     @RequestMapping(value = "/upload.html")
     public ModelAndView test(HttpServletRequest request){
@@ -231,8 +228,4 @@ public class UploadController {
         return base* Math.pow(p,Constant.TASK_NUMBER)*para.getMaxWorker()*discount;*/
     }
 
-    @Autowired
-    public void setMainService(MainService mainService){this.mainService=mainService;}
-    @Autowired
-    public void setNewsService(NewsService newsService){this.newsService=newsService;}
 }

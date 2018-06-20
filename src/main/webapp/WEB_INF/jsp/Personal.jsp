@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css2/main.css" />
     <link rel="stylesheet" href="css/samples-styles.css">
     <script src="js/Personal.js"></script>
-    <script src="js/CreateChartArea.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/echarts-wordcloud.min.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -308,6 +307,7 @@
 <!-- Scripts -->
 <script src="js/ChartData.js"></script>
 <script src="js/GetChartData.js"></script>
+<script src="js/CreateChartArea.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>
 <script src="js2/skel-viewport.min.js"></script>

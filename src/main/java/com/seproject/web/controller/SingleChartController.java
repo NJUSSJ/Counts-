@@ -1,6 +1,7 @@
 package com.seproject.web.controller;
 
 import com.seproject.common.SearchCategory;
+import com.seproject.domain.Collection;
 import com.seproject.domain.CollectionResult;
 import com.seproject.domain.Mission;
 import com.seproject.domain.User;
@@ -8,9 +9,11 @@ import com.seproject.domain.chart.*;
 import com.seproject.service.Factory;
 import com.seproject.service.blService.BasicBLService;
 import net.sf.json.JSON;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import org.hibernate.action.internal.CollectionRecreateAction;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 
-@RestController
+@Controller
 public class SingleChartController {
     //BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getBasicBLService(new CollectionResult());
     BasicBLService<CollectionResult> collectionResultBasicBLService=Factory.getCollectionResultBasicBLService();
@@ -130,15 +133,27 @@ public class SingleChartController {
 
     @RequestMapping(value = "/singleChart/getChart9")
     @ResponseBody
-    public String getChart9(@RequestBody String mid){
-        ArrayList<Mission> missions=missionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+    public String getChart9(@RequestBody String uid){
+
+        uid = uid.substring(8,19);
+        ArrayList<CollectionResult> collections=collectionResultBasicBLService.search("uid",SearchCategory.EQUAL,uid);
+        ArrayList<String > mids=new ArrayList<String>();
+        ArrayList<Mission >missions=new ArrayList<Mission>();
+        for(int i=0;i<collections.size();i++){
+            mids.add(collections.get(i).getMid());
+
+        }
+        for(int i=0;i<mids.size();i++){
+            missions.add(missionBasicBLService.findByKey(mids.get(i)));
+        }
         int x[]=new int[7];
         for(int i=0;i<missions.size();i++){
             String type=missions.get(i).getPicType();
             if(type.equals("人物")){
                 x[0]++;
-            }else if(type.equals("任务")){
+            }else if(type.equals("动物")){
                 x[1]++;
+                System.out.println(x[1]);
             }else if(type.equals("风景")){
                 x[2]++;
             }else if(type.equals("卡通")){
@@ -151,7 +166,7 @@ public class SingleChartController {
                 x[6]++;
             }
         }
-        JSONObject object = JSONObject.fromObject(x);
+        JSONArray object = JSONArray.fromObject(x);
         return object.toString();
     }
 

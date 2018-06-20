@@ -112,10 +112,10 @@ public class OtherController {
         }
     }
 
-    @RequestMapping(value = "/findUser")
+    @RequestMapping(value = "/findUserByAdmin")
     @ResponseBody
     public String findUser(@RequestBody String uid){
-
+        System.out.println(uid+"***************");
         FindUserResponse findUserResponse=new FindUserResponse();
         User user=userBasicBLService.findByKey(uid);
         if(user==null){
@@ -132,7 +132,7 @@ public class OtherController {
 
     }
 
-    @RequestMapping(value = "/findMission")
+    @RequestMapping(value = "/findMissionByAdmin")
     @ResponseBody
     public String findMission(@RequestBody String mid){
         FindMissionResponse findMissionResponse=new FindMissionResponse();
