@@ -35,7 +35,10 @@ public class MultiController {
         int index = Integer.parseInt(request.getParameter("imageURL"));
 
         String collection = request.getParameter("collection");
+        System.out.println("phoneNumer:"+phoneNumber);
+        System.out.println("collection:"+collection);
         ArrayList<Integer> submission = new MissionController().getPictureIndex(phoneNumber, collection);
+        System.out.println("submission.size()="+submission.size());
         url += (submission.get(index)+1)+".jpg\'";
         int tagType = missionBasicBLService.findByKey(collection).getTagType();
         if(tagType == 1){

@@ -174,13 +174,16 @@ public class MainService {
      */
     public boolean getGoldMission(String mid,String uid){
         Mission mission=missionBasicBLService.findByKey(mid);
-        String name=mission.getRequestorNumber();
-        System.out.println("发起者账号:"+name);
+        String startName=mission.getRequestorNumber();
+        System.out.println("发起者账号:"+startName);
         ArrayList<GoldMission> goldMissions = goldMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         System.out.println("goldMission.size():"+goldMissions.size());
         for (GoldMission goldMission : goldMissions) {
             System.out.println("goldMissionOldName:"+goldMission.getUid());
-            if (goldMission.getUid().equals(name)) {
+            if (goldMission.getUid().equals(uid)) {//不能接两次金标
+                return false;
+            }
+            if (goldMission.getUid().equals(startName)) {
                 goldMission.setUid(uid);
                 goldMissionBasicBLService.update(goldMission);
                 User user = userBasicBLService.findByKey(uid);
@@ -275,8 +278,9 @@ public class MainService {
 
             }
             for (int j = 0; j < subLabelMission.getAnswers().size(); j++) {
+                String user=subLabelMission.getUid().get(j);
                 ArrayList<Integer> userAnswer = subLabelMission.getAnswers().get(j);
-                System.out.println("用户的答案是："+userAnswer);
+                System.out.println("用户"+user+"的答案是："+userAnswer);
                 for (int k = 0; k < 10; k++) {
                     if(userAnswer.get(k)>=0) {
                         vote[k][userAnswer.get(k)] += weight.get(j);

@@ -54,8 +54,14 @@ public class MainController {
         String uid=para.getUid();
         String mid=para.getMid();
         ArrayList<SubLabelMission> subLabelMissions =subTagMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
+
         ArrayList<Integer> userNum=new ArrayList<Integer>();
-        for(SubLabelMission subLabelMission : subLabelMissions){userNum.add(subLabelMission.getUid().size());}
+        for(SubLabelMission subLabelMission : subLabelMissions){
+            if(subLabelMission.getUid().contains(uid)){//不能接两次任务
+                return RM.FAILURE.toString();
+            }
+            userNum.add(subLabelMission.getUid().size());
+        }
         int index=getMinIndex(userNum);
         subLabelMissions.get(index).getUid().add(uid);
 
@@ -82,7 +88,12 @@ public class MainController {
         String mid=para.getMid();
         ArrayList<SubFreeMission> subFreeMissions =subFreeMissionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         ArrayList<Integer> userNum=new ArrayList<Integer>();
-        for(SubFreeMission subFreeMission : subFreeMissions){userNum.add(subFreeMission.getUid().size());}
+        for(SubFreeMission subFreeMission : subFreeMissions){
+            if(subFreeMission.getUid().contains(uid)){//不能接两次任务
+                return RM.FAILURE.toString();
+            }
+            userNum.add(subFreeMission.getUid().size());
+        }
         int index=getMinIndex(userNum);
         subFreeMissions.get(index).getUid().add(uid);
         mainService.createCollection(uid,mid);
