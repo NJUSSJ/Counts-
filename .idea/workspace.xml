@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="" />
+=======
     <list default="true" id="7e422d85-c3dc-4fc7-994a-4af46bb909f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java" afterPath="$PROJECT_DIR$/src/main/java/com/seproject/domain/Mission.java" />
@@ -394,6 +397,7 @@
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/MathServiceTest.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/blServiceImpl/BasicBLImpl_HibernateTest.class" afterPath="" />
     </list>
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -511,6 +515,11 @@
       <file leaf-file-name="MainService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/service/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="391">
+              <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+              <folding />
+=======
             <state relative-caret-position="46">
               <caret line="278" column="45" lean-forward="false" selection-start-line="278" selection-start-column="45" selection-end-line="278" selection-end-column="45" />
               <folding>
@@ -518,6 +527,7 @@
                 <element signature="e#33509#33510#0" expanded="true" />
                 <element signature="e#33561#33562#0" expanded="true" />
               </folding>
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
             </state>
           </provider>
         </entry>
@@ -2056,7 +2066,7 @@
       <workItem from="1529390957093" duration="2252000" />
       <workItem from="1529393346154" duration="5453000" />
       <workItem from="1529401240655" duration="9428000" />
-      <workItem from="1529412859796" duration="4749000" />
+      <workItem from="1529412859796" duration="5533000" />
     </task>
     <task id="LOCAL-00001" summary="V 3.9.5">
       <created>1529333485898</created>
@@ -2069,7 +2079,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34648000" />
+    <option name="totallyTimeSpent" value="35432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2126,8 +2136,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2508,8 +2522,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seproject/web/MultiController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="391">
+          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+=======
         <state relative-caret-position="40">
           <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+>>>>>>> 3e69e30d46f1e8011add626a27debf0aa571842c
           <folding />
         </state>
       </provider>
