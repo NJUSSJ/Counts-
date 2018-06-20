@@ -137,8 +137,8 @@
 
             <div class="9u 12u(narrow)" align="left" id="missionManagement" style="display: none;padding-top: 0px;padding-left: 90px">
                 <form>
-                    <input type="search" placeholder="任务名" class="userSearch">
-                    <a id="missionSearchBt">搜索</a>
+                    <input type="search" placeholder="任务名" class="userSearch" id="missionName">
+                    <a id="missionSearchBt" onclick="searchMission()">搜索</a>
                 </form>
 
                 <table id="missionTable" class="default" style="margin-top: 20px">

@@ -115,17 +115,17 @@ public class OtherController {
     @RequestMapping(value = "/findUserByAdmin")
     @ResponseBody
     public String findUser(@RequestBody String uid){
-        System.out.println(uid+"***************");
+        uid = uid.substring(9, uid.lastIndexOf("\""));
         FindUserResponse findUserResponse=new FindUserResponse();
         User user=userBasicBLService.findByKey(uid);
         if(user==null){
-            return "";
+            return "0";
         }else{
             findUserResponse.setCategory(user.getCategory());
             findUserResponse.setCredit(user.getCredit());
             findUserResponse.setLevel(user.getLevel());
             findUserResponse.setUid(user.getPhoneNumber());
-            findUserResponse.setUid(user.getUserName());
+            findUserResponse.setUserName(user.getUserName());
             JSONObject object = JSONObject.fromObject(findUserResponse);
             return object.toString();
         }
@@ -135,11 +135,12 @@ public class OtherController {
     @RequestMapping(value = "/findMissionByAdmin")
     @ResponseBody
     public String findMission(@RequestBody String mid){
+        mid = mid.substring(9, mid.lastIndexOf("\""));
         FindMissionResponse findMissionResponse=new FindMissionResponse();
         Mission mission=missionBasicBLService.findByKey(mid);
         ArrayList<Collection> collections=collectionBasicBLService.search("mid",SearchCategory.EQUAL,mid);
         if(mission==null){
-            return "";
+            return "0";
         }else{
             findMissionResponse.setMemberNum(collections.size());
             findMissionResponse.setMid(mid);
