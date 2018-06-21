@@ -306,7 +306,6 @@
 
 <!-- Scripts -->
 <script src="js/ChartData.js"></script>
-<script src="js/GetChartData.js"></script>
 <script src="js/CreateChartArea.js"></script>
 <script src="js2/jquery.min.js"></script>
 <script src="js2/skel.min.js"></script>

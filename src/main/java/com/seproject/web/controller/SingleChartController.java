@@ -144,10 +144,14 @@ public class SingleChartController {
 
         }
         for(int i=0;i<mids.size();i++){
+            if(missionBasicBLService.findByKey(mids.get(i))!=null)
             missions.add(missionBasicBLService.findByKey(mids.get(i)));
         }
         int x[]=new int[7];
         for(int i=0;i<missions.size();i++){
+            System.out.println(missions==null);
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(missions.get(i));
             String type=missions.get(i).getPicType();
             if(type.equals("人物")){
                 x[0]++;

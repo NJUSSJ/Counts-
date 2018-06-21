@@ -71,13 +71,13 @@ public class MissionController {
             ArrayList<Mission> missions=missionBasicBLService.getAllObjects();
             if(range.equals("ended")){
                 for(Mission mission:missions){
-                    if(mission.getState()>0&&mission.getState()<3){
+                    if(mission.getState()>0&&mission.getState()<3&&mission.getName().contains(keyword)){
                         missionRe.add(mission);
                     }
                 }
             }else if(range.equals("notEnded")){
                 for(Mission mission:missions){
-                    if(mission.getState()==0){
+                    if(mission.getState()==0&&mission.getName().contains(keyword)){
                         missionRe.add(mission);
                     }
                 }
@@ -108,7 +108,11 @@ public class MissionController {
             } else if(range.equals("refresh")){
                 missionRe=missionService.recommendByAlikeUser(keyword);
             }else{
-                missionRe.addAll(missions);
+                for(Mission mission:missions){
+                    if(mission.getName().contains(keyword)){
+                        missionRe.add(mission);
+                    }
+                }
             }
         }
 

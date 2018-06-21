@@ -38,10 +38,11 @@ public class OtherController {
     /**
      * 签到
      */
-    public String sign(@RequestBody String phoneNumber){
+    public int sign(@RequestBody String phoneNumber){
         phoneNumber = phoneNumber.split("=")[1];
         System.out.println("phoneNumber:"+phoneNumber);
         String message="sign up success";
+        int result=0;
         Date now=new Date(System.currentTimeMillis());
         User user=userBasicBLService.findByKey(phoneNumber);
         double reward=0;
@@ -54,17 +55,19 @@ public class OtherController {
         Date[] dateArray = userDate.getDate();
         int index = userDate.getFlag();
         if(index==-1){//如果整个日期数组为空，添加第一项并令index=0
-            System.out.println("firstTimeNow:"+now);
             reward=2;
             dateArray[0]=now;
             index=0;
+            result=1;
         }else {//否则比较上次签到时间和今天的差
             Date lastTime = dateArray[index];
-            System.out.println("lastTime:"+lastTime);
             int day = ((int) (now.getTime() / (1000 * 3600 * 24))) - ((int)(lastTime.getTime() / (1000 * 3600 * 24)));
             if (day < 1) {
-                message = "";
+                System.out.println("part1");
+                message = "you have signed up today";
             } else if (day >= 1 && day < 2) {
+                System.out.println("part2");
+                result=1;
                 index++;
                 reward = (index+1) * 2;
                 if (index == 6) {//如果签满七天，清空日期数组
@@ -74,6 +77,8 @@ public class OtherController {
                     dateArray[index] = now;
                 }
             } else {//如果不连续，清空日期数组，添加第一项为今天
+                System.out.println("part3");
+                result=1;
                 clearArray(dateArray);
                 reward=2;
                 index = 0;
@@ -90,7 +95,7 @@ public class OtherController {
             userBasicBLService.update(user);
         }
         System.out.println(message);
-        return message;
+        return result;
     }
 
     @RequestMapping(value = "/ChangeCredit")
