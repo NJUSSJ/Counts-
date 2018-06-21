@@ -3,326 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0c2d122f-b73a-48c3-82b3-a5131d1ae498" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SEPF.war" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SEPM.war" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/Application.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/Constant.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/Key.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/RM.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/SearchCategory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/common/Searchable.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/FileDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/dao/MySQL5DialectUTF8.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Collection.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/CollectionResult.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/FreeMissionDetail.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/GoldMission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Message.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Mission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/Sample.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/SubFreeMission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/SubLabelMission.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/UserDate.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart7.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/chart/Chart8.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/AdminData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/SingleMissionData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/StarterData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/statisticsData/WorkerData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/LoginLog.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/TestDomain.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/domain/testDomain/TestH.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/BasicUtilService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/Factory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FactoryService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FileIOService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/FreeMissionService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/InitData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/LabelMissionService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/LanguageService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MainService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MathService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MessageService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/MissionService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/NewsService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/ReviewService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/StatisticsService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blService/BasicBLService.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_File$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_File.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/service/blServiceImpl/BasicBLImpl_Hibernate.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/ChartController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/CollectionController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/MultiController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/SampleController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/SignUpController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/TagController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/UploadController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/LoginController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MainController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MessageController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/MissionController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/OtherController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/PersonalController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/SingleChartController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/controller/UserController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/CalRewardParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/ChangeCreditParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/FinishReviewParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/FreeMissionParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/GetMissionParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/LoginParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MessageParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MissionParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/MissionSearchParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/PersonalParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/RecommendParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/UpdateFreeMissionParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/parameter/UpdateLabelMissionParameter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/DownloadFileResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/FindMissionResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/FindUserResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/MissionCheckResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/MissionResultResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/ReviewResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/seproject/web/response/SignResponse.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/res_readme" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/960_12_col.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/SubCollection.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/base.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/ie8.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/ie9.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-bl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-br.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-tl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/dark-tr.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-bl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-br.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-tl.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/light-tr.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/overlay.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/images/upload.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/jquery.tag-editor.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/main.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/samples-styles.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css/style.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/font-awesome.min.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/ie8.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/images/bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/images/overlay.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/main.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/css2/noscript.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneCSS/basic.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneCSS/dropzone.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/dropZoneJS/dropzone.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/cat1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/cat2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/dog1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/dog2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/parrot1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/parrot2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/registry.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/dataFile/test1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/downloadFile/3a3a3a.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/downloadFile/navigation.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/navigation.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/objectFile/ObjectFileReadMe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/objectFile/navigation.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/userFile/test2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/file/userFile/user.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/FontAwesome.otf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/Quicksand_Book-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/100.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/20.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/50.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/add.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/back.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/banner.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/edit.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/graphics_editor.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/logo.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/logo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/more.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/more4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/note.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/pen.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/recommend.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/refresh.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/save.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/search_ico.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/search_ico_hover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/sign.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/timg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/CalReward.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ChartData.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/CreateChartArea.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawAdminChart.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawStarterChart.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/DrawWorkerChart.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/GetChartData.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/LabelEdit.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Maincollection.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Message.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Personal.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Search.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/Sign.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/TagType.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/admin.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/charts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/echarts-wordcloud.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/echarts.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/freeJudge.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/backgroundsize.min.htc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/html5shiv.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/ie/respond.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.11.0.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery-1.8.3.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.dropotron.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.filtertable.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.scrollgress.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.scrolly.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.select.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/jquery.tag-editor.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/judge.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionDetails.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionDetailsCharts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/missionRest.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/multipic.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/object.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/signUp.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/singleEdit.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/skel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/submission.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/tagTool.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/upload1.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/backgroundsize.min.htc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/html5shiv.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/ie/respond.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/skel-viewport.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/skel.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/js2/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/666_9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/navigation.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务1_9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/标签式任务2_9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务2_9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_10.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_11.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_12.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_13.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_14.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_15.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_4.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_5.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_6.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_7.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_8.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/missionImages/非标签式任务_9.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/ie8.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/ie9.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_functions.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_skel.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/libs/_vars.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/ie8.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_functions.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_mixins.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_skel.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/libs/_vars.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/main.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/sass2/noscript.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/dao/FileDaoTest2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/BasicBLServiceTest2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/MathServiceTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/seproject/service/blServiceImpl/BasicBLImpl_HibernateTest.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -367,8 +47,8 @@
       <file leaf-file-name="Personal.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="267" column="67" lean-forward="false" selection-start-line="267" selection-start-column="67" selection-end-line="267" selection-end-column="67" />
+            <state relative-caret-position="1765">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -490,108 +170,6 @@
             <path>
               <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="seproject" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB_INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEP_Phase_III" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB_INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1153,12 +731,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529522533681</updated>
-      <workItem from="1529522541446" duration="8432000" />
+      <workItem from="1529522541446" duration="8571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8432000" />
+    <option name="totallyTimeSpent" value="8571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1178,12 +756,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1373,8 +951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB_INF/jsp/Personal.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="267" column="67" lean-forward="false" selection-start-line="267" selection-start-column="67" selection-end-line="267" selection-end-column="67" />
+        <state relative-caret-position="1765">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
       </provider>
