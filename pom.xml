@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.7.Final</version>
+            <version>5.4.24.Final</version>
         </dependency>
         <!--展现层-->
         <dependency>
